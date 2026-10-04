@@ -21,7 +21,7 @@ export default function BackToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}
       aria-label={LABEL[lang]}
       title={LABEL[lang]}
-      className="back-to-top fixed bottom-24 right-4 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-ink/90 text-paper shadow-lg backdrop-blur transition hover:border-accent lg:bottom-6 lg:right-6"
+      className="back-to-top fixed bottom-24 left-4 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-ink/90 text-paper shadow-lg backdrop-blur transition hover:border-accent lg:bottom-6 lg:left-6"
     >
       <span aria-hidden className="text-lg leading-none">
         ↑
