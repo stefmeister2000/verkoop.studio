@@ -1,3 +1,30 @@
+/* Keep the office photograph clear and visible from the start. */
+.studio-hero .hero-studio-photo {
+  margin: 24px 24px 24px 12px;
+  min-height: 492px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.studio-hero .hero-studio-photo > img {
+  width: 100%;
+  left: 0;
+  object-position: center;
+  mask-image: none;
+  animation: none;
+  border-radius: inherit;
+}
+@media (max-width: 800px) {
+  .studio-hero .hero-studio-photo {
+    order: -1;
+    margin: 20px 30px 0;
+    height: clamp(240px, 55vw, 380px);
+    min-height: 0;
+    aspect-ratio: auto;
+    overflow: hidden;
+  }
+  .studio-hero .hero-studio-photo > img { object-position: center 42%; }
+  .studio-hero .hero-studio-photo .floating-strategy { display: none; }
+}
 /* Phone and tablet refinements, after the shared component styles. */
 .mobile-navigation { max-height: calc(100dvh - 80px); overflow-y: auto; overscroll-behavior: contain; padding-bottom: max(24px, env(safe-area-inset-bottom)); }
 @media (max-width: 1023px) {
@@ -13,6 +40,7 @@
   .input { scroll-margin-block: 110px; font-size: 16px; min-height: 48px; }
 }
 @media (max-width: 600px) {
+  .studio-hero .hero-studio-photo { margin: 16px 20px 0; border-radius: 20px; }
   .site-shell { margin: 0; padding-inline: 0; }
   .studio-nav { border-radius: 0; padding-top: env(safe-area-inset-top); }
   .studio-nav > div:first-child { padding: 12px 16px; gap: 8px; }
@@ -30,7 +58,7 @@
   .studio-hero .hero-disciplines > a,
   .studio-hero .hero-disciplines > a:first-child { padding: 12px; min-height: 62px; border: 1px solid #dce2f3; border-radius: 10px; background: #ffffff70; }
   .hero-disciplines strong { font-size: 12px; }
-  .studio-hero .hero-art { aspect-ratio: auto; height: clamp(300px,90vw,430px); min-height: 0; }
+  .studio-hero .hero-art { aspect-ratio: auto; height: clamp(240px,55vw,330px); min-height: 0; }
   .studio-hero .floating-strategy { width: 160px; right: 20px; bottom: 24px; padding: 16px; }
   .studio-hero .floating-strategy p { font-size: 12px; }
   .studio-hero .strategy-link { font-size: 11px; }

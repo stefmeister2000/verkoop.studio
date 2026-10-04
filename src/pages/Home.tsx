@@ -29,8 +29,8 @@ export default function Home() {
         path="/"
       />
       <PersonalHero />
-      <GrowthGoals />
       <SelectedWork />
+      <GrowthGoals />
       <RevenueGrowth />
       <AgencyCapabilities />
       <StudioTools />

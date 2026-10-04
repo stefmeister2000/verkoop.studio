@@ -14,7 +14,7 @@ export default function SelectedWork() {
   return (
     <section className="selected-work" id="selected-work">
       <div className="work-intro">
-        <p className="eyebrow">{nl ? 'Geselecteerd werk' : 'Selected work'}</p>
+        <p className="eyebrow">{nl ? 'Onze projecten' : 'Our projects'}</p>
         <h2>
           {nl ? 'Sterke campagnes.' : 'Strong campaigns.'}
           <br />

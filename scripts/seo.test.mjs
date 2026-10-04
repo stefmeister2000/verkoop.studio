@@ -131,7 +131,11 @@ test('articles have crawlable content, authorship, links and sitemap entries', a
 
 test('hero uses responsive WebP candidates with explicit image dimensions', async () => {
   const html = await readFile('dist/index.html', 'utf8')
-  const tag = html.match(/<img[^>]*src="([^"]*freeflow-hero-3d[^" ]*\.webp)"[^>]*>/)[0]
+  const hero = html.match(/<section class="studio-hero"[\s\S]*?<\/section>/)?.[0]
+  assert(hero, 'Homepage includes the hero section')
+  const tag = hero.match(/<img[^>]*>/)?.[0]
+  assert(tag, 'Hero includes an image')
+  assert.match(tag, /src="[^"]+\.webp"/)
   assert.match(tag, /width="\d+"/)
   assert.match(tag, /height="\d+"/)
   assert.match(tag, /srcSet="[^"]+640w/)
