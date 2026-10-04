@@ -4,6 +4,7 @@ import PersonalHero from '../components/PersonalHero'
 import RevenueGrowth from '../components/RevenueGrowth'
 import SelectedWork from '../components/SelectedWork'
 import AgencyCapabilities from '../components/AgencyCapabilities'
+import { StudioTools, OwnPlatforms } from '../components/StudioPlatforms'
 import AboutStef from '../components/AboutStef'
 import ProcessSection from '../components/ProcessSection'
 import PricingSection from '../components/PricingSection'
@@ -32,6 +33,8 @@ export default function Home() {
       <SelectedWork />
       <RevenueGrowth />
       <AgencyCapabilities />
+      <StudioTools />
+      <OwnPlatforms />
       <AboutStef />
       <div id="aanpak">
         <ProcessSection />

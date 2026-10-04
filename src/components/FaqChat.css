@@ -1,6 +1,7 @@
 .faq-chat { position: fixed; z-index: 60; right: 24px; bottom: 24px; color: #17203b; font-size: 14px; font-family: Inter,system-ui,sans-serif; }
 .faq-chat button { cursor: pointer; }
 .faq-chat-launcher { display: flex; align-items: center; gap: 11px; background: linear-gradient(120deg,#111c39,#243168); color: white; padding: 14px 20px; border: 1px solid #ffffff35; border-radius: 32px; box-shadow: 0 8px 30px #1c2c6035,inset 0 1px #ffffff15; font-size: 12px; font-weight: 550; min-height: 52px; transition: transform .25s ease,box-shadow .25s ease; }
+.chat-launcher-symbol { display: none; flex-shrink: 0; }
 .faq-chat-launcher:hover { transform: translateY(-3px); box-shadow: 0 12px 35px #2348c550; }
 .faq-chat-panel { position: absolute; right: 0; bottom: 66px; width: 410px; max-width: calc(100vw - 32px); height: min(660px,calc(100dvh - 114px)); display: flex; flex-direction: column; background: #fcfdff; border: 1px solid #ffffffc0; border-radius: 24px; box-shadow: 0 28px 90px #15245230,0 4px 16px #15245212; overflow: hidden; transform-origin: bottom right; animation: chat-open .32s cubic-bezier(.16,1,.3,1) both; }
 .chat-header { display: flex; align-items: center; gap: 12px; padding: 20px 18px; background: radial-gradient(ellipse at top right,#4559a55c,transparent 70%),#111b36; color: white; }
@@ -60,7 +61,9 @@
 /* A spacious conversation sheet, with a quiet launcher above the mobile CTA. */
 @media (max-width: 600px) {
   .faq-chat { right: 12px; bottom: calc(82px + env(safe-area-inset-bottom)); }
-  .faq-chat-launcher { gap: 8px; min-height: 46px; padding: 12px 17px; font-size: 11px; box-shadow: 0 5px 18px #1c2c6026; }
+  .faq-chat-launcher { justify-content: center; width: 48px; height: 48px; min-height: 48px; padding: 0; gap: 0; border-radius: 50%; box-shadow: 0 4px 14px #1c2c6026; }
+  .faq-chat-launcher > span { display: none; }
+  .faq-chat-launcher .chat-launcher-symbol { display: block; }
   .faq-chat.has-open-chat { z-index: 100; }
   .has-open-chat .faq-chat-launcher { display: none; }
   .faq-chat-panel { position: fixed; top: calc(var(--chat-viewport-top, 0px) + 8px); right: 8px; bottom: auto; width: calc(100% - 16px); max-width: none; height: calc(var(--chat-viewport-height, 100dvh) - 16px); border-radius: 22px; box-shadow: 0 0 0 100vmax #101a3690, 0 16px 60px #101a3630; outline: none; }
