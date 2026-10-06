@@ -31,7 +31,7 @@ export default function Contact() {
   const [ready, setReady] = useState(false)
   useEffect(() => { setReady(true) }, [])
   const selectedPackage = ready ? pricingTiers.find(tier => tier.key === params.get('pakket')) : undefined
-  const platformNames = { overview: lang === 'nl' ? 'onze klantenplatforms' : 'our client platforms', crm: 'Sales CRM', affiliates: lang === 'nl' ? 'het affiliateplatform' : 'the affiliate platform' }
+  const platformNames = { overview: lang === 'nl' ? 'onze klantenplatforms' : 'our client platforms', crm: 'Sales CRM', dashboard: lang === 'nl' ? 'het marketingdashboard' : 'the marketing dashboard', affiliates: lang === 'nl' ? 'het affiliateplatform' : 'the affiliate platform' }
   const platformKey = ready ? params.get('platform') : null
   const selectedPlatform = platformKey && Object.hasOwn(platformNames, platformKey) ? platformNames[platformKey as keyof typeof platformNames] : undefined
 

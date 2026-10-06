@@ -54,6 +54,8 @@ export const pricingTiers: PricingTier[] = [
         'Maandelijkse rapportage',
         'Advies om meer bezoekers klant te maken',
         'Richting voor content en advertenties',
+        'Toegang tot ons CRM en marketingdashboard',
+        'Documentatie en instructievideo’s bij alles',
       ],
       en: [
         'Strategy',
@@ -62,6 +64,8 @@ export const pricingTiers: PricingTier[] = [
         'Monthly reporting',
         'CRO advice',
         'Content and ad direction',
+        'Access to our CRM and marketing dashboard',
+        'Documentation and video guides for everything',
       ],
     },
   },
@@ -78,7 +82,7 @@ export const pricingTiers: PricingTier[] = [
         'Alles uit Foundation',
         'Landingspagina’s en conversieverbetering',
         'E-mailflows, retargeting en automatisering',
-        'Dashboards en advertentietests',
+        'Maatwerkdashboards en advertentietests',
         'SEO en lokale vindbaarheid',
         'Wekelijkse opvolging',
       ],
@@ -86,7 +90,7 @@ export const pricingTiers: PricingTier[] = [
         'Everything in Foundation',
         'Landing pages and conversion improvements',
         'Email flows, retargeting and automation',
-        'Dashboards and creative testing',
+        'Custom dashboards and creative testing',
         'SEO and local visibility',
         'Weekly follow-up',
       ],
@@ -135,6 +139,9 @@ const dash: Cell = { type: 'dash' }
 const text = (nl: string, en: string): Cell => ({ type: 'text', label: { nl, en } })
 
 export const featureRows: FeatureRow[] = [
+  { label: { nl: 'Toegang tot ons CRM', en: 'Access to our CRM' }, values: [check, check, check] },
+  { label: { nl: 'Toegang tot ons marketingdashboard', en: 'Access to our marketing dashboard' }, values: [check, check, check] },
+  { label: { nl: 'Documentatie en instructievideo’s', en: 'Documentation and video guides' }, values: [check, check, check] },
   { label: { nl: 'Growth-strategie', en: 'Growth strategy' }, values: [check, check, check] },
   { label: { nl: 'Meta Ads-beheer', en: 'Meta Ads management' }, values: [check, check, check] },
   { label: { nl: 'Google Ads-beheer', en: 'Google Ads management' }, values: [check, check, check] },
@@ -150,7 +157,7 @@ export const featureRows: FeatureRow[] = [
     values: [dash, check, check],
   },
   { label: { nl: 'SEO / lokale SEO', en: 'SEO / local SEO' }, values: [dash, check, check] },
-  { label: { nl: 'Dashboards en advertentietests', en: 'Dashboards and creative testing' }, values: [dash, check, check] },
+  { label: { nl: 'Maatwerkdashboards en advertentietests', en: 'Custom dashboards and creative testing' }, values: [dash, check, check] },
   { label: { nl: 'E-mailmarketingstrategie', en: 'Email marketing strategy' }, values: [dash, check, check] },
   { label: { nl: 'E-mailflows & automatisering', en: 'Email flows & automation' }, values: [dash, check, check] },
   {

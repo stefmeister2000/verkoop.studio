@@ -108,8 +108,22 @@ export const faqItems: FaqItem[] = [
   {
     question: { nl: 'Wat kost een samenwerking?', en: 'What does a collaboration cost?' },
     answer: {
-      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten, vanaf €1.500 per maand. De invulling van de opstart en uitvoering hangt af van het gekozen pakket. Scope, advertentiebudget en eventuele bijkomende kosten leggen we vooraf vast in het voorstel. Losse strategische consulting kan ook, aan €250/uur of €1.250/dag.',
-      en: 'Ongoing collaborations run through three growth packages, starting at €1,500 per month. Setup and delivery depend on the package you choose. Scope, advertising budget and any additional costs are agreed in the proposal. Standalone strategic consulting is also available, at €250/hour or €1,250/day.',
+      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten, vanaf €1.500 per maand. Toegang tot onze klanttools, zoals het CRM en marketingdashboard, is inbegrepen, net als documentatie en instructievideo’s. De invulling van de opstart en uitvoering hangt af van het gekozen pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel. Losse strategische consulting kan ook, aan €250/uur of €1.250/dag.',
+      en: 'Ongoing collaborations run through three growth packages, starting at €1,500 per month. Access to our client tools, including the CRM and marketing dashboard, is included, along with documentation and video guides. Setup and delivery depend on the package you choose. Scope, advertising budget and any third-party licences are agreed in the proposal. Standalone strategic consulting is also available, at €250/hour or €1,250/day.',
+    },
+  },
+  {
+    question: { nl: 'Moet ik zelf een CRM of marketingdashboard aanschaffen?', en: 'Do I need to buy a CRM or marketing dashboard separately?' },
+    answer: {
+      nl: 'Nee. Als klant krijg je toegang tot onze programma’s, waaronder een sales-CRM, marketingdashboard en affiliateplatform. Daarvoor hoef je geen apart abonnement aan te schaffen. Eventuele externe licenties voor je project spreken we vooraf af in het voorstel.',
+      en: 'No. As a client, you get access to our software, including a sales CRM, marketing dashboard and affiliate platform, without a separate subscription. Any third-party licences needed for your project are agreed upfront in the proposal.',
+    },
+  },
+  {
+    question: { nl: 'Krijgen we ook documentatie en instructievideo’s?', en: 'Do we also receive documentation and video guides?' },
+    answer: {
+      nl: 'Ja, altijd. Bij alles wat we opleveren krijg je heldere documentatie en instructievideo’s: hoe het werkt, hoe je het gebruikt en wat je zelf kunt aanpassen. Zo kunnen jij en je team de uitleg op elk moment terugvinden en opnieuw bekijken.',
+      en: 'Yes, always. Everything we deliver comes with clear documentation and video guides explaining how it works, how to use it and what you can adjust yourself. You and your team can refer back to the guidance whenever you need.',
     },
   },
 ]

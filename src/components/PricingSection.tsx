@@ -32,6 +32,18 @@ export default function PricingSection() {
           <h2 id="pricing-title">{nl ? 'De juiste basis.' : 'The right foundation.'}<br /><span>{nl ? 'De ruimte om te groeien.' : 'Room to grow.'}</span></h2>
           <p>{nl ? 'Meer grip op je marketing of een team dat mee de uitvoering draagt? Kies de samenwerking die past bij je doelen en wat je intern al kunt.' : 'More clarity in your marketing, or a team to help deliver it? Choose the collaboration that fits your goals and in-house capabilities.'}</p>
         </header>
+        <section className="pricing-included" aria-labelledby="included-title">
+          <div className="pricing-included-intro">
+            <p className="eyebrow">{nl ? 'Bij elk groeipakket inbegrepen' : 'Included in every growth package'}</p>
+            <h3 id="included-title">{nl ? 'Je tools én de uitleg erbij.' : 'Your tools, with the guidance to use them.'}</h3>
+            <p>{nl ? 'Je krijgt toegang tot onze programma’s, zoals een CRM en marketingdashboard. Die hoef je dus niet meer apart aan te schaffen.' : 'You get access to our software, including a CRM and marketing dashboard. No separate purchase or subscription needed for these tools.'}</p>
+          </div>
+          <div className="pricing-included-grid">
+            <div><h4>{nl ? 'CRM voor je klantopvolging' : 'CRM for customer follow-up'}</h4><p>{nl ? 'Je contacten, verkoopkansen en volgende stappen overzichtelijk op één plek.' : 'Your contacts, sales opportunities and next steps, organised in one place.'}</p></div>
+            <div><h4>{nl ? 'Je eigen marketingdashboard' : 'Your marketing dashboard'}</h4><p>{nl ? 'Inzicht in je campagnes en resultaten, zonder een extra abonnement op ons dashboard.' : 'A clear view of your campaigns and results, without an extra subscription to our dashboard.'}</p></div>
+            <div><h4>{nl ? 'Documentatie & instructievideo’s' : 'Documentation & video guides'}</h4><p>{nl ? 'Bij alles wat we opleveren krijg je duidelijke documentatie en instructievideo’s. Zo weten jij en je team hoe alles werkt en kun je het altijd terugkijken.' : 'Everything we deliver comes with clear documentation and video guides, so you and your team know how it works and can revisit the steps whenever you need.'}</p></div>
+          </div>
+        </section>
         <div className="pricing-grid">
           {pricingTiers.map((tier, index) => {
             const copy = positioning[tier.key]
@@ -48,7 +60,7 @@ export default function PricingSection() {
             </article>
           })}
         </div>
-        <div className="pricing-scope"><span aria-hidden="true">↗</span><p><strong>{nl ? 'Duidelijke afspraken vooraf.' : 'Clear agreements upfront.'}</strong> {nl ? 'Dit zijn richtprijzen voor doorlopende marketing. In je voorstel leggen we de scope, prioriteiten, het advertentiebudget, eventuele toolkosten en btw vast. Websites, apps en software begroten we apart.' : 'These are indicative rates for ongoing marketing. Your proposal specifies scope, priorities, advertising budget, any tool costs and VAT. Websites, apps and software are quoted separately.'}</p></div>
+        <div className="pricing-scope"><span aria-hidden="true">↗</span><p><strong>{nl ? 'Duidelijke afspraken vooraf.' : 'Clear agreements upfront.'}</strong> {nl ? 'Dit zijn richtprijzen voor doorlopende marketing. Onze klanttools, documentatie en instructievideo’s zijn inbegrepen. In je voorstel leggen we de scope, prioriteiten, het advertentiebudget, eventuele externe licenties en btw vast. Websites, apps en software op maat begroten we apart.' : 'These are indicative rates for ongoing marketing. Our client tools, documentation and video guides are included. Your proposal specifies scope, priorities, advertising budget, any third-party licences and VAT. Websites, apps and custom software are quoted separately.'}</p></div>
         <details className="pricing-comparison">
           <summary>{nl ? 'Vergelijk wat er in elk pakket zit' : 'Compare what each package includes'}<span aria-hidden="true">+</span></summary>
           <div className="pricing-table-scroll" role="region" aria-label={nl ? 'Pakketvergelijking, horizontaal scrollbaar' : 'Package comparison, scroll horizontally'} tabIndex={0}>

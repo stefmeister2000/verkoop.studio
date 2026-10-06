@@ -4,6 +4,12 @@
 .pricing-intro h2 { font-size: clamp(32px,4vw,52px); line-height: 1.08; letter-spacing: -.055em; font-weight: 600; margin: 18px 0; color: #151b2d; }
 .pricing-intro h2 span { color: #294cf0; }
 .pricing-intro > p:last-child { font-size: 16px; line-height: 1.75; color: #596178; max-width: 640px; }
+.pricing-included { margin-bottom: 28px; padding: 30px; border: 1px solid #cdd7f5; border-radius: 24px; background: #edf2ff; }
+.pricing-included-intro { max-width: 720px; }
+.pricing-included h3 { margin: 14px 0 12px; font-size: clamp(25px,3vw,34px); line-height: 1.2; letter-spacing: -.04em; font-weight: 600; color: #182039; }
+.pricing-included p:not(.eyebrow) { font-size: 14px; line-height: 1.8; color: #48546e; }
+.pricing-included-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; margin-top: 26px; padding-top: 24px; border-top: 1px solid #cdd7f5; }
+.pricing-included-grid h4 { margin-bottom: 8px; font-size: 16px; line-height: 1.5; font-weight: 600; color: #253c98; }
 .pricing-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; align-items: stretch; }
 .growth-plan { display: flex; flex-direction: column; padding: 28px; border: 1px solid #dce2f0; border-radius: 24px; background: #fff; color: #182039; min-width: 0; box-shadow: 0 12px 40px #1b2f6610; }
 .plan-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; font-size: 10px; color: #626c85; }
@@ -75,6 +81,8 @@
 }
 @media (max-width: 760px) {
   .pricing-wrap { padding: 52px 20px; }
+  .pricing-included { padding: 24px; }
+  .pricing-included-grid { grid-template-columns: 1fr; gap: 22px; }
   .pricing-grid,.pricing-first-step { grid-template-columns: 1fr; gap: 22px; }
   .growth-plan { padding: 26px; }
   .plan-topline > span:last-child { max-width: none; }
