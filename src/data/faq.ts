@@ -115,8 +115,8 @@ export const faqItems: FaqItem[] = [
   {
     question: { nl: 'Moet ik zelf een CRM of marketingdashboard aanschaffen?', en: 'Do I need to buy a CRM or marketing dashboard separately?' },
     answer: {
-      nl: 'Nee. Als klant krijg je toegang tot onze programma’s, waaronder een sales-CRM, marketingdashboard en affiliateplatform. Daarvoor hoef je geen apart abonnement aan te schaffen. Eventuele externe licenties voor je project spreken we vooraf af in het voorstel.',
-      en: 'No. As a client, you get access to our software, including a sales CRM, marketing dashboard and affiliate platform, without a separate subscription. Any third-party licences needed for your project are agreed upfront in the proposal.',
+      nl: 'Nee. Als klant krijg je toegang tot onze programma’s, waaronder een sales-CRM en marketingdashboard. Daarvoor hoef je geen apart abonnement aan te schaffen. Eventuele externe licenties voor je project spreken we vooraf af in het voorstel.',
+      en: 'No. As a client, you get access to our software, including a sales CRM and marketing dashboard, without a separate subscription. Any third-party licences needed for your project are agreed upfront in the proposal.',
     },
   },
   {

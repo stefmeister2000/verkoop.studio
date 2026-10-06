@@ -9,7 +9,8 @@ export default function StickyMobileCTA() {
   if (pathname === '/contact' || pathname === '/funnel-audit') return null
 
   return (
-    <div className="mobile-contact-bar pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-line bg-ink/95 p-3 backdrop-blur lg:hidden">
+    <div className={`mobile-contact-bar${pathname === '/' ? ' mobile-contact-bar-with-offer' : ''} pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-line bg-ink/95 p-3 backdrop-blur lg:hidden`}>
+      {pathname === '/' && <Link to="/#groeipakketten" className="mobile-offer-link">{lang === 'nl' ? 'Aanbod & prijzen' : 'Plans & pricing'}</Link>}
       <Link
         to={persistentCtaHref}
         onClick={() => trackEvent('audit_cta_clicked', { placement: 'sticky_mobile' })}

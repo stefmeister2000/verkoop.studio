@@ -122,6 +122,9 @@ export default function Nav() {
       {open && (
         <div id="mobile-navigation" className="mobile-navigation border-t border-line bg-ink px-5 pb-6 pt-2 lg:hidden">
           <nav className="flex flex-col gap-1">
+            <Link to="/#groeipakketten" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-semibold text-paper">
+              {lang === 'nl' ? 'Aanbod & prijzen' : 'Plans & pricing'}
+            </Link>
             {navItems.map((item) => (
               <Link
                 key={item.href}

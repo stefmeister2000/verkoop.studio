@@ -24,6 +24,8 @@
 .plan-outcome { min-height: 66px; font-size: 14px; line-height: 1.65; color: #515c75; margin-top: 10px; }
 .plan-price { font-size: clamp(19px,1.85vw,25px); font-weight: 650; letter-spacing: -.045em; margin-top: 24px; }
 .plan-audience { font-size: 12px; line-height: 1.7; color: #626c85; margin-top: 12px; min-height: 62px; }
+.plan-details-toggle, .pricing-mobile-comparison { display: none; }
+.plan-details-content { display: flex; flex-direction: column; flex: 1; }
 .plan-includes { border-top: 1px solid #e2e7f2; margin-top: 24px; padding-top: 24px; flex: 1; }
 .plan-includes > p { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #68758e; margin-bottom: 18px; }
 .plan-includes ul { display: grid; gap: 13px; }
@@ -45,8 +47,8 @@
 .pricing-comparison { border-block: 1px solid #dde3ef; }
 .pricing-comparison summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 23px 0; cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: #263966; }
 .pricing-comparison summary::-webkit-details-marker { display: none; }
-.pricing-comparison summary > span { font-size: 24px; font-weight: 400; }
-.pricing-comparison[open] summary > span { rotate: 45deg; }
+.pricing-comparison > summary > span { font-size: 24px; font-weight: 400; }
+.pricing-comparison[open] > summary > span { rotate: 45deg; }
 .pricing-table-scroll { overflow-x: auto; padding-bottom: 15px; }
 .pricing-table-scroll table { min-width: 740px; width: 100%; font-size: 12px; text-align: left; }
 .pricing-table-scroll th,.pricing-table-scroll td { padding: 14px; border-bottom: 1px solid #e0e6f2; color: #4c5b74; }
@@ -63,7 +65,7 @@
 .pricing-alternatives strong { display: block; color: #294cf0; font-size: 12px; margin: 5px 0 8px; }
 .selected-package { margin-top: 26px; padding: 18px 22px; border: 1px solid #cdd7ff; background: #eff3ff; border-radius: 14px; font-size: 14px; color: #263d8b; }
 .selected-package a { display: inline-block; margin-left: 12px; text-decoration: underline; font-size: 12px; }
-.growth-pricing :is(a,summary,[tabindex]):focus-visible { outline: 3px solid #7891ff; outline-offset: 5px; }
+.growth-pricing :is(a,button,summary,[tabindex]):focus-visible { outline: 3px solid #7891ff; outline-offset: 5px; }
 @media (prefers-reduced-motion: no-preference) {
   .plan-cta { transition: transform .25s, box-shadow .25s; }
   .plan-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 20px #142f6620; }
@@ -91,4 +93,32 @@
   .plan-signal { margin-block: 16px; }
   .plan-includes li { font-size: 14px; }
   .pricing-scope { padding: 18px; }
+  .pricing-intro { margin-bottom: 24px; }
+  .pricing-included { padding: 22px; }
+  .pricing-included-grid { gap: 16px; margin-top: 18px; padding-top: 18px; }
+  .pricing-included-grid h4 { margin-bottom: 4px; }
+  .pricing-included p:not(.eyebrow) { line-height: 1.65; }
+  .pricing-grid { gap: 14px; }
+  .growth-plan { padding: 22px; box-shadow: none; }
+  .plan-signal { display: none; }
+  .growth-plan h3 { margin-top: 14px; }
+  .plan-outcome { margin-top: 8px; }
+  .plan-price { margin-top: 14px; }
+  .plan-details-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; width: 100%; text-align: left; margin-top: 16px; border-block: 1px solid #dce2f0; font-size: 14px; font-weight: 600; color: #253c98; cursor: pointer; }
+  .plan-details-toggle > span { font-size: 22px; }
+  .growth-plan-featured .plan-details-toggle { border-color: #ffffff40; color: #fff; }
+  .plan-details-content:not(.is-expanded) { display: none; }
+  .plan-includes { margin-top: 16px; padding-top: 16px; }
+  .plan-cta { margin-top: 16px; }
+  .pricing-table-scroll { display: none; }
+  .pricing-mobile-comparison { display: grid; gap: 8px; padding-bottom: 20px; }
+  .pricing-mobile-comparison > details { padding: 0 16px; border: 1px solid #dce2f0; border-radius: 12px; background: #fff; min-width: 0; }
+  .pricing-mobile-comparison summary { padding-block: 14px; min-height: 52px; }
+  .pricing-mobile-comparison summary > span:first-child { font-size: 16px; }
+  .pricing-mobile-comparison summary > span:last-child { font-size: 22px; }
+  .pricing-mobile-comparison details[open] > summary > span:last-child { rotate: 45deg; }
+  .pricing-mobile-comparison dl { padding-bottom: 12px; }
+  .pricing-mobile-comparison dl > div { padding: 12px 0; border-top: 1px solid #e0e6f2; font-size: 14px; line-height: 1.5; }
+  .pricing-mobile-comparison dt { color: #253453; }
+  .pricing-mobile-comparison dd { color: #59657c; margin-top: 4px; }
 }

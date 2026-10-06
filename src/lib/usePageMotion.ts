@@ -8,10 +8,13 @@ export function usePageMotion(route = '/') {
     if (!root || !('IntersectionObserver' in window)) return
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
     const pointer = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const mobile = window.matchMedia('(max-width: 1023px)')
+    // Keep touch scrolling immediate: no entrance animations or pointer listeners.
+    if (mobile.matches || !pointer.matches || preference.matches) return
     const animations = new Set<Animation>()
     const cleanups: (() => void)[] = []
     const play = (el: Element, frames: Keyframe[], delay = 0, duration = 750) => {
-      if (preference.matches || !el.animate) return
+      if (preference.matches || mobile.matches || !pointer.matches || !el.animate) return
       const animation = el.animate(frames, { duration, delay, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' })
       animations.add(animation)
       animation.onfinish = () => { animations.delete(animation); animation.cancel() }
@@ -21,7 +24,7 @@ export function usePageMotion(route = '/') {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return
         observer.unobserve(entry.target)
-        if (preference.matches) return
+        if (preference.matches || mobile.matches || !pointer.matches) return
         const delay = Math.min(index++ * 65, 195)
         play(entry.target, [{ opacity: 0, translate: '0 30px' }, { opacity: 1, translate: '0 0' }], delay)
         // Each service illustration tells its story in a short, ordered sequence.
@@ -38,12 +41,13 @@ export function usePageMotion(route = '/') {
       let clientX = 0
       let clientY = 0
       const reset = () => {
+        if (!frame && !el.style.getPropertyValue('--motion-x')) return
         cancelAnimationFrame(frame)
         frame = 0
         ;['--motion-x', '--motion-y', '--motion-rx', '--motion-ry', '--light-x', '--light-y'].forEach(name => el.style.removeProperty(name))
       }
       const move = (event: PointerEvent) => {
-        if (preference.matches || !pointer.matches || event.pointerType !== 'mouse') return
+        if (preference.matches || mobile.matches || !pointer.matches || event.pointerType !== 'mouse') return
         clientX = event.clientX
         clientY = event.clientY
         if (frame) return
@@ -76,14 +80,18 @@ export function usePageMotion(route = '/') {
       })
     })
     const stop = () => {
-      if (preference.matches) { animations.forEach(animation => animation.cancel()); animations.clear() }
+      if (preference.matches || mobile.matches || !pointer.matches) { animations.forEach(animation => animation.cancel()); animations.clear() }
     }
     preference.addEventListener('change', stop)
+    mobile.addEventListener('change', stop)
+    pointer.addEventListener('change', stop)
     return () => {
       observer.disconnect()
       animations.forEach(animation => animation.cancel())
       cleanups.forEach(cleanup => cleanup())
       preference.removeEventListener('change', stop)
+      mobile.removeEventListener('change', stop)
+      pointer.removeEventListener('change', stop)
     }
   }, [route])
   return ref

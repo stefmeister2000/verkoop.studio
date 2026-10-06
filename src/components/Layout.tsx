@@ -20,12 +20,13 @@ export default function Layout() {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1))
       if (el) {
-        el.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' })
+        const instant = window.matchMedia('(max-width: 1023px), (prefers-reduced-motion: reduce)').matches
+        el.scrollIntoView({ behavior: instant ? 'instant' : 'smooth', block: 'start' })
         return
       }
     }
     window.scrollTo({ top: 0 })
-  }, [location.pathname, location.hash])
+  }, [location.pathname, location.hash, location.key])
 
   return (
     <div ref={motionRef} className="site-shell min-h-screen pb-28 lg:pb-0">
