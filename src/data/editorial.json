@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "slug": "website-gent-meer-aanvragen",
+      "title": "Een website laten maken voor je bedrijf in Gent: wat moet ze opleveren?",
+      "category": "Websites & conversie",
+      "description": "Een websitebriefing voor Gentse ondernemers: bezoekersvragen, mobiele formulieren, inhoud, snelheid en meetbare vervolgstappen.",
+      "sections": [
+        {
+          "title": "Kies de belangrijkste vervolgstap",
+          "paragraphs": [
+            "Een website kan een boeking, offerteaanvraag, aankoop of kennismaking ondersteunen. Kies per pagina één belangrijkste vervolgstap. Dat helpt om te bepalen welke informatie erop moet staan en wat kan wachten.",
+            "Voor een lokale dienstverlener kan het werkgebied bepalend zijn. Voor een locatie in Gent tellen praktische bezoekinformatie en de boekingsroute mee. Voor een webshop moet de productkeuze duidelijk zijn. Gebruik geen identieke pagina’s voor elke stad wanneer het aanbod en de informatie niet verschillen."
+          ]
+        },
+        {
+          "title": "Schrijf vanuit de vragen vóór de aanvraag",
+          "paragraphs": [
+            "Bezoekers willen begrijpen wat je doet, voor wie het geschikt is, wat je aanpak inhoudt en waarom ze je kunnen vertrouwen. Laat werk zien dat daarbij past. Een concrete case met een duidelijke bijdrage is bruikbaarder dan een rij algemene beloften.",
+            "Bespreek bij de briefing wie teksten, foto’s en bewijsstukken aanlevert. Verwerk ook praktische informatie die klanten vaak in een eerste gesprek vragen. Publiceer alleen cijfers waarvan je de herkomst kunt uitleggen."
+          ]
+        },
+        {
+          "title": "Test de echte mobiele taak",
+          "paragraphs": [
+            "Bekijk niet alleen of de homepage op een telefoon past. Doorloop de volledige route: dienst zoeken, informatie lezen, formulier invullen en bevestiging ontvangen. Controleer of vaste knoppen, chatvensters en het toetsenbord de invoervelden niet bedekken.",
+            "Grote afbeeldingen kunnen onnodig veel data vragen. Laat kleinere schermen een passend beeldformaat laden, reserveer ruimte voor beelden en laad video pas wanneer dat nodig is. Meet daarna op echte apparaten; een kleiner bestand alleen bewijst nog geen betere ervaring."
+          ],
+          "checklist": [
+            "Is de belangrijkste knop duidelijk en bereikbaar?",
+            "Kun je het formulier met het telefoontoetsenbord invullen?",
+            "Wordt een fout helder uitgelegd zonder de invoer te wissen?",
+            "Komt de aanvraag daadwerkelijk bij de juiste persoon terecht?"
+          ]
+        },
+        {
+          "title": "Welke informatie heb je nodig voor een bruikbare websiteofferte?",
+          "paragraphs": [
+            "Begin met je aanbod, doelgroep en belangrijkste vervolgstap. Vul dat aan met het aantal verschillende paginatypes, de beschikbare teksten en beelden en de functies die nodig zijn. Een contactformulier vraagt een andere uitwerking dan een boekingsroute of webshop. Zo kun je offertes vergelijken op dezelfde opdracht.",
+            "Vraag om een duidelijke scheiding tussen de bouw, inhoud, eventuele koppelingen en terugkerend onderhoud. Laat vastleggen wie teksten, foto's, feedback en toegang aanlevert. De scope van een website begroten we afzonderlijk; een algemeen bedrag zonder die afbakening helpt je niet om de voorstellen eerlijk te vergelijken."
+          ],
+          "checklist": [
+            "Wat moet een bezoeker op de site kunnen doen?",
+            "Welke pagina's en functies zijn inbegrepen?",
+            "Wie levert inhoud aan en wie verwerkt feedback?",
+            "Welke kosten en verantwoordelijkheden keren na oplevering terug?"
+          ]
+        },
+        {
+          "title": "Hoe controleer je of de website echt snel en prettig werkt?",
+          "paragraphs": [
+            "Combineer een technische test met de taken die bezoekers echt uitvoeren. Open de belangrijkste dienstpagina op een telefoon, lees de inhoud en doorloop het formulier. Kijk of de hoofdinhoud vlot verschijnt, knoppen reageren en tekst niet verspringt wanneer beelden laden.",
+            "Een Lighthouse-score is een laboratoriumtest. Ze helpt om knelpunten op te sporen, maar beschrijft niet vanzelf de ervaring van je echte bezoekers. Google's Core Web Vitals kijken naar laden, reageren en visuele stabiliteit. Gebruik beschikbare bezoekersmetingen naast de testresultaten en vergelijk dezelfde pagina's vóór en na een wijziging.",
+            "Ontbreken er bezoekersgegevens, benoem dat dan. Een labmeting van blokkeringstijd is geen gemeten INP van echte bezoeken. Leg ook vast wanneer en op welk apparaat je meet, zodat een eenmalige schommeling niet meteen als verbetering of probleem wordt gezien."
+          ]
+        },
+        {
+          "title": "Leg eigenaarschap en evaluatie vooraf vast",
+          "paragraphs": [
+            "Vraag wie domein, hosting, bronbestanden en accounts beheert. Bespreek onderhoud, wijzigingen en wat er gebeurt bij een overstap. Een oplevering is pas bruikbaar wanneer je team ermee kan werken.",
+            "Leg vóór de lancering vast welke acties je meet. Vergelijk geschikte aanvragen en klanten met dezelfde definities en vermeld veranderingen in campagnes of aanbod. verkoop.studio verbindt vanuit Lochristi websites, campagnes en opvolging; de scope van een website begroten we afzonderlijk."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "/websites",
+          "label": "Websites en ecommerce"
+        },
+        {
+          "href": "/cases/olearys",
+          "label": "O’Learys: verschillende bezoekersroutes"
+        },
+        {
+          "href": "/contact",
+          "label": "Bespreek je websitebriefing"
+        },
+        {
+          "href": "https://web.dev/articles/vitals",
+          "label": "Google: Core Web Vitals en het verschil tussen lab- en bezoekersmetingen"
+        }
+      ],
+      "publishedAt": "2026-10-02",
+      "modifiedAt": "2026-10-07"
+    }
+  ],
+  "metadata": {}
+}

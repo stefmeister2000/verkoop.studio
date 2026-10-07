@@ -1,5 +1,7 @@
-export type Article = {slug:string; title:string; description:string; category:string; sections:{title:string; paragraphs:string[]; checklist?:string[]}[]; links:{href:string;label:string}[]}
-export const articles: Article[] = [
+import editorial from './editorial.json' with { type: 'json' }
+
+export type Article = {slug:string; title:string; description:string; category:string; publishedAt?:string; modifiedAt?:string; sections:{title:string; paragraphs:string[]; checklist?:string[]}[]; links:{href:string;label:string}[]}
+const originalArticles: Article[] = [
 {
  slug:'marketingbureau-gent-kiezen', title:'Marketingbureau in Gent kiezen: welke vragen stel je eerst?', category:'Strategie',
  description:'Een praktische keuzehulp voor ondernemers in Gent: vergelijk scope, eigenaarschap, rapportage en de samenwerking met een marketingbureau.',
@@ -30,4 +32,12 @@ export const articles: Article[] = [
  {title:'Leg eigenaarschap en evaluatie vooraf vast',paragraphs:['Vraag wie domein, hosting, bronbestanden en accounts beheert. Bespreek onderhoud, wijzigingen en wat er gebeurt bij een overstap. Een oplevering is pas bruikbaar wanneer je team ermee kan werken.','Leg vóór de lancering vast welke acties je meet. Vergelijk geschikte aanvragen en klanten met dezelfde definities en vermeld veranderingen in campagnes of aanbod. verkoop.studio verbindt vanuit Lochristi websites, campagnes en opvolging; de scope van een website begroten we afzonderlijk.']},
  ],links:[{href:'/websites',label:'Websites en ecommerce'},{href:'/cases/olearys',label:'O’Learys: verschillende bezoekersroutes'},{href:'/contact',label:'Bespreek je websitebriefing'}]
 }
+]
+
+// Automated editorial changes are data-only; existing articles retain their URL and date.
+const updates = new Map<string, Article>(editorial.articles.map(article => [article.slug, article]))
+export const articles: Article[] = [
+  ...editorial.articles.filter(article => !originalArticles.some(old => old.slug === article.slug))
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)),
+  ...originalArticles.map(article => updates.get(article.slug) ?? { ...article, publishedAt: '2026-10-02' }),
 ]

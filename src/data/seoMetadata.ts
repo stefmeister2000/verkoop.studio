@@ -1,3 +1,5 @@
+import editorial from './editorial.json' with { type: 'json' }
+
 // Search titles can be more concise than the visible page headings.
 type Metadata = { title?: string; description?: string }
 export const seoMetadata: Record<string, Partial<Record<'nl' | 'en', Metadata>>> = {
@@ -25,4 +27,9 @@ export const seoMetadata: Record<string, Partial<Record<'nl' | 'en', Metadata>>>
   '/email-marketing': { nl: { description: 'E-mailmarketing die klanten opvolgt: nieuwsbrieven, segmentatie en geautomatiseerde flows. Van strategie tot uitvoering door verkoop.studio.' } },
   '/distributie': { nl: { description: 'Bouw je distributie uit met verkoop.studio: heldere positionering, geschikte verkoopkanalen en een aanpak voor nieuwe verkooppunten.' } },
   '/cases/nooms': { nl: { title: 'Nooms: merk en ecommerce' }, en: { title: 'Nooms: brand and ecommerce' } },
+}
+
+const editorialMetadata: Record<string, Metadata> = editorial.metadata
+for (const [path, metadata] of Object.entries(editorialMetadata)) {
+  seoMetadata[path] = { ...seoMetadata[path], nl: { ...seoMetadata[path]?.nl, ...metadata } }
 }

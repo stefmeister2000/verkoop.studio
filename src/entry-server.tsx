@@ -12,3 +12,4 @@ export function render(location: string) {
 }
 
 export { faqItems } from './data/faq'
+export { articles } from './data/articles'
