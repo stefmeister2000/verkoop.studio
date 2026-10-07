@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import { readFile, access } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
+import { validateEditorial } from './check-editorial.mjs'
 
 const routes = JSON.parse(await readFile('dist/routes.json', 'utf8'))
 const sitemap = await readFile('dist/sitemap.xml', 'utf8')
@@ -115,7 +116,11 @@ test('FAQ answers exist in initial HTML and service sections use headings', asyn
 
 test('articles have crawlable content, authorship, links and sitemap entries', async () => {
   const blogRoutes = routes.filter(route => route.startsWith('/blog/'))
-  assert.equal(blogRoutes.length, 3)
+  const { articles } = await import('../dist-ssr/entry-server.js')
+  const editorial = JSON.parse(await readFile('src/data/editorial.json', 'utf8'))
+  validateEditorial(editorial, { routes })
+  assert.equal(blogRoutes.length, articles.length)
+  assert(articles.length >= 3, 'Existing articles must not disappear')
   for (const route of blogRoutes) {
     const html = await readFile(`dist${route}/index.html`, 'utf8')
     const graphs = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]))
@@ -123,6 +128,10 @@ test('articles have crawlable content, authorship, links and sitemap entries', a
     assert.equal(article.url, origin + route)
     assert.equal(article.author.name, 'verkoop.studio')
     assert.equal(article.inLanguage, 'nl-BE')
+    const source = articles.find(a => origin + `/blog/${a.slug}` === article.url)
+    assert.equal(article.datePublished, source.publishedAt)
+    assert.match(html, new RegExp(`<time dateTime="${source.publishedAt}"`))
+    if (source.modifiedAt) { assert.equal(article.dateModified, source.modifiedAt); assert(html.includes('Bijgewerkt op')) }
     assert.match(html, /<article[\s>]/)
     assert.match(html, /href="\/contact"/)
     assert(sitemap.includes(`<loc>${origin}${route}</loc>`))
