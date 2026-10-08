@@ -83,6 +83,75 @@
       ],
       "publishedAt": "2026-10-02",
       "modifiedAt": "2026-10-07"
+    },
+    {
+      "slug": "marketingbureau-gent-kiezen",
+      "title": "Marketingbureau in Gent kiezen: welke vragen stel je eerst?",
+      "category": "Strategie",
+      "description": "Een praktische keuzehulp voor ondernemers in Gent: vergelijk scope, eigenaarschap, rapportage en de samenwerking met een marketingbureau.",
+      "sections": [
+        {
+          "title": "Begin bij het probleem dat je wilt oplossen",
+          "paragraphs": [
+            "Zoek je een marketingbureau in Gent omdat er te weinig aanvragen binnenkomen? Omdat je webshop wel bezoekers heeft, maar weinig verkoopt? Of omdat niemand kan uitleggen welke campagnes werken? Die vragen leiden niet automatisch tot dezelfde opdracht.",
+            "Noteer vóór een kennismaking je belangrijkste doel, hoe je dat vandaag meet en wie aanvragen opvolgt. Een bruikbare briefing is bijvoorbeeld: we willen meer aanvragen voor bedrijfsevents en willen weten hoeveel daarvan een boeking worden. Dat is concreter dan “meer zichtbaarheid”."
+          ]
+        },
+        {
+          "title": "Vergelijk dezelfde opdracht",
+          "paragraphs": [
+            "Een maandbedrag zegt weinig zonder afbakening. Vraag welke campagnes, pagina’s en rapportages inbegrepen zijn. Worden teksten en beelden gemaakt, of moet jouw team die aanleveren? Wie past de website aan wanneer een campagne wel kliks oplevert maar geen klanten?",
+            "Houd bureaukosten, advertentiebudget en software apart. Vergelijk ook de tijd die je eigen team moet investeren. Een goedkoper voorstel kan meer werk bij jou laten liggen."
+          ],
+          "checklist": [
+            "Welke werkzaamheden en opleverpunten zijn inbegrepen?",
+            "Welke kosten komen boven op het afgesproken bedrag?",
+            "Wie beheert de website, advertentieaccounts en meetgegevens?",
+            "Hoe vaak bespreken we resultaten en beslissingen?"
+          ]
+        },
+        {
+          "title": "Vraag om een case die op jouw situatie lijkt",
+          "paragraphs": [
+            "Een webshopcase vertelt iets anders dan een campagne voor groepsboekingen. Kijk naar de doelgroep, de aankoopbeslissing en wat het bureau daadwerkelijk uitvoerde. In onze E-Kart-case gaat het bijvoorbeeld om particuliere rijders én organisatoren van groepsactiviteiten in Gent. Die bezoekers hebben andere vragen.",
+            "Vraag bij een resultaatpercentage naar de meetperiode, de vergelijking en de databron. Omzetgroei alleen vertelt nog niet hoeveel advertentiebudget nodig was of welk deel door de campagne kwam."
+          ]
+        },
+        {
+          "title": "Wanneer begin je beter met een analyse dan met een campagne?",
+          "paragraphs": [
+            "Als je nog niet weet of het probleem bij bereik, de website of de opvolging zit, kan een analyse helpen om de opdracht af te bakenen. Leg vast welke pagina’s en stappen worden bekeken, welke gegevens beschikbaar zijn en welke vragen de analyse moet beantwoorden. Zo vergelijk je bureaus op hun onderzoek en voorgestelde aanpak, niet alleen op een lijst kanalen.",
+            "Onze groeianalyse bekijkt de huidige website, campagnes en commerciële klantreis. Mogelijke opleverpunten zijn concrete observaties, meetproblemen en geprioriteerde vervolgstappen. Spreek vooraf af welke onderdelen bij jouw situatie passen; een analyse op zichzelf is geen garantie op meer aanvragen. Onder ‘Van lezen naar toepassen’ vind je de uitleg en aanvraagmogelijkheid."
+          ]
+        },
+        {
+          "title": "Maak de samenwerking praktisch",
+          "paragraphs": [
+            "Nabijheid kan handig zijn voor overleg, maar spreek vooral af wie beslissingen neemt, wie toegang krijgt tot welke systemen en hoe je feedback geeft. Leg ook vast hoe accounts en bestanden worden overgedragen wanneer de samenwerking eindigt.",
+            "verkoop.studio werkt vanuit Lochristi. In een eerste gesprek bekijken we de huidige klantreis, de blokkade en welke opdracht daarbij past. Een doorlopend pakket is niet verplicht voor een afzonderlijke website of project."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "/cases/e-kart",
+          "label": "E-Kart: B2C en B2B in Gent"
+        },
+        {
+          "href": "/agency",
+          "label": "Onze studio in Lochristi"
+        },
+        {
+          "href": "/#groeipakketten",
+          "label": "Scope en richtprijzen van onze pakketten"
+        },
+        {
+          "href": "/funnel-audit",
+          "label": "Groeianalyse: onderzoek waar je klantreis vastloopt"
+        }
+      ],
+      "publishedAt": "2026-10-02",
+      "modifiedAt": "2026-10-08"
     }
   ],
   "metadata": {}
