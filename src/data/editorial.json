@@ -2,6 +2,80 @@
   "version": 1,
   "articles": [
     {
+      "slug": "landingspagina-of-website",
+      "title": "Landingspagina of website: wat heb je nodig voor je campagne?",
+      "category": "Landingspagina’s & conversie",
+      "description": "Een nieuwe landingspagina of je bestaande website gebruiken? Vergelijk de opties voor je campagne, met voorbeelden en een praktische beslischecklist.",
+      "publishedAt": "2026-10-11",
+      "sections": [
+        {
+          "title": "Het korte antwoord: begin bij de vraag van je bezoeker",
+          "paragraphs": [
+            "Gebruik een bestaande dienstenpagina als die de belofte van je campagne duidelijk waarmaakt. Kies een aparte landingspagina wanneer één doelgroep, aanbod of actie een eigen uitleg nodig heeft. Werk aan de volledige website als bezoekers meerdere diensten moeten vergelijken of als de algemene informatie en navigatie tekortschieten. Een nieuwe pagina is dus niet automatisch de beste eerste stap.",
+            "De keuze is ook niet altijd landingspagina óf website. Een campagnepagina kan gewoon onderdeel zijn van je bestaande site. Je hebt niet voor elke campagne een nieuw domein of een volledig nieuwe website nodig."
+          ]
+        },
+        {
+          "title": "Wat is het verschil tussen een landingspagina, salespage en website?",
+          "paragraphs": [
+            "Google Ads noemt de pagina waarop iemand na een advertentieklik terechtkomt de landingspagina. Dat kan een homepage, productpagina of dienstenpagina zijn. In een websiteproject bedoelen we met een aparte landingspagina meestal een pagina die is uitgewerkt rond één concrete bezoekersvraag en vervolgstap.",
+            "Een salespage is een verkoopgerichte pagina: ze helpt iemand beoordelen of een specifiek aanbod past en hoe die kan bestellen of contact opnemen. De lengte volgt uit de vragen die je moet beantwoorden, niet uit een vaste formule. Een volledige website biedt daarnaast samenhang tussen je diensten, bedrijf, contactinformatie en eventuele kennisartikelen."
+          ]
+        },
+        {
+          "title": "Wanneer volstaat je bestaande dienstenpagina?",
+          "paragraphs": [
+            "Bekijk de pagina eerst alsof je de advertentie net hebt gezien. Vind je meteen de juiste dienst, het werkgebied, relevante informatie en een duidelijke volgende stap? Dan kan gericht verbeteren verstandiger zijn dan een tweede pagina bouwen met bijna dezelfde inhoud. Je houdt informatie en onderhoud op één plek.",
+            "Denk aan dit fictieve voorbeeld: een installateur adverteert één dienst in zijn bestaande werkgebied. Zijn dienstenpagina legt de aanpak uit, beantwoordt praktische vragen en heeft een bruikbare aanvraagroute. Controleer die aansluiting voordat je een aparte campagnepagina laat maken. Ontbreekt informatie, vul dan eerst die leemte."
+          ]
+        },
+        {
+          "title": "Wanneer heeft een aparte landingspagina meerwaarde?",
+          "paragraphs": [
+            "Een eigen pagina wordt nuttig wanneer de campagne een andere beslissing ondersteunt dan de algemene dienstenpagina. Neem als fictief voorbeeld een evenementenlocatie: een organisator van een bedrijfsevent wil informatie over groepsgrootte, programma en praktische afspraken. Een individuele bezoeker zoekt mogelijk vooral openingsuren en beschikbaarheid. Die verschillende vragen kunnen afzonderlijke pagina’s rechtvaardigen.",
+            "Maak de inhoud specifiek voor die beslissing. Toon echte, passende voorbeelden en leg uit wat er na de aanvraag gebeurt. Google adviseert dat de bestemming aansluit op de advertentie en makkelijk bruikbaar is, ook op mobiel. Een opvallende knop compenseert geen ontbrekende uitleg of onduidelijk aanbod."
+          ],
+          "checklist": [
+            "De pagina gaat over hetzelfde aanbod als de advertentie.",
+            "De bezoeker begrijpt voor wie het aanbod wel en niet geschikt is.",
+            "Belangrijke voorwaarden en praktische informatie zijn vindbaar.",
+            "Voorbeelden en bewijs zijn echt en controleerbaar.",
+            "Contact opnemen werkt op een telefoon en de vervolgstap is duidelijk."
+          ]
+        },
+        {
+          "title": "Wanneer moet je de bredere website aanpakken?",
+          "paragraphs": [
+            "Een losse campagnepagina lost niet alles op. Als je aanbod op verschillende pagina’s tegenstrijdig wordt beschreven, bezoekers diensten niet uit elkaar kunnen houden of bedrijfsinformatie ontbreekt, ligt de opdracht breder. Breng dan eerst structuur in de website en bepaal welke pagina welke vraag beantwoordt.",
+            "Bij meerdere diensten kan een heldere overzichtspagina helpen kiezen, met daaronder inhoudelijke dienstenpagina’s. Een campagne kan vervolgens rechtstreeks naar de meest passende pagina verwijzen. Zo hoeft de homepage niet tegelijk elke advertentie, doelgroep en aankoopvraag te beantwoorden."
+          ]
+        },
+        {
+          "title": "Hoe beoordeel je of de gekozen pagina werkt?",
+          "paragraphs": [
+            "Leg vooraf vast wat telt als een geschikte aanvraag. Kijk vervolgens naar de route van campagnebezoek naar aanvraag en de verdere opvolging. Veel ingevulde formulieren zijn niet vanzelf goede aanvragen; een contact kan bijvoorbeeld buiten je werkgebied vallen. Bespreek daarom ook de kwaliteit met degene die de aanvragen behandelt.",
+            "Vergelijk resultaten over passende perioden en noteer veranderingen in advertentiebudget, doelgroep en aanbod. Bij weinig bezoeken of aanvragen is een groot percentageverschil nog geen betrouwbare conclusie. Een voor-en-na-vergelijking alleen bewijst bovendien niet dat de nieuwe pagina de oorzaak is. Houd verbeteringen overzichtelijk en test eerst of de meting en aanvraagroute werken."
+          ]
+        },
+        {
+          "title": "Veelgestelde vragen over campagnepagina’s",
+          "paragraphs": [
+            "Heb ik eerst een volledige website nodig? Niet per se. Een gerichte pagina kan een eerste aanbod uitleggen, zolang bezoekers ook de nodige bedrijfsinformatie, voorwaarden en contactmogelijkheden vinden. Bepaal wel welke aanvullende informatie en functies jouw aanbod vereist.",
+            "Scoort een aparte salespage vanzelf beter in Google? Nee. Een pagina moet nuttig zijn en een eigen vraag beantwoorden. Kopieën die alleen een plaatsnaam of zoekwoord vervangen voegen weinig toe en kunnen onder Googles beleid tegen doorway-pagina’s vallen.",
+            "Moet alle navigatie verdwijnen? Nee. Houd de belangrijkste vervolgstap duidelijk, maar zorg dat bezoekers noodzakelijke informatie kunnen vinden. Begin bij de vragen die een beslissing tegenhouden, niet bij een universeel sjabloon. Onder ‘Van lezen naar toepassen’ vind je onze diensten en de primaire bronnen bij deze uitleg."
+          ]
+        }
+      ],
+      "links": [
+        { "href": "/landing-pages", "label": "Landingspagina’s voor een duidelijke volgende stap" },
+        { "href": "/websites", "label": "Websites: de bredere structuur en bezoekersroutes" },
+        { "href": "/google-ads", "label": "Google Ads en de aansluiting op je landingspagina" },
+        { "href": "https://support.google.com/google-ads/answer/14086?hl=nl", "label": "Google Ads: definitie van een landingspagina" },
+        { "href": "https://support.google.com/google-ads/answer/6238826?hl=nl", "label": "Google Ads: landingspagina’s optimaliseren" },
+        { "href": "https://developers.google.com/search/docs/essentials/spam-policies", "label": "Google Search: spambeleid, waaronder doorway-pagina’s" }
+      ]
+    },
+    {
       "slug": "website-gent-meer-aanvragen",
       "title": "Een website laten maken voor je bedrijf in Gent: wat moet ze opleveren?",
       "category": "Websites & conversie",
