@@ -46,7 +46,7 @@ export default function SelectedWork() {
           to={'/cases/' + c.slug}
         >
           <div className="project-image">
-            <ResponsiveImage src={c.image} alt={c.name} loading="lazy" />
+            <ResponsiveImage src={c.image} alt={c.name} loading="lazy" sizes="(max-width: 600px) 88px, (max-width: 640px) 100vw, (max-width: 1024px) 70vw, 960px" />
             <span className="project-arrow">↗</span>
           </div>
           <div className="project-caption">
@@ -70,7 +70,7 @@ export default function SelectedWork() {
           rel="noopener noreferrer"
         >
           <div className="project-image">
-            <ResponsiveImage src={c.image} alt={c.name} loading="lazy" />
+            <ResponsiveImage src={c.image} alt={c.name} loading="lazy" sizes="(max-width: 600px) 88px, (max-width: 640px) 100vw, (max-width: 1024px) 70vw, 960px" />
             <span className="project-arrow">↗</span>
           </div>
           <div className="project-caption">
