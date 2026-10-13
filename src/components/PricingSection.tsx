@@ -70,17 +70,6 @@ export default function PricingSection() {
             </article>
           })}
         </div>
-        <section className="pricing-scope" aria-labelledby="pricing-scope-title">
-          <header className="pricing-scope-heading">
-            <h3 id="pricing-scope-title">{nl ? 'Duidelijke afspraken vooraf.' : 'Clear agreements upfront.'}</h3>
-            <p>{nl ? 'Dit zijn richtprijzen voor doorlopende marketing.' : 'These are indicative rates for ongoing marketing.'}</p>
-          </header>
-          <div className="pricing-scope-grid">
-            <div><h4>{nl ? 'Gratis bij elk pakket' : 'Free with every package'}</h4><p>{nl ? 'Ons CRM en marketingdashboard, inclusief documentatie en instructievideo’s voor je team.' : 'Our CRM and marketing dashboard, including documentation and video guides for your team.'}</p></div>
-            <div><h4>{nl ? 'Vooraf vastgelegd' : 'Agreed upfront'}</h4><p>{nl ? 'In je voorstel leggen we de scope, prioriteiten, het advertentiebudget, eventuele externe licenties en btw vast.' : 'Your proposal specifies scope, priorities, advertising budget, any third-party licences and VAT.'}</p></div>
-            <div><h4>{nl ? 'Maatwerk apart begroot' : 'Custom work quoted separately'}</h4><p>{nl ? 'Websites, apps en software op maat krijgen een aparte offerte.' : 'Websites, apps and custom software receive a separate quote.'}</p></div>
-          </div>
-        </section>
         <details className="pricing-comparison">
           <summary>{nl ? 'Vergelijk wat er in elk pakket zit' : 'Compare what each package includes'}<span aria-hidden="true">+</span></summary>
           <div className="pricing-table-scroll" role="region" aria-label={nl ? 'Pakketvergelijking, horizontaal scrollbaar' : 'Package comparison, scroll horizontally'} tabIndex={0}>
