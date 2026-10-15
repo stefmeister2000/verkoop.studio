@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { trackEvent } from '../lib/analytics'
 import studioPhoto from '../assets/studio-team.webp'
+import studioPhotoSmall from '../assets/studio-team-640.webp'
 export default function PersonalHero() {
   const { lang } = useLang()
   const nl = lang === 'nl'
@@ -44,7 +45,10 @@ export default function PersonalHero() {
         </div>
       </div>
       <div className="hero-art hero-studio-photo">
-        <ResponsiveImage src={studioPhoto} alt={nl ? 'Samen aan het werk in ons bureau in Lochristi' : 'Working together in our office in Lochristi'} sizes="(max-width: 800px) 100vw, 50vw" loading="eager" fetchPriority="high" decoding="async" />
+        <picture>
+          <source media="(max-width: 600px)" srcSet={studioPhotoSmall} />
+          <ResponsiveImage src={studioPhoto} alt={nl ? 'Samen aan het werk in ons bureau in Lochristi' : 'Working together in our office in Lochristi'} sizes="(max-width: 800px) 100vw, 50vw" loading="eager" fetchPriority="high" decoding="async" />
+        </picture>
         <Link to="/cases/pinacello" className="floating-strategy">
           <div>
             <span>+120%</span>

@@ -5,9 +5,13 @@
   border-radius: 24px;
   overflow: hidden;
 }
-.studio-hero .hero-studio-photo > img {
+.studio-hero .hero-studio-photo img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
   width: 100%;
-  left: 0;
+  max-width: none;
+  object-fit: cover;
   object-position: center;
   mask-image: none;
   animation: none;
@@ -22,7 +26,7 @@
     aspect-ratio: auto;
     overflow: hidden;
   }
-  .studio-hero .hero-studio-photo > img { object-position: center 42%; }
+  .studio-hero .hero-studio-photo img { object-position: center 42%; }
   .studio-hero .hero-studio-photo .floating-strategy { display: none; }
 }
 /* Phone and tablet refinements, after the shared component styles. */
