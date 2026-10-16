@@ -54,7 +54,7 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '32kb' }))
 
 // Short bio links keep campaign attribution on the destination page.
-for (const [route, source] of [['/ig', 'instagram'], ['/fb', 'facebook']]) {
+for (const [route, source] of [['/ig', 'instagram'], ['/fb', 'facebook'], ['/li', 'linkedin']]) {
   app.get(route, (req, res) => {
     const params = new URL(req.originalUrl, 'https://verkoop.studio').searchParams
     params.set('utm_source', source)
