@@ -25,3 +25,10 @@ test('rejects failed or misleading CRM responses', async () => {
   }
   await assert.rejects(sendToCrm({}, {url:'http://public.example.com/api',token:'test'}),/requires_https/)
 })
+
+test('forwards only valid Google identifiers for CRM appointment attribution', () => {
+  const base={naam:'Example',email:'test@example.invalid'}
+  const payload=crmPayload({...base,ga4:{clientId:'123.456',sessionId:'789',email:'private@example.invalid'}})
+  assert.deepEqual(payload.ga4,{clientId:'123.456',sessionId:'789'})
+  assert.equal(crmPayload({...base,ga4:{clientId:'private@example.invalid'}}).ga4,undefined)
+})

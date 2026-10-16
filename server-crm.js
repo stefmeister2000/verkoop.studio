@@ -19,6 +19,11 @@ export function crmPayload(body) {
     campaign: 'verkoop.studio website',
     notes: fields.filter(([, value]) => text(value)).map(([label, value]) => `${label}: ${text(value)}`).join('\n'),
   }
+  // Only structured, Google-generated identifiers cross the server bridge.
+  if (typeof body.ga4?.clientId === 'string' && /^\d{1,20}\.\d{1,20}$/.test(body.ga4.clientId)) {
+    payload.ga4 = { clientId: body.ga4.clientId }
+    if (typeof body.ga4.sessionId === 'string' && /^\d{1,20}$/.test(body.ga4.sessionId)) payload.ga4.sessionId = body.ga4.sessionId
+  }
   if (text(body.website)) payload.website = text(body.website)
   // Fail visibly instead of silently losing part of the enquiry.
   for (const [key, limit] of Object.entries({company:200,contactName:200,email:200,phone:60,website:300,notes:4000})) {

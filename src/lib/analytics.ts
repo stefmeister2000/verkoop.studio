@@ -25,7 +25,10 @@ export type TrackingEvent =
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
-    gtag?: (command: 'event', event: string, params: Record<string, unknown>) => void
+    gtag?: {
+      (command: 'event', event: string, params: Record<string, unknown>): void
+      (command: 'get', target: string, field: string, callback: (value: unknown) => void): void
+    }
   }
 }
 
@@ -121,4 +124,19 @@ export function readAttribution(): Attribution | null {
   } catch {
     return null
   }
+}
+
+/** Use the visitor's real GA identifier; never invent one for blocked analytics. */
+export async function getGa4Context(): Promise<{ clientId: string; sessionId?: string } | undefined> {
+  if (typeof window === 'undefined' || !window.gtag) return undefined
+  const get = (field: string): Promise<unknown> => new Promise(resolve => {
+    const timeout = setTimeout(() => resolve(undefined), 700)
+    try {
+      window.gtag!('get', 'G-VRKJP8K3SD', field, value => { clearTimeout(timeout); resolve(value) })
+    } catch { clearTimeout(timeout); resolve(undefined) }
+  })
+  const [client, session] = await Promise.all([get('client_id'), get('session_id')])
+  if (typeof client !== 'string' || !/^\d{1,20}\.\d{1,20}$/.test(client)) return undefined
+  const sessionId = typeof session === 'number' || typeof session === 'string' ? String(session) : ''
+  return { clientId: client, ...(/^\d{1,20}$/.test(sessionId) ? { sessionId } : {}) }
 }

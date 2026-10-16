@@ -55,3 +55,19 @@ test('storage restrictions and missing or broken analytics do not break the form
   vm.runInContext(compiled, context)
   assert.doesNotThrow(() => context.exports.trackLeadConversion(receipt, 'submission-1', 'contact'))
 })
+
+test('collects actual Google client/session IDs without inventing attribution', async () => {
+  for (const [client, session, expected] of [
+    ['12345.67890', 1234, {clientId:'12345.67890',sessionId:'1234'}],
+    ['private@example.com', 1234, undefined],
+    [undefined, undefined, undefined],
+  ]) {
+    const context = vm.createContext({exports:{},setTimeout,clearTimeout,window:{gtag:(_cmd,_target,field,callback)=>callback(field==='client_id'?client:session)}})
+    vm.runInContext(compiled, context)
+    const result=await context.exports.getGa4Context()
+    assert.deepEqual(result && JSON.parse(JSON.stringify(result)),expected)
+  }
+  const context=vm.createContext({exports:{},setTimeout,clearTimeout,window:{gtag:()=>{}}})
+  vm.runInContext(compiled,context)
+  assert.equal(await context.exports.getGa4Context(),undefined)
+})
