@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { captureAttribution, trackEvent, trackLeadConversion } from '../lib/analytics'
+import { captureAttribution, trackEvent, trackLeadConversion, getGa4Context } from '../lib/analytics'
 import { useInView } from '../lib/useInView'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -164,6 +164,7 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
     const attribution = captureAttribution()
 
     try {
+      const ga4 = await getGa4Context()
       const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -176,6 +177,7 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
           lang,
           company_website: honeypotRef.current, // honeypot — bots fill this
           attribution,
+          ga4,
         }),
       })
       const receipt = await res.json()
