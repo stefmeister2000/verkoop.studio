@@ -52,6 +52,19 @@ app.use((req, res, next) => {
   next()
 })
 app.use(express.json({ limit: '32kb' }))
+
+// Short bio links keep campaign attribution on the destination page.
+for (const [route, source] of [['/ig', 'instagram'], ['/fb', 'facebook']]) {
+  app.get(route, (req, res) => {
+    const params = new URL(req.originalUrl, 'https://verkoop.studio').searchParams
+    params.set('utm_source', source)
+    params.set('utm_medium', 'organic_social')
+    params.set('utm_campaign', 'social_profiel')
+    res.set('Cache-Control', 'no-store')
+    res.redirect(302, `/?${params}`)
+  })
+}
+
 app.use('/assets', express.static(path.join(DIST, 'assets'), { immutable: true, maxAge: '1y' }))
 app.use(express.static(DIST, { redirect: false, index: false }))
 
