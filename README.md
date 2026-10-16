@@ -56,3 +56,9 @@ Run `npm run test:crm` for mapping, authentication, oversized-input and failure-
 ## Production domain migration
 
 Connect `verkoop.studio` (and optionally `www.verkoop.studio`) to the existing Railway service and apply the DNS targets shown by Railway. Set `VITE_SITE_URL=https://verkoop.studio` in Railway before rebuilding. Redirect the old host to the new origin while preserving paths and query parameters. The verified legacy email sender remains in place until the new sending domain is verified in Resend; then set `LEAD_FROM` and `LEAD_REPLY_FROM` to the verified new address.
+
+## Google Analytics lead measurement
+
+The shared HTML initializes `G-VRKJP8K3SD` alongside the existing GA4 property using one asynchronous Google tag loader. A successful `/api/lead` receipt with persisted contact capture sends `generate_lead` explicitly to `G-VRKJP8K3SD`. Only `method` and `form_id` are included; contact details and free-text answers are excluded. Submission IDs deduplicate browser events in memory/session storage and are not sent to Google. Rejected requests and honeypot acknowledgements do not count as leads.
+
+Run `node --test tests/analytics.test.mjs` for conversion checks. In the target GA4 property, mark `generate_lead` as a key event if it should count as a conversion. Receiving events and marking key events are separate settings. No appointment conversion is emitted yet: the website currently has no active booking integration. Connect the actual booking provider's confirmed-booking signal before adding `meeting_booked`; opening a calendar or submitting an enquiry is not a confirmed appointment.

@@ -1,10 +1,7 @@
 /**
- * Thin tracking layer. Pushes every event to window.dataLayer (GTM), which
- * fans out to GA4, Meta Pixel and LinkedIn Insight Tag once those tags are
- * installed with real IDs (see index.html). Nothing here calls a vendor SDK
- * directly, so the site works before any tracking IDs are confirmed.
- *
- * Full event map: see /docs or the "Tracking event map" deliverable.
+ * Existing site events remain available in dataLayer for GTM integrations.
+ * Confirmed website leads are also sent explicitly to the requested GA4
+ * property; plain dataLayer objects are not gtag event commands.
  */
 
 export type TrackingEvent =
@@ -28,6 +25,7 @@ export type TrackingEvent =
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
+    gtag?: (command: 'event', event: string, params: Record<string, unknown>) => void
   }
 }
 
@@ -39,6 +37,29 @@ export function trackEvent(event: TrackingEvent, payload: Record<string, unknown
     // eslint-disable-next-line no-console
     console.debug('[track]', event, payload)
   }
+}
+
+const trackedLeads = new Set<string>()
+
+/** Call only after /api/lead succeeds. Never send contact details or free text. */
+export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown }, submissionId: string, formId: string) {
+  if (typeof window === 'undefined' || !window.gtag || !submissionId) return
+  // The bot honeypot returns ok without storing a lead or returning capture receipts.
+  if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('resend_contact')) return
+  const key = `sk_ga4_lead_${submissionId}`
+  if (trackedLeads.has(key)) return
+  try {
+    if (sessionStorage.getItem(key)) return
+  } catch { /* Tracking still works when storage is unavailable. */ }
+  try {
+    window.gtag('event', 'generate_lead', {
+      send_to: 'G-VRKJP8K3SD',
+      method: 'website_form',
+      form_id: formId,
+    })
+    trackedLeads.add(key)
+    try { sessionStorage.setItem(key, '1') } catch { /* In-memory deduplication remains. */ }
+  } catch { /* Analytics must never turn a saved lead into a failed form. */ }
 }
 
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const

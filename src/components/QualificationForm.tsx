@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { captureAttribution, trackEvent } from '../lib/analytics'
+import { captureAttribution, trackEvent, trackLeadConversion } from '../lib/analytics'
 import { useInView } from '../lib/useInView'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -181,6 +181,7 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
       const receipt = await res.json()
       if (!res.ok || receipt.ok !== true) throw new Error(`Request failed: ${res.status}`)
       trackEvent('form_submitted', { form_id: id, doel: values.doel, ...attribution })
+      trackLeadConversion(receipt, submissionRef.current, id)
       setStatus('done')
     } catch {
       setSubmitError(true)
