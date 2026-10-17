@@ -130,6 +130,20 @@
           ]
         },
         {
+          "title": "Wat gebeurt er met bestaande pagina’s als je je website vernieuwt?",
+          "paragraphs": [
+            "Neem je bestaande pagina-adressen mee in de briefing. Behoud bruikbare URL’s waar dat past. Moet een adres veranderen, laat dan vooraf vastleggen welke nieuwe pagina dezelfde bezoekersvraag beantwoordt. Zo krijgt een bezoeker via een oude link een passende bestemming in plaats van een foutmelding.",
+            "Google adviseert bij URL-wijzigingen een overzicht van oude en nieuwe adressen, permanente doorverwijzingen en bijgewerkte interne links. Laat niet elke verdwenen pagina zomaar naar de homepage wijzen: de bestemming moet inhoudelijk passen. Controleer na de lancering ook de sitemap en of openbare pagina’s niet onbedoeld op noindex staan, een instructie om ze buiten de zoekindex te houden.",
+            "Spreek af wie dit vóór en na de lancering controleert. Een nieuwe vormgeving garandeert geen behoud van zoekverkeer; Google kan tijd nodig hebben om gewijzigde URL’s opnieuw te verwerken. De Google-handleiding onder ‘Van lezen naar toepassen’ licht deze aanpak toe."
+          ],
+          "checklist": [
+            "Welke bestaande pagina’s leveren bezoekers of aanvragen op?",
+            "Welke adressen blijven behouden en welke krijgen een passende vervanger?",
+            "Zijn doorverwijzingen, interne links en sitemap gecontroleerd?",
+            "Wie volgt bereikbaarheid en indexering na de lancering op?"
+          ]
+        },
+        {
           "title": "Leg eigenaarschap en evaluatie vooraf vast",
           "paragraphs": [
             "Vraag wie domein, hosting, bronbestanden en accounts beheert. Bespreek onderhoud, wijzigingen en wat er gebeurt bij een overstap. Een oplevering is pas bruikbaar wanneer je team ermee kan werken.",
@@ -143,6 +157,10 @@
           "label": "Websites en ecommerce"
         },
         {
+          "href": "/blog/landingspagina-of-website",
+          "label": "Keuzehulp: een volledige website of een gerichte landingspagina?"
+        },
+        {
           "href": "/cases/olearys",
           "label": "O’Learys: verschillende bezoekersroutes"
         },
@@ -153,10 +171,14 @@
         {
           "href": "https://web.dev/articles/vitals",
           "label": "Google: Core Web Vitals en het verschil tussen lab- en bezoekersmetingen"
+        },
+        {
+          "href": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+          "label": "Google: bestaande URL’s zorgvuldig overzetten naar een vernieuwde website"
         }
       ],
       "publishedAt": "2026-10-02",
-      "modifiedAt": "2026-10-07"
+      "modifiedAt": "2026-10-17"
     },
     {
       "slug": "marketingbureau-gent-kiezen",
