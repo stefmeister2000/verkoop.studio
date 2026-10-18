@@ -1,7 +1,5 @@
-import ResponsiveImage from '../components/ResponsiveImage'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
-import pinacello from '../assets/cases/pinacello.webp'
 
 export default function RevenueGrowth() {
   const { lang } = useLang()
@@ -26,9 +24,17 @@ export default function RevenueGrowth() {
           {nl ? 'Bekijk Pinacello' : 'Explore Pinacello'} ↗
         </Link>
       </div>
-      <Link to="/cases/pinacello" className="revenue-proof">
-        <ResponsiveImage src={pinacello} alt="Pinacello webshop" loading="lazy" />
-        <div className="revenue-stat">
+      <div className="revenue-proof">
+        <iframe
+          className="revenue-video"
+          src="https://www.youtube-nocookie.com/embed/Yy8j3y5s4jU?rel=0"
+          title={nl ? 'Pinacello — bekijk de video' : 'Pinacello — watch the video'}
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+        <Link to="/cases/pinacello" className="revenue-stat">
           <span className="proof-label">PINACELLO / ECOMMERCE</span>
           <strong>
             +120<span>%</span>
@@ -37,8 +43,8 @@ export default function RevenueGrowth() {
             {nl ? 'online omzetgroei' : 'online revenue growth'}{' '}
             <span aria-hidden="true">↗</span>
           </p>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="revenue-principles">
         {(nl
           ? [

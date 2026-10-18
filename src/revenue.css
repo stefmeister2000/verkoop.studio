@@ -130,14 +130,14 @@
   background: #ffffff;
   color: #141a30;
 }
-.revenue-proof > img {
+.revenue-video {
   display: block;
-  height: 180px;
   width: 100%;
-  flex: 0 0 180px;
-  object-fit: cover;
-  object-position: top;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  border: 0;
   border-bottom: 1px solid #e3e7f2;
+  background: #000;
 }
 .revenue-stat {
   display: flex;
