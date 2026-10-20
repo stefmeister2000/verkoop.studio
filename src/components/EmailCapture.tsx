@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
+import { trackNewsletterConversion } from '../lib/analytics'
 import './EmailCapture.css'
 
 const STORAGE_KEY = 'verkoop_newsletter_until'
@@ -52,6 +53,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
   const [error, setError] = useState('')
   const dismissed = useRef(false)
   const pending = useRef(false)
+  const submissionId = useRef('')
   const panel = useRef<HTMLElement>(null)
   const excluded = pathname === '/contact' || pathname === '/funnel-audit'
 
@@ -97,6 +99,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
     setError('')
     const data = new FormData(event.currentTarget)
     try {
+      submissionId.current ||= crypto.randomUUID()
       const response = await fetch('/api/newsletter', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         signal: AbortSignal.timeout(20_000),
@@ -111,6 +114,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
         setStatus('idle')
         return
       }
+      trackNewsletterConversion(result, submissionId.current)
       setStatus('success')
       remember(365)
       dismissed.current = true

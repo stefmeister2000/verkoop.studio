@@ -69,7 +69,7 @@ export function newsletterRouter(resend) {
     }
     try {
       const result = await subscribeNewsletter({ resend, email, lang: body.lang })
-      return res.status(result.status).json(result.ok ? { ok: true } : { error: result.error })
+      return res.status(result.status).json(result.ok ? { ok: true, captured: ['newsletter_segment'] } : { error: result.error })
     } catch {
       console.error('[newsletter] Resend capture failed')
       return res.status(502).json({ error: 'capture_failed' })

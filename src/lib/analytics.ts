@@ -63,11 +63,22 @@ export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown 
   if (typeof window === 'undefined' || !submissionId) return
   // The bot honeypot returns ok without storing a lead or returning capture receipts.
   if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('resend_contact')) return
+  sendLeadConversion(submissionId, formId, 'website_form', 'Website enquiry')
+}
+
+/** Newsletter success needs a segment receipt; a honeypot acknowledgement is not a lead. */
+export function trackNewsletterConversion(receipt: { ok?: boolean; captured?: unknown }, submissionId: string) {
+  if (typeof window === 'undefined' || !submissionId) return
+  if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('newsletter_segment')) return
+  sendLeadConversion(`newsletter_${submissionId}`, 'newsletter-popup', 'newsletter_signup', 'Newsletter signup')
+}
+
+function sendLeadConversion(submissionId: string, formId: string, method: string, contentName: string) {
   if (typeof window.gtag === 'function') {
     trackLeadOnce(`sk_ga4_lead_${submissionId}`, () => {
       window.gtag!('event', 'generate_lead', {
         send_to: 'G-VRKJP8K3SD',
-        method: 'website_form',
+        method,
         form_id: formId,
       })
     })
@@ -75,7 +86,7 @@ export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown 
   if (typeof window.fbq === 'function') {
     trackLeadOnce(`sk_meta_lead_${submissionId}`, () => {
       window.fbq!('trackSingle', '29297541076513579', 'Lead', {
-        content_name: 'Website enquiry',
+        content_name: contentName,
         form_id: formId,
       }, { eventID: `website_lead_${submissionId}` })
     })
