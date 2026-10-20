@@ -8,6 +8,7 @@
 }
 .email-capture-close { position: absolute; right: 9px; top: 9px; width: 44px; height: 44px; font-size: 25px; color: #69758c; cursor: pointer; border-radius: 50%; }
 .email-capture-close:hover { background: #eef2fb; }
+.email-capture-teaser { display: none; }
 .email-capture-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: #254bfa; color: white; font-size: 24px; margin-bottom: 16px; }
 .email-capture-eyebrow { color: #657494; font-size: 10px; font-weight: 600; letter-spacing: .06em; }
 .email-capture h2 { font-size: 25px; font-weight: 650; letter-spacing: -1px; line-height: 1.2; margin: 8px 0; }
@@ -33,7 +34,31 @@
   .email-capture { left: 16px; bottom: calc(150px + env(safe-area-inset-bottom)); max-height: calc(100dvh - 174px - env(safe-area-inset-bottom)); padding: 20px; }
 }
 @media (max-width: 600px) {
-  .email-capture { width: calc(100vw - 32px); }
+  .email-capture {
+    left: 12px; bottom: calc(84px + env(safe-area-inset-bottom));
+    width: calc(100vw - 24px); max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - 108px - env(safe-area-inset-bottom));
+    padding: 18px; border-radius: 18px;
+  }
   .email-capture-mark { width: 32px; height: 32px; margin-bottom: 12px; font-size: 21px; }
+  .email-capture:not(.is-expanded) {
+    display: flex; align-items: center; width: fit-content; max-width: calc(100vw - 84px);
+    padding: 0 3px 0 12px; border-radius: 24px; background: #fffffff2;
+    box-shadow: 0 3px 12px #15245212;
+  }
+  .email-capture:not(.is-expanded) .email-capture-content { display: none; }
+  .email-capture:not(.is-expanded) .email-capture-teaser {
+    display: flex; align-items: center; gap: 8px; min-height: 44px;
+    font-size: 12px; font-weight: 500; color: #4d5e7d; cursor: pointer; text-align: left;
+  }
+  .email-capture:not(.is-expanded) .email-capture-close {
+    position: static; flex-shrink: 0; width: 40px; height: 44px; font-size: 20px;
+  }
+  .email-capture.is-expanded .email-capture-mark,
+  .email-capture.is-expanded .email-capture-eyebrow { display: none; }
+  .email-capture.is-expanded h2 { padding-right: 28px; font-size: 22px; margin: 0 0 8px; }
+  .email-capture.is-expanded .email-capture-description { font-size: 12px; margin-bottom: 14px; }
+  .site-shell:has(.email-capture.is-expanded) .faq-chat:not(.has-open-chat) { visibility: hidden; }
+  .site-shell:has(form:focus-within) .email-capture:not(.is-expanded) { visibility: hidden; }
 }
 @media (prefers-reduced-motion: reduce) { .email-capture { animation: none; } }

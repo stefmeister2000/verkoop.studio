@@ -1,5 +1,5 @@
 import FaqChat from './FaqChat'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './Nav'
 import Footer from './Footer'
@@ -12,6 +12,7 @@ import { captureAttribution } from '../lib/analytics'
 
 export default function Layout() {
   const location = useLocation()
+  const [newsletterRequest, setNewsletterRequest] = useState(0)
   const motionRef = usePageMotion(location.pathname)
   usePrimaryButtonMotion()
 
@@ -37,11 +38,11 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <Footer onNewsletterOpen={() => setNewsletterRequest(value => value + 1)} />
       <BackToTop />
       <FaqChat />
       <StickyMobileCTA />
-      <EmailCapture />
+      <EmailCapture openRequest={newsletterRequest} />
     </div>
   )
 }

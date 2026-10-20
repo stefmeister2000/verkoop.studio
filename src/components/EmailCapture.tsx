@@ -11,6 +11,7 @@ const COPY = {
     email: 'Je e-mailadres', placeholder: 'jij@bedrijf.be',
     consent: 'Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.',
     action: 'Hou me op de hoogte', busy: 'Even opslaan…', close: 'Sluiten',
+    teaser: 'Tips in je inbox',
     note: 'Uitschrijven kan altijd.',
     privacy: 'Je e-mailadres en toestemming worden via Resend bewaard voor deze nieuwsbrief. Inzage of verwijdering aanvragen:',
     privacyLabel: 'Privacy',
@@ -25,6 +26,7 @@ const COPY = {
     email: 'Your email address', placeholder: 'you@company.com',
     consent: 'Yes, I would like to receive marketing tips and news from verkoop.studio by email.',
     action: 'Keep me posted', busy: 'Saving…', close: 'Close',
+    teaser: 'Tips in your inbox',
     note: 'Unsubscribe at any time.',
     privacy: 'Your email and consent are stored through Resend for this newsletter. To request access or deletion:',
     privacyLabel: 'Privacy',
@@ -39,11 +41,13 @@ function remember(days: number) {
   try { localStorage.setItem(STORAGE_KEY, String(Date.now() + days * 86_400_000)) } catch { /* Optional storage. */ }
 }
 
-export default function EmailCapture() {
+export default function EmailCapture({ openRequest = 0 }: { openRequest?: number }) {
   const { lang } = useLang()
   const { pathname } = useLocation()
   const t = COPY[lang]
   const [visible, setVisible] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+  const [manuallyOpened, setManuallyOpened] = useState(false)
   const [status, setStatus] = useState<'idle' | 'pending' | 'success'>('idle')
   const [error, setError] = useState('')
   const dismissed = useRef(false)
@@ -52,10 +56,21 @@ export default function EmailCapture() {
   const excluded = pathname === '/contact' || pathname === '/funnel-audit'
 
   useEffect(() => {
+    if (!openRequest) return
+    dismissed.current = true
+    setManuallyOpened(true)
+    setExpanded(true)
+    setVisible(true)
+    const frame = requestAnimationFrame(() => panel.current?.focus())
+    return () => cancelAnimationFrame(frame)
+  }, [openRequest])
+
+  useEffect(() => {
     if (excluded || dismissed.current) return
     try { if (Number(localStorage.getItem(STORAGE_KEY)) > Date.now()) return } catch { /* Optional storage. */ }
     let timer: ReturnType<typeof setTimeout>
     function showWhenIdle() {
+      if (dismissed.current) return
       if (document.hidden || document.activeElement?.closest('form, input, textarea, select') ||
           document.querySelector('.has-open-chat, .mobile-navigation')) {
         timer = setTimeout(showWhenIdle, 3000)
@@ -71,6 +86,7 @@ export default function EmailCapture() {
     dismissed.current = true
     remember(status === 'success' ? 365 : 30)
     setVisible(false)
+    setManuallyOpened(false)
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -105,11 +121,20 @@ export default function EmailCapture() {
     } finally { pending.current = false }
   }
 
-  if (!visible || excluded) return null
+  if (!visible || (excluded && !manuallyOpened)) return null
   return (
-    <aside ref={panel} className="email-capture" aria-labelledby="email-capture-title" tabIndex={-1} data-clarity-mask="true"
+    <aside ref={panel} className={`email-capture${expanded ? ' is-expanded' : ''}`} aria-label={t.title} tabIndex={-1} data-clarity-mask="true"
       onKeyDown={event => { if (event.key === 'Escape') close() }}>
+      <button className="email-capture-teaser" type="button" aria-expanded={expanded} aria-controls="email-capture-content"
+        onClick={() => { setExpanded(true); requestAnimationFrame(() => panel.current?.focus()) }}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" strokeWidth="1.5" />
+          <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+        {t.teaser}<span aria-hidden="true">↗</span>
+      </button>
       <button className="email-capture-close" type="button" aria-label={t.close} onClick={close}>×</button>
+      <div className="email-capture-content" id="email-capture-content">
       <div className="email-capture-mark" aria-hidden="true">{status === 'success' ? '✓' : '↗'}</div>
       <p className="email-capture-eyebrow">{t.eyebrow}</p>
       <h2 id="email-capture-title">{status === 'success' ? t.success : t.title}</h2>
@@ -137,6 +162,7 @@ export default function EmailCapture() {
           <details><summary>{t.privacyLabel}</summary><p>{t.privacy} <a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a>.</p></details>
         </div>
       </form>}
+      </div>
     </aside>
   )
 }

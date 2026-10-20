@@ -21,7 +21,7 @@ const COPY = {
   },
 }
 
-export default function Footer() {
+export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => void }) {
   const { lang, toggleLang } = useLang()
   const t = COPY[lang]
 
@@ -74,6 +74,11 @@ export default function Footer() {
                 <Link to={persistentCtaHref} className="transition hover:text-paper">
                   {persistentCta[lang]}
                 </Link>
+              </li>
+              <li>
+                <button type="button" onClick={onNewsletterOpen} className="min-h-11 cursor-pointer text-left transition hover:text-paper">
+                  {lang === 'nl' ? 'Nieuwsbrief openen ↗' : 'Open newsletter signup ↗'}
+                </button>
               </li>
             </ul>
           </div>

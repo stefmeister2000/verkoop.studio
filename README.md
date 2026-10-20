@@ -58,6 +58,9 @@ Run `npm run test:crm` for mapping, authentication, oversized-input and failure-
 The compact NL/EN popup appears after 12 seconds, waits while visitors use another
 form or chat, and is excluded from `/contact` and `/funnel-audit`. Closing it hides
 it for 30 days; a successful signup hides it for one year in that browser.
+On phones (up to 600px), only a small “Tips in je inbox” pill appears automatically;
+the form opens on tap. The footer's newsletter button opens it on demand on any
+page, including when a stored dismissal suppresses the automatic popup.
 
 `POST /api/newsletter` uses the existing server-only `RESEND_API_KEY` (full access).
 Contacts enter **Website nieuwsbrief** (`77506f2d-d387-4e75-97aa-bbaa003e7e0f`).
