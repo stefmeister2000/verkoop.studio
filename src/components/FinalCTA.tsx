@@ -23,23 +23,20 @@ export default function FinalCTA() {
   const t = COPY[lang]
 
   return (
-    <section ref={ref} className="reveal border-t border-line">
-      <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-28">
-        <h2 className="font-display text-3xl text-paper text-balance sm:text-5xl">{t.title}</h2>
-        <p className="mx-auto mt-5 max-w-xl text-bone">{t.body}</p>
+    <section ref={ref} className="closing-cta reveal">
+      <div className="closing-cta-inner">
+        <h2 className="font-display text-balance">{t.title}</h2>
+        <p>{t.body}</p>
 
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="hero-actions">
           <Link
             to={persistentCtaHref}
             onClick={() => trackEvent('audit_cta_clicked', { placement: 'final_cta' })}
-            className="rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition hover:bg-accent-2"
+            className="button-dark"
           >
             {persistentCta[lang]}
           </Link>
-          <Link
-            to="/cases"
-            className="rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-paper transition hover:border-accent"
-          >
+          <Link to="/cases" className="button-light">
             {t.ctaSecondary}
           </Link>
         </div>

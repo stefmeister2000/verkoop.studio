@@ -11,13 +11,41 @@
   .project-arrow, .lyte-case-arrow, .service-more > span {
     transition: transform .4s cubic-bezier(.22,1,.36,1), background .3s, color .3s;
   }
+  .growth-goal h3::after {
+    transition: width .5s cubic-bezier(.22,1,.36,1), background-color .3s ease;
+  }
+  .goal-link > span {
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1);
+  }
+  .growth-goal:is(:hover, :focus-visible) .goal-link > span {
+    transform: translate(4px, -4px);
+  }
+  .strategy-go {
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1);
+  }
+  .floating-strategy:is(:hover, :focus-visible) .strategy-go {
+    transform: translate(3px, -3px);
+  }
   :is(.project-tile, .lyte-case-card, .marketing-card):is(:hover, :focus-visible) :is(.project-arrow, .lyte-case-arrow, .service-more > span) {
     transform: rotate(45deg);
   }
   :is(.button-dark, .button-light) {
     transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s, background .3s;
   }
-  :is(.button-dark, .button-light):active { transform: scale(.97); }
+  .button-light {
+    transition: transform .55s cubic-bezier(.34, 1.56, .64, 1), box-shadow .4s ease, background .3s ease, --arc .62s cubic-bezier(.22, 1, .36, 1);
+  }
+  .button-light:active {
+    transform: translateY(1px) scale(.97);
+    transition: transform .09s ease, box-shadow .09s ease;
+  }
+  .button-dark {
+    transition: transform .55s cubic-bezier(.34, 1.56, .64, 1), box-shadow .4s ease, background .3s ease;
+  }
+  .button-dark:active {
+    transform: translateY(1px) scale(.96);
+    transition: transform .09s ease, box-shadow .09s ease;
+  }
   .creative-front, .creative-back, .concept-search-result, .concept-mail, .dashboard-metrics > span {
     transition: transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s;
   }
@@ -33,6 +61,9 @@
     transform: perspective(1000px) rotateX(var(--motion-rx, 0deg)) rotateY(var(--motion-ry, 0deg));
     transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .35s;
   }
+  :is(.project-tile, .lyte-case-card):is(:hover, :focus-visible) {
+    box-shadow: 0 18px 40px #10131c22;
+  }
   :is(.project-image, .lyte-case-cover)::after {
     content: '';
     position: absolute;
@@ -43,6 +74,25 @@
     transition: opacity .4s;
   }
   :is(.project-tile, .lyte-case-card):hover :is(.project-image, .lyte-case-cover)::after { opacity: 1; }
+  .button-dark:hover { transform: translateY(-3px); }
+  .button-dark:active {
+    transform: translateY(1px) scale(.96);
+    transition: transform .09s ease, box-shadow .09s ease;
+  }
+  .button-dark > span:last-child {
+    display: inline-block;
+    transition: transform .45s cubic-bezier(.34, 1.56, .64, 1);
+  }
+  .button-dark:hover > span:last-child { transform: translate(4px, -4px); }
+  .button-dark:active > span:last-child {
+    transform: translate(8px, -8px);
+    transition-duration: .09s;
+  }
+  .button-light:hover { transform: translateY(-2px); }
+  .button-light:active {
+    transform: translateY(1px) scale(.97);
+    transition: transform .09s ease, box-shadow .09s ease;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .site-shell *, .site-shell *::before, .site-shell *::after {

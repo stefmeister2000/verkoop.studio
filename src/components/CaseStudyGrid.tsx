@@ -48,7 +48,6 @@ export default function CaseStudyGrid() {
                 <h3 className="font-display text-xl text-paper">{c.name}</h3>
                 {c.status === 'ongoing' && <span className="text-xs italic text-accent-2">{t.ongoing}</span>}
               </div>
-              <p className="mt-1 text-xs uppercase tracking-widest text-mute">{c.sector[lang]}</p>
               <p className="mt-2 text-xs text-accent-2">Stef Keppens · Growth & strategy</p>
               <p className="mt-3 text-sm leading-relaxed text-bone">{c.summary[lang]}</p>
               <span className="mt-5 text-sm font-medium text-accent-2 underline decoration-transparent underline-offset-4 transition group-hover:decoration-accent-2">

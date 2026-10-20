@@ -6,8 +6,8 @@ interface PlaceholderProps {
 
 /**
  * Honest stand-in for real photography/screenshots that haven't been supplied
- * yet. Intentionally looks like a placeholder, not a fake product shot —
- * swap for real assets (see deliverable #13).
+ * yet. It should look like a placeholder, not a fake product shot.
+ * Swap for real assets (see deliverable #13).
  */
 export default function Placeholder({ label, ratio = 'aspect-[4/3]', className = '' }: PlaceholderProps) {
   return (

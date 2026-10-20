@@ -6,11 +6,13 @@ import Footer from './Footer'
 import StickyMobileCTA from './StickyMobileCTA'
 import BackToTop from './BackToTop'
 import { usePageMotion } from '../lib/usePageMotion'
+import { usePrimaryButtonMotion } from '../lib/usePrimaryButtonMotion'
 import { captureAttribution } from '../lib/analytics'
 
 export default function Layout() {
   const location = useLocation()
   const motionRef = usePageMotion(location.pathname)
+  usePrimaryButtonMotion()
 
   useEffect(() => {
     captureAttribution()

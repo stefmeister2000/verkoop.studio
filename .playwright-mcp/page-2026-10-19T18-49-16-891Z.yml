@@ -1,0 +1,234 @@
+- generic [ref=f172e3]:
+  - banner [ref=f172e4]:
+    - generic [ref=f172e5]:
+      - link "verkoop.studio, home" [ref=f172e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f172e7]:
+          - generic [ref=f172e8]: verkoop.
+          - generic [ref=f172e9]: studio
+      - navigation [ref=f172e10]:
+        - link "Home" [ref=f172e11] [cursor=pointer]:
+          - /url: /
+        - link "Results" [ref=f172e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Services" [ref=f172e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f172e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f172e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f172e21] [cursor=pointer]:
+          - /url: /contact
+      - link "Discuss your project" [ref=f172e24] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f172e25]:
+    - generic [ref=f172e26]:
+      - generic [ref=f172e27]:
+        - generic [ref=f172e28]:
+          - navigation "Breadcrumb" [ref=f172e29]:
+            - link "Home" [ref=f172e31] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f172e32]:
+              - generic [aria-hidden] [ref=f172e33]: /
+              - link "Services" [ref=f172e34] [cursor=pointer]:
+                - /url: /#expertise
+            - generic [ref=f172e35]:
+              - generic [aria-hidden] [ref=f172e36]: /
+              - generic [ref=f172e37]: Websites & ecommerce
+          - heading "Websites & ecommerce" [level=1] [ref=f172e38]
+          - paragraph [ref=f172e39]: A digital home that expresses your brand and guides visitors towards the right next step.
+          - list [ref=f172e40]:
+            - listitem [ref=f172e41]: Web design
+            - listitem [ref=f172e42]: Web development
+            - listitem [ref=f172e43]: Ecommerce
+            - listitem [ref=f172e44]: Content structure
+          - link "Discuss your approach" [ref=f172e45] [cursor=pointer]:
+            - /url: "#audit-formulier-section"
+            - text: Discuss your approach
+            - generic [aria-hidden] [ref=f172e46]: ↗
+          - paragraph [ref=f172e47]: You’ll hear from us within 24 hours.
+        - complementary [ref=f172e48]:
+          - heading "What happens next" [level=2] [ref=f172e49]
+          - list [ref=f172e50]:
+            - listitem [ref=f172e51]: You share your goal and challenge.
+            - listitem [ref=f172e52]: We discuss opportunities and priorities.
+            - listitem [ref=f172e53]: You receive a proposal with scope and budget.
+      - generic [ref=f172e54]:
+        - generic [ref=f172e55]:
+          - heading "Where it gets stuck" [level=2] [ref=f172e56]
+          - paragraph [ref=f172e57]: Your business is growing, but your website no longer tells the right story or makes it too hard for visitors to act.
+        - generic [ref=f172e58]:
+          - heading "What you get" [level=2] [ref=f172e59]
+          - list [ref=f172e60]:
+            - listitem [ref=f172e61]:
+              - generic [ref=f172e64]: Responsive website or online store
+            - listitem [ref=f172e65]:
+              - generic [ref=f172e68]: Content and navigation structure
+            - listitem [ref=f172e69]:
+              - generic [ref=f172e72]: Agreed integrations
+            - listitem [ref=f172e73]:
+              - generic [ref=f172e76]: Handover and launch plan
+        - generic [ref=f172e77]:
+          - heading "How we work" [level=2] [ref=f172e78]
+          - list [ref=f172e79]:
+            - listitem [ref=f172e80]: We define the audience, message and desired action.
+            - listitem [ref=f172e81]: We design the structure and visual experience.
+            - listitem [ref=f172e82]: We build, test and prepare the launch with LYTE Studios.
+      - link [ref=f172e83] [cursor=pointer]:
+        - /url: https://lytestudios.be/projects/jobr-website/
+        - generic [ref=f172e84]:
+          - paragraph [ref=f172e85]: Together with LYTE Studios
+          - heading "Jobr website" [level=2] [ref=f172e86]: Jobr website ↗
+          - paragraph [ref=f172e87]: "By LYTE Studios: a website introducing the Jobr app and guiding visitors to downloads and employer registration."
+      - generic [ref=f172e88]:
+        - figure "Stef Keppens Lochristi stefkeppens@gmail.com" [ref=f172e89]:
+          - img "Stef Keppens at his laptop" [ref=f172e90]
+          - generic [ref=f172e91]:
+            - strong [ref=f172e92]: Stef Keppens
+            - generic [ref=f172e93]: Lochristi
+            - link "stefkeppens@gmail.com" [ref=f172e94] [cursor=pointer]:
+              - /url: mailto:stefkeppens@gmail.com
+        - generic [ref=f172e95]:
+          - heading "Tell us about your project" [level=2] [ref=f172e96]
+          - paragraph [ref=f172e97]: You’re here for Websites & ecommerce. Tell us where you stand. We’ll look at your situation and say which approach fits.
+          - generic [ref=f172e99]:
+            - generic [ref=f172e100]:
+              - generic [ref=f172e101]: Name
+              - textbox "Name" [ref=f172e102]
+            - generic [ref=f172e103]:
+              - generic [ref=f172e104]: Company (optional)
+              - textbox "Company (optional)" [ref=f172e105]
+            - generic [ref=f172e106]:
+              - generic [ref=f172e107]: Business email
+              - textbox "Business email" [ref=f172e108]
+            - generic [ref=f172e109]:
+              - generic [ref=f172e110]: Phone number
+              - textbox "Phone number" [ref=f172e111]
+            - generic [ref=f172e112]:
+              - generic [ref=f172e113]: Website (optional)
+              - textbox "Website (optional)" [ref=f172e114]:
+                - /placeholder: https://
+            - group "What can we help you with?" [ref=f172e115]:
+              - paragraph [ref=f172e117]: Choose the closest fit. We’ll work out the details together.
+              - generic [ref=f172e118]:
+                - generic [ref=f172e119] [cursor=pointer]:
+                  - radio "More customers More enquiries or bookings." [ref=f172e120]
+                  - generic [ref=f172e123]:
+                    - strong [ref=f172e124]: More customers
+                    - generic [ref=f172e125]: More enquiries or bookings.
+                - generic [ref=f172e126] [cursor=pointer]:
+                  - radio "More online sales Grow your online store." [ref=f172e127]
+                  - generic [ref=f172e130]:
+                    - strong [ref=f172e131]: More online sales
+                    - generic [ref=f172e132]: Grow your online store.
+                - generic [ref=f172e133] [cursor=pointer]:
+                  - radio "A website or app Build something new or improve it." [ref=f172e134]
+                  - generic [ref=f172e137]:
+                    - strong [ref=f172e138]: A website or app
+                    - generic [ref=f172e139]: Build something new or improve it.
+                - generic [ref=f172e140] [cursor=pointer]:
+                  - radio "Work smarter Clarity through data and automation." [ref=f172e141]
+                  - generic [ref=f172e144]:
+                    - strong [ref=f172e145]: Work smarter
+                    - generic [ref=f172e146]: Clarity through data and automation.
+                - generic [ref=f172e147] [cursor=pointer]:
+                  - radio "I’m not sure yet Let’s work out your next step together." [ref=f172e148]
+                  - generic [ref=f172e151]:
+                    - strong [ref=f172e152]: I’m not sure yet
+                    - generic [ref=f172e153]: Let’s work out your next step together.
+            - generic [ref=f172e154]:
+              - generic [ref=f172e155]: Biggest challenge
+              - textbox "Biggest challenge" [ref=f172e156]
+            - button "+ Add more info (optional)" [ref=f172e158]
+            - button "Send your enquiry" [ref=f172e160]:
+              - text: Send your enquiry
+              - generic [aria-hidden] [ref=f172e161]: ↗
+  - contentinfo [ref=f172e162]:
+    - generic [ref=f172e163]:
+      - generic [ref=f172e164]:
+        - generic [ref=f172e165]:
+          - link "verkoop.studio, home" [ref=f172e166] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f172e167]:
+              - generic [ref=f172e168]: verkoop.
+              - generic [ref=f172e169]: studio
+          - paragraph [ref=f172e170]: Lochristi, België
+          - paragraph [ref=f172e171]: We build the complete digital route from first click to conversion.
+        - generic [ref=f172e172]:
+          - paragraph [ref=f172e173]: Navigation
+          - list [ref=f172e174]:
+            - listitem [ref=f172e175]:
+              - link "Blog · Gent & omgeving" [ref=f172e176] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f172e177]:
+              - link "Home" [ref=f172e178] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f172e179]:
+              - link "Results" [ref=f172e180] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f172e181]:
+              - link "Services" [ref=f172e182] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f172e183]:
+              - link "Cases" [ref=f172e184] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f172e185]:
+              - link "Agency" [ref=f172e186] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f172e187]:
+              - link "Contact" [ref=f172e188] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f172e189]:
+          - paragraph [ref=f172e190]: Services
+          - list [ref=f172e191]:
+            - listitem [ref=f172e192]:
+              - link "Email marketing" [ref=f172e193] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f172e194]:
+              - link "Data & analytics" [ref=f172e195] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f172e196]:
+              - link "Websites & ecommerce" [ref=f172e197] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f172e198]:
+              - link "Software & apps" [ref=f172e199] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f172e200]:
+              - link "Landing pages" [ref=f172e201] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f172e202]:
+              - link "Funnels" [ref=f172e203] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f172e204]:
+              - link "Meta Ads" [ref=f172e205] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f172e206]:
+              - link "Google Ads" [ref=f172e207] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f172e208]:
+              - link "Ecommerce conversion" [ref=f172e209] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f172e210]:
+              - link "AI automations" [ref=f172e211] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f172e212]:
+              - link "Offer & distribution" [ref=f172e213] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f172e214]:
+          - paragraph [ref=f172e215]: Contact
+          - list [ref=f172e216]:
+            - listitem [ref=f172e217]:
+              - link "stefkeppens@gmail.com" [ref=f172e218] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f172e219]:
+              - link "Discuss your project" [ref=f172e220] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f172e221]:
+        - paragraph [ref=f172e222]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f172e223]:
+          - generic [ref=f172e224]: NL
+          - generic [aria-hidden] [ref=f172e225]: /
+          - generic [ref=f172e226]: EN
+        - paragraph [ref=f172e227]: Growth, design & development.
+  - button "Open FAQ chat" [ref=f172e229] [cursor=pointer]:
+    - generic [ref=f172e230]: Ask the studio

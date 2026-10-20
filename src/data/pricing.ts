@@ -23,16 +23,16 @@ export const addOns: AddOn[] = [
     name: { nl: 'Strategisch gesprek', en: 'Strategy session' },
     price: { nl: '€250 / uur', en: '€250 / hour' },
     description: {
-      nl: 'Een gericht sparringgesprek over jullie groei — kom eerst leren, beslis daarna pas over samenwerking.',
-      en: 'A focused sparring session about your growth — come to learn first, decide on working together later.',
+      nl: 'Een gericht sparringgesprek over jullie groei. Kom eerst leren, en beslis daarna pas over samenwerking.',
+      en: 'A focused sparring session about your growth. Come to learn first, and decide on working together later.',
     },
   },
   {
     key: 'learning-track',
     name: { nl: 'Leertraject', en: 'Learning track' },
     description: {
-      nl: 'Een begeleidingstraject waarin je zelf leert hoe je jullie digitale groei aanpakt en uitvoert — opzet en invulling bespreken we samen.',
-      en: 'A guided track where you learn to run and execute your own digital growth — scope and setup we discuss together.',
+      nl: 'Een begeleidingstraject waarin je zelf leert hoe je jullie digitale groei aanpakt en uitvoert. Opzet en invulling bespreken we samen.',
+      en: 'A guided track where you learn to run and execute your own digital growth. We discuss the scope and setup together.',
     },
   },
 ]

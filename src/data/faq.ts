@@ -49,8 +49,8 @@ export const faqItems: FaqItem[] = [
       en: 'Can you optimise an existing ecommerce website?',
     },
     answer: {
-      nl: 'Ja. We analyseren de volledige aankoopreis — productpagina, checkout, upsells en e-mailflows — en werken gericht aan de plekken waar klanten afhaken.',
-      en: 'Yes. We analyse the full purchase journey — product page, checkout, upsells and email flows — and work specifically on the points where customers drop off.',
+      nl: 'Ja. We analyseren de volledige aankoopreis, van productpagina en checkout tot upsells en e-mailflows, en werken gericht aan de plekken waar klanten afhaken.',
+      en: 'Yes. We analyse the full purchase journey, from the product page and checkout to upsells and email flows, and work specifically on the points where customers drop off.',
     },
   },
   {
@@ -71,7 +71,7 @@ export const faqItems: FaqItem[] = [
     question: { nl: 'Doen jullie strategie én uitvoering?', en: 'Do you handle both strategy and execution?' },
     answer: {
       nl: 'Ja, allebei, door hetzelfde projectteam. Daardoor blijven ideeën niet in een presentatie staan, maar worden ze vertaald naar pagina’s, campagnes en systemen die effectief gebruikt worden.',
-      en: 'Yes, both, by the same project team. That means ideas don’t stay stuck in a presentation — they get translated into pages, campaigns and systems that actually get used.',
+      en: 'Yes, both, by the same project team. Ideas don’t stay stuck in a presentation. They get translated into pages, campaigns and systems that actually get used.',
     },
   },
   {
@@ -101,8 +101,8 @@ export const faqItems: FaqItem[] = [
       en: 'Can I start with standalone consulting first, without a monthly package?',
     },
     answer: {
-      nl: 'Ja. Je kunt starten met een los strategisch gesprek (€250/uur) — eerst leren en meedenken over jullie groei, zonder verplichting. Er is ook een leertraject mogelijk waarin je zelf leert hoe je jullie groei aanpakt; opzet en invulling bespreken we samen. Daarna beslis je pas of een verdere samenwerking zinvol is.',
-      en: 'Yes. You can start with a standalone strategy session (€250/hour) — come to learn and think through your growth first, with no commitment. There’s also a learning track where you learn to run your own growth; scope and setup we discuss together. Only then do you decide whether a further collaboration makes sense.',
+      nl: 'Ja. Je kunt starten met een los strategisch gesprek (€250/uur). Eerst leren en meedenken over jullie groei, zonder verplichting. Er is ook een leertraject mogelijk waarin je zelf leert hoe je jullie groei aanpakt; opzet en invulling bespreken we samen. Daarna beslis je pas of een verdere samenwerking zinvol is.',
+      en: 'Yes. You can start with a standalone strategy session (€250/hour). Come to learn and think through your growth first, with no commitment. There’s also a learning track where you learn to run your own growth; scope and setup we discuss together. Only then do you decide whether a further collaboration makes sense.',
     },
   },
   {

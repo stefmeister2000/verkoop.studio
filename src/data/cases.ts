@@ -17,8 +17,8 @@ export const cases: CaseStudy[] = [
       en: 'From one website for everyone to separate, clear decision paths for B2C visitors and B2B organisers.',
     },
     situation: {
-      nl: 'O’Learys biedt een breed aanbod aan activiteiten, arrangementen en doelgroepen — van een avondje bowling met vrienden tot een volledig bedrijfsevent. Die breedte is een sterkte, maar maakt het ook lastig voor een bezoeker om snel de juiste keuze te maken.',
-      en: 'O’Learys offers a wide range of activities, packages and audiences — from a night of bowling with friends to a full corporate event. That breadth is a strength, but it also makes it harder for a visitor to quickly find the right choice.',
+      nl: 'O’Learys biedt een breed aanbod aan activiteiten, arrangementen en doelgroepen, van een avondje bowling met vrienden tot een volledig bedrijfsevent. Die breedte is een sterkte, maar maakt het ook lastig voor een bezoeker om snel de juiste keuze te maken.',
+      en: 'O’Learys offers a wide range of activities, packages and audiences, from a night of bowling with friends to a full corporate event. That breadth is a strength, but it also makes it harder for a visitor to quickly find the right choice.',
     },
     challenge: {
       nl: 'De website bevat veel activiteiten, arrangementen en doelgroepen, maar B2C-bezoekers en zakelijke organisatoren hebben elk een ander beslistraject nodig.',
@@ -68,8 +68,8 @@ export const cases: CaseStudy[] = [
     image: pinacello,
     video: '/videos/pinacello.mp4',
     videoCaption: {
-      nl: '20 verkopen uit één organische video — we focussen op zelfgemaakte producten.',
-      en: '20 sales from one organic video — we focus on self-made products.',
+      nl: '20 verkopen uit één organische video. We focussen op zelfgemaakte producten.',
+      en: '20 sales from one organic video. We focus on self-made products.',
     },
     summary: {
       nl: '+120% online omzet bij Pinacello. Campagnes, landingspagina’s en conversie verbonden tot een ecommerce-verkoopmotor.',
@@ -80,8 +80,8 @@ export const cases: CaseStudy[] = [
       en: 'Pinacello is building brand awareness in a consumer market. The challenge is turning that attention consistently into online sales, not just reach.',
     },
     challenge: {
-      nl: 'Bezoekers die via campagnes binnenkomen, hebben een directe, overtuigende route naar aankoop nodig — inclusief het juiste aanbod op het juiste moment.',
-      en: 'Visitors arriving through campaigns need a direct, convincing route to purchase — including the right offer at the right moment.',
+      nl: 'Bezoekers die via campagnes binnenkomen, hebben een directe, overtuigende route naar aankoop nodig, inclusief het juiste aanbod op het juiste moment.',
+      en: 'Visitors arriving through campaigns need a direct, convincing route to purchase, including the right offer at the right moment.',
     },
     role: {
       nl: 'Ik werk aan de ecommerce en digitale groeikant van Pinacello, waaronder campagnes, landingspagina’s, conversie en online verkoop.',
@@ -160,16 +160,16 @@ export const cases: CaseStudy[] = [
     liveUrl: 'https://noomsdaily.com/',
     image: nooms,
     summary: {
-      nl: 'Pre-sale via influencer marketing volledig uitverkocht — op weg naar een schaalbare digitale route van productontdekking tot herhaalaankoop.',
-      en: 'Pre-sale sold out completely via influencer marketing — building a scalable digital route from product discovery to repeat purchase.',
+      nl: 'Pre-sale via influencer marketing volledig uitverkocht. We werken verder aan een schaalbare digitale route van productontdekking tot herhaalaankoop.',
+      en: 'Pre-sale sold out completely via influencer marketing. We are building a scalable digital route from product discovery to repeat purchase.',
     },
     situation: {
       nl: 'Nooms is een opbouwend ecommerce-merk in de supplementenmarkt, met zowel directe verkoop als retail- en B2B-ambities.',
       en: 'Nooms is a growing ecommerce brand in the supplements market, with both direct sales and retail/B2B ambitions.',
     },
     challenge: {
-      nl: 'De volledige route — van productontdekking via influencers en campagnes tot eerste aankoop, herhaalaankoop en zakelijke kanalen — moet als één geheel functioneren.',
-      en: 'The full route — from product discovery through influencers and campaigns to first purchase, repeat purchase and business channels — needs to function as one whole.',
+      nl: 'De volledige route, van productontdekking via influencers en campagnes tot eerste aankoop, herhaalaankoop en zakelijke kanalen, moet als één geheel functioneren.',
+      en: 'The full route, from product discovery through influencers and campaigns to first purchase, repeat purchase and business channels, needs to function as one whole.',
     },
     role: {
       nl: 'Nooms is mijn eigen bedrijf. Ik bouw het zelf op, met focus op ecommerce, funnels, branding, verkoop en digitale groei.',

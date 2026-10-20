@@ -9,12 +9,14 @@ import CaseStudyPage from './pages/CaseStudyPage'
 import FunnelAudit from './pages/FunnelAudit'
 import OverStef from './pages/OverStef'
 import Contact from './pages/Contact'
+import PursuitOffer from './pages/PursuitOffer'
 
 export default function App({ location }: { location?: string }) {
   const Router = location ? StaticRouter : BrowserRouter
   return (
     <Router location={location ?? "/"}>
       <Routes>
+        <Route path="offerte/pursuit-femmes" element={<PursuitOffer />} />
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="blog" element={<Blog />} />

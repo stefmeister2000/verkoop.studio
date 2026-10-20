@@ -3,6 +3,26 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { cases } from '../data/cases'
 import { lyteCases } from '../data/lyteCases'
+
+const cardLine: Record<string, { nl: string; en: string }> = {
+  nooms: {
+    nl: 'Pre-sale via influencer marketing volledig uitverkocht.',
+    en: 'Pre-sale sold out completely via influencer marketing.',
+  },
+  olearys: {
+    nl: 'Van één website naar aparte routes voor bezoekers en organisatoren.',
+    en: 'From one website to separate paths for visitors and organisers.',
+  },
+  'e-kart': {
+    nl: 'Van zin in een race naar een boeking.',
+    en: 'From the thrill of racing to a booking.',
+  },
+  Tinrate: {
+    nl: 'Een platform om betaalde gesprekken met experts te boeken.',
+    en: 'A platform for booking paid conversations with experts.',
+  },
+}
+
 export default function SelectedWork() {
   const { lang } = useLang()
   const nl = lang === 'nl'
@@ -14,7 +34,6 @@ export default function SelectedWork() {
   return (
     <section className="selected-work" id="selected-work">
       <div className="work-intro">
-        <p className="eyebrow">{nl ? 'Onze projecten' : 'Our projects'}</p>
         <h2>
           {nl ? 'Sterke campagnes.' : 'Strong campaigns.'}
           <br />
@@ -22,22 +41,10 @@ export default function SelectedWork() {
           <br />
           <span>{nl ? 'Meetbare groei.' : 'Measurable growth.'}</span>
         </h2>
-        <p>
-          {nl
-            ? 'Van eerste indruk tot dagelijkse interactie. Ontdek de projecten achter ons team.'
-            : 'From first impression to everyday interaction. Explore the projects behind our team.'}
-        </p>
+        <p>{nl ? 'Ontdek de projecten achter ons team.' : 'Explore the projects behind our team.'}</p>
         <Link className="button-dark" to="/cases">
           {nl ? 'Alle projecten' : 'All projects'} <span>↗</span>
         </Link>
-        <div className="work-signoff">
-          <span>✳</span>
-          <p>
-            {nl
-              ? 'Van idee naar iets dat het verschil maakt.'
-              : 'From an idea to something that makes a difference.'}
-          </p>
-        </div>
       </div>
       {selected.map((c) => (
         <Link
@@ -47,17 +54,15 @@ export default function SelectedWork() {
         >
           <div className="project-image">
             <ResponsiveImage src={c.image} alt={c.name} loading="lazy" sizes="(max-width: 600px) 88px, (max-width: 640px) 100vw, (max-width: 1024px) 70vw, 960px" />
-            <span className="project-arrow">↗</span>
+            <span className="project-arrow" aria-hidden="true">↗</span>
           </div>
           <div className="project-caption">
             <h3>{c.name}</h3>
-            {c.slug === 'pinacello' && (
-              <strong className="project-result">
-                +120% {nl ? 'online omzet' : 'online revenue'}
-              </strong>
+            {c.slug === 'pinacello' ? (
+              <strong className="project-result">+120% {nl ? 'online omzet' : 'online revenue'}</strong>
+            ) : (
+              <p>{cardLine[c.slug][lang]}</p>
             )}
-            <p>{c.summary[lang]}</p>
-            <span>{nl ? 'Bekijk de case' : 'Explore the case'} ↗ · Stef Keppens</span>
           </div>
         </Link>
       ))}
@@ -71,15 +76,14 @@ export default function SelectedWork() {
         >
           <div className="project-image">
             <ResponsiveImage src={c.image} alt={c.name} loading="lazy" sizes="(max-width: 600px) 88px, (max-width: 640px) 100vw, (max-width: 1024px) 70vw, 960px" />
-            <span className="project-arrow">↗</span>
+            <span className="project-arrow" aria-hidden="true">↗</span>
           </div>
           <div className="project-caption">
             <div className="partner-project-heading">
               <h3>{c.name}</h3>
               {c.logo && <ResponsiveImage src={c.logo} alt="" loading="lazy" className="lyte-client-logo" />}
             </div>
-            <p>{c.description[lang]}</p>
-            <span>{nl ? 'Bekijk de case' : 'Explore the case'} ↗ · LYTE Studios</span>
+            <p>{cardLine[c.name]?.[lang] ?? c.description[lang]}</p>
           </div>
         </a>
       ))}

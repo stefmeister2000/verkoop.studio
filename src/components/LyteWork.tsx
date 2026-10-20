@@ -10,10 +10,7 @@ export default function LyteWork({ featured = false }: { featured?: boolean }) {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="text-xs uppercase tracking-widest text-accent-2">
-              Portfolio / LYTE Studios
-            </p>
-            <h2 className="mt-3 font-display text-3xl text-paper sm:text-4xl">
+            <h2 className="font-display text-3xl text-paper sm:text-4xl">
               {nl
                 ? 'Digitale producten. In de praktijk.'
                 : 'Digital products. Out in the world.'}
@@ -40,7 +37,7 @@ export default function LyteWork({ featured = false }: { featured?: boolean }) {
               className="lyte-case-card"
             >
               <div className="lyte-case-cover">
-                <ResponsiveImage src={c.image} alt={`${c.name} — ${c.category}`} loading="lazy" />
+                <ResponsiveImage src={c.image} alt={`${c.name}, ${c.category}`} loading="lazy" />
                 <span className="lyte-case-category">{c.category}</span>
                 <span className="lyte-case-arrow" aria-hidden="true">↗</span>
               </div>

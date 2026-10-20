@@ -1,0 +1,220 @@
+- generic [ref=f83e3]:
+  - banner [ref=f83e4]:
+    - generic [ref=f83e5]:
+      - link "verkoop.studio — Home" [ref=f83e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f83e7]:
+          - generic [ref=f83e8]: verkoop.
+          - generic [ref=f83e9]: studio
+      - navigation [ref=f83e10]:
+        - link "Home" [ref=f83e11] [cursor=pointer]:
+          - /url: /
+        - link "Resultaten" [ref=f83e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Diensten" [ref=f83e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f83e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f83e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f83e21] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f83e23]:
+        - button "Switch language" [ref=f83e24]:
+          - generic [ref=f83e25]: NL
+          - generic [ref=f83e26]: /
+          - generic [ref=f83e27]: EN
+        - link "Bespreek je project" [ref=f83e28] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f83e29]:
+    - generic [ref=f83e680]:
+      - generic [ref=f83e682]:
+        - navigation "Breadcrumb" [ref=f83e683]:
+          - link "Home" [ref=f83e685] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f83e686]:
+            - generic [aria-hidden] [ref=f83e687]: /
+            - link "Diensten" [ref=f83e688] [cursor=pointer]:
+              - /url: /#expertise
+          - generic [ref=f83e689]:
+            - generic [aria-hidden] [ref=f83e690]: /
+            - generic [ref=f83e691]: Data & analytics
+        - generic [ref=f83e692]: "10"
+        - heading "Data & analytics" [level=1] [ref=f83e693]
+        - paragraph [ref=f83e694]: Van verspreide cijfers naar duidelijke beslissingen. We verbinden websitegedrag, campagnes en conversies zodat je ziet waar je groei vandaan komt.
+        - link "Bespreek jouw aanpak ↗" [ref=f83e695] [cursor=pointer]:
+          - /url: /contact
+        - generic [aria-hidden] [ref=f83e697]:
+          - generic [ref=f83e698]: Zo werkt het
+          - generic [ref=f83e699]:
+            - generic [ref=f83e700]:
+              - generic [ref=f83e701]: Ads
+              - generic [ref=f83e702]: Website
+              - generic [ref=f83e703]: CRM
+            - generic [ref=f83e704]: ↓
+            - generic [ref=f83e705]:
+              - strong [ref=f83e706]: Eén helder overzicht
+              - generic [ref=f83e707]:
+                - generic [ref=f83e708]: Kosten
+                - generic [ref=f83e709]: Aanvragen
+                - generic [ref=f83e710]: Omzet
+              - generic [ref=f83e711]: ↗ Van inzicht naar actie
+        - paragraph [ref=f83e712]: GA4 · Google Tag Manager · Conversietracking · Looker Studio dashboards
+      - generic [ref=f83e714]:
+        - heading "Het probleem" [level=2] [ref=f83e715]
+        - paragraph [ref=f83e716]: Je investeert in marketing, maar weet niet welke campagnes goede aanvragen opleveren. Of je dashboard toont verkeer, terwijl je wilt weten wat klanten en omzet brengt.
+      - generic [ref=f83e718]:
+        - heading "Aanpak" [level=2] [ref=f83e719]
+        - generic [ref=f83e720]:
+          - generic [ref=f83e721]:
+            - generic [ref=f83e722]: "01"
+            - paragraph [ref=f83e723]: "We bepalen welke acties waardevol zijn: aanvragen, boekingen, aankopen en gekwalificeerde leads."
+          - generic [ref=f83e724]:
+            - generic [ref=f83e725]: "02"
+            - paragraph [ref=f83e726]: We controleren je meetplan, GA4, tags en conversies op fouten en dubbele registraties.
+          - generic [ref=f83e727]:
+            - generic [ref=f83e728]: "03"
+            - paragraph [ref=f83e729]: We richten rapportage in rond de afgesproken KPI’s en beschikbare databronnen.
+          - generic [ref=f83e730]:
+            - generic [ref=f83e731]: "04"
+            - paragraph [ref=f83e732]: We vertalen de inzichten naar prioriteiten voor campagnes en conversie.
+      - generic [ref=f83e734]:
+        - heading "Opleverpunten" [level=2] [ref=f83e735]
+        - paragraph [ref=f83e736]: Meetplan met duidelijke conversiedefinities · Trackingcontrole en afgesproken implementaties · Dashboard met kosten, conversies en beschikbare omzetdata · Uitleg bij datakwaliteit, meetbeperkingen en concrete vervolgstappen
+      - generic [ref=f83e738]:
+        - heading "Vertel ons over je project" [level=2] [ref=f83e739]
+        - paragraph [ref=f83e740]: Geen algemene template. We bekijken jullie huidige situatie en proces.
+        - generic [ref=f83e743]:
+          - generic [ref=f83e744]:
+            - generic [ref=f83e745]: Naam
+            - textbox "Naam" [ref=f83e746]
+          - generic [ref=f83e747]:
+            - generic [ref=f83e748]: Bedrijf (optioneel)
+            - textbox "Bedrijf (optioneel)" [ref=f83e749]
+          - generic [ref=f83e750]:
+            - generic [ref=f83e751]: Zakelijk e-mailadres
+            - textbox "Zakelijk e-mailadres" [ref=f83e752]
+          - generic [ref=f83e753]:
+            - generic [ref=f83e754]: Telefoonnummer
+            - textbox "Telefoonnummer" [ref=f83e755]
+          - generic [ref=f83e756]:
+            - generic [ref=f83e757]: Website (optioneel)
+            - textbox "Website (optioneel)" [ref=f83e758]:
+              - /placeholder: https://
+          - group "Waar kunnen we je mee helpen?" [ref=f83e759]:
+            - paragraph [ref=f83e761]: Kies wat het best past. De details bekijken we samen.
+            - generic [ref=f83e762]:
+              - generic [ref=f83e763] [cursor=pointer]:
+                - radio "Meer klanten Meer aanvragen of boekingen." [ref=f83e764]
+                - generic [ref=f83e767]:
+                  - strong [ref=f83e768]: Meer klanten
+                  - generic [ref=f83e769]: Meer aanvragen of boekingen.
+              - generic [ref=f83e770] [cursor=pointer]:
+                - radio "Meer online verkopen Je webshop laten groeien." [ref=f83e771]
+                - generic [ref=f83e774]:
+                  - strong [ref=f83e775]: Meer online verkopen
+                  - generic [ref=f83e776]: Je webshop laten groeien.
+              - generic [ref=f83e777] [cursor=pointer]:
+                - radio "Een website of app Iets nieuws bouwen of verbeteren." [ref=f83e778]
+                - generic [ref=f83e781]:
+                  - strong [ref=f83e782]: Een website of app
+                  - generic [ref=f83e783]: Iets nieuws bouwen of verbeteren.
+              - generic [ref=f83e784] [cursor=pointer]:
+                - radio "Slimmer werken Meer inzicht met data en automatisering." [ref=f83e785]
+                - generic [ref=f83e788]:
+                  - strong [ref=f83e789]: Slimmer werken
+                  - generic [ref=f83e790]: Meer inzicht met data en automatisering.
+              - generic [ref=f83e791] [cursor=pointer]:
+                - radio "Ik weet het nog niet Denk samen met ons na over je volgende stap." [ref=f83e792]
+                - generic [ref=f83e795]:
+                  - strong [ref=f83e796]: Ik weet het nog niet
+                  - generic [ref=f83e797]: Denk samen met ons na over je volgende stap.
+          - generic [ref=f83e798]:
+            - generic [ref=f83e799]: Grootste uitdaging
+            - textbox "Grootste uitdaging" [ref=f83e800]
+          - button "Verstuur je aanvraag" [ref=f83e802]
+  - contentinfo [ref=f83e613]:
+    - generic [ref=f83e614]:
+      - generic [ref=f83e615]:
+        - generic [ref=f83e616]:
+          - link "verkoop.studio — Home" [ref=f83e617] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f83e618]:
+              - generic [ref=f83e619]: verkoop.
+              - generic [ref=f83e620]: studio
+          - paragraph [ref=f83e621]: Lochristi, België
+          - paragraph [ref=f83e622]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f83e623]:
+          - paragraph [ref=f83e624]: Navigatie
+          - list [ref=f83e625]:
+            - listitem [ref=f83e626]:
+              - link "Blog · Gent & omgeving" [ref=f83e627] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f83e628]:
+              - link "Home" [ref=f83e629] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f83e630]:
+              - link "Resultaten" [ref=f83e631] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f83e632]:
+              - link "Diensten" [ref=f83e633] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f83e634]:
+              - link "Cases" [ref=f83e635] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f83e636]:
+              - link "Agency" [ref=f83e637] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f83e638]:
+              - link "Contact" [ref=f83e639] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f83e640]:
+          - paragraph [ref=f83e641]: Diensten
+          - list [ref=f83e642]:
+            - listitem [ref=f83e643]:
+              - link "E-mailmarketing" [ref=f83e644] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f83e645]:
+              - link "Data & analytics" [ref=f83e646] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f83e647]:
+              - link "Websites & ecommerce" [ref=f83e648] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f83e649]:
+              - link "Software & apps" [ref=f83e650] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f83e651]:
+              - link "Landing pages" [ref=f83e652] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f83e653]:
+              - link "Funnels" [ref=f83e654] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f83e655]:
+              - link "Meta Ads" [ref=f83e656] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f83e657]:
+              - link "Google Ads" [ref=f83e658] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f83e659]:
+              - link "Ecommerce conversie" [ref=f83e660] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f83e661]:
+              - link "AI-automatiseringen" [ref=f83e662] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f83e663]:
+              - link "Offer & distributie" [ref=f83e664] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f83e665]:
+          - paragraph [ref=f83e666]: Contact
+          - list [ref=f83e667]:
+            - listitem [ref=f83e668]:
+              - link "stefkeppens@gmail.com" [ref=f83e669] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f83e670]:
+              - link "Bespreek je project" [ref=f83e671] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f83e672]:
+        - paragraph [ref=f83e673]: © 2026 verkoop.studio
+        - paragraph [ref=f83e674]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f83e676] [cursor=pointer]:
+    - generic [ref=f83e677]: Vraag het de studio

@@ -1,0 +1,212 @@
+- generic [ref=f159e3]:
+  - banner [ref=f159e4]:
+    - generic [ref=f159e5]:
+      - link "verkoop.studio, home" [ref=f159e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f159e7]:
+          - generic [ref=f159e8]: verkoop.
+          - generic [ref=f159e9]: studio
+      - navigation [ref=f159e10]:
+        - link "Home" [ref=f159e11] [cursor=pointer]:
+          - /url: /
+        - link "Results" [ref=f159e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Services" [ref=f159e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f159e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f159e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f159e21] [cursor=pointer]:
+          - /url: /contact
+      - link "Discuss your project" [ref=f159e24] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f159e25]:
+    - generic [ref=f159e26]:
+      - generic [ref=f159e28]:
+        - heading "Request a growth analysis" [level=1] [ref=f159e29]
+        - paragraph [ref=f159e30]: No generic template. We look at your current situation, audience and commercial process. Then we see where conversion is lost in the journey.
+      - generic [ref=f159e32]:
+        - heading "Where is your current digital customer journey losing conversion?" [level=2] [ref=f159e33]
+        - paragraph [ref=f159e34]: No generic template. We look at your current situation, audience and commercial process.
+        - generic [ref=f159e35]:
+          - generic [ref=f159e36]:
+            - heading "The analysis reviews" [level=3] [ref=f159e37]
+            - paragraph [ref=f159e38]: Website structure · Campaign landing pages · Meta Ads · Google Ads · Ecommerce journey · Checkout flow · Lead flow · Booking flow · Email follow-up · Tracking · Opportunities for AI automation
+          - generic [ref=f159e39]:
+            - heading "Possible deliverables" [level=3] [ref=f159e40]
+            - paragraph [ref=f159e41]: Key conversion problems · Screenshots and observations · Prioritised recommendations · Proposed new funnel · Suggested landing pages · Tracking gaps · Automation opportunities · Recommended next steps
+        - generic [ref=f159e42]:
+          - paragraph [ref=f159e43]: The setup that follows from this is always included in a growth package.
+          - link "See the growth packages" [ref=f159e44] [cursor=pointer]:
+            - /url: /#groeipakketten
+        - link "Discuss your project" [ref=f159e46] [cursor=pointer]:
+          - /url: "#audit-formulier"
+      - generic [ref=f159e48]:
+        - heading "From problem to working system" [level=2] [ref=f159e49]
+        - generic [ref=f159e50]:
+          - generic [ref=f159e51]:
+            - generic [ref=f159e52]: "01"
+            - heading "Analysis" [level=3] [ref=f159e53]
+            - paragraph [ref=f159e54]: We look at the website, campaigns, data and current customer journey.
+          - generic [ref=f159e55]:
+            - generic [ref=f159e56]: "02"
+            - heading "Priorities" [level=3] [ref=f159e57]
+            - paragraph [ref=f159e58]: We determine where the biggest commercial leaks are.
+          - generic [ref=f159e59]:
+            - generic [ref=f159e60]: "03"
+            - heading "Funnel design" [level=3] [ref=f159e61]
+            - paragraph [ref=f159e62]: We design the pages, campaigns, tracking and follow-up as one system.
+          - generic [ref=f159e63]:
+            - generic [ref=f159e64]: "04"
+            - heading "Implementation" [level=3] [ref=f159e65]
+            - paragraph [ref=f159e66]: The landing pages, ads and automations are built and connected.
+          - generic [ref=f159e67]:
+            - generic [ref=f159e68]: "05"
+            - heading "Optimisation" [level=3] [ref=f159e69]
+            - paragraph [ref=f159e70]: We measure behaviour, leads, bookings, sales and revenue, and improve based on data.
+        - paragraph [ref=f159e71]: "We work: Project-based · As an ongoing growth partner · Together with internal teams · Together with external developers, designers and specialists"
+      - generic [ref=f159e73]:
+        - heading "Tell us briefly where you stand today" [level=2] [ref=f159e74]
+        - paragraph [ref=f159e75]: Seven fields, two minutes. Based on that We’ll see if and how we can best help.
+        - generic [ref=f159e78]:
+          - generic [ref=f159e79]:
+            - generic [ref=f159e80]: Name
+            - textbox "Name" [ref=f159e81]
+          - generic [ref=f159e82]:
+            - generic [ref=f159e83]: Company (optional)
+            - textbox "Company (optional)" [ref=f159e84]
+          - generic [ref=f159e85]:
+            - generic [ref=f159e86]: Business email
+            - textbox "Business email" [ref=f159e87]
+          - generic [ref=f159e88]:
+            - generic [ref=f159e89]: Phone number
+            - textbox "Phone number" [ref=f159e90]
+          - generic [ref=f159e91]:
+            - generic [ref=f159e92]: Website (optional)
+            - textbox "Website (optional)" [ref=f159e93]:
+              - /placeholder: https://
+          - group "What can we help you with?" [ref=f159e94]:
+            - paragraph [ref=f159e96]: Choose the closest fit. We’ll work out the details together.
+            - generic [ref=f159e97]:
+              - generic [ref=f159e98] [cursor=pointer]:
+                - radio "More customers More enquiries or bookings." [ref=f159e99]
+                - generic [ref=f159e102]:
+                  - strong [ref=f159e103]: More customers
+                  - generic [ref=f159e104]: More enquiries or bookings.
+              - generic [ref=f159e105] [cursor=pointer]:
+                - radio "More online sales Grow your online store." [ref=f159e106]
+                - generic [ref=f159e109]:
+                  - strong [ref=f159e110]: More online sales
+                  - generic [ref=f159e111]: Grow your online store.
+              - generic [ref=f159e112] [cursor=pointer]:
+                - radio "A website or app Build something new or improve it." [ref=f159e113]
+                - generic [ref=f159e116]:
+                  - strong [ref=f159e117]: A website or app
+                  - generic [ref=f159e118]: Build something new or improve it.
+              - generic [ref=f159e119] [cursor=pointer]:
+                - radio "Work smarter Clarity through data and automation." [ref=f159e120]
+                - generic [ref=f159e123]:
+                  - strong [ref=f159e124]: Work smarter
+                  - generic [ref=f159e125]: Clarity through data and automation.
+              - generic [ref=f159e126] [cursor=pointer]:
+                - radio "I’m not sure yet Let’s work out your next step together." [ref=f159e127]
+                - generic [ref=f159e130]:
+                  - strong [ref=f159e131]: I’m not sure yet
+                  - generic [ref=f159e132]: Let’s work out your next step together.
+          - generic [ref=f159e133]:
+            - generic [ref=f159e134]: Biggest challenge
+            - textbox "Biggest challenge" [ref=f159e135]
+          - button "+ Add more info (optional)" [ref=f159e137]
+          - button "Send your enquiry" [ref=f159e139]:
+            - text: Send your enquiry
+            - generic [aria-hidden] [ref=f159e140]: ↗
+  - contentinfo [ref=f159e141]:
+    - generic [ref=f159e142]:
+      - generic [ref=f159e143]:
+        - generic [ref=f159e144]:
+          - link "verkoop.studio, home" [ref=f159e145] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f159e146]:
+              - generic [ref=f159e147]: verkoop.
+              - generic [ref=f159e148]: studio
+          - paragraph [ref=f159e149]: Lochristi, België
+          - paragraph [ref=f159e150]: We build the complete digital route from first click to conversion.
+        - generic [ref=f159e151]:
+          - paragraph [ref=f159e152]: Navigation
+          - list [ref=f159e153]:
+            - listitem [ref=f159e154]:
+              - link "Blog · Gent & omgeving" [ref=f159e155] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f159e156]:
+              - link "Home" [ref=f159e157] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f159e158]:
+              - link "Results" [ref=f159e159] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f159e160]:
+              - link "Services" [ref=f159e161] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f159e162]:
+              - link "Cases" [ref=f159e163] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f159e164]:
+              - link "Agency" [ref=f159e165] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f159e166]:
+              - link "Contact" [ref=f159e167] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f159e168]:
+          - paragraph [ref=f159e169]: Services
+          - list [ref=f159e170]:
+            - listitem [ref=f159e171]:
+              - link "Email marketing" [ref=f159e172] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f159e173]:
+              - link "Data & analytics" [ref=f159e174] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f159e175]:
+              - link "Websites & ecommerce" [ref=f159e176] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f159e177]:
+              - link "Software & apps" [ref=f159e178] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f159e179]:
+              - link "Landing pages" [ref=f159e180] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f159e181]:
+              - link "Funnels" [ref=f159e182] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f159e183]:
+              - link "Meta Ads" [ref=f159e184] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f159e185]:
+              - link "Google Ads" [ref=f159e186] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f159e187]:
+              - link "Ecommerce conversion" [ref=f159e188] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f159e189]:
+              - link "AI automations" [ref=f159e190] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f159e191]:
+              - link "Offer & distribution" [ref=f159e192] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f159e193]:
+          - paragraph [ref=f159e194]: Contact
+          - list [ref=f159e195]:
+            - listitem [ref=f159e196]:
+              - link "stefkeppens@gmail.com" [ref=f159e197] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f159e198]:
+              - link "Discuss your project" [ref=f159e199] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f159e200]:
+        - paragraph [ref=f159e201]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f159e202]:
+          - generic [ref=f159e203]: NL
+          - generic [aria-hidden] [ref=f159e204]: /
+          - generic [ref=f159e205]: EN
+        - paragraph [ref=f159e206]: Growth, design & development.
+  - button "Open FAQ chat" [ref=f159e208] [cursor=pointer]:
+    - generic [ref=f159e209]: Ask the studio

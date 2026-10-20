@@ -59,7 +59,7 @@ export async function captureLead({ resend, body, from, to = 'stefkeppens@gmail.
     }],
     ['resend_email', () => request(() => resend.emails.send({
       from, to: [...new Set(['stefkeppens@gmail.com', to].filter(Boolean))], replyTo: body.email,
-      subject: `Nieuwe groeianalyse-aanvraag — ${String(body.bedrijf || body.naam).replace(/[\r\n]/g, ' ').slice(0, 80)}`,
+      subject: `Nieuwe groeianalyse-aanvraag van ${String(body.bedrijf || body.naam).replace(/[\r\n]/g, ' ').slice(0, 80)}`,
       template: enquiryTemplate(body),
     }, { idempotencyKey: `lead-notification/${key}` }))],
   ]

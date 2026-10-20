@@ -7,7 +7,7 @@ test('internal template uses applicant email rather than recipient reserved EMAI
  assert.equal(t.variables.LEAD_EMAIL,'applicant@example.com')
  assert.equal(t.variables.UITDAGING,'&lt;img src=x&gt;')
  assert.equal(t.variables.ATTRIBUTION,'source: Website')
- assert.equal(t.variables.WEBSITE,'—')
+ assert.equal(t.variables.WEBSITE,'niet ingevuld')
 })
 test('confirmation selects actual NL and EN templates and applicant name',()=>{
  const nl=confirmationTemplate({naam:'New Visitor',doel:'Growth'})

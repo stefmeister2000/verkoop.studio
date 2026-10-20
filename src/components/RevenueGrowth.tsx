@@ -7,9 +7,6 @@ export default function RevenueGrowth() {
   return (
     <section className="revenue-case" id="resultaten">
       <div className="revenue-copy">
-        <p className="eyebrow">
-          {nl ? 'Resultaat in de praktijk' : 'Results in practice'}
-        </p>
         <h2>
           {nl ? 'Mooi is het begin.' : 'Great design is the start.'}
           <br />
@@ -17,8 +14,8 @@ export default function RevenueGrowth() {
         </h2>
         <p>
           {nl
-            ? 'We verbinden je aanbod, advertenties en webshop. Zodat aandacht een duidelijke route krijgt naar een aankoop — en we kunnen verbeteren op wat er echt verkoopt.'
-            : 'We connect your offer, ads and online store. So attention has a clear path to purchase — and we can optimise for what actually sells.'}
+            ? 'We verbinden je aanbod, advertenties en webshop. Zo krijgt aandacht een duidelijke route naar een aankoop, en kunnen we verbeteren op wat er echt verkoopt.'
+            : 'We connect your offer, ads and online store. Attention then has a clear path to purchase, and we can optimise for what actually sells.'}
         </p>
         <Link to="/cases/pinacello" className="button-dark">
           {nl ? 'Bekijk Pinacello' : 'Explore Pinacello'} ↗
@@ -28,14 +25,13 @@ export default function RevenueGrowth() {
         <iframe
           className="revenue-video"
           src="https://www.youtube-nocookie.com/embed/Yy8j3y5s4jU?rel=0"
-          title={nl ? 'Pinacello — bekijk de video' : 'Pinacello — watch the video'}
+          title={nl ? 'Bekijk de Pinacello-video' : 'Watch the Pinacello video'}
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
         <Link to="/cases/pinacello" className="revenue-stat">
-          <span className="proof-label">PINACELLO / ECOMMERCE</span>
           <strong>
             +120<span>%</span>
           </strong>

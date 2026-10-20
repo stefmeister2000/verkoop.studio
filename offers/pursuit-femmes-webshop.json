@@ -1,0 +1,56 @@
+{
+  "number": "VS-2026-002",
+  "date": "2026-10-19",
+  "validDays": 30,
+  "status": "final",
+  "clientId": "pursuit-femmes",
+  "reference": "Flagship store Antwerpen",
+  "title": "Jullie webshop.",
+  "intro": "Pursuit Femmes maakt maatpakken voor vrouwen, met de winkel in de Sint-Michielstraat in Antwerpen. In deze offerte bouwen we de webshop: ontwerp, bouw en oplevering.",
+  "approachLabel": "Wat we maken",
+  "approach": [
+    {
+      "title": "Ontwerp",
+      "body": "De structuur en de vorm van de shop, zodat die klopt met Pursuit Femmes."
+    },
+    {
+      "title": "Bouw",
+      "body": "De webshop zelf, zodat klanten online kunnen kijken en kopen."
+    },
+    {
+      "title": "Oplevering",
+      "body": "We testen, dragen over en spreken af hoe de shop live gaat."
+    }
+  ],
+  "principlesLabel": "Uitgangspunten",
+  "principles": [
+    "De shop werkt op desktop en op de telefoon.",
+    "Jullie blijven eigenaar van de shop, het domein en de data.",
+    "Teksten en foto’s die we niet hebben, spreken we apart af."
+  ],
+  "investmentLabel": "Investering",
+  "lines": [
+    {
+      "name": "Webshop",
+      "detail": "Ontwerp, bouw en oplevering.",
+      "amount": 4000,
+      "recurrence": "once"
+    }
+  ],
+  "vatRate": 0.21,
+  "excludedLabel": "Niet inbegrepen",
+  "excluded": [
+    "Fotografie, video en productieshoots.",
+    "Advertenties en maandelijkse begeleiding.",
+    "Werk dat niet in deze offerte staat."
+  ],
+  "termsLabel": "Afspraken",
+  "terms": [
+    "Deze offerte is 30 dagen geldig.",
+    "We starten na een schriftelijk akkoord.",
+    "De helft bij de start, de helft bij oplevering.",
+    "Het bedrag is exclusief btw."
+  ],
+  "closing": "Als dit klopt, bevestig je onderaan. Daarna plannen we de start.",
+  "signOff": "Stef Keppens"
+}

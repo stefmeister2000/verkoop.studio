@@ -1,0 +1,243 @@
+- generic [ref=f19e3]:
+  - banner [ref=f19e4]:
+    - generic [ref=f19e5]:
+      - link "verkoop.studio — Home" [ref=f19e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f19e7]:
+          - generic [ref=f19e8]: verkoop.
+          - generic [ref=f19e9]: studio
+      - navigation [ref=f19e10]:
+        - link "Home" [ref=f19e11] [cursor=pointer]:
+          - /url: /
+        - link "Diensten" [ref=f19e12] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Resultaten" [ref=f19e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Cases" [active] [ref=f19e14] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f19e15] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f19e16] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f19e17]:
+        - button "Switch language" [ref=f19e18]:
+          - generic [ref=f19e19]: NL
+          - generic [ref=f19e20]: /
+          - generic [ref=f19e21]: EN
+        - link "Bespreek je project" [ref=f19e22] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f19e23]:
+    - generic [ref=f19e768]:
+      - generic [ref=f19e770]:
+        - heading "Werk dat ideeën verder brengt" [level=1] [ref=f19e771]
+        - paragraph [ref=f19e772]: Van groeicampagnes en ecommerce tot apps en platformen. Ontdek de ervaring achter verkoop.studio, met de oorspronkelijke uitvoerder bij elk project.
+      - generic [ref=f19e774]:
+        - link "O'Learys O'Learys Lopend project Hospitality en entertainment Stef Keppens · Growth & strategy Van één website voor iedereen naar aparte, duidelijke beslistrajecten voor B2C-bezoekers en B2B-organisatoren. Bekijk de case" [ref=f19e775] [cursor=pointer]:
+          - /url: /cases/olearys
+          - img "O'Learys" [ref=f19e776]
+          - generic [ref=f19e777]:
+            - heading "O'Learys" [level=2] [ref=f19e778]
+            - generic [ref=f19e779]: Lopend project
+          - paragraph [ref=f19e780]: Hospitality en entertainment
+          - paragraph [ref=f19e781]: Stef Keppens · Growth & strategy
+          - paragraph [ref=f19e782]: Van één website voor iedereen naar aparte, duidelijke beslistrajecten voor B2C-bezoekers en B2B-organisatoren.
+          - text: Bekijk de case
+        - link "Pinacello Pinacello Lopend project Consumer ecommerce Stef Keppens · Growth & strategy +120% online omzet bij Pinacello. Campagnes, landingspagina’s en conversie verbonden tot een ecommerce-verkoopmotor. Bekijk de case" [ref=f19e783] [cursor=pointer]:
+          - /url: /cases/pinacello
+          - img "Pinacello" [ref=f19e784]
+          - generic [ref=f19e785]:
+            - heading "Pinacello" [level=2] [ref=f19e786]
+            - generic [ref=f19e787]: Lopend project
+          - paragraph [ref=f19e788]: Consumer ecommerce
+          - paragraph [ref=f19e789]: Stef Keppens · Growth & strategy
+          - paragraph [ref=f19e790]: +120% online omzet bij Pinacello. Campagnes, landingspagina’s en conversie verbonden tot een ecommerce-verkoopmotor.
+          - text: Bekijk de case
+        - link "E-Kart E-Kart Lopend project Indoor karting · B2C & B2B Stef Keppens · Growth & strategy Van zin in een race naar een boeking. Digitale groei voor E-Kart in Gent, met aandacht voor particuliere rijders én zakelijke groepen. Bekijk de case" [ref=f19e791] [cursor=pointer]:
+          - /url: /cases/e-kart
+          - img "E-Kart" [ref=f19e792]
+          - generic [ref=f19e793]:
+            - heading "E-Kart" [level=2] [ref=f19e794]
+            - generic [ref=f19e795]: Lopend project
+          - paragraph [ref=f19e796]: Indoor karting · B2C & B2B
+          - paragraph [ref=f19e797]: Stef Keppens · Growth & strategy
+          - paragraph [ref=f19e798]: Van zin in een race naar een boeking. Digitale groei voor E-Kart in Gent, met aandacht voor particuliere rijders én zakelijke groepen.
+          - text: Bekijk de case
+        - link "Nooms Nooms Lopend project Supplementen en ecommerce Stef Keppens · Growth & strategy Pre-sale via influencer marketing volledig uitverkocht — op weg naar een schaalbare digitale route van productontdekking tot herhaalaankoop. Bekijk de case" [ref=f19e799] [cursor=pointer]:
+          - /url: /cases/nooms
+          - img "Nooms" [ref=f19e800]
+          - generic [ref=f19e801]:
+            - heading "Nooms" [level=2] [ref=f19e802]
+            - generic [ref=f19e803]: Lopend project
+          - paragraph [ref=f19e804]: Supplementen en ecommerce
+          - paragraph [ref=f19e805]: Stef Keppens · Growth & strategy
+          - paragraph [ref=f19e806]: Pre-sale via influencer marketing volledig uitverkocht — op weg naar een schaalbare digitale route van productontdekking tot herhaalaankoop.
+          - text: Bekijk de case
+      - generic [ref=f19e808]:
+        - generic [ref=f19e810]:
+          - paragraph [ref=f19e811]: Portfolio / LYTE Studios
+          - heading "Digitale producten. In de praktijk." [level=2] [ref=f19e812]
+          - paragraph [ref=f19e813]: Eerder werk van LYTE Studios binnen de ervaring achter ons team. Bekijk de originele cases voor hun aanpak en uitvoering.
+        - generic [ref=f19e814]:
+          - link "Jobr — Mobile app Mobile app Jobr Een mobiele app die kandidaten en werkgevers verbindt via matching, sollicitaties en chat. Bekijk de case ↗ Design & development door LYTE Studios" [ref=f19e815] [cursor=pointer]:
+            - /url: https://lytestudios.be/projects/jobr/
+            - generic [ref=f19e816]:
+              - img "Jobr — Mobile app" [ref=f19e817]
+              - generic [ref=f19e818]: Mobile app
+              - generic [aria-hidden] [ref=f19e819]: ↗
+            - generic [ref=f19e820]:
+              - heading "Jobr" [level=3] [ref=f19e822]
+              - paragraph [ref=f19e823]: Een mobiele app die kandidaten en werkgevers verbindt via matching, sollicitaties en chat.
+              - paragraph [ref=f19e824]: Bekijk de case ↗
+              - generic [ref=f19e825]:
+                - generic [ref=f19e826]: Design & development door
+                - img "LYTE Studios" [ref=f19e827]
+          - link "WERKR — Software platform Software platform WERKR Software voor de planning en uitvoering van opdrachten door flexibele medewerkers. Bekijk de case ↗ Design & development door LYTE Studios" [ref=f19e828] [cursor=pointer]:
+            - /url: https://lytestudios.be/projects/werkr/
+            - generic [ref=f19e829]:
+              - img "WERKR — Software platform" [ref=f19e830]
+              - generic [ref=f19e831]: Software platform
+              - generic [aria-hidden] [ref=f19e832]: ↗
+            - generic [ref=f19e833]:
+              - heading "WERKR" [level=3] [ref=f19e835]
+              - paragraph [ref=f19e836]: Software voor de planning en uitvoering van opdrachten door flexibele medewerkers.
+              - paragraph [ref=f19e837]: Bekijk de case ↗
+              - generic [ref=f19e838]:
+                - generic [ref=f19e839]: Design & development door
+                - img "LYTE Studios" [ref=f19e840]
+          - link "Tinrate — Incubator Incubator Tinrate Een platform om betaalde gesprekken met experts te boeken, mee uitgebouwd door LYTE. Bekijk de case ↗ Design & development door LYTE Studios" [ref=f19e841] [cursor=pointer]:
+            - /url: https://lytestudios.be/projects/tinrate/
+            - generic [ref=f19e842]:
+              - img "Tinrate — Incubator" [ref=f19e843]
+              - generic [ref=f19e844]: Incubator
+              - generic [aria-hidden] [ref=f19e845]: ↗
+            - generic [ref=f19e846]:
+              - heading "Tinrate" [level=3] [ref=f19e848]
+              - paragraph [ref=f19e849]: Een platform om betaalde gesprekken met experts te boeken, mee uitgebouwd door LYTE.
+              - paragraph [ref=f19e850]: Bekijk de case ↗
+              - generic [ref=f19e851]:
+                - generic [ref=f19e852]: Design & development door
+                - img "LYTE Studios" [ref=f19e853]
+          - link "EONLOG — Website Website EONLOG Een website die de investeringsaanpak van een family office uitlegt. Bekijk de case ↗ Design & development door LYTE Studios" [ref=f19e854] [cursor=pointer]:
+            - /url: https://lytestudios.be/projects/eonlog-website/
+            - generic [ref=f19e855]:
+              - img "EONLOG — Website" [ref=f19e856]
+              - generic [ref=f19e857]: Website
+              - generic [aria-hidden] [ref=f19e858]: ↗
+            - generic [ref=f19e859]:
+              - heading "EONLOG" [level=3] [ref=f19e861]
+              - paragraph [ref=f19e862]: Een website die de investeringsaanpak van een family office uitlegt.
+              - paragraph [ref=f19e863]: Bekijk de case ↗
+              - generic [ref=f19e864]:
+                - generic [ref=f19e865]: Design & development door
+                - img "LYTE Studios" [ref=f19e866]
+          - link "Tinrate — Website Website Tinrate De website die bezoekers helpt experts te ontdekken en een gesprek te boeken. Bekijk de case ↗ Design & development door LYTE Studios" [ref=f19e867] [cursor=pointer]:
+            - /url: https://lytestudios.be/projects/tinrate-website/
+            - generic [ref=f19e868]:
+              - img "Tinrate — Website" [ref=f19e869]
+              - generic [ref=f19e870]: Website
+              - generic [aria-hidden] [ref=f19e871]: ↗
+            - generic [ref=f19e872]:
+              - heading "Tinrate" [level=3] [ref=f19e874]
+              - paragraph [ref=f19e875]: De website die bezoekers helpt experts te ontdekken en een gesprek te boeken.
+              - paragraph [ref=f19e876]: Bekijk de case ↗
+              - generic [ref=f19e877]:
+                - generic [ref=f19e878]: Design & development door
+                - img "LYTE Studios" [ref=f19e879]
+          - link "Jobr — Website Website Jobr Een marketingwebsite gericht op app-downloads en nieuwe werkgevers. Bekijk de case ↗ Design & development door LYTE Studios" [ref=f19e880] [cursor=pointer]:
+            - /url: https://lytestudios.be/projects/jobr-website/
+            - generic [ref=f19e881]:
+              - img "Jobr — Website" [ref=f19e882]
+              - generic [ref=f19e883]: Website
+              - generic [aria-hidden] [ref=f19e884]: ↗
+            - generic [ref=f19e885]:
+              - heading "Jobr" [level=3] [ref=f19e887]
+              - paragraph [ref=f19e888]: Een marketingwebsite gericht op app-downloads en nieuwe werkgevers.
+              - paragraph [ref=f19e889]: Bekijk de case ↗
+              - generic [ref=f19e890]:
+                - generic [ref=f19e891]: Design & development door
+                - img "LYTE Studios" [ref=f19e892]
+  - contentinfo [ref=f19e100]:
+    - generic [ref=f19e101]:
+      - generic [ref=f19e102]:
+        - generic [ref=f19e103]:
+          - link "verkoop.studio — Home" [ref=f19e104] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f19e105]:
+              - generic [ref=f19e106]: verkoop.
+              - generic [ref=f19e107]: studio
+          - paragraph [ref=f19e108]: Lochristi, België
+          - paragraph [ref=f19e109]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f19e110]:
+          - paragraph [ref=f19e111]: Navigatie
+          - list [ref=f19e112]:
+            - listitem [ref=f19e113]:
+              - link "Blog · Gent & omgeving" [ref=f19e114] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f19e115]:
+              - link "Home" [ref=f19e116] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f19e117]:
+              - link "Diensten" [ref=f19e118] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f19e119]:
+              - link "Resultaten" [ref=f19e120] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f19e121]:
+              - link "Cases" [ref=f19e122] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f19e123]:
+              - link "Agency" [ref=f19e124] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f19e125]:
+              - link "Contact" [ref=f19e126] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f19e127]:
+          - paragraph [ref=f19e128]: Diensten
+          - list [ref=f19e129]:
+            - listitem [ref=f19e130]:
+              - link "E-mailmarketing" [ref=f19e131] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f19e132]:
+              - link "Data & analytics" [ref=f19e133] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f19e134]:
+              - link "Websites & ecommerce" [ref=f19e135] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f19e136]:
+              - link "Software & apps" [ref=f19e137] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f19e138]:
+              - link "Landing pages" [ref=f19e139] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f19e140]:
+              - link "Funnels" [ref=f19e141] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f19e142]:
+              - link "Meta Ads" [ref=f19e143] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f19e144]:
+              - link "Google Ads" [ref=f19e145] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f19e146]:
+              - link "Ecommerce conversie" [ref=f19e147] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f19e148]:
+              - link "AI-automatiseringen" [ref=f19e149] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f19e150]:
+              - link "Offer & distributie" [ref=f19e151] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f19e152]:
+          - paragraph [ref=f19e153]: Contact
+          - list [ref=f19e154]:
+            - listitem [ref=f19e155]:
+              - link "stefkeppens@gmail.com" [ref=f19e156] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f19e157]:
+              - link "Bespreek je project" [ref=f19e158] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f19e159]:
+        - paragraph [ref=f19e160]: © 2026 verkoop.studio
+        - paragraph [ref=f19e161]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f19e163] [cursor=pointer]:
+    - generic [ref=f19e164]: Vraag het de studio

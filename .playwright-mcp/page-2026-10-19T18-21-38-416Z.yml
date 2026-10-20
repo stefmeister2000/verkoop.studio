@@ -1,0 +1,195 @@
+- generic [ref=f148e3]:
+  - banner [ref=f148e4]:
+    - generic [ref=f148e5]:
+      - link "verkoop.studio — Home" [ref=f148e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f148e7]:
+          - generic [ref=f148e8]: verkoop.
+          - generic [ref=f148e9]: studio
+      - button "Menu openen" [ref=f148e10]:
+        - generic [ref=f148e11]: Menu
+  - main [ref=f148e14]:
+    - generic [ref=f148e15]:
+      - generic [ref=f148e17]:
+        - navigation "Breadcrumb" [ref=f148e18]:
+          - link "Home" [ref=f148e20] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f148e21]:
+            - generic [aria-hidden] [ref=f148e22]: /
+            - link "Diensten" [ref=f148e23] [cursor=pointer]:
+              - /url: /#expertise
+          - generic [ref=f148e24]:
+            - generic [aria-hidden] [ref=f148e25]: /
+            - generic [ref=f148e26]: Websites & ecommerce
+        - generic [ref=f148e27]: "01"
+        - heading "Websites & ecommerce" [level=1] [ref=f148e28]
+        - paragraph [ref=f148e29]: Een digitale thuisbasis die je merk sterk neerzet en bezoekers naar de juiste volgende stap brengt.
+        - link "Bespreek jouw aanpak ↗" [ref=f148e30] [cursor=pointer]:
+          - /url: /contact
+        - paragraph [ref=f148e31]: Webdesign · Webdevelopment · Ecommerce · Contentstructuur
+      - generic [ref=f148e33]:
+        - heading "Het probleem" [level=2] [ref=f148e34]
+        - paragraph [ref=f148e35]: Je bedrijf groeit, maar je website vertelt niet meer het juiste verhaal of maakt het bezoekers te moeilijk om actie te ondernemen.
+      - generic [ref=f148e37]:
+        - heading "Aanpak" [level=2] [ref=f148e38]
+        - generic [ref=f148e39]:
+          - generic [ref=f148e40]:
+            - generic [ref=f148e41]: "01"
+            - paragraph [ref=f148e42]: We bepalen doelgroep, boodschap en de gewenste actie.
+          - generic [ref=f148e43]:
+            - generic [ref=f148e44]: "02"
+            - paragraph [ref=f148e45]: We ontwerpen de structuur en visuele ervaring.
+          - generic [ref=f148e46]:
+            - generic [ref=f148e47]: "03"
+            - paragraph [ref=f148e48]: We bouwen, testen en bereiden de lancering voor met LYTE Studios.
+      - generic [ref=f148e50]:
+        - heading "Opleverpunten" [level=2] [ref=f148e51]
+        - paragraph [ref=f148e52]: Responsieve website of webshop · Content- en navigatiestructuur · Afgesproken integraties · Overdracht en lanceringsplan
+      - link [ref=f148e55] [cursor=pointer]:
+        - /url: https://lytestudios.be/projects/jobr-website/
+        - heading "Jobr website ↗" [level=2] [ref=f148e56]
+        - paragraph [ref=f148e57]: "Door LYTE Studios: een website die de Jobr-app introduceert en bezoekers naar downloads en werkgeversregistraties leidt."
+      - generic [ref=f148e59]:
+        - heading "Vertel ons over je project" [level=2] [ref=f148e60]
+        - paragraph [ref=f148e61]: Geen algemene template. We bekijken jullie huidige situatie en proces.
+        - generic [ref=f148e64]:
+          - generic [ref=f148e65]:
+            - generic [ref=f148e66]: Naam
+            - textbox "Naam" [ref=f148e67]
+          - generic [ref=f148e68]:
+            - generic [ref=f148e69]: Bedrijf (optioneel)
+            - textbox "Bedrijf (optioneel)" [ref=f148e70]
+          - generic [ref=f148e71]:
+            - generic [ref=f148e72]: Zakelijk e-mailadres
+            - textbox "Zakelijk e-mailadres" [ref=f148e73]
+          - generic [ref=f148e74]:
+            - generic [ref=f148e75]: Telefoonnummer
+            - textbox "Telefoonnummer" [ref=f148e76]
+          - generic [ref=f148e77]:
+            - generic [ref=f148e78]: Website (optioneel)
+            - textbox "Website (optioneel)" [ref=f148e79]:
+              - /placeholder: https://
+          - group "Waar kunnen we je mee helpen?" [ref=f148e80]:
+            - paragraph [ref=f148e82]: Kies wat het best past. De details bekijken we samen.
+            - generic [ref=f148e83]:
+              - generic [ref=f148e84] [cursor=pointer]:
+                - radio "Meer klanten Meer aanvragen of boekingen." [ref=f148e85]
+                - generic [ref=f148e88]:
+                  - strong [ref=f148e89]: Meer klanten
+                  - generic [ref=f148e90]: Meer aanvragen of boekingen.
+              - generic [ref=f148e91] [cursor=pointer]:
+                - radio "Meer online verkopen Je webshop laten groeien." [ref=f148e92]
+                - generic [ref=f148e95]:
+                  - strong [ref=f148e96]: Meer online verkopen
+                  - generic [ref=f148e97]: Je webshop laten groeien.
+              - generic [ref=f148e98] [cursor=pointer]:
+                - radio "Een website of app Iets nieuws bouwen of verbeteren." [ref=f148e99]
+                - generic [ref=f148e102]:
+                  - strong [ref=f148e103]: Een website of app
+                  - generic [ref=f148e104]: Iets nieuws bouwen of verbeteren.
+              - generic [ref=f148e105] [cursor=pointer]:
+                - radio "Slimmer werken Meer inzicht met data en automatisering." [ref=f148e106]
+                - generic [ref=f148e109]:
+                  - strong [ref=f148e110]: Slimmer werken
+                  - generic [ref=f148e111]: Meer inzicht met data en automatisering.
+              - generic [ref=f148e112] [cursor=pointer]:
+                - radio "Ik weet het nog niet Denk samen met ons na over je volgende stap." [ref=f148e113]
+                - generic [ref=f148e116]:
+                  - strong [ref=f148e117]: Ik weet het nog niet
+                  - generic [ref=f148e118]: Denk samen met ons na over je volgende stap.
+          - generic [ref=f148e119]:
+            - generic [ref=f148e120]: Grootste uitdaging
+            - textbox "Grootste uitdaging" [ref=f148e121]
+          - button "Verstuur je aanvraag" [ref=f148e123]:
+            - text: Verstuur je aanvraag
+            - generic [aria-hidden] [ref=f148e124]: ↗
+  - contentinfo [ref=f148e125]:
+    - generic [ref=f148e126]:
+      - generic [ref=f148e127]:
+        - generic [ref=f148e128]:
+          - link "verkoop.studio — Home" [ref=f148e129] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f148e130]:
+              - generic [ref=f148e131]: verkoop.
+              - generic [ref=f148e132]: studio
+          - paragraph [ref=f148e133]: Lochristi, België
+          - paragraph [ref=f148e134]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f148e135]:
+          - paragraph [ref=f148e136]: Navigatie
+          - list [ref=f148e137]:
+            - listitem [ref=f148e138]:
+              - link "Blog · Gent & omgeving" [ref=f148e139] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f148e140]:
+              - link "Home" [ref=f148e141] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f148e142]:
+              - link "Resultaten" [ref=f148e143] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f148e144]:
+              - link "Diensten" [ref=f148e145] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f148e146]:
+              - link "Cases" [ref=f148e147] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f148e148]:
+              - link "Agency" [ref=f148e149] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f148e150]:
+              - link "Contact" [ref=f148e151] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f148e152]:
+          - paragraph [ref=f148e153]: Diensten
+          - list [ref=f148e154]:
+            - listitem [ref=f148e155]:
+              - link "E-mailmarketing" [ref=f148e156] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f148e157]:
+              - link "Data & analytics" [ref=f148e158] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f148e159]:
+              - link "Websites & ecommerce" [ref=f148e160] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f148e161]:
+              - link "Software & apps" [ref=f148e162] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f148e163]:
+              - link "Landing pages" [ref=f148e164] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f148e165]:
+              - link "Funnels" [ref=f148e166] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f148e167]:
+              - link "Meta Ads" [ref=f148e168] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f148e169]:
+              - link "Google Ads" [ref=f148e170] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f148e171]:
+              - link "Ecommerce conversie" [ref=f148e172] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f148e173]:
+              - link "AI-automatiseringen" [ref=f148e174] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f148e175]:
+              - link "Offer & distributie" [ref=f148e176] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f148e177]:
+          - paragraph [ref=f148e178]: Contact
+          - list [ref=f148e179]:
+            - listitem [ref=f148e180]:
+              - link "stefkeppens@gmail.com" [ref=f148e181] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f148e182]:
+              - link "Bespreek je project" [ref=f148e183] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f148e184]:
+        - paragraph [ref=f148e185]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f148e186]:
+          - generic [ref=f148e187]: NL
+          - generic [aria-hidden] [ref=f148e188]: /
+          - generic [ref=f148e189]: EN
+        - paragraph [ref=f148e190]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f148e192] [cursor=pointer]
+  - link "Bespreek je project" [ref=f148e197] [cursor=pointer]:
+    - /url: /contact

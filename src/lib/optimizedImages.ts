@@ -2,8 +2,12 @@ import image0 from '../assets/freeflow-hero-3d.webp'
 import small0 from '../assets/freeflow-hero-3d-640.webp'
 import image1 from '../assets/studio-team.webp'
 import small1 from '../assets/studio-team-640.webp'
+import imageHero from '../assets/hero-portrait.webp'
+import smallHero from '../assets/hero-portrait-640.webp'
 import image2 from '../assets/stef.webp'
 import small2 from '../assets/stef-640.webp'
+import imageStefDesk from '../assets/stef-desk.webp'
+import smallStefDesk from '../assets/stef-desk-640.webp'
 import image3 from '../assets/cases/pinacello.webp'
 import small3 from '../assets/cases/pinacello-640.webp'
 import image4 from '../assets/cases/nooms.webp'
@@ -15,7 +19,9 @@ import small6 from '../assets/cases/ekart-640.webp'
 export const optimizedImages: Record<string, {width:number; height:number; srcSet?:string}> = {
   [image0]: {width:1254, height:1254, srcSet:`${small0} 640w, ${image0} 1254w`},
   [image1]: {width:848, height:1066, srcSet:`${small1} 640w, ${image1} 848w`},
+  [imageHero]: {width:1066, height:1600, srcSet:`${smallHero} 640w, ${imageHero} 1066w`},
   [image2]: {width:1440, height:1920, srcSet:`${small2} 640w, ${image2} 1440w`},
+  [imageStefDesk]: {width:1066, height:1600, srcSet:`${smallStefDesk} 640w, ${imageStefDesk} 1066w`},
   [image3]: {width:1440, height:777, srcSet:`${small3} 640w, ${image3} 1440w`},
   [image4]: {width:1440, height:781, srcSet:`${small4} 640w, ${image4} 1440w`},
   [image5]: {width:1440, height:776, srcSet:`${small5} 640w, ${image5} 1440w`},

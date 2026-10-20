@@ -17,8 +17,7 @@
 .chat-context button:disabled { opacity: .4; cursor: default; }
 .faq-chat-log { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 22px 20px; scrollbar-width: thin; scrollbar-color: #d1d8eb transparent; }
 .chat-welcome { padding-top: 8px; }
-.chat-eyebrow { font-size: 9px; letter-spacing: .13em; color: #637aa8; font-weight: 650; }
-.chat-welcome h3 { font-size: 28px; font-weight: 650; letter-spacing: -1px; line-height: 1.14; margin: 12px 0 16px; }
+.chat-welcome h3 { font-size: 28px; font-weight: 650; letter-spacing: -1px; line-height: 1.14; margin: 0 0 16px; }
 .chat-welcome h3 span { color: #6e7c98; font-weight: 450; }
 .chat-welcome > p:last-of-type { color: #69758c; line-height: 1.7; font-size: 12px; max-width: 310px; }
 .chat-starters { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 25px; }

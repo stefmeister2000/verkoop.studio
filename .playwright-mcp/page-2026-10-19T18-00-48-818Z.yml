@@ -1,0 +1,254 @@
+- generic [ref=f120e3]:
+  - banner [ref=f120e4]:
+    - generic [ref=f120e5]:
+      - link "verkoop.studio — Home" [ref=f120e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f120e7]:
+          - generic [ref=f120e8]: verkoop.
+          - generic [ref=f120e9]: studio
+      - navigation [ref=f120e10]:
+        - link "Home" [ref=f120e11] [cursor=pointer]:
+          - /url: /
+        - link "Resultaten" [ref=f120e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Diensten" [ref=f120e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f120e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f120e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f120e21] [cursor=pointer]:
+          - /url: /contact
+      - link "Bespreek je project" [ref=f120e24] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f120e25]:
+    - generic [ref=f120e661]:
+      - generic [ref=f120e662]:
+        - navigation "Breadcrumb" [ref=f120e663]:
+          - link "Home" [ref=f120e665] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f120e666]:
+            - generic [aria-hidden] [ref=f120e667]: /
+            - link "Cases" [ref=f120e668] [cursor=pointer]:
+              - /url: /cases
+          - generic [ref=f120e669]:
+            - generic [aria-hidden] [ref=f120e670]: /
+            - generic [ref=f120e671]: Pinacello
+        - generic [ref=f120e672]:
+          - generic [ref=f120e673]:
+            - heading [level=1] [ref=f120e674]:
+              - text: Van aandachtnaar
+              - emphasis [ref=f120e675]: aankoop.
+            - paragraph [ref=f120e676]: Een herkenbaar product. Een helder aanbod. Een digitale klantreis die alles met elkaar verbindt. Voor Pinacello komen campagnes, content en ecommerce samen.
+            - link "Ontdek de aanpak" [ref=f120e677] [cursor=pointer]:
+              - /url: "#pinacello-aanpak"
+              - text: Ontdek de aanpak
+              - generic [aria-hidden] [ref=f120e678]: ↓
+          - complementary "Resultaat van de case" [ref=f120e679]:
+            - strong [ref=f120e680]: +120%
+            - paragraph [ref=f120e681]: groei in online omzet
+            - generic [ref=f120e682]:
+              - generic [aria-hidden] [ref=f120e683]: ↗
+              - generic [ref=f120e684]: Campagnes, landingspagina’s en conversie binnen één ecommerce-aanpak.
+        - generic [ref=f120e685]:
+          - generic [ref=f120e686]:
+            - term [ref=f120e687]: Merk
+            - definition [ref=f120e688]: Pinacello
+          - generic [ref=f120e689]:
+            - term [ref=f120e690]: Bijdrage
+            - definition [ref=f120e691]: Stef Keppens
+          - generic [ref=f120e692]:
+            - term [ref=f120e693]: Focus
+            - definition [ref=f120e694]: Meta Ads · Content · Ecommerce
+          - generic [ref=f120e695]:
+            - term [ref=f120e696]: Status
+            - definition [ref=f120e697]: Doorlopende samenwerking
+      - figure "Van merkbeleving naar een duidelijke bestelstap. Bekijk de website ↗" [ref=f120e698]:
+        - generic [ref=f120e699]:
+          - generic [aria-hidden] [ref=f120e700]: ● ● ●
+          - generic [ref=f120e701]: Pinacello / campagne-landingspagina
+          - generic [aria-hidden] [ref=f120e702]: ↗
+        - link "Bekijk de Pinacello-website in een nieuw tabblad" [ref=f120e703] [cursor=pointer]:
+          - /url: https://promo.pinacello.com/
+          - img "Pinacello-landingspagina met productbeelden, aanbod en een directe bestelknop" [ref=f120e704]
+        - generic [ref=f120e705]:
+          - generic [ref=f120e706]: Van merkbeleving naar een duidelijke bestelstap.
+          - link "Bekijk de website ↗" [ref=f120e707] [cursor=pointer]:
+            - /url: https://promo.pinacello.com/
+      - region [ref=f120e708]:
+        - heading "Aandacht is pas het begin." [level=2] [ref=f120e710]
+        - generic [ref=f120e711]:
+          - paragraph [ref=f120e712]: Pinacello bouwt merkbekendheid op in een consumentenmarkt. De uitdaging is om die aandacht consequent te vertalen naar online verkoop, niet enkel naar bereik.
+          - paragraph [ref=f120e713]: Bezoekers die via campagnes binnenkomen, hebben een directe, overtuigende route naar aankoop nodig — inclusief het juiste aanbod op het juiste moment.
+          - generic [ref=f120e714]:
+            - generic [ref=f120e715]: De opdracht
+            - strong [ref=f120e716]: Aandacht voor het merk omzetten in meetbare ecommerce-omzet.
+      - region [ref=f120e717]:
+        - generic [ref=f120e718]:
+          - generic [ref=f120e719]:
+            - heading "Drie schakels. Eén klantreis." [level=2] [ref=f120e720]
+            - paragraph [ref=f120e721]: Het werk van Stef Keppens aan de digitale groei van Pinacello verbindt de campagne met wat er na de klik gebeurt.
+          - generic [ref=f120e722]:
+            - article [ref=f120e723]:
+              - generic [ref=f120e724]:
+                - text: "01"
+                - generic [aria-hidden] [ref=f120e725]: ↗
+              - heading "Aandacht die bij het product past." [level=3] [ref=f120e726]
+              - paragraph [ref=f120e727]: Meta Ads en conversiegerichte content brengen Pinacello bij potentiële kopers. Het product, het gebruiksmoment en het aanbod vormen de rode draad.
+              - generic [ref=f120e728]:
+                - generic [ref=f120e729]: Meta Ads
+                - generic [ref=f120e730]: Organische content
+              - link "Meer over deze aanpak ↗" [ref=f120e731] [cursor=pointer]:
+                - /url: /meta-ads
+            - article [ref=f120e732]:
+              - generic [ref=f120e733]:
+                - text: "02"
+                - generic [aria-hidden] [ref=f120e734]: ↗
+              - heading "Een pagina die de keuze helder maakt." [level=3] [ref=f120e735]
+              - paragraph [ref=f120e736]: Campagne-landingspagina’s brengen aanbod, productinformatie en de bestelstap samen. Aanbiedingen en bundels maken deel uit van die verkoopflow.
+              - generic [ref=f120e737]:
+                - generic [ref=f120e738]: Landingspagina’s
+                - generic [ref=f120e739]: Aanbod & bundels
+              - link "Meer over deze aanpak ↗" [ref=f120e740] [cursor=pointer]:
+                - /url: /landing-pages
+            - article [ref=f120e741]:
+              - generic [ref=f120e742]:
+                - text: "03"
+                - generic [aria-hidden] [ref=f120e743]: ↗
+              - heading "De route naar aankoop afmaken." [level=3] [ref=f120e744]
+              - paragraph [ref=f120e745]: "Retargeting sluit aan op de eerste interesse. De focus blijft op de volledige online verkoopflow: van ontdekking naar een concrete aankoop."
+              - generic [ref=f120e746]:
+                - generic [ref=f120e747]: Retargeting
+                - generic [ref=f120e748]: Ecommerce
+              - link "Meer over deze aanpak ↗" [ref=f120e749] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+      - region [ref=f120e750]:
+        - generic [ref=f120e751]:
+          - heading [level=2] [ref=f120e752]:
+            - text: Eén organische video.
+            - emphasis [ref=f120e753]: 20 verkopen.
+          - paragraph [ref=f120e754]: "Naast betaalde campagnes speelt organische content een rol. Deze video leverde 20 verkopen op: een concreet resultaat van content rond het product."
+          - paragraph [ref=f120e755]: Bekijk de originele video. De video start alleen wanneer je op afspelen drukt.
+          - generic [ref=f120e756]:
+            - generic [ref=f120e757]: Organische content
+            - generic [ref=f120e758]: Productverhaal
+        - figure "Pinacello — de organische video uit deze case." [ref=f120e759]:
+          - generic "Originele organische Pinacello-video" [ref=f120e760]
+      - generic [ref=f120e763]:
+        - heading "Een sterke campagne stopt niet bij de klik." [level=2] [ref=f120e764]
+        - paragraph [ref=f120e765]: "Pinacello behaalde +120% online omzetgroei. De aanpak brengt aandacht, aanbod en aankoop samen: precies de samenhang waar we ook bij andere ecommerce-bedrijven naar zoeken."
+        - generic [ref=f120e766]:
+          - generic [ref=f120e767]:
+            - strong [ref=f120e768]: +120%
+            - text: online omzet
+          - generic [ref=f120e769]:
+            - strong [ref=f120e770]: "20"
+            - text: verkopen uit één organische video
+          - generic [ref=f120e771]:
+            - strong [ref=f120e772]: Doorlopend
+            - text: werken aan digitale groei
+      - region [ref=f120e773]:
+        - generic [ref=f120e774]:
+          - heading "Wat deze case laat zien" [level=2] [ref=f120e775]
+          - paragraph [ref=f120e776]: De campagne-landingspagina en de originele productvideo tonen de gebruikte verkooproute en content. Het gepubliceerde resultaat is +120% online omzet en 20 verkopen uit één organische video. De meetperiode, vergelijkingsbasis en attributiemethode zijn hier nog niet gepubliceerd; de cijfers zijn daardoor niet onafhankelijk te reconstrueren vanuit deze pagina.
+          - paragraph [ref=f120e777]:
+            - link "Bekijk het publieke werk bij Pinacello" [ref=f120e778] [cursor=pointer]:
+              - /url: https://promo.pinacello.com/
+            - text: De live website kan intussen gewijzigd zijn. Ze toont het aanbod en de ervaring, niet de achterliggende omzetrapportage.
+      - generic [ref=f120e779]:
+        - heading "Waar laat jouw webshop kansen liggen?" [level=2] [ref=f120e780]
+        - paragraph [ref=f120e781]: We bekijken je aanbod, campagnes en bestelroute. Samen bepalen we waar de grootste kans zit en welke aanpak past.
+        - generic [ref=f120e782]:
+          - link "Bespreek je webshop ↗" [ref=f120e783] [cursor=pointer]:
+            - /url: /contact
+          - link "Bekijk andere cases ↗" [ref=f120e784] [cursor=pointer]:
+            - /url: /cases
+  - contentinfo [ref=f120e591]:
+    - generic [ref=f120e592]:
+      - generic [ref=f120e593]:
+        - generic [ref=f120e594]:
+          - link "verkoop.studio — Home" [ref=f120e595] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f120e596]:
+              - generic [ref=f120e597]: verkoop.
+              - generic [ref=f120e598]: studio
+          - paragraph [ref=f120e599]: Lochristi, België
+          - paragraph [ref=f120e600]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f120e601]:
+          - paragraph [ref=f120e602]: Navigatie
+          - list [ref=f120e603]:
+            - listitem [ref=f120e604]:
+              - link "Blog · Gent & omgeving" [ref=f120e605] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f120e606]:
+              - link "Home" [ref=f120e607] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f120e608]:
+              - link "Resultaten" [ref=f120e609] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f120e610]:
+              - link "Diensten" [ref=f120e611] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f120e612]:
+              - link "Cases" [ref=f120e613] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f120e614]:
+              - link "Agency" [ref=f120e615] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f120e616]:
+              - link "Contact" [ref=f120e617] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f120e618]:
+          - paragraph [ref=f120e619]: Diensten
+          - list [ref=f120e620]:
+            - listitem [ref=f120e621]:
+              - link "E-mailmarketing" [ref=f120e622] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f120e623]:
+              - link "Data & analytics" [ref=f120e624] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f120e625]:
+              - link "Websites & ecommerce" [ref=f120e626] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f120e627]:
+              - link "Software & apps" [ref=f120e628] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f120e629]:
+              - link "Landing pages" [ref=f120e630] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f120e631]:
+              - link "Funnels" [ref=f120e632] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f120e633]:
+              - link "Meta Ads" [ref=f120e634] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f120e635]:
+              - link "Google Ads" [ref=f120e636] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f120e637]:
+              - link "Ecommerce conversie" [ref=f120e638] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f120e639]:
+              - link "AI-automatiseringen" [ref=f120e640] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f120e641]:
+              - link "Offer & distributie" [ref=f120e642] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f120e643]:
+          - paragraph [ref=f120e644]: Contact
+          - list [ref=f120e645]:
+            - listitem [ref=f120e646]:
+              - link "stefkeppens@gmail.com" [ref=f120e647] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f120e648]:
+              - link "Bespreek je project" [ref=f120e649] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f120e650]:
+        - paragraph [ref=f120e651]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f120e652]:
+          - generic [ref=f120e653]: NL
+          - generic [aria-hidden] [ref=f120e654]: /
+          - generic [ref=f120e655]: EN
+        - paragraph [ref=f120e656]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f120e658] [cursor=pointer]:
+    - generic [ref=f120e659]: Vraag het de studio

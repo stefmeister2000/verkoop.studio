@@ -1,0 +1,185 @@
+- generic [ref=f10e3]:
+  - banner [ref=f10e4]:
+    - generic [ref=f10e5]:
+      - link "verkoop.studio — Home" [ref=f10e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f10e7]:
+          - generic [ref=f10e8]: verkoop.
+          - generic [ref=f10e9]: studio
+      - navigation [ref=f10e10]:
+        - link "Home" [ref=f10e11] [cursor=pointer]:
+          - /url: /
+        - link "Diensten" [ref=f10e12] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Resultaten" [ref=f10e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Cases" [ref=f10e14] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f10e15] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f10e16] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f10e17]:
+        - button "Switch language" [ref=f10e18]:
+          - generic [ref=f10e19]: NL
+          - generic [ref=f10e20]: /
+          - generic [ref=f10e21]: EN
+        - link "Bespreek je project" [ref=f10e22] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f10e23]:
+    - generic [ref=f10e24]:
+      - generic [ref=f10e26]:
+        - generic [ref=f10e27]:
+          - generic [ref=f10e28]:
+            - navigation "Breadcrumb" [ref=f10e29]:
+              - link "Home" [ref=f10e31] [cursor=pointer]:
+                - /url: /
+              - generic [ref=f10e32]:
+                - generic [aria-hidden] [ref=f10e33]: /
+                - link "Cases" [ref=f10e34] [cursor=pointer]:
+                  - /url: /cases
+              - generic [ref=f10e35]:
+                - generic [aria-hidden] [ref=f10e36]: /
+                - generic [ref=f10e37]: Nooms
+            - generic [ref=f10e38]:
+              - heading "Nooms" [level=1] [ref=f10e39]
+              - generic [ref=f10e40]: Lopend project
+            - paragraph [ref=f10e41]: Supplementen en ecommerce
+            - paragraph [ref=f10e42]: Pre-sale via influencer marketing volledig uitverkocht — op weg naar een schaalbare digitale route van productontdekking tot herhaalaankoop.
+            - link "Bezoek de website ↗" [ref=f10e43] [cursor=pointer]:
+              - /url: https://noomsdaily.com/
+          - complementary "Hoe succes gemeten wordt" [ref=f10e44]:
+            - paragraph [ref=f10e45]: Lopend project
+            - paragraph [ref=f10e46]: De pre-sale, aangedreven door influencer marketing, was volledig uitverkocht. Groei in eerste aankopen en herhaalaankopen wordt gemeten van productontdekking tot klant.
+        - img "Nooms" [ref=f10e47]
+      - generic [ref=f10e49]:
+        - generic [ref=f10e50]:
+          - paragraph [ref=f10e51]: Situatie
+          - paragraph [ref=f10e52]: Nooms is een opbouwend ecommerce-merk in de supplementenmarkt, met zowel directe verkoop als retail- en B2B-ambities.
+        - generic [ref=f10e53]:
+          - paragraph [ref=f10e54]: Commerciële uitdaging
+          - paragraph [ref=f10e55]: De volledige route — van productontdekking via influencers en campagnes tot eerste aankoop, herhaalaankoop en zakelijke kanalen — moet als één geheel functioneren.
+      - generic [ref=f10e57]:
+        - paragraph [ref=f10e58]: Bijdrage van Stef Keppens
+        - paragraph [ref=f10e59]: Nooms is mijn eigen bedrijf. Ik bouw het zelf op, met focus op ecommerce, funnels, branding, verkoop en digitale groei.
+      - generic [ref=f10e61]:
+        - paragraph [ref=f10e62]: Wat er gebouwd werd
+        - list [ref=f10e63]:
+          - listitem [ref=f10e64]:
+            - generic [ref=f10e67]: Ecommerce-opzet
+          - listitem [ref=f10e68]:
+            - generic [ref=f10e71]: Productpositionering
+          - listitem [ref=f10e72]:
+            - generic [ref=f10e75]: Landingspagina’s
+          - listitem [ref=f10e76]:
+            - generic [ref=f10e79]: Pre-sale flow
+          - listitem [ref=f10e80]:
+            - generic [ref=f10e83]: Influencer-funnel
+          - listitem [ref=f10e84]:
+            - generic [ref=f10e87]: Denkwerk rond abonnementen
+          - listitem [ref=f10e88]:
+            - generic [ref=f10e91]: Retail- en B2B-strategie
+          - listitem [ref=f10e92]:
+            - generic [ref=f10e95]: E-mail- en acquisitiestructuur
+      - generic [ref=f10e97]:
+        - paragraph [ref=f10e98]: Hoe succes gemeten wordt
+        - paragraph [ref=f10e99]: De pre-sale, aangedreven door influencer marketing, was volledig uitverkocht. Groei in eerste aankopen en herhaalaankopen wordt gemeten van productontdekking tot klant.
+        - paragraph [ref=f10e100]: Dit project loopt nog — cijfers volgen zodra beschikbaar.
+      - region [ref=f10e101]:
+        - generic [ref=f10e102]:
+          - paragraph [ref=f10e103]: Werk & resultaatcontext
+          - heading "Wat deze case laat zien" [level=2] [ref=f10e104]
+          - paragraph [ref=f10e105]: Nooms is een eigen merk van Stef. Het ontwerp en de website laten zien hoe merk, productaanbod en vervolgstappen verbonden zijn. Een uitverkochte pre-sale gaat over de beschikbare voorraad voor die lancering. Voorraadaantal, verkoopperiode en omzet zijn hier niet gepubliceerd; dit resultaat zegt op zichzelf niets over structurele winst of herhaalaankopen.
+          - paragraph [ref=f10e106]:
+            - link "Bekijk het publieke werk bij Nooms" [ref=f10e107] [cursor=pointer]:
+              - /url: https://noomsdaily.com/
+            - text: De live website kan intussen gewijzigd zijn. Ze toont het aanbod en de ervaring, niet de achterliggende omzetrapportage.
+      - generic [ref=f10e109]:
+        - heading "Herkenbaar? Laten we jullie klantreis bekijken" [level=2] [ref=f10e110]
+        - link "Bespreek je project" [ref=f10e112] [cursor=pointer]:
+          - /url: /contact
+  - contentinfo [ref=f10e113]:
+    - generic [ref=f10e114]:
+      - generic [ref=f10e115]:
+        - generic [ref=f10e116]:
+          - link "verkoop.studio — Home" [ref=f10e117] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f10e118]:
+              - generic [ref=f10e119]: verkoop.
+              - generic [ref=f10e120]: studio
+          - paragraph [ref=f10e121]: Lochristi, België
+          - paragraph [ref=f10e122]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f10e123]:
+          - paragraph [ref=f10e124]: Navigatie
+          - list [ref=f10e125]:
+            - listitem [ref=f10e126]:
+              - link "Blog · Gent & omgeving" [ref=f10e127] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f10e128]:
+              - link "Home" [ref=f10e129] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f10e130]:
+              - link "Diensten" [ref=f10e131] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f10e132]:
+              - link "Resultaten" [ref=f10e133] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f10e134]:
+              - link "Cases" [ref=f10e135] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f10e136]:
+              - link "Agency" [ref=f10e137] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f10e138]:
+              - link "Contact" [ref=f10e139] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f10e140]:
+          - paragraph [ref=f10e141]: Diensten
+          - list [ref=f10e142]:
+            - listitem [ref=f10e143]:
+              - link "E-mailmarketing" [ref=f10e144] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f10e145]:
+              - link "Data & analytics" [ref=f10e146] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f10e147]:
+              - link "Websites & ecommerce" [ref=f10e148] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f10e149]:
+              - link "Software & apps" [ref=f10e150] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f10e151]:
+              - link "Landing pages" [ref=f10e152] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f10e153]:
+              - link "Funnels" [ref=f10e154] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f10e155]:
+              - link "Meta Ads" [ref=f10e156] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f10e157]:
+              - link "Google Ads" [ref=f10e158] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f10e159]:
+              - link "Ecommerce conversie" [ref=f10e160] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f10e161]:
+              - link "AI-automatiseringen" [ref=f10e162] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f10e163]:
+              - link "Offer & distributie" [ref=f10e164] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f10e165]:
+          - paragraph [ref=f10e166]: Contact
+          - list [ref=f10e167]:
+            - listitem [ref=f10e168]:
+              - link "stefkeppens@gmail.com" [ref=f10e169] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f10e170]:
+              - link "Bespreek je project" [ref=f10e171] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f10e172]:
+        - paragraph [ref=f10e173]: © 2026 verkoop.studio
+        - paragraph [ref=f10e174]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f10e176] [cursor=pointer]:
+    - generic [ref=f10e177]: Vraag het de studio

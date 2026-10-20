@@ -1,0 +1,152 @@
+- generic [ref=f74e3]:
+  - banner [ref=f74e4]:
+    - generic [ref=f74e5]:
+      - link "verkoop.studio — Home" [ref=f74e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f74e7]:
+          - generic [ref=f74e8]: verkoop.
+          - generic [ref=f74e9]: studio
+      - navigation [ref=f74e10]:
+        - link "Home" [ref=f74e11] [cursor=pointer]:
+          - /url: /
+        - link "Resultaten" [ref=f74e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Diensten" [ref=f74e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f74e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f74e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f74e21] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f74e23]:
+        - button "Switch language" [ref=f74e24]:
+          - generic [ref=f74e25]: NL
+          - generic [ref=f74e26]: /
+          - generic [ref=f74e27]: EN
+        - link "Bespreek je project" [ref=f74e28] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f74e29]:
+    - generic [ref=f74e31]:
+      - navigation "Breadcrumb" [ref=f74e32]:
+        - link "Home" [ref=f74e34] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f74e35]:
+          - generic [aria-hidden] [ref=f74e36]: /
+          - generic [ref=f74e37]: Blog
+      - heading "Inzichten voor ondernemers in Gent en omgeving" [level=1] [ref=f74e38]
+      - paragraph [ref=f74e39]: Praktische artikelen over marketing, Google Ads en websites voor bedrijven in Gent en omgeving. Vanuit verkoop.studio in Lochristi.
+      - generic [ref=f74e40]:
+        - article [ref=f74e41]:
+          - heading [level=2] [ref=f74e42]:
+            - 'link "Landingspagina of website: wat heb je nodig voor je campagne?" [ref=f74e43] [cursor=pointer]':
+              - /url: /blog/landingspagina-of-website
+          - paragraph [ref=f74e44]: Een nieuwe landingspagina of je bestaande website gebruiken? Vergelijk de opties voor je campagne, met voorbeelden en een praktische beslischecklist.
+          - link "Lees het artikel" [ref=f74e45] [cursor=pointer]:
+            - /url: /blog/landingspagina-of-website
+        - article [ref=f74e46]:
+          - heading [level=2] [ref=f74e47]:
+            - 'link "Marketingbureau in Gent kiezen: welke vragen stel je eerst?" [ref=f74e48] [cursor=pointer]':
+              - /url: /blog/marketingbureau-gent-kiezen
+          - paragraph [ref=f74e49]: "Een praktische keuzehulp voor ondernemers in Gent: vergelijk scope, eigenaarschap, rapportage en de samenwerking met een marketingbureau."
+          - link "Lees het artikel" [ref=f74e50] [cursor=pointer]:
+            - /url: /blog/marketingbureau-gent-kiezen
+        - article [ref=f74e51]:
+          - heading [level=2] [ref=f74e52]:
+            - 'link "Google Ads voor je bedrijf in Gent: van budget naar geschikte aanvragen" [ref=f74e53] [cursor=pointer]':
+              - /url: /blog/google-ads-gent-budget-aanvragen
+          - paragraph [ref=f74e54]: Bepaal wat een geschikte aanvraag mag kosten en verbind Google Ads, landingspagina en opvolging. Met een transparant rekenvoorbeeld.
+          - link "Lees het artikel" [ref=f74e55] [cursor=pointer]:
+            - /url: /blog/google-ads-gent-budget-aanvragen
+        - article [ref=f74e56]:
+          - heading [level=2] [ref=f74e57]:
+            - 'link "Een website laten maken voor je bedrijf in Gent: wat moet ze opleveren?" [ref=f74e58] [cursor=pointer]':
+              - /url: /blog/website-gent-meer-aanvragen
+          - paragraph [ref=f74e59]: "Een websitebriefing voor Gentse ondernemers: bezoekersvragen, mobiele formulieren, inhoud, snelheid en meetbare vervolgstappen."
+          - link "Lees het artikel" [ref=f74e60] [cursor=pointer]:
+            - /url: /blog/website-gent-meer-aanvragen
+  - contentinfo [ref=f74e61]:
+    - generic [ref=f74e62]:
+      - generic [ref=f74e63]:
+        - generic [ref=f74e64]:
+          - link "verkoop.studio — Home" [ref=f74e65] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f74e66]:
+              - generic [ref=f74e67]: verkoop.
+              - generic [ref=f74e68]: studio
+          - paragraph [ref=f74e69]: Lochristi, België
+          - paragraph [ref=f74e70]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f74e71]:
+          - paragraph [ref=f74e72]: Navigatie
+          - list [ref=f74e73]:
+            - listitem [ref=f74e74]:
+              - link "Blog · Gent & omgeving" [ref=f74e75] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f74e76]:
+              - link "Home" [ref=f74e77] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f74e78]:
+              - link "Resultaten" [ref=f74e79] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f74e80]:
+              - link "Diensten" [ref=f74e81] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f74e82]:
+              - link "Cases" [ref=f74e83] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f74e84]:
+              - link "Agency" [ref=f74e85] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f74e86]:
+              - link "Contact" [ref=f74e87] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f74e88]:
+          - paragraph [ref=f74e89]: Diensten
+          - list [ref=f74e90]:
+            - listitem [ref=f74e91]:
+              - link "E-mailmarketing" [ref=f74e92] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f74e93]:
+              - link "Data & analytics" [ref=f74e94] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f74e95]:
+              - link "Websites & ecommerce" [ref=f74e96] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f74e97]:
+              - link "Software & apps" [ref=f74e98] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f74e99]:
+              - link "Landing pages" [ref=f74e100] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f74e101]:
+              - link "Funnels" [ref=f74e102] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f74e103]:
+              - link "Meta Ads" [ref=f74e104] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f74e105]:
+              - link "Google Ads" [ref=f74e106] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f74e107]:
+              - link "Ecommerce conversie" [ref=f74e108] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f74e109]:
+              - link "AI-automatiseringen" [ref=f74e110] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f74e111]:
+              - link "Offer & distributie" [ref=f74e112] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f74e113]:
+          - paragraph [ref=f74e114]: Contact
+          - list [ref=f74e115]:
+            - listitem [ref=f74e116]:
+              - link "stefkeppens@gmail.com" [ref=f74e117] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f74e118]:
+              - link "Bespreek je project" [ref=f74e119] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f74e120]:
+        - paragraph [ref=f74e121]: © 2026 verkoop.studio
+        - paragraph [ref=f74e122]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f74e124] [cursor=pointer]:
+    - generic [ref=f74e125]: Vraag het de studio

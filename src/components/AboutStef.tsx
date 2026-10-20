@@ -8,12 +8,9 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
   const { lang } = useLang()
   const nl = lang === 'nl'
   return (
-    <section id="agency" className="border-b border-line bg-surface/40">
+    <section id="agency" className="studio-agency">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <p className="text-xs uppercase tracking-widest text-accent-2">
-          verkoop.studio · Lochristi
-        </p>
-        <Heading className="mt-4 max-w-3xl font-display text-4xl text-paper sm:text-5xl">
+        <Heading className="max-w-3xl font-display text-4xl text-paper sm:text-5xl">
           {nl
             ? 'Commercieel denken. Technisch bouwen. Samen vooruit.'
             : 'Commercial thinking. Technical craft. Moving forward together.'}
@@ -24,12 +21,9 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
             : 'From Lochristi, we bring strategy, marketing, design and development together in one studio. From your first growth question to the website, campaigns and systems that make it happen.'}
         </p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-line p-8">
+          <div className="panel agency-card">
             <ResponsiveImage className="agency-team-photo agency-nooms-photo" src={stefNooms} alt={nl ? 'Stef Keppens bij Nooms' : 'Stef Keppens at Nooms'} loading="lazy" />
-            <p className="text-xs uppercase tracking-widest text-mute">
-              Growth & strategy
-            </p>
-            <CardHeading className="mt-3 font-display text-3xl text-paper">
+            <CardHeading className="font-display text-3xl text-paper">
               Stef Keppens
             </CardHeading>
             <p className="mt-4 text-bone">
@@ -38,12 +32,9 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
                 : 'Marketing strategy, funnels, ecommerce, campaigns and AI automation. Starting with the complete customer journey.'}
             </p>
           </div>
-          <div className="rounded-2xl border border-line p-8">
+          <div className="panel agency-card">
             <ResponsiveImage className="agency-team-photo" src={studioTeam} alt={nl ? 'Samen aan het werk in de studio' : 'Working together in the studio'} loading="lazy" />
-            <p className="text-xs uppercase tracking-widest text-mute">
-              Design & technology
-            </p>
-            <CardHeading className="mt-3 font-display text-3xl text-paper">
+            <CardHeading className="font-display text-3xl text-paper">
               Design & development
             </CardHeading>
             <p className="mt-4 text-bone">

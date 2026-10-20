@@ -13,7 +13,6 @@ export default function PerformanceAds() {
     <section className="performance-section" id="performance">
       <div className="performance-heading">
         <div>
-          <p className="eyebrow">Performance marketing</p>
           <h2>
             {nl ? 'Aandacht inkopen.' : 'Buy attention.'}
             <br />
@@ -78,7 +77,7 @@ export default function PerformanceAds() {
               <div className="social-creative">
                 <ResponsiveImage
                   src={pinacello}
-                  alt="Pinacello — campagnevisual"
+                  alt="Campagnevisual van Pinacello"
                   loading="lazy"
                 />
               </div>

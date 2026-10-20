@@ -33,7 +33,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     try {
       window.localStorage.setItem(STORAGE_KEY, lang)
     } catch {
-      // storage unavailable — language choice just won't persist
+      // If storage is unavailable, the language choice will not persist.
     }
   }, [lang, storageReady])
 

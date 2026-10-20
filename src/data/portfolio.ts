@@ -3,7 +3,7 @@ import type { Bi, PortfolioItem } from './types'
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 'olearys-b2c-booking',
-    project: "O'Learys — B2C booking landing page",
+    project: "O'Learys: B2C booking landing page",
     caseSlug: 'olearys',
     liveUrl: 'https://olearys.com/nl-be/',
     category: 'B2C',
@@ -20,7 +20,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'olearys-b2b-events',
-    project: "O'Learys — B2B company-event page",
+    project: "O'Learys: B2B company-event page",
     caseSlug: 'olearys',
     liveUrl: 'https://olearys.com/nl-be/',
     category: 'B2B',
@@ -37,7 +37,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'pinacello-campaign',
-    project: 'Pinacello — ecommerce campagnepagina',
+    project: 'Pinacello: ecommerce campagnepagina',
     caseSlug: 'pinacello',
     liveUrl: 'https://promo.pinacello.com/',
     category: 'ecommerce',
@@ -51,7 +51,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'nooms-launch',
-    project: 'Nooms — productlancering',
+    project: 'Nooms: productlancering',
     caseSlug: 'nooms',
     liveUrl: 'https://noomsdaily.com/',
     category: 'launch',

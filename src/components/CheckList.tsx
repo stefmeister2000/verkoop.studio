@@ -4,7 +4,7 @@ interface CheckListProps {
   className?: string
 }
 
-/** Scannable list with a small check icon per item — replaces dense, dot-joined text. */
+/** Scannable list with a small check icon per item. Replaces dense, dot-joined text. */
 export default function CheckList({ items, columns = 2, className = '' }: CheckListProps) {
   return (
     <ul className={`grid gap-x-8 gap-y-3 ${columns === 2 ? 'sm:grid-cols-2' : ''} ${className}`}>

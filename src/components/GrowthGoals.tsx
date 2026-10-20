@@ -10,12 +10,12 @@ export default function GrowthGoals() {
   const { lang } = useLang()
   return (
     <section className="growth-goals" aria-labelledby="growth-goals-title">
-      <p className="eyebrow">{lang === 'nl' ? 'Jouw bedrijf. Jouw volgende stap.' : 'Your business. Your next step.'}</p>
       <h2 id="growth-goals-title">{lang === 'nl' ? 'Wat wil jij zien groeien?' : 'What do you want to grow?'}</h2>
       <div className="growth-goals-grid">
-        {goals.map((goal, i) => <Link to={goal.href} key={goal.href} className="growth-goal">
-          <span className="goal-number">0{i + 1}</span>
-          <h3>{goal[lang][0]}</h3><p>{goal[lang][1]}</p><span className="goal-link">{goal[lang][2]} ↗</span>
+        {goals.map((goal) => <Link to={goal.href} key={goal.href} className="growth-goal">
+          <h3>{goal[lang][0]}</h3>
+          <p>{goal[lang][1]}</p>
+          <span className="goal-link">{goal[lang][2]} <span aria-hidden="true">↗</span></span>
         </Link>)}
       </div>
     </section>

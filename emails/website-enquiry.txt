@@ -1,4 +1,4 @@
-NIEUWE GROEIANALYSE — {{{BEDRIJF}}}
+Nieuwe groeianalyse van {{{BEDRIJF}}}
 Aanvraag van {{{NAAM}}}
 
 Beantwoord deze e-mail rechtstreeks om de aanvrager te contacteren.

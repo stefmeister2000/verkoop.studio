@@ -42,7 +42,7 @@ export default function GrowthSystemVisual() {
         <div className="mt-12 divide-y divide-line border-y border-line">
           {t.stages.map((stage) => (
             <div key={stage.label} className="flex flex-col gap-1.5 py-5 sm:flex-row sm:items-baseline sm:gap-8">
-              <span className="w-40 shrink-0 text-xs font-semibold uppercase tracking-widest text-accent-2">
+              <span className="w-40 shrink-0 text-sm font-semibold text-paper">
                 {stage.label}
               </span>
               <p className="text-bone">{stage.items.join(' · ')}</p>

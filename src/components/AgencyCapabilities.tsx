@@ -12,7 +12,7 @@ export default function AgencyCapabilities() {
   const { lang } = useLang()
   const i = lang === 'nl' ? 0 : 1
   return <section id="expertise" className="marketing-services">
-    <div className="marketing-intro"><p className="eyebrow">{i === 0 ? 'Vier specialismen. Eén groeiplan.' : 'Four specialisms. One growth plan.'}</p>
+    <div className="marketing-intro">
       <h2>{i === 0 ? 'De juiste mensen bereiken. Meer klanten behouden.' : 'Reach the right people. Keep more customers.'}</h2>
       <p>{i === 0 ? 'Google Ads vangt vraag op. Meta Ads maakt je merk zichtbaar. Data laat zien wat rendeert. E-mailmarketing bouwt de relatie verder uit.' : 'Google Ads captures demand. Meta Ads builds visibility. Data shows what delivers. Email marketing develops the relationship.'}</p>
     </div>

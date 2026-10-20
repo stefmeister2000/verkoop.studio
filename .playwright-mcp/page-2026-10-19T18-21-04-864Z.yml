@@ -1,0 +1,166 @@
+- generic [ref=f146e3]:
+  - banner [ref=f146e4]:
+    - generic [ref=f146e5]:
+      - link "verkoop.studio — Home" [ref=f146e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f146e7]:
+          - generic [ref=f146e8]: verkoop.
+          - generic [ref=f146e9]: studio
+      - button "Menu openen" [ref=f146e10]:
+        - generic [ref=f146e11]: Menu
+  - main [ref=f146e14]:
+    - region [ref=f146e16]:
+      - complementary [ref=f146e17]:
+        - figure [ref=f146e18]:
+          - img "Stef Keppens aan zijn laptop" [ref=f146e19]
+        - generic [ref=f146e20]:
+          - paragraph [ref=f146e21]:
+            - strong [ref=f146e22]: Stef Keppens
+            - generic [ref=f146e23]: Lochristi
+          - link "stefkeppens@gmail.com" [ref=f146e24] [cursor=pointer]:
+            - /url: mailto:stefkeppens@gmail.com
+      - generic [ref=f146e25]:
+        - heading "Toegang tot onze platforms" [level=1] [ref=f146e26]
+        - paragraph [ref=f146e27]: Je wilt meer weten over Sales CRM. Deze platforms zijn gratis voor klanten van verkoop.studio. Laat je gegevens achter en vertel ons waarvoor je het platform wilt gebruiken.
+        - heading "Vraag toegang aan" [level=2] [ref=f146e28]
+        - generic [ref=f146e30]:
+          - generic [ref=f146e31]:
+            - generic [ref=f146e32]: Naam
+            - textbox "Naam" [ref=f146e33]
+          - generic [ref=f146e34]:
+            - generic [ref=f146e35]: Bedrijf (optioneel)
+            - textbox "Bedrijf (optioneel)" [ref=f146e36]
+          - generic [ref=f146e37]:
+            - generic [ref=f146e38]: Zakelijk e-mailadres
+            - textbox "Zakelijk e-mailadres" [ref=f146e39]
+          - generic [ref=f146e40]:
+            - generic [ref=f146e41]: Telefoonnummer
+            - textbox "Telefoonnummer" [ref=f146e42]
+          - generic [ref=f146e43]:
+            - generic [ref=f146e44]: Website (optioneel)
+            - textbox "Website (optioneel)" [ref=f146e45]:
+              - /placeholder: https://
+          - group "Waar kunnen we je mee helpen?" [ref=f146e46]:
+            - paragraph [ref=f146e48]: Kies wat het best past. De details bekijken we samen.
+            - generic [ref=f146e49]:
+              - generic [ref=f146e50] [cursor=pointer]:
+                - radio "Meer klanten Meer aanvragen of boekingen." [ref=f146e51]
+                - generic [ref=f146e54]:
+                  - strong [ref=f146e55]: Meer klanten
+                  - generic [ref=f146e56]: Meer aanvragen of boekingen.
+              - generic [ref=f146e57] [cursor=pointer]:
+                - radio "Meer online verkopen Je webshop laten groeien." [ref=f146e58]
+                - generic [ref=f146e61]:
+                  - strong [ref=f146e62]: Meer online verkopen
+                  - generic [ref=f146e63]: Je webshop laten groeien.
+              - generic [ref=f146e64] [cursor=pointer]:
+                - radio "Een website of app Iets nieuws bouwen of verbeteren." [ref=f146e65]
+                - generic [ref=f146e68]:
+                  - strong [ref=f146e69]: Een website of app
+                  - generic [ref=f146e70]: Iets nieuws bouwen of verbeteren.
+              - generic [ref=f146e71] [cursor=pointer]:
+                - radio "Slimmer werken Meer inzicht met data en automatisering." [ref=f146e72]
+                - generic [ref=f146e75]:
+                  - strong [ref=f146e76]: Slimmer werken
+                  - generic [ref=f146e77]: Meer inzicht met data en automatisering.
+              - generic [ref=f146e78] [cursor=pointer]:
+                - radio "Ik weet het nog niet Denk samen met ons na over je volgende stap." [ref=f146e79]
+                - generic [ref=f146e82]:
+                  - strong [ref=f146e83]: Ik weet het nog niet
+                  - generic [ref=f146e84]: Denk samen met ons na over je volgende stap.
+          - generic [ref=f146e85]:
+            - generic [ref=f146e86]: Grootste uitdaging
+            - textbox "Grootste uitdaging" [ref=f146e87]
+          - button "+ Extra info toevoegen (optioneel)" [ref=f146e89]
+          - button "Verstuur je aanvraag" [ref=f146e91]:
+            - text: Verstuur je aanvraag
+            - generic [aria-hidden] [ref=f146e92]: ↗
+  - contentinfo [ref=f146e93]:
+    - generic [ref=f146e94]:
+      - generic [ref=f146e95]:
+        - generic [ref=f146e96]:
+          - link "verkoop.studio — Home" [ref=f146e97] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f146e98]:
+              - generic [ref=f146e99]: verkoop.
+              - generic [ref=f146e100]: studio
+          - paragraph [ref=f146e101]: Lochristi, België
+          - paragraph [ref=f146e102]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f146e103]:
+          - paragraph [ref=f146e104]: Navigatie
+          - list [ref=f146e105]:
+            - listitem [ref=f146e106]:
+              - link "Blog · Gent & omgeving" [ref=f146e107] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f146e108]:
+              - link "Home" [ref=f146e109] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f146e110]:
+              - link "Resultaten" [ref=f146e111] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f146e112]:
+              - link "Diensten" [ref=f146e113] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f146e114]:
+              - link "Cases" [ref=f146e115] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f146e116]:
+              - link "Agency" [ref=f146e117] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f146e118]:
+              - link "Contact" [ref=f146e119] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f146e120]:
+          - paragraph [ref=f146e121]: Diensten
+          - list [ref=f146e122]:
+            - listitem [ref=f146e123]:
+              - link "E-mailmarketing" [ref=f146e124] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f146e125]:
+              - link "Data & analytics" [ref=f146e126] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f146e127]:
+              - link "Websites & ecommerce" [ref=f146e128] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f146e129]:
+              - link "Software & apps" [ref=f146e130] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f146e131]:
+              - link "Landing pages" [ref=f146e132] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f146e133]:
+              - link "Funnels" [ref=f146e134] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f146e135]:
+              - link "Meta Ads" [ref=f146e136] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f146e137]:
+              - link "Google Ads" [ref=f146e138] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f146e139]:
+              - link "Ecommerce conversie" [ref=f146e140] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f146e141]:
+              - link "AI-automatiseringen" [ref=f146e142] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f146e143]:
+              - link "Offer & distributie" [ref=f146e144] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f146e145]:
+          - paragraph [ref=f146e146]: Contact
+          - list [ref=f146e147]:
+            - listitem [ref=f146e148]:
+              - link "stefkeppens@gmail.com" [ref=f146e149] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f146e150]:
+              - link "Bespreek je project" [ref=f146e151] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f146e152]:
+        - paragraph [ref=f146e153]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f146e154]:
+          - generic [ref=f146e155]: NL
+          - generic [aria-hidden] [ref=f146e156]: /
+          - generic [ref=f146e157]: EN
+        - paragraph [ref=f146e158]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f146e160] [cursor=pointer]:
+    - generic [ref=f146e161]: Vraag het de studio

@@ -1,0 +1,875 @@
+- generic [ref=f152e3]:
+  - banner [ref=f152e4]:
+    - generic [ref=f152e5]:
+      - link "verkoop.studio, home" [ref=f152e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f152e7]:
+          - generic [ref=f152e8]: verkoop.
+          - generic [ref=f152e9]: studio
+      - navigation [ref=f152e10]:
+        - link "Home" [ref=f152e11] [cursor=pointer]:
+          - /url: /
+        - link "Results" [ref=f152e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Services" [ref=f152e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f152e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f152e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f152e21] [cursor=pointer]:
+          - /url: /contact
+      - link "Discuss your project" [ref=f152e24] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f152e25]:
+    - generic [ref=f152e26]:
+      - region [ref=f152e27]:
+        - generic [ref=f152e28]:
+          - heading "More enquiries. More sales. Clarity on growth." [level=1] [ref=f152e29]: More enquiries.More sales.Clarity on growth.
+          - paragraph [ref=f152e30]: See which campaigns bring customers, and where your budget works harder.
+          - generic [ref=f152e31]:
+            - link "Discuss your growth ↗" [ref=f152e32] [cursor=pointer]:
+              - /url: /contact
+              - text: Discuss your growth
+              - generic [ref=f152e33]: ↗
+            - link "See results" [ref=f152e34] [cursor=pointer]:
+              - /url: "#resultaten"
+        - generic [ref=f152e35]:
+          - img "A man having coffee on a terrace" [ref=f152e36]
+          - link "Pinacello, +120% online revenue. Explore the case." [ref=f152e37] [cursor=pointer]:
+            - /url: /cases/pinacello
+            - generic [ref=f152e38]: +120% online revenue
+            - generic [ref=f152e39]:
+              - text: Pinacello
+              - generic [aria-hidden] [ref=f152e40]: ↗
+      - generic [ref=f152e41]:
+        - generic [ref=f152e42]:
+          - heading "Strong campaigns. Smart websites. Measurable growth." [level=2] [ref=f152e43]: Strong campaigns.Smart websites.Measurable growth.
+          - paragraph [ref=f152e44]: Explore the projects behind our team.
+          - link "All projects ↗" [ref=f152e45] [cursor=pointer]:
+            - /url: /cases
+            - text: All projects
+            - generic [ref=f152e46]: ↗
+        - link [ref=f152e47] [cursor=pointer]:
+          - /url: /cases/pinacello
+          - generic [ref=f152e48]:
+            - img "Pinacello" [ref=f152e49]
+            - generic [aria-hidden] [ref=f152e50]: ↗
+          - generic [ref=f152e51]:
+            - heading "Pinacello" [level=3] [ref=f152e52]
+            - strong [ref=f152e53]: +120% online revenue
+        - link [ref=f152e54] [cursor=pointer]:
+          - /url: /cases/nooms
+          - generic [ref=f152e55]:
+            - img "Nooms" [ref=f152e56]
+            - generic [aria-hidden] [ref=f152e57]: ↗
+          - generic [ref=f152e58]:
+            - heading "Nooms" [level=3] [ref=f152e59]
+            - paragraph [ref=f152e60]: Pre-sale sold out completely via influencer marketing.
+        - link [ref=f152e61] [cursor=pointer]:
+          - /url: /cases/olearys
+          - generic [ref=f152e62]:
+            - img "O'Learys" [ref=f152e63]
+            - generic [aria-hidden] [ref=f152e64]: ↗
+          - generic [ref=f152e65]:
+            - heading "O'Learys" [level=3] [ref=f152e66]
+            - paragraph [ref=f152e67]: From one website to separate paths for visitors and organisers.
+        - link [ref=f152e68] [cursor=pointer]:
+          - /url: /cases/e-kart
+          - generic [ref=f152e69]:
+            - img "E-Kart" [ref=f152e70]
+            - generic [aria-hidden] [ref=f152e71]: ↗
+          - generic [ref=f152e72]:
+            - heading "E-Kart" [level=3] [ref=f152e73]
+            - paragraph [ref=f152e74]: From the thrill of racing to a booking.
+        - link [ref=f152e75] [cursor=pointer]:
+          - /url: https://lytestudios.be/projects/tinrate/
+          - generic [ref=f152e76]:
+            - img "Tinrate" [ref=f152e77]
+            - generic [aria-hidden] [ref=f152e78]: ↗
+          - generic [ref=f152e79]:
+            - heading "Tinrate" [level=3] [ref=f152e81]
+            - paragraph [ref=f152e82]: A platform for booking paid conversations with experts.
+        - link [ref=f152e83] [cursor=pointer]:
+          - /url: https://lytestudios.be/projects/werkr/
+          - generic [ref=f152e84]:
+            - img "WERKR" [ref=f152e85]
+            - generic [aria-hidden] [ref=f152e86]: ↗
+          - generic [ref=f152e87]:
+            - heading "WERKR" [level=3] [ref=f152e89]
+            - paragraph [ref=f152e90]: Software for scheduling and delivering assignments with a flexible workforce.
+      - region [ref=f152e91]:
+        - heading "What do you want to grow?" [level=2] [ref=f152e92]
+        - generic [ref=f152e93]:
+          - link [ref=f152e94] [cursor=pointer]:
+            - /url: /google-ads
+            - heading "More qualified enquiries" [level=3] [ref=f152e95]
+            - paragraph [ref=f152e96]: Your sales team needs conversations with the right people. We connect Google Ads, persuasive pages and follow-up.
+            - generic [ref=f152e97]:
+              - text: Google Ads & lead generation
+              - generic [aria-hidden] [ref=f152e98]: ↗
+          - link [ref=f152e99] [cursor=pointer]:
+            - /url: /ecommerce-conversie
+            - heading "More sales from your store" [level=3] [ref=f152e100]
+            - paragraph [ref=f152e101]: Turn visitors into customers. We combine Meta Ads, a strong offer and a smooth purchase journey.
+            - generic [ref=f152e102]:
+              - text: Ecommerce & conversion
+              - generic [aria-hidden] [ref=f152e103]: ↗
+          - link [ref=f152e104] [cursor=pointer]:
+            - /url: /data-analytics
+            - heading "Know what your budget delivers" [level=3] [ref=f152e105]
+            - paragraph [ref=f152e106]: Which campaign brings customers? Where do visitors drop off? Tracking and analysis show what needs improving.
+            - generic [ref=f152e107]:
+              - text: Data & analytics
+              - generic [aria-hidden] [ref=f152e108]: ↗
+      - generic [ref=f152e109]:
+        - generic [ref=f152e110]:
+          - heading "Great design is the start. Growth is the goal." [level=2] [ref=f152e111]: Great design is the start.Growth is the goal.
+          - paragraph [ref=f152e112]: We connect your offer, ads and online store. Attention then has a clear path to purchase, and we can optimise for what actually sells.
+          - link "Explore Pinacello ↗" [ref=f152e113] [cursor=pointer]:
+            - /url: /cases/pinacello
+        - generic [ref=f152e114]:
+          - iframe [ref=f152e115]:
+            - generic [ref=f153e1]:
+              - generic "YouTube-videospeler" [ref=f153e3]
+              - generic [ref=f153e5]:
+                - generic:
+                  - generic:
+                    - generic [ref=f153e6] [cursor=pointer]
+                    - button "Video afspelen" [ref=f153e10] [cursor=pointer]
+                    - button "Afspeelbediening verbergen" [ref=f153e12] [cursor=pointer]
+                    - generic [ref=f153e14]:
+                      - generic [ref=f153e21]:
+                        - generic [ref=f153e22]:
+                          - link "Waarom je Meta Ads geen winst maken (Pinacello case study)" [ref=f153e23] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=Yy8j3y5s4jU
+                          - link "Stef Meister BE" [ref=f153e24] [cursor=pointer]:
+                            - /url: /channel/UC_SNWyYRszNva3hGFOZrLxg
+                        - generic [ref=f153e26]:
+                          - button [ref=f153e27] [cursor=pointer]
+                          - generic [ref=f153e29]:
+                            - generic: Stef Meister BE
+                            - generic: 80 abonnees
+                      - generic [ref=f153e30]:
+                        - button "Link kopiëren" [ref=f153e33] [cursor=pointer]
+                        - link "Bekijken op YouTube" [ref=f153e44] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=Yy8j3y5s4jU
+                          - generic [ref=f153e45]: Bekijken op
+          - link [ref=f152e116] [cursor=pointer]:
+            - /url: /cases/pinacello
+            - strong [ref=f152e117]: +120%
+            - paragraph [ref=f152e118]:
+              - text: online revenue growth
+              - generic [aria-hidden] [ref=f152e119]: ↗
+        - generic [ref=f152e120]:
+          - generic [ref=f152e121]:
+            - text: "01"
+            - heading "More relevant buyers" [level=3] [ref=f152e122]
+            - paragraph [ref=f152e123]: A clear offer for the right audience.
+          - generic [ref=f152e124]:
+            - text: "02"
+            - heading "More conversions" [level=3] [ref=f152e125]
+            - paragraph [ref=f152e126]: Ads and landing pages that work together.
+          - generic [ref=f152e127]:
+            - text: "03"
+            - heading "A view of profitability" [level=3] [ref=f152e128]
+            - paragraph [ref=f152e129]: Revenue, acquisition cost and margin guide decisions.
+      - generic [ref=f152e130]:
+        - generic [ref=f152e131]:
+          - heading "Reach the right people. Keep more customers." [level=2] [ref=f152e132]
+          - paragraph [ref=f152e133]: Google Ads captures demand. Meta Ads builds visibility. Data shows what delivers. Email marketing develops the relationship.
+        - generic [ref=f152e134]:
+          - link "Google Ads Reach people looking for you today. Turn buying intent into qualified enquiries and sales. We align keywords, ads and landing pages. Search Shopping Conversietracking Explore the approach ↗" [ref=f152e135] [cursor=pointer]:
+            - /url: /google-ads
+            - generic [aria-hidden] [ref=f152e136]:
+              - generic [ref=f152e137]: How it works
+              - generic [ref=f152e138]:
+                - generic [ref=f152e139]:
+                  - generic [ref=f152e140]: ⌕
+                  - generic [ref=f152e141]: The solution I need…
+                - generic [ref=f152e142]:
+                  - generic [ref=f152e143]: Ad · Your business
+                  - strong [ref=f152e144]: Found at the right moment.
+                  - generic [ref=f152e148]: From search to enquiry ↗
+            - generic [ref=f152e149]:
+              - generic [ref=f152e150]: Google Ads
+              - heading "Reach people looking for you today." [level=3] [ref=f152e151]
+              - paragraph [ref=f152e152]: Turn buying intent into qualified enquiries and sales. We align keywords, ads and landing pages.
+              - generic [ref=f152e153]:
+                - generic [ref=f152e154]: Search
+                - generic [ref=f152e155]: Shopping
+                - generic [ref=f152e156]: Conversietracking
+              - generic [ref=f152e157]:
+                - text: Explore the approach
+                - generic [ref=f152e158]: ↗
+          - link "Meta Ads Turn attention into new customers. Help the right people discover your offer on Facebook and Instagram. We test visuals, messages and audiences and reconnect with interested visitors. Facebook Instagram Creative testing Explore the approach ↗" [ref=f152e159] [cursor=pointer]:
+            - /url: /meta-ads
+            - generic [aria-hidden] [ref=f152e160]:
+              - generic [ref=f152e161]: How it works
+              - generic [ref=f152e162]:
+                - generic [ref=f152e163]: 02 / TEST
+                - generic [ref=f152e166]:
+                  - generic [ref=f152e167]: 01 / CREATIVE
+                  - strong [ref=f152e168]: An offer they remember.
+                  - generic [ref=f152e169]: Discover your brand ↗
+                - generic [ref=f152e170]: Test → learn → improve
+            - generic [ref=f152e171]:
+              - generic [ref=f152e172]: Meta Ads
+              - heading "Turn attention into new customers." [level=3] [ref=f152e173]
+              - paragraph [ref=f152e174]: Help the right people discover your offer on Facebook and Instagram. We test visuals, messages and audiences and reconnect with interested visitors.
+              - generic [ref=f152e175]:
+                - generic [ref=f152e176]: Facebook
+                - generic [ref=f152e177]: Instagram
+                - generic [ref=f152e178]: Creative testing
+              - generic [ref=f152e179]:
+                - text: Explore the approach
+                - generic [ref=f152e180]: ↗
+          - link "Data & analytics Know what works. Decide with clarity. Connect campaign costs, enquiries and sales. Reliable tracking and clear dashboards show where to make adjustments. GA4 Tag Manager Looker Studio Explore the approach ↗" [ref=f152e181] [cursor=pointer]:
+            - /url: /data-analytics
+            - generic [aria-hidden] [ref=f152e182]:
+              - generic [ref=f152e183]: How it works
+              - generic [ref=f152e184]:
+                - generic [ref=f152e185]:
+                  - generic [ref=f152e186]: Ads
+                  - generic [ref=f152e187]: Website
+                  - generic [ref=f152e188]: CRM
+                - generic [ref=f152e189]: ↓
+                - generic [ref=f152e190]:
+                  - strong [ref=f152e191]: One clear overview
+                  - generic [ref=f152e192]:
+                    - generic [ref=f152e193]: Cost
+                    - generic [ref=f152e194]: Enquiries
+                    - generic [ref=f152e195]: Revenue
+                  - generic [ref=f152e196]: ↗ From insight to action
+            - generic [ref=f152e197]:
+              - generic [ref=f152e198]: Data & analytics
+              - heading "Know what works. Decide with clarity." [level=3] [ref=f152e199]
+              - paragraph [ref=f152e200]: Connect campaign costs, enquiries and sales. Reliable tracking and clear dashboards show where to make adjustments.
+              - generic [ref=f152e201]:
+                - generic [ref=f152e202]: GA4
+                - generic [ref=f152e203]: Tag Manager
+                - generic [ref=f152e204]: Looker Studio
+              - generic [ref=f152e205]:
+                - text: Explore the approach
+                - generic [ref=f152e206]: ↗
+          - 'link "Email marketing Get more from every customer relationship. From first sign-up to repeat purchase: relevant campaigns and automated email flows keep your brand close at the right moment. Welcome Retention Automation Explore the approach ↗" [ref=f152e207] [cursor=pointer]':
+            - /url: /email-marketing
+            - generic [aria-hidden] [ref=f152e208]:
+              - generic [ref=f152e209]: How it works
+              - generic [ref=f152e210]:
+                - generic [ref=f152e211]: ✦ New subscriber
+                - generic [ref=f152e213]:
+                  - generic [ref=f152e214]: ✉
+                  - generic [ref=f152e215]:
+                    - generic [ref=f152e216]: WELCOME FLOW
+                    - strong [ref=f152e217]: Good to have you here.
+                  - generic [ref=f152e218]: ↗
+                - generic [ref=f152e220]:
+                  - generic [ref=f152e221]: Build trust
+                  - generic [ref=f152e222]: Buy again
+            - generic [ref=f152e223]:
+              - generic [ref=f152e224]: Email marketing
+              - heading "Get more from every customer relationship." [level=3] [ref=f152e225]
+              - paragraph [ref=f152e226]: "From first sign-up to repeat purchase: relevant campaigns and automated email flows keep your brand close at the right moment."
+              - generic [ref=f152e227]:
+                - generic [ref=f152e228]: Welcome
+                - generic [ref=f152e229]: Retention
+                - generic [ref=f152e230]: Automation
+              - generic [ref=f152e231]:
+                - text: Explore the approach
+                - generic [ref=f152e232]: ↗
+        - generic [ref=f152e233]:
+          - paragraph [ref=f152e234]: The technology behind your growth, too.
+          - generic [ref=f152e235]:
+            - link "Websites & ecommerce ↗" [ref=f152e236] [cursor=pointer]:
+              - /url: /websites
+            - link "CRM & automation ↗" [ref=f152e237] [cursor=pointer]:
+              - /url: /ai-automatiseringen
+            - link "Software & apps ↗" [ref=f152e238] [cursor=pointer]:
+              - /url: /software
+      - region [ref=f152e239]:
+        - generic [ref=f152e240]:
+          - heading "The right platforms. One connected approach." [level=2] [ref=f152e241]
+          - paragraph [ref=f152e242]: We use these platforms to connect your marketing, data and follow-up. We choose what your business needs.
+        - generic [ref=f152e243]:
+          - article [ref=f152e244]:
+            - heading "Advertising & reach" [level=3] [ref=f152e245]
+            - paragraph [ref=f152e246]: Reach your audience through the channels that fit your offer.
+            - list [ref=f152e247]:
+              - listitem [ref=f152e248]:
+                - generic [ref=f152e249]: Meta
+              - listitem [ref=f152e250]:
+                - generic [ref=f152e251]: Google
+              - listitem [ref=f152e252]:
+                - generic [ref=f152e253]: TikTok
+              - listitem [ref=f152e254]:
+                - generic [ref=f152e255]: Instagram
+              - listitem [ref=f152e256]:
+                - generic [ref=f152e257]: YouTube
+          - article [ref=f152e258]:
+            - heading "Data & insights" [level=3] [ref=f152e259]
+            - paragraph [ref=f152e260]: See where visitors come from, what they do and where they drop off.
+            - list [ref=f152e261]:
+              - listitem [ref=f152e262]:
+                - generic [ref=f152e263]: Google Analytics
+              - listitem [ref=f152e264]:
+                - generic [ref=f152e265]: Tag Manager
+              - listitem [ref=f152e266]:
+                - generic [ref=f152e267]: Looker Studio
+              - listitem [ref=f152e268]:
+                - generic [ref=f152e269]: Microsoft Clarity
+              - listitem [ref=f152e270]:
+                - generic [ref=f152e271]: Supabase
+          - article [ref=f152e272]:
+            - heading "Email & ecommerce" [level=3] [ref=f152e273]
+            - paragraph [ref=f152e274]: Connect your store and email marketing, from the first purchase to returning customers.
+            - list [ref=f152e275]:
+              - listitem [ref=f152e276]:
+                - generic [ref=f152e277]: Mailchimp
+              - listitem [ref=f152e278]:
+                - generic [ref=f152e279]: Klaviyo
+              - listitem [ref=f152e280]:
+                - generic [ref=f152e281]: Resend
+              - listitem [ref=f152e282]:
+                - generic [ref=f152e283]: Shopify
+              - listitem [ref=f152e284]:
+                - generic [ref=f152e285]: Wix
+              - listitem [ref=f152e286]:
+                - generic [ref=f152e287]: WhatsApp Business
+          - article [ref=f152e288]:
+            - heading "AI & automation" [level=3] [ref=f152e289]
+            - paragraph [ref=f152e290]: Use AI to build tools, connect processes and automate recurring work.
+            - list [ref=f152e291]:
+              - listitem [ref=f152e292]:
+                - generic [ref=f152e293]: Lovable
+              - listitem [ref=f152e294]:
+                - generic [ref=f152e295]: Codex
+              - listitem [ref=f152e296]:
+                - generic [ref=f152e297]: Claude
+              - listitem [ref=f152e298]:
+                - generic [ref=f152e299]: OpenAI
+      - region [ref=f152e300]:
+        - generic [ref=f152e301]:
+          - heading "Our own platforms. Included for clients." [level=2] [ref=f152e302]
+          - paragraph [ref=f152e303]: As a verkoop.studio client, you get access to our sales CRM and marketing dashboard, with no separate purchase or subscription needed. Everything we deliver comes with documentation and video guides, so you and your team know how it works.
+          - link "Request access" [ref=f152e304] [cursor=pointer]:
+            - /url: /contact?platform=overview
+            - text: Request access
+            - generic [aria-hidden] [ref=f152e305]: ↗
+        - generic [ref=f152e306]:
+          - article [ref=f152e307]:
+            - heading "Sales CRM" [level=3] [ref=f152e308]
+            - generic [ref=f152e309]: Free for our clients
+            - paragraph [ref=f152e310]: Keep an overview of your contacts, sales opportunities and next steps, so you know who to follow up with.
+            - link "Explore our CRM" [ref=f152e311] [cursor=pointer]:
+              - /url: /contact?platform=crm
+              - text: Explore our CRM
+              - generic [aria-hidden] [ref=f152e312]: ↗
+          - article [ref=f152e313]:
+            - heading "Marketing dashboard" [level=3] [ref=f152e314]
+            - generic [ref=f152e315]: Free for our clients
+            - paragraph [ref=f152e316]: Your campaigns, results and marketing figures in one place. See what your marketing delivers.
+            - link "Explore the marketing dashboard" [ref=f152e317] [cursor=pointer]:
+              - /url: /contact?platform=dashboard
+              - text: Explore the marketing dashboard
+              - generic [aria-hidden] [ref=f152e318]: ↗
+      - generic [ref=f152e320]:
+        - heading "Commercial thinking. Technical craft. Moving forward together." [level=2] [ref=f152e321]
+        - paragraph [ref=f152e322]: From Lochristi, we bring strategy, marketing, design and development together in one studio. From your first growth question to the website, campaigns and systems that make it happen.
+        - generic [ref=f152e323]:
+          - generic [ref=f152e324]:
+            - img "Stef Keppens at Nooms" [ref=f152e325]
+            - heading "Stef Keppens" [level=3] [ref=f152e326]
+            - paragraph [ref=f152e327]: Marketing strategy, funnels, ecommerce, campaigns and AI automation. Starting with the complete customer journey.
+          - generic [ref=f152e328]:
+            - img "Working together in the studio" [ref=f152e329]
+            - heading "Design & development" [level=3] [ref=f152e330]
+            - paragraph [ref=f152e331]: Websites, software and mobile apps. Product design and development from our studio in Lochristi.
+      - generic [ref=f152e334]:
+        - heading "From problem to working system" [level=2] [ref=f152e335]
+        - generic [ref=f152e336]:
+          - generic [ref=f152e337]:
+            - generic [ref=f152e338]: "01"
+            - heading "Analysis" [level=3] [ref=f152e339]
+            - paragraph [ref=f152e340]: We look at the website, campaigns, data and current customer journey.
+          - generic [ref=f152e341]:
+            - generic [ref=f152e342]: "02"
+            - heading "Priorities" [level=3] [ref=f152e343]
+            - paragraph [ref=f152e344]: We determine where the biggest commercial leaks are.
+          - generic [ref=f152e345]:
+            - generic [ref=f152e346]: "03"
+            - heading "Funnel design" [level=3] [ref=f152e347]
+            - paragraph [ref=f152e348]: We design the pages, campaigns, tracking and follow-up as one system.
+          - generic [ref=f152e349]:
+            - generic [ref=f152e350]: "04"
+            - heading "Implementation" [level=3] [ref=f152e351]
+            - paragraph [ref=f152e352]: The landing pages, ads and automations are built and connected.
+          - generic [ref=f152e353]:
+            - generic [ref=f152e354]: "05"
+            - heading "Optimisation" [level=3] [ref=f152e355]
+            - paragraph [ref=f152e356]: We measure behaviour, leads, bookings, sales and revenue, and improve based on data.
+        - paragraph [ref=f152e357]: "We work: Project-based · As an ongoing growth partner · Together with internal teams · Together with external developers, designers and specialists"
+      - region [ref=f152e358]:
+        - generic [ref=f152e359]:
+          - generic [ref=f152e360]:
+            - heading "The right foundation. Room to grow." [level=2] [ref=f152e361]: The right foundation.Room to grow.
+            - paragraph [ref=f152e362]: From a strong marketing foundation to a team that helps deliver it. Choose what fits your business.
+          - region [ref=f152e363]:
+            - generic [ref=f152e364]:
+              - heading "Your tools, with the guidance to use them." [level=3] [ref=f152e365]
+              - paragraph [ref=f152e366]: Our CRM and marketing dashboard are included. No separate subscription needed.
+            - generic [ref=f152e367]:
+              - generic [ref=f152e368]:
+                - heading "CRM for customer follow-up" [level=4] [ref=f152e369]
+                - paragraph [ref=f152e370]: Contacts, sales opportunities and follow-up in one place.
+              - generic [ref=f152e371]:
+                - heading "Your marketing dashboard" [level=4] [ref=f152e372]
+                - paragraph [ref=f152e373]: See how your campaigns perform and what they deliver.
+              - generic [ref=f152e374]:
+                - heading "Documentation & video guides" [level=4] [ref=f152e375]
+                - paragraph [ref=f152e376]: With everything we deliver. Clear for your whole team, ready to revisit anytime.
+          - generic [ref=f152e377]:
+            - article [ref=f152e378]:
+              - generic [ref=f152e379]:
+                - generic [ref=f152e380]: "01"
+                - generic [ref=f152e381]: A strong foundation
+              - heading "Growth Foundation" [level=3] [ref=f152e386]
+              - paragraph [ref=f152e387]: From scattered activity to a measurable plan.
+              - paragraph [ref=f152e388]: €1,500 / month
+              - paragraph [ref=f152e389]:
+                - generic [aria-hidden] [ref=f152e390]: ✓
+                - text: Includes free software for your business
+              - generic [ref=f152e391]:
+                - paragraph [ref=f152e392]: For businesses that want to get their ads, tracking and marketing foundations right.
+                - generic [ref=f152e393]:
+                  - paragraph [ref=f152e394]: What we work on
+                  - list [ref=f152e395]:
+                    - listitem [ref=f152e396]:
+                      - generic [aria-hidden] [ref=f152e397]: ✓
+                      - text: Strategy
+                    - listitem [ref=f152e398]:
+                      - generic [aria-hidden] [ref=f152e399]: ✓
+                      - text: Meta and Google Ads management
+                    - listitem [ref=f152e400]:
+                      - generic [aria-hidden] [ref=f152e401]: ✓
+                      - text: Reliable tracking and data
+                    - listitem [ref=f152e402]:
+                      - generic [aria-hidden] [ref=f152e403]: ✓
+                      - text: Monthly reporting
+                    - listitem [ref=f152e404]:
+                      - generic [aria-hidden] [ref=f152e405]: ✓
+                      - text: CRO advice
+                    - listitem [ref=f152e406]:
+                      - generic [aria-hidden] [ref=f152e407]: ✓
+                      - text: Content and ad direction
+                    - listitem [ref=f152e408]:
+                      - generic [aria-hidden] [ref=f152e409]: ✓
+                      - text: Access to our CRM and marketing dashboard
+                    - listitem [ref=f152e410]:
+                      - generic [aria-hidden] [ref=f152e411]: ✓
+                      - text: Documentation and video guides for everything
+              - link "Discuss Foundation" [ref=f152e412] [cursor=pointer]:
+                - /url: /contact?pakket=foundation
+                - text: Discuss Foundation
+                - generic [aria-hidden] [ref=f152e413]: ↗
+              - paragraph [ref=f152e414]: Your goals first. A proposal comes next.
+            - article [ref=f152e415]:
+              - generic [ref=f152e416]:
+                - generic [ref=f152e417]: "02"
+                - generic [ref=f152e418]: Campaigns + conversion
+              - heading "Growth Partner" [level=3] [ref=f152e423]
+              - paragraph [ref=f152e424]: Connect your campaigns, website and follow-up.
+              - paragraph [ref=f152e425]: €2,500 / month
+              - paragraph [ref=f152e426]:
+                - generic [aria-hidden] [ref=f152e427]: ✓
+                - text: Includes free software for your business
+              - generic [ref=f152e428]:
+                - paragraph [ref=f152e429]: For businesses that want to improve conversion and customer follow-up alongside their campaigns.
+                - generic [ref=f152e430]:
+                  - paragraph [ref=f152e431]: What we work on
+                  - list [ref=f152e432]:
+                    - listitem [ref=f152e433]:
+                      - generic [aria-hidden] [ref=f152e434]: ✓
+                      - text: Everything in Foundation
+                    - listitem [ref=f152e435]:
+                      - generic [aria-hidden] [ref=f152e436]: ✓
+                      - text: Landing pages and conversion improvements
+                    - listitem [ref=f152e437]:
+                      - generic [aria-hidden] [ref=f152e438]: ✓
+                      - text: Email flows, retargeting and automation
+                    - listitem [ref=f152e439]:
+                      - generic [aria-hidden] [ref=f152e440]: ✓
+                      - text: Custom dashboards and creative testing
+                    - listitem [ref=f152e441]:
+                      - generic [aria-hidden] [ref=f152e442]: ✓
+                      - text: SEO and local visibility
+                    - listitem [ref=f152e443]:
+                      - generic [aria-hidden] [ref=f152e444]: ✓
+                      - text: Weekly follow-up
+              - link "Discuss Partner" [ref=f152e445] [cursor=pointer]:
+                - /url: /contact?pakket=partner
+                - text: Discuss Partner
+                - generic [aria-hidden] [ref=f152e446]: ↗
+              - paragraph [ref=f152e447]: Your goals first. A proposal comes next.
+            - article [ref=f152e448]:
+              - generic [ref=f152e449]:
+                - generic [ref=f152e450]: "03"
+                - generic [ref=f152e451]: An extension of your team
+              - heading "Growth Department" [level=3] [ref=f152e456]
+              - paragraph [ref=f152e457]: One partner for your complete growth approach.
+              - paragraph [ref=f152e458]: From €4,000 / month
+              - paragraph [ref=f152e459]:
+                - generic [aria-hidden] [ref=f152e460]: ✓
+                - text: Includes free software for your business
+              - generic [ref=f152e461]:
+                - paragraph [ref=f152e462]: For businesses that want coordinated strategy and delivery across multiple channels.
+                - generic [ref=f152e463]:
+                  - paragraph [ref=f152e464]: What we work on
+                  - list [ref=f152e465]:
+                    - listitem [ref=f152e466]:
+                      - generic [aria-hidden] [ref=f152e467]: ✓
+                      - text: Everything in Partner
+                    - listitem [ref=f152e468]:
+                      - generic [aria-hidden] [ref=f152e469]: ✓
+                      - text: Multiple campaigns and sales funnels
+                    - listitem [ref=f152e470]:
+                      - generic [aria-hidden] [ref=f152e471]: ✓
+                      - text: Active conversion optimisation
+                    - listitem [ref=f152e472]:
+                      - generic [aria-hidden] [ref=f152e473]: ✓
+                      - text: CRM and AI automation
+                    - listitem [ref=f152e474]:
+                      - generic [aria-hidden] [ref=f152e475]: ✓
+                      - text: Strategic and organic growth planning
+                    - listitem [ref=f152e476]:
+                      - generic [aria-hidden] [ref=f152e477]: ✓
+                      - text: Monthly management workshop
+                    - listitem [ref=f152e478]:
+                      - generic [aria-hidden] [ref=f152e479]: ✓
+                      - text: Priority support
+              - link "Discuss your needs" [ref=f152e480] [cursor=pointer]:
+                - /url: /contact?pakket=department
+                - text: Discuss your needs
+                - generic [aria-hidden] [ref=f152e481]: ↗
+              - paragraph [ref=f152e482]: Your goals first. A proposal comes next.
+          - group [ref=f152e483]:
+            - generic "Compare what each package includes" [active] [ref=f152e484] [cursor=pointer]:
+              - text: Compare what each package includes
+              - generic [aria-hidden] [ref=f152e485]: +
+            - region "Package comparison, scroll horizontally" [ref=f152e650]:
+              - table [ref=f152e651]:
+                - caption [ref=f152e652]: Full growth package comparison
+                - rowgroup [ref=f152e653]:
+                  - row [ref=f152e654]:
+                    - columnheader "Included" [ref=f152e655]
+                    - columnheader "Growth Foundation" [ref=f152e656]
+                    - columnheader "Growth Partner" [ref=f152e657]
+                    - columnheader "Growth Department" [ref=f152e658]
+                - rowgroup [ref=f152e659]:
+                  - row [ref=f152e660]:
+                    - rowheader "Access to our CRM" [ref=f152e661]
+                    - cell "Included" [ref=f152e662]: ✓
+                    - cell "Included" [ref=f152e664]: ✓
+                    - cell "Included" [ref=f152e666]: ✓
+                  - row [ref=f152e668]:
+                    - rowheader "Access to our marketing dashboard" [ref=f152e669]
+                    - cell "Included" [ref=f152e670]: ✓
+                    - cell "Included" [ref=f152e672]: ✓
+                    - cell "Included" [ref=f152e674]: ✓
+                  - row [ref=f152e676]:
+                    - rowheader "Documentation and video guides" [ref=f152e677]
+                    - cell "Included" [ref=f152e678]: ✓
+                    - cell "Included" [ref=f152e680]: ✓
+                    - cell "Included" [ref=f152e682]: ✓
+                  - row [ref=f152e684]:
+                    - rowheader "Growth strategy" [ref=f152e685]
+                    - cell "Included" [ref=f152e686]: ✓
+                    - cell "Included" [ref=f152e688]: ✓
+                    - cell "Included" [ref=f152e690]: ✓
+                  - row [ref=f152e692]:
+                    - rowheader "Meta Ads management" [ref=f152e693]
+                    - cell "Included" [ref=f152e694]: ✓
+                    - cell "Included" [ref=f152e696]: ✓
+                    - cell "Included" [ref=f152e698]: ✓
+                  - row [ref=f152e700]:
+                    - rowheader "Google Ads management" [ref=f152e701]
+                    - cell "Included" [ref=f152e702]: ✓
+                    - cell "Included" [ref=f152e704]: ✓
+                    - cell "Included" [ref=f152e706]: ✓
+                  - row [ref=f152e708]:
+                    - rowheader "Tracking & analytics" [ref=f152e709]
+                    - cell "Included" [ref=f152e710]: ✓
+                    - cell "Included" [ref=f152e712]: ✓
+                    - cell "Included" [ref=f152e714]: ✓
+                  - row [ref=f152e716]:
+                    - rowheader "Monthly reporting" [ref=f152e717]
+                    - cell "Included" [ref=f152e718]: ✓
+                    - cell "Included" [ref=f152e720]: ✓
+                    - cell "Included" [ref=f152e722]: ✓
+                  - row [ref=f152e724]:
+                    - rowheader "Creative / ad direction" [ref=f152e725]
+                    - cell "Included" [ref=f152e726]: ✓
+                    - cell "Included" [ref=f152e728]: ✓
+                    - cell "Included" [ref=f152e730]: ✓
+                  - row [ref=f152e732]:
+                    - rowheader "Landing page & CRO advice" [ref=f152e733]
+                    - cell "Included" [ref=f152e734]: ✓
+                    - cell "Included" [ref=f152e736]: ✓
+                    - cell "Included" [ref=f152e738]: ✓
+                  - row [ref=f152e740]:
+                    - rowheader "Landing page implementation" [ref=f152e741]
+                    - cell "Not included" [ref=f152e742]: "No"
+                    - cell "Included" [ref=f152e744]: ✓
+                    - cell "Included" [ref=f152e746]: ✓
+                  - row [ref=f152e748]:
+                    - rowheader "SEO / local SEO" [ref=f152e749]
+                    - cell "Not included" [ref=f152e750]: "No"
+                    - cell "Included" [ref=f152e752]: ✓
+                    - cell "Included" [ref=f152e754]: ✓
+                  - row [ref=f152e756]:
+                    - rowheader "Custom dashboards and creative testing" [ref=f152e757]
+                    - cell "Not included" [ref=f152e758]: "No"
+                    - cell "Included" [ref=f152e760]: ✓
+                    - cell "Included" [ref=f152e762]: ✓
+                  - row [ref=f152e764]:
+                    - rowheader "Email marketing strategy" [ref=f152e765]
+                    - cell "Not included" [ref=f152e766]: "No"
+                    - cell "Included" [ref=f152e768]: ✓
+                    - cell "Included" [ref=f152e770]: ✓
+                  - row [ref=f152e772]:
+                    - rowheader "Email flows & automation" [ref=f152e773]
+                    - cell "Not included" [ref=f152e774]: "No"
+                    - cell "Included" [ref=f152e776]: ✓
+                    - cell "Included" [ref=f152e778]: ✓
+                  - row [ref=f152e780]:
+                    - rowheader "Retargeting funnels" [ref=f152e781]
+                    - cell "Basic" [ref=f152e782]
+                    - cell "Included" [ref=f152e783]: ✓
+                    - cell "Included" [ref=f152e785]: ✓
+                  - row [ref=f152e787]:
+                    - rowheader "Website optimisation" [ref=f152e788]
+                    - cell "Advice" [ref=f152e789]
+                    - cell "Regular optimisation" [ref=f152e790]
+                    - cell "Continuous optimisation" [ref=f152e791]
+                  - row [ref=f152e792]:
+                    - rowheader "Organic social strategy" [ref=f152e793]
+                    - cell "Not included" [ref=f152e794]: "No"
+                    - cell "Basic" [ref=f152e796]
+                    - cell "Included" [ref=f152e797]: ✓
+                  - row [ref=f152e799]:
+                    - rowheader "Content planning" [ref=f152e800]
+                    - cell "Not included" [ref=f152e801]: "No"
+                    - cell "Direction" [ref=f152e803]
+                    - cell "Active planning" [ref=f152e804]
+                  - row [ref=f152e805]:
+                    - rowheader "CRM optimisation" [ref=f152e806]
+                    - cell "Not included" [ref=f152e807]: "No"
+                    - cell "Basic" [ref=f152e809]
+                    - cell "Advanced" [ref=f152e810]
+                  - row [ref=f152e811]:
+                    - rowheader "Sales funnel optimisation" [ref=f152e812]
+                    - cell "Advice" [ref=f152e813]
+                    - cell "Included" [ref=f152e814]: ✓
+                    - cell "Included" [ref=f152e816]: ✓
+                  - row [ref=f152e818]:
+                    - rowheader "New campaigns & offers" [ref=f152e819]
+                    - cell "Limited" [ref=f152e820]
+                    - cell "Included" [ref=f152e821]: ✓
+                    - cell "Continuous" [ref=f152e823]
+                  - row [ref=f152e824]:
+                    - rowheader "Weekly growth meeting" [ref=f152e825]
+                    - cell "Not included" [ref=f152e826]: "No"
+                    - cell "Included" [ref=f152e828]: ✓
+                    - cell "Included" [ref=f152e830]: ✓
+                  - row [ref=f152e832]:
+                    - rowheader "Management / strategic consulting" [ref=f152e833]
+                    - cell "Not included" [ref=f152e834]: "No"
+                    - cell "Limited" [ref=f152e836]
+                    - cell "Included" [ref=f152e837]: ✓
+                  - row [ref=f152e839]:
+                    - rowheader "Priority support" [ref=f152e840]
+                    - cell "Not included" [ref=f152e841]: "No"
+                    - cell "Not included" [ref=f152e843]: "No"
+                    - cell "Included" [ref=f152e845]: ✓
+                  - row [ref=f152e847]:
+                    - rowheader "Multiple funnels / campaigns" [ref=f152e848]
+                    - cell "Limited" [ref=f152e849]
+                    - cell "Moderate" [ref=f152e850]
+                    - cell "High capacity" [ref=f152e851]
+                  - row [ref=f152e852]:
+                    - rowheader "External consulting outside scope" [ref=f152e853]
+                    - cell "€250/hour" [ref=f152e854]
+                    - cell "€250/hour" [ref=f152e855]
+                    - cell "€250/hour" [ref=f152e856]
+          - generic [ref=f152e486]:
+            - generic [ref=f152e487]:
+              - heading "You don’t have to know yet." [level=3] [ref=f152e488]
+              - paragraph [ref=f152e489]: Let’s look at where you are first. A focused session or learning track is also an option, without choosing a monthly package.
+              - link "Help me choose" [ref=f152e490] [cursor=pointer]:
+                - /url: /contact
+                - text: Help me choose
+                - generic [aria-hidden] [ref=f152e491]: ↗
+            - generic [ref=f152e492]:
+              - generic [ref=f152e493]:
+                - heading "Strategy session" [level=4] [ref=f152e494]
+                - strong [ref=f152e495]: €250 / hour
+                - paragraph [ref=f152e496]: A focused sparring session about your growth. Come to learn first, and decide on working together later.
+              - generic [ref=f152e497]:
+                - heading "Learning track" [level=4] [ref=f152e498]
+                - strong [ref=f152e499]: On request
+                - paragraph [ref=f152e500]: A guided track where you learn to run and execute your own digital growth. We discuss the scope and setup together.
+      - region [ref=f152e501]:
+        - generic [ref=f152e502]:
+          - heading "Frequently asked questions" [level=2] [ref=f152e503]
+          - generic [ref=f152e504]:
+            - group [ref=f152e505]:
+              - generic "Who is verkoop.studio?" [ref=f152e506] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e508]: +
+              - paragraph [ref=f152e509]: verkoop.studio is a studio in Lochristi for strategy, marketing, design and development. We connect commercial growth with the websites, apps and systems behind it. Our portfolio credits the teams behind existing projects.
+            - group [ref=f152e510]:
+              - generic "Can we work with you just on a website or app?" [ref=f152e511] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e513]: +
+            - group [ref=f152e514]:
+              - generic "What kind of companies do you work with?" [ref=f152e515] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e517]: +
+            - group [ref=f152e518]:
+              - generic "Do you only build landing pages, or the full funnel too?" [ref=f152e519] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e521]: +
+            - group [ref=f152e522]:
+              - generic "Do you also do Meta Ads and Google Ads?" [ref=f152e523] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e525]: +
+            - group [ref=f152e526]:
+              - generic "Do you also do B2B outreach or email campaigns?" [ref=f152e527] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e529]: +
+            - group [ref=f152e530]:
+              - generic "Can you optimise an existing ecommerce website?" [ref=f152e531] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e533]: +
+            - group [ref=f152e534]:
+              - generic "Do you work alongside internal marketing teams?" [ref=f152e535] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e537]: +
+            - group [ref=f152e538]:
+              - generic "Do you also build AI automations?" [ref=f152e539] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e541]: +
+            - group [ref=f152e542]:
+              - generic "Do you handle both strategy and execution?" [ref=f152e543] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e545]: +
+            - group [ref=f152e546]:
+              - generic "Do you work project-based or on a monthly basis?" [ref=f152e547] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e549]: +
+            - group [ref=f152e550]:
+              - generic "How does a collaboration start?" [ref=f152e551] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e553]: +
+            - group [ref=f152e554]:
+              - generic "How is success measured?" [ref=f152e555] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e557]: +
+            - group [ref=f152e558]:
+              - generic "Can I start with standalone consulting first, without a monthly package?" [ref=f152e559] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e561]: +
+            - group [ref=f152e562]:
+              - generic "What does a collaboration cost?" [ref=f152e563] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e565]: +
+            - group [ref=f152e566]:
+              - generic "Do I need to buy a CRM or marketing dashboard separately?" [ref=f152e567] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e569]: +
+            - group [ref=f152e570]:
+              - generic "Do we also receive documentation and video guides?" [ref=f152e571] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f152e573]: +
+      - generic [ref=f152e575]:
+        - heading "Ready to turn marketing into more revenue?" [level=2] [ref=f152e576]
+        - paragraph [ref=f152e577]: Find out where your ads, website, ecommerce or follow-up are losing revenue today.
+        - generic [ref=f152e578]:
+          - link "Discuss your project" [ref=f152e579] [cursor=pointer]:
+            - /url: /contact
+          - link "See our work" [ref=f152e580] [cursor=pointer]:
+            - /url: /cases
+  - contentinfo [ref=f152e581]:
+    - generic [ref=f152e582]:
+      - generic [ref=f152e583]:
+        - generic [ref=f152e584]:
+          - link "verkoop.studio, home" [ref=f152e585] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f152e586]:
+              - generic [ref=f152e587]: verkoop.
+              - generic [ref=f152e588]: studio
+          - paragraph [ref=f152e589]: Lochristi, België
+          - paragraph [ref=f152e590]: We build the complete digital route from first click to conversion.
+        - generic [ref=f152e591]:
+          - paragraph [ref=f152e592]: Navigation
+          - list [ref=f152e593]:
+            - listitem [ref=f152e594]:
+              - link "Blog · Gent & omgeving" [ref=f152e595] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f152e596]:
+              - link "Home" [ref=f152e597] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f152e598]:
+              - link "Results" [ref=f152e599] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f152e600]:
+              - link "Services" [ref=f152e601] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f152e602]:
+              - link "Cases" [ref=f152e603] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f152e604]:
+              - link "Agency" [ref=f152e605] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f152e606]:
+              - link "Contact" [ref=f152e607] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f152e608]:
+          - paragraph [ref=f152e609]: Services
+          - list [ref=f152e610]:
+            - listitem [ref=f152e611]:
+              - link "Email marketing" [ref=f152e612] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f152e613]:
+              - link "Data & analytics" [ref=f152e614] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f152e615]:
+              - link "Websites & ecommerce" [ref=f152e616] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f152e617]:
+              - link "Software & apps" [ref=f152e618] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f152e619]:
+              - link "Landing pages" [ref=f152e620] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f152e621]:
+              - link "Funnels" [ref=f152e622] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f152e623]:
+              - link "Meta Ads" [ref=f152e624] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f152e625]:
+              - link "Google Ads" [ref=f152e626] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f152e627]:
+              - link "Ecommerce conversion" [ref=f152e628] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f152e629]:
+              - link "AI automations" [ref=f152e630] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f152e631]:
+              - link "Offer & distribution" [ref=f152e632] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f152e633]:
+          - paragraph [ref=f152e634]: Contact
+          - list [ref=f152e635]:
+            - listitem [ref=f152e636]:
+              - link "stefkeppens@gmail.com" [ref=f152e637] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f152e638]:
+              - link "Discuss your project" [ref=f152e639] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f152e640]:
+        - paragraph [ref=f152e641]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f152e642]:
+          - generic [ref=f152e643]: NL
+          - generic [aria-hidden] [ref=f152e644]: /
+          - generic [ref=f152e645]: EN
+        - paragraph [ref=f152e646]: Growth, design & development.
+  - button "Back to top" [ref=f152e857]:
+    - generic [aria-hidden] [ref=f152e858]: ↑
+  - button "Open FAQ chat" [ref=f152e648] [cursor=pointer]:
+    - generic [ref=f152e649]: Ask the studio

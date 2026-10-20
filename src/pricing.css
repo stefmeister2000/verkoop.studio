@@ -1,50 +1,50 @@
 .growth-pricing { border-bottom: 1px solid #dfe3ef; background: radial-gradient(ellipse at 50% 35%,#e9edff66,transparent 65%),#fafaff; }
 .pricing-wrap { max-width: 1250px; margin: auto; padding: 90px 32px; }
 .pricing-intro { max-width: 740px; margin-bottom: 42px; }
-.pricing-intro h2 { font-size: clamp(32px,4vw,52px); line-height: 1.08; letter-spacing: -.055em; font-weight: 600; margin: 18px 0; color: #151b2d; }
-.pricing-intro h2 span { color: #294cf0; }
+.pricing-intro h2 { font-size: clamp(32px,4vw,52px); line-height: 1.08; letter-spacing: -.055em; font-weight: 600; margin: 0 0 18px; color: #151b2d; }
+.pricing-intro h2 span { color: #254bfa; }
 .pricing-intro > p:last-child { font-size: 16px; line-height: 1.75; color: #596178; max-width: 640px; }
-.pricing-included { margin-bottom: 28px; padding: 30px; border: 1px solid #cdd7f5; border-radius: 24px; background: #edf2ff; }
+.pricing-included { margin-bottom: 28px; padding: 30px; border: 1px solid #c5d0f2; border-radius: 24px; background: #edf2ff; }
 .pricing-included-intro { max-width: 720px; }
-.pricing-included h3 { margin: 14px 0 12px; font-size: clamp(25px,3vw,34px); line-height: 1.2; letter-spacing: -.04em; font-weight: 600; color: #182039; }
-.pricing-included p:not(.eyebrow) { font-size: 14px; line-height: 1.8; color: #48546e; }
+.pricing-included h3 { margin: 0 0 12px; font-size: clamp(25px,3vw,34px); line-height: 1.2; letter-spacing: -.04em; font-weight: 600; color: #182039; }
+.pricing-included p { font-size: 15px; line-height: 1.6; color: #4e5364; }
 .pricing-included-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; margin-top: 26px; padding-top: 24px; border-top: 1px solid #cdd7f5; }
 .pricing-included-grid h4 { margin-bottom: 8px; font-size: 16px; line-height: 1.5; font-weight: 600; color: #253c98; }
 .pricing-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; align-items: stretch; }
-.growth-plan { display: flex; flex-direction: column; padding: 28px; border: 1px solid #dce2f0; border-radius: 24px; background: #fff; color: #182039; min-width: 0; box-shadow: 0 12px 40px #1b2f6610; }
-.plan-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; font-size: 10px; color: #626c85; }
+.growth-plan { display: flex; flex-direction: column; padding: 28px; border: 1px solid #e1e4ef; border-radius: 20px; background: #fff; color: #182039; min-width: 0; box-shadow: 0 10px 30px #10131c14; }
+.plan-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; font-size: 13px; color: #626c85; }
 .plan-topline > span:first-child { letter-spacing: .1em; }
 .plan-topline > span:last-child { padding: 7px 10px; background: #eef2ff; color: #304fc8; border-radius: 20px; }
 .plan-signal { display: flex; align-items: flex-end; gap: 7px; height: 62px; margin: 25px 0 24px; }
 .plan-signal span { width: 34px; height: 22px; border-radius: 7px; background: #edf0f8; transform-origin: bottom; }
 .plan-signal span:nth-child(2) { height: 39px; }
 .plan-signal span:nth-child(3) { height: 56px; }
-.plan-signal .signal-active { background: linear-gradient(160deg,#6e89ff,#244afa); box-shadow: inset 0 1px 0 #ffffff55; }
+.plan-signal .signal-active { background: linear-gradient(160deg,#6e89ff,#254bfa); box-shadow: inset 0 1px 0 #ffffff55; }
 .growth-plan h3 { font-size: 23px; letter-spacing: -.04em; font-weight: 600; }
-.plan-outcome { min-height: 66px; font-size: 14px; line-height: 1.65; color: #515c75; margin-top: 10px; }
+.plan-outcome { min-height: 66px; font-size: 15px; line-height: 1.6; color: #4e5364; margin-top: 10px; }
 .plan-price { font-size: clamp(19px,1.85vw,25px); font-weight: 650; letter-spacing: -.045em; margin-top: 24px; }
-.plan-software { display: flex; align-items: flex-start; gap: 8px; align-self: flex-start; margin-top: 14px; padding: 9px 12px; border: 1px solid #dce4ff; border-radius: 10px; background: #f1f5ff; color: #2948b0; font-size: 12px; font-weight: 500; line-height: 1.6; }
+.plan-software { display: flex; align-items: flex-start; gap: 8px; align-self: flex-start; margin-top: 14px; padding: 9px 12px; border: 1px solid #dce4ff; border-radius: 10px; background: #f1f5ff; color: #254bfa; font-size: 13px; font-weight: 500; line-height: 1.6; }
 .plan-software > span { flex-shrink: 0; }
 .growth-plan-featured .plan-software { border-color: #ffffff30; background: #ffffff12; color: #e4edff; }
 .growth-plan-featured .plan-software > span { color: #b6f1e1; }
-.plan-audience { font-size: 12px; line-height: 1.7; color: #626c85; margin-top: 12px; min-height: 62px; }
+.plan-audience { font-size: 14px; line-height: 1.6; color: #4e5364; margin-top: 12px; min-height: 62px; }
 .plan-details-toggle, .pricing-mobile-comparison { display: none; }
 .plan-details-content { display: flex; flex-direction: column; flex: 1; }
 .plan-includes { border-top: 1px solid #e2e7f2; margin-top: 24px; padding-top: 24px; flex: 1; }
 .plan-includes > p { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #68758e; margin-bottom: 18px; }
 .plan-includes ul { display: grid; gap: 13px; }
-.plan-includes li { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; line-height: 1.65; color: #48546e; }
-.plan-includes li > span { color: #294cf0; flex-shrink: 0; }
+.plan-includes li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.6; color: #4e5364; }
+.plan-includes li > span { color: #254bfa; flex-shrink: 0; }
 .plan-cta { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 15px 18px; min-height: 50px; border: 1px solid #cdd6ee; border-radius: 12px; font-size: 13px; font-weight: 600; margin-top: 32px; color: #1f3bbb; background: #f4f6ff; }
 .plan-cta-note { text-align: center; font-size: 10px; line-height: 1.6; color: #6a7389; margin-top: 12px; }
-.growth-plan-featured { background: linear-gradient(150deg,#263fd6,#17256a); border-color: #3451ed; color: #fff; box-shadow: 0 20px 50px #244afa26; }
+.growth-plan-featured { background: linear-gradient(150deg,#263fd6,#17256a); border-color: #3451ed; color: #fff; box-shadow: 0 20px 50px #254bfa26; }
 .growth-plan-featured :is(.plan-outcome,.plan-audience,.plan-topline,.plan-includes li,.plan-cta-note,.plan-includes > p) { color: #dbe3ff; }
 .growth-plan-featured .plan-topline > span:last-child { background: #ffffff1f; color: #fff; }
 .growth-plan-featured .plan-includes { border-color: #ffffff30; }
 .growth-plan-featured .plan-includes li > span { color: #b6f1e1; }
 .growth-plan-featured .plan-signal span { background: #ffffff1a; }
 .growth-plan-featured .plan-signal .signal-active { background: linear-gradient(160deg,#d2f5ff,#7fa7ff); }
-.growth-plan-featured .plan-cta { color: #243fc6; background: #fff; border-color: #fff; }
+.growth-plan-featured .plan-cta { color: #254bfa; background: #fff; border-color: #fff; }
 .pricing-comparison { margin-top: 36px; border-block: 1px solid #dde3ef; }
 .pricing-comparison summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 23px 0; cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: #263966; }
 .pricing-comparison summary::-webkit-details-marker { display: none; }
@@ -57,8 +57,8 @@
 .pricing-table-scroll tbody th { font-weight: 400; }
 .pricing-table-scroll td:nth-child(3) { background: #f0f3ff; }
 .pricing-first-step { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 48px; }
-.pricing-first-step h3 { font-size: 26px; line-height: 1.2; letter-spacing: -.04em; color: #182039; margin: 14px 0; }
-.pricing-first-step p:not(.eyebrow) { font-size: 13px; line-height: 1.8; color: #5f6a80; }
+.pricing-first-step h3 { font-size: 26px; line-height: 1.2; letter-spacing: -.04em; color: #182039; margin: 0 0 14px; }
+.pricing-first-step p { font-size: 13px; line-height: 1.8; color: #5f6a80; }
 .pricing-first-step .button-dark { margin-top: 23px; }
 .pricing-alternatives { display: grid; gap: 16px; }
 .pricing-alternatives > div { border: 1px solid #dce3f1; background: #fff; border-radius: 16px; padding: 22px; }
@@ -97,7 +97,7 @@
   .pricing-included { padding: 22px; }
   .pricing-included-grid { gap: 16px; margin-top: 18px; padding-top: 18px; }
   .pricing-included-grid h4 { margin-bottom: 4px; }
-  .pricing-included p:not(.eyebrow) { line-height: 1.65; }
+  .pricing-included p { line-height: 1.65; }
   .pricing-grid { gap: 14px; }
   .growth-plan { padding: 22px; box-shadow: none; }
   .plan-signal { display: none; }

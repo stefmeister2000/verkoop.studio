@@ -9,8 +9,7 @@ const context = {
 export default function CaseEvidence({project}:{project:CaseStudy}) {
  const {lang}=useLang();const nl=lang==='nl'
  return <section className="border-y border-line bg-surface/30" aria-labelledby={`evidence-${project.slug}`}><div className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-  <p className="text-xs uppercase tracking-widest text-mute">{nl?'Werk & resultaatcontext':'Work & result context'}</p>
-  <h2 id={`evidence-${project.slug}`} className="mt-3 font-display text-2xl text-paper">{nl?'Wat deze case laat zien':'What this case demonstrates'}</h2>
+  <h2 id={`evidence-${project.slug}`} className="font-display text-2xl text-paper">{nl?'Wat deze case laat zien':'What this case demonstrates'}</h2>
   <p className="mt-5 max-w-3xl leading-8 text-bone">{context[project.slug][lang]}</p>
   {project.liveUrl && <p className="mt-5 text-sm leading-7 text-mute"><a className="text-paper underline underline-offset-4" href={project.liveUrl} target="_blank" rel="noopener noreferrer">{nl?`Bekijk het publieke werk bij ${project.name}`:`View the public work at ${project.name}`}</a><br/>{nl?'De live website kan intussen gewijzigd zijn. Ze toont het aanbod en de ervaring, niet de achterliggende omzetrapportage.':'The live website may have changed. It shows the offer and experience, not the underlying revenue report.'}</p>}
  </div></section>

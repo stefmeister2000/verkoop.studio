@@ -106,7 +106,7 @@ export function captureAttribution(): Attribution {
   try {
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(attribution))
   } catch {
-    // storage unavailable — attribution still returned for this page view
+    // If storage is unavailable, attribution is still returned for this page view.
   }
 
   if (attribution.utm_source) trackEvent('traffic_source_captured', attribution)

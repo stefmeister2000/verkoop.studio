@@ -31,7 +31,6 @@ export function StudioTools() {
   const i = lang === 'nl' ? 0 : 1
   return <section className="studio-tools" aria-labelledby="studio-tools-title">
     <div className="marketing-intro">
-      <p className="eyebrow">{i === 0 ? 'De tools achter ons werk' : 'The tools behind our work'}</p>
       <h2 id="studio-tools-title">{i === 0 ? 'De juiste platforms. Eén verbonden aanpak.' : 'The right platforms. One connected approach.'}</h2>
       <p>{i === 0 ? 'We werken met deze platforms om je marketing, data en opvolging op elkaar af te stemmen. We kiezen wat jouw bedrijf nodig heeft.' : 'We use these platforms to connect your marketing, data and follow-up. We choose what your business needs.'}</p>
     </div>
@@ -50,14 +49,13 @@ export function OwnPlatforms() {
   const nl = lang === 'nl'
   return <section className="studio-own-platforms" aria-labelledby="own-platforms-title">
     <div className="own-platforms-intro">
-      <p className="eyebrow">{nl ? 'Gebouwd door verkoop.studio' : 'Built by verkoop.studio'}</p>
       <h2 id="own-platforms-title">{nl ? 'Onze eigen platforms. Inbegrepen voor klanten.' : 'Our own platforms. Included for clients.'}</h2>
       <p>{nl ? 'Als klant van verkoop.studio krijg je toegang tot ons sales-CRM en marketingdashboard. Die programma’s hoef je niet meer apart aan te schaffen. Bij alles wat we opleveren krijg je documentatie en instructievideo’s, zodat jij en je team weten hoe het werkt.' : 'As a verkoop.studio client, you get access to our sales CRM and marketing dashboard, with no separate purchase or subscription needed. Everything we deliver comes with documentation and video guides, so you and your team know how it works.'}</p>
       <Link className="own-platforms-cta" to="/contact?platform=overview">{nl ? 'Vraag toegang aan' : 'Request access'} <span aria-hidden="true">↗</span></Link>
     </div>
     <div className="own-platforms-products">
-      <article><span className="own-product-label">01 / {nl ? 'Sales & opvolging' : 'Sales & follow-up'}</span><h3>Sales CRM</h3><span className="own-product-included">{nl ? 'Gratis voor onze klanten' : 'Free for our clients'}</span><p>{nl ? 'Houd overzicht over je contacten, verkoopkansen en volgende stappen. Zo weet je wie je nog moet opvolgen.' : 'Keep an overview of your contacts, sales opportunities and next steps, so you know who to follow up with.'}</p><Link to="/contact?platform=crm">{nl ? 'Meer over ons CRM' : 'Explore our CRM'} <span aria-hidden="true">↗</span></Link></article>
-      <article><span className="own-product-label">02 / {nl ? 'Marketing & inzicht' : 'Marketing & insights'}</span><h3>{nl ? 'Marketingdashboard' : 'Marketing dashboard'}</h3><span className="own-product-included">{nl ? 'Gratis voor onze klanten' : 'Free for our clients'}</span><p>{nl ? 'Je campagnes, resultaten en marketingcijfers op één plek. Zo volg je eenvoudig wat je marketing oplevert.' : 'Your campaigns, results and marketing figures in one place. See what your marketing delivers.'}</p><Link to="/contact?platform=dashboard">{nl ? 'Meer over het marketingdashboard' : 'Explore the marketing dashboard'} <span aria-hidden="true">↗</span></Link></article>
+      <article><h3>Sales CRM</h3><span className="own-product-included">{nl ? 'Gratis voor onze klanten' : 'Free for our clients'}</span><p>{nl ? 'Houd overzicht over je contacten, verkoopkansen en volgende stappen. Zo weet je wie je nog moet opvolgen.' : 'Keep an overview of your contacts, sales opportunities and next steps, so you know who to follow up with.'}</p><Link to="/contact?platform=crm">{nl ? 'Meer over ons CRM' : 'Explore our CRM'} <span aria-hidden="true">↗</span></Link></article>
+      <article><h3>{nl ? 'Marketingdashboard' : 'Marketing dashboard'}</h3><span className="own-product-included">{nl ? 'Gratis voor onze klanten' : 'Free for our clients'}</span><p>{nl ? 'Je campagnes, resultaten en marketingcijfers op één plek. Zo volg je eenvoudig wat je marketing oplevert.' : 'Your campaigns, results and marketing figures in one place. See what your marketing delivers.'}</p><Link to="/contact?platform=dashboard">{nl ? 'Meer over het marketingdashboard' : 'Explore the marketing dashboard'} <span aria-hidden="true">↗</span></Link></article>
     </div>
   </section>
 }

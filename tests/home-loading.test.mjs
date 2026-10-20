@@ -56,7 +56,7 @@ test('phone hero uses the existing smaller photo with matching, exclusive preloa
   assert(picture)
   const mobile = picture.match(/<source media="\(max-width: 600px\)" srcSet="([^"]+)"/)
   assert(mobile)
-  assert.match(mobile[1], /studio-team-640-.*\.webp$/)
+  assert.match(mobile[1], /hero-portrait-640-.*\.webp$/)
   assert((await readFile(`dist${mobile[1]}`)).length < 45000)
   const preloads = [...head.matchAll(/<link\b[^>]*as="image"[^>]*>/g)].map(m => m[0])
   assert.equal(preloads.length, 2)
@@ -64,8 +64,8 @@ test('phone hero uses the existing smaller photo with matching, exclusive preloa
   assert(preloads.some(tag => tag.includes('imageSrcSet=') && tag.includes('media="(min-width: 600.01px)"')))
   for (const tag of preloads) assert.match(tag, /fetchPriority="high"/)
   assert.match(picture, /loading="eager"/)
-  assert.match(picture, /width="848" height="1066"/)
-  assert.match(picture, /848w/)
+  assert.match(picture, /width="1066" height="1600"/)
+  assert.match(picture, /1066w/)
 })
 
 test('homepage retains all existing tracking scripts verbatim', async () => {

@@ -22,7 +22,7 @@ const COPY = {
     role: 'Bijdrage van Stef Keppens',
     built: 'Wat er gebouwd werd',
     measurement: 'Hoe succes gemeten wordt',
-    ongoingNote: 'Dit project loopt nog — cijfers volgen zodra beschikbaar.',
+    ongoingNote: 'Dit project loopt nog. Cijfers volgen zodra ze beschikbaar zijn.',
     visitSite: 'Bezoek de website',
     closingTitle: 'Herkenbaar? Laten we jullie klantreis bekijken',
   },
@@ -35,7 +35,7 @@ const COPY = {
     role: 'Stef Keppens’ contribution',
     built: 'What was built',
     measurement: 'How success is measured',
-    ongoingNote: 'This project is still ongoing — numbers will follow once available.',
+    ongoingNote: 'This project is still ongoing. Numbers will follow once they are available.',
     visitSite: 'Visit the website',
     closingTitle: 'Sound familiar? Let’s look at your customer journey',
   },
@@ -52,29 +52,35 @@ export default function CaseStudyPage({ slug }: { slug: CaseSlug }) {
 
   return (
     <div ref={ref}>
-      <Seo title={`${t.caseLabel} — ${c.name}`} description={c.summary[lang]} path={`/cases/${c.slug}`} />
+      <Seo title={`${t.caseLabel}: ${c.name}`} description={c.summary[lang]} path={`/cases/${c.slug}`} />
 
-      <section className="border-b border-line">
-        <div className="reveal mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-24">
-          <Breadcrumbs items={[{ label: t.casesCrumb, href: '/cases' }, { label: c.name }]} />
+      <section className="page-hero border-b border-line">
+        <div className="reveal mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+          <div className="case-hero-top">
+            <div>
+              <Breadcrumbs items={[{ label: t.casesCrumb, href: '/cases' }, { label: c.name }]} />
 
-          <div className="mt-5 flex flex-wrap items-center gap-3">
-            <h1 className="font-display text-4xl text-paper text-balance sm:text-5xl">{c.name}</h1>
-            {c.status === 'ongoing' && <span className="text-sm italic text-accent-2">{t.ongoing}</span>}
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <h1 className="font-display text-balance">{c.name}</h1>
+                {c.status === 'ongoing' && <span className="text-sm italic text-accent-2">{t.ongoing}</span>}
+              </div>
+              <p className="mt-6 max-w-2xl text-lg text-bone">{c.summary[lang]}</p>
+
+              {c.liveUrl && (
+                <a
+                  href={c.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-sm font-medium text-accent-2 hover:text-accent"
+                >
+                  {t.visitSite} ↗
+                </a>
+              )}
+            </div>
+            <aside className="case-proof" aria-label={t.measurement}>
+              <p>{c.measurement[lang]}</p>
+            </aside>
           </div>
-          <p className="mt-2 text-sm uppercase tracking-widest text-mute">{c.sector[lang]}</p>
-          <p className="mt-6 max-w-2xl text-lg text-bone">{c.summary[lang]}</p>
-
-          {c.liveUrl && (
-            <a
-              href={c.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm font-medium text-accent-2 hover:text-accent"
-            >
-              {t.visitSite} ↗
-            </a>
-          )}
 
           {c.video ? (
             <figure className="mt-10">
@@ -91,52 +97,54 @@ export default function CaseStudyPage({ slug }: { slug: CaseSlug }) {
         </div>
       </section>
 
-      <section className="border-b border-line bg-surface/30">
-        <div className="mx-auto grid max-w-4xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2">
+      <section className="page-section">
+        <div className="page-panel grid gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.situation}</p>
-            <p className="mt-4 text-bone">{c.situation[lang]}</p>
+            <h2 className="section-title">{t.situation}</h2>
+            <p className="mt-4">{c.situation[lang]}</p>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.challenge}</p>
-            <p className="mt-4 text-bone">{c.challenge[lang]}</p>
+            <h2 className="section-title">{t.challenge}</h2>
+            <p className="mt-4">{c.challenge[lang]}</p>
           </div>
         </div>
       </section>
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.role}</p>
+          <h2 className="section-title">{t.role}</h2>
           <p className="mt-4 max-w-2xl text-bone">{c.role[lang]}</p>
         </div>
       </section>
 
       <section className="border-b border-line bg-surface/30">
         <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{c.builtLabel?.[lang] ?? t.built}</p>
+          <h2 className="section-title">{c.builtLabel?.[lang] ?? t.built}</h2>
           <CheckList items={c.built[lang]} className="mt-5" />
         </div>
       </section>
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.measurement}</p>
+          <h2 className="section-title">{t.measurement}</h2>
           <p className="mt-4 max-w-2xl font-display text-2xl text-paper text-balance">{c.measurement[lang]}</p>
           {c.status === 'ongoing' && c.slug !== 'pinacello' && <p className="mt-4 text-sm text-mute">{t.ongoingNote}</p>}
         </div>
       </section>
 
       <CaseEvidence project={c} />
-      <section>
-        <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8 sm:py-24">
-          <h2 className="font-display text-3xl text-paper text-balance sm:text-4xl">{t.closingTitle}</h2>
-          <Link
-            to={persistentCtaHref}
-            onClick={() => trackEvent('audit_cta_clicked', { placement: `case_${c.slug}` })}
-            className="mt-8 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-ink transition hover:bg-accent-2"
-          >
-            {persistentCta[lang]}
-          </Link>
+      <section className="closing-cta">
+        <div className="closing-cta-inner">
+          <h2 className="font-display text-balance">{t.closingTitle}</h2>
+          <div className="hero-actions">
+            <Link
+              to={persistentCtaHref}
+              onClick={() => trackEvent('audit_cta_clicked', { placement: `case_${c.slug}` })}
+              className="button-dark"
+            >
+              {persistentCta[lang]}
+            </Link>
+          </div>
         </div>
       </section>
     </div>

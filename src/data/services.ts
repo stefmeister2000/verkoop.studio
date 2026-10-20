@@ -164,13 +164,13 @@ export const services: Service[] = [
     process: {
       nl: [
         'We bekijken de campagne, de doelgroep en het conversiedoel voor er één regel copy geschreven wordt.',
-        'De pagina krijgt één boodschap en één actie — geen concurrerende keuzes.',
+        'De pagina krijgt één boodschap en één actie, zonder concurrerende keuzes.',
         'Structuur, copy en design worden afgestemd op hoe de bezoeker binnenkomt: via Meta, Google, e-mail of referral.',
         'Tracking wordt ingebouwd zodat gedrag op de pagina meetbaar is, niet enkel het bezoek.',
       ],
       en: [
         'We look at the campaign, the audience and the conversion goal before a single line of copy is written.',
-        'The page gets one message and one action — no competing choices.',
+        'The page gets one message and one action, with no competing choices.',
         'Structure, copy and design are matched to how the visitor arrives: via Meta, Google, email or referral.',
         'Tracking is built in so behaviour on the page is measurable, not just the visit.',
       ],
@@ -218,19 +218,19 @@ export const services: Service[] = [
       ],
     },
     problem: {
-      nl: 'Een goede landingspagina is niet genoeg als wat erna komt niet klopt. Leads die niet snel worden opgevolgd, boekingen zonder bevestiging, of kopers die na aankoop niets meer horen — dat is omzet die op tafel blijft liggen.',
-      en: 'A good landing page isn’t enough if what comes after it doesn’t work. Leads that aren’t followed up quickly, bookings without confirmation, buyers who hear nothing after purchase — that’s revenue left on the table.',
+      nl: 'Een goede landingspagina is niet genoeg als wat erna komt niet klopt. Leads die niet snel worden opgevolgd, boekingen zonder bevestiging, of kopers die na aankoop niets meer horen. Dat is omzet die op tafel blijft liggen.',
+      en: 'A good landing page isn’t enough if what comes after it doesn’t work. Leads that aren’t followed up quickly, bookings without confirmation, or buyers who hear nothing after purchase. That’s revenue left on the table.',
     },
     process: {
       nl: [
         'We brengen de volledige klantreis in kaart: van eerste klik tot klant en herhaalaankoop.',
-        'Elke stap krijgt een duidelijke commerciële functie — geen stap zonder doel.',
+        'Elke stap krijgt een duidelijke commerciële functie. Geen stap blijft zonder doel.',
         'Opvolging via e-mail, CRM of AI-automatisering wordt gekoppeld aan de funnel.',
         'De funnel wordt gebouwd zodat elke stap meetbaar is.',
       ],
       en: [
         'We map out the full customer journey: from first click to customer and repeat purchase.',
-        'Every step gets a clear commercial function — no step without a purpose.',
+        'Every step gets a clear commercial function. No step is left without a purpose.',
         'Follow-up via email, CRM or AI automation is connected to the funnel.',
         'The funnel is built so every step is measurable.',
       ],
@@ -286,13 +286,13 @@ export const services: Service[] = [
         'Campagnestructuur en doelgroepen worden opgebouwd rond het commerciële doel, niet enkel bereik.',
         'Creatives worden afgestemd op de fase van de funnel: koud, warm of retargeting.',
         'Elke campagne verwijst naar een landingspagina die bij de boodschap past.',
-        'Resultaten worden geanalyseerd op leads, boekingen of omzet — niet enkel op klikken.',
+        'Resultaten worden geanalyseerd op leads, boekingen of omzet, niet enkel op klikken.',
       ],
       en: [
         'Campaign structure and audiences are built around the commercial goal, not just reach.',
         'Creatives are matched to the funnel stage: cold, warm or retargeting.',
         'Every campaign points to a landing page that matches the message.',
-        'Results are analysed on leads, bookings or revenue — not just clicks.',
+        'Results are analysed on leads, bookings or revenue, not just on clicks.',
       ],
     },
     deliverables: {
@@ -471,13 +471,13 @@ export const services: Service[] = [
       nl: [
         'We brengen in kaart welke terugkerende taken het meeste tijd kosten.',
         'Workflows worden ontworpen rond bestaande tools: CRM, e-mail, formulieren, agenda.',
-        'AI wordt ingezet om te kwalificeren, samen te vatten en voor te bereiden — een mens blijft eindverantwoordelijk.',
+        'AI wordt ingezet om te kwalificeren, samen te vatten en voor te bereiden. Een mens blijft eindverantwoordelijk.',
         'De workflow wordt getest en verfijnd op basis van echte gevallen.',
       ],
       en: [
         'We map out which recurring tasks cost the most time.',
         'Workflows are designed around existing tools: CRM, email, forms, calendar.',
-        'AI is used to qualify, summarise and prepare — a human stays in charge.',
+        'AI is used to qualify, summarise and prepare. A human stays in charge.',
         'The workflow is tested and refined on real cases.',
       ],
     },
@@ -502,8 +502,8 @@ export const services: Service[] = [
     number: '09',
     title: { nl: 'Offer & distributie', en: 'Offer & distribution' },
     summary: {
-      nl: 'Een scherp aanbod en de juiste distributiekanalen — B2B-outreach, B2C-advertenties en offline campagnes — zodat de juiste mensen je zien, op meer dan één manier.',
-      en: 'A sharp offer and the right distribution channels — B2B outreach, B2C ads and offline campaigns — so the right people see you, in more than one way.',
+      nl: 'Een scherp aanbod en de juiste distributiekanalen, zoals B2B-outreach, B2C-advertenties en offline campagnes, zodat de juiste mensen je zien, op meer dan één manier.',
+      en: 'A sharp offer and the right distribution channels, such as B2B outreach, B2C ads and offline campaigns, so the right people see you in more than one way.',
     },
     includes: {
       nl: [
@@ -535,13 +535,13 @@ export const services: Service[] = [
       nl: [
         'We bekijken het huidige aanbod en waar de aandacht nu vandaan komt.',
         'Het aanbod wordt scherper gepositioneerd rond één duidelijke actie.',
-        'De juiste mix van kanalen wordt opgezet — B2B-outreach, B2C-advertenties, offline campagnes, SEO/GEO — als trackbare campagne.',
+        'De juiste mix van kanalen wordt opgezet als trackbare campagne: B2B-outreach, B2C-advertenties, offline campagnes en SEO/GEO.',
         'Resultaten per kanaal worden gemeten, zodat duidelijk wordt wat wél werkt.',
       ],
       en: [
         'We look at the current offer and where attention is coming from today.',
         'The offer is positioned more sharply around one clear action.',
-        'The right channel mix is set up — B2B outreach, B2C ads, offline campaigns, SEO/GEO — as a trackable campaign.',
+        'The right channel mix is set up as a trackable campaign: B2B outreach, B2C ads, offline campaigns and SEO/GEO.',
         'Results per channel are measured, so it becomes clear what actually works.',
       ],
     },

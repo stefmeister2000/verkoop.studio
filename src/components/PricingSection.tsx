@@ -31,13 +31,11 @@ export default function PricingSection() {
     <section id="groeipakketten" className="growth-pricing" aria-labelledby="pricing-title">
       <div className="pricing-wrap">
         <header className="pricing-intro">
-          <p className="eyebrow">{nl ? 'Samenwerken met verkoop.studio' : 'Working with verkoop.studio'}</p>
           <h2 id="pricing-title">{nl ? 'De juiste basis.' : 'The right foundation.'}<br /><span>{nl ? 'De ruimte om te groeien.' : 'Room to grow.'}</span></h2>
           <p>{nl ? 'Van een sterke marketingbasis tot een team dat mee uitvoert. Kies wat past bij je bedrijf.' : 'From a strong marketing foundation to a team that helps deliver it. Choose what fits your business.'}</p>
         </header>
         <section className="pricing-included" aria-labelledby="included-title">
           <div className="pricing-included-intro">
-            <p className="eyebrow">{nl ? 'Bij elk groeipakket inbegrepen' : 'Included in every growth package'}</p>
             <h3 id="included-title">{nl ? 'Je tools én de uitleg erbij.' : 'Your tools, with the guidance to use them.'}</h3>
             <p>{nl ? 'Ons CRM en marketingdashboard zijn inbegrepen. Je hoeft er geen apart abonnement voor te nemen.' : 'Our CRM and marketing dashboard are included. No separate subscription needed.'}</p>
           </div>
@@ -58,7 +56,7 @@ export default function PricingSection() {
               <p className="plan-outcome">{copy.outcome[i]}</p>
               <p className="plan-price">{tier.price[lang]}</p>
               <p className="plan-software"><span aria-hidden="true">✓</span>{nl ? 'Inclusief gratis software voor je bedrijf' : 'Includes free software for your business'}</p>
-              <button className="plan-details-toggle" type="button" aria-expanded={expanded} aria-controls={`plan-details-${tier.key}`} aria-label={`${nl ? (expanded ? 'Verberg details' : 'Bekijk wat je krijgt') : (expanded ? 'Hide details' : 'See what’s included')} — ${tier.name[lang]}`} onClick={() => setExpandedPlans(plans => expanded ? plans.filter(key => key !== tier.key) : [...plans, tier.key])}>
+              <button className="plan-details-toggle" type="button" aria-expanded={expanded} aria-controls={`plan-details-${tier.key}`} aria-label={`${nl ? (expanded ? 'Verberg details van' : 'Bekijk wat je krijgt bij') : (expanded ? 'Hide details of' : 'See what’s included in')} ${tier.name[lang]}`} onClick={() => setExpandedPlans(plans => expanded ? plans.filter(key => key !== tier.key) : [...plans, tier.key])}>
                 {nl ? (expanded ? 'Verberg details' : 'Bekijk wat je krijgt') : (expanded ? 'Hide details' : 'See what’s included')}<span aria-hidden="true">{expanded ? '−' : '+'}</span>
               </button>
               <div id={`plan-details-${tier.key}`} className={`plan-details-content${expanded ? ' is-expanded' : ''}`}>
@@ -73,7 +71,7 @@ export default function PricingSection() {
         <details className="pricing-comparison">
           <summary>{nl ? 'Vergelijk wat er in elk pakket zit' : 'Compare what each package includes'}<span aria-hidden="true">+</span></summary>
           <div className="pricing-table-scroll" role="region" aria-label={nl ? 'Pakketvergelijking, horizontaal scrollbaar' : 'Package comparison, scroll horizontally'} tabIndex={0}>
-            <table><caption className="sr-only">{nl ? 'Volledige vergelijking van de groeipakketten' : 'Full growth package comparison'}</caption><thead><tr><th scope="col">{nl ? 'Inbegrepen' : 'Included'}</th>{pricingTiers.map(tier => <th scope="col" key={tier.key}>{tier.name[lang]}</th>)}</tr></thead><tbody>{featureRows.map(row => <tr key={row.label[lang]}><th scope="row">{row.label[lang]}</th>{row.values.map((cell, index) => <td key={index}>{cell.type === 'text' ? cell.label[lang] : <><span aria-hidden="true">{cell.type === 'check' ? '✓' : '—'}</span><span className="sr-only">{cell.type === 'check' ? (nl ? 'Inbegrepen' : 'Included') : (nl ? 'Niet inbegrepen' : 'Not included')}</span></>}</td>)}</tr>)}</tbody></table>
+            <table><caption className="sr-only">{nl ? 'Volledige vergelijking van de groeipakketten' : 'Full growth package comparison'}</caption><thead><tr><th scope="col">{nl ? 'Inbegrepen' : 'Included'}</th>{pricingTiers.map(tier => <th scope="col" key={tier.key}>{tier.name[lang]}</th>)}</tr></thead><tbody>{featureRows.map(row => <tr key={row.label[lang]}><th scope="row">{row.label[lang]}</th>{row.values.map((cell, index) => <td key={index}>{cell.type === 'text' ? cell.label[lang] : <><span aria-hidden="true">{cell.type === 'check' ? '✓' : (nl ? 'Nee' : 'No')}</span><span className="sr-only">{cell.type === 'check' ? (nl ? 'Inbegrepen' : 'Included') : (nl ? 'Niet inbegrepen' : 'Not included')}</span></>}</td>)}</tr>)}</tbody></table>
           </div>
           <div className="pricing-mobile-comparison">
             {pricingTiers.map((tier, tierIndex) => <details key={tier.key}>
@@ -86,7 +84,7 @@ export default function PricingSection() {
           </div>
         </details>
         <div className="pricing-first-step">
-          <div><p className="eyebrow">{nl ? 'Liever klein beginnen?' : 'Prefer to start small?'}</p><h3>{nl ? 'Je hoeft het nog niet te weten.' : 'You don’t have to know yet.'}</h3><p>{nl ? 'We bekijken eerst waar je staat. Een gericht gesprek of leertraject kan ook, zonder meteen voor een maandpakket te kiezen.' : 'Let’s look at where you are first. A focused session or learning track is also an option, without choosing a monthly package.'}</p><Link className="button-dark" to="/contact">{nl ? 'Help me kiezen' : 'Help me choose'} <span aria-hidden="true">↗</span></Link></div>
+          <div><h3>{nl ? 'Je hoeft het nog niet te weten.' : 'You don’t have to know yet.'}</h3><p>{nl ? 'We bekijken eerst waar je staat. Een gericht gesprek of leertraject kan ook, zonder meteen voor een maandpakket te kiezen.' : 'Let’s look at where you are first. A focused session or learning track is also an option, without choosing a monthly package.'}</p><Link className="button-dark" to="/contact">{nl ? 'Help me kiezen' : 'Help me choose'} <span aria-hidden="true">↗</span></Link></div>
           <div className="pricing-alternatives">{addOns.map(addOn => <div key={addOn.key}><h4>{addOn.name[lang]}</h4><strong>{addOn.price?.[lang] ?? (nl ? 'Op aanvraag' : 'On request')}</strong><p>{addOn.description[lang]}</p></div>)}</div>
         </div>
       </div>

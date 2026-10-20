@@ -2,14 +2,13 @@
 .pina-case-wrap { max-width: 1200px; margin: auto; padding-inline: 32px; }
 .pina-case-hero { padding-top: 45px; }
 .pina-case-heading { display: grid; grid-template-columns: 1.5fr 1fr; gap: 65px; align-items: center; padding-block: 48px; }
-.pina-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; font-weight: 600; color: #8c4c22; }
-.pina-case-heading h1 { font-size: clamp(46px,5.4vw,76px); line-height: 1.02; font-weight: 600; letter-spacing: -.06em; margin: 20px 0 24px; }
+.pina-case-heading h1 { font-size: clamp(46px,5.4vw,76px); line-height: 1.02; font-weight: 600; letter-spacing: -.06em; margin: 0 0 24px; }
 .pinacello-case em { font-family: Georgia,serif; font-weight: 400; color: var(--pina-orange); }
 .pina-case-lead { color: #6b604c; font-size: 16px; line-height: 1.8; max-width: 550px; }
 .pina-text-link { display: inline-flex; align-items: center; gap: 15px; color: #96401f; font-size: 13px; font-weight: 600; }
 .pina-case-heading .pina-text-link { margin-top: 26px; }
 .pina-result-card { background: #fff1bd; border: 1px solid #efdb99; border-radius: 28px; padding: 34px; position: relative; overflow: hidden; }
-.pina-result-card > strong { display: block; font-size: clamp(60px,7.5vw,108px); line-height: 1; letter-spacing: -.075em; font-weight: 600; color: #653516; margin: 25px 0 10px; }
+.pina-result-card > strong { display: block; font-size: clamp(60px,7.5vw,108px); line-height: 1; letter-spacing: -.075em; font-weight: 600; color: #653516; margin: 0 0 10px; }
 .pina-result-card > strong > span { font-size: .55em; }
 .pina-result-card > p { font-size: 19px; color: #75401e; }
 .pina-result-card > div { border-top: 1px solid #dfc779; padding-top: 22px; margin-top: 28px; display: flex; align-items: center; gap: 18px; color: #795d32; font-size: 12px; line-height: 1.7; }
@@ -24,14 +23,14 @@
 .pina-showcase figcaption { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; font-size: 12px; color: #766951; line-height: 1.7; }
 .pina-context { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; padding-block: 90px; }
 .pinacello-case h2 { font-size: clamp(28px,3.3vw,44px); line-height: 1.13; letter-spacing: -.045em; font-weight: 600; }
-.pina-context h2 { margin-top: 20px; max-width: 350px; }
+.pina-context h2 { max-width: 350px; }
 .pina-context > div:last-child > p { font-size: 15px; line-height: 1.9; color: #6b604c; margin-bottom: 20px; }
 .pina-objective { padding: 23px; border-left: 3px solid #e19a39; background: #faf3e3; margin-top: 28px; }
 .pina-objective > span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: #8c4c22; margin-bottom: 9px; }
 .pina-objective strong { font-size: 16px; line-height: 1.65; font-weight: 500; }
 .pina-approach { padding-block: 75px; background: #f8f0df; border-block: 1px solid #eee3ca; }
 .pina-section-heading { max-width: 680px; margin-bottom: 38px; }
-.pina-section-heading h2 { margin-block: 18px; }
+.pina-section-heading h2 { margin: 0 0 18px; }
 .pina-section-heading > p:last-child { color: #76654b; font-size: 15px; line-height: 1.8; }
 .pina-step-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
 .pina-step { display: flex; flex-direction: column; padding: 29px; background: #fffdf7; border: 1px solid #e5d8bb; border-radius: 20px; min-width: 0; }
@@ -43,22 +42,21 @@
 .pina-step-tags span,.pina-content-tags span { padding: 7px 10px; border: 1px solid #e5d8bb; border-radius: 20px; color: #7c522b; font-size: 10px; }
 .pina-step a { margin-top: 24px; padding-top: 18px; border-top: 1px solid #e9e0cc; font-size: 11px; color: #96401f; font-weight: 600; }
 .pina-video-section { display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; gap: 90px; padding-block: 85px; }
-.pina-video-copy h2 { margin: 22px 0; }
-.pina-video-copy > p:not(.pina-eyebrow) { font-size: 15px; line-height: 1.85; color: #6b604c; }
+.pina-video-copy h2 { margin: 0 0 22px; }
+.pina-video-copy > p { font-size: 15px; line-height: 1.85; color: #6b604c; }
 .pina-video-copy .pina-video-note { font-size: 12px !important; margin-top: 22px; }
 .pina-video-frame { max-width: 340px; width: 100%; justify-self: center; }
 .pina-video-frame video { width: 100%; max-height: 570px; aspect-ratio: 9/16; object-fit: contain; border: 6px solid #342b22; border-radius: 25px; background: #171512; box-shadow: 0 24px 55px #41250724; }
 .pina-video-frame figcaption { text-align: center; color: #766951; font-size: 11px; line-height: 1.7; margin-top: 15px; }
 .pina-takeaway { background: #342b22; color: #fff8e9; padding-block: 70px; }
-.pina-takeaway .pina-eyebrow { color: #e8b271; }
-.pina-takeaway h2 { max-width: 720px; margin: 20px 0; }
-.pina-takeaway p:not(.pina-eyebrow) { max-width: 700px; font-size: 15px; color: #d7c9b2; line-height: 1.85; }
+.pina-takeaway h2 { max-width: 720px; margin: 0 0 20px; }
+.pina-takeaway p { max-width: 700px; font-size: 15px; color: #d7c9b2; line-height: 1.85; }
 .pina-result-summary { display: grid; grid-template-columns: 1fr 1fr 1.2fr; margin-top: 40px; border-top: 1px solid #685740; padding-top: 28px; gap: 30px; }
 .pina-result-summary > span { display: flex; flex-direction: column; font-size: 12px; line-height: 1.7; color: #d7c9b2; }
 .pina-result-summary strong { display: block; color: #ffce77; font-size: clamp(26px,3.5vw,48px); font-weight: 500; letter-spacing: -.04em; margin-bottom: 5px; }
 .pina-case-cta { padding-block: 85px; text-align: center; }
-.pina-case-cta h2 { max-width: 740px; margin: 20px auto; }
-.pina-case-cta > p:not(.pina-eyebrow) { max-width: 580px; margin: auto; font-size: 15px; line-height: 1.8; color: #6b604c; }
+.pina-case-cta h2 { max-width: 740px; margin: 0 auto 20px; }
+.pina-case-cta > p { max-width: 580px; margin: auto; font-size: 15px; line-height: 1.8; color: #6b604c; }
 .pina-case-cta > div { display: flex; align-items: center; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 30px; }
 .pinacello-case a:focus-visible { outline: 3px solid #ba6531; outline-offset: 5px; }
 @media (max-width: 850px) {
@@ -75,7 +73,7 @@
   .pina-case-heading,.pina-context,.pina-video-section { grid-template-columns: 1fr; gap: 32px; }
   .pina-case-heading { padding-block: 32px; }
   .pina-case-heading h1 { font-size: 48px; }
-  .pina-result-card > strong { font-size: 82px; margin-top: 18px; }
+  .pina-result-card > strong { font-size: 82px; }
   .pina-result-card > div { margin-top: 22px; padding-top: 18px; }
   .pina-project-meta { margin-bottom: 30px; gap: 20px; }
   .pina-showcase figcaption { flex-direction: column; align-items: flex-start; gap: 8px; }

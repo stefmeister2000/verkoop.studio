@@ -1,0 +1,188 @@
+- generic [ref=f158e3]:
+  - banner [ref=f158e4]:
+    - link [ref=f158e5] [cursor=pointer]:
+      - /url: "#open"
+      - img "Pursuit Femmes" [ref=f158e6]
+    - link "Investering" [ref=f158e7] [cursor=pointer]:
+      - /url: "#investering"
+  - navigation "Hoofdstukken" [ref=f158e8]:
+    - link "01 Open" [ref=f158e9] [cursor=pointer]:
+      - /url: "#open"
+      - generic [ref=f158e10]: "01"
+      - text: Open
+    - link "02 De route" [ref=f158e11] [cursor=pointer]:
+      - /url: "#route"
+      - generic [ref=f158e12]: "02"
+      - text: De route
+    - link "03 Webshop" [ref=f158e13] [cursor=pointer]:
+      - /url: "#webshop"
+      - generic [ref=f158e14]: "03"
+      - text: Webshop
+    - link "04 Configurator" [ref=f158e15] [cursor=pointer]:
+      - /url: "#configurator"
+      - generic [ref=f158e16]: "04"
+      - text: Configurator
+    - link "05 Investering" [ref=f158e17] [cursor=pointer]:
+      - /url: "#investering"
+      - generic [ref=f158e18]: "05"
+      - text: Investering
+  - generic [ref=f158e19]:
+    - paragraph [ref=f158e20]: Voorstel · Antwerpen
+    - heading "Van de eerste klik tot het volgende pak." [level=1] [ref=f158e21]
+    - paragraph [ref=f158e22]: Voor Pursuit Femmes. Eerst wat we bouwen en bijhouden. Daarna wat het kost.
+    - link "Begin bij de route" [ref=f158e23] [cursor=pointer]:
+      - /url: "#route"
+  - generic [ref=f158e24]:
+    - paragraph [ref=f158e25]: 01 · De route
+    - heading "Wat er gebeurt voor ze in de Sint-Michielstraat staat." [level=2] [ref=f158e26]
+  - generic [ref=f158e27]:
+    - paragraph [ref=f158e28]: "01"
+    - heading "Zij zoekt een pak." [level=3] [ref=f158e29]
+    - paragraph [ref=f158e30]: Meta of Google. De advertentie en de pagina zeggen hetzelfde. We kijken niet alleen naar de klik. We kijken of ze een afspraak maakt, of ze klant wordt, en wat dat aan omzet doet.
+  - generic [ref=f158e31]:
+    - paragraph [ref=f158e32]: "02"
+    - heading "De pagina na de klik." [level=3] [ref=f158e33]
+    - paragraph [ref=f158e34]: "Een landingspagina per boodschap. Werk, een bruiloft, of een eerste pak. Eén volgende stap: een afspraak in Antwerpen, Gent of Brussel."
+  - generic [ref=f158e35]:
+    - paragraph [ref=f158e36]: "03"
+    - heading "Als ze nog niet boekt." [level=3] [ref=f158e37]
+    - paragraph [ref=f158e38]: Een korte mailflow en retargeting. Geen lange reeks. Eén herinnering, dan nog een, en dan is het klaar.
+  - generic [ref=f158e39]:
+    - paragraph [ref=f158e40]: "04"
+    - heading "Als ze zelf zoekt." [level=3] [ref=f158e41]
+    - paragraph [ref=f158e42]: SEO en lokale vindbaarheid, zodat een zoektocht naar een maatpak in Antwerpen niet alleen via een advertentie bij jullie uitkomt.
+  - generic [ref=f158e43]:
+    - paragraph [ref=f158e44]: "05"
+    - heading "Wat jullie elke week zien." [level=3] [ref=f158e45]
+    - paragraph [ref=f158e46]: Een dashboard op maat. Afspraken, klanten en omzet, en welk kanaal dat bracht. Eén vast moment om de volgende stap te kiezen. Jullie blijven eigenaar van de accounts, het domein en de data. Het advertentiebudget loopt rechtstreeks via het platform.
+  - generic [ref=f158e47]:
+    - paragraph [ref=f158e48]: Elke maand inbegrepen
+    - list [ref=f158e49]:
+      - listitem [ref=f158e50]: Strategie en prioriteiten
+      - listitem [ref=f158e51]: Meta en Google
+      - listitem [ref=f158e52]: Tracking en data
+      - listitem [ref=f158e53]: Landingspagina’s en conversie
+      - listitem [ref=f158e54]: E-mailflows, retargeting en automatisering
+      - listitem [ref=f158e55]: SEO en lokale vindbaarheid
+      - listitem [ref=f158e56]: Maatwerkdashboards en advertentietests
+      - listitem [ref=f158e57]: Wekelijkse opvolging
+      - listitem [ref=f158e58]: CRM en marketingdashboard
+      - listitem [ref=f158e59]: Documentatie en instructievideo’s
+  - generic [ref=f158e60]:
+    - paragraph [ref=f158e61]: 02 · De webshop
+    - heading "Een plek om te kijken en te kopen, in jullie huis." [level=2] [ref=f158e62]
+    - generic [ref=f158e63]:
+      - paragraph [ref=f158e64]: We ontwerpen de shop zodat ze klopt met de winkel. We bouwen haar, voor desktop en voor de telefoon. We testen, dragen over, en spreken af hoe ze live gaat.
+      - list [ref=f158e65]:
+        - listitem [ref=f158e66]: Structuur, vorm en navigatie
+        - listitem [ref=f158e67]: De shop zelf, zodat een klant een stuk kan kiezen
+        - listitem [ref=f158e68]: Oplevering en een plan voor de lancering
+        - listitem [ref=f158e69]: Jullie blijven eigenaar van de shop
+    - paragraph [ref=f158e70]: Foto’s en teksten die er nog niet zijn, spreken we apart af. Advertenties en de maandelijkse begeleiding zitten hier niet in.
+  - generic [ref=f158e71]:
+    - paragraph [ref=f158e72]: 03 · Optie bij de webshop
+    - heading "Het volgende pak begint bij de maten die jullie al hebben." [level=2] [ref=f158e73]
+    - paragraph [ref=f158e74]: De eerste keer is het passen in de zaak. Daarna hoeft een volgend stuk niet opnieuw bij nul te beginnen. Zij opent haar dossier, kiest stof, snit en details, en legt de bestelling vast. Jullie blijven de laatste controle. Het blijft maatwerk.
+    - generic [ref=f158e75]:
+      - generic [ref=f158e76]:
+        - generic [ref=f158e77]:
+          - paragraph [ref=f158e78]: Stuk
+          - group "Stuk" [ref=f158e79]:
+            - button "Pak" [pressed] [ref=f158e80] [cursor=pointer]
+            - button "Blazer" [ref=f158e81] [cursor=pointer]
+            - button "Broek" [ref=f158e82] [cursor=pointer]
+        - generic [ref=f158e83]:
+          - paragraph [ref=f158e84]: Stof
+          - group "Stof" [ref=f158e85]:
+            - button "Marine wol" [pressed] [ref=f158e86] [cursor=pointer]
+            - button "Krijtstreep" [ref=f158e88] [cursor=pointer]
+            - button "Ivoor" [ref=f158e90] [cursor=pointer]
+            - button "Terracotta" [ref=f158e92] [cursor=pointer]
+            - button "Zwart" [ref=f158e94] [cursor=pointer]
+        - generic [ref=f158e96]:
+          - paragraph [ref=f158e97]: Snit
+          - group "Snit" [ref=f158e98]:
+            - button "Recht" [ref=f158e99] [cursor=pointer]
+            - button "Getailleerd" [pressed] [ref=f158e100] [cursor=pointer]
+            - button "Wijd" [ref=f158e101] [cursor=pointer]
+        - generic [ref=f158e102]:
+          - paragraph [ref=f158e103]: Knopen
+          - group "Knopen" [ref=f158e104]:
+            - button "Hoorn" [pressed] [ref=f158e105] [cursor=pointer]
+            - button "Goud" [ref=f158e106] [cursor=pointer]
+            - button "Bedekt" [ref=f158e107] [cursor=pointer]
+      - article [ref=f158e108]:
+        - paragraph [ref=f158e109]: Pasdossier
+        - generic [ref=f158e122]:
+          - generic [ref=f158e123]:
+            - term [ref=f158e124]: Stuk
+            - definition [ref=f158e125]: Pak
+          - generic [ref=f158e126]:
+            - term [ref=f158e127]: Stof
+            - definition [ref=f158e128]: Marine wol
+          - generic [ref=f158e129]:
+            - term [ref=f158e130]: Snit
+            - definition [ref=f158e131]: Getailleerd
+          - generic [ref=f158e132]:
+            - term [ref=f158e133]: Knopen
+            - definition [ref=f158e134]: Hoorn
+          - generic [ref=f158e135]:
+            - term [ref=f158e136]: Voering
+            - definition [ref=f158e137]: Uit de collectie
+          - generic [ref=f158e138]:
+            - term [ref=f158e139]: Maten
+            - definition [ref=f158e140]: Uit het pasdossier
+        - paragraph [ref=f158e141]: Klaar voor jullie controle.
+    - paragraph [ref=f158e142]: Dit is een schets, met voorbeeldstoffen. De echte stoffen, snitten en knopen komen uit jullie collectie. De prijs staat bij de investering. Het is een optie. De webshop kan zonder.
+  - generic [ref=f158e143]:
+    - paragraph [ref=f158e144]: 04 · Investering
+    - heading "Drie bedragen. Twee opdrachten, en één optie." [level=2] [ref=f158e145]
+    - generic [ref=f158e146]:
+      - article [ref=f158e147]:
+        - paragraph [ref=f158e148]: Growth Partner
+        - heading "Per maand" [level=3] [ref=f158e149]
+        - paragraph [ref=f158e150]: € 2.500 / maand
+        - paragraph [ref=f158e151]: Korting € 1.000
+        - paragraph [ref=f158e152]:
+          - text: € 1.500
+          - generic [ref=f158e153]: excl. btw
+        - paragraph [ref=f158e154]: € 1.815 incl. btw
+        - list [ref=f158e155]:
+          - listitem [ref=f158e156]: Alles uit de route hierboven
+          - listitem [ref=f158e157]: Opzeg van één maand
+          - listitem [ref=f158e158]: Advertentiebudget via het platform
+      - article [ref=f158e159]:
+        - paragraph [ref=f158e160]: Webshop
+        - heading "Eenmalig" [level=3] [ref=f158e161]
+        - paragraph [ref=f158e162]:
+          - text: € 4.000
+          - generic [ref=f158e163]: excl. btw
+        - paragraph [ref=f158e164]: € 4.840 incl. btw
+        - list [ref=f158e165]:
+          - listitem [ref=f158e166]: Ontwerp, bouw en oplevering
+          - listitem [ref=f158e167]: Helft bij de start, helft bij oplevering
+          - listitem [ref=f158e168]: Los van de maandelijkse begeleiding
+      - article [ref=f158e169]:
+        - paragraph [ref=f158e170]: Optie · bij de webshop
+        - heading "Configurator" [level=3] [ref=f158e171]
+        - paragraph [ref=f158e172]:
+          - text: € 12.000
+          - generic [ref=f158e173]: excl. btw
+        - paragraph [ref=f158e174]: € 14.520 incl. btw
+        - list [ref=f158e175]:
+          - listitem [ref=f158e176]: Bestellen vanuit het pasdossier
+          - listitem [ref=f158e177]: Stof, snit en details, met jullie controle
+          - listitem [ref=f158e178]: Niet nodig om de webshop te doen
+    - paragraph [ref=f158e179]: Dit voorstel is 30 dagen geldig, tot 18 november 2026. We starten na een schriftelijk akkoord. Alle bedragen zijn exclusief btw.
+    - generic [ref=f158e180]:
+      - generic [ref=f158e181]:
+        - paragraph [ref=f158e182]: Aan
+        - strong [ref=f158e183]: PURSUIT BV
+        - generic [ref=f158e184]: Pursuit Femmes · BTW BE 0762.904.307
+        - generic [ref=f158e185]: Sint-Michielstraat 21, 2000 Antwerpen
+        - generic [ref=f158e186]: Zetel Epicealaan 4, 2910 Essen
+      - generic [ref=f158e187]:
+        - paragraph [ref=f158e188]: Van
+        - strong [ref=f158e189]: verkoop.studio
+        - generic [ref=f158e190]: TanguyDeBee BV · BTW BE 1002.613.972
+        - generic [ref=f158e191]: Zilverbergstraat 176, 8800 Roeselare

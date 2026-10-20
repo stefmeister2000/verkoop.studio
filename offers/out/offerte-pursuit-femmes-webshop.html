@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>VS-2026-002 · Pursuit Femmes · verkoop.studio</title>
+  <style>
+    @font-face { font-family: Inter; src: url("/Users/tanguydebrabandere/code/verkoop.studio/offers/fonts/inter-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: block; }
+    @font-face { font-family: Inter; src: url("/Users/tanguydebrabandere/code/verkoop.studio/offers/fonts/inter-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: block; }
+    @font-face { font-family: Inter; src: url("/Users/tanguydebrabandere/code/verkoop.studio/offers/fonts/inter-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: block; }
+    @font-face { font-family: Inter; src: url("/Users/tanguydebrabandere/code/verkoop.studio/offers/fonts/inter-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: block; }
+
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      color: #10131c;
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bar { position: fixed; top: 0; left: 0; right: 0; height: 5px; background: #254bfa; z-index: 3; }
+    .foot {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 3;
+      height: 14mm; box-sizing: border-box;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 0 15mm;
+      background: #fff; border-top: 1px solid #e1e4ef;
+      color: #676d7e; font-size: 10px; letter-spacing: 0.01em;
+    }
+    .foot b { color: #10131c; font-weight: 600; }
+
+    main { padding: 12mm 15mm 20mm; }
+    header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    .mark { display: flex; align-items: baseline; gap: 5px; color: #10131c; }
+    .mark .name { font-size: 28px; line-height: 1; font-weight: 700; letter-spacing: -1.5px; }
+    .mark .dot { color: #254bfa; }
+    .mark .studio { font-size: 12px; font-weight: 500; letter-spacing: -0.2px; }
+    .tagline { margin: 8px 0 0; color: #676d7e; font-size: 11px; }
+
+    .doc { text-align: right; }
+    .chip {
+      display: inline-block; margin-bottom: 8px;
+      background: #eaf0ff; color: #2344ca; border: 1px solid #d5e0ff;
+      border-radius: 999px; padding: 3px 9px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .doclabel {
+      margin: 0; color: #676d7e; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .docnum { margin: 2px 0 8px; font-size: 18px; font-weight: 600; letter-spacing: -0.04em; }
+    .meta { margin: 0; color: #4e5364; font-size: 11.5px; }
+    .meta div { display: flex; justify-content: flex-end; gap: 14px; }
+    .meta dt { color: #676d7e; }
+    .meta dd { margin: 0; min-width: 118px; color: #10131c; }
+
+    h1 {
+      margin: 18px 0 0; max-width: 12em;
+      font-size: 34px; line-height: 1.02; font-weight: 600; letter-spacing: -0.045em;
+    }
+    .reference { margin: 8px 0 0; color: #254bfa; font-size: 12px; font-weight: 600; }
+    .intro { margin: 8px 0 0; max-width: 64ch; color: #4e5364; font-size: 13.5px; line-height: 1.5; }
+
+    .parties { display: grid; grid-template-columns: 1fr 1.15fr; gap: 12px; margin-top: 16px; }
+    .card { background: #f4f5fb; border-radius: 16px; padding: 14px 16px 15px; break-inside: avoid; }
+    .eyebrow {
+      margin: 0 0 8px; color: #254bfa; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .card p { margin: 0; color: #4e5364; font-size: 12px; line-height: 1.4; }
+    .card .name { color: #10131c; font-size: 15px; font-weight: 600; letter-spacing: -0.03em; }
+    .card .label { color: #676d7e; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .card .gap { margin-top: 10px; }
+
+    h2 {
+      margin: 16px 0 0; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: #254bfa;
+    }
+    .step {
+      display: grid; grid-template-columns: 42px 1fr; gap: 8px;
+      padding: 9px 0; border-bottom: 1px solid #e1e4ef; break-inside: avoid;
+    }
+    .step:first-of-type { border-top: 1px solid #e1e4ef; margin-top: 12px; }
+    .num { color: #254bfa; font-weight: 600; letter-spacing: -0.04em; font-size: 14px; }
+    .step h3 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: -0.03em; }
+    .step p { margin: 3px 0 0; color: #4e5364; }
+
+    .principles { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+    .principles li {
+      margin: 0; background: #fff; border: 1px solid #e1e4ef; border-radius: 12px;
+      padding: 9px 11px; color: #4e5364; font-size: 11.5px; line-height: 1.4; break-inside: avoid;
+    }
+
+    .sheet { break-before: page; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .group td {
+      padding: 11px 0 2px; border: 0; color: #676d7e; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    td { padding: 10px 0; border-bottom: 1px solid #e1e4ef; vertical-align: top; }
+    td strong { display: block; font-size: 14px; font-weight: 600; letter-spacing: -0.02em; }
+    td span { display: block; margin-top: 2px; color: #4e5364; }
+    td.amount {
+      width: 34%; text-align: right; color: #10131c; font-weight: 600;
+      font-size: 14px; letter-spacing: -0.02em; white-space: nowrap;
+    }
+    tr.discount td.amount { color: #254bfa; }
+
+    .totals {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+      margin-top: 14px; background: #10131c; color: #fff;
+      border-radius: 16px; padding: 14px 18px 12px; break-inside: avoid;
+    }
+    .totals:has(.total-group:only-child) { grid-template-columns: 1fr; }
+    .total-group p {
+      margin: 0 0 4px; color: #a9b9ff; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .totals .quiet, .totals .strong { display: flex; justify-content: space-between; gap: 16px; padding: 3px 0; }
+    .totals .quiet { color: #c5cbdc; font-size: 12px; }
+    .totals .strong { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.03em; padding-top: 6px; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
+    .split ul, .note { margin: 10px 0 0; padding: 0; list-style: none; color: #4e5364; }
+    .split li { position: relative; padding-left: 14px; margin: 0 0 7px; }
+    .split li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: #254bfa; }
+    .closing { margin: 16px 0 0; max-width: 62ch; font-size: 13.5px; }
+
+    .sign { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; break-inside: avoid; }
+    .sign article { border: 1px solid #e1e4ef; border-radius: 16px; padding: 12px 14px 10px; break-inside: avoid; }
+    .sign h3 { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: -0.02em; }
+    .sign .who { margin: 3px 0 14px; color: #4e5364; font-size: 12px; }
+    .field { display: grid; grid-template-columns: 88px 1fr; gap: 8px; align-items: end; margin-top: 7px; color: #676d7e; font-size: 11px; }
+    .field i { display: block; border-bottom: 1px solid #10131c; min-height: 16px; font-style: normal; color: #10131c; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="bar"></div>
+  <footer class="foot">
+    <span><b>verkoop.studio</b> · Roeselare, België · BTW BE 1002.613.972</span>
+    <span>stefkeppens@gmail.com</span>
+    <span>VS-2026-002</span>
+  </footer>
+  <main>
+    <header>
+      <div>
+        <div class="mark" aria-label="verkoop.studio"><span class="name">verkoop<span class="dot">.</span></span><span class="studio">studio</span></div>
+        <p class="tagline">Growth, design &amp; development.</p>
+      </div>
+      <div class="doc">
+        
+        <p class="doclabel">Offerte</p>
+        <p class="docnum">VS-2026-002</p>
+        <dl class="meta">
+          <div><dt>Datum</dt><dd>19 oktober 2026</dd></div>
+          <div><dt>Geldig tot</dt><dd>18 november 2026</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <h1>Jullie webshop.</h1>
+    <p class="reference">Flagship store Antwerpen</p>
+    <p class="intro">Pursuit Femmes maakt maatpakken voor vrouwen, met de winkel in de Sint-Michielstraat in Antwerpen. In deze offerte bouwen we de webshop: ontwerp, bouw en oplevering.</p>
+
+    <div class="parties">
+      <section class="card"><p class="eyebrow">Van</p><p class="name">verkoop.studio</p><p>TanguyDeBee BV</p><p>Stef Keppens</p><p>Zilverbergstraat 176</p><p>8800 Roeselare, België</p><p>BTW BE 1002.613.972</p><p class="gap">stefkeppens@gmail.com</p><p>verkoop.studio</p></section>
+      <section class="card"><p class="eyebrow">Aan</p><p class="name">PURSUIT BV</p><p>Pursuit Femmes</p><p>BTW BE 0762.904.307</p><p class="gap label">Maatschappelijke zetel</p><p>Epicealaan 4</p><p>2910 Essen</p><p class="gap label">Vestiging Antwerpen</p><p>Sint-Michielstraat 21</p><p>2000 Antwerpen</p><p class="gap">info@pursuit-femmes.com</p><p>+32 4 60 95 33 32</p><p>pursuit-femmes.com</p></section>
+    </div>
+
+    <h2>Wat we maken</h2>
+    
+    <article class="step">
+      <span class="num">01</span>
+      <div>
+        <h3>Ontwerp</h3>
+        <p>De structuur en de vorm van de shop, zodat die klopt met Pursuit Femmes.</p>
+      </div>
+    </article>
+    <article class="step">
+      <span class="num">02</span>
+      <div>
+        <h3>Bouw</h3>
+        <p>De webshop zelf, zodat klanten online kunnen kijken en kopen.</p>
+      </div>
+    </article>
+    <article class="step">
+      <span class="num">03</span>
+      <div>
+        <h3>Oplevering</h3>
+        <p>We testen, dragen over en spreken af hoe de shop live gaat.</p>
+      </div>
+    </article>
+
+    <h2>Uitgangspunten</h2><ul class="principles"><li>De shop werkt op desktop en op de telefoon.</li><li>Jullie blijven eigenaar van de shop, het domein en de data.</li><li>Teksten en foto’s die we niet hebben, spreken we apart af.</li></ul>
+
+    <section class="sheet">
+      <h2>Investering</h2>
+      <table>
+        <tbody>
+        <tr class="">
+          <td>
+            <strong>Webshop</strong>
+            <span>Ontwerp, bouw en oplevering.</span>
+          </td>
+          <td class="amount">€ 4.000,00</td>
+        </tr></tbody>
+      </table>
+      <div class="totals">
+      <div class="total-group">
+        <p>Totaal</p>
+        <div class="quiet"><span>Excl. btw</span><span>€ 4.000,00</span></div>
+        <div class="quiet"><span>Btw 21%</span><span>€ 840,00</span></div>
+        <div class="strong"><span>Incl. btw</span><span>€ 4.840,00</span></div>
+      </div></div>
+
+      <div class="split">
+        <section>
+          <h2>Niet inbegrepen</h2>
+          <ul><li>Fotografie, video en productieshoots.</li><li>Advertenties en maandelijkse begeleiding.</li><li>Werk dat niet in deze offerte staat.</li></ul>
+        </section>
+        <section>
+          <h2>Afspraken</h2>
+          <ul><li>Deze offerte is 30 dagen geldig.</li><li>We starten na een schriftelijk akkoord.</li><li>De helft bij de start, de helft bij oplevering.</li><li>Het bedrag is exclusief btw.</li></ul>
+        </section>
+      </div>
+
+      <p class="closing">Als dit klopt, bevestig je onderaan. Daarna plannen we de start.</p>
+
+      <div class="sign">
+        <article>
+          <p class="eyebrow">Voor akkoord</p>
+          <h3>PURSUIT BV</h3>
+          <p class="who">Pursuit Femmes</p>
+          <div class="field"><span>Naam</span><i></i></div>
+          <div class="field"><span>Datum</span><i></i></div>
+          <div class="field"><span>Handtekening</span><i></i></div>
+        </article>
+        <article>
+          <p class="eyebrow">Opgesteld door</p>
+          <h3>verkoop.studio</h3>
+          <p class="who">Stef Keppens</p>
+          <div class="field"><span>Naam</span><i>Stef Keppens</i></div>
+          <div class="field"><span>Datum</span><i>19 oktober 2026</i></div>
+          <div class="field"><span>Handtekening</span><i></i></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

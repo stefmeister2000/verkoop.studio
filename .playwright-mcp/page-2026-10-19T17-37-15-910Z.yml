@@ -1,0 +1,219 @@
+- generic [ref=f75e3]:
+  - banner [ref=f75e4]:
+    - generic [ref=f75e5]:
+      - link "verkoop.studio — Home" [ref=f75e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f75e7]:
+          - generic [ref=f75e8]: verkoop.
+          - generic [ref=f75e9]: studio
+      - navigation [ref=f75e10]:
+        - link "Home" [ref=f75e11] [cursor=pointer]:
+          - /url: /
+        - link "Resultaten" [ref=f75e13] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Diensten" [ref=f75e15] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Cases" [ref=f75e17] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f75e19] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f75e21] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f75e23]:
+        - button "Switch language" [ref=f75e24]:
+          - generic [ref=f75e25]: NL
+          - generic [ref=f75e26]: /
+          - generic [ref=f75e27]: EN
+        - link "Bespreek je project" [ref=f75e28] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f75e29]:
+    - generic [ref=f75e31]:
+      - navigation "Breadcrumb" [ref=f75e32]:
+        - link "Home" [ref=f75e34] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f75e35]:
+          - generic [aria-hidden] [ref=f75e36]: /
+          - link "Blog" [ref=f75e37] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=f75e38]:
+          - generic [aria-hidden] [ref=f75e39]: /
+          - generic [ref=f75e40]: Landingspagina’s & conversie
+      - 'heading "Landingspagina of website: wat heb je nodig voor je campagne?" [level=1] [ref=f75e41]'
+      - paragraph [ref=f75e42]: Een nieuwe landingspagina of je bestaande website gebruiken? Vergelijk de opties voor je campagne, met voorbeelden en een praktische beslischecklist.
+      - paragraph [ref=f75e43]:
+        - text: Door
+        - link "verkoop.studio" [ref=f75e44] [cursor=pointer]:
+          - /url: /agency
+        - text: ·
+        - time [ref=f75e45]: 11 oktober 2026
+        - text: · Vanuit Lochristi
+      - navigation "In dit artikel" [ref=f75e46]:
+        - paragraph [ref=f75e47]: In dit artikel
+        - list [ref=f75e48]:
+          - listitem [ref=f75e49]:
+            - 'link "Het korte antwoord: begin bij de vraag van je bezoeker" [ref=f75e50] [cursor=pointer]':
+              - /url: "#deel-1"
+          - listitem [ref=f75e51]:
+            - link "Wat is het verschil tussen een landingspagina, salespage en website?" [ref=f75e52] [cursor=pointer]:
+              - /url: "#deel-2"
+          - listitem [ref=f75e53]:
+            - link "Wanneer volstaat je bestaande dienstenpagina?" [ref=f75e54] [cursor=pointer]:
+              - /url: "#deel-3"
+          - listitem [ref=f75e55]:
+            - link "Wanneer heeft een aparte landingspagina meerwaarde?" [ref=f75e56] [cursor=pointer]:
+              - /url: "#deel-4"
+          - listitem [ref=f75e57]:
+            - link "Wanneer moet je de bredere website aanpakken?" [ref=f75e58] [cursor=pointer]:
+              - /url: "#deel-5"
+          - listitem [ref=f75e59]:
+            - link "Hoe beoordeel je of de gekozen pagina werkt?" [ref=f75e60] [cursor=pointer]:
+              - /url: "#deel-6"
+          - listitem [ref=f75e61]:
+            - link "Veelgestelde vragen over campagnepagina’s" [ref=f75e62] [cursor=pointer]:
+              - /url: "#deel-7"
+      - article [ref=f75e63]:
+        - generic [ref=f75e64]:
+          - 'heading "Het korte antwoord: begin bij de vraag van je bezoeker" [level=2] [ref=f75e65]'
+          - paragraph [ref=f75e66]: Gebruik een bestaande dienstenpagina als die de belofte van je campagne duidelijk waarmaakt. Kies een aparte landingspagina wanneer één doelgroep, aanbod of actie een eigen uitleg nodig heeft. Werk aan de volledige website als bezoekers meerdere diensten moeten vergelijken of als de algemene informatie en navigatie tekortschieten. Een nieuwe pagina is dus niet automatisch de beste eerste stap.
+          - paragraph [ref=f75e67]: De keuze is ook niet altijd landingspagina óf website. Een campagnepagina kan gewoon onderdeel zijn van je bestaande site. Je hebt niet voor elke campagne een nieuw domein of een volledig nieuwe website nodig.
+        - generic [ref=f75e68]:
+          - heading "Wat is het verschil tussen een landingspagina, salespage en website?" [level=2] [ref=f75e69]
+          - paragraph [ref=f75e70]: Google Ads noemt de pagina waarop iemand na een advertentieklik terechtkomt de landingspagina. Dat kan een homepage, productpagina of dienstenpagina zijn. In een websiteproject bedoelen we met een aparte landingspagina meestal een pagina die is uitgewerkt rond één concrete bezoekersvraag en vervolgstap.
+          - paragraph [ref=f75e71]: "Een salespage is een verkoopgerichte pagina: ze helpt iemand beoordelen of een specifiek aanbod past en hoe die kan bestellen of contact opnemen. De lengte volgt uit de vragen die je moet beantwoorden, niet uit een vaste formule. Een volledige website biedt daarnaast samenhang tussen je diensten, bedrijf, contactinformatie en eventuele kennisartikelen."
+        - generic [ref=f75e72]:
+          - heading "Wanneer volstaat je bestaande dienstenpagina?" [level=2] [ref=f75e73]
+          - paragraph [ref=f75e74]: Bekijk de pagina eerst alsof je de advertentie net hebt gezien. Vind je meteen de juiste dienst, het werkgebied, relevante informatie en een duidelijke volgende stap? Dan kan gericht verbeteren verstandiger zijn dan een tweede pagina bouwen met bijna dezelfde inhoud. Je houdt informatie en onderhoud op één plek.
+          - paragraph [ref=f75e75]: "Denk aan dit fictieve voorbeeld: een installateur adverteert één dienst in zijn bestaande werkgebied. Zijn dienstenpagina legt de aanpak uit, beantwoordt praktische vragen en heeft een bruikbare aanvraagroute. Controleer die aansluiting voordat je een aparte campagnepagina laat maken. Ontbreekt informatie, vul dan eerst die leemte."
+        - generic [ref=f75e76]:
+          - heading "Wanneer heeft een aparte landingspagina meerwaarde?" [level=2] [ref=f75e77]
+          - paragraph [ref=f75e78]: "Een eigen pagina wordt nuttig wanneer de campagne een andere beslissing ondersteunt dan de algemene dienstenpagina. Neem als fictief voorbeeld een evenementenlocatie: een organisator van een bedrijfsevent wil informatie over groepsgrootte, programma en praktische afspraken. Een individuele bezoeker zoekt mogelijk vooral openingsuren en beschikbaarheid. Die verschillende vragen kunnen afzonderlijke pagina’s rechtvaardigen."
+          - paragraph [ref=f75e79]: Maak de inhoud specifiek voor die beslissing. Toon echte, passende voorbeelden en leg uit wat er na de aanvraag gebeurt. Google adviseert dat de bestemming aansluit op de advertentie en makkelijk bruikbaar is, ook op mobiel. Een opvallende knop compenseert geen ontbrekende uitleg of onduidelijk aanbod.
+          - list [ref=f75e80]:
+            - listitem [ref=f75e81]: De pagina gaat over hetzelfde aanbod als de advertentie.
+            - listitem [ref=f75e82]: De bezoeker begrijpt voor wie het aanbod wel en niet geschikt is.
+            - listitem [ref=f75e83]: Belangrijke voorwaarden en praktische informatie zijn vindbaar.
+            - listitem [ref=f75e84]: Voorbeelden en bewijs zijn echt en controleerbaar.
+            - listitem [ref=f75e85]: Contact opnemen werkt op een telefoon en de vervolgstap is duidelijk.
+        - generic [ref=f75e86]:
+          - heading "Wanneer moet je de bredere website aanpakken?" [level=2] [ref=f75e87]
+          - paragraph [ref=f75e88]: Een losse campagnepagina lost niet alles op. Als je aanbod op verschillende pagina’s tegenstrijdig wordt beschreven, bezoekers diensten niet uit elkaar kunnen houden of bedrijfsinformatie ontbreekt, ligt de opdracht breder. Breng dan eerst structuur in de website en bepaal welke pagina welke vraag beantwoordt.
+          - paragraph [ref=f75e89]: Bij meerdere diensten kan een heldere overzichtspagina helpen kiezen, met daaronder inhoudelijke dienstenpagina’s. Een campagne kan vervolgens rechtstreeks naar de meest passende pagina verwijzen. Zo hoeft de homepage niet tegelijk elke advertentie, doelgroep en aankoopvraag te beantwoorden.
+        - generic [ref=f75e90]:
+          - heading "Hoe beoordeel je of de gekozen pagina werkt?" [level=2] [ref=f75e91]
+          - paragraph [ref=f75e92]: Leg vooraf vast wat telt als een geschikte aanvraag. Kijk vervolgens naar de route van campagnebezoek naar aanvraag en de verdere opvolging. Veel ingevulde formulieren zijn niet vanzelf goede aanvragen; een contact kan bijvoorbeeld buiten je werkgebied vallen. Bespreek daarom ook de kwaliteit met degene die de aanvragen behandelt.
+          - paragraph [ref=f75e93]: Vergelijk resultaten over passende perioden en noteer veranderingen in advertentiebudget, doelgroep en aanbod. Bij weinig bezoeken of aanvragen is een groot percentageverschil nog geen betrouwbare conclusie. Een voor-en-na-vergelijking alleen bewijst bovendien niet dat de nieuwe pagina de oorzaak is. Houd verbeteringen overzichtelijk en test eerst of de meting en aanvraagroute werken.
+        - generic [ref=f75e94]:
+          - heading "Veelgestelde vragen over campagnepagina’s" [level=2] [ref=f75e95]
+          - paragraph [ref=f75e96]: Heb ik eerst een volledige website nodig? Niet per se. Een gerichte pagina kan een eerste aanbod uitleggen, zolang bezoekers ook de nodige bedrijfsinformatie, voorwaarden en contactmogelijkheden vinden. Bepaal wel welke aanvullende informatie en functies jouw aanbod vereist.
+          - paragraph [ref=f75e97]: Scoort een aparte salespage vanzelf beter in Google? Nee. Een pagina moet nuttig zijn en een eigen vraag beantwoorden. Kopieën die alleen een plaatsnaam of zoekwoord vervangen voegen weinig toe en kunnen onder Googles beleid tegen doorway-pagina’s vallen.
+          - paragraph [ref=f75e98]: Moet alle navigatie verdwijnen? Nee. Houd de belangrijkste vervolgstap duidelijk, maar zorg dat bezoekers noodzakelijke informatie kunnen vinden. Begin bij de vragen die een beslissing tegenhouden, niet bij een universeel sjabloon. Onder ‘Van lezen naar toepassen’ vind je onze diensten en de primaire bronnen bij deze uitleg.
+      - complementary [ref=f75e99]:
+        - heading "Van lezen naar toepassen" [level=2] [ref=f75e100]
+        - list [ref=f75e101]:
+          - listitem [ref=f75e102]:
+            - link "Landingspagina’s voor een duidelijke volgende stap" [ref=f75e103] [cursor=pointer]:
+              - /url: /landing-pages
+          - listitem [ref=f75e104]:
+            - 'link "Websites: de bredere structuur en bezoekersroutes" [ref=f75e105] [cursor=pointer]':
+              - /url: /websites
+          - listitem [ref=f75e106]:
+            - link "Google Ads en de aansluiting op je landingspagina" [ref=f75e107] [cursor=pointer]:
+              - /url: /google-ads
+          - listitem [ref=f75e108]:
+            - 'link "Google Ads: definitie van een landingspagina" [ref=f75e109] [cursor=pointer]':
+              - /url: https://support.google.com/google-ads/answer/14086?hl=nl
+          - listitem [ref=f75e110]:
+            - 'link "Google Ads: landingspagina’s optimaliseren" [ref=f75e111] [cursor=pointer]':
+              - /url: https://support.google.com/google-ads/answer/6238826?hl=nl
+          - listitem [ref=f75e112]:
+            - 'link "Google Search: spambeleid, waaronder doorway-pagina’s" [ref=f75e113] [cursor=pointer]':
+              - /url: https://developers.google.com/search/docs/essentials/spam-policies
+      - link "Bespreek jouw groeivraag" [ref=f75e114] [cursor=pointer]:
+        - /url: /contact
+      - link "Alle artikelen" [ref=f75e115] [cursor=pointer]:
+        - /url: /blog
+  - contentinfo [ref=f75e116]:
+    - generic [ref=f75e117]:
+      - generic [ref=f75e118]:
+        - generic [ref=f75e119]:
+          - link "verkoop.studio — Home" [ref=f75e120] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f75e121]:
+              - generic [ref=f75e122]: verkoop.
+              - generic [ref=f75e123]: studio
+          - paragraph [ref=f75e124]: Lochristi, België
+          - paragraph [ref=f75e125]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f75e126]:
+          - paragraph [ref=f75e127]: Navigatie
+          - list [ref=f75e128]:
+            - listitem [ref=f75e129]:
+              - link "Blog · Gent & omgeving" [ref=f75e130] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f75e131]:
+              - link "Home" [ref=f75e132] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f75e133]:
+              - link "Resultaten" [ref=f75e134] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f75e135]:
+              - link "Diensten" [ref=f75e136] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f75e137]:
+              - link "Cases" [ref=f75e138] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f75e139]:
+              - link "Agency" [ref=f75e140] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f75e141]:
+              - link "Contact" [ref=f75e142] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f75e143]:
+          - paragraph [ref=f75e144]: Diensten
+          - list [ref=f75e145]:
+            - listitem [ref=f75e146]:
+              - link "E-mailmarketing" [ref=f75e147] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f75e148]:
+              - link "Data & analytics" [ref=f75e149] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f75e150]:
+              - link "Websites & ecommerce" [ref=f75e151] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f75e152]:
+              - link "Software & apps" [ref=f75e153] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f75e154]:
+              - link "Landing pages" [ref=f75e155] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f75e156]:
+              - link "Funnels" [ref=f75e157] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f75e158]:
+              - link "Meta Ads" [ref=f75e159] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f75e160]:
+              - link "Google Ads" [ref=f75e161] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f75e162]:
+              - link "Ecommerce conversie" [ref=f75e163] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f75e164]:
+              - link "AI-automatiseringen" [ref=f75e165] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f75e166]:
+              - link "Offer & distributie" [ref=f75e167] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f75e168]:
+          - paragraph [ref=f75e169]: Contact
+          - list [ref=f75e170]:
+            - listitem [ref=f75e171]:
+              - link "stefkeppens@gmail.com" [ref=f75e172] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f75e173]:
+              - link "Bespreek je project" [ref=f75e174] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f75e175]:
+        - paragraph [ref=f75e176]: © 2026 verkoop.studio
+        - paragraph [ref=f75e177]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f75e179] [cursor=pointer]:
+    - generic [ref=f75e180]: Vraag het de studio

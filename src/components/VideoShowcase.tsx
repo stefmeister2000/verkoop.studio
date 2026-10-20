@@ -6,20 +6,18 @@ const VIDEO_EMBED = 'https://www.youtube-nocookie.com/embed/G4jEwA_Znz4?start=12
 
 const COPY = {
   nl: {
-    eyebrow: 'YouTube',
-    title: 'Inzichten uit de praktijk — van AI-ads tot funnels',
+    title: 'Inzichten uit de praktijk: van AI-ads tot funnels',
     body: 'Op zijn YouTube-kanaal deelt Stef nieuwe vormen van adverteren en digitale groei, zoals AI-gegenereerde advertenties. Concreet, met echte voorbeelden.',
     caption: 'Uitgelicht: een nieuwe vorm van AI-advertenties.',
     cta: 'Bekijk het YouTube-kanaal van Stef',
-    videoTitle: 'Nieuwe vorm van AI-advertenties — Stefmeister',
+    videoTitle: 'Nieuwe vorm van AI-advertenties, door Stefmeister',
   },
   en: {
-    eyebrow: 'YouTube',
-    title: 'Insights from practice — from AI ads to funnels',
+    title: 'Insights from practice: from AI ads to funnels',
     body: 'On his YouTube channel, Stef breaks down new forms of advertising and digital growth, like AI-generated ads. Practical, with real examples.',
     caption: 'Featured: a new form of AI-generated ads.',
     cta: 'Visit Stef’s YouTube channel',
-    videoTitle: 'A new form of AI ads — Stefmeister',
+    videoTitle: 'A new form of AI ads, by Stefmeister',
   },
 }
 
@@ -35,8 +33,7 @@ export default function VideoShowcase() {
         className="reveal mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
       >
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.eyebrow}</p>
-          <h2 className="mt-4 font-display text-3xl text-paper text-balance sm:text-4xl">{t.title}</h2>
+          <h2 className="font-display text-3xl text-paper text-balance sm:text-4xl">{t.title}</h2>
           <p className="mt-5 max-w-xl text-bone">{t.body}</p>
           <a
             href={CHANNEL_URL}

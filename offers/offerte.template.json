@@ -1,0 +1,63 @@
+{
+  "number": "VS-2026-000",
+  "date": "2026-10-19",
+  "validDays": 30,
+  "status": "template",
+  "clientId": "pursuit-femmes",
+  "reference": "Flagship store Antwerpen",
+  "title": "Van eerste klik tot afspraak.",
+  "intro": "Pursuit Femmes maakt maatpakken voor vrouwen. De flagship store zit in de Sint-Michielstraat in Antwerpen. Hieronder staat hoe we de digitale route van eerste klik tot afspraak kunnen opzetten.",
+  "approachLabel": "Aanpak",
+  "approach": [
+    {
+      "title": "Eerst de route",
+      "body": "We bekijken hoe iemand jullie nu vindt, waar die persoon afhaakt, en welke meting ontbreekt om dat te zien."
+    },
+    {
+      "title": "Dan het werk",
+      "body": "We voeren uit wat we afspreken. Dat kan een campagne zijn, een pagina, de opvolging na een aanvraag, of de techniek erachter."
+    },
+    {
+      "title": "En daarna bijsturen",
+      "body": "Op een vast moment kijken we naar de cijfers en kiezen we de volgende stap."
+    }
+  ],
+  "principlesLabel": "Uitgangspunten",
+  "principles": [
+    "Jullie blijven eigenaar van accounts, domein en data.",
+    "Advertentiebudget loopt rechtstreeks via het platform, niet via deze offerte.",
+    "We kijken naar afspraken, klanten en omzet, niet alleen naar klikken."
+  ],
+  "investmentLabel": "Investering",
+  "lines": [
+    {
+      "name": "Opstart",
+      "detail": "Inrichting van meting, accounts en de eerste oplevering.",
+      "amount": null,
+      "recurrence": "once"
+    },
+    {
+      "name": "Begeleiding",
+      "detail": "Uitvoering, opvolging en bijsturing na de opstart.",
+      "amount": null,
+      "recurrence": "month"
+    }
+  ],
+  "vatRate": 0.21,
+  "excludedLabel": "Niet inbegrepen",
+  "excluded": [
+    "Advertentiebudget bij Meta, Google of andere platformen.",
+    "Fotografie, video en productieshoots.",
+    "Werk dat niet in deze offerte staat."
+  ],
+  "termsLabel": "Afspraken",
+  "terms": [
+    "Deze offerte is 30 dagen geldig.",
+    "We starten na een schriftelijk akkoord.",
+    "Eenmalig werk: de helft bij de start, de helft bij oplevering.",
+    "Een maandelijkse begeleiding heeft een opzeg van één maand.",
+    "Alle bedragen zijn exclusief btw."
+  ],
+  "closing": "Als dit de juiste richting is, bevestig je onderaan. Daarna leggen we de planning vast.",
+  "signOff": "Stef Keppens"
+}

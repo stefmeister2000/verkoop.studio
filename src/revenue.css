@@ -18,9 +18,6 @@
   object-position: center 43%;
 }
 
-.hero-copy > .eyebrow {
-  animation: revenue-rise 0.6s both;
-}
 .hero-copy h1 {
   animation: revenue-rise 0.75s 0.08s both;
 }
@@ -29,9 +26,6 @@
 }
 .hero-actions {
   animation: revenue-rise 0.75s 0.24s both;
-}
-.hero-disciplines {
-  animation: revenue-rise 0.75s 0.32s both;
 }
 .hero-art > img {
   animation: glass-arrive 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -48,12 +42,13 @@
   justify-content: center;
 }
 .studio-hero a:focus-visible {
-  outline: 3px solid #244afa;
+  outline: 3px solid #254bfa;
   outline-offset: 5px;
 }
 .studio-hero .floating-strategy:focus-visible {
-  outline-offset: -6px;
-  transform: rotate(0deg) translateY(-5px);
+  outline: 3px solid #6485ff;
+  outline-offset: 3px;
+  transform: translateY(-2px);
 }
 @media (max-width: 800px) {
   .studio-hero .hero-art {
@@ -69,24 +64,6 @@
     flex: 1 1 150px;
     font-size: 12px;
   }
-  .studio-hero .hero-disciplines {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .studio-hero .hero-disciplines > a {
-    padding: 0 8px;
-  }
-  .studio-hero .hero-disciplines > a:first-child {
-    padding-left: 0;
-  }
-  .studio-hero .floating-strategy {
-    width: 160px;
-    bottom: 18px;
-    right: 18px;
-  }
-  .studio-hero .strategy-link {
-    font-size: 11px;
-  }
 }
 .studio-home .revenue-case {
   padding: 44px;
@@ -100,7 +77,7 @@
 }
 .revenue-copy h2,
 .performance-heading h2 {
-  margin: 20px 0;
+  margin: 0 0 20px;
   font-size: clamp(30px, 3.3vw, 48px);
   line-height: 1.12;
   letter-spacing: -0.05em;
@@ -110,11 +87,11 @@
 .performance-heading h2 span {
   color: #254bfa;
 }
-.revenue-copy > p:not(.eyebrow) {
-  font-size: 14px;
-  color: #53596b;
-  line-height: 1.8;
-  max-width: 430px;
+.revenue-copy > p {
+  font-size: 16px;
+  color: #4e5364;
+  line-height: 1.6;
+  max-width: 460px;
 }
 .revenue-copy .button-dark {
   margin-top: 24px;
@@ -144,24 +121,19 @@
   flex-direction: column;
   justify-content: center;
   padding: 26px 30px 30px;
-  background: #f5f7ff;
-}
-.proof-label {
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: #596783;
+  background: #10131c;
+  color: #fff;
 }
 .revenue-stat > strong {
   font-size: clamp(64px, 6vw, 88px);
   letter-spacing: -0.07em;
   line-height: 1.1;
   font-weight: 650;
-  margin-top: 12px;
-  color: #254bfa;
+  color: #fff;
 }
 .revenue-stat strong > span {
   font-size: 0.55em;
-  color: #254bfa;
+  color: #fff;
 }
 .revenue-stat > p {
   display: flex;
@@ -170,6 +142,7 @@
   gap: 12px;
   font-size: 16px;
   margin-top: 5px;
+  color: #dde0ed;
 }
 .revenue-stat > p > span {
   font-size: 30px;
@@ -183,19 +156,19 @@
   border-top: 1px solid #d9dff3;
 }
 .revenue-principles > div > span {
-  font-size: 11px;
+  font-size: 13px;
   color: #254bfa;
 }
 .revenue-principles h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 10px;
 }
 .revenue-principles p {
-  color: #616779;
-  font-size: 12px;
+  color: #4e5364;
+  font-size: 15px;
   margin-top: 7px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .studio-home .performance-section {
   padding: 44px;
@@ -482,13 +455,11 @@
   margin-top: 18px;
 }
 .project-caption .project-result {
-  display: inline-block;
-  font-size: 11px;
-  background: #e9efff;
-  color: #2044d1;
-  border-radius: 5px;
-  padding: 5px 7px;
-  margin-top: 7px;
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 650;
+  color: #254bfa;
 }
 @media (max-width: 850px) {
   .studio-home .revenue-case,
@@ -567,11 +538,9 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-copy > .eyebrow,
   .hero-copy h1,
   .hero-description,
   .hero-actions,
-  .hero-disciplines,
   .hero-art > img,
   .hero-art .floating-strategy,
   .channel-stage,
@@ -595,54 +564,51 @@
   z-index: 1;
   background: linear-gradient(to bottom, #f8f8ff 0%, transparent 14%, transparent 82%, #f8f8ff 100%);
 }
-.hero-reassurance {
-  margin-top: 14px;
-  max-width: 430px;
-  color: #656b7c;
-  font-size: 12px;
-  line-height: 1.6;
-}
-.studio-hero .hero-disciplines { margin-top: 28px; }
-.hero-disciplines > a { display: block; min-width: 0; padding-bottom: 6px; }
-.hero-disciplines > a:hover strong { color: #244afa; }
-.hero-disciplines strong { font-size: 11px; line-height: 1.4; }
 .studio-home .growth-goals { padding: 44px; background: #fff; }
-.growth-goals h2 { font-size: clamp(27px, 3vw, 40px); line-height: 1.15; letter-spacing: -.04em; margin: 16px 0 28px; }
-.growth-goals-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.growth-goal { display: flex; flex-direction: column; border: 1px solid #dde2f0; border-radius: 16px; padding: 26px; transition: border-color .2s, background .2s; }
-.growth-goal:hover { border-color: #244afa; background: #f8f8ff; }
-.goal-number { color: #244afa; font-size: 12px; }
-.growth-goal h3 { font-size: 22px; line-height: 1.2; letter-spacing: -.03em; margin: 20px 0 12px; }
-.growth-goal p { font-size: 14px; line-height: 1.75; color: #505465; margin-bottom: 24px; }
-.goal-link { margin-top: auto; color: #244afa; font-size: 12px; font-weight: 600; }
-.contact-next-steps { margin-top: 28px; padding: 22px; border-radius: 16px; background: #edf0ff; display: grid; gap: 12px; font-size: 14px; }
+.growth-goals h2 { font-size: clamp(27px, 3vw, 40px); line-height: 1.15; letter-spacing: -.04em; margin: 0 0 28px; }
+.growth-goals-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: hidden; border: 1px solid #e1e4ef; border-radius: 20px; background: #fff; box-shadow: 0 10px 30px #10131c14; }
+.growth-goal { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 32px 28px 26px; color: #10131c; background: #fff; transition: background .25s ease; }
+.growth-goal + .growth-goal { border-left: 1px solid #e1e4ef; }
+.growth-goal:hover,
+.growth-goal:focus-visible { background: #f4f6ff; }
+.growth-goals-grid a.growth-goal:focus-visible { outline-offset: -5px; z-index: 1; }
+.growth-goal h3 { margin: 0; font-size: clamp(24px, 2.1vw, 30px); line-height: 1.15; letter-spacing: -.035em; font-weight: 650; }
+.growth-goal h3::after { content: ""; display: block; width: 28px; height: 2px; margin-top: 16px; background: #10131c; }
+.growth-goal:hover h3::after,
+.growth-goal:focus-visible h3::after { width: 100%; background: #254bfa; }
+.growth-goal p { font-size: 15px; line-height: 1.6; color: #4e5364; margin: 18px 0 32px; }
+.goal-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: auto; color: #10131c; font-size: 15px; font-weight: 600; }
+.goal-link > span { color: #254bfa; }
+
 @media (max-width: 800px) {
   .hero-art.hero-graphic > img { mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent); }
   .hero-graphic::after { background: linear-gradient(to right, #f8f8ff, transparent 12%, transparent 90%, #f8f8ff); }
   .growth-goals-grid { grid-template-columns: 1fr; }
+  .growth-goal + .growth-goal { border-left: 0; border-top: 1px solid #e1e4ef; }
   .studio-home .growth-goals { padding: 28px 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .growth-goal { transition: none; } }
 
 .studio-home .marketing-services { padding: 44px; background: #fafaff; }
 .marketing-intro { max-width: 730px; margin-bottom: 32px; }
-.marketing-intro h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -.045em; margin: 16px 0; }
-.marketing-intro > p:last-child { color: #565d70; font-size: 15px; line-height: 1.8; max-width: 620px; }
+.marketing-intro h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -.045em; margin: 0 0 16px; }
+.marketing-intro > p:last-child { color: #4e5364; font-size: 16px; line-height: 1.6; max-width: 640px; }
 .marketing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.marketing-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #dfe4ef; border-radius: 22px; overflow: hidden; transition: box-shadow .2s, border-color .2s; }
-.marketing-card:hover { border-color: #859bff; box-shadow: 0 12px 35px #1d327812; }
+.marketing-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #e1e4ef; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px #10131c14; transition: box-shadow .2s, border-color .2s, transform .2s; }
+.marketing-card:hover { border-color: #254bfa; box-shadow: 0 18px 40px #10131c22; transform: translateY(-2px); }
 .marketing-card-copy { padding: 28px; display: flex; flex-direction: column; flex: 1; }
-.service-name { color: #244afa; font-size: 13px; font-weight: 650; }
+.service-name { color: #254bfa; font-size: 13px; font-weight: 650; }
 #expertise .marketing-card h3 { font-size: clamp(23px, 2.4vw, 30px); line-height: 1.2; letter-spacing: -.035em; margin-top: 12px; }
-.marketing-card-copy > p { font-size: 14px; line-height: 1.8; color: #565d70; margin: 16px 0 20px; }
+.marketing-card-copy > p { font-size: 15px; line-height: 1.6; color: #4e5364; margin: 16px 0 20px; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
-.service-tags > span { font-size: 10px; padding: 6px 9px; border-radius: 6px; background: #f0f3f9; color: #4d566b; }
+.service-tags > span { font-size: 13px; padding: 6px 9px; border-radius: 8px; background: #f0f3f9; color: #4e5364; }
 .service-more { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #edf0f7; padding-top: 19px; margin-top: 23px; font-size: 13px; font-weight: 600; }
-.service-more > span { color: #244afa; font-size: 21px; }
-.marketing-support { margin-top: 30px; border-top: 1px solid #dfe4ef; padding-top: 24px; }
-.marketing-support > p { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
-.marketing-support > div { display: flex; flex-wrap: wrap; gap: 12px 26px; }
-.marketing-support a { color: #244afa; font-size: 13px; padding: 8px 0; }
+.service-more > span { color: #254bfa; font-size: 21px; }
+.marketing-support { margin-top: 30px; padding: 22px 26px; border-radius: 16px; background: #10131c; color: #fff; }
+.marketing-support > p { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #fff; }
+.marketing-support > div { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.marketing-support a { color: #fff; font-size: 15px; padding: 8px 0; }
+.marketing-support a:hover { color: #c5d4ff; }
 .service-visual { position: relative; min-height: 280px; padding: 45px 28px 24px; overflow: hidden; display: grid; align-items: center; color: #152038; }
 .visual-caption { position: absolute; top: 17px; left: 23px; text-transform: uppercase; font-size: 9px; letter-spacing: .16em; opacity: .65; }
 .visual-google-ads { background: linear-gradient(140deg,#ebf4ff,#e6edff); }
@@ -654,7 +620,7 @@
 .concept-search > span:first-child { color: #3156ef; font-size: 18px; line-height: 1; }
 .concept-search-result { margin: 12px 6px 0; padding: 19px; border-radius: 12px; background: #ffffffdc; border: 1px solid white; }
 .concept-search-result small { display: block; font-size: 9px; color: #5b6271; }
-.concept-search-result strong { display: block; font-size: 16px; line-height: 1.3; color: #244afa; margin: 8px 0 12px; }
+.concept-search-result strong { display: block; font-size: 16px; line-height: 1.3; color: #254bfa; margin: 8px 0 12px; }
 .concept-lines { display: grid; gap: 6px; margin-bottom: 13px; }
 .concept-lines i { display: block; height: 5px; border-radius: 4px; background: #e2e7f1; }
 .concept-lines i:last-child { width: 70%; }
@@ -664,7 +630,7 @@
 .concept-creative > span:first-child { display: block; font-size: 8px; letter-spacing: .1em; }
 .creative-front { left: 8px; top: 7px; transform: rotate(-7deg); background: #3557ed; color: #fff; }
 .creative-front strong { display: block; font-size: 22px; line-height: 1.1; letter-spacing: -.035em; margin: 21px 0 18px; white-space: pre-line; }
-.creative-front .concept-pill { color: #244afa; background: #fff; }
+.creative-front .concept-pill { color: #254bfa; background: #fff; }
 .creative-back { right: 5px; top: 1px; transform: rotate(9deg); background: #fbfaff; }
 .creative-orbit { width: 110px; height: 110px; border: 24px solid #b3aaff; border-radius: 50%; margin: 18px 0; box-shadow: inset 5px 5px 15px #445cf633; }
 .concept-tag { position: absolute; bottom: 0; right: 0; border: 1px solid #fff; border-radius: 20px; padding: 8px 13px; background: #ffffffdc; font-size: 10px; }
@@ -698,13 +664,13 @@
 }
 @media (prefers-reduced-motion: reduce) { .marketing-card { transition: none; } }
 .verkoop-brand-icon { display: block; flex-shrink: 0; width: 40px; height: 40px; overflow: visible; }
-.lyte-case-card { display: block; overflow: hidden; border: 1px solid #dfe4ef; border-radius: 20px; background: #fff; transition: box-shadow .2s, border-color .2s; }
-.lyte-case-card:hover { border-color: #a2b2f5; box-shadow: 0 15px 40px #20377a12; }
+.lyte-case-card { display: block; overflow: hidden; border: 1px solid #e1e4ef; border-radius: 20px; background: #fff; box-shadow: 0 10px 30px #10131c14; transition: box-shadow .2s, border-color .2s; }
+.lyte-case-card:hover { border-color: #254bfa; box-shadow: 0 18px 40px #10131c22; }
 .lyte-case-cover { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: #edf0f8; }
 .lyte-case-cover > img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .lyte-case-card:hover .lyte-case-cover > img { transform: scale(1.035); }
 .lyte-case-category { position: absolute; top: 16px; left: 16px; background: #ffffffed; border: 1px solid #ffffff; border-radius: 20px; padding: 7px 12px; font-size: 11px; color: #263049; }
-.lyte-case-arrow { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #244afa; font-size: 22px; }
+.lyte-case-arrow { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #254bfa; font-size: 22px; }
 .lyte-case-copy { padding: 26px; }
 .lyte-case-heading { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-bottom: 14px; }
 .lyte-case-heading h3 { font-size: 26px; font-weight: 600; letter-spacing: -.035em; }

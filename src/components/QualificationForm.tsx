@@ -175,7 +175,7 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
           extra: [inquiryContext, values.extra].filter(Boolean).join('\n'),
           form_id: id,
           lang,
-          company_website: honeypotRef.current, // honeypot — bots fill this
+          company_website: honeypotRef.current, // Honeypot. Bots fill this.
           attribution,
           ga4,
         }),
@@ -343,12 +343,8 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
         </div>
 
         <div className="sm:col-span-2 pt-2">
-          <button
-            type="submit"
-            disabled={status === 'submitting'}
-            className="w-full rounded-full bg-accent px-8 py-4 text-center font-semibold text-accent-ink transition hover:bg-accent-2 disabled:opacity-60 sm:w-auto"
-          >
-            {status === 'submitting' ? t.submitting : t.submit}
+          <button type="submit" disabled={status === 'submitting'} className="button-dark">
+            {status === 'submitting' ? t.submitting : <>{t.submit} <span aria-hidden="true">↗</span></>}
           </button>
           {submitError && <p className="mt-3 text-sm text-rose-400">{t.errorNote}</p>}
         </div>

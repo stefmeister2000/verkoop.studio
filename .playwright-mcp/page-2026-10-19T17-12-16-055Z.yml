@@ -1,0 +1,178 @@
+- generic [ref=f29e3]:
+  - banner [ref=f29e4]:
+    - generic [ref=f29e5]:
+      - link "verkoop.studio — Home" [ref=f29e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f29e7]:
+          - generic [ref=f29e8]: verkoop.
+          - generic [ref=f29e9]: studio
+      - generic [ref=f29e10]:
+        - button "Switch language" [ref=f29e11]:
+          - generic [ref=f29e12]: NL
+          - generic [ref=f29e13]: /
+          - generic [ref=f29e14]: EN
+        - button "Menu sluiten" [expanded] [active] [ref=f29e163]:
+          - generic [ref=f29e16]: Menu
+    - generic [ref=f29e164]:
+      - navigation [ref=f29e165]:
+        - link "Aanbod & prijzen" [ref=f29e166] [cursor=pointer]:
+          - /url: /#groeipakketten
+        - link "Home" [ref=f29e167] [cursor=pointer]:
+          - /url: /
+        - link "Diensten" [ref=f29e168] [cursor=pointer]:
+          - /url: /#expertise
+        - link "Resultaten" [ref=f29e169] [cursor=pointer]:
+          - /url: /#resultaten
+        - link "Cases" [ref=f29e170] [cursor=pointer]:
+          - /url: /cases
+        - link "Agency" [ref=f29e171] [cursor=pointer]:
+          - /url: /agency
+        - link "Contact" [ref=f29e172] [cursor=pointer]:
+          - /url: /contact
+      - link "Bespreek je project" [ref=f29e173] [cursor=pointer]:
+        - /url: /contact
+  - main [ref=f29e19]:
+    - generic [ref=f29e22]:
+      - heading "Waar wil je bedrijf naartoe?" [level=1] [ref=f29e23]
+      - paragraph [ref=f29e24]: Vertel ons je doel en wat vandaag vastloopt. We bespreken je huidige aanpak, bepalen waar de grootste kans zit en bekijken welke samenwerking past.
+      - link "stefkeppens@gmail.com" [ref=f29e26] [cursor=pointer]:
+        - /url: mailto:stefkeppens@gmail.com
+      - list [ref=f29e27]:
+        - listitem [ref=f29e28]: 01 · Jij deelt je doel en uitdaging.
+        - listitem [ref=f29e29]: 02 · We bespreken de kansen en prioriteiten.
+        - listitem [ref=f29e30]: 03 · Je krijgt een voorstel met scope en budget.
+      - generic [ref=f29e31]:
+        - heading "Vertel ons over je project" [level=2] [ref=f29e32]
+        - generic [ref=f29e34]:
+          - generic [ref=f29e35]:
+            - generic [ref=f29e36]: Naam
+            - textbox "Naam" [ref=f29e37]
+          - generic [ref=f29e38]:
+            - generic [ref=f29e39]: Bedrijf (optioneel)
+            - textbox "Bedrijf (optioneel)" [ref=f29e40]
+          - generic [ref=f29e41]:
+            - generic [ref=f29e42]: Zakelijk e-mailadres
+            - textbox "Zakelijk e-mailadres" [ref=f29e43]
+          - generic [ref=f29e44]:
+            - generic [ref=f29e45]: Telefoonnummer
+            - textbox "Telefoonnummer" [ref=f29e46]
+          - generic [ref=f29e47]:
+            - generic [ref=f29e48]: Website (optioneel)
+            - textbox "Website (optioneel)" [ref=f29e49]:
+              - /placeholder: https://
+          - group "Waar kunnen we je mee helpen?" [ref=f29e50]:
+            - paragraph [ref=f29e52]: Kies wat het best past. De details bekijken we samen.
+            - generic [ref=f29e53]:
+              - generic [ref=f29e54] [cursor=pointer]:
+                - radio "Meer klanten Meer aanvragen of boekingen." [ref=f29e55]
+                - generic [ref=f29e58]:
+                  - strong [ref=f29e59]: Meer klanten
+                  - generic [ref=f29e60]: Meer aanvragen of boekingen.
+              - generic [ref=f29e61] [cursor=pointer]:
+                - radio "Meer online verkopen Je webshop laten groeien." [ref=f29e62]
+                - generic [ref=f29e65]:
+                  - strong [ref=f29e66]: Meer online verkopen
+                  - generic [ref=f29e67]: Je webshop laten groeien.
+              - generic [ref=f29e68] [cursor=pointer]:
+                - radio "Een website of app Iets nieuws bouwen of verbeteren." [ref=f29e69]
+                - generic [ref=f29e72]:
+                  - strong [ref=f29e73]: Een website of app
+                  - generic [ref=f29e74]: Iets nieuws bouwen of verbeteren.
+              - generic [ref=f29e75] [cursor=pointer]:
+                - radio "Slimmer werken Meer inzicht met data en automatisering." [ref=f29e76]
+                - generic [ref=f29e79]:
+                  - strong [ref=f29e80]: Slimmer werken
+                  - generic [ref=f29e81]: Meer inzicht met data en automatisering.
+              - generic [ref=f29e82] [cursor=pointer]:
+                - radio "Ik weet het nog niet Denk samen met ons na over je volgende stap." [ref=f29e83]
+                - generic [ref=f29e86]:
+                  - strong [ref=f29e87]: Ik weet het nog niet
+                  - generic [ref=f29e88]: Denk samen met ons na over je volgende stap.
+          - generic [ref=f29e89]:
+            - generic [ref=f29e90]: Grootste uitdaging
+            - textbox "Grootste uitdaging" [ref=f29e91]
+          - button "+ Extra info toevoegen (optioneel)" [ref=f29e93]
+          - button "Verstuur je aanvraag" [ref=f29e95]
+  - contentinfo [ref=f29e96]:
+    - generic [ref=f29e97]:
+      - generic [ref=f29e98]:
+        - generic [ref=f29e99]:
+          - link "verkoop.studio — Home" [ref=f29e100] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f29e101]:
+              - generic [ref=f29e102]: verkoop.
+              - generic [ref=f29e103]: studio
+          - paragraph [ref=f29e104]: Lochristi, België
+          - paragraph [ref=f29e105]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f29e106]:
+          - paragraph [ref=f29e107]: Navigatie
+          - list [ref=f29e108]:
+            - listitem [ref=f29e109]:
+              - link "Blog · Gent & omgeving" [ref=f29e110] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f29e111]:
+              - link "Home" [ref=f29e112] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f29e113]:
+              - link "Diensten" [ref=f29e114] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f29e115]:
+              - link "Resultaten" [ref=f29e116] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f29e117]:
+              - link "Cases" [ref=f29e118] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f29e119]:
+              - link "Agency" [ref=f29e120] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f29e121]:
+              - link "Contact" [ref=f29e122] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f29e123]:
+          - paragraph [ref=f29e124]: Diensten
+          - list [ref=f29e125]:
+            - listitem [ref=f29e126]:
+              - link "E-mailmarketing" [ref=f29e127] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f29e128]:
+              - link "Data & analytics" [ref=f29e129] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f29e130]:
+              - link "Websites & ecommerce" [ref=f29e131] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f29e132]:
+              - link "Software & apps" [ref=f29e133] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f29e134]:
+              - link "Landing pages" [ref=f29e135] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f29e136]:
+              - link "Funnels" [ref=f29e137] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f29e138]:
+              - link "Meta Ads" [ref=f29e139] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f29e140]:
+              - link "Google Ads" [ref=f29e141] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f29e142]:
+              - link "Ecommerce conversie" [ref=f29e143] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f29e144]:
+              - link "AI-automatiseringen" [ref=f29e145] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f29e146]:
+              - link "Offer & distributie" [ref=f29e147] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f29e148]:
+          - paragraph [ref=f29e149]: Contact
+          - list [ref=f29e150]:
+            - listitem [ref=f29e151]:
+              - link "stefkeppens@gmail.com" [ref=f29e152] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f29e153]:
+              - link "Bespreek je project" [ref=f29e154] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f29e155]:
+        - paragraph [ref=f29e156]: © 2026 verkoop.studio
+        - paragraph [ref=f29e157]: Growth, design & development.

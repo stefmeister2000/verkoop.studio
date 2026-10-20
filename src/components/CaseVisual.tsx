@@ -43,7 +43,7 @@ export default function CaseVisual({ case: c, lang, ratio = 'aspect-[16/10]', cl
   }
 
   if (c.comingSoon) {
-    return <Placeholder label={`${c.name} — ${COMING_SOON[lang]}`} ratio={ratio} className={className} />
+    return <Placeholder label={`${c.name}, ${COMING_SOON[lang]}`} ratio={ratio} className={className} />
   }
 
   if (c.unavailable) {

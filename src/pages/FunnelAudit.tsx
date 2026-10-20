@@ -10,14 +10,14 @@ const COPY = {
     seoDescription:
       'Vraag een persoonlijke groeianalyse aan: een gerichte analyse van website, campagnes, ecommerce, tracking en opvolging.',
     title: 'Vraag een groeianalyse aan',
-    body: 'Geen algemene template. We bekijken jullie huidige situatie, doelgroep en commerciële proces — en waar in de klantreis conversie verloren gaat.',
+    body: 'Geen algemene template. We bekijken jullie huidige situatie, doelgroep en commerciële proces. Daarna zien we waar in de klantreis conversie verloren gaat.',
   },
   en: {
     seoTitle: 'Growth analysis',
     seoDescription:
       'Request a personal growth analysis: a focused analysis of website, campaigns, ecommerce, tracking and follow-up.',
     title: 'Request a growth analysis',
-    body: 'No generic template. We look at your current situation, audience and commercial process — and where conversion is lost in the journey.',
+    body: 'No generic template. We look at your current situation, audience and commercial process. Then we see where conversion is lost in the journey.',
   },
 }
 

@@ -1,0 +1,631 @@
+- generic [ref=f138e3]:
+  - banner [ref=f138e4]:
+    - generic [ref=f138e5]:
+      - link "verkoop.studio — Home" [ref=f138e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f138e7]:
+          - generic [ref=f138e8]: verkoop.
+          - generic [ref=f138e9]: studio
+      - button "Menu openen" [ref=f138e10]:
+        - generic [ref=f138e11]: Menu
+  - main [ref=f138e14]:
+    - generic [ref=f138e15]:
+      - region [ref=f138e16]:
+        - generic [ref=f138e17]:
+          - heading "Meer aanvragen. Meer verkoop. Grip op je groei." [level=1] [ref=f138e18]: Meer aanvragen.Meer verkoop.Grip op je groei.
+          - paragraph [ref=f138e19]: Je ziet welke campagnes klanten opleveren, en waar je budget beter rendeert.
+          - generic [ref=f138e20]:
+            - link "Bespreek je groeikansen ↗" [ref=f138e21] [cursor=pointer]:
+              - /url: /contact
+              - text: Bespreek je groeikansen
+              - generic [ref=f138e22]: ↗
+            - link "Bekijk resultaten" [ref=f138e23] [cursor=pointer]:
+              - /url: "#resultaten"
+        - img "Een man drinkt koffie op een terras" [ref=f138e25]
+      - generic [ref=f138e26]:
+        - generic [ref=f138e27]:
+          - heading "Sterke campagnes. Slimme websites. Meetbare groei." [level=2] [ref=f138e28]: Sterke campagnes.Slimme websites.Meetbare groei.
+          - paragraph [ref=f138e29]: Ontdek de projecten achter ons team.
+          - link "Alle projecten ↗" [ref=f138e30] [cursor=pointer]:
+            - /url: /cases
+            - text: Alle projecten
+            - generic [ref=f138e31]: ↗
+        - link [ref=f138e32] [cursor=pointer]:
+          - /url: /cases/pinacello
+          - img "Pinacello" [ref=f138e34]
+          - generic [ref=f138e35]:
+            - heading "Pinacello" [level=3] [ref=f138e36]
+            - strong [ref=f138e37]: +120% online omzet
+        - link [ref=f138e38] [cursor=pointer]:
+          - /url: /cases/nooms
+          - img "Nooms" [ref=f138e40]
+          - generic [ref=f138e41]:
+            - heading "Nooms" [level=3] [ref=f138e42]
+            - paragraph [ref=f138e43]: Pre-sale via influencer marketing volledig uitverkocht.
+        - link [ref=f138e44] [cursor=pointer]:
+          - /url: /cases/olearys
+          - img "O'Learys" [ref=f138e46]
+          - generic [ref=f138e47]:
+            - heading "O'Learys" [level=3] [ref=f138e48]
+            - paragraph [ref=f138e49]: Van één website naar aparte routes voor bezoekers en organisatoren.
+        - link [ref=f138e50] [cursor=pointer]:
+          - /url: /cases/e-kart
+          - img "E-Kart" [ref=f138e52]
+          - generic [ref=f138e53]:
+            - heading "E-Kart" [level=3] [ref=f138e54]
+            - paragraph [ref=f138e55]: Van zin in een race naar een boeking.
+        - link [ref=f138e56] [cursor=pointer]:
+          - /url: https://lytestudios.be/projects/tinrate/
+          - img "Tinrate" [ref=f138e58]
+          - generic [ref=f138e59]:
+            - heading "Tinrate" [level=3] [ref=f138e61]
+            - paragraph [ref=f138e62]: Een platform om betaalde gesprekken met experts te boeken.
+        - link [ref=f138e63] [cursor=pointer]:
+          - /url: https://lytestudios.be/projects/werkr/
+          - img "WERKR" [ref=f138e65]
+          - generic [ref=f138e66]:
+            - heading "WERKR" [level=3] [ref=f138e68]
+            - paragraph [ref=f138e69]: Software voor de planning en uitvoering van opdrachten door flexibele medewerkers.
+      - region [ref=f138e70]:
+        - heading "Wat wil jij zien groeien?" [level=2] [ref=f138e71]
+        - generic [ref=f138e72]:
+          - link [ref=f138e73] [cursor=pointer]:
+            - /url: /google-ads
+            - heading "Meer geschikte aanvragen" [level=3] [ref=f138e74]
+            - paragraph [ref=f138e75]: Je sales-team heeft gesprekken nodig met mensen die echt passen. We verbinden Google Ads, overtuigende pagina’s en opvolging.
+            - generic [ref=f138e76]:
+              - text: Google Ads & leadgeneratie
+              - generic [aria-hidden] [ref=f138e77]: ↗
+          - link [ref=f138e78] [cursor=pointer]:
+            - /url: /ecommerce-conversie
+            - heading "Meer verkoop uit je webshop" [level=3] [ref=f138e79]
+            - paragraph [ref=f138e80]: Maak van bezoekers klanten. We combineren Meta Ads, een sterk aanbod en een soepel aankoopproces.
+            - generic [ref=f138e81]:
+              - text: Ecommerce & conversie
+              - generic [aria-hidden] [ref=f138e82]: ↗
+          - link [ref=f138e83] [cursor=pointer]:
+            - /url: /data-analytics
+            - heading "Weten wat je budget oplevert" [level=3] [ref=f138e84]
+            - paragraph [ref=f138e85]: Welke campagne brengt klanten? Waar haken bezoekers af? Met tracking en analyse zie je wat je moet verbeteren.
+            - generic [ref=f138e86]:
+              - text: Data & analytics
+              - generic [aria-hidden] [ref=f138e87]: ↗
+      - generic [ref=f138e88]:
+        - generic [ref=f138e89]:
+          - heading "Mooi is het begin. Groei is het doel." [level=2] [ref=f138e90]: Mooi is het begin.Groei is het doel.
+          - paragraph [ref=f138e91]: We verbinden je aanbod, advertenties en webshop. Zodat aandacht een duidelijke route krijgt naar een aankoop — en we kunnen verbeteren op wat er echt verkoopt.
+          - link "Bekijk Pinacello ↗" [ref=f138e92] [cursor=pointer]:
+            - /url: /cases/pinacello
+        - generic [ref=f138e93]:
+          - iframe [ref=f138e94]:
+            - generic [ref=f139e1]:
+              - generic "YouTube-videospeler" [ref=f139e3]
+              - generic [ref=f139e5]:
+                - generic:
+                  - generic:
+                    - generic [ref=f139e6] [cursor=pointer]
+                    - button "Video afspelen" [ref=f139e10] [cursor=pointer]
+                    - button "Afspeelbediening verbergen" [ref=f139e12] [cursor=pointer]
+                    - generic [ref=f139e14]:
+                      - generic [ref=f139e21]:
+                        - generic [ref=f139e22]:
+                          - link "Waarom je Meta Ads geen winst maken (Pinacello case study)" [ref=f139e23] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=Yy8j3y5s4jU
+                          - link "Stef Meister BE" [ref=f139e24] [cursor=pointer]:
+                            - /url: /channel/UC_SNWyYRszNva3hGFOZrLxg
+                        - generic [ref=f139e26]:
+                          - button [ref=f139e27] [cursor=pointer]
+                          - generic [ref=f139e29]:
+                            - generic: Stef Meister BE
+                            - generic: 80 abonnees
+                      - generic [ref=f139e30]:
+                        - button "Link kopiëren" [ref=f139e33] [cursor=pointer]
+                        - link "Bekijken op YouTube" [ref=f139e44] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=Yy8j3y5s4jU
+                          - generic [ref=f139e45]: Bekijken op
+          - link [ref=f138e95] [cursor=pointer]:
+            - /url: /cases/pinacello
+            - strong [ref=f138e96]: +120%
+            - paragraph [ref=f138e97]:
+              - text: online omzetgroei
+              - generic [aria-hidden] [ref=f138e98]: ↗
+        - generic [ref=f138e99]:
+          - generic [ref=f138e100]:
+            - generic [ref=f138e101]: "01"
+            - heading "Meer relevante kopers" [level=3] [ref=f138e102]
+            - paragraph [ref=f138e103]: Een scherp aanbod voor de juiste doelgroep.
+          - generic [ref=f138e104]:
+            - generic [ref=f138e105]: "02"
+            - heading "Meer conversie" [level=3] [ref=f138e106]
+            - paragraph [ref=f138e107]: Ads en landingspagina’s die elkaar versterken.
+          - generic [ref=f138e108]:
+            - generic [ref=f138e109]: "03"
+            - heading "Zicht op rendement" [level=3] [ref=f138e110]
+            - paragraph [ref=f138e111]: Sturen op omzet, acquisitiekosten en marge.
+      - generic [ref=f138e112]:
+        - generic [ref=f138e113]:
+          - heading "De juiste mensen bereiken. Meer klanten behouden." [level=2] [ref=f138e114]
+          - paragraph [ref=f138e115]: Google Ads vangt vraag op. Meta Ads maakt je merk zichtbaar. Data laat zien wat rendeert. E-mailmarketing bouwt de relatie verder uit.
+        - generic [ref=f138e116]:
+          - link "Google Ads Bereik wie vandaag naar jou zoekt. Maak van koopintentie geschikte aanvragen en verkopen. We stemmen zoekwoorden, advertenties en landingspagina’s op elkaar af. Search Shopping Conversietracking Ontdek de aanpak ↗" [ref=f138e117] [cursor=pointer]:
+            - /url: /google-ads
+            - generic [aria-hidden] [ref=f138e118]:
+              - generic [ref=f138e119]: Zo werkt het
+              - generic [ref=f138e120]:
+                - generic [ref=f138e121]:
+                  - generic [ref=f138e122]: ⌕
+                  - generic [ref=f138e123]: De oplossing die ik zoek…
+                - generic [ref=f138e124]:
+                  - generic [ref=f138e125]: Advertentie · Jouw bedrijf
+                  - strong [ref=f138e126]: Gevonden op het juiste moment.
+                  - generic [ref=f138e130]: Van zoekopdracht naar aanvraag ↗
+            - generic [ref=f138e131]:
+              - generic [ref=f138e132]: Google Ads
+              - heading "Bereik wie vandaag naar jou zoekt." [level=3] [ref=f138e133]
+              - paragraph [ref=f138e134]: Maak van koopintentie geschikte aanvragen en verkopen. We stemmen zoekwoorden, advertenties en landingspagina’s op elkaar af.
+              - generic [ref=f138e135]:
+                - generic [ref=f138e136]: Search
+                - generic [ref=f138e137]: Shopping
+                - generic [ref=f138e138]: Conversietracking
+              - generic [ref=f138e139]:
+                - text: Ontdek de aanpak
+                - generic [ref=f138e140]: ↗
+          - link "Meta Ads Maak van aandacht nieuwe klanten. Laat de juiste mensen je aanbod ontdekken op Facebook en Instagram. We testen beelden, boodschappen en doelgroepen en volgen geïnteresseerde bezoekers opnieuw op. Facebook Instagram Creative testing Ontdek de aanpak ↗" [ref=f138e141] [cursor=pointer]:
+            - /url: /meta-ads
+            - generic [aria-hidden] [ref=f138e142]:
+              - generic [ref=f138e143]: Zo werkt het
+              - generic [ref=f138e144]:
+                - generic [ref=f138e145]: 02 / TEST
+                - generic [ref=f138e148]:
+                  - generic [ref=f138e149]: 01 / CREATIVE
+                  - strong [ref=f138e150]: Een aanbod dat blijft hangen.
+                  - generic [ref=f138e151]: Ontdek je merk ↗
+                - generic [ref=f138e152]: Testen → leren → verbeteren
+            - generic [ref=f138e153]:
+              - generic [ref=f138e154]: Meta Ads
+              - heading "Maak van aandacht nieuwe klanten." [level=3] [ref=f138e155]
+              - paragraph [ref=f138e156]: Laat de juiste mensen je aanbod ontdekken op Facebook en Instagram. We testen beelden, boodschappen en doelgroepen en volgen geïnteresseerde bezoekers opnieuw op.
+              - generic [ref=f138e157]:
+                - generic [ref=f138e158]: Facebook
+                - generic [ref=f138e159]: Instagram
+                - generic [ref=f138e160]: Creative testing
+              - generic [ref=f138e161]:
+                - text: Ontdek de aanpak
+                - generic [ref=f138e162]: ↗
+          - link "Data & analytics Weet wat werkt. Beslis met inzicht. Verbind campagnekosten, aanvragen en verkoop. Met betrouwbare tracking en begrijpelijke dashboards zie je waar je moet bijsturen. GA4 Tag Manager Looker Studio Ontdek de aanpak ↗" [ref=f138e163] [cursor=pointer]:
+            - /url: /data-analytics
+            - generic [aria-hidden] [ref=f138e164]:
+              - generic [ref=f138e165]: Zo werkt het
+              - generic [ref=f138e166]:
+                - generic [ref=f138e167]:
+                  - generic [ref=f138e168]: Ads
+                  - generic [ref=f138e169]: Website
+                  - generic [ref=f138e170]: CRM
+                - generic [ref=f138e171]: ↓
+                - generic [ref=f138e172]:
+                  - strong [ref=f138e173]: Eén helder overzicht
+                  - generic [ref=f138e174]:
+                    - generic [ref=f138e175]: Kosten
+                    - generic [ref=f138e176]: Aanvragen
+                    - generic [ref=f138e177]: Omzet
+                  - generic [ref=f138e178]: ↗ Van inzicht naar actie
+            - generic [ref=f138e179]:
+              - generic [ref=f138e180]: Data & analytics
+              - heading "Weet wat werkt. Beslis met inzicht." [level=3] [ref=f138e181]
+              - paragraph [ref=f138e182]: Verbind campagnekosten, aanvragen en verkoop. Met betrouwbare tracking en begrijpelijke dashboards zie je waar je moet bijsturen.
+              - generic [ref=f138e183]:
+                - generic [ref=f138e184]: GA4
+                - generic [ref=f138e185]: Tag Manager
+                - generic [ref=f138e186]: Looker Studio
+              - generic [ref=f138e187]:
+                - text: Ontdek de aanpak
+                - generic [ref=f138e188]: ↗
+          - 'link "E-mailmarketing Haal meer uit elke klantrelatie. Van eerste inschrijving tot herhaalaankoop: relevante campagnes en automatische e-mailflows houden je merk dichtbij op het juiste moment. Welcome Retention Automation Ontdek de aanpak ↗" [ref=f138e189] [cursor=pointer]':
+            - /url: /email-marketing
+            - generic [aria-hidden] [ref=f138e190]:
+              - generic [ref=f138e191]: Zo werkt het
+              - generic [ref=f138e192]:
+                - generic [ref=f138e193]: ✦ Nieuwe inschrijving
+                - generic [ref=f138e195]:
+                  - generic [ref=f138e196]: ✉
+                  - generic [ref=f138e197]:
+                    - generic [ref=f138e198]: WELKOMSTFLOW
+                    - strong [ref=f138e199]: Fijn dat je er bent.
+                  - generic [ref=f138e200]: ↗
+                - generic [ref=f138e202]:
+                  - generic [ref=f138e203]: Vertrouwen opbouwen
+                  - generic [ref=f138e204]: Opnieuw kopen
+            - generic [ref=f138e205]:
+              - generic [ref=f138e206]: E-mailmarketing
+              - heading "Haal meer uit elke klantrelatie." [level=3] [ref=f138e207]
+              - paragraph [ref=f138e208]: "Van eerste inschrijving tot herhaalaankoop: relevante campagnes en automatische e-mailflows houden je merk dichtbij op het juiste moment."
+              - generic [ref=f138e209]:
+                - generic [ref=f138e210]: Welcome
+                - generic [ref=f138e211]: Retention
+                - generic [ref=f138e212]: Automation
+              - generic [ref=f138e213]:
+                - text: Ontdek de aanpak
+                - generic [ref=f138e214]: ↗
+        - generic [ref=f138e215]:
+          - paragraph [ref=f138e216]: Ook de techniek achter je groei.
+          - generic [ref=f138e217]:
+            - link "Websites & ecommerce ↗" [ref=f138e218] [cursor=pointer]:
+              - /url: /websites
+            - link "CRM & automatisering ↗" [ref=f138e219] [cursor=pointer]:
+              - /url: /ai-automatiseringen
+            - link "Software & apps ↗" [ref=f138e220] [cursor=pointer]:
+              - /url: /software
+      - region [ref=f138e221]:
+        - generic [ref=f138e222]:
+          - heading "De juiste platforms. Eén verbonden aanpak." [level=2] [ref=f138e223]
+          - paragraph [ref=f138e224]: We werken met deze platforms om je marketing, data en opvolging op elkaar af te stemmen. We kiezen wat jouw bedrijf nodig heeft.
+        - generic [ref=f138e225]:
+          - article [ref=f138e226]:
+            - heading "Advertenties & bereik" [level=3] [ref=f138e227]
+            - paragraph [ref=f138e228]: Je doelgroep bereiken via de kanalen die bij je aanbod passen.
+            - list [ref=f138e229]:
+              - listitem [ref=f138e230]:
+                - generic [ref=f138e231]: Meta
+              - listitem [ref=f138e232]:
+                - generic [ref=f138e233]: Google
+              - listitem [ref=f138e234]:
+                - generic [ref=f138e235]: TikTok
+              - listitem [ref=f138e236]:
+                - generic [ref=f138e237]: Instagram
+              - listitem [ref=f138e238]:
+                - generic [ref=f138e239]: YouTube
+          - article [ref=f138e240]:
+            - heading "Data & inzicht" [level=3] [ref=f138e241]
+            - paragraph [ref=f138e242]: Zien waar bezoekers vandaan komen, wat ze doen en waar ze afhaken.
+            - list [ref=f138e243]:
+              - listitem [ref=f138e244]:
+                - generic [ref=f138e245]: Google Analytics
+              - listitem [ref=f138e246]:
+                - generic [ref=f138e247]: Tag Manager
+              - listitem [ref=f138e248]:
+                - generic [ref=f138e249]: Looker Studio
+              - listitem [ref=f138e250]:
+                - generic [ref=f138e251]: Microsoft Clarity
+              - listitem [ref=f138e252]:
+                - generic [ref=f138e253]: Supabase
+          - article [ref=f138e254]:
+            - heading "E-mail & ecommerce" [level=3] [ref=f138e255]
+            - paragraph [ref=f138e256]: Je webshop en e-mailmarketing verbinden, van eerste aankoop tot terugkerende klant.
+            - list [ref=f138e257]:
+              - listitem [ref=f138e258]:
+                - generic [ref=f138e259]: Mailchimp
+              - listitem [ref=f138e260]:
+                - generic [ref=f138e261]: Klaviyo
+              - listitem [ref=f138e262]:
+                - generic [ref=f138e263]: Resend
+              - listitem [ref=f138e264]:
+                - generic [ref=f138e265]: Shopify
+              - listitem [ref=f138e266]:
+                - generic [ref=f138e267]: Wix
+              - listitem [ref=f138e268]:
+                - generic [ref=f138e269]: WhatsApp Business
+          - article [ref=f138e270]:
+            - heading "AI & automatisering" [level=3] [ref=f138e271]
+            - paragraph [ref=f138e272]: AI inzetten om tools te bouwen, processen te verbinden en terugkerend werk te automatiseren.
+            - list [ref=f138e273]:
+              - listitem [ref=f138e274]:
+                - generic [ref=f138e275]: Lovable
+              - listitem [ref=f138e276]:
+                - generic [ref=f138e277]: Codex
+              - listitem [ref=f138e278]:
+                - generic [ref=f138e279]: Claude
+              - listitem [ref=f138e280]:
+                - generic [ref=f138e281]: OpenAI
+      - region [ref=f138e282]:
+        - generic [ref=f138e283]:
+          - heading "Onze eigen platforms. Inbegrepen voor klanten." [level=2] [ref=f138e284]
+          - paragraph [ref=f138e285]: Als klant van verkoop.studio krijg je toegang tot ons sales-CRM en marketingdashboard. Die programma’s hoef je niet meer apart aan te schaffen. Bij alles wat we opleveren krijg je documentatie en instructievideo’s, zodat jij en je team weten hoe het werkt.
+          - link "Vraag toegang aan" [ref=f138e286] [cursor=pointer]:
+            - /url: /contact?platform=overview
+            - text: Vraag toegang aan
+            - generic [aria-hidden] [ref=f138e287]: ↗
+        - generic [ref=f138e288]:
+          - article [ref=f138e289]:
+            - heading "Sales CRM" [level=3] [ref=f138e290]
+            - generic [ref=f138e291]: Gratis voor onze klanten
+            - paragraph [ref=f138e292]: Houd overzicht over je contacten, verkoopkansen en volgende stappen. Zo weet je wie je nog moet opvolgen.
+            - link "Meer over ons CRM" [ref=f138e293] [cursor=pointer]:
+              - /url: /contact?platform=crm
+              - text: Meer over ons CRM
+              - generic [aria-hidden] [ref=f138e294]: ↗
+          - article [ref=f138e295]:
+            - heading "Marketingdashboard" [level=3] [ref=f138e296]
+            - generic [ref=f138e297]: Gratis voor onze klanten
+            - paragraph [ref=f138e298]: Je campagnes, resultaten en marketingcijfers op één plek. Zo volg je eenvoudig wat je marketing oplevert.
+            - link "Meer over het marketingdashboard" [ref=f138e299] [cursor=pointer]:
+              - /url: /contact?platform=dashboard
+              - text: Meer over het marketingdashboard
+              - generic [aria-hidden] [ref=f138e300]: ↗
+      - generic [ref=f138e302]:
+        - heading "Commercieel denken. Technisch bouwen. Samen vooruit." [level=2] [ref=f138e303]
+        - paragraph [ref=f138e304]: Vanuit Lochristi brengen we strategie, marketing, design en ontwikkeling samen in één studio. Van je eerste groeivraag tot de website, campagnes en systemen die het waarmaken.
+        - generic [ref=f138e305]:
+          - generic [ref=f138e306]:
+            - img "Stef Keppens bij Nooms" [ref=f138e307]
+            - heading "Stef Keppens" [level=3] [ref=f138e308]
+            - paragraph [ref=f138e309]: Marketingstrategie, funnels, ecommerce, campagnes en AI-automatisering. Met de volledige klantreis als vertrekpunt.
+          - generic [ref=f138e310]:
+            - img "Samen aan het werk in de studio" [ref=f138e311]
+            - heading "Design & development" [level=3] [ref=f138e312]
+            - paragraph [ref=f138e313]: Websites, software en mobiele apps. Productdesign en ontwikkeling vanuit onze studio in Lochristi.
+      - generic [ref=f138e316]:
+        - heading "Van probleem naar werkend systeem" [level=2] [ref=f138e317]
+        - generic [ref=f138e318]:
+          - generic [ref=f138e319]:
+            - generic [ref=f138e320]: "01"
+            - heading "Analyse" [level=3] [ref=f138e321]
+            - paragraph [ref=f138e322]: We bekijken de website, campagnes, data en huidige klantreis.
+          - generic [ref=f138e323]:
+            - generic [ref=f138e324]: "02"
+            - heading "Prioriteiten" [level=3] [ref=f138e325]
+            - paragraph [ref=f138e326]: We bepalen waar de grootste commerciële lekken zitten.
+          - generic [ref=f138e327]:
+            - generic [ref=f138e328]: "03"
+            - heading "Funnel design" [level=3] [ref=f138e329]
+            - paragraph [ref=f138e330]: We ontwerpen de pagina’s, campagnes, tracking en opvolging als één geheel.
+          - generic [ref=f138e331]:
+            - generic [ref=f138e332]: "04"
+            - heading "Implementatie" [level=3] [ref=f138e333]
+            - paragraph [ref=f138e334]: De landingspagina’s, advertenties en automatiseringen worden gebouwd en gekoppeld.
+          - generic [ref=f138e335]:
+            - generic [ref=f138e336]: "05"
+            - heading "Optimalisatie" [level=3] [ref=f138e337]
+            - paragraph [ref=f138e338]: We meten gedrag, leads, boekingen, verkopen en omzet en verbeteren op basis van data.
+        - paragraph [ref=f138e339]: "We werken: Projectmatig · Als doorlopende groeipartner · Samen met interne teams · Samen met externe developers, designers en specialisten"
+      - region [ref=f138e340]:
+        - generic [ref=f138e341]:
+          - generic [ref=f138e342]:
+            - heading "De juiste basis. De ruimte om te groeien." [level=2] [ref=f138e343]: De juiste basis.De ruimte om te groeien.
+            - paragraph [ref=f138e344]: Van een sterke marketingbasis tot een team dat mee uitvoert. Kies wat past bij je bedrijf.
+          - region [ref=f138e345]:
+            - generic [ref=f138e346]:
+              - heading "Je tools én de uitleg erbij." [level=3] [ref=f138e347]
+              - paragraph [ref=f138e348]: Ons CRM en marketingdashboard zijn inbegrepen. Je hoeft er geen apart abonnement voor te nemen.
+            - generic [ref=f138e349]:
+              - generic [ref=f138e350]:
+                - heading "CRM voor je klantopvolging" [level=4] [ref=f138e351]
+                - paragraph [ref=f138e352]: Contacten, verkoopkansen en opvolging op één plek.
+              - generic [ref=f138e353]:
+                - heading "Je eigen marketingdashboard" [level=4] [ref=f138e354]
+                - paragraph [ref=f138e355]: Zie hoe je campagnes presteren en wat ze opleveren.
+              - generic [ref=f138e356]:
+                - heading "Documentatie & instructievideo’s" [level=4] [ref=f138e357]
+                - paragraph [ref=f138e358]: Bij alles wat we opleveren. Duidelijk voor je hele team, altijd opnieuw te bekijken.
+          - generic [ref=f138e359]:
+            - article [ref=f138e360]:
+              - generic [ref=f138e361]:
+                - generic [ref=f138e362]: "01"
+                - generic [ref=f138e363]: Een sterke basis
+              - heading "Growth Foundation" [level=3] [ref=f138e364]
+              - paragraph [ref=f138e365]: Van losse acties naar een meetbare aanpak.
+              - paragraph [ref=f138e366]: €1.500 / maand
+              - paragraph [ref=f138e367]:
+                - generic [aria-hidden] [ref=f138e368]: ✓
+                - text: Inclusief gratis software voor je bedrijf
+              - button "Bekijk wat je krijgt — Growth Foundation" [ref=f138e369] [cursor=pointer]:
+                - text: Bekijk wat je krijgt
+                - generic [aria-hidden] [ref=f138e370]: +
+              - link "Bespreek Foundation" [ref=f138e371] [cursor=pointer]:
+                - /url: /contact?pakket=foundation
+                - text: Bespreek Foundation
+                - generic [aria-hidden] [ref=f138e372]: ↗
+              - paragraph [ref=f138e373]: Eerst je doelen bespreken, dan een voorstel.
+            - article [ref=f138e374]:
+              - generic [ref=f138e375]:
+                - generic [ref=f138e376]: "02"
+                - generic [ref=f138e377]: Campagnes + conversie
+              - heading "Growth Partner" [level=3] [ref=f138e378]
+              - paragraph [ref=f138e379]: Laat je campagnes, website en opvolging samenwerken.
+              - paragraph [ref=f138e380]: €2.500 / maand
+              - paragraph [ref=f138e381]:
+                - generic [aria-hidden] [ref=f138e382]: ✓
+                - text: Inclusief gratis software voor je bedrijf
+              - button "Bekijk wat je krijgt — Growth Partner" [ref=f138e383] [cursor=pointer]:
+                - text: Bekijk wat je krijgt
+                - generic [aria-hidden] [ref=f138e384]: +
+              - link "Bespreek Partner" [ref=f138e385] [cursor=pointer]:
+                - /url: /contact?pakket=partner
+                - text: Bespreek Partner
+                - generic [aria-hidden] [ref=f138e386]: ↗
+              - paragraph [ref=f138e387]: Eerst je doelen bespreken, dan een voorstel.
+            - article [ref=f138e388]:
+              - generic [ref=f138e389]:
+                - generic [ref=f138e390]: "03"
+                - generic [ref=f138e391]: Een team naast je team
+              - heading "Growth Department" [level=3] [ref=f138e392]
+              - paragraph [ref=f138e393]: Eén partner voor je volledige groeiaanpak.
+              - paragraph [ref=f138e394]: Vanaf €4.000 / maand
+              - paragraph [ref=f138e395]:
+                - generic [aria-hidden] [ref=f138e396]: ✓
+                - text: Inclusief gratis software voor je bedrijf
+              - button "Bekijk wat je krijgt — Growth Department" [ref=f138e397] [cursor=pointer]:
+                - text: Bekijk wat je krijgt
+                - generic [aria-hidden] [ref=f138e398]: +
+              - link "Bespreek maatwerk" [ref=f138e399] [cursor=pointer]:
+                - /url: /contact?pakket=department
+                - text: Bespreek maatwerk
+                - generic [aria-hidden] [ref=f138e400]: ↗
+              - paragraph [ref=f138e401]: Eerst je doelen bespreken, dan een voorstel.
+          - group [ref=f138e402]:
+            - generic "Vergelijk wat er in elk pakket zit" [ref=f138e403] [cursor=pointer]:
+              - text: Vergelijk wat er in elk pakket zit
+              - generic [aria-hidden] [ref=f138e404]: +
+          - generic [ref=f138e405]:
+            - generic [ref=f138e406]:
+              - heading "Je hoeft het nog niet te weten." [level=3] [ref=f138e407]
+              - paragraph [ref=f138e408]: We bekijken eerst waar je staat. Een gericht gesprek of leertraject kan ook, zonder meteen voor een maandpakket te kiezen.
+              - link "Help me kiezen" [ref=f138e409] [cursor=pointer]:
+                - /url: /contact
+                - text: Help me kiezen
+                - generic [aria-hidden] [ref=f138e410]: ↗
+            - generic [ref=f138e411]:
+              - generic [ref=f138e412]:
+                - heading "Strategisch gesprek" [level=4] [ref=f138e413]
+                - strong [ref=f138e414]: €250 / uur
+                - paragraph [ref=f138e415]: Een gericht sparringgesprek over jullie groei — kom eerst leren, beslis daarna pas over samenwerking.
+              - generic [ref=f138e416]:
+                - heading "Leertraject" [level=4] [ref=f138e417]
+                - strong [ref=f138e418]: Op aanvraag
+                - paragraph [ref=f138e419]: Een begeleidingstraject waarin je zelf leert hoe je jullie digitale groei aanpakt en uitvoert — opzet en invulling bespreken we samen.
+      - region [ref=f138e420]:
+        - generic [ref=f138e421]:
+          - heading "Veelgestelde vragen" [level=2] [ref=f138e422]
+          - generic [ref=f138e423]:
+            - group [ref=f138e424]:
+              - generic "Wie is verkoop.studio?" [ref=f138e425] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e427]: +
+              - paragraph [ref=f138e428]: verkoop.studio is een studio in Lochristi voor strategie, marketing, design en development. We verbinden commerciële groei met de websites, apps en systemen erachter. In ons portfolio vermelden we wie de bestaande projecten uitvoerde.
+            - group [ref=f138e429]:
+              - generic "Kunnen we ook alleen een website of app laten bouwen?" [ref=f138e430] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e432]: +
+            - group [ref=f138e433]:
+              - generic "Met welke bedrijven werken jullie?" [ref=f138e434] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e436]: +
+            - group [ref=f138e437]:
+              - generic "Bouwen jullie alleen landing pages of ook de volledige funnel?" [ref=f138e438] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e440]: +
+            - group [ref=f138e441]:
+              - generic "Doen jullie ook Meta Ads en Google Ads?" [ref=f138e442] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e444]: +
+            - group [ref=f138e445]:
+              - generic "Doen jullie ook B2B-outreach of e-mailcampagnes?" [ref=f138e446] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e448]: +
+            - group [ref=f138e449]:
+              - generic "Kunnen jullie bestaande ecommerce-websites optimaliseren?" [ref=f138e450] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e452]: +
+            - group [ref=f138e453]:
+              - generic "Werken jullie samen met interne marketingteams?" [ref=f138e454] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e456]: +
+            - group [ref=f138e457]:
+              - generic "Bouwen jullie ook AI-automatiseringen?" [ref=f138e458] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e460]: +
+            - group [ref=f138e461]:
+              - generic "Doen jullie strategie én uitvoering?" [ref=f138e462] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e464]: +
+            - group [ref=f138e465]:
+              - generic "Werken jullie projectmatig of op maandbasis?" [ref=f138e466] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e468]: +
+            - group [ref=f138e469]:
+              - generic "Hoe start een samenwerking?" [ref=f138e470] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e472]: +
+            - group [ref=f138e473]:
+              - generic "Hoe wordt resultaat gemeten?" [ref=f138e474] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e476]: +
+            - group [ref=f138e477]:
+              - generic "Kan ik ook eerst losse consulting doen, zonder maandpakket?" [ref=f138e478] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e480]: +
+            - group [ref=f138e481]:
+              - generic "Wat kost een samenwerking?" [ref=f138e482] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e484]: +
+            - group [ref=f138e485]:
+              - generic "Moet ik zelf een CRM of marketingdashboard aanschaffen?" [ref=f138e486] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e488]: +
+            - group [ref=f138e489]:
+              - generic "Krijgen we ook documentatie en instructievideo’s?" [ref=f138e490] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f138e492]: +
+      - generic [ref=f138e494]:
+        - heading "Klaar om van marketing meer omzet te maken?" [level=2] [ref=f138e495]
+        - paragraph [ref=f138e496]: Ontdek waar jullie advertenties, website, ecommerce of opvolging vandaag omzet verliezen.
+        - generic [ref=f138e497]:
+          - link "Bespreek je project" [ref=f138e498] [cursor=pointer]:
+            - /url: /contact
+          - link "Bekijk ons werk" [ref=f138e499] [cursor=pointer]:
+            - /url: /cases
+  - contentinfo [ref=f138e500]:
+    - generic [ref=f138e501]:
+      - generic [ref=f138e502]:
+        - generic [ref=f138e503]:
+          - link "verkoop.studio — Home" [ref=f138e504] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f138e505]:
+              - generic [ref=f138e506]: verkoop.
+              - generic [ref=f138e507]: studio
+          - paragraph [ref=f138e508]: Lochristi, België
+          - paragraph [ref=f138e509]: We bouwen de complete digitale route van eerste klik tot conversie.
+        - generic [ref=f138e510]:
+          - paragraph [ref=f138e511]: Navigatie
+          - list [ref=f138e512]:
+            - listitem [ref=f138e513]:
+              - link "Blog · Gent & omgeving" [ref=f138e514] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f138e515]:
+              - link "Home" [ref=f138e516] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f138e517]:
+              - link "Resultaten" [ref=f138e518] [cursor=pointer]:
+                - /url: /#resultaten
+            - listitem [ref=f138e519]:
+              - link "Diensten" [ref=f138e520] [cursor=pointer]:
+                - /url: /#expertise
+            - listitem [ref=f138e521]:
+              - link "Cases" [ref=f138e522] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=f138e523]:
+              - link "Agency" [ref=f138e524] [cursor=pointer]:
+                - /url: /agency
+            - listitem [ref=f138e525]:
+              - link "Contact" [ref=f138e526] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=f138e527]:
+          - paragraph [ref=f138e528]: Diensten
+          - list [ref=f138e529]:
+            - listitem [ref=f138e530]:
+              - link "E-mailmarketing" [ref=f138e531] [cursor=pointer]:
+                - /url: /email-marketing
+            - listitem [ref=f138e532]:
+              - link "Data & analytics" [ref=f138e533] [cursor=pointer]:
+                - /url: /data-analytics
+            - listitem [ref=f138e534]:
+              - link "Websites & ecommerce" [ref=f138e535] [cursor=pointer]:
+                - /url: /websites
+            - listitem [ref=f138e536]:
+              - link "Software & apps" [ref=f138e537] [cursor=pointer]:
+                - /url: /software
+            - listitem [ref=f138e538]:
+              - link "Landing pages" [ref=f138e539] [cursor=pointer]:
+                - /url: /landing-pages
+            - listitem [ref=f138e540]:
+              - link "Funnels" [ref=f138e541] [cursor=pointer]:
+                - /url: /funnels
+            - listitem [ref=f138e542]:
+              - link "Meta Ads" [ref=f138e543] [cursor=pointer]:
+                - /url: /meta-ads
+            - listitem [ref=f138e544]:
+              - link "Google Ads" [ref=f138e545] [cursor=pointer]:
+                - /url: /google-ads
+            - listitem [ref=f138e546]:
+              - link "Ecommerce conversie" [ref=f138e547] [cursor=pointer]:
+                - /url: /ecommerce-conversie
+            - listitem [ref=f138e548]:
+              - link "AI-automatiseringen" [ref=f138e549] [cursor=pointer]:
+                - /url: /ai-automatiseringen
+            - listitem [ref=f138e550]:
+              - link "Offer & distributie" [ref=f138e551] [cursor=pointer]:
+                - /url: /distributie
+        - generic [ref=f138e552]:
+          - paragraph [ref=f138e553]: Contact
+          - list [ref=f138e554]:
+            - listitem [ref=f138e555]:
+              - link "stefkeppens@gmail.com" [ref=f138e556] [cursor=pointer]:
+                - /url: mailto:stefkeppens@gmail.com
+            - listitem [ref=f138e557]:
+              - link "Bespreek je project" [ref=f138e558] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=f138e559]:
+        - paragraph [ref=f138e560]: © 2026 verkoop.studio
+        - button "Switch language" [ref=f138e561]:
+          - generic [ref=f138e562]: NL
+          - generic [aria-hidden] [ref=f138e563]: /
+          - generic [ref=f138e564]: EN
+        - paragraph [ref=f138e565]: Growth, design & development.
+  - button "FAQ-chat openen" [ref=f138e567] [cursor=pointer]
+  - generic [ref=f138e571]:
+    - link "Aanbod & prijzen" [ref=f138e572] [cursor=pointer]:
+      - /url: /#groeipakketten
+    - link "Bespreek je project" [ref=f138e573] [cursor=pointer]:
+      - /url: /contact

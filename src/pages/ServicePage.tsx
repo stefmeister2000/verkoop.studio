@@ -3,38 +3,56 @@ import ServiceVisual from '../components/ServiceVisual'
 import { hasServiceVisual } from '../data/visualServices'
 import Seo from '../components/Seo'
 import CaseVisual from '../components/CaseVisual'
+import CheckList from '../components/CheckList'
 import QualificationForm from '../components/QualificationForm'
 import Breadcrumbs from '../components/Breadcrumbs'
+import ResponsiveImage from '../components/ResponsiveImage'
 import { getService } from '../data/services'
 import { getCase } from '../data/cases'
 import type { ServiceSlug } from '../data/types'
 import { trackEvent } from '../lib/analytics'
 import { useInView } from '../lib/useInView'
 import { useLang } from '../i18n/LanguageContext'
+import stefDesk from '../assets/stef-desk.webp'
+import stefDeskSmall from '../assets/stef-desk-640.webp'
 
 const COPY = {
   nl: {
     servicesCrumb: 'Diensten',
-    problemLabel: 'Het probleem',
-    approachLabel: 'Aanpak',
-    deliverablesLabel: 'Opleverpunten',
-    exampleLabel: 'Voorbeeld',
+    problemLabel: 'Waar het vastloopt',
+    approachLabel: 'Zo werken we',
+    deliverablesLabel: 'Wat je krijgt',
+    visualLabel: 'Zo werkt het',
     view: 'Bekijk de case',
+    partnerLabel: 'Samen met LYTE Studios',
     formTitle: 'Vertel ons over je project',
-    formBody:
-      'Geen algemene template. We bekijken jullie huidige situatie en proces.',
+    cta: 'Bespreek jouw aanpak',
+    reply: 'Je hoort binnen 24 uur van ons.',
+    nextLabel: 'Wat er daarna gebeurt',
+    proofStat: '+120% online omzet',
+    steps: ['Jij deelt je doel en uitdaging.', 'We bespreken de kansen en prioriteiten.', 'Je krijgt een voorstel met scope en budget.'],
   },
   en: {
     servicesCrumb: 'Services',
-    problemLabel: 'The problem',
-    approachLabel: 'Approach',
-    deliverablesLabel: 'Deliverables',
-    exampleLabel: 'Example',
+    problemLabel: 'Where it gets stuck',
+    approachLabel: 'How we work',
+    deliverablesLabel: 'What you get',
+    visualLabel: 'How it works',
     view: 'View the case',
+    partnerLabel: 'Together with LYTE Studios',
     formTitle: 'Tell us about your project',
-    formBody:
-      'No generic template. We look at your current situation and process.',
+    cta: 'Discuss your approach',
+    reply: 'You’ll hear from us within 24 hours.',
+    nextLabel: 'What happens next',
+    proofStat: '+120% online revenue',
+    steps: ['You share your goal and challenge.', 'We discuss opportunities and priorities.', 'You receive a proposal with scope and budget.'],
   },
+}
+
+function leadIn(title: string, lang: 'nl' | 'en') {
+  return lang === 'nl'
+    ? `Je bent hier voor ${title}. Vertel ons waar je nu staat. We bekijken je situatie en zeggen welke aanpak past.`
+    : `You’re here for ${title}. Tell us where you stand. We’ll look at your situation and say which approach fits.`
 }
 
 export default function ServicePage({ slug }: { slug: ServiceSlug }) {
@@ -46,156 +64,117 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
   )
 
   if (!service) return null
-  const relatedCase = service.relatedCase
-    ? getCase(service.relatedCase)
-    : undefined
+  const relatedCase = service.relatedCase ? getCase(service.relatedCase) : undefined
+  const showVisual = hasServiceVisual(slug)
 
   return (
-    <div ref={ref}>
-      <Seo
-        title={service.title[lang]}
-        description={service.summary[lang]}
-        path={`/${service.slug}`}
-      />
+    <div ref={ref} className="service-landing">
+      <Seo title={service.title[lang]} description={service.summary[lang]} path={`/${service.slug}`} />
 
-      <section className="border-b border-line">
-        <div className="reveal mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-24">
-          <Breadcrumbs
-            items={[
-              { label: t.servicesCrumb, href: '/#expertise' },
-              { label: service.title[lang] },
-            ]}
-          />
-
-          <span className="mt-6 block font-display text-sm text-mute">
-            {service.number}
-          </span>
-          <h1 className="mt-1 font-display text-4xl text-paper text-balance sm:text-5xl">
-            {service.title[lang]}
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg text-bone">
-            {service.summary[lang]}
-          </p>
-
-          <Link to="/contact" className="button-dark service-page-cta" onClick={() => trackEvent('audit_cta_clicked', { placement: 'service_hero', service: slug })}>{lang === 'nl' ? 'Bespreek jouw aanpak' : 'Discuss your approach'} ↗</Link>
-          {hasServiceVisual(slug) && <div className="service-page-visual"><ServiceVisual service={slug} /></div>}
-          <p className="mt-6 max-w-2xl border-t border-line pt-5 text-sm text-mute">
-            {service.includes[lang].join(' · ')}
-          </p>
-        </div>
-      </section>
-
-      <section className="border-b border-line bg-surface/30">
-        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-accent-2">
-            {t.problemLabel}
-          </h2>
-          <p className="mt-4 max-w-2xl font-display text-2xl text-paper text-balance">
-            {service.problem[lang]}
-          </p>
-        </div>
-      </section>
-
-      <section className="border-b border-line">
-        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-accent-2">
-            {t.approachLabel}
-          </h2>
-          <div className="mt-6 space-y-5">
-            {service.process[lang].map((step, i) => (
-              <div key={step} className="flex gap-5">
-                <span className="font-display text-xl text-mute">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <p className="text-bone">{step}</p>
-              </div>
+      <section className="service-hero">
+        <div className="service-hero-copy reveal">
+          <Breadcrumbs items={[{ label: t.servicesCrumb, href: '/#expertise' }, { label: service.title[lang] }]} />
+          <h1>{service.title[lang]}</h1>
+          <p className="service-hero-lead">{service.summary[lang]}</p>
+          <ul className="service-includes">
+            {service.includes[lang].map((item) => (
+              <li key={item}>{item.charAt(0).toUpperCase() + item.slice(1)}</li>
             ))}
+          </ul>
+          <a
+            className="button-dark"
+            href="#audit-formulier-section"
+            onClick={() => trackEvent('audit_cta_clicked', { placement: 'service_hero', service: slug })}
+          >
+            {t.cta} <span aria-hidden="true">↗</span>
+          </a>
+          <p className="service-reply">{t.reply}</p>
+        </div>
+        <aside className="service-next">
+          <h2>{t.nextLabel}</h2>
+          <ol className="contact-steps">
+            {t.steps.map((step) => <li key={step}>{step}</li>)}
+          </ol>
+        </aside>
+      </section>
+
+      <section className="service-middle">
+        <div className="service-problem">
+          <h2>{t.problemLabel}</h2>
+          <p>{service.problem[lang]}</p>
+        </div>
+        <div className="service-offer">
+          <h2>{t.deliverablesLabel}</h2>
+          <CheckList items={service.deliverables[lang]} columns={1} />
+        </div>
+        {showVisual && (
+          <div className="service-visual-panel">
+            <h2>{t.visualLabel}</h2>
+            <ServiceVisual service={slug} />
           </div>
+        )}
+        <div className="service-steps">
+          <h2>{t.approachLabel}</h2>
+          <ol className="contact-steps">
+            {service.process[lang].map((step) => <li key={step}>{step}</li>)}
+          </ol>
         </div>
       </section>
 
-      <section className="border-b border-line bg-surface/30">
-        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-accent-2">
-            {t.deliverablesLabel}
-          </h2>
-          <p className="mt-4 max-w-2xl text-bone">
-            {service.deliverables[lang].join(' · ')}
-          </p>
-        </div>
-      </section>
+      {relatedCase && (
+        <Link
+          to={`/cases/${relatedCase.slug}`}
+          className="service-proof"
+          onClick={() => trackEvent('case_viewed', { case: relatedCase.slug, placement: 'service_page' })}
+        >
+          <CaseVisual case={relatedCase} lang={lang} ratio="aspect-[16/10]" />
+          <div>
+            <h2>{relatedCase.name}</h2>
+            {relatedCase.slug === 'pinacello' && <p className="service-proof-stat">{t.proofStat}</p>}
+            <p>{relatedCase.slug === 'pinacello' ? relatedCase.summary[lang].split('. ').slice(1).join('. ') : relatedCase.summary[lang]}</p>
+            <span>{t.view} <span aria-hidden="true">↗</span></span>
+          </div>
+        </Link>
+      )}
 
       {service.partnerCase && (
-        <section className="border-b border-line">
-          <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8">
-            <p className="text-xs uppercase tracking-widest text-accent-2">
-              LYTE Studios · {t.exampleLabel}
-            </p>
-            <a
-              href={service.partnerCase.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 block rounded-2xl border border-line bg-surface p-8 hover:border-accent"
-            >
-              <h2 className="font-display text-3xl text-paper">
-                {service.partnerCase.name} ↗
-              </h2>
-              <p className="mt-4 text-bone">
-                {service.partnerCase.description[lang]}
-              </p>
-            </a>
+        <a className="service-proof service-proof-partner" href={service.partnerCase.url} target="_blank" rel="noopener noreferrer">
+          <div>
+            <p className="service-proof-kicker">{t.partnerLabel}</p>
+            <h2>{service.partnerCase.name} <span aria-hidden="true">↗</span></h2>
+            <p>{service.partnerCase.description[lang]}</p>
           </div>
-        </section>
-      )}
-      {relatedCase && (
-        <section className="border-b border-line">
-          <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">
-              {t.exampleLabel}
-            </p>
-            <Link
-              to={`/cases/${relatedCase.slug}`}
-              onClick={() =>
-                trackEvent('case_viewed', {
-                  case: relatedCase.slug,
-                  placement: 'service_page',
-                })
-              }
-              className="group mt-6 grid gap-6 rounded-2xl border border-line bg-surface p-6 transition hover:border-accent sm:grid-cols-[1fr_1.3fr] sm:items-center"
-            >
-              <CaseVisual
-                case={relatedCase}
-                lang={lang}
-                ratio="aspect-[16/10]"
-              />
-              <div>
-                <h3 className="font-display text-xl text-paper">
-                  {relatedCase.name}
-                </h3>
-                <p className="mt-1 text-xs uppercase tracking-widest text-mute">
-                  {relatedCase.sector[lang]}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-bone">
-                  {relatedCase.summary[lang]}
-                </p>
-                <span className="mt-4 inline-block text-sm font-medium text-accent-2 underline decoration-transparent underline-offset-4 transition group-hover:decoration-accent-2">
-                  {t.view}
-                </span>
-              </div>
-            </Link>
-          </div>
-        </section>
+        </a>
       )}
 
-      <section id="audit-formulier-section">
-        <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
-          <h2 className="font-display text-3xl text-paper text-balance sm:text-4xl">
-            {t.formTitle}
-          </h2>
-          <p className="mt-4 text-bone">{t.formBody}</p>
-          <div className="mt-10">
-            <QualificationForm id={`audit-formulier-${service.slug}`} compact />
+      <section id="audit-formulier-section" className="service-close">
+        <div className="service-close-head">
+          <figure className="service-close-photo">
+            <picture>
+              <source media="(max-width: 600px)" srcSet={stefDeskSmall} />
+              <ResponsiveImage
+                src={stefDesk}
+                alt={lang === 'nl' ? 'Stef Keppens aan zijn laptop' : 'Stef Keppens at his laptop'}
+                sizes="(max-width: 900px) 100vw, 460px"
+                loading="lazy"
+              />
+            </picture>
+          </figure>
+          <div className="service-close-intro">
+            <h2 className="font-display text-balance">{t.formTitle}</h2>
+            <p className="contact-lead">{leadIn(service.title[lang], lang)}</p>
+            <p className="service-close-who">
+              <strong>Stef Keppens</strong>
+              <span>Lochristi</span>
+              <a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a>
+            </p>
           </div>
+        </div>
+        <div className="service-close-form">
+          <QualificationForm
+            id={`audit-formulier-${service.slug}`}
+            inquiryContext={lang === 'nl' ? `Dienst: ${service.title[lang]}` : `Service: ${service.title[lang]}`}
+          />
         </div>
       </section>
     </div>

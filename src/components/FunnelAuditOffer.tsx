@@ -82,11 +82,11 @@ export default function FunnelAuditOffer() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.scopeLabel}</p>
+            <h3 className="section-title">{t.scopeLabel}</h3>
             <p className="mt-3 text-sm leading-relaxed text-bone">{t.scope.join(' · ')}</p>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent-2">{t.deliverablesLabel}</p>
+            <h3 className="section-title">{t.deliverablesLabel}</h3>
             <p className="mt-3 text-sm leading-relaxed text-bone">{t.deliverables.join(' · ')}</p>
           </div>
         </div>
