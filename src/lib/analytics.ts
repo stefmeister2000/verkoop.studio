@@ -25,6 +25,7 @@ export type TrackingEvent =
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
+    fbq?: (command: 'trackSingle', pixelId: string, event: 'Lead', params: Record<string, unknown>, options: { eventID: string }) => void
     gtag?: {
       (command: 'event', event: string, params: Record<string, unknown>): void
       (command: 'get', target: string, field: string, callback: (value: unknown) => void): void
@@ -44,25 +45,41 @@ export function trackEvent(event: TrackingEvent, payload: Record<string, unknown
 
 const trackedLeads = new Set<string>()
 
-/** Call only after /api/lead succeeds. Never send contact details or free text. */
-export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown }, submissionId: string, formId: string) {
-  if (typeof window === 'undefined' || !window.gtag || !submissionId) return
-  // The bot honeypot returns ok without storing a lead or returning capture receipts.
-  if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('resend_contact')) return
-  const key = `sk_ga4_lead_${submissionId}`
+/** Keep destinations independent: a blocked or broken tag must not block the other. */
+function trackLeadOnce(key: string, send: () => void) {
   if (trackedLeads.has(key)) return
   try {
     if (sessionStorage.getItem(key)) return
   } catch { /* Tracking still works when storage is unavailable. */ }
   try {
-    window.gtag('event', 'generate_lead', {
-      send_to: 'G-VRKJP8K3SD',
-      method: 'website_form',
-      form_id: formId,
-    })
+    send()
     trackedLeads.add(key)
     try { sessionStorage.setItem(key, '1') } catch { /* In-memory deduplication remains. */ }
   } catch { /* Analytics must never turn a saved lead into a failed form. */ }
+}
+
+/** Call only after /api/lead succeeds. Never send contact details or free text. */
+export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown }, submissionId: string, formId: string) {
+  if (typeof window === 'undefined' || !submissionId) return
+  // The bot honeypot returns ok without storing a lead or returning capture receipts.
+  if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('resend_contact')) return
+  if (typeof window.gtag === 'function') {
+    trackLeadOnce(`sk_ga4_lead_${submissionId}`, () => {
+      window.gtag!('event', 'generate_lead', {
+        send_to: 'G-VRKJP8K3SD',
+        method: 'website_form',
+        form_id: formId,
+      })
+    })
+  }
+  if (typeof window.fbq === 'function') {
+    trackLeadOnce(`sk_meta_lead_${submissionId}`, () => {
+      window.fbq!('trackSingle', '29297541076513579', 'Lead', {
+        content_name: 'Website enquiry',
+        form_id: formId,
+      }, { eventID: `website_lead_${submissionId}` })
+    })
+  }
 }
 
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const
