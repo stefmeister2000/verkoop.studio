@@ -6,6 +6,7 @@ import { crmPayload, sendToCrm } from './server-crm.js'
 import { Resend } from 'resend'
 import { sendConfirmation } from './server-confirmation.js'
 import { captureLead } from './server-lead.js'
+import { newsletterRouter } from './server-newsletter.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, 'dist')
@@ -36,6 +37,8 @@ const VERIFIED_SENDER = 'Verkoop Studio <noreply@send.verkoop.studio>'
 const SENDER = /onboarding@resend\.dev/i.test(LEAD_FROM) ? VERIFIED_SENDER : LEAD_FROM
 
 const app = express()
+// Railway's final reverse proxy supplies the visitor address for rate limiting.
+if (process.env.RAILWAY_ENVIRONMENT_ID) app.set('trust proxy', 1)
 app.disable('x-powered-by')
 app.use((req, res, next) => {
   res.set({
@@ -52,6 +55,7 @@ app.use((req, res, next) => {
   next()
 })
 app.use(express.json({ limit: '32kb' }))
+app.use('/api/newsletter', newsletterRouter(resend))
 
 // Short bio links keep campaign attribution on the destination page.
 for (const [route, source] of [['/ig', 'instagram'], ['/fb', 'facebook'], ['/li', 'linkedin']]) {

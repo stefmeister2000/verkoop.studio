@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import StickyMobileCTA from './StickyMobileCTA'
 import BackToTop from './BackToTop'
+import EmailCapture from './EmailCapture'
 import { usePageMotion } from '../lib/usePageMotion'
 import { usePrimaryButtonMotion } from '../lib/usePrimaryButtonMotion'
 import { captureAttribution } from '../lib/analytics'
@@ -40,6 +41,7 @@ export default function Layout() {
       <BackToTop />
       <FaqChat />
       <StickyMobileCTA />
+      <EmailCapture />
     </div>
   )
 }

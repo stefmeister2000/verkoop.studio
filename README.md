@@ -53,6 +53,25 @@ New contacts enter the CRM as Website / New, with qualification answers in notes
 
 Run `npm run test:crm` for mapping, authentication, oversized-input and failure-response checks. Never use real visitor addresses for automated delivery tests.
 
+## Newsletter popup → Resend
+
+The compact NL/EN popup appears after 12 seconds, waits while visitors use another
+form or chat, and is excluded from `/contact` and `/funnel-audit`. Closing it hides
+it for 30 days; a successful signup hides it for one year in that browser.
+
+`POST /api/newsletter` uses the existing server-only `RESEND_API_KEY` (full access).
+Contacts enter **Website nieuwsbrief** (`77506f2d-d387-4e75-97aa-bbaa003e7e0f`).
+The `newsletter_consent` string property records timestamp, source, language,
+version and checkbox text. This is single opt-in with an unchecked required
+checkbox; no email or enquiry automation is triggered. Existing unsubscribes
+are preserved and directed to contact the studio. Future newsletters should use
+Resend Broadcasts with the unsubscribe link.
+
+The endpoint validates input, checks a honeypot and limits requests per email
+and IP. Limits are in-memory per server instance; use shared storage when scaling
+to multiple replicas. Railway's final proxy is trusted for the client IP.
+Run `node --test tests/newsletter.test.mjs` for isolated integration tests.
+
 ## Production domain migration
 
 Connect `verkoop.studio` (and optionally `www.verkoop.studio`) to the existing Railway service and apply the DNS targets shown by Railway. Set `VITE_SITE_URL=https://verkoop.studio` in Railway before rebuilding. Redirect the old host to the new origin while preserving paths and query parameters. The verified legacy email sender remains in place until the new sending domain is verified in Resend; then set `LEAD_FROM` and `LEAD_REPLY_FROM` to the verified new address.
