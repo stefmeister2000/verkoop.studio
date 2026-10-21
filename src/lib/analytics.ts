@@ -26,6 +26,7 @@ declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
     fbq?: (command: 'trackSingle', pixelId: string, event: 'Lead', params: Record<string, unknown>, options: { eventID: string }) => void
+    current?: (command: 'lead', data: Record<string, unknown>) => void
     gtag?: {
       (command: 'event', event: string, params: Record<string, unknown>): void
       (command: 'get', target: string, field: string, callback: (value: unknown) => void): void
@@ -81,6 +82,12 @@ function sendLeadConversion(submissionId: string, formId: string, method: string
         method,
         form_id: formId,
       })
+    })
+  }
+  if (typeof window.current === 'function') {
+    // Current links the lead to the visitor's ad clicks; no contact details are sent with it.
+    trackLeadOnce(`sk_current_lead_${submissionId}`, () => {
+      window.current!('lead', { form_id: formId, method })
     })
   }
   if (typeof window.fbq === 'function') {
