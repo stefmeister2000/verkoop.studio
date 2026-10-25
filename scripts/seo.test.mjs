@@ -138,21 +138,14 @@ test('articles have crawlable content, authorship, links and sitemap entries', a
   }
 })
 
-test('hero uses responsive WebP candidates with explicit image dimensions', async () => {
+test('hero artwork is drawn in HTML, so the first view needs no image download', async () => {
   const html = await readFile('dist/index.html', 'utf8')
   const hero = html.match(/<section class="studio-hero"[\s\S]*?<\/section>/)?.[0]
   assert(hero, 'Homepage includes the hero section')
-  const tag = hero.match(/<img[^>]*>/)?.[0]
-  assert(tag, 'Hero includes an image')
-  assert.match(tag, /src="[^"]+\.webp"/)
-  assert.match(tag, /width="\d+"/)
-  assert.match(tag, /height="\d+"/)
-  assert.match(tag, /srcSet="[^"]+640w/)
-  assert.match(tag, /sizes="/)
-  for (const [,asset] of tag.matchAll(/(\/assets\/[^\s",]+\.webp)/g)) {
-    const bytes = await readFile(`dist${asset}`)
-    assert(bytes.length < 160000, asset)
-  }
+  assert.doesNotMatch(hero, /<img\b/)
+  assert.doesNotMatch(html, /rel="preload" as="image"/)
+  assert.match(hero, /class="hd-board" aria-hidden="true"/)
+  assert.match(hero, /href="\/cases\/pinacello"/)
 })
 
 

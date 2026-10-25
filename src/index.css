@@ -449,16 +449,6 @@ body {
   min-width: 0;
   min-height: 540px;
 }
-.hero-art > img {
-  position: absolute;
-  height: 100%;
-  width: 112%;
-  max-width: none;
-  left: -6%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  mask-image: linear-gradient(to right, transparent, #000 14%);
-}
 .glass-caption {
   position: absolute;
   left: 33%;
@@ -762,13 +752,6 @@ button:focus-visible {
   }
   .hero-art {
     min-height: 480px;
-  }
-  .hero-art > img {
-    width: 100%;
-    left: 0;
-    object-fit: cover;
-    object-position: 50% 46%;
-    mask-image: linear-gradient(to bottom, transparent, #000 8%);
   }
   .glass-caption {
     left: 34%;

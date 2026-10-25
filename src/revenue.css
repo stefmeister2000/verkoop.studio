@@ -27,9 +27,6 @@
 .hero-actions {
   animation: revenue-rise 0.75s 0.24s both;
 }
-.hero-art > img {
-  animation: glass-arrive 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
 .hero-art .floating-strategy {
   animation: card-arrive 1s 0.35s backwards;
 }
@@ -541,7 +538,6 @@
   .hero-copy h1,
   .hero-description,
   .hero-actions,
-  .hero-art > img,
   .hero-art .floating-strategy,
   .channel-stage,
   .campaign-flow > span,

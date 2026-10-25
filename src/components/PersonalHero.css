@@ -1,0 +1,50 @@
+/* Hero artwork: a drawn growth overview instead of a photo, so the first view needs no image download. */
+.studio-hero .hero-dash { display: grid; place-items: center; margin: 24px 24px 24px 12px; min-height: 600px; padding: 64px 40px; border-radius: 24px; overflow: hidden; background: radial-gradient(420px 320px at 88% 8%, #7d95ff59, transparent 70%), radial-gradient(380px 300px at 8% 96%, #a5b4ff4d, transparent 70%), linear-gradient(#254bfa0b 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, #254bfa0b 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(160deg, #f1f3ff, #e2e7ff); box-shadow: inset 0 0 0 1px #fff; }
+.hd-board { width: min(100%, 410px); padding: 20px; border-radius: 20px; background: #fff; color: #10131c; box-shadow: 0 32px 64px -30px #1a2a8a66, 0 0 0 1px #e4e8f7; animation: card-arrive 1s .15s both; }
+.hd-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.hd-head strong { font-size: 15px; font-weight: 650; letter-spacing: -.02em; }
+.hd-head em { color: #8a90a8; font-size: 11.5px; font-style: normal; }
+.hd-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.hd-kpis div { display: grid; gap: 2px; padding: 10px 12px; border-radius: 12px; background: #f4f6ff; }
+.hd-kpis small { color: #6b7190; font-size: 11.5px; }
+.hd-kpis strong { font-size: 20px; font-weight: 650; letter-spacing: -.035em; white-space: nowrap; }
+.hd-kpis b { color: #15965b; font-size: 11.5px; font-weight: 600; }
+.hd-chart { display: block; width: 100%; height: auto; margin-top: 14px; overflow: visible; }
+.hd-chart line { stroke: #eef0f7; stroke-width: 1; }
+.hd-line { fill: none; stroke: #254bfa; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.hd-chart circle { fill: #254bfa; stroke: #fff; stroke-width: 2.5; }
+.hd-label { margin: 14px 0 8px; color: #8a90a8; font-size: 10.5px; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
+.hd-channels { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.hd-channels li { display: grid; grid-template-columns: 84px minmax(0, 1fr) 22px; align-items: center; gap: 10px; color: #4e5364; font-size: 12.5px; }
+.hd-channels i { height: 6px; border-radius: 6px; background: linear-gradient(90deg, #254bfa, #7d95ff); }
+.hd-channels b { color: #10131c; font-weight: 650; text-align: right; }
+.hd-toast { position: absolute; z-index: 2; top: 40px; left: 28px; display: flex; align-items: center; gap: 10px; padding: 10px 16px 10px 12px; border-radius: 14px; background: #fff; color: #10131c; font-size: 13px; font-weight: 650; box-shadow: 0 18px 40px -18px #1a2a8a73, 0 0 0 1px #e4e8f7; animation: card-arrive .9s .7s both; }
+.hd-toast small { display: block; color: #6b7190; font-size: 11.5px; font-weight: 500; }
+.hd-dot { width: 10px; height: 10px; flex: none; border-radius: 50%; background: #15965b; box-shadow: 0 0 0 4px #15965b26; }
+@media (prefers-reduced-motion: no-preference) {
+  .hd-line { stroke-dasharray: 400; stroke-dashoffset: 400; animation: hd-draw 1.4s .4s cubic-bezier(.22, 1, .36, 1) forwards; }
+}
+@keyframes hd-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .hd-board, .hd-toast { animation: none; }
+}
+/* Phones and tablets: headline first, then the overview with the notification and case card overlapping its edges. */
+@media (max-width: 800px) {
+  .studio-hero .hero-dash { display: flex; flex-direction: column; align-items: stretch; min-height: 0; aspect-ratio: auto; height: auto; margin: 0 20px 24px; padding: 20px 16px; border-radius: 20px; }
+  .hd-board { width: 100%; max-width: 480px; margin-inline: auto; padding: 16px; }
+  .hd-toast { position: relative; top: auto; left: auto; align-self: flex-start; margin: 0 0 -12px 8px; padding: 8px 14px 8px 10px; font-size: 12.5px; }
+  .studio-hero .hero-dash .floating-strategy { position: relative; right: auto; bottom: auto; align-self: flex-end; margin: -16px 8px 0 0; padding: 11px 14px; }
+}
+@media (max-width: 400px) {
+  .studio-hero .hero-dash { padding: 16px 10px; }
+  .hd-board { padding: 14px 12px; }
+  .hd-head { flex-wrap: wrap; gap: 0 12px; }
+  .hd-head strong { white-space: nowrap; }
+  .hd-kpis { gap: 6px; }
+  .hd-kpis div { padding: 8px 7px; }
+  .hd-kpis strong { font-size: 15.5px; }
+  .hd-channels li { grid-template-columns: 74px minmax(0, 1fr) 20px; font-size: 12px; }
+}
+@media (max-width: 360px) {
+  .hd-kpis strong { font-size: 14.5px; }
+}

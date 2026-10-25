@@ -47,25 +47,15 @@ test('only homepage embeds the complete build CSS and deprioritizes hydration do
   }
 })
 
-test('phone hero uses the existing smaller photo with matching, exclusive preload', async () => {
+test('hero artwork paints from the inlined styles, without an image download', async () => {
   const html = await readFile('dist/index.html', 'utf8')
   const head = html.split('</head>')[0]
   const hero = html.match(/<section class="studio-hero"[\s\S]*?<\/section>/)?.[0]
   assert(hero)
-  const picture = hero.match(/<picture>([\s\S]*?)<\/picture>/)?.[1]
-  assert(picture)
-  const mobile = picture.match(/<source media="\(max-width: 600px\)" srcSet="([^"]+)"/)
-  assert(mobile)
-  assert.match(mobile[1], /hero-portrait-640-.*\.webp$/)
-  assert((await readFile(`dist${mobile[1]}`)).length < 45000)
-  const preloads = [...head.matchAll(/<link\b[^>]*as="image"[^>]*>/g)].map(m => m[0])
-  assert.equal(preloads.length, 2)
-  assert(preloads.some(tag => tag.includes(`href="${mobile[1]}"`) && tag.includes('media="(max-width: 600px)"')))
-  assert(preloads.some(tag => tag.includes('imageSrcSet=') && tag.includes('media="(min-width: 600.01px)"')))
-  for (const tag of preloads) assert.match(tag, /fetchPriority="high"/)
-  assert.match(picture, /loading="eager"/)
-  assert.match(picture, /width="1066" height="1600"/)
-  assert.match(picture, /1066w/)
+  assert.doesNotMatch(hero, /<(img|picture)\b/)
+  assert.equal([...head.matchAll(/<link\b[^>]*as="image"[^>]*>/g)].length, 0)
+  assert.match(hero, /class="hd-board" aria-hidden="true"/)
+  assert.match(head, /<style data-home-styles="[^"]+">[\s\S]*\.hd-board\{/)
 })
 
 test('homepage retains all existing tracking scripts verbatim', async () => {

@@ -11,18 +11,6 @@ for (const route of [...routes, '/404']) {
   let markup = render(route)
   const head = []
   markup = markup.replace(/<title>[\s\S]*?<\/title>|<meta\s[^>]*\/>|<link\s[^>]*\/>/g, tag => { head.push(tag); return '' })
-  if (route === '/') {
-    // Preload the exact picture candidates without adding non-hoistable React
-    // nodes to the hydrated tree. Media queries prevent a double download.
-    const hero = markup.match(/<section class="studio-hero"[\s\S]*?<\/section>/)?.[0]
-    const phone = hero?.match(/<source media="\(max-width: 600px\)" srcSet="([^"]+)"/)?.[1]
-    const image = hero?.match(/<img\b[^>]*>/)?.[0]
-    const srcSet = image?.match(/srcSet="([^"]+)"/)?.[1]
-    const sizes = image?.match(/sizes="([^"]+)"/)?.[1]
-    if (!phone || !srcSet || !sizes) throw new Error('Expected responsive homepage hero candidates')
-    head.push(`<link rel="preload" as="image" href="${phone}" media="(max-width: 600px)" fetchPriority="high"/>`)
-    head.push(`<link rel="preload" as="image" imageSrcSet="${srcSet}" imageSizes="${sizes}" media="(min-width: 600.01px)" fetchPriority="high"/>`)
-  }
   const pageTemplate = route === '/' ? homepageTemplate : template
   const html = pageTemplate.replace('<!--seo-head-->', head.join('\n')).replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
   const directory = route === '/' ? 'dist' : `dist${route}`
