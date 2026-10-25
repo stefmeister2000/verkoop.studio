@@ -2,12 +2,12 @@ import { useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { captureAttribution, getGa4Context, trackAcademyConversion, trackEvent } from '../lib/analytics'
 
-const levels = [['start', 'Nog nooit geadverteerd'], ['basis', 'Al wat zelf geprobeerd'], ['actief', 'Draait al campagnes']] as const
-const budgets = [['geen', 'Nog geen budget'], ['klein', 'Tot €500 / maand'], ['middel', '€500 – €2.000 / maand'], ['groot', 'Meer dan €2.000 / maand']] as const
+const levels = [['start', 'Nog niet gestart'], ['basis', 'Draait al campagnes'], ['actief', 'Wil opschalen']] as const
+const budgets = [['klein', 'Tot €1.000 / maand'], ['middel', '€1.000 – €5.000 / maand'], ['groot', '€5.000 – €20.000 / maand'], ['schaal', 'Meer dan €20.000 / maand']] as const
 
 interface AcademySignupProps {
   formId: string
-  /** "compact" asks name, email and phone; "full" also asks company, experience, budget and a question. */
+  /** "compact" asks name, email and phone; "full" also asks company, webshop, experience, ad budget and a question. */
   variant?: 'compact' | 'full'
   submitLabel?: string
   onSuccess: (firstName: string) => void
@@ -54,7 +54,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       const response = await fetch('/api/academy', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(25_000),
         body: JSON.stringify({
-          naam, email, telefoon, bedrijf: data.get('bedrijf') ?? '', vraag: data.get('vraag') ?? '', niveau, budget,
+          naam, email, telefoon, bedrijf: data.get('bedrijf') ?? '', website: data.get('website') ?? '', vraag: data.get('vraag') ?? '', niveau, budget,
           nieuwsbrief: data.get('nieuwsbrief') === 'on', form_id: formId, submission_id: submissionId.current,
           company_website: data.get('company_website'), attribution, ga4,
         }),
@@ -79,11 +79,12 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       <label className={`ac-field ${full ? '' : 'ac-field-wide'}`}><span className={full ? '' : 'sr-only'}>Naam</span><input name="naam" autoComplete="name" required maxLength={200} placeholder={full ? '' : 'Je naam'} /></label>
       <label className="ac-field"><span className={full ? '' : 'sr-only'}>E-mailadres</span><input name="email" type="email" autoComplete="email" autoCapitalize="none" spellCheck={false} required maxLength={200} placeholder={full ? '' : 'Je e-mailadres'} /></label>
       <label className="ac-field"><span className={full ? '' : 'sr-only'}>Telefoon</span><input name="telefoon" type="tel" autoComplete="tel" required maxLength={60} placeholder={full ? '' : 'Je telefoonnummer'} /></label>
-      {full && <label className="ac-field ac-field-wide"><span>Bedrijf <em>optioneel</em></span><input name="bedrijf" autoComplete="organization" maxLength={200} /></label>}
+      {full && <label className="ac-field"><span>Bedrijf <em>optioneel</em></span><input name="bedrijf" autoComplete="organization" maxLength={200} /></label>}
+      {full && <label className="ac-field ac-field-wide"><span>Webshop <em>optioneel</em></span><input name="website" type="url" inputMode="url" autoCapitalize="none" spellCheck={false} maxLength={300} placeholder="https://" /></label>}
     </div>
-    {full && <Choices legend="Ervaring met Meta ads" options={levels} value={niveau} onChange={value => { start(); setNiveau(value) }} />}
+    {full && <Choices legend="Waar sta je met Meta ads?" options={levels} value={niveau} onChange={value => { start(); setNiveau(value) }} />}
     {full && <Choices legend="Maandelijks advertentiebudget" options={budgets} value={budget} onChange={value => { start(); setBudget(value) }} />}
-    {full && <label className="ac-field ac-field-wide"><span>Waar wil je vooral beter in worden? <em>optioneel</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder="Bijvoorbeeld: mijn eerste campagne opzetten, creatives testen of mijn cijfers begrijpen." /></label>}
+    {full && <label className="ac-field ac-field-wide"><span>Waar wil je vooral beter in worden? <em>optioneel</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder="Bijvoorbeeld: opschalen zonder dat mijn ROAS zakt, mijn tracking op orde krijgen of retargeting opzetten." /></label>}
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
     {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.</span></label>}
     <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? 'Even geduld…' : submitLabel}{status !== 'pending' && <Arrow />}</button>

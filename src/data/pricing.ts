@@ -24,8 +24,8 @@ export const addOns: AddOn[] = [
     name: { nl: 'Meta Ads Academy', en: 'Meta Ads Academy' },
     price: { nl: 'Meld je aan', en: 'Sign up' },
     description: {
-      nl: 'Leer zelf Meta-advertenties opzetten, testen en meten, met Stef die meekijkt in je eigen account. Meld je aan en we bespreken samen de opzet.',
-      en: 'Learn to set up, test and measure Meta ads yourself, with Stef looking along in your own account. Sign up and we discuss the setup together.',
+      nl: 'Leer je webshop schalen met Meta ads: tracking, ROAS en LTV, retargeting en opschalen, met Stef die meekijkt in je eigen account. Meld je aan en we bespreken samen de opzet.',
+      en: 'Learn to scale your online store with Meta ads: tracking, ROAS and LTV, retargeting and scaling, with Stef looking along in your own account. Sign up and we discuss the setup together.',
     },
     href: '/academy',
   },

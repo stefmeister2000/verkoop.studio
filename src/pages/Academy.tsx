@@ -5,7 +5,7 @@ import AcademySignup from '../components/AcademySignup'
 import BrandMark from '../components/BrandMark'
 import ResponsiveImage from '../components/ResponsiveImage'
 import Seo from '../components/Seo'
-import { academyFaq, academyLessons, academyTests } from '../data/academy'
+import { academyFaq, academyModules, academyTests } from '../data/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
 import stefNooms from '../assets/stef.webp'
@@ -15,19 +15,23 @@ import stefPortrait from '../assets/hero-portrait.webp'
 import academyStylesheet from './Academy.css?url'
 
 const number = (index: number) => String(index + 1).padStart(2, '0')
-const euro = (value: number) => `€${Number.isInteger(value) ? value : value.toFixed(2).replace('.', ',')}`
-const sectionCount = academyLessons.reduce((total, item) => total + item.sections.length, 0)
+const euro = (value: number) => {
+  const [whole, cents] = value.toFixed(2).split('.')
+  return `€${whole.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}${cents === '00' ? '' : `,${cents}`}`
+}
+const ratio = (value: number) => value.toFixed(2).replace('.', ',')
 const contactAcademy = '/contact?interesse=academy'
 const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
-const whyMeta = ['Je bereikt je klant nog vóór die actief zoekt', 'Je toont je aanbod met beeld en video, waar je doelgroep al scrolt', 'Je test snel welke boodschap aanslaat', 'Je stuurt op aanvragen of verkoop, niet op likes']
-const pitfalls = ['Boosten zonder duidelijk doel', 'Budget versnipperd over te veel advertentiesets', 'Drie keer dezelfde advertentie in een andere kleur', 'Cijfers in Ads Manager die niet kloppen met je CRM', 'Opschalen na twee goede dagen']
-const path = [
-  ['BASIS', 'Doel, aanbod en meting op orde', 'Je weet welke actie telt voor je bedrijf en of je die correct meet, tot in je CRM.'],
-  ['LANCEREN', 'Je eerste campagne live', 'Een eenvoudige opzet met een bewust testbudget, met feedback van Stef voor je publiceert.'],
-  ['TESTEN', 'Creatives die echt verschillen', 'Drie invalshoeken en een testlog, zodat je ziet wat aanslaat en waarom.'],
-  ['VERBETEREN', 'Beslissen op je cijfers', 'Samen je resultaten lezen, je volgende test kiezen en pas opschalen als de cijfers het toelaten.'],
+const whyMeta = ['Je bereikt kopers nog vóór ze actief zoeken', 'Je toont je product met beeld en video, waar je doelgroep al scrolt', 'Catalogus-ads tonen automatisch het juiste product aan de juiste persoon', 'Je kan opschalen zolang je cijfers het toelaten']
+const pitfalls = ['Sturen op de ROAS in Ads Manager zonder die naast je webshopomzet te leggen', 'Geen break-even ROAS kennen, en dus niet weten of je winst maakt', 'Het budget verdubbelen na twee goede dagen', 'Retargeting die vooral mensen bereikt die toch al zouden kopen', 'Eén winnende creative opbranden tot de resultaten instorten']
+const stages = [
+  ['🏗️', 'BOUWEN', 'Tracking met pixel en Conversions API, je break-even ROAS en een account dat kan groeien.'],
+  ['🚀', 'LANCEREN', 'Je prospecting- en retargetingcampagnes live, met feedback van Stef voor je publiceert.'],
+  ['🔍', 'OPTIMALISEREN', 'Elke week creatives testen en bijsturen op MER, nieuwe klanten en LTV.'],
+  ['📈', 'SCHALEN', 'Budget, doelgroepen en landen opschalen met vaste beslisregels.'],
 ] as const
-const included = ['Zes praktische lessen met oefeningen', 'Samen je account, pixel en meting nalopen', 'Feedback op je campagne-opzet en creatives', 'Je resultaten samen lezen en de volgende test kiezen', 'Je eigen campagneplan', 'Je vragen rechtstreeks aan Stef']
+const afterwards = ['Je kent je break-even ROAS en je maximale kost per nieuwe klant', 'Je tracking klopt, van Meta tot in je webshop', 'Je hebt elke week nieuwe creatives om te testen', 'Je weet wanneer je opschaalt, en wanneer niet']
+const included = ['Tracking, pixel en Conversions API samen nalopen', 'Je break-even ROAS, MER-doel en maximale CAC', 'Een accountstructuur die kan groeien', 'Een testritme voor creatives', 'Retargeting en retentie die je LTV verhogen', 'Een schaalplan met beslisregels', 'Je vragen rechtstreeks aan Stef']
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? 'M7 17 17 7M8 7h9v9' : 'M4 12h15m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -68,82 +72,92 @@ function useReveal() {
 }
 
 function ConceptTiles() {
-  return <div className="ac-concepts">{[['Demo', 'Laat zien hoe het werkt'], ['Situatie', 'Het probleem van je klant'], ['Ervaring', 'Een echte klant vertelt']].map(([name, text], index) => <div key={name} className={`ac-concept ac-concept-${index}`}><span className="ac-concept-art"><i /><i /></span><strong>{name}</strong><small>{text}</small></div>)}</div>
+  return <div className="ac-concepts">{[['UGC', 'Een klant toont het product'], ['Demo', 'Het product in gebruik'], ['Aanbod', 'Bundel of tijdelijke actie']].map(([name, text], index) => <div key={name} className={`ac-concept ac-concept-${index}`}><span className="ac-concept-art"><i /><i /></span><strong>{name}</strong><small>{text}</small></div>)}</div>
 }
 
-/** The hero shows the product itself: a lesson, an ad concept, a test result and the plan you take home. */
+const spendBars = [30, 36, 40, 48, 55, 62, 70, 80]
+const merLine = [34, 31, 33, 30, 32, 29, 31, 30]
+
+/** The hero shows where the academy leads: a webshop that grows its budget while its MER holds. Example figures. */
 function HeroVisual() {
   return <div className="ac-hv" aria-hidden="true">
-    <div className="ac-hv-player">
-      <div className="ac-hv-bar"><span><i /><i /><i /></span><em>verkoop.studio / academy</em></div>
+    <div className="ac-hv-dash">
+      <div className="ac-hv-bar"><span><i /><i /><i /></span><em>schaalplan · voorbeeld</em></div>
       <div className="ac-hv-body">
-        <span className="ac-mock-label">LES 03 / 06 · CREATIEVE IDEEËN</span>
-        <strong>Drie ideeën, geen drie kleuren.</strong>
-        <ConceptTiles />
-        <div className="ac-hv-task"><span>NU JIJ</span><p>Werk drie invalshoeken uit voor je eigen aanbod.</p><i /></div>
+        <span className="ac-mock-label">LAATSTE 8 WEKEN</span>
+        <div className="ac-hv-kpis">
+          <div><small>Ad spend</small><strong>€12.400</strong><em>+38%</em></div>
+          <div><small>Omzet</small><strong>€41.200</strong><em>+31%</em></div>
+          <div><small>MER</small><strong>3,3</strong><em>doel 2,8 ✓</em></div>
+          <div><small>Nieuwe klanten</small><strong>612</strong><em>+27%</em></div>
+        </div>
+        <svg className="ac-hv-chart" viewBox="0 0 300 84">
+          {spendBars.map((height, index) => <rect key={index} x={10 + index * 36} y={82 - height * .85} width="22" height={height * .85} rx="4" />)}
+          <polyline points={merLine.map((y, index) => `${21 + index * 36},${y}`).join(' ')} />
+        </svg>
+        <p className="ac-hv-legend"><span><i className="is-bar" />Budget</span><span><i className="is-line" />MER</span><b>Schalen ✓</b></p>
       </div>
     </div>
     <div className="ac-hv-ad">
-      <div className="ac-hv-ad-top"><span className="ac-hv-avatar">v.</span><span>jouw merk<small>Gesponsord</small></span><b>···</b></div>
-      <div className="ac-hv-ad-art"><span className="ac-hv-ring" /><span className="ac-hv-ring ac-hv-ring-two" /><strong>Laat zien<br />hoe het werkt.</strong></div>
-      <div className="ac-hv-ad-cta"><span>Vraag een demo aan</span><b>Meer info</b></div>
+      <div className="ac-hv-ad-top"><span className="ac-hv-avatar">v.</span><span>jouw webshop<small>Gesponsord</small></span><b>···</b></div>
+      <div className="ac-hv-ad-art"><span className="ac-hv-ring" /><span className="ac-hv-ring ac-hv-ring-two" /><span className="ac-hv-product" /><strong>Bestseller.<br />Nu met gratis levering.</strong></div>
+      <div className="ac-hv-ad-cta"><span>jouwwebshop.be</span><b>Shop nu</b></div>
     </div>
-    <div className="ac-hv-stat">
-      <span className="ac-mock-label">RELEVANTE AANVRAGEN</span>
-      <svg viewBox="0 0 180 56"><polyline points="4,50 30,46 56,40 82,38 108,28 134,22 160,12 176,8" /><polyline className="ac-hv-stat-b" points="4,50 30,44 56,42 82,40 108,38 134,36 160,34 176,33" /></svg>
-      <p><span className="ac-swatch ac-swatch-demo" />Concept A <b>Doorgaan</b></p>
+    <div className="ac-hv-stat ac-hv-ltv">
+      <span className="ac-mock-label">KLANTWAARDE (LTV)</span>
+      <div><span>1e aankoop</span><i style={{ width: '48%' }} /><b>€58</b></div>
+      <div><span>90 dagen</span><i style={{ width: '80%' }} /><b>€96</b></div>
+      <div><span>180 dagen</span><i style={{ width: '100%' }} /><b>€121</b></div>
     </div>
-    <div className="ac-hv-file"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14H6V3ZM14 3v5h4M9 12h6M9 16h6" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" /></svg><span>mijn-campagneplan.txt<small>Klaar om te downloaden</small></span><span className="ac-tick"><Check /></span></div>
+    <div className="ac-hv-file"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 1 2.3 5.6M4 20v-4h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg><span>Retargeting · catalogus<small>Winkelwagen · 7 dagen</small></span><span className="ac-tick"><Check /></span></div>
   </div>
 }
 
-/** A small, illustrative mock-up per lesson: what you will look at in Ads Manager or your own systems. */
-function LessonVisual({ id }: { id: string }) {
-  if (id === 'doel') return <div className="ac-mock">
-    <span className="ac-mock-label">KIES JE CAMPAGNEDOEL</span>
-    <ul className="ac-objectives">{['Bekendheid', 'Verkeer', 'Interactie', 'Leads', 'App-promotie', 'Verkoop'].map(item => <li key={item} className={item === 'Leads' ? 'is-picked' : ''}><span className="ac-radio" />{item}{item === 'Leads' && <b>Past bij je hoofdactie</b>}</li>)}</ul>
-    <p className="ac-mock-foot">Hoofdactie <strong>demo-aanvraag</strong></p>
+/** A small, illustrative mock-up per topic: what you look at in Ads Manager or your webshop. */
+function ModuleVisual({ id }: { id: string }) {
+  if (id === 'tracking') return <div className="ac-mock">
+    <span className="ac-mock-label">AANKOOPDATA · VOORBEELD</span>
+    <ul className="ac-events">{[['PageView', 'Pixel + CAPI'], ['AddToCart', 'Pixel + CAPI'], ['InitiateCheckout', 'Pixel + CAPI'], ['Purchase', '1× geteld, ontdubbeld']].map(([event, text]) => <li key={event}><span>{event}</span><small>{text}</small><Check /></li>)}</ul>
+    <p className="ac-mock-foot">Ads Manager naast Shopify <strong>afwijking 4%</strong></p>
+  </div>
+  if (id === 'rendement') return <div className="ac-mock">
+    <span className="ac-mock-label">REKENVOORBEELD</span>
+    <dl className="ac-calc">
+      <div><dt>Gemiddelde orderwaarde</dt><dd>€60</dd></div>
+      <div><dt>Marge na product, verzending en kosten</dt><dd>50%</dd></div>
+      <div className="is-key"><dt>Break-even ROAS</dt><dd>2,0</dd></div>
+      <div><dt>Klantwaarde na 90 dagen</dt><dd>€96</dd></div>
+      <div className="is-key"><dt>Max. kost per nieuwe klant</dt><dd>€48</dd></div>
+    </dl>
   </div>
   if (id === 'structuur') return <div className="ac-mock">
-    <span className="ac-mock-label">DRIE NIVEAUS</span>
-    <ol className="ac-tree">
-      <li><span>Campagne</span><small>Doel: Leads</small></li>
-      <li><span>Advertentieset</span><small>België · Nederlandstalig · testbudget</small></li>
-      <li><span>Advertenties</span><small>Drie creatieve invalshoeken</small><div className="ac-tree-ads"><i /><i /><i /></div></li>
-    </ol>
+    <span className="ac-mock-label">BUDGETVERDELING · VOORBEELD</span>
+    <ul className="ac-stack">{[['Prospecting', 'Advantage+ · brede doelgroep', 75], ['Retargeting', 'Catalogus · bezoekers en winkelwagens', 15], ['Testing', 'Nieuwe creatives tegen de winnaar', 10]].map(([name, text, share]) => <li key={name}><div><strong>{name}</strong><small>{text}</small></div><b>{share}%</b><i style={{ width: `${share}%` }} /></li>)}</ul>
   </div>
-  if (id === 'creatief') return <div className="ac-mock">
-    <span className="ac-mock-label">DRIE IDEEËN, GEEN DRIE KLEUREN</span>
+  if (id === 'creatives') return <div className="ac-mock">
+    <span className="ac-mock-label">DRIE INVALSHOEKEN, GEEN DRIE KLEUREN</span>
     <ConceptTiles />
+    <p className="ac-mock-foot">Testritme <strong>elke week nieuwe hooks</strong></p>
   </div>
-  if (id === 'bestemming') return <div className="ac-mock">
-    <span className="ac-mock-label">DE ROUTE NA EEN KLIK</span>
-    <ol className="ac-route">{[['Advertentie', '“Vraag een demo aan”'], ['Landingspagina', 'Zelfde belofte, één actie'], ['Formulier', 'Alleen wat je nodig hebt'], ['Bevestiging', 'Duidelijke volgende stap']].map(([name, text]) => <li key={name}><span className="ac-route-dot"><Check /></span><span>{name}<small>{text}</small></span></li>)}</ol>
-  </div>
-  if (id === 'meting') return <div className="ac-mock">
-    <span className="ac-mock-label">GEMETEN ÉN GECONTROLEERD</span>
-    <ul className="ac-events">
-      <li className="is-muted"><span>Formulier bekeken</span><small>Nog geen aanvraag</small></li>
-      <li><span>Lead</span><small>1× geregistreerd</small><Check /></li>
-      <li><span>Aanvraag in CRM</span><small>Zelfde persoon, zelfde moment</small><Check /></li>
-      <li><span>Demo gepland</span><small>De uitkomst die telt</small><Check /></li>
-    </ul>
+  if (id === 'retargeting') return <div className="ac-mock">
+    <span className="ac-mock-label">VAN BEZOEKER NAAR VASTE KLANT</span>
+    <ol className="ac-route">{[['Product bekeken', 'Catalogus-ads · 14 dagen'], ['In winkelwagen', 'Herinnering · 7 dagen'], ['Gekocht', 'Cross-sell · 30 dagen'], ['Vaste klant', 'E-mail en ads · herhaalaankoop']].map(([name, text]) => <li key={name}><span className="ac-route-dot"><Check /></span><span>{name}<small>{text}</small></span></li>)}</ol>
   </div>
   return <div className="ac-mock">
-    <span className="ac-mock-label">RELEVANTE AANVRAGEN · DAG 14</span>
-    <div className="ac-bars">
-      <div><span>Concept A</span><i style={{ width: '88%' }} /><b>7</b></div>
-      <div><span>Concept B</span><i style={{ width: '50%' }} /><b>4</b></div>
-    </div>
-    <p className="ac-mock-foot"><span className="ac-live-dot" /> Eerste signaal: <strong>nog geen winnaar</strong></p>
+    <span className="ac-mock-label">BUDGET EN MER PER WEEK · VOORBEELD</span>
+    <svg className="ac-scale-chart" viewBox="0 0 300 110" aria-hidden="true">
+      {spendBars.map((height, index) => <rect key={index} x={10 + index * 36} y={104 - height} width="22" height={height} rx="4" />)}
+      <polyline points={merLine.map((y, index) => `${21 + index * 36},${y + 4}`).join(' ')} />
+    </svg>
+    <p className="ac-mock-foot">Beslisregel <strong>+20% budget zolang MER ≥ 2,8</strong></p>
   </div>
 }
 
 function TestChart({ selected }: { selected: string }) {
   const x = (day: number) => 24 + day * (556 / 13)
-  const y = (value: number) => 168 - value * 19
-  return <svg className="ac-chart" viewBox="0 0 640 190" role="img" aria-label="Fictief voorbeeld: cumulatief aantal relevante aanvragen per concept over 14 dagen">
-    {[0, 2, 4, 6, 8].map(value => <g key={value}><line x1="24" x2="580" y1={y(value)} y2={y(value)} className="ac-chart-grid" /><text x="596" y={y(value) + 4} className="ac-chart-axis">{value}</text></g>)}
+  const y = (value: number) => 168 - value * (150 / 32)
+  return <svg className="ac-chart" viewBox="0 0 640 190" role="img" aria-label="Fictief voorbeeld: cumulatief aantal nieuwe klanten per creative over 14 dagen">
+    {[0, 8, 16, 24, 32].map(value => <g key={value}><line x1="24" x2="580" y1={y(value)} y2={y(value)} className="ac-chart-grid" /><text x="592" y={y(value) + 4} className="ac-chart-axis">{value}</text></g>)}
     {academyTests.map(test => {
       const points = test.daily.flatMap((value, day) => value === null ? [] : [`${x(day)},${y(value)}`])
       const last = points[points.length - 1]?.split(',').map(Number)
@@ -185,10 +199,10 @@ function NewsletterForm() {
       setStatus('idle')
     }
   }
-  if (status === 'success') return <p className="ac-newsletter-done" role="status"><Check /> Je bent ingeschreven. Nieuwe lessen en tips komen in je inbox.</p>
+  if (status === 'success') return <p className="ac-newsletter-done" role="status"><Check /> Je bent ingeschreven. Nieuwe tips komen in je inbox.</p>
   return <form className="ac-newsletter" onSubmit={submit} data-clarity-mask="true">
-    <label htmlFor="academy-newsletter-email">Nieuwe lessen in je inbox</label>
-    <p>Praktische Meta-adstips en nieuwe lessen van verkoop.studio.</p>
+    <label htmlFor="academy-newsletter-email">Meta-adstips in je inbox</label>
+    <p>Praktische tips over Meta ads, ROAS en opschalen van verkoop.studio.</p>
     <div className="ac-newsletter-row"><input id="academy-newsletter-email" name="email" type="email" autoComplete="email" required maxLength={254} placeholder="naam@bedrijf.be" /><button type="submit" className="ac-button" disabled={status === 'pending'}>{status === 'pending' ? 'Bezig…' : 'Inschrijven'}</button></div>
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
     <label className="ac-consent"><input type="checkbox" name="consent" required /><span>Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.</span></label>
@@ -203,10 +217,10 @@ export default function Academy() {
   const [signedUp, setSignedUp] = useState<{ naam: string; via: string } | null>(null)
   const [sticky, setSticky] = useState(false)
   const [stickyArmed, setStickyArmed] = useState(false)
-  const slideLesson = academyLessons[slide]
+  const topic = academyModules[slide]
   const test = academyTests.find(item => item.id === testId) ?? academyTests[0]
-  const testLesson = academyLessons.findIndex(item => item.id === test.lesson)
-  const totals = academyTests.reduce((sum, item) => ({ spend: sum.spend + item.spend, leads: sum.leads + item.leads, relevant: sum.relevant + item.relevant }), { spend: 0, leads: 0, relevant: 0 })
+  const testModule = academyModules.find(item => item.id === test.module)
+  const totals = academyTests.reduce((sum, item) => ({ spend: sum.spend + item.spend, purchases: sum.purchases + item.purchases, newCustomers: sum.newCustomers + item.newCustomers }), { spend: 0, purchases: 0, newCustomers: 0 })
   const thanks = signedUp?.naam ? `Bedankt, ${signedUp.naam}!` : 'Bedankt!'
 
   useEffect(() => {
@@ -240,15 +254,34 @@ export default function Academy() {
 
   const joined = (via: string) => (naam: string) => setSignedUp({ naam, via })
 
+  const swipeStart = useRef<number | null>(null)
+  const tabsRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    // On phones the topic tabs scroll sideways; keep the active one in view without moving the page.
+    const tabs = tabsRef.current
+    const active = tabs?.querySelector<HTMLElement>('.is-active')
+    if (tabs && active && tabs.scrollWidth > tabs.clientWidth) tabs.scrollTo({ left: active.offsetLeft - 16, behavior: 'smooth' })
+  }, [slide])
+  const lastModule = academyModules.length - 1
+  const wrap = (index: number) => index < 0 ? lastModule : index > lastModule ? 0 : index
+  const showSlide = (index: number) => setSlide(wrap(index))
+  const step = (delta: number) => setSlide(current => wrap(current + delta))
+  function endSwipe(x: number) {
+    if (swipeStart.current === null) return
+    const distance = x - swipeStart.current
+    swipeStart.current = null
+    if (Math.abs(distance) > 50) step(distance < 0 ? 1 : -1)
+  }
+
   return <div className="academy-page" lang="nl" ref={pageRef}>
     <link rel="stylesheet" href={academyStylesheet} precedence="academy" />
-    <Seo title="Meta Ads Academy — leer adverteren met verkoop.studio" description="Leer Meta ads met verkoop.studio. Zes praktische lessen over doel, campagne-opzet, creatief testen en meting, met begeleiding in je eigen account. Meld je aan en Stef neemt persoonlijk contact op." path="/academy" language="nl" />
+    <Seo title="Meta Ads Academy — schaal je webshop met Meta ads" description="Leer Meta ads voor ecommerce met verkoop.studio: tracking en Conversions API, break-even ROAS, MER en LTV, retargeting en opschalen zonder je marge te verbranden. Meld je aan en Stef neemt persoonlijk contact op." path="/academy" language="nl" />
     <a className="ac-skip" href="#academy-main">Naar de inhoud</a>
 
     <header className="ac-header">
       <div className="ac-wrap ac-header-inner">
         <div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
-        <nav className="ac-pill-nav" aria-label="Academy navigatie"><a href="#aanpak">Aanpak</a><a href="#leerpad">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#faq">FAQ</a></nav>
+        <nav className="ac-pill-nav" aria-label="Academy navigatie"><a href="#aanpak">Aanpak</a><a href="#programma">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#faq">FAQ</a></nav>
         <button className="ac-header-cta" onClick={goToSignup}>Meld je aan</button>
       </div>
     </header>
@@ -256,16 +289,16 @@ export default function Academy() {
     <main id="academy-main">
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
-          <p className="ac-hero-eyebrow"><span className="ac-live-dot" /> Meta Ads Academy <i /> {academyLessons.length} lessen met begeleiding</p>
-          <h1 id="academy-title">Leer Meta ads zonder je budget <span>op goed geluk in te zetten.</span></h1>
-          <p className="ac-hero-lead">Zes praktische lessen, oefeningen op je eigen aanbod en begeleiding in je eigen account. Meld je aan en Stef neemt persoonlijk contact met je op.</p>
+          <p className="ac-hero-eyebrow"><span className="ac-live-dot" /> Meta Ads Academy <i /> voor webshops</p>
+          <h1 id="academy-title">Schaal je webshop met Meta ads <span>naar je volgende omzetmijlpaal.</span></h1>
+          <p className="ac-hero-lead">Van tracking die klopt en een break-even ROAS tot retargeting, LTV en opschalen in stappen. Je leert het in je eigen account, met Stef die meekijkt.</p>
           <div id="academy-hero-signup" className="ac-hero-signup">
             {signedUp ? <div className="ac-welcome-card" role="status">
               <span className="ac-tick"><Check /></span>
               <div><strong>{thanks} Je aanmelding is binnen.</strong><small>Stef neemt persoonlijk contact met je op. Je krijgt ook een bevestiging per mail.</small></div>
             </div> : <AcademySignup formId="academy-hero" onSuccess={joined('academy-hero')} />}
           </div>
-          {!signedUp && <ul className="ac-hero-note"><li><Check /> Persoonlijk contact met Stef</li><li><Check /> Leren in je eigen account</li><li><Check /> Voorstel op maat</li></ul>}
+          {!signedUp && <ul className="ac-hero-note"><li><Check /> Schalen op winst, niet op gevoel</li><li><Check /> ROAS, MER en LTV die kloppen</li><li><Check /> In je eigen account</li></ul>}
           <div className="ac-trust">
             <img src={stefDeskSmall} alt="" width="44" height="44" loading="eager" />
             <p><strong>Door Stef Keppens</strong>, verkoop.studio<span>Uit de praktijk bij {practice.map((name, index) => <b key={name}>{name}{index < practice.length - 1 && <i aria-hidden="true">·</i>}</b>)}</span></p>
@@ -274,38 +307,36 @@ export default function Academy() {
         <HeroVisual />
       </section>
 
-      <section className="ac-wrap ac-outcomes" aria-labelledby="outcomes-title">
-        <h2 id="outcomes-title" className="sr-only">Wat je na de academy kunt</h2>
-        <ul>
-          <li><span>01</span><strong>Een campagne met één helder doel</strong><small>Geen bereik kopen, maar sturen op aanvragen of verkoop.</small></li>
-          <li><span>02</span><strong>Drie creatives die echt verschillen</strong><small>Demo, herkenbare situatie en bewijs in plaats van drie kleuren.</small></li>
-          <li><span>03</span><strong>Cijfers die je zelf kan controleren</strong><small>Van Ads Manager tot in je CRM, zonder dubbeltellingen.</small></li>
-          <li><span>04</span><strong>Een plan voor je volgende test</strong><small>Met een beslismoment, zodat je niet op gevoel bijstuurt.</small></li>
-        </ul>
-      </section>
-
       <section id="aanpak" className="ac-focus ac-wrap" aria-labelledby="focus-title">
         <article className="ac-focus-article">
           <p className="ac-dot-kicker"><span /> Over de academy</p>
-          <h2 id="focus-title">Leer Meta ads die <span>aanvragen en verkoop opleveren.</span></h2>
-          <p className="ac-focus-lead">Veel ondernemers starten met Meta ads zonder plan: de boost-knop, budget verspreid over te veel advertentiesets en beslissingen op basis van een paar klikken. In de Meta Ads Academy pak je het anders aan. Stap voor stap, in je eigen account, met Stef die meekijkt.</p>
+          <h2 id="focus-title"><span className="ac-emoji" aria-hidden="true">💰</span> Schaal je webshop met Meta ads, <span>op winst.</span></h2>
+          <p className="ac-focus-lead">Veel webshops lopen vast op hetzelfde punt: zodra het budget omhoog gaat, zakt de ROAS en weet niemand waarom. Meestal ligt het niet aan Meta, maar aan de meting, de marges of de creatives. In de academy krijg je die drie op orde, zodat je met vertrouwen kan opschalen.</p>
 
-          <h3>Waarom Meta ads?</h3>
+          <h3>Waarom Meta ads voor je webshop?</h3>
           <ul className="ac-check-list">{whyMeta.map(item => <li key={item}><span className="ac-list-icon is-yes"><Check /></span>{item}</li>)}</ul>
 
           <h3>Waar het vaak misloopt</h3>
           <ul className="ac-check-list">{pitfalls.map(item => <li key={item}><span className="ac-list-icon is-no"><Cross /></span>{item}</li>)}</ul>
 
-          <h3>Je traject in de academy</h3>
-          <ol className="ac-path">{path.map(([label, title, text], index) => <li key={label}><span className="ac-path-label"><b>{number(index)}</b>{label}</span><div><strong>{title}</strong><p>{text}</p></div></li>)}</ol>
+          <h3>Jouw traject in de academy</h3>
+          <ol className="ac-stages">{stages.map(([emoji, label, text]) => <li key={label}><span className="ac-stage-emoji" aria-hidden="true">{emoji}</span><div><strong>{label} <span aria-hidden="true">→</span></strong><p>{text}</p></div></li>)}</ol>
+
+          <h3>Wat je na het traject kan</h3>
+          <ul className="ac-trophy-list">{afterwards.map(item => <li key={item}><span aria-hidden="true">🏆</span>{item}</li>)}</ul>
 
           <h3>Van wie je leert</h3>
           <div className="ac-focus-author">
             <img src={stefDeskSmall} alt="" width="56" height="56" loading="lazy" />
-            <p><strong>Stef Keppens</strong> werkt vanuit verkoop.studio in Lochristi aan campagnes, landingspagina’s, tracking en conversie voor onder meer Pinacello, O’Learys en E-Kart, en bouwt met Nooms zijn eigen merk op. In de academy leer je de werkwijze die hij daar gebruikt: eerst het doel en de meting, dan pas het budget.</p>
+            <p><strong>Stef Keppens</strong> werkt vanuit verkoop.studio aan de ecommerce- en groeikant van merken als Pinacello, en bouwt met Nooms zijn eigen webshopmerk op. In de academy leer je de werkwijze die hij daar gebruikt: eerst je tracking en marges op orde, dan pas het budget omhoog.</p>
           </div>
 
-          <p className="ac-focus-cta"><Arrow /> Meld je aan en Stef neemt persoonlijk contact met je op om te bekijken waar je staat.</p>
+          <div className="ac-focus-join">
+            <p><span aria-hidden="true">⚡️</span> <strong>Meld je aan voor de academy</strong></p>
+            <p><span aria-hidden="true">🔒</span> Prijs op maat, na een kennismaking met Stef.</p>
+            <p><span aria-hidden="true">👉</span> Meld je nu aan en bouw aan je volgende mijlpaal.</p>
+            {!signedUp && <button className="ac-button" onClick={goToSignup}>Meld je aan<Arrow /></button>}
+          </div>
         </article>
 
         <aside className="ac-focus-card" aria-label="Meta Ads Academy in het kort">
@@ -313,74 +344,60 @@ export default function Academy() {
           <div className="ac-focus-card-body">
             <h3>Meta Ads Academy</h3>
             <span className="ac-focus-url">verkoop.studio/academy</span>
-            <p>Leer Meta ads die aanvragen en verkoop opleveren, in je eigen account.</p>
-            <dl><div><dt>Lessen</dt><dd>{number(academyLessons.length - 1)}</dd></div><div><dt>Begeleiding</dt><dd>1-op-1</dd></div><div><dt>Account</dt><dd>Eigen</dd></div></dl>
-            {signedUp ? <p className="ac-focus-done"><Check /> Je aanmelding is binnen.</p> : <button className="ac-button ac-focus-join" onClick={goToSignup}>Meld je aan<Arrow /></button>}
+            <p>Leer je webshop schalen met Meta ads <span aria-hidden="true">💰</span></p>
+            <dl><div><dt>Voor</dt><dd>Webshops</dd></div><div><dt>Begeleiding</dt><dd>1-op-1</dd></div><div><dt>Account</dt><dd>Eigen</dd></div></dl>
+            {signedUp ? <p className="ac-focus-done"><Check /> Je aanmelding is binnen.</p> : <button className="ac-button ac-focus-join-button" onClick={goToSignup}>Meld je aan<Arrow /></button>}
             <small>Prijs op maat, na een kennismaking met Stef.</small>
           </div>
         </aside>
       </section>
 
-      <section className="ac-not ac-wrap" aria-labelledby="not-title">
-        <h2 id="not-title" className="ac-reveal">Dit is niet voor wie<span className="ac-not-words"><s>de boost-knop</s> <s>snelle trucs</s><br /><s>een gouden doelgroep</s></span>zoekt. Maar voor wie<br /><span className="ac-blue">zelf wil leren</span><br /><span className="ac-grey">beslissen.</span></h2>
-        <figure className="ac-stat-card ac-reveal">
-          <ResponsiveImage src={studioTeam} alt="Samen aan het werk in de studio van verkoop.studio" sizes="(max-width: 900px) 100vw, 520px" loading="lazy" />
-          <dl><div><dt>Lessen</dt><dd>{number(academyLessons.length - 1)}</dd></div><div><dt>Kennisblokken</dt><dd>{sectionCount}</dd></div><div><dt>Campagneplan</dt><dd>01</dd></div></dl>
-        </figure>
-        <ul className="ac-pillars ac-reveal">
-          <li><strong>Doel</strong><span>Weten wat je wil</span></li>
-          <li><strong>Structuur</strong><span>Eenvoud bewaken</span></li>
-          <li><strong>Creatief</strong><span>Bewust variëren</span></li>
-          <li><strong>Meting</strong><span>Echt controleren</span></li>
-        </ul>
-      </section>
-
-      <section id="leerpad" className="ac-curriculum ac-wrap" aria-labelledby="curriculum-title">
+      <section id="programma" className="ac-curriculum ac-wrap" aria-labelledby="curriculum-title">
         <div className="ac-curriculum-top">
-          <p className="ac-kicker" id="curriculum-title">WAT JE LEERT · HET PROGRAMMA</p>
-          <div className="ac-slider-buttons"><button onClick={() => setSlide(slide === 0 ? academyLessons.length - 1 : slide - 1)} aria-label="Vorige les"><Chevron back /></button><button onClick={() => setSlide(slide === academyLessons.length - 1 ? 0 : slide + 1)} aria-label="Volgende les"><Chevron /></button></div>
+          <div><p className="ac-kicker">WAAR WE DIEP OP INGAAN</p><h2 id="curriculum-title">Meta ads die schalen. <span>Onderdeel per onderdeel.</span></h2></div>
+          <div className="ac-slider-buttons"><button onClick={() => step(-1)} aria-label="Vorig onderdeel"><Chevron back /></button><button onClick={() => step(1)} aria-label="Volgend onderdeel"><Chevron /></button></div>
         </div>
-        <div className="ac-progress-tabs">{academyLessons.map((item, index) => <button key={item.id} className={index === slide ? 'is-active' : index < slide ? 'is-past' : ''} onClick={() => setSlide(index)} aria-label={`Les ${number(index)}: ${item.shortTitle}`} aria-current={index === slide ? 'true' : undefined}><span>{number(index)}</span><em>{item.shortTitle}</em></button>)}</div>
-        <div className="ac-slide" key={slideLesson.id}>
-          <div className="ac-slide-visual"><LessonVisual id={slideLesson.id} /></div>
+        <div className="ac-progress-tabs" ref={tabsRef}>{academyModules.map((item, index) => <button key={item.id} className={index === slide ? 'is-active' : index < slide ? 'is-past' : ''} onClick={() => setSlide(index)} aria-label={item.shortTitle} aria-current={index === slide ? 'true' : undefined}><span>{number(index)}</span><em>{item.shortTitle}</em></button>)}</div>
+        <div className="ac-slide" key={topic.id} onTouchStart={event => { swipeStart.current = event.touches[0].clientX }} onTouchEnd={event => endSwipe(event.changedTouches[0].clientX)}>
+          <div className="ac-slide-visual"><ModuleVisual id={topic.id} /></div>
           <div className="ac-slide-copy">
-            <span className="ac-slide-number">({number(slide)})</span>
-            <h3>{slideLesson.title}.</h3>
-            <p>{slideLesson.summary}</p>
-            <ul>{slideLesson.sections.map(section => <li key={section.title}><Check />{section.title}</li>)}</ul>
-            <p className="ac-slide-outcome"><span>NA DEZE LES</span>{slideLesson.outcome}</p>
-            <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>Meld je aan<Arrow /></button><span className="ac-slide-hint">Les {number(slide)} van {number(academyLessons.length - 1)}</span></div>
+            <span className="ac-slide-number">{topic.tag}</span>
+            <h3>{topic.title}.</h3>
+            <p>{topic.summary}</p>
+            <ul>{topic.points.map(point => <li key={point}><Check />{point}</li>)}</ul>
+            <p className="ac-slide-outcome"><span>WAT JE EROVER HEBT</span>{topic.outcome}</p>
+            <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>Meld je aan<Arrow /></button></div>
           </div>
         </div>
       </section>
 
       <section id="testlog" className="ac-testlog-section ac-wrap" aria-labelledby="testlog-title">
-        <p className="ac-dot-kicker"><span /> Oefenaccount · fictief voorbeeld</p>
-        <h2 id="testlog-title">Leer kijken voorbij<br /><span>de goedkoopste klik.</span></h2>
-        <p className="ac-section-intro">Drie advertentieconcepten, veertien dagen. Op kost per aanvraag lijkt één concept de winnaar, je eigen cijfers wijzen een andere aan. Klik op een test en zie welke beslissing je neemt.</p>
-        <div className="ac-stats-row"><div><span>UITGAVEN · 14 DAGEN</span><strong>{euro(totals.spend)}</strong></div><div><span>RELEVANTE AANVRAGEN</span><strong className="ac-positive">{totals.relevant} <small>van {totals.leads}</small></strong></div></div>
+        <p className="ac-dot-kicker"><span /> Webshop-account · fictief voorbeeld</p>
+        <h2 id="testlog-title">Leer kijken voorbij<br /><span>de hoogste ROAS.</span></h2>
+        <p className="ac-section-intro">Drie creatives, veertien dagen, dezelfde webshop. In Ads Manager lijkt de kortingsactie de winnaar. Kijk je naar nieuwe klanten en marge, dan wijst een andere creative de weg. Klik op een test en zie welke beslissing je neemt.</p>
+        <div className="ac-stats-row"><div><span>UITGAVEN · 14 DAGEN</span><strong>{euro(totals.spend)}</strong></div><div><span>NIEUWE KLANTEN</span><strong className="ac-positive">{totals.newCustomers} <small>van {totals.purchases} aankopen</small></strong></div></div>
         <div className="ac-testlog ac-reveal">
           <aside className="ac-testlog-side">
             <span className="ac-testlog-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>Testlog</span>
-            {academyTests.map(item => <button key={item.id} className={item.id === test.id ? 'is-active' : ''} onClick={() => setTestId(item.id)} aria-pressed={item.id === test.id}><span className={`ac-swatch ac-swatch-${item.id}`} /><span>{item.name}<small>{item.relevant} relevant</small></span></button>)}
+            {academyTests.map(item => <button key={item.id} className={item.id === test.id ? 'is-active' : ''} onClick={() => setTestId(item.id)} aria-pressed={item.id === test.id}><span className={`ac-swatch ac-swatch-${item.id}`} /><span>{item.name}<small>{item.newCustomers} nieuwe klanten</small></span></button>)}
             <span className="ac-testlog-system"><span className="ac-live-dot" /> verkoop.studio werkplaats</span>
           </aside>
           <div className="ac-testlog-main">
-            <div className="ac-testlog-head"><div><strong>Demo-aanvragen</strong><span>Leads · 3 concepten</span></div><code>Relevante aanvragen, cumulatief</code></div>
+            <div className="ac-testlog-head"><div><strong>Webshop · aankopen</strong><span>3 creatives</span></div><code>Nieuwe klanten, cumulatief</code></div>
             <TestChart selected={test.id} />
-            <div className="ac-testlog-decision" aria-live="polite"><span className="ac-mock-label">BESLISSING · {test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testLesson >= 0 && <button className="ac-text-link" onClick={goToSignup}>Dit leer je in les {number(testLesson)}: {academyLessons[testLesson].shortTitle}<Arrow /></button>}</div>
+            <div className="ac-testlog-decision" aria-live="polite"><span className="ac-mock-label">BESLISSING · {test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testModule && <button className="ac-text-link" onClick={() => { showSlide(academyModules.indexOf(testModule)); scrollToId('programma') }}>Hierover gaat: {testModule.shortTitle}<Arrow /></button>}</div>
           </div>
           <div className="ac-testlog-table">
             <div className="ac-table-caption"><span>TESTS</span><span>Klik op een test om de beslissing te zien</span></div>
-            <div className="ac-row ac-row-head" aria-hidden="true"><span>STATUS</span><span>CONCEPT</span><span>UITGAVEN</span><span>AANVRAGEN</span><span>PER AANVRAAG</span><span>RELEVANT</span><span>PER RELEVANTE</span><span /></div>
-            {academyTests.map(item => <button key={item.id} className={`ac-row ${item.id === test.id ? 'is-active' : ''}`} onClick={() => setTestId(item.id)} aria-pressed={item.id === test.id} aria-label={`${item.name}: ${euro(item.spend)} uitgegeven, ${item.leads} aanvragen, waarvan ${item.relevant} relevant`}>
+            <div className="ac-row ac-row-head" aria-hidden="true"><span>STATUS</span><span>CREATIVE</span><span>UITGAVEN</span><span>AANKOPEN</span><span>ROAS</span><span>NIEUWE KLANTEN</span><span>PER NIEUWE KLANT</span><span /></div>
+            {academyTests.map(item => <button key={item.id} className={`ac-row ${item.id === test.id ? 'is-active' : ''}`} onClick={() => setTestId(item.id)} aria-pressed={item.id === test.id} aria-label={`${item.name}: ${euro(item.spend)} uitgegeven, ROAS ${ratio(item.revenue / item.spend)}, ${item.newCustomers} nieuwe klanten`}>
               <span><em className={item.status === 'LOPEND' ? 'ac-status' : 'ac-status ac-status-wait'}>{item.status}</em></span>
               <span className="ac-row-name"><i className={`ac-swatch ac-swatch-${item.id}`} />{item.name}</span>
               <span className="ac-mono">{euro(item.spend)}</span>
-              <span className="ac-mono">{item.leads}</span>
-              <span className="ac-mono">{euro(Math.round(item.spend / item.leads * 100) / 100)}</span>
-              <span className="ac-mono">{item.relevant}</span>
-              <span className={`ac-mono ac-strong ${item.id === 'demo' ? 'ac-positive' : item.id === 'situatie' ? 'ac-negative' : ''}`}>{euro(Math.round(item.spend / item.relevant * 100) / 100)}</span>
+              <span className="ac-mono">{item.purchases}</span>
+              <span className="ac-mono">{ratio(item.revenue / item.spend)}</span>
+              <span className="ac-mono">{item.newCustomers}</span>
+              <span className={`ac-mono ac-strong ${item.id === 'demo' ? 'ac-positive' : item.id === 'situatie' ? 'ac-negative' : ''}`}>{euro(Math.round(item.spend / item.newCustomers * 100) / 100)}</span>
               <span className="ac-row-arrow"><Arrow /></span>
             </button>)}
           </div>
@@ -388,14 +405,18 @@ export default function Academy() {
         <p className="ac-fine">Fictieve cijfers om te oefenen. Geen klantgegevens en geen voorspelling van je eigen resultaat.</p>
       </section>
 
-      <section className="ac-process" aria-labelledby="process-title">
-        <div className="ac-wrap ac-process-inner">
-          <span className="ac-pill-label">HET LEERPROCES</span>
-          <h2 id="process-title" className="ac-reveal">Je begrijpt zelf.<br /><span>Je beslist zelf.</span></h2>
-          <p className="ac-reveal">Niet door trucs van anderen te kopiëren,<br />maar door elke keuze te kunnen uitleggen.</p>
-          <ol className="ac-timeline ac-reveal"><li>Door je doel scherp<br />te stellen</li><li>Door bewust<br />te testen</li><li>Door je cijfers<br />zelf te controleren</li></ol>
-          <p className="ac-no-quick"><span>DIT IS GEEN BOOST-KNOP.</span>Dit is leren adverteren met een plan, meting en geduld.</p>
-        </div>
+      <section className="ac-not ac-wrap" aria-labelledby="not-title">
+        <h2 id="not-title" className="ac-reveal">Dit is niet voor wie<span className="ac-not-words"><s>de boost-knop</s> <s>snelle trucs</s><br /><s>een winning-product-hack</s></span>zoekt. Maar voor wie<br /><span className="ac-blue">rendabel wil</span><br /><span className="ac-grey">opschalen.</span></h2>
+        <figure className="ac-stat-card ac-reveal">
+          <ResponsiveImage src={studioTeam} alt="Samen aan het werk in de studio van verkoop.studio" sizes="(max-width: 900px) 100vw, 520px" loading="lazy" />
+          <dl><div><dt>Totaal rendement</dt><dd>MER</dd></div><div><dt>Klantwaarde</dt><dd>LTV</dd></div><div><dt>Server-tracking</dt><dd>CAPI</dd></div></dl>
+        </figure>
+        <ul className="ac-pillars ac-reveal">
+          <li><strong>Meten</strong><span>Weten wat klopt</span></li>
+          <li><strong>Rendement</strong><span>Sturen op winst</span></li>
+          <li><strong>Creatives</strong><span>Altijd nieuwe winnaars</span></li>
+          <li><strong>Schalen</strong><span>Met beslisregels</span></li>
+        </ul>
       </section>
 
       <section id="zo-werkt-het" className="ac-plans ac-wrap" aria-labelledby="plans-title">
@@ -404,18 +425,18 @@ export default function Academy() {
           <article className="ac-plan ac-reveal">
             <div className="ac-plan-top"><span>01–03</span><span>Van aanmelding tot start</span></div>
             <ol className="ac-next-steps ac-how-steps">
-              <li><span>1</span><div><strong>Je meldt je aan</strong><small>Laat je naam, e-mailadres en telefoonnummer achter. Meer hoeft niet.</small></div></li>
-              <li><span>2</span><div><strong>Kennismaking met Stef</strong><small>Stef neemt contact met je op en bespreekt je doel, je ervaring en je budget.</small></div></li>
-              <li><span>3</span><div><strong>Voorstel en start</strong><small>Je krijgt een voorstel op maat. Daarna beslis je, en start je traject in je eigen account.</small></div></li>
+              <li><span>1</span><div><strong>Je meldt je aan</strong><small>Laat je gegevens en je webshop achter. Meer hoeft niet.</small></div></li>
+              <li><span>2</span><div><strong>Kennismaking met Stef</strong><small>Stef bekijkt je webshop en cijfers en bespreekt je doelen en budget.</small></div></li>
+              <li><span>3</span><div><strong>Voorstel en start</strong><small>Je krijgt een voorstel op maat. Daarna start je traject in je eigen account.</small></div></li>
             </ol>
             <button className="ac-button ac-button-outline" onClick={goToSignup}>Meld je aan<Arrow /></button>
-            <small>Eerst je doel bespreken, dan een voorstel.</small>
+            <small>Eerst je doelen bespreken, dan een voorstel.</small>
           </article>
           <article className="ac-plan ac-plan-featured ac-reveal">
             <div className="ac-plan-top"><span>META ADS ACADEMY</span><span>Met Stef aan je zijde</span></div>
             <h3>Wat je krijgt</h3>
             <p className="ac-plan-price">Op maat</p>
-            <p>Je leert het in je eigen Ads Manager, aan je eigen aanbod, met iemand die meekijkt.</p>
+            <p>Je leert het in je eigen Ads Manager en webshop, met iemand die meekijkt.</p>
             <ul>{included.map(item => <li key={item}><Check />{item}</li>)}</ul>
             <button className="ac-button ac-button-light" onClick={goToSignup}>Meld je aan<Arrow /></button>
             <small>Prijs en ritme na een kennismakingsgesprek. Advertentiebudget is niet inbegrepen.</small>
@@ -427,11 +448,11 @@ export default function Academy() {
         <div className="ac-signup-intro">
           <p className="ac-dot-kicker"><span /> Aanmelden</p>
           <h2 id="signup-title">Meld je aan.<br /><span>Stef neemt contact op.</span></h2>
-          <p>Vul het formulier in. Stef bekijkt je aanmelding en neemt persoonlijk contact met je op om je doel en de opzet van je traject te bespreken.</p>
+          <p>Vul het formulier in. Stef bekijkt je webshop en neemt persoonlijk contact met je op om je cijfers, je doelen en de opzet van je traject te bespreken.</p>
           <ol className="ac-next-steps">
-            <li><span>1</span><div><strong>Vul het formulier in</strong><small>Je contactgegevens en, als je wil, je ervaring en budget.</small></div></li>
+            <li><span>1</span><div><strong>Vul het formulier in</strong><small>Je contactgegevens, je webshop en, als je wil, je budget.</small></div></li>
             <li><span>2</span><div><strong>Stef neemt contact op</strong><small>Telefonisch of per e-mail, om te bekijken waar je staat.</small></div></li>
-            <li><span>3</span><div><strong>Je krijgt een voorstel</strong><small>Op maat van je doel. Daarna beslis je.</small></div></li>
+            <li><span>3</span><div><strong>Je krijgt een voorstel</strong><small>Op maat van je doelen. Daarna beslis je.</small></div></li>
           </ol>
           <p className="ac-privacy">We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.</p>
         </div>
@@ -439,7 +460,7 @@ export default function Academy() {
           {signedUp ? <div className="ac-signup-done" role="status">
             <span className="ac-tick ac-tick-large"><Check /></span>
             <h3>{thanks}</h3>
-            <p>Je aanmelding is binnen. Stef neemt persoonlijk contact met je op om je doel en de opzet te bespreken. Je krijgt ook een bevestiging per mail.</p>
+            <p>Je aanmelding is binnen. Stef bekijkt je webshop en neemt persoonlijk contact met je op. Je krijgt ook een bevestiging per mail.</p>
             <div><Link className="ac-button" to="/cases">Bekijk intussen onze cases<Arrow /></Link></div>
           </div> : <AcademySignup formId="academy-signup" variant="full" onSuccess={joined('academy-signup')} />}
         </div>
@@ -447,9 +468,9 @@ export default function Academy() {
 
       <section className="ac-honest ac-wrap" aria-labelledby="honest-title">
         <div className="ac-honest-copy ac-reveal">
-          <h2 id="honest-title">We beloven geen ROAS.<br /><span>Je leert keuzes maken.</span></h2>
-          <p>Geen gegarandeerde resultaten. Geen losse dashboardscreenshots.<br />Alleen een aanpak die je begrijpt, kan uitleggen en kan herhalen.</p>
-          <p className="ac-strong-line">Je leert de werkwijze die we ook voor onze klanten gebruiken.</p>
+          <h2 id="honest-title">Geen beloftes.<br /><span>Wel cijfers die kloppen.</span></h2>
+          <p>Geen gegarandeerde ROAS. Geen losse dashboardscreenshots.<br />Alleen beslissingen die je begrijpt, kan uitleggen en kan herhalen.</p>
+          <p className="ac-strong-line">Je leert de werkwijze die we ook voor onze klanten en ons eigen merk gebruiken.</p>
           <p className="ac-small">Benieuwd hoe dat in de praktijk loopt?</p>
           <div className="ac-hero-actions"><Link className="ac-button" to="/cases">Bekijk onze cases<Arrow /></Link><Link className="ac-text-link" to="/meta-ads">Liever uitbesteden?<Arrow diagonal /></Link></div>
         </div>
@@ -462,23 +483,23 @@ export default function Academy() {
       </section>
 
       <section className="ac-final ac-wrap" aria-labelledby="final-title">
-        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">JE HOEFT NIET ALLES AL TE WETEN</p><h2 id="final-title">Begin met één goede stap.</h2><p>Meld je aan. Stef neemt contact op en samen bekijken we waar je staat.</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>Meld je aan<Arrow /></button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>Of stel eerst een vraag<Arrow diagonal /></Link></div></div>
+        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">⚡️ KLAAR OM TE SCHALEN?</p><h2 id="final-title">Bouw aan je volgende mijlpaal.</h2><p>Meld je aan. Stef bekijkt je webshop en neemt persoonlijk contact met je op.</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>Meld je aan<Arrow /></button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>Of stel eerst een vraag<Arrow diagonal /></Link></div></div>
       </section>
     </main>
 
     {!signedUp && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
-      <p><strong>Meta Ads Academy</strong><span>Leer Meta ads met Stef, in je eigen account</span></p>
+      <p><strong>Meta Ads Academy</strong><span>Schaal je webshop met Meta ads</span></p>
       <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>Meld je aan<Arrow /></button>
     </div>}
 
     <footer className="ac-footer">
       <div className="ac-wrap">
         <div className="ac-footer-top">
-          <div><div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>Leer Meta ads met een plan. Een praktisch leertraject van verkoop.studio voor ondernemers en marketeers.</p></div>
+          <div><div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>Schaal je webshop met Meta ads, op basis van cijfers die kloppen. Een leertraject van verkoop.studio.</p></div>
           <NewsletterForm />
         </div>
         <div className="ac-footer-columns">
-          <div><h3>Academy</h3><a href="#leerpad">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#aanmelden">Aanmelden</a></div>
+          <div><h3>Academy</h3><a href="#programma">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#aanmelden">Aanmelden</a></div>
           <div><h3>verkoop.studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
           <div><h3>Contact</h3><a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a><Link to={contactAcademy}>Plan een gesprek</Link><span>Lochristi, België</span></div>
           <div><h3>Goed om te weten</h3><span>Niet verbonden aan of gecertificeerd door Meta.</span><span>Geen garantie op resultaten.</span></div>

@@ -101,8 +101,8 @@ export const faqItems: FaqItem[] = [
       en: 'Can I learn to advertise myself, without a monthly package?',
     },
     answer: {
-      nl: 'Ja. In de Meta Ads Academy op verkoop.studio/academy leer je zelf campagnes opzetten, testen en meten, met Stef die meekijkt in je eigen account. Je meldt je aan via het formulier, daarna bespreken we samen de opzet en krijg je een voorstel. Pas dan beslis je of een verdere samenwerking zinvol is.',
-      en: 'Yes. In the Meta Ads Academy at verkoop.studio/academy you learn to set up, test and measure campaigns yourself, with Stef looking along in your own account. You sign up through the form, then we discuss the setup together and you receive a proposal. Only then do you decide whether a further collaboration makes sense.',
+      nl: 'Ja. In de Meta Ads Academy op verkoop.studio/academy leer je je webshop schalen met Meta ads: tracking, ROAS en LTV, retargeting en opschalen, met Stef die meekijkt in je eigen account. Je meldt je aan via het formulier, daarna bespreken we samen de opzet en krijg je een voorstel. Pas dan beslis je of een verdere samenwerking zinvol is.',
+      en: 'Yes. In the Meta Ads Academy at verkoop.studio/academy you learn to scale your online store with Meta ads: tracking, ROAS and LTV, retargeting and scaling, with Stef looking along in your own account. You sign up through the form, then we discuss the setup together and you receive a proposal. Only then do you decide whether a further collaboration makes sense.',
     },
   },
   {

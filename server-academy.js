@@ -4,8 +4,8 @@ import { resendRequest, saveLeadContact } from './server-lead.js'
 import { crmPayload, sendToCrm } from './server-crm.js'
 import { subscribeNewsletter } from './server-newsletter.js'
 
-export const ACADEMY_LEVELS = { start: 'Nog nooit geadverteerd', basis: 'Al wat zelf geprobeerd', actief: 'Draait al campagnes' }
-export const ACADEMY_BUDGETS = { geen: 'Nog geen budget', klein: 'Tot €500 per maand', middel: '€500 – €2.000 per maand', groot: 'Meer dan €2.000 per maand' }
+export const ACADEMY_LEVELS = { start: 'Nog niet gestart met Meta ads', basis: 'Draait al campagnes', actief: 'Wil opschalen' }
+export const ACADEMY_BUDGETS = { klein: 'Tot €1.000 per maand', middel: '€1.000 – €5.000 per maand', groot: '€5.000 – €20.000 per maand', schaal: 'Meer dan €20.000 per maand' }
 export const ACADEMY_CAMPAIGN = 'verkoop.studio academy'
 
 const text = (value, limit) => typeof value === 'string' ? value.trim().slice(0, limit) : ''
@@ -39,7 +39,7 @@ export function academyCrmPayload(fields) {
     doel: 'Meta Ads Academy: aanmelding',
     uitdaging: fields.vraag,
     investering: ACADEMY_BUDGETS[fields.budget] ?? '',
-    extra: [fields.niveau && `Ervaring met Meta ads: ${ACADEMY_LEVELS[fields.niveau]}`, fields.nieuwsbrief && 'Nieuwsbrief: ja'].filter(Boolean).join('\n'),
+    extra: [fields.niveau && `Stand van zaken: ${ACADEMY_LEVELS[fields.niveau]}`, fields.nieuwsbrief && 'Nieuwsbrief: ja'].filter(Boolean).join('\n'),
     form_id: fields.form_id, lang: fields.lang, attribution: fields.attribution, ga4: fields.ga4,
   }, { campaign: ACADEMY_CAMPAIGN })
 }
@@ -51,7 +51,7 @@ export function academyNotification(fields) {
   const title = fields.bedrijf || fields.naam
   const attribution = Object.entries(fields.attribution).filter(([, value]) => typeof value === 'string' && value).map(([key, value]) => `${key}: ${value}`).join(' · ') || 'niet ingevuld'
   const contact = [['Naam', fields.naam], ['E-mailadres', fields.email], ['Telefoon', fields.telefoon], ['Bedrijf', fields.bedrijf], ...(fields.website ? [['Website', fields.website]] : [])]
-  const academy = [['Ervaring met Meta ads', ACADEMY_LEVELS[fields.niveau]], ['Maandelijks advertentiebudget', ACADEMY_BUDGETS[fields.budget]], ['Waar wil je vooral beter in worden?', fields.vraag], ['Nieuwsbrief', fields.nieuwsbrief ? 'ja' : 'nee']]
+  const academy = [['Waar staat de webshop met Meta ads?', ACADEMY_LEVELS[fields.niveau]], ['Maandelijks advertentiebudget', ACADEMY_BUDGETS[fields.budget]], ['Waar wil je vooral beter in worden?', fields.vraag], ['Nieuwsbrief', fields.nieuwsbrief ? 'ja' : 'nee']]
   return {
     subject: oneLine(`Nieuwe academy-aanmelding van ${title}`).slice(0, 120),
     text: [`Nieuwe academy-aanmelding van ${title}`, `Aanmelding van ${fields.naam}`, '', 'Beantwoord deze e-mail rechtstreeks om de aanvrager te contacteren.', '',
