@@ -24,10 +24,12 @@ const ratio = (value: number) => value.toFixed(2).replace('.', ',')
 const contactAcademy = '/contact?interesse=academy'
 const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
 const offer = [
-  ['Volledig 1-op-1', 'Alleen jij en Stef, over jouw webshop en jouw cijfers.'],
-  ['In je eigen account', 'Je bouwt je campagnes zelf. Stef kijkt mee en stuurt bij.'],
+  ['Volledig 1-op-1', 'Alleen jij en Stef, in je eigen account en webshop.'],
   ['Starten vanaf nul', 'Nog nooit geadverteerd? Je begint bij de basis, zonder vakjargon.'],
-  ['Alles wat verkoopt', 'Tracking, creatives, retargeting en opschalen. Niets overbodigs.'],
+  ['Meta ads', 'Campagnes, creatives, retargeting en opschalen.'],
+  ['Landingspagina’s', 'Pagina’s die bezoekers uit je ads omzetten in kopers.'],
+  ['Tracking', 'Pixel en Conversions API, zodat je cijfers kloppen.'],
+  ['E-mailmarketing', 'Flows en mails die klanten opnieuw laten kopen.'],
 ]
 const pinacelloSteps = [
   ['Aandacht', 'Meta ads en content rond het product en het aanbod.'],
@@ -284,7 +286,6 @@ export default function Academy() {
     <main id="academy-main">
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
-          <p className="ac-hero-eyebrow"><span className="ac-live-dot" /> Meta Ads Academy <i /> 1-op-1 voor webshops</p>
           <h1 id="academy-title">Start en schaal je webshop <span>met Meta ads.</span></h1>
           <p className="ac-hero-lead">Volledig 1-op-1 lessen met Stef, in je eigen account. Ook als je nog nooit hebt geadverteerd. Onze belofte: een ROAS van 3 tot 4.</p>
           <div id="academy-hero-signup" className="ac-hero-signup">
@@ -306,7 +307,7 @@ export default function Academy() {
         <div className="ac-offer-main">
           <p className="ac-dot-kicker"><span /> Het aanbod</p>
           <h2 id="offer-title">1-op-1 Meta ads lessen. <span>Met één belofte.</span></h2>
-          <p className="ac-section-intro">Geen videocursus, geen groep. Stef leert je persoonlijk adverteren in je eigen account, stap voor stap, tot je Meta ads renderen.</p>
+          <p className="ac-section-intro">Geen videocursus, geen groep. Stef leert je persoonlijk alles wat je webshop nodig heeft om met Meta ads te verkopen: van ads en landingspagina’s tot tracking en e‑mail.</p>
           <ul className="ac-offer-list">{offer.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
         </div>
         <aside className="ac-promise" aria-label="Onze belofte">
