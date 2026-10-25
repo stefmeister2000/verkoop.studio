@@ -101,8 +101,8 @@ export const faqItems: FaqItem[] = [
       en: 'Can I learn to advertise myself, without a monthly package?',
     },
     answer: {
-      nl: 'Ja. In de Meta Ads Academy op verkoop.studio/academy leer je je webshop schalen met Meta ads: tracking, ROAS en LTV, retargeting en opschalen, met Stef die meekijkt in je eigen account. Je meldt je aan via het formulier, daarna bespreken we samen de opzet en krijg je een voorstel. Pas dan beslis je of een verdere samenwerking zinvol is.',
-      en: 'Yes. In the Meta Ads Academy at verkoop.studio/academy you learn to scale your online store with Meta ads: tracking, ROAS and LTV, retargeting and scaling, with Stef looking along in your own account. You sign up through the form, then we discuss the setup together and you receive a proposal. Only then do you decide whether a further collaboration makes sense.',
+      nl: 'Ja. In de Meta Ads Academy op verkoop.studio/academy krijg je volledig 1-op-1 lessen met Stef, in je eigen advertentieaccount. Het doel: een ROAS van 3 tot 4, ook als je nog nooit hebt geadverteerd. Je meldt je aan via het formulier, Stef neemt contact op en je krijgt een voorstel op maat.',
+      en: 'Yes. In the Meta Ads Academy at verkoop.studio/academy you get fully one-on-one lessons with Stef, in your own ad account. The goal: a ROAS of 3 to 4, even if you have never advertised before. You sign up through the form, Stef gets in touch and you receive a tailored proposal.',
     },
   },
   {
