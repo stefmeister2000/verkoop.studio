@@ -11,6 +11,8 @@ import stefDeskSmall from '../assets/stef-desk-640.webp'
 import stefNooms from '../assets/stef.webp'
 import studioTeam from '../assets/studio-team.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
+import pinacelloPage from '../assets/cases/pinacello.webp'
+import pinacelloPoster from '../assets/cases/pinacello-video-poster.webp'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
 import academyStylesheet from './Academy.css?url'
 
@@ -22,6 +24,16 @@ const euro = (value: number) => {
 const ratio = (value: number) => value.toFixed(2).replace('.', ',')
 const contactAcademy = '/contact?interesse=academy'
 const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
+const pinacelloSteps = [
+  ['Aandacht', 'Meta ads en content rond het product, het gebruiksmoment en het aanbod.'],
+  ['Pagina', 'Een campagnepagina met aanbod, productinfo en een directe bestelstap, inclusief aanbiedingen en bundels.'],
+  ['Retargeting', 'Wie interesse toonde maar nog niet kocht, krijgt een vervolg dat de aankoop afmaakt.'],
+]
+const pinacelloLessons = [
+  ['creatives', 'Creatives', 'Herkenbare content over je product bepaalt wie Meta bereikt.'],
+  ['rendement', 'ROAS & LTV', 'Een sterk aanbod en bundels verhogen je orderwaarde, en dus wat een klant mag kosten.'],
+  ['retargeting', 'Retargeting', 'Wie nog twijfelt, breng je met de juiste boodschap terug.'],
+]
 const whyMeta = ['Je bereikt kopers nog vóór ze actief zoeken', 'Je toont je product met beeld en video, waar je doelgroep al scrolt', 'Catalogus-ads tonen automatisch het juiste product aan de juiste persoon', 'Je kan opschalen zolang je cijfers het toelaten']
 const pitfalls = ['Sturen op de ROAS in Ads Manager zonder die naast je webshopomzet te leggen', 'Geen break-even ROAS kennen, en dus niet weten of je winst maakt', 'Het budget verdubbelen na twee goede dagen', 'Retargeting die vooral mensen bereikt die toch al zouden kopen', 'Eén winnende creative opbranden tot de resultaten instorten']
 const stages = [
@@ -250,6 +262,7 @@ export default function Academy() {
   const wrap = (index: number) => index < 0 ? lastModule : index > lastModule ? 0 : index
   const showSlide = (index: number) => setSlide(wrap(index))
   const step = (delta: number) => setSlide(current => wrap(current + delta))
+  const openModule = (id: string) => { showSlide(academyModules.findIndex(item => item.id === id)); scrollToId('programma') }
   function endSwipe(x: number) {
     if (swipeStart.current === null) return
     const distance = x - swipeStart.current
@@ -265,7 +278,7 @@ export default function Academy() {
     <header className="ac-header">
       <div className="ac-wrap ac-header-inner">
         <div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
-        <nav className="ac-pill-nav" aria-label="Academy navigatie"><a href="#aanpak">Aanpak</a><a href="#programma">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#faq">FAQ</a></nav>
+        <nav className="ac-pill-nav" aria-label="Academy navigatie"><a href="#resultaten">Resultaten</a><a href="#aanpak">Aanpak</a><a href="#programma">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#faq">FAQ</a></nav>
         <button className="ac-header-cta" onClick={goToSignup}>Meld je aan</button>
       </div>
     </header>
@@ -289,6 +302,45 @@ export default function Academy() {
           </div>
         </div>
         <HeroVisual />
+      </section>
+
+      <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
+        <div className="ac-proof-top">
+          <div><p className="ac-dot-kicker"><span /> Uit de praktijk · Pinacello</p><h2 id="proof-title">Geen theorie. <span>Zo werkt het bij Pinacello.</span></h2></div>
+          <p className="ac-section-intro">Stef werkt doorlopend aan de ecommerce- en groeikant van Pinacello: Meta ads, content, landingspagina’s en retargeting. De aanpak die je in de academy leert, komt rechtstreeks uit dat werk.</p>
+        </div>
+        <article className="ac-case ac-case-main ac-reveal">
+          <div className="ac-case-copy">
+            <span className="ac-case-tag">CASE 01 · VAN KLIK TOT AANKOOP</span>
+            <p className="ac-case-figure"><strong>+120%</strong><span>online omzet bij Pinacello</span></p>
+            <p>Campagnes, landingspagina’s en conversie werken samen als één verkoopmotor. Elke klik krijgt een duidelijke route naar een aankoop.</p>
+            <ol className="ac-case-steps">{pinacelloSteps.map(([label, text], index) => <li key={label}><span>{number(index)}</span><div><strong>{label}</strong>{text}</div></li>)}</ol>
+            <Link className="ac-text-link" to="/cases/pinacello">Lees de volledige case</Link>
+          </div>
+          <figure className="ac-case-shot">
+            <a href="https://promo.pinacello.com/" target="_blank" rel="noopener noreferrer" aria-label="Bekijk de campagnepagina van Pinacello in een nieuw tabblad"><ResponsiveImage src={pinacelloPage} width="1900" height="1024" alt="Campagnepagina van Pinacello met productbeelden, aanbod en een bestelknop" sizes="(max-width: 900px) 100vw, 620px" loading="lazy" /></a>
+            <figcaption>promo.pinacello.com</figcaption>
+          </figure>
+        </article>
+        <div className="ac-proof-row">
+          <article className="ac-case ac-case-video ac-reveal">
+            <figure><video controls playsInline preload="none" poster={pinacelloPoster} src="/videos/pinacello.mp4" aria-label="Organische video van Pinacello" /></figure>
+            <div className="ac-case-copy">
+              <span className="ac-case-tag">CASE 02 · CONTENT</span>
+              <p className="ac-case-figure"><strong>20</strong><span>verkopen uit één organische video</span></p>
+              <p>De makers vertellen zelf het verhaal achter hun product. In de academy leer je hoe je zulke content test als creative in je Meta ads.</p>
+              <button className="ac-text-link" onClick={() => openModule('creatives')}>Hierover gaat: Creatives</button>
+              <p className="ac-case-note">De video start pas als je op afspelen drukt.</p>
+            </div>
+          </article>
+          <aside className="ac-case ac-case-lessons ac-reveal" aria-labelledby="lessons-title">
+            <span className="ac-case-tag">WAT JE HIERUIT LEERT</span>
+            <h3 id="lessons-title">Dezelfde bouwstenen, in je eigen webshop.</h3>
+            <ul>{pinacelloLessons.map(([id, label, text]) => <li key={id}><button onClick={() => openModule(id)}><strong>{label}</strong><span>{text}</span></button></li>)}</ul>
+            {signedUp ? <p className="ac-focus-done">Je aanmelding is binnen.</p> : <button className="ac-button" onClick={goToSignup}>Meld je aan</button>}
+          </aside>
+        </div>
+        <p className="ac-fine">Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders: dit is geen garantie voor je eigen resultaat.</p>
       </section>
 
       <section id="aanpak" className="ac-focus ac-wrap" aria-labelledby="focus-title">

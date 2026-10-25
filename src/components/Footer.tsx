@@ -37,7 +37,7 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
 
           <div>
             <p className="text-sm font-semibold text-paper">{t.nav}</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 space-y-2 footer-link-grid">
               <li><Link to="/blog" className="text-sm text-mute transition hover:text-paper">Blog · Gent & omgeving</Link></li>
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -51,7 +51,7 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
 
           <div>
             <p className="text-sm font-semibold text-paper">{t.services}</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-3 space-y-2 footer-link-grid">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link to={`/${service.slug}`} className="text-sm text-mute transition hover:text-paper">

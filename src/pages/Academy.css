@@ -605,3 +605,65 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-identity-line, .ac-identity-label { display: none; }
   .ac-hero-eyebrow { font-size: 12px; }
 }
+
+/* Pinacello case: published client results, unlike the fictional testlog. */
+.ac-proof { margin-top: 110px; scroll-margin-top: 88px; }
+.ac-proof-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 480px); align-items: end; gap: 20px 56px; }
+.ac-proof-top h2 { margin-top: 12px; }
+.ac-proof-top .ac-section-intro { margin-top: 0; }
+.ac-case { border: 1px solid #eef0f7; border-radius: 26px; background: #fff; box-shadow: 0 30px 60px -38px #181c3d4d; }
+.ac-case-tag { color: var(--ac-blue); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.ac-case-figure { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; }
+.ac-case-figure strong { font-size: 64px; line-height: 1; font-weight: 700; letter-spacing: -.045em; }
+.ac-case-figure span { color: var(--ac-text); font-size: 16px; font-weight: 500; }
+.ac-case-copy > p:not(.ac-case-figure):not(.ac-case-note) { margin-top: 16px; color: var(--ac-text); font-size: 16px; line-height: 1.6; }
+.ac-case-copy .ac-text-link { margin-top: 18px; }
+.ac-case-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); align-items: center; gap: 44px; margin-top: 40px; padding: 36px; }
+.ac-case-steps { display: grid; gap: 8px; margin-top: 22px; }
+.ac-case-steps li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 12px 14px; border-radius: 14px; background: var(--ac-tint); color: var(--ac-text); font-size: 14.5px; line-height: 1.5; }
+.ac-case-steps li > span { padding-top: 1px; color: var(--ac-blue); font-family: var(--ac-mono); font-size: 13px; font-weight: 600; }
+.ac-case-steps strong { display: block; color: var(--ac-ink); font-size: 15px; font-weight: 600; }
+.ac-case-shot { position: relative; overflow: hidden; border: 1px solid var(--ac-line); border-radius: 18px; background: var(--ac-tint); }
+.ac-case-shot img { width: 100%; height: auto; aspect-ratio: 1900 / 1024; object-fit: cover; transition: transform .6s cubic-bezier(.16, 1, .3, 1); }
+.ac-case-shot a:hover img { transform: scale(1.02); }
+.ac-case-shot figcaption { position: absolute; left: 14px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: #ffffffeb; color: var(--ac-ink); font-family: var(--ac-mono); font-size: 12px; box-shadow: 0 8px 20px -10px #181c3d59; pointer-events: none; }
+.ac-proof-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 20px; margin-top: 20px; }
+.ac-case-video { display: grid; grid-template-columns: 210px minmax(0, 1fr); align-items: center; gap: 30px; padding: 18px 30px 18px 18px; }
+.ac-case-video figure { overflow: hidden; aspect-ratio: 9 / 16; border-radius: 16px; background: var(--ac-ink); }
+.ac-case-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ac-case-note { margin-top: 12px; color: var(--ac-mute); font-size: 12.5px; }
+.ac-case-lessons { display: flex; flex-direction: column; padding: 30px; }
+.ac-case-lessons h3 { margin-top: 12px; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.025em; }
+.ac-case-lessons ul { margin: 16px 0 24px; }
+.ac-case-lessons li + li { border-top: 1px solid var(--ac-line); }
+.ac-case-lessons li button { display: grid; gap: 3px; width: 100%; padding: 14px 0; text-align: left; }
+.ac-case-lessons li strong { color: var(--ac-blue); font-size: 15.5px; font-weight: 600; }
+.ac-case-lessons li span { color: var(--ac-text); font-size: 14.5px; line-height: 1.5; }
+.ac-case-lessons li button:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+.ac-case-lessons .ac-button { margin-top: auto; align-self: flex-start; }
+@media (max-width: 1080px) {
+  .ac-proof-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .ac-proof { margin-top: 88px; }
+  .ac-proof-top { grid-template-columns: 1fr; }
+  .ac-case-main { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+  .ac-case-shot { order: -1; }
+}
+@media (max-width: 560px) {
+  .ac-proof { margin-top: 72px; }
+  .ac-case { border-radius: 22px; }
+  .ac-case-main { margin-top: 28px; padding: 14px 14px 22px; gap: 22px; }
+  .ac-case-main .ac-case-copy { padding-inline: 4px; }
+  .ac-case-shot { border-radius: 14px; }
+  .ac-case-shot figcaption { left: 10px; bottom: 10px; font-size: 11px; }
+  .ac-case-figure strong { font-size: 52px; }
+  .ac-case-copy > p:not(.ac-case-figure):not(.ac-case-note) { font-size: 15.5px; }
+  .ac-case-steps li { padding: 12px; font-size: 14px; }
+  .ac-proof-row { gap: 14px; margin-top: 14px; }
+  .ac-case-video { grid-template-columns: 1fr; gap: 22px; padding: 22px 18px; }
+  .ac-case-video figure { order: 2; width: min(240px, 72%); margin-inline: auto; }
+  .ac-case-lessons { padding: 22px 18px; }
+  .ac-case-lessons h3 { font-size: 21px; }
+  .ac-case-lessons .ac-button { align-self: stretch; }
+}

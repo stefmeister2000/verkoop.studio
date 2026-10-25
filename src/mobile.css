@@ -61,6 +61,11 @@
   .site-shell :is(section[id], div[id], fieldset) { scroll-margin-top: 100px; }
   .input { scroll-margin-block: 110px; font-size: 16px; min-height: 48px; }
 }
+
+@media (max-width: 360px) {
+  .mobile-contact-bar-with-offer { grid-template-columns: 1fr 1fr; }
+  .mobile-contact-bar-with-offer a { padding-inline: 6px; white-space: nowrap; }
+}
 @media (max-width: 600px) {
   .studio-hero .hero-studio-photo { margin: 16px 20px 0; border-radius: 20px; }
   .site-shell { margin: 0; padding-inline: 0; }
@@ -71,12 +76,13 @@
   .brand-name { font-size: 15px; }
   .brand-name > span { font-size: 12px; }
   .verkoop-brand-icon { width: 36px; height: 36px; }
-  .studio-hero .hero-copy { padding: 30px 20px 12px; }
+  .studio-hero .hero-copy { padding: 24px 20px 12px; }
   .studio-hero .hero-copy h1 { font-size: clamp(34px,9vw,52px); line-height: 1.08; }
   .studio-hero .hero-description { font-size: 16px; line-height: 1.7; }
   .studio-hero .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
   .studio-hero .hero-actions > a { width: 100%; min-height: 50px; font-size: 14px; padding: 14px 18px; }
-  .studio-hero .hero-art { aspect-ratio: auto; height: clamp(230px, 68vw, 300px); min-height: 0; }
+  /* A shorter photo keeps the headline and both buttons above the fixed contact bar. */
+  .studio-hero .hero-art { aspect-ratio: auto; height: clamp(120px, min(46vw, 21vh), 220px); min-height: 0; }
   .studio-home .selected-work { grid-template-columns: minmax(0,1fr); padding: 36px 20px; gap: 22px; }
   .project-image { aspect-ratio: 1.45; }
   .project-caption { padding: 20px; }
@@ -130,6 +136,8 @@
   .pina-case-cta > div { flex-direction: column; gap: 12px; }
   .pina-case-cta .button-dark { width: 100%; justify-content: center; }
   .site-shell footer a { min-height: 44px; display: inline-flex; align-items: center; overflow-wrap: anywhere; }
+  .site-shell footer .footer-link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  .site-shell footer .footer-link-grid > li { margin: 0; }
   footer .lang-switch { min-height: 44px; }
 }
 @media (max-width: 359px) {
@@ -138,4 +146,8 @@
   .brand-name { font-size: 13px; }
   .growth-plan { padding: 22px 18px; }
   .pina-case-heading h1 { font-size: 42px; }
+}
+@media (max-width: 600px) and (max-height: 700px) {
+  .studio-hero .hero-copy { padding-top: 18px; }
+  .studio-hero .hero-actions { margin-top: 18px; }
 }

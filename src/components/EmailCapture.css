@@ -41,8 +41,9 @@
     padding: 18px; border-radius: 18px;
   }
   .email-capture-mark { width: 32px; height: 32px; margin-bottom: 12px; font-size: 21px; }
+  /* Phones already have the contact bar and chat button; the newsletter opens from the footer link. */
   .email-capture:not(.is-expanded) {
-    display: flex; align-items: center; width: fit-content; max-width: calc(100vw - 84px);
+    display: none; align-items: center; width: fit-content; max-width: calc(100vw - 84px);
     padding: 0 3px 0 12px; border-radius: 24px; background: #fffffff2;
     box-shadow: 0 3px 12px #15245212;
   }
