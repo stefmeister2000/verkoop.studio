@@ -61,6 +61,20 @@ test('previous GA receipt does not suppress a new Meta delivery', () => {
   assert.equal(f.calls.ga.length,0); assert.equal(f.calls.meta.length,1)
 })
 
+test('academy signup emits a Lead labelled with its track, once and without personal data', () => {
+  const f = fixture()
+  const academy = f.exports.trackAcademyConversion
+  academy(receipt, 'signup-9', 'academy-hero', 'gratis')
+  academy(receipt, 'signup-9', 'academy-hero', 'gratis')
+  academy({ ok: true }, 'bot', 'academy-hero', 'gratis')
+  assert.deepEqual(JSON.parse(JSON.stringify(f.calls)), {
+    ga: [['event', 'generate_lead', { send_to: 'G-VRKJP8K3SD', method: 'academy_signup', form_id: 'academy-hero' }]],
+    meta: [['trackSingle', '29297541076513579', 'Lead', { content_name: 'Meta Ads Academy: gratis', form_id: 'academy-hero' }, { eventID: 'website_lead_academy_signup-9' }]],
+  })
+  academy(receipt, 'signup-10', 'academy-signup', 'begeleid')
+  assert.equal(f.calls.meta.at(-1)[3].content_name, 'Meta Ads Academy: begeleid leertraject')
+})
+
 test('newsletter signup emits distinguishable GA and Meta leads once without personal data', () => {
   const f = fixture()
   const signup = { ok: true, captured: ['newsletter_segment'], email: 'private@example.com', consent: 'private' }

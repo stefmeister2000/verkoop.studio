@@ -1,0 +1,100 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import express from 'express'
+import { academyFields, academyCrmPayload, academyRouter, captureAcademySignup, ACADEMY_CAMPAIGN } from '../server-academy.js'
+
+const ok = { data: { id: 'receipt' }, error: null }
+const failure = { data: null, error: { name: 'validation_error', statusCode: 422 } }
+const signup = { naam: 'Lies Peeters', email: 'Lies@Example.com', track: 'gratis', niveau: 'basis', submission_id: 'sub-1', form_id: 'academy-hero' }
+
+function fixture() {
+  const sent = [], created = [], segments = []
+  const resend = {
+    contacts: { get: async () => ({ error: { statusCode: 404 } }), create: async p => { created.push(p); return ok }, update: async () => ok, segments: { add: async p => { segments.push(p); return ok } } },
+    emails: { send: async (p, o) => { sent.push({ p, o }); return ok } },
+  }
+  return { resend, sent, created, segments }
+}
+
+async function post(router, body) {
+  const app = express()
+  app.use(express.json())
+  app.use('/api/academy', router)
+  const server = app.listen(0)
+  try {
+    const response = await fetch(`http://127.0.0.1:${server.address().port}/api/academy`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+    return { status: response.status, body: await response.json() }
+  } finally { server.close() }
+}
+
+test('requires name, valid email and a known track; guided track also needs a phone number', () => {
+  assert.equal(academyFields(signup).email, 'lies@example.com')
+  assert.equal(academyFields({ ...signup, naam: ' ' }), null)
+  assert.equal(academyFields({ ...signup, email: 'geen-mail' }), null)
+  assert.equal(academyFields({ ...signup, track: 'vip' }), null)
+  assert.equal(academyFields({ ...signup, track: 'begeleid' }), null)
+  assert.equal(academyFields({ ...signup, track: 'begeleid', telefoon: '0470 00 00 00' }).track, 'begeleid')
+  assert.equal(academyFields({ ...signup, niveau: 'expert' }).niveau, '')
+})
+
+test('CRM lead is labelled as an academy signup with track and experience', () => {
+  const payload = academyCrmPayload(academyFields({ ...signup, vraag: 'Hoe test ik creatives?', attribution: { utm_source: 'meta' } }))
+  assert.equal(payload.campaign, ACADEMY_CAMPAIGN)
+  assert.equal(payload.company, 'Lies Peeters')
+  assert.match(payload.notes, /Doel: Meta Ads Academy: Gratis startleerpad/)
+  assert.match(payload.notes, /Uitdaging: Hoe test ik creatives\?/)
+  assert.match(payload.notes, /Ervaring: Al wat zelf geprobeerd/)
+  assert.match(payload.notes, /utm_source: meta/)
+})
+
+test('signup stores the contact, emails Stef and creates the CRM lead', async () => {
+  const f = fixture()
+  let crmCalls = 0
+  const result = await captureAcademySignup({ resend: f.resend, fields: academyFields(signup), from: 'noreply@example.com', to: 'stefkeppens@gmail.com', crm: async () => { crmCalls++ } })
+  assert.equal(result.ok, true)
+  assert.deepEqual(result.captured, ['resend_contact', 'resend_email', 'crm'])
+  assert.equal(f.created[0].email, 'lies@example.com')
+  assert.deepEqual(f.sent[0].p.to, ['stefkeppens@gmail.com'])
+  assert.equal(f.sent[0].p.replyTo, 'lies@example.com')
+  assert.match(f.sent[0].p.subject, /Academy-aanmelding \(Gratis startleerpad\): Lies Peeters/)
+  assert.match(f.sent[0].o.idempotencyKey, /^academy-notification\//)
+  assert.equal(crmCalls, 1)
+})
+
+test('a failed CRM or email is reported instead of a silent success', async () => {
+  const f = fixture()
+  const crmDown = await captureAcademySignup({ resend: f.resend, fields: academyFields(signup), from: 'x', to: 'y', crm: async () => { throw Error('down') } })
+  assert.equal(crmDown.ok, false)
+  assert.deepEqual(crmDown.failed, ['crm'])
+  f.resend.emails.send = async () => failure
+  const mailDown = await captureAcademySignup({ resend: f.resend, fields: academyFields(signup), from: 'x', to: 'y' })
+  assert.equal(mailDown.ok, false)
+  assert.deepEqual(mailDown.captured, ['resend_contact'])
+})
+
+test('endpoint sends the welcome mail, forwards the CRM payload and only subscribes with consent', async () => {
+  const f = fixture()
+  const crmPayloads = []
+  const router = academyRouter({ resend: f.resend, from: 'noreply@example.com', to: 'stefkeppens@gmail.com', siteUrl: 'https://verkoop.studio', crmUrl: 'https://crm.example.com/api', crmToken: 'test', sendCrm: async payload => { crmPayloads.push(payload); return { status: 'created', leadId: 'lead-1' } } })
+  const first = await post(router, signup)
+  assert.equal(first.status, 200)
+  assert.deepEqual(first.body.captured, ['resend_contact', 'resend_email', 'crm', 'resend_welcome'])
+  assert.equal(crmPayloads[0].campaign, ACADEMY_CAMPAIGN)
+  const welcome = f.sent.find(item => item.p.subject === 'Welkom in de Meta Ads Academy')
+  assert.deepEqual(welcome.p.to, ['lies@example.com'])
+  assert.match(welcome.p.html, /https:\/\/verkoop\.studio\/academy\?toegang=1#werkplaats/)
+  assert.equal(f.segments.length, 0)
+  const second = await post(router, { ...signup, submission_id: 'sub-2', nieuwsbrief: true })
+  assert.ok(second.body.captured.includes('newsletter_segment'))
+  assert.equal(JSON.parse(f.created.at(-1).properties.newsletter_consent).source, 'academy')
+})
+
+test('endpoint rejects invalid input, ignores bots and needs Resend', async () => {
+  const f = fixture()
+  const router = academyRouter({ resend: f.resend, from: 'x', to: 'y' })
+  assert.equal((await post(router, { ...signup, email: '' })).status, 400)
+  const bot = await post(router, { ...signup, company_website: 'spam.example' })
+  assert.deepEqual(bot.body, { ok: true })
+  assert.equal(f.sent.length, 0)
+  assert.equal((await post(academyRouter({ resend: null, from: 'x', to: 'y' }), signup)).status, 503)
+})

@@ -34,6 +34,7 @@ export default function Contact() {
   const [ready, setReady] = useState(false)
   useEffect(() => { setReady(true) }, [])
   const selectedPackage = ready ? pricingTiers.find(tier => tier.key === params.get('pakket')) : undefined
+  const academyInterest = ready && params.get('interesse') === 'academy'
   const platformNames = { overview: lang === 'nl' ? 'onze klantenplatforms' : 'our client platforms', crm: 'Sales CRM', dashboard: lang === 'nl' ? 'het marketingdashboard' : 'the marketing dashboard' }
   const platformKey = ready ? params.get('platform') : null
   const selectedPlatform = platformKey && Object.hasOwn(platformNames, platformKey) ? platformNames[platformKey as keyof typeof platformNames] : undefined
@@ -85,6 +86,12 @@ export default function Contact() {
                 : `You’re interested in ${selectedPlatform}. These platforms are free for verkoop.studio clients. Leave your details and tell us how you would like to use the platform.`)
               : t.body}
           </p>
+          {academyInterest && !selectedPackage && !selectedPlatform && (
+            <div className="selected-package">
+              {lang === 'nl' ? 'Je wilt Meta ads leren met' : 'You want to learn Meta ads with'} <strong>{lang === 'nl' ? 'een begeleid leertraject' : 'a guided learning track'}</strong>.
+              <Link to="/academy">{lang === 'nl' ? 'Naar de academy' : 'Back to the academy'}</Link>
+            </div>
+          )}
           {selectedPackage && (
             <div className="selected-package">
               {lang === 'nl' ? 'Je wilt meer weten over' : 'You’re interested in'} <strong>{selectedPackage.name[lang]}</strong>.
@@ -94,7 +101,7 @@ export default function Contact() {
           <h2 className="font-display">
             {selectedPlatform ? (lang === 'nl' ? 'Vraag toegang aan' : 'Request access') : (lang === 'nl' ? 'Vertel ons over je project' : 'Tell us about your project')}
           </h2>
-          <QualificationForm id="audit-formulier-contact" inquiryContext={selectedPlatform ? `Platform: ${selectedPlatform}` : selectedPackage ? `Pakket: ${selectedPackage.name[lang]}` : undefined} />
+          <QualificationForm id="audit-formulier-contact" inquiryContext={selectedPlatform ? `Platform: ${selectedPlatform}` : selectedPackage ? `Pakket: ${selectedPackage.name[lang]}` : academyInterest ? 'Academy: begeleid Meta Ads-leertraject' : undefined} />
         </div>
       </section>
     </div>

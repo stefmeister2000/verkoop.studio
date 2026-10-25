@@ -15,25 +15,19 @@ export interface AddOn {
   name: Bi<string>
   price?: Bi<string>
   description: Bi<string>
+  href?: string
 }
 
 export const addOns: AddOn[] = [
   {
-    key: 'strategic-consulting',
-    name: { nl: 'Strategisch gesprek', en: 'Strategy session' },
-    price: { nl: '€250 / uur', en: '€250 / hour' },
-    description: {
-      nl: 'Een gericht sparringgesprek over jullie groei. Kom eerst leren, en beslis daarna pas over samenwerking.',
-      en: 'A focused sparring session about your growth. Come to learn first, and decide on working together later.',
-    },
-  },
-  {
     key: 'learning-track',
-    name: { nl: 'Leertraject', en: 'Learning track' },
+    name: { nl: 'Meta Ads Academy', en: 'Meta Ads Academy' },
+    price: { nl: 'Gratis starten', en: 'Start for free' },
     description: {
-      nl: 'Een begeleidingstraject waarin je zelf leert hoe je jullie digitale groei aanpakt en uitvoert. Opzet en invulling bespreken we samen.',
-      en: 'A guided track where you learn to run and execute your own digital growth. We discuss the scope and setup together.',
+      nl: 'Leer zelf Meta-advertenties opzetten, testen en meten. Start met het gratis leerpad of kies een begeleid traject met Stef.',
+      en: 'Learn to set up, test and measure Meta ads yourself. Start with the free learning path or choose a guided track with Stef.',
     },
+    href: '/academy',
   },
 ]
 
@@ -201,9 +195,5 @@ export const featureRows: FeatureRow[] = [
   {
     label: { nl: 'Meerdere funnels / campagnes', en: 'Multiple funnels / campaigns' },
     values: [text('Beperkt', 'Limited'), text('Gemiddeld', 'Moderate'), text('Hoge capaciteit', 'High capacity')],
-  },
-  {
-    label: { nl: 'Extern advies buiten scope', en: 'External consulting outside scope' },
-    values: [text('€250/uur', '€250/hour'), text('€250/uur', '€250/hour'), text('€250/uur', '€250/hour')],
   },
 ]

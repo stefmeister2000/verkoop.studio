@@ -97,19 +97,19 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: {
-      nl: 'Kan ik ook eerst losse consulting doen, zonder maandpakket?',
-      en: 'Can I start with standalone consulting first, without a monthly package?',
+      nl: 'Kan ik ook zelf leren adverteren, zonder maandpakket?',
+      en: 'Can I learn to advertise myself, without a monthly package?',
     },
     answer: {
-      nl: 'Ja. Je kunt starten met een los strategisch gesprek (€250/uur). Eerst leren en meedenken over jullie groei, zonder verplichting. Er is ook een leertraject mogelijk waarin je zelf leert hoe je jullie groei aanpakt; opzet en invulling bespreken we samen. Daarna beslis je pas of een verdere samenwerking zinvol is.',
-      en: 'Yes. You can start with a standalone strategy session (€250/hour). Come to learn and think through your growth first, with no commitment. There’s also a learning track where you learn to run your own growth; scope and setup we discuss together. Only then do you decide whether a further collaboration makes sense.',
+      nl: 'Ja. In de Meta Ads Academy op verkoop.studio/academy leer je zelf campagnes opzetten, testen en meten. Het startleerpad is gratis. Wil je dat iemand meekijkt in je eigen account, dan is er ook een begeleid leertraject; opzet en invulling bespreken we samen. Daarna beslis je pas of een verdere samenwerking zinvol is.',
+      en: 'Yes. In the Meta Ads Academy at verkoop.studio/academy you learn to set up, test and measure campaigns yourself. The starter path is free. If you want someone to look along in your own account, there’s also a guided learning track; scope and setup we discuss together. Only then do you decide whether a further collaboration makes sense.',
     },
   },
   {
     question: { nl: 'Wat kost een samenwerking?', en: 'What does a collaboration cost?' },
     answer: {
-      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten, vanaf €1.500 per maand. Toegang tot onze klanttools, zoals het CRM en marketingdashboard, is inbegrepen, net als documentatie en instructievideo’s. De invulling van de opstart en uitvoering hangt af van het gekozen pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel. Losse strategische consulting kan ook, aan €250/uur of €1.250/dag.',
-      en: 'Ongoing collaborations run through three growth packages, starting at €1,500 per month. Access to our client tools, including the CRM and marketing dashboard, is included, along with documentation and video guides. Setup and delivery depend on the package you choose. Scope, advertising budget and any third-party licences are agreed in the proposal. Standalone strategic consulting is also available, at €250/hour or €1,250/day.',
+      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten, vanaf €1.500 per maand. Toegang tot onze klanttools, zoals het CRM en marketingdashboard, is inbegrepen, net als documentatie en instructievideo’s. De invulling van de opstart en uitvoering hangt af van het gekozen pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel.',
+      en: 'Ongoing collaborations run through three growth packages, starting at €1,500 per month. Access to our client tools, including the CRM and marketing dashboard, is included, along with documentation and video guides. Setup and delivery depend on the package you choose. Scope, advertising budget and any third-party licences are agreed in the proposal.',
     },
   },
   {

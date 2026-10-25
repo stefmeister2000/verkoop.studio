@@ -9,10 +9,10 @@ const CONSENT = {
   en: 'Yes, I would like to receive marketing tips and news from verkoop.studio by email.',
 }
 
-export async function subscribeNewsletter({ resend, email, lang, request = resendRequest, now = new Date() }) {
+export async function subscribeNewsletter({ resend, email, lang, source = 'website_popup', request = resendRequest, now = new Date() }) {
   const properties = {
     newsletter_consent: JSON.stringify({
-      at: now.toISOString(), source: 'website_popup', version: CONSENT_VERSION, lang, text: CONSENT[lang],
+      at: now.toISOString(), source, version: CONSENT_VERSION, lang, text: CONSENT[lang],
     }),
   }
   let contact

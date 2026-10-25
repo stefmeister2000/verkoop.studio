@@ -84,8 +84,11 @@ export default function PricingSection() {
           </div>
         </details>
         <div className="pricing-first-step">
-          <div><h3>{nl ? 'Je hoeft het nog niet te weten.' : 'You don’t have to know yet.'}</h3><p>{nl ? 'We bekijken eerst waar je staat. Een gericht gesprek of leertraject kan ook, zonder meteen voor een maandpakket te kiezen.' : 'Let’s look at where you are first. A focused session or learning track is also an option, without choosing a monthly package.'}</p><Link className="button-dark" to="/contact">{nl ? 'Help me kiezen' : 'Help me choose'} <span aria-hidden="true">↗</span></Link></div>
-          <div className="pricing-alternatives">{addOns.map(addOn => <div key={addOn.key}><h4>{addOn.name[lang]}</h4><strong>{addOn.price?.[lang] ?? (nl ? 'Op aanvraag' : 'On request')}</strong><p>{addOn.description[lang]}</p></div>)}</div>
+          <div><h3>{nl ? 'Je hoeft het nog niet te weten.' : 'You don’t have to know yet.'}</h3><p>{nl ? 'We bekijken eerst waar je staat. Wil je liever zelf leren adverteren? Dat kan ook, zonder meteen voor een maandpakket te kiezen.' : 'Let’s look at where you are first. Prefer to learn advertising yourself? That’s an option too, without choosing a monthly package.'}</p><Link className="button-dark" to="/contact">{nl ? 'Help me kiezen' : 'Help me choose'} <span aria-hidden="true">↗</span></Link></div>
+          <div className="pricing-alternatives">{addOns.map(addOn => {
+            const content = <><h4>{addOn.name[lang]}</h4><strong>{addOn.price?.[lang] ?? (nl ? 'Op aanvraag' : 'On request')}</strong><p>{addOn.description[lang]}</p></>
+            return addOn.href ? <Link key={addOn.key} to={addOn.href} className="pricing-alternative-link">{content}<span aria-hidden="true">↗</span></Link> : <div key={addOn.key}>{content}</div>
+          })}</div>
         </div>
       </div>
     </section>

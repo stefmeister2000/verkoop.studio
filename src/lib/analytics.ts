@@ -67,6 +67,13 @@ export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown 
   sendLeadConversion(submissionId, formId, 'website_form', 'Website enquiry')
 }
 
+/** Academy signups are leads Stef follows up; they get their own label so ads can be judged separately. */
+export function trackAcademyConversion(receipt: { ok?: boolean; captured?: unknown }, submissionId: string, formId: string, track: 'gratis' | 'begeleid') {
+  if (typeof window === 'undefined' || !submissionId) return
+  if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('resend_contact')) return
+  sendLeadConversion(`academy_${submissionId}`, formId, 'academy_signup', track === 'begeleid' ? 'Meta Ads Academy: begeleid leertraject' : 'Meta Ads Academy: gratis')
+}
+
 /** Newsletter success needs a segment receipt; a honeypot acknowledgement is not a lead. */
 export function trackNewsletterConversion(receipt: { ok?: boolean; captured?: unknown }, submissionId: string) {
   if (typeof window === 'undefined' || !submissionId) return

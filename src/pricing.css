@@ -64,6 +64,9 @@
 .pricing-alternatives > div { border: 1px solid #dce3f1; background: #fff; border-radius: 16px; padding: 22px; }
 .pricing-alternatives h4 { font-size: 16px; color: #223353; display: inline; }
 .pricing-alternatives strong { display: block; color: #294cf0; font-size: 12px; margin: 5px 0 8px; }
+.pricing-alternatives > .pricing-alternative-link { position: relative; display: block; border: 1px solid #dce3f1; background: #fff; border-radius: 16px; padding: 22px 52px 22px 22px; color: inherit; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+.pricing-alternative-link > span { position: absolute; top: 20px; right: 22px; color: #294cf0; font-size: 16px; }
+.pricing-alternative-link:hover { border-color: #a5b4ff; box-shadow: 0 10px 28px #254bfa14; }
 .selected-package { margin-top: 26px; padding: 18px 22px; border: 1px solid #cdd7ff; background: #eff3ff; border-radius: 14px; font-size: 14px; color: #263d8b; }
 .selected-package a { display: inline-block; margin-left: 12px; text-decoration: underline; font-size: 12px; }
 .growth-pricing :is(a,button,summary,[tabindex]):focus-visible { outline: 3px solid #7891ff; outline-offset: 5px; }

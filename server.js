@@ -7,6 +7,7 @@ import { Resend } from 'resend'
 import { sendConfirmation } from './server-confirmation.js'
 import { captureLead } from './server-lead.js'
 import { newsletterRouter } from './server-newsletter.js'
+import { academyRouter } from './server-academy.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, 'dist')
@@ -56,6 +57,10 @@ app.use((req, res, next) => {
 })
 app.use(express.json({ limit: '32kb' }))
 app.use('/api/newsletter', newsletterRouter(resend))
+app.use('/api/academy', academyRouter({
+  resend, from: SENDER, to: LEAD_TO, replyFrom: LEAD_REPLY_FROM, siteUrl: process.env.VITE_SITE_URL || 'https://verkoop.studio',
+  crmUrl: CRM_INBOUND_URL, crmToken: CRM_INBOUND_TOKEN,
+}))
 
 // Short bio links keep campaign attribution on the destination page.
 for (const [route, source] of [['/ig', 'instagram'], ['/fb', 'facebook'], ['/li', 'linkedin']]) {

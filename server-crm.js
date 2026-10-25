@@ -1,5 +1,5 @@
 // Server-only bridge. Never import this module into the browser bundle.
-export function crmPayload(body) {
+export function crmPayload(body, { campaign = 'verkoop.studio website' } = {}) {
   const text = (value) => typeof value === 'string' ? value.trim() : ''
   const fields = [
     ['Doel', body.doel], ['Uitdaging', body.uitdaging],
@@ -16,7 +16,7 @@ export function crmPayload(body) {
     contactName: text(body.naam),
     email: text(body.email).toLowerCase(),
     phone: text(body.telefoon),
-    campaign: 'verkoop.studio website',
+    campaign,
     notes: fields.filter(([, value]) => text(value)).map(([label, value]) => `${label}: ${text(value)}`).join('\n'),
   }
   // Only structured, Google-generated identifiers cross the server bridge.
