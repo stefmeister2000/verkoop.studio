@@ -292,8 +292,8 @@ export default function Academy() {
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
           <p className="ac-hero-eyebrow"><span className="ac-live-dot" /> Meta Ads Academy <i /> 1-op-1 voor webshops</p>
-          <h1 id="academy-title">Haal €3 tot €4 omzet <span>uit elke euro Meta ads.</span></h1>
-          <p className="ac-hero-lead">Volledig 1-op-1 lessen met Stef, in je eigen account. Ook als je nog nooit hebt geadverteerd.</p>
+          <h1 id="academy-title">Start en schaal je webshop <span>met Meta ads.</span></h1>
+          <p className="ac-hero-lead">Volledig 1-op-1 lessen met Stef, in je eigen account. Ook als je nog nooit hebt geadverteerd. Onze belofte: een ROAS van 3 tot 4.</p>
           <div id="academy-hero-signup" className="ac-hero-signup">
             {signedUp ? <div className="ac-welcome-card" role="status">
               
