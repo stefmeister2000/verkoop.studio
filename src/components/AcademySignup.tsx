@@ -13,10 +13,6 @@ interface AcademySignupProps {
   onSuccess: (firstName: string) => void
 }
 
-function Arrow() {
-  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-}
-
 function Choices({ legend, options, value, onChange }: { legend: string; options: readonly (readonly [string, string])[]; value: string; onChange: (value: string) => void }) {
   return <fieldset className="ac-level-picker"><legend>{legend} <em>optioneel</em></legend><div>{options.map(([key, text]) => <button type="button" key={key} className={value === key ? 'is-active' : ''} aria-pressed={value === key} onClick={() => onChange(value === key ? '' : key)}>{text}</button>)}</div></fieldset>
 }
@@ -87,7 +83,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
     {full && <label className="ac-field ac-field-wide"><span>Waar wil je vooral beter in worden? <em>optioneel</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder="Bijvoorbeeld: opschalen zonder dat mijn ROAS zakt, mijn tracking op orde krijgen of retargeting opzetten." /></label>}
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
     {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.</span></label>}
-    <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? 'Even geduld…' : submitLabel}{status !== 'pending' && <Arrow />}</button>
+    <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? 'Even geduld…' : submitLabel}</button>
     {error && <p className="ac-form-error" role="alert">{error}</p>}
   </form>
 }
