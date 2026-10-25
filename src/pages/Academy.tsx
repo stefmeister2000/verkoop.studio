@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import AcademySignup from '../components/AcademySignup'
-import type { AcademyMember, AcademyTrack } from '../components/AcademySignup'
 import BrandMark from '../components/BrandMark'
 import ResponsiveImage from '../components/ResponsiveImage'
 import Seo from '../components/Seo'
@@ -15,15 +14,12 @@ import stefPortrait from '../assets/hero-portrait.webp'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
 import academyStylesheet from './Academy.css?url'
 
-const storageKey = 'verkoop-academy-meta-v1'
-const memberKey = 'verkoop-academy-member-v1'
-/** Lessons before this index are open to everyone; the rest unlock after a free signup. */
-const freeLessons = 1
 const number = (index: number) => String(index + 1).padStart(2, '0')
 const euro = (value: number) => `€${Number.isInteger(value) ? value : value.toFixed(2).replace('.', ',')}`
 const sectionCount = academyLessons.reduce((total, item) => total + item.sections.length, 0)
 const contactAcademy = '/contact?interesse=academy'
 const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
+const included = ['Zes praktische lessen met oefeningen', 'Samen je account, pixel en meting nalopen', 'Feedback op je campagne-opzet en creatives', 'Je resultaten samen lezen en de volgende test kiezen', 'Je eigen campagneplan', 'Je vragen rechtstreeks aan Stef']
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? 'M7 17 17 7M8 7h9v9' : 'M4 12h15m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -31,10 +27,6 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function Check() {
   return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-}
-
-function Lock() {
-  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5" stroke="currentColor" strokeWidth="1.9" /><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" /></svg>
 }
 
 function Chevron({ back = false }: { back?: boolean }) {
@@ -194,68 +186,16 @@ function NewsletterForm() {
 
 export default function Academy() {
   const pageRef = useReveal()
-  const [active, setActive] = useState(0)
   const [slide, setSlide] = useState(0)
   const [testId, setTestId] = useState(academyTests[0].id)
-  const [completed, setCompleted] = useState<string[]>([])
-  const [notes, setNotes] = useState<Record<string, string>>({})
-  const [answer, setAnswer] = useState<number | null>(null)
-  const [checked, setChecked] = useState(false)
-  const [ready, setReady] = useState(false)
-  const [storageUnavailable, setStorageUnavailable] = useState(false)
-  const [notice, setNotice] = useState('')
-  const [member, setMember] = useState<AcademyMember | null>(null)
-  const [joinedVia, setJoinedVia] = useState('')
-  const [signupTrack, setSignupTrack] = useState<AcademyTrack>('gratis')
+  const [signedUp, setSignedUp] = useState<{ naam: string; via: string } | null>(null)
   const [sticky, setSticky] = useState(false)
   const [stickyArmed, setStickyArmed] = useState(false)
-  const lessonHeading = useRef<HTMLHeadingElement>(null)
-  const lesson = academyLessons[active]
   const slideLesson = academyLessons[slide]
   const test = academyTests.find(item => item.id === testId) ?? academyTests[0]
   const testLesson = academyLessons.findIndex(item => item.id === test.lesson)
   const totals = academyTests.reduce((sum, item) => ({ spend: sum.spend + item.spend, leads: sum.leads + item.leads, relevant: sum.relevant + item.relevant }), { spend: 0, leads: 0, relevant: 0 })
-  const correct = checked && answer === lesson.correctAnswer
-  const allComplete = completed.length === academyLessons.length
-  const locked = (index: number) => !member && index >= freeLessons
-  const showSignupForm = !member || (signupTrack === 'begeleid' && member.track === 'gratis')
-  const nextLesson = Math.max(0, academyLessons.findIndex(item => !completed.includes(item.id)))
-
-  useEffect(() => {
-    try {
-      const saved: unknown = JSON.parse(localStorage.getItem(storageKey) ?? 'null')
-      if (saved && typeof saved === 'object') {
-        const record = saved as { completed?: unknown; notes?: unknown }
-        const validIds = academyLessons.map(item => item.id)
-        if (Array.isArray(record.completed)) setCompleted([...new Set(record.completed.filter((id): id is string => typeof id === 'string' && validIds.includes(id)))])
-        if (record.notes && typeof record.notes === 'object') {
-          setNotes(Object.fromEntries(Object.entries(record.notes).filter(([id, value]) => validIds.includes(id) && typeof value === 'string').map(([id, value]) => [id, String(value).slice(0, 6000)])))
-        }
-      }
-      const savedMember: unknown = JSON.parse(localStorage.getItem(memberKey) ?? 'null')
-      if (savedMember && typeof savedMember === 'object') {
-        const record = savedMember as Partial<AcademyMember>
-        setMember({ naam: typeof record.naam === 'string' ? record.naam.slice(0, 60) : '', track: record.track === 'begeleid' ? 'begeleid' : 'gratis' })
-      }
-    } catch { setStorageUnavailable(true) }
-    // The welcome mail links here with ?toegang=1, so access also works on another device.
-    const params = new URLSearchParams(location.search)
-    if (params.get('toegang') === '1') {
-      setMember(previous => previous ?? { naam: '', track: 'gratis' })
-      params.delete('toegang')
-      const rest = params.toString()
-      history.replaceState(null, '', `${location.pathname}${rest ? `?${rest}` : ''}${location.hash}`)
-    }
-    setReady(true)
-  }, [])
-
-  useEffect(() => {
-    if (!ready) return
-    try {
-      localStorage.setItem(storageKey, JSON.stringify({ completed, notes }))
-      if (member) localStorage.setItem(memberKey, JSON.stringify(member))
-    } catch { setStorageUnavailable(true) }
-  }, [completed, notes, member, ready])
+  const thanks = signedUp?.naam ? `Bedankt, ${signedUp.naam}!` : 'Bedankt!'
 
   useEffect(() => {
     const update = () => {
@@ -280,82 +220,38 @@ export default function Academy() {
     })
   }
 
-  function openLesson(index: number) {
-    setActive(index)
-    setAnswer(null)
-    setChecked(false)
-    setNotice('')
-    requestAnimationFrame(() => lessonHeading.current?.focus({ preventScroll: true }))
-    scrollToId('werkplaats')
+  function goToSignup() {
+    scrollToId('aanmelden', signedUp ? undefined : '#aanmelden input[name="naam"]')
   }
 
-  function startLearning() {
-    openLesson(nextLesson)
-  }
-
-  function goToSignup(track: AcademyTrack = 'gratis') {
-    setSignupTrack(track)
-    scrollToId('aanmelden', '#aanmelden input[name="naam"]')
-  }
-
-  function joined(formId: string) {
-    return (next: AcademyMember) => {
-      setMember(previous => ({ naam: next.naam || previous?.naam || '', track: next.track === 'begeleid' || previous?.track === 'begeleid' ? 'begeleid' : 'gratis' }))
-      setJoinedVia(formId)
-      setSignupTrack(next.track)
-    }
-  }
-
-  function finishLesson() {
-    if (!correct || !(notes[lesson.id] ?? '').trim()) return
-    setCompleted(previous => previous.includes(lesson.id) ? previous : [...previous, lesson.id])
-    setNotice(`Les ${active + 1} afgerond. ${active < academyLessons.length - 1 ? 'Je kunt verder met de volgende les.' : 'Download je plan om ermee aan de slag te gaan.'}`)
-  }
-
-  function downloadPlan() {
-    const content = ['MIJN META ADS CAMPAGNEPLAN', 'verkoop.studio / academy', '', ...academyLessons.flatMap((item, index) => [
-      `${number(index)} — ${item.shortTitle.toUpperCase()}`, item.prompt, '', (notes[item.id] ?? '').trim() || 'Nog niet ingevuld.', '',
-    ]), 'Dit plan is een werkdocument. Controleer je instellingen, meting en budget vóór je een campagne start.'].join('\n')
-    const url = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }))
-    const link = document.createElement('a')
-    link.href = url
-    link.download = 'mijn-meta-ads-campagneplan.txt'
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
-    setTimeout(() => URL.revokeObjectURL(url), 1000)
-    setNotice('Je campagneplan is als tekstbestand aangeboden om te downloaden.')
-  }
-
-  const greeting = member?.naam ? `, ${member.naam}` : ''
+  const joined = (via: string) => (naam: string) => setSignedUp({ naam, via })
 
   return <div className="academy-page" lang="nl" ref={pageRef}>
     <link rel="stylesheet" href={academyStylesheet} precedence="academy" />
-    <Seo title="Meta Ads Academy — leer adverteren met verkoop.studio" description="Leer Meta ads stap voor stap met verkoop.studio. Meld je gratis aan voor zes praktische lessen over doel, campagne-opzet, creatief testen en meting, of kies een begeleid leertraject in je eigen account." path="/academy" language="nl" />
+    <Seo title="Meta Ads Academy — leer adverteren met verkoop.studio" description="Leer Meta ads met verkoop.studio. Zes praktische lessen over doel, campagne-opzet, creatief testen en meting, met begeleiding in je eigen account. Meld je aan en Stef neemt persoonlijk contact op." path="/academy" language="nl" />
     <a className="ac-skip" href="#academy-main">Naar de inhoud</a>
 
     <header className="ac-header">
       <div className="ac-wrap ac-header-inner">
         <div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
-        <nav className="ac-pill-nav" aria-label="Academy navigatie"><a href="#aanpak">Aanpak</a><a href="#leerpad">Lessen</a><a href="#testlog">Testlog</a><a href="#begeleiding">Begeleiding</a><a href="#faq">FAQ</a></nav>
-        {member ? <button className="ac-outline-pill" onClick={startLearning}>Verder leren</button> : <button className="ac-header-cta" onClick={() => goToSignup()}><span className="ac-cta-long">Meld je gratis aan</span><span className="ac-cta-short">Start gratis</span></button>}
+        <nav className="ac-pill-nav" aria-label="Academy navigatie"><a href="#aanpak">Aanpak</a><a href="#leerpad">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#faq">FAQ</a></nav>
+        <button className="ac-header-cta" onClick={goToSignup}>Meld je aan</button>
       </div>
     </header>
 
     <main id="academy-main">
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
-          <p className="ac-hero-eyebrow"><span className="ac-live-dot" /> Gratis Meta Ads Academy <i /> {academyLessons.length} lessen</p>
+          <p className="ac-hero-eyebrow"><span className="ac-live-dot" /> Meta Ads Academy <i /> {academyLessons.length} lessen met begeleiding</p>
           <h1 id="academy-title">Leer Meta ads zonder je budget <span>op goed geluk in te zetten.</span></h1>
-          <p className="ac-hero-lead">Zes praktische lessen, oefeningen op je eigen aanbod en een campagneplan dat je meeneemt. Zo leer je adverteren zoals wij het voor klanten doen.</p>
+          <p className="ac-hero-lead">Zes praktische lessen, oefeningen op je eigen aanbod en begeleiding in je eigen account. Meld je aan en Stef neemt persoonlijk contact met je op.</p>
           <div id="academy-hero-signup" className="ac-hero-signup">
-            {member ? <div className="ac-welcome-card" role="status">
+            {signedUp ? <div className="ac-welcome-card" role="status">
               <span className="ac-tick"><Check /></span>
-              <div><strong>{joinedVia === 'academy-hero' ? `Gelukt${greeting}! Alle lessen staan open.` : `Welkom terug${greeting}.`}</strong><small>{joinedVia === 'academy-hero' ? 'Stef neemt persoonlijk contact met je op. Check ook je inbox.' : `${completed.length} van ${academyLessons.length} lessen afgerond.`}</small></div>
-              <button className="ac-button" onClick={startLearning}>{completed.length ? 'Ga verder' : 'Start les 01'}<Arrow /></button>
+              <div><strong>{thanks} Je aanmelding is binnen.</strong><small>Stef neemt persoonlijk contact met je op. Je krijgt ook een bevestiging per mail.</small></div>
             </div> : <AcademySignup formId="academy-hero" onSuccess={joined('academy-hero')} />}
           </div>
-          {!member && <ul className="ac-hero-note"><li><Check /> 100% gratis</li><li><Check /> Meteen toegang</li><li><Check /> Geen wachtwoord nodig</li></ul>}
+          {!signedUp && <ul className="ac-hero-note"><li><Check /> Persoonlijk contact met Stef</li><li><Check /> Leren in je eigen account</li><li><Check /> Voorstel op maat</li></ul>}
           <div className="ac-trust">
             <img src={stefDeskSmall} alt="" width="44" height="44" loading="eager" />
             <p><strong>Door Stef Keppens</strong>, verkoop.studio<span>Uit de praktijk bij {practice.map((name, index) => <b key={name}>{name}{index < practice.length - 1 && <i aria-hidden="true">·</i>}</b>)}</span></p>
@@ -394,10 +290,10 @@ export default function Academy() {
           <p className="ac-rule-line"><span>Leren adverteren, <strong>in je eigen campagne.</strong></span></p>
           <div className="ac-inside-grid">
             <div><h3><span>01</span>LEREN</h3><ul><li><b>Zes</b> praktische lessen</li><li><b>Kennischeck</b> bij elke les</li><li><b>Verdieping</b> via Meta Blueprint</li></ul></div>
-            <div><h3><span>02</span>TOEPASSEN</h3><ul><li><b>Oefening</b> op je eigen aanbod</li><li><b>Campagneplan</b> dat meegroeit</li><li><b>Download</b> als werkdocument</li></ul></div>
+            <div><h3><span>02</span>TOEPASSEN</h3><ul><li><b>Oefening</b> op je eigen aanbod</li><li><b>Campagneplan</b> dat meegroeit</li><li><b>Testlog</b> om je cijfers te lezen</li></ul></div>
             <div><h3><span>03</span>BEGELEIDING</h3><ul><li><b>Meekijken</b> in je eigen account</li><li><b>Feedback</b> op opzet en creatives</li><li><b>Vragen</b> rechtstreeks aan Stef</li></ul></div>
           </div>
-          <div className="ac-inside-foot"><p>Leren denken en beslissen als een <span>performance marketeer</span>.</p>{!member && <button className="ac-button" onClick={() => goToSignup()}>Meld je gratis aan<Arrow /></button>}</div>
+          <div className="ac-inside-foot"><p>Leren denken en beslissen als een <span>performance marketeer</span>.</p>{!signedUp && <button className="ac-button" onClick={goToSignup}>Meld je aan<Arrow /></button>}</div>
         </div>
       </section>
 
@@ -417,10 +313,10 @@ export default function Academy() {
 
       <section id="leerpad" className="ac-curriculum ac-wrap" aria-labelledby="curriculum-title">
         <div className="ac-curriculum-top">
-          <p className="ac-kicker" id="curriculum-title">WAT JE LEERT · HET STARTLEERPAD</p>
+          <p className="ac-kicker" id="curriculum-title">WAT JE LEERT · HET PROGRAMMA</p>
           <div className="ac-slider-buttons"><button onClick={() => setSlide(slide === 0 ? academyLessons.length - 1 : slide - 1)} aria-label="Vorige les"><Chevron back /></button><button onClick={() => setSlide(slide === academyLessons.length - 1 ? 0 : slide + 1)} aria-label="Volgende les"><Chevron /></button></div>
         </div>
-        <div className="ac-progress-tabs">{academyLessons.map((item, index) => <button key={item.id} className={index === slide ? 'is-active' : index < slide ? 'is-past' : ''} onClick={() => setSlide(index)} aria-label={`Les ${number(index)}: ${item.shortTitle}`} aria-current={index === slide ? 'true' : undefined}><span>{number(index)}{locked(index) && <Lock />}</span><em>{item.shortTitle}</em></button>)}</div>
+        <div className="ac-progress-tabs">{academyLessons.map((item, index) => <button key={item.id} className={index === slide ? 'is-active' : index < slide ? 'is-past' : ''} onClick={() => setSlide(index)} aria-label={`Les ${number(index)}: ${item.shortTitle}`} aria-current={index === slide ? 'true' : undefined}><span>{number(index)}</span><em>{item.shortTitle}</em></button>)}</div>
         <div className="ac-slide" key={slideLesson.id}>
           <div className="ac-slide-visual"><LessonVisual id={slideLesson.id} /></div>
           <div className="ac-slide-copy">
@@ -429,10 +325,7 @@ export default function Academy() {
             <p>{slideLesson.summary}</p>
             <ul>{slideLesson.sections.map(section => <li key={section.title}><Check />{section.title}</li>)}</ul>
             <p className="ac-slide-outcome"><span>NA DEZE LES</span>{slideLesson.outcome}</p>
-            <div className="ac-slide-actions">
-              {locked(slide) ? <><button className="ac-button" onClick={() => goToSignup()}>Ontgrendel gratis<Arrow /></button><span className="ac-lock-tag"><Lock /> Na gratis aanmelding</span></> : <button className="ac-button" onClick={() => openLesson(slide)}>{completed.includes(slideLesson.id) ? 'Bekijk les' : 'Open les'} {number(slide)}<Arrow /></button>}
-              {completed.includes(slideLesson.id) && <span className="ac-done-tag"><Check /> Afgerond</span>}
-            </div>
+            <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>Meld je aan<Arrow /></button><span className="ac-slide-hint">Les {number(slide)} van {number(academyLessons.length - 1)}</span></div>
           </div>
         </div>
       </section>
@@ -451,7 +344,7 @@ export default function Academy() {
           <div className="ac-testlog-main">
             <div className="ac-testlog-head"><div><strong>Demo-aanvragen</strong><span>Leads · 3 concepten</span></div><code>Relevante aanvragen, cumulatief</code></div>
             <TestChart selected={test.id} />
-            <div className="ac-testlog-decision" aria-live="polite"><span className="ac-mock-label">BESLISSING · {test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testLesson >= 0 && <button className="ac-text-link" onClick={() => locked(testLesson) ? goToSignup() : openLesson(testLesson)}>{locked(testLesson) && <Lock />}Hoort bij les {number(testLesson)}: {academyLessons[testLesson].shortTitle}<Arrow /></button>}</div>
+            <div className="ac-testlog-decision" aria-live="polite"><span className="ac-mock-label">BESLISSING · {test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testLesson >= 0 && <button className="ac-text-link" onClick={goToSignup}>Dit leer je in les {number(testLesson)}: {academyLessons[testLesson].shortTitle}<Arrow /></button>}</div>
           </div>
           <div className="ac-testlog-table">
             <div className="ac-table-caption"><span>TESTS</span><span>Klik op een test om de beslissing te zien</span></div>
@@ -481,63 +374,27 @@ export default function Academy() {
         </div>
       </section>
 
-      <section id="werkplaats" className="ac-workspace-section ac-wrap" aria-labelledby="workspace-title">
-        <div className="ac-section-heading"><div><p className="ac-dot-kicker"><span /> Van lezen naar doen</p><h2 id="workspace-title">Welkom in je <span>werkplaats.</span></h2></div><p>Lees de les, pas ze toe op je eigen aanbod en check je inzicht. Elke afgeronde les vult je campagneplan verder aan.</p></div>
-        <div className="ac-workspace">
-          <aside className="ac-sidebar" aria-label="Jouw leerpad">
-            <div className="ac-sidebar-heading"><span className="ac-mock-label">META ADS / DE BASIS</span><h3>Jouw leerpad</h3><p>{completed.length} van {academyLessons.length} lessen afgerond</p><progress value={completed.length} max={academyLessons.length} aria-label="Voortgang van het leerpad" /></div>
-            <nav aria-label="Les kiezen">{academyLessons.map((item, index) => <button key={item.id} onClick={() => openLesson(index)} className={active === index ? 'is-active' : ''} aria-current={active === index ? 'step' : undefined}><span className={`ac-sidebar-number ${completed.includes(item.id) ? 'is-complete' : ''} ${locked(index) ? 'is-locked' : ''}`}>{completed.includes(item.id) ? <Check /> : locked(index) ? <Lock /> : number(index)}</span><span>{item.shortTitle}</span>{locked(index) && <span className="sr-only"> (na gratis aanmelding)</span>}</button>)}</nav>
-            <div className="ac-sidebar-download"><h4>Je plan gaat met je mee.</h4><p>Download je ingevulde antwoorden als één werkdocument.</p><button onClick={downloadPlan}>Download mijn plan<span aria-hidden="true">↓</span></button></div>
-            <p className="ac-storage-note">{storageUnavailable ? 'Opslaan in deze browser lukt niet. Download je plan voordat je de pagina sluit.' : 'Je antwoorden blijven in deze browser en worden niet verstuurd.'}</p>
-          </aside>
-          <article className="ac-lesson" aria-labelledby="lesson-title">
-            <div className="ac-lesson-meta"><span>LES {number(active)} <span>/ {number(academyLessons.length - 1)}</span></span><span>{locked(active) ? 'Gratis na aanmelding' : 'Uitleg + oefening'}</span></div>
-            <h3 id="lesson-title" tabIndex={-1} ref={lessonHeading}>{lesson.title}</h3>
-            <p className="ac-lesson-outcome"><span>Na deze les</span>{lesson.outcome}</p>
-            {locked(active) ? <div className="ac-locked">
-              <ul className="ac-locked-preview">{lesson.sections.map((section, index) => <li key={section.title}><span>{index + 1}</span>{section.title}<Lock /></li>)}</ul>
-              <div className="ac-locked-card">
-                <span className="ac-mock-label">GRATIS NA AANMELDING</span>
-                <h4>Ontgrendel les {number(freeLessons)} tot {number(academyLessons.length - 1)}.</h4>
-                <p>Laat je naam en e-mailadres achter. Je krijgt meteen toegang tot alle lessen, de oefeningen en je campagneplan.</p>
-                <AcademySignup formId="academy-unlock" submitLabel="Ontgrendel alle lessen" onSuccess={joined('academy-unlock')} />
-                <small><Check /> Geen wachtwoord nodig <span>·</span> Uitschrijven kan altijd</small>
-              </div>
-            </div> : <>
-              {joinedVia === 'academy-unlock' && <p className="ac-unlocked" role="status"><Check /> Gelukt{greeting}! Alle lessen staan open en Stef neemt persoonlijk contact met je op.</p>}
-              <div className="ac-lesson-sections">{lesson.sections.map((section, index) => <section key={section.title}><h4><span>{index + 1}</span>{section.title}</h4><p>{section.text}</p></section>)}</div>
-              <aside className="ac-example"><span className="ac-mock-label">ZO KAN DAT ERUITZIEN</span><p>{lesson.example}</p></aside>
-              <div className="ac-exercise"><span className="ac-mock-label">NU JIJ</span><label htmlFor={`exercise-${lesson.id}`}>{lesson.exercise}</label><p id="exercise-help">{lesson.prompt}</p><textarea key={lesson.id} id={`exercise-${lesson.id}`} aria-describedby="exercise-help exercise-save" value={notes[lesson.id] ?? ''} maxLength={6000} rows={4} onChange={event => setNotes(previous => ({ ...previous, [lesson.id]: event.target.value }))} placeholder="Schrijf hier jouw antwoord…" /><small id="exercise-save">{storageUnavailable ? 'Download je plan om je antwoord te bewaren.' : 'Wordt bewaard in deze browser.'}</small></div>
-              <fieldset className="ac-quiz"><legend><span className="ac-mock-label">CHECK JE INZICHT</span>{lesson.question}</legend>{lesson.answers.map((option, index) => <label key={`${lesson.id}-${index}`} className={`${answer === index ? 'is-selected' : ''} ${checked && answer === index ? (correct ? 'is-correct' : 'is-incorrect') : ''}`}><input type="radio" name={`quiz-${lesson.id}`} value={index} checked={answer === index} onChange={() => { setAnswer(index); setChecked(false); setNotice('') }} /><span>{option}</span></label>)}<button className="ac-button ac-button-outline" disabled={answer === null} onClick={() => setChecked(true)}>Controleer mijn antwoord<Arrow /></button><div className="ac-quiz-feedback" aria-live="polite">{checked && <p className={correct ? 'is-correct' : 'is-incorrect'}><strong>{correct ? 'Klopt.' : 'Nog niet helemaal.'}</strong> {correct ? lesson.explanation : 'Kijk nog eens naar de uitleg hierboven en probeer opnieuw.'}</p>}</div></fieldset>
-              <div className="ac-lesson-finish"><div><button className="ac-button" onClick={finishLesson} disabled={!correct || !(notes[lesson.id] ?? '').trim() || completed.includes(lesson.id)}>{completed.includes(lesson.id) ? <><Check /> Les afgerond</> : <>Rond deze les af<Check /></>}</button>{!completed.includes(lesson.id) && <small>Vul je oefening in en beantwoord de kennisvraag correct.</small>}</div>{completed.includes(lesson.id) && active < academyLessons.length - 1 && <button className="ac-text-link" onClick={() => openLesson(active + 1)}>{locked(active + 1) && <Lock />}Volgende les<Arrow /></button>}</div>
-              <div className="ac-notice" role="status">{notice}</div>
-              {allComplete && <div className="ac-complete"><span className="ac-mock-label">LEERPAD AFGEROND</span><h4>Je basis staat. Tijd om ermee te werken.</h4><p>Download je plan, of zet je eerste campagne op samen met Stef.</p><div><button onClick={downloadPlan} className="ac-button ac-button-light">Download mijn campagneplan<Arrow /></button><button className="ac-text-link ac-text-link-light" onClick={() => goToSignup('begeleid')}>Vraag begeleiding aan<Arrow /></button></div></div>}
-              <a className="ac-source" href={lesson.source.url} target="_blank" rel="noreferrer">Verdieping: {lesson.source.label}<Arrow diagonal /></a>
-            </>}
-          </article>
-        </div>
-      </section>
-
-      <section id="begeleiding" className="ac-plans ac-wrap" aria-labelledby="plans-title">
-        <div className="ac-section-heading ac-section-heading-center"><div><p className="ac-dot-kicker"><span /> Leren met verkoop.studio</p><h2 id="plans-title">Zelf leren.<br /><span>Of samen in je eigen account.</span></h2></div></div>
+      <section id="zo-werkt-het" className="ac-plans ac-wrap" aria-labelledby="plans-title">
+        <div className="ac-section-heading ac-section-heading-center"><div><p className="ac-dot-kicker"><span /> Zo werkt het</p><h2 id="plans-title">Geen cursus om door te klikken.<br /><span>Je leert het in je eigen account.</span></h2></div></div>
         <div className="ac-plan-grid">
           <article className="ac-plan ac-reveal">
-            <div className="ac-plan-top"><span>01</span><span>Op je eigen tempo</span></div>
-            <h3>Het startleerpad</h3>
-            <p className="ac-plan-price">Gratis</p>
-            <p>De basis van goede Meta-advertenties, toegepast op je eigen aanbod.</p>
-            <ul><li><Check />{academyLessons.length} praktische lessen met voorbeelden</li><li><Check />Een kennischeck bij elke les</li><li><Check />Je eigen campagneplan om te downloaden</li><li><Check />Verdieping via Meta Blueprint</li></ul>
-            {member ? <button className="ac-button ac-button-outline" onClick={startLearning}>Ga verder met leren<Arrow /></button> : <button className="ac-button ac-button-outline" onClick={() => goToSignup('gratis')}>Meld je gratis aan<Arrow /></button>}
-            <small>Aanmelden met naam en e-mail. Geen wachtwoord nodig.</small>
+            <div className="ac-plan-top"><span>01–03</span><span>Van aanmelding tot start</span></div>
+            <ol className="ac-next-steps ac-how-steps">
+              <li><span>1</span><div><strong>Je meldt je aan</strong><small>Laat je naam, e-mailadres en telefoonnummer achter. Meer hoeft niet.</small></div></li>
+              <li><span>2</span><div><strong>Kennismaking met Stef</strong><small>Stef neemt contact met je op en bespreekt je doel, je ervaring en je budget.</small></div></li>
+              <li><span>3</span><div><strong>Voorstel en start</strong><small>Je krijgt een voorstel op maat. Daarna beslis je, en start je traject in je eigen account.</small></div></li>
+            </ol>
+            <button className="ac-button ac-button-outline" onClick={goToSignup}>Meld je aan<Arrow /></button>
+            <small>Eerst je doel bespreken, dan een voorstel.</small>
           </article>
           <article className="ac-plan ac-plan-featured ac-reveal">
-            <div className="ac-plan-top"><span>02</span><span>Met Stef aan je zijde</span></div>
-            <h3>Begeleid leertraject</h3>
+            <div className="ac-plan-top"><span>META ADS ACADEMY</span><span>Met Stef aan je zijde</span></div>
+            <h3>Wat je krijgt</h3>
             <p className="ac-plan-price">Op maat</p>
             <p>Je leert het in je eigen Ads Manager, aan je eigen aanbod, met iemand die meekijkt.</p>
-            <ul><li><Check />Alles uit het startleerpad</li><li><Check />Samen je account, pixel en meting nalopen</li><li><Check />Feedback op je campagne-opzet en creatives</li><li><Check />Je resultaten samen lezen en de volgende test kiezen</li><li><Check />Je vragen rechtstreeks aan Stef</li></ul>
-            {member?.track === 'begeleid' ? <p className="ac-plan-done"><Check /> Aangevraagd. Stef neemt contact met je op.</p> : <button className="ac-button ac-button-light" onClick={() => goToSignup('begeleid')}>Vraag je leertraject aan<Arrow /></button>}
-            <small>Eerst je doel bespreken, dan een voorstel. Advertentiebudget is niet inbegrepen.</small>
+            <ul>{included.map(item => <li key={item}><Check />{item}</li>)}</ul>
+            <button className="ac-button ac-button-light" onClick={goToSignup}>Meld je aan<Arrow /></button>
+            <small>Prijs en ritme na een kennismakingsgesprek. Advertentiebudget is niet inbegrepen.</small>
           </article>
         </div>
       </section>
@@ -545,22 +402,22 @@ export default function Academy() {
       <section id="aanmelden" className="ac-signup-section ac-wrap" aria-labelledby="signup-title">
         <div className="ac-signup-intro">
           <p className="ac-dot-kicker"><span /> Aanmelden</p>
-          <h2 id="signup-title">Start vandaag.<br /><span>{signupTrack === 'begeleid' ? 'Samen met Stef.' : 'Het is gratis.'}</span></h2>
-          <p>Laat je gegevens achter. Je hebt meteen toegang tot alle zes lessen en je campagneplan, en Stef neemt persoonlijk contact met je op.</p>
+          <h2 id="signup-title">Meld je aan.<br /><span>Stef neemt contact op.</span></h2>
+          <p>Vul het formulier in. Stef bekijkt je aanmelding en neemt persoonlijk contact met je op om je doel en de opzet van je traject te bespreken.</p>
           <ol className="ac-next-steps">
-            <li><span>1</span><div><strong>Meteen toegang</strong><small>Alle lessen gaan open in deze browser.</small></div></li>
-            <li><span>2</span><div><strong>Welkomstmail</strong><small>Met je persoonlijke link, ook voor een ander toestel.</small></div></li>
-            <li><span>3</span><div><strong>Persoonlijk contact</strong><small>Stef neemt contact met je op om te bekijken waar je staat en wat je volgende stap is.</small></div></li>
+            <li><span>1</span><div><strong>Vul het formulier in</strong><small>Je contactgegevens en, als je wil, je ervaring en budget.</small></div></li>
+            <li><span>2</span><div><strong>Stef neemt contact op</strong><small>Telefonisch of per e-mail, om te bekijken waar je staat.</small></div></li>
+            <li><span>3</span><div><strong>Je krijgt een voorstel</strong><small>Op maat van je doel. Daarna beslis je.</small></div></li>
           </ol>
-          <p className="ac-privacy">We gebruiken je gegevens alleen om je toegang te geven en je op te volgen. Nieuwsbrieven krijg je enkel als je dat aanvinkt.</p>
+          <p className="ac-privacy">We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.</p>
         </div>
         <div className="ac-signup-card">
-          {showSignupForm ? <AcademySignup formId={member ? 'academy-upgrade' : 'academy-signup'} variant="full" track={signupTrack} onTrackChange={setSignupTrack} onSuccess={joined('academy-signup')} /> : <div className="ac-signup-done" role="status">
+          {signedUp ? <div className="ac-signup-done" role="status">
             <span className="ac-tick ac-tick-large"><Check /></span>
-            <h3>{joinedVia === 'academy-signup' ? `Gelukt${greeting}!` : `Je bent al aangemeld${greeting}.`}</h3>
-            <p>{member?.track === 'begeleid' ? 'Je hebt toegang tot alle lessen. Stef neemt contact met je op om je doel en de opzet van je leertraject te bespreken.' : 'Je hebt toegang tot alle lessen en Stef neemt persoonlijk contact met je op. Check ook je inbox voor je welkomstmail.'}</p>
-            <div><button className="ac-button" onClick={startLearning}>{completed.length ? 'Ga verder met leren' : 'Start met les 01'}<Arrow /></button>{member?.track !== 'begeleid' && <button className="ac-text-link" onClick={() => setSignupTrack('begeleid')}>Toch liever begeleiding?<Arrow /></button>}</div>
-          </div>}
+            <h3>{thanks}</h3>
+            <p>Je aanmelding is binnen. Stef neemt persoonlijk contact met je op om je doel en de opzet te bespreken. Je krijgt ook een bevestiging per mail.</p>
+            <div><Link className="ac-button" to="/cases">Bekijk intussen onze cases<Arrow /></Link></div>
+          </div> : <AcademySignup formId="academy-signup" variant="full" onSuccess={joined('academy-signup')} />}
         </div>
       </section>
 
@@ -581,23 +438,23 @@ export default function Academy() {
       </section>
 
       <section className="ac-final ac-wrap" aria-labelledby="final-title">
-        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">JE HOEFT NIET ALLES AL TE WETEN</p><h2 id="final-title">Begin met één goede stap.</h2><p>Je eerste les staat klaar. De rest bouw je onderweg, alleen of samen met ons.</p></div><div className="ac-final-actions">{member ? <button className="ac-button ac-button-light" onClick={startLearning}>Ga verder met je leerpad<Arrow /></button> : <button className="ac-button ac-button-light" onClick={() => goToSignup()}>Meld je gratis aan<Arrow /></button>}<button className="ac-text-link ac-text-link-light" onClick={() => goToSignup('begeleid')}>Of kies begeleiding<Arrow /></button></div></div>
+        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">JE HOEFT NIET ALLES AL TE WETEN</p><h2 id="final-title">Begin met één goede stap.</h2><p>Meld je aan. Stef neemt contact op en samen bekijken we waar je staat.</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>Meld je aan<Arrow /></button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>Of stel eerst een vraag<Arrow diagonal /></Link></div></div>
       </section>
     </main>
 
-    {!member && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
-      <p><strong>Gratis Meta Ads Academy</strong><span>{academyLessons.length} lessen · oefeningen · je eigen campagneplan</span></p>
-      <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={() => goToSignup()}>Meld je gratis aan<Arrow /></button>
+    {!signedUp && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
+      <p><strong>Meta Ads Academy</strong><span>Leer Meta ads met Stef, in je eigen account</span></p>
+      <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>Meld je aan<Arrow /></button>
     </div>}
 
     <footer className="ac-footer">
       <div className="ac-wrap">
         <div className="ac-footer-top">
-          <div><div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>Leer Meta ads met een plan. Een onafhankelijk leerpad van verkoop.studio voor ondernemers en marketeers.</p></div>
+          <div><div className="ac-identity"><Link to="/" aria-label="verkoop.studio — naar de homepage"><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>Leer Meta ads met een plan. Een praktisch leertraject van verkoop.studio voor ondernemers en marketeers.</p></div>
           <NewsletterForm />
         </div>
         <div className="ac-footer-columns">
-          <div><h3>Academy</h3><a href="#leerpad">Lessen</a><a href="#testlog">Testlog</a><a href="#werkplaats">Werkplaats</a><a href="#aanmelden">Aanmelden</a></div>
+          <div><h3>Academy</h3><a href="#leerpad">Programma</a><a href="#testlog">Testlog</a><a href="#zo-werkt-het">Zo werkt het</a><a href="#aanmelden">Aanmelden</a></div>
           <div><h3>verkoop.studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
           <div><h3>Contact</h3><a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a><Link to={contactAcademy}>Plan een gesprek</Link><span>Lochristi, België</span></div>
           <div><h3>Goed om te weten</h3><span>Niet verbonden aan of gecertificeerd door Meta.</span><span>Geen garantie op resultaten.</span></div>

@@ -22,10 +22,10 @@ export const addOns: AddOn[] = [
   {
     key: 'learning-track',
     name: { nl: 'Meta Ads Academy', en: 'Meta Ads Academy' },
-    price: { nl: 'Gratis starten', en: 'Start for free' },
+    price: { nl: 'Meld je aan', en: 'Sign up' },
     description: {
-      nl: 'Leer zelf Meta-advertenties opzetten, testen en meten. Start met het gratis leerpad of kies een begeleid traject met Stef.',
-      en: 'Learn to set up, test and measure Meta ads yourself. Start with the free learning path or choose a guided track with Stef.',
+      nl: 'Leer zelf Meta-advertenties opzetten, testen en meten, met Stef die meekijkt in je eigen account. Meld je aan en we bespreken samen de opzet.',
+      en: 'Learn to set up, test and measure Meta ads yourself, with Stef looking along in your own account. Sign up and we discuss the setup together.',
     },
     href: '/academy',
   },

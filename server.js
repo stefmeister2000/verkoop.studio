@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '32kb' }))
 app.use('/api/newsletter', newsletterRouter(resend))
 app.use('/api/academy', academyRouter({
-  resend, from: SENDER, to: LEAD_TO, replyFrom: LEAD_REPLY_FROM, siteUrl: process.env.VITE_SITE_URL || 'https://verkoop.studio',
+  resend, from: SENDER, to: LEAD_TO, replyFrom: LEAD_REPLY_FROM,
   crmUrl: CRM_INBOUND_URL, crmToken: CRM_INBOUND_TOKEN,
 }))
 
