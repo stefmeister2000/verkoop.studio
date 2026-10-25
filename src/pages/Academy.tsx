@@ -19,10 +19,22 @@ const euro = (value: number) => `€${Number.isInteger(value) ? value : value.to
 const sectionCount = academyLessons.reduce((total, item) => total + item.sections.length, 0)
 const contactAcademy = '/contact?interesse=academy'
 const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
+const whyMeta = ['Je bereikt je klant nog vóór die actief zoekt', 'Je toont je aanbod met beeld en video, waar je doelgroep al scrolt', 'Je test snel welke boodschap aanslaat', 'Je stuurt op aanvragen of verkoop, niet op likes']
+const pitfalls = ['Boosten zonder duidelijk doel', 'Budget versnipperd over te veel advertentiesets', 'Drie keer dezelfde advertentie in een andere kleur', 'Cijfers in Ads Manager die niet kloppen met je CRM', 'Opschalen na twee goede dagen']
+const path = [
+  ['BASIS', 'Doel, aanbod en meting op orde', 'Je weet welke actie telt voor je bedrijf en of je die correct meet, tot in je CRM.'],
+  ['LANCEREN', 'Je eerste campagne live', 'Een eenvoudige opzet met een bewust testbudget, met feedback van Stef voor je publiceert.'],
+  ['TESTEN', 'Creatives die echt verschillen', 'Drie invalshoeken en een testlog, zodat je ziet wat aanslaat en waarom.'],
+  ['VERBETEREN', 'Beslissen op je cijfers', 'Samen je resultaten lezen, je volgende test kiezen en pas opschalen als de cijfers het toelaten.'],
+] as const
 const included = ['Zes praktische lessen met oefeningen', 'Samen je account, pixel en meting nalopen', 'Feedback op je campagne-opzet en creatives', 'Je resultaten samen lezen en de volgende test kiezen', 'Je eigen campagneplan', 'Je vragen rechtstreeks aan Stef']
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? 'M7 17 17 7M8 7h9v9' : 'M4 12h15m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+}
+
+function Cross() {
+  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" /></svg>
 }
 
 function Check() {
@@ -202,8 +214,10 @@ export default function Academy() {
       const hero = document.getElementById('academy-hero-signup')?.getBoundingClientRect()
       const signup = document.getElementById('aanmelden')?.getBoundingClientRect()
       const footer = document.querySelector('.ac-footer')?.getBoundingClientRect()
+      const card = document.querySelector('.ac-focus-card')?.getBoundingClientRect()
       const visible = (rect?: DOMRect) => !!rect && rect.top < innerHeight && rect.bottom > 0
-      setSticky(!!hero && hero.bottom < 0 && !visible(signup) && !visible(footer))
+      // Hide the bar wherever another join button is already on screen.
+      setSticky(!!hero && hero.bottom < 0 && !visible(signup) && !visible(footer) && !visible(card))
       // Mount the bar only once the visitor scrolls, so it never animates while the stylesheet is still loading.
       if (scrollY > 40) setStickyArmed(true)
     }
@@ -270,31 +284,41 @@ export default function Academy() {
         </ul>
       </section>
 
-      <section id="aanpak" className="ac-about ac-wrap" aria-labelledby="about-title">
-        <figure className="ac-photo-card ac-reveal">
-          <ResponsiveImage src={stefNooms} alt="Stef Keppens bij Nooms" sizes="(max-width: 900px) 100vw, 480px" loading="lazy" />
-          <figcaption className="ac-photo-chip"><span>STEF KEPPENS</span>Growth & strategy</figcaption>
-        </figure>
-        <div className="ac-about-copy ac-reveal">
-          <h2 id="about-title">Wat de <span>academy</span> doet.</h2>
-          <p>De academy leert je Meta-advertenties opzetten vanuit een <strong>commercieel doel</strong>: aanvragen, boekingen of verkoop. Niet vanuit de <strong>boost-knop</strong>.</p>
-          <p className="ac-muted">Je leert adverteren <strong>voorbij de instellingen</strong>.<br />Niet alleen wat je aanklikt, maar waarom.</p>
-          <p className="ac-muted">Ads Manager is één deel.<br /><strong>Aanbod</strong>, <strong>creatief</strong> en <strong>meting</strong> bepalen minstens even veel.</p>
-          <blockquote>Daar focust de academy op.<br />Keuzes die je begrijpt en kan herhalen.</blockquote>
-        </div>
-      </section>
+      <section id="aanpak" className="ac-focus ac-wrap" aria-labelledby="focus-title">
+        <article className="ac-focus-article">
+          <p className="ac-dot-kicker"><span /> Over de academy</p>
+          <h2 id="focus-title">Leer Meta ads die <span>aanvragen en verkoop opleveren.</span></h2>
+          <p className="ac-focus-lead">Veel ondernemers starten met Meta ads zonder plan: de boost-knop, budget verspreid over te veel advertentiesets en beslissingen op basis van een paar klikken. In de Meta Ads Academy pak je het anders aan. Stap voor stap, in je eigen account, met Stef die meekijkt.</p>
 
-      <section className="ac-wrap" aria-labelledby="inside-title">
-        <div className="ac-glass ac-inside ac-reveal">
-          <h2 id="inside-title">Wat zit er in<br /><span>de academy</span></h2>
-          <p className="ac-rule-line"><span>Leren adverteren, <strong>in je eigen campagne.</strong></span></p>
-          <div className="ac-inside-grid">
-            <div><h3><span>01</span>LEREN</h3><ul><li><b>Zes</b> praktische lessen</li><li><b>Kennischeck</b> bij elke les</li><li><b>Verdieping</b> via Meta Blueprint</li></ul></div>
-            <div><h3><span>02</span>TOEPASSEN</h3><ul><li><b>Oefening</b> op je eigen aanbod</li><li><b>Campagneplan</b> dat meegroeit</li><li><b>Testlog</b> om je cijfers te lezen</li></ul></div>
-            <div><h3><span>03</span>BEGELEIDING</h3><ul><li><b>Meekijken</b> in je eigen account</li><li><b>Feedback</b> op opzet en creatives</li><li><b>Vragen</b> rechtstreeks aan Stef</li></ul></div>
+          <h3>Waarom Meta ads?</h3>
+          <ul className="ac-check-list">{whyMeta.map(item => <li key={item}><span className="ac-list-icon is-yes"><Check /></span>{item}</li>)}</ul>
+
+          <h3>Waar het vaak misloopt</h3>
+          <ul className="ac-check-list">{pitfalls.map(item => <li key={item}><span className="ac-list-icon is-no"><Cross /></span>{item}</li>)}</ul>
+
+          <h3>Je traject in de academy</h3>
+          <ol className="ac-path">{path.map(([label, title, text], index) => <li key={label}><span className="ac-path-label"><b>{number(index)}</b>{label}</span><div><strong>{title}</strong><p>{text}</p></div></li>)}</ol>
+
+          <h3>Van wie je leert</h3>
+          <div className="ac-focus-author">
+            <img src={stefDeskSmall} alt="" width="56" height="56" loading="lazy" />
+            <p><strong>Stef Keppens</strong> werkt vanuit verkoop.studio in Lochristi aan campagnes, landingspagina’s, tracking en conversie voor onder meer Pinacello, O’Learys en E-Kart, en bouwt met Nooms zijn eigen merk op. In de academy leer je de werkwijze die hij daar gebruikt: eerst het doel en de meting, dan pas het budget.</p>
           </div>
-          <div className="ac-inside-foot"><p>Leren denken en beslissen als een <span>performance marketeer</span>.</p>{!signedUp && <button className="ac-button" onClick={goToSignup}>Meld je aan<Arrow /></button>}</div>
-        </div>
+
+          <p className="ac-focus-cta"><Arrow /> Meld je aan en Stef neemt persoonlijk contact met je op om te bekijken waar je staat.</p>
+        </article>
+
+        <aside className="ac-focus-card" aria-label="Meta Ads Academy in het kort">
+          <figure><ResponsiveImage src={stefNooms} alt="Stef Keppens van verkoop.studio" sizes="340px" loading="lazy" /><figcaption>META ADS ACADEMY</figcaption></figure>
+          <div className="ac-focus-card-body">
+            <h3>Meta Ads Academy</h3>
+            <span className="ac-focus-url">verkoop.studio/academy</span>
+            <p>Leer Meta ads die aanvragen en verkoop opleveren, in je eigen account.</p>
+            <dl><div><dt>Lessen</dt><dd>{number(academyLessons.length - 1)}</dd></div><div><dt>Begeleiding</dt><dd>1-op-1</dd></div><div><dt>Account</dt><dd>Eigen</dd></div></dl>
+            {signedUp ? <p className="ac-focus-done"><Check /> Je aanmelding is binnen.</p> : <button className="ac-button ac-focus-join" onClick={goToSignup}>Meld je aan<Arrow /></button>}
+            <small>Prijs op maat, na een kennismaking met Stef.</small>
+          </div>
+        </aside>
       </section>
 
       <section className="ac-not ac-wrap" aria-labelledby="not-title">
