@@ -12,7 +12,6 @@ import stefNooms from '../assets/stef.webp'
 import studioTeam from '../assets/studio-team.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
 import pinacelloPage from '../assets/cases/pinacello.webp'
-import pinacelloPoster from '../assets/cases/pinacello-video-poster.webp'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
 import academyStylesheet from './Academy.css?url'
 
@@ -34,11 +33,6 @@ const pinacelloSteps = [
   ['Aandacht', 'Meta ads en content rond het product en het aanbod.'],
   ['Pagina', 'Een campagnepagina met aanbod, bundels en een directe bestelknop.'],
   ['Retargeting', 'Wie interesse toonde, komt terug tot de aankoop.'],
-]
-const pinacelloLessons = [
-  ['creatives', 'Creatives', 'Echte content over je product bepaalt wie Meta bereikt.'],
-  ['rendement', 'ROAS & LTV', 'Een sterk aanbod verhoogt je orderwaarde, en dus je ROAS.'],
-  ['retargeting', 'Retargeting', 'Twijfelaars haal je terug met de juiste boodschap.'],
 ]
 const whyMeta = ['Je bereikt kopers nog voor ze zelf zoeken', 'Je toont je product met beeld en video, waar je klant al scrolt', 'Je schaalt op zolang je cijfers kloppen']
 const pitfalls = ['Sturen op Ads Manager zonder je echte omzet te checken', 'Niet weten bij welke ROAS je winst maakt', 'Het budget verdubbelen na twee goede dagen', 'Eén goede ad laten opbranden']
@@ -267,7 +261,6 @@ export default function Academy() {
   const wrap = (index: number) => index < 0 ? lastModule : index > lastModule ? 0 : index
   const showSlide = (index: number) => setSlide(wrap(index))
   const step = (delta: number) => setSlide(current => wrap(current + delta))
-  const openModule = (id: string) => { showSlide(academyModules.findIndex(item => item.id === id)); scrollToId('programma') }
   function endSwipe(x: number) {
     if (swipeStart.current === null) return
     const distance = x - swipeStart.current
@@ -333,7 +326,7 @@ export default function Academy() {
         </div>
         <article className="ac-case ac-case-main ac-reveal">
           <div className="ac-case-copy">
-            <span className="ac-case-tag">CASE 01 · VAN KLIK TOT AANKOOP</span>
+            <span className="ac-case-tag">VAN KLIK TOT AANKOOP</span>
             <p className="ac-case-figure"><strong>+120%</strong><span>online omzet bij Pinacello</span></p>
             <p>Ads, landingspagina en retargeting werken samen als één verkoopmotor.</p>
             <ol className="ac-case-steps">{pinacelloSteps.map(([label, text], index) => <li key={label}><span>{number(index)}</span><div><strong>{label}</strong>{text}</div></li>)}</ol>
@@ -344,24 +337,6 @@ export default function Academy() {
             <figcaption>promo.pinacello.com</figcaption>
           </figure>
         </article>
-        <div className="ac-proof-row">
-          <article className="ac-case ac-case-video ac-reveal">
-            <figure><video controls playsInline preload="none" poster={pinacelloPoster} src="/videos/pinacello.mp4" aria-label="Organische video van Pinacello" /></figure>
-            <div className="ac-case-copy">
-              <span className="ac-case-tag">CASE 02 · CONTENT</span>
-              <p className="ac-case-figure"><strong>20</strong><span>verkopen uit één organische video</span></p>
-              <p>De makers vertellen zelf het verhaal achter hun product. In de lessen leer je zulke content inzetten als ad.</p>
-              <button className="ac-text-link" onClick={() => openModule('creatives')}>Hierover gaat: Creatives</button>
-              <p className="ac-case-note">De video start pas als je op afspelen drukt.</p>
-            </div>
-          </article>
-          <aside className="ac-case ac-case-lessons ac-reveal" aria-labelledby="lessons-title">
-            <span className="ac-case-tag">WAT JE HIERUIT LEERT</span>
-            <h3 id="lessons-title">Dezelfde bouwstenen, in je eigen webshop.</h3>
-            <ul>{pinacelloLessons.map(([id, label, text]) => <li key={id}><button onClick={() => openModule(id)}><strong>{label}</strong><span>{text}</span></button></li>)}</ul>
-            {signedUp ? <p className="ac-focus-done">Je aanmelding is binnen.</p> : <button className="ac-button" onClick={goToSignup}>Meld je aan</button>}
-          </aside>
-        </div>
         <p className="ac-fine">Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.</p>
       </section>
 
