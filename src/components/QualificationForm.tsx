@@ -256,18 +256,18 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
           />
         </Field>
         <fieldset className="goal-picker sm:col-span-2" aria-describedby={`${id}-goal-hint${errors.doel ? ` ${id}-goal-error` : ''}`} disabled={status === 'submitting'}>
-          <legend>{t.labels.doel}</legend>
-          <p id={`${id}-goal-hint`} className="goal-picker-hint">{lang === 'nl' ? 'Kies wat het best past. De details bekijken we samen.' : 'Choose the closest fit. We’ll work out the details together.'}</p>
-          <div className="goal-options">
-            {GOALS.map(goal => (
-              <label key={goal.key} className={`goal-option ${goal.key === 'explore' ? 'goal-option-explore' : ''}`}>
-                <input type="radio" name={`${id}-goal`} value={goal.key} checked={values.doel === goal.key} onChange={() => update('doel', goal.key)} className="sr-only" required aria-invalid={Boolean(errors.doel)} />
-                <span className="goal-option-body"><span className="goal-option-dot" aria-hidden="true" /><span><strong>{goal[lang][0]}</strong><span className="goal-option-description">{goal[lang][1]}</span></span></span>
-              </label>
-            ))}
-          </div>
-          {errors.doel && <p id={`${id}-goal-error`} className="mt-2 text-sm text-accent-2" role="alert">{t.errors.doel}</p>}
-        </fieldset>
+            <legend>{t.labels.doel}</legend>
+            <p id={`${id}-goal-hint`} className="goal-picker-hint">{lang === 'nl' ? 'Kies wat het best past. De details bekijken we samen.' : 'Choose the closest fit. We’ll work out the details together.'}</p>
+            <div className="goal-options">
+              {GOALS.map(goal => (
+                <label key={goal.key} className={`goal-option ${goal.key === 'explore' ? 'goal-option-explore' : ''}`}>
+                  <input type="radio" name={`${id}-goal`} value={goal.key} checked={values.doel === goal.key} onChange={() => update('doel', goal.key)} className="sr-only" required aria-invalid={Boolean(errors.doel)} />
+                  <span className="goal-option-body"><span className="goal-option-dot" aria-hidden="true" /><span><strong>{goal[lang][0]}</strong><span className="goal-option-description">{goal[lang][1]}</span></span></span>
+                </label>
+              ))}
+            </div>
+            {errors.doel && <p id={`${id}-goal-error`} className="mt-2 text-sm text-accent-2" role="alert">{t.errors.doel}</p>}
+          </fieldset>
         <Field label={t.labels.uitdaging} error={errors.uitdaging ? t.errors.uitdaging : undefined} htmlFor="uitdaging" full>
           <textarea
             id="uitdaging"

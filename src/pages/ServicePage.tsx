@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ServiceVisual from '../components/ServiceVisual'
+import WebsiteStage from '../components/WebsiteStage'
 import { hasServiceVisual } from '../data/visualServices'
 import Seo from '../components/Seo'
 import CaseVisual from '../components/CaseVisual'
@@ -49,7 +50,12 @@ const COPY = {
   },
 }
 
-function leadIn(title: string, lang: 'nl' | 'en') {
+function leadIn(title: string, lang: 'nl' | 'en', slug: ServiceSlug) {
+  if (slug === 'websites') {
+    return lang === 'nl'
+      ? 'Vul je gegevens in. We sturen een voorstel met scope en budget.'
+      : 'Add your details. We’ll send a proposal with scope and budget.'
+  }
   return lang === 'nl'
     ? `Je bent hier voor ${title}. Vertel ons waar je nu staat. We bekijken je situatie en zeggen welke aanpak past.`
     : `You’re here for ${title}. Tell us where you stand. We’ll look at your situation and say which approach fits.`
@@ -59,6 +65,7 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
   const service = getService(slug)
   const { lang } = useLang()
   const t = COPY[lang]
+  const isWebsites = slug === 'websites'
   const { ref } = useInView<HTMLDivElement>(() =>
     trackEvent('service_viewed', { service: slug, placement: 'page' }),
   )
@@ -71,55 +78,76 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
     <div ref={ref} className="service-landing">
       <Seo title={service.title[lang]} description={service.summary[lang]} path={`/${service.slug}`} />
 
-      <section className="service-hero">
-        <div className="service-hero-copy reveal">
-          <Breadcrumbs items={[{ label: t.servicesCrumb, href: '/#expertise' }, { label: service.title[lang] }]} />
-          <h1>{service.title[lang]}</h1>
-          <p className="service-hero-lead">{service.summary[lang]}</p>
-          <ul className="service-includes">
-            {service.includes[lang].map((item) => (
-              <li key={item}>{item.charAt(0).toUpperCase() + item.slice(1)}</li>
-            ))}
-          </ul>
-          <a
-            className="button-dark"
-            href="#audit-formulier-section"
-            onClick={() => trackEvent('audit_cta_clicked', { placement: 'service_hero', service: slug })}
-          >
-            {t.cta} <span aria-hidden="true">↗</span>
-          </a>
-          <p className="service-reply">{t.reply}</p>
-        </div>
-        <aside className="service-next">
-          <h2>{t.nextLabel}</h2>
-          <ol className="contact-steps">
-            {t.steps.map((step) => <li key={step}>{step}</li>)}
-          </ol>
-        </aside>
-      </section>
-
-      <section className="service-middle">
-        <div className="service-problem">
-          <h2>{t.problemLabel}</h2>
-          <p>{service.problem[lang]}</p>
-        </div>
-        <div className="service-offer">
-          <h2>{t.deliverablesLabel}</h2>
-          <CheckList items={service.deliverables[lang]} columns={1} />
-        </div>
-        {showVisual && (
-          <div className="service-visual-panel">
-            <h2>{t.visualLabel}</h2>
-            <ServiceVisual service={slug} />
+      {isWebsites ? (
+        <section className="service-hero is-websites">
+          <div className="service-hero-copy reveal">
+            <Breadcrumbs items={[{ label: t.servicesCrumb, href: '/#expertise' }, { label: service.title[lang] }]} />
+            <h1>{service.title[lang]}</h1>
+            <p className="service-hero-lead">{service.summary[lang]}</p>
+            <a
+              className="button-dark"
+              href="#audit-formulier-section"
+              onClick={() => trackEvent('audit_cta_clicked', { placement: 'service_hero', service: slug })}
+            >
+              {lang === 'nl' ? 'Bespreek je website' : 'Discuss your website'} <span aria-hidden="true">↗</span>
+            </a>
+            <p className="service-reply">{t.reply}</p>
           </div>
-        )}
-        <div className="service-steps">
-          <h2>{t.approachLabel}</h2>
-          <ol className="contact-steps">
-            {service.process[lang].map((step) => <li key={step}>{step}</li>)}
-          </ol>
-        </div>
-      </section>
+          <WebsiteStage lang={lang} />
+        </section>
+      ) : (
+        <section className="service-hero">
+          <div className="service-hero-copy reveal">
+            <Breadcrumbs items={[{ label: t.servicesCrumb, href: '/#expertise' }, { label: service.title[lang] }]} />
+            <h1>{service.title[lang]}</h1>
+            <p className="service-hero-lead">{service.summary[lang]}</p>
+            <ul className="service-includes">
+              {service.includes[lang].map((item) => (
+                <li key={item}>{item.charAt(0).toUpperCase() + item.slice(1)}</li>
+              ))}
+            </ul>
+            <a
+              className="button-dark"
+              href="#audit-formulier-section"
+              onClick={() => trackEvent('audit_cta_clicked', { placement: 'service_hero', service: slug })}
+            >
+              {t.cta} <span aria-hidden="true">↗</span>
+            </a>
+            <p className="service-reply">{t.reply}</p>
+          </div>
+          <aside className="service-next">
+            <h2>{t.nextLabel}</h2>
+            <ol className="contact-steps">
+              {t.steps.map((step) => <li key={step}>{step}</li>)}
+            </ol>
+          </aside>
+        </section>
+      )}
+
+      {!isWebsites && (
+        <section className="service-middle">
+          <div className="service-problem">
+            <h2>{t.problemLabel}</h2>
+            <p>{service.problem[lang]}</p>
+          </div>
+          <div className="service-offer">
+            <h2>{t.deliverablesLabel}</h2>
+            <CheckList items={service.deliverables[lang]} columns={1} />
+          </div>
+          {showVisual && (
+            <div className="service-visual-panel">
+              <h2>{t.visualLabel}</h2>
+              <ServiceVisual service={slug} />
+            </div>
+          )}
+          <div className="service-steps">
+            <h2>{t.approachLabel}</h2>
+            <ol className="contact-steps">
+              {service.process[lang].map((step) => <li key={step}>{step}</li>)}
+            </ol>
+          </div>
+        </section>
+      )}
 
       {relatedCase && (
         <Link
@@ -137,7 +165,7 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
         </Link>
       )}
 
-      {service.partnerCase && (
+      {service.partnerCase && !isWebsites && (
         <a className="service-proof service-proof-partner" href={service.partnerCase.url} target="_blank" rel="noopener noreferrer">
           <div>
             <p className="service-proof-kicker">{t.partnerLabel}</p>
@@ -162,7 +190,7 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
           </figure>
           <div className="service-close-intro">
             <h2 className="font-display text-balance">{t.formTitle}</h2>
-            <p className="contact-lead">{leadIn(service.title[lang], lang)}</p>
+            <p className="contact-lead">{leadIn(service.title[lang], lang, slug)}</p>
             <p className="service-close-who">
               <strong>Stef Keppens</strong>
               <span>Lochristi</span>
