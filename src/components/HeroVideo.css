@@ -1,0 +1,11 @@
+.hero-video { position: relative; width: 100%; min-width: 0; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 20px; background: #10131c; box-shadow: 0 24px 60px -30px #1a2a8a66; }
+.hero-video iframe, .hero-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
+.hero-video .hero-video-play { padding: 0; cursor: pointer; color: #fff; background: #10131c; font: inherit; text-align: left; }
+.hero-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-video-icon { position: absolute; z-index: 1; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 68px; height: 48px; padding-left: 3px; border-radius: 14px; background: #254bfa; color: #fff; font-size: 24px; }
+.hero-video-play:hover .hero-video-icon { background: #1a37d6; }
+.hero-video .hero-video-play:focus-visible { outline: 3px solid #a5b4ff; outline-offset: -5px; }
+.hero-video noscript a { position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; padding: 20px; color: #fff; background: #10131c; }
+@media (max-width: 480px) {
+  .hero-video { border-radius: 14px; }
+}

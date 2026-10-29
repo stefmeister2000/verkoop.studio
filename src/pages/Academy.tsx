@@ -5,6 +5,7 @@ import AcademySignup from '../components/AcademySignup'
 import BrandMark from '../components/BrandMark'
 import ResponsiveImage from '../components/ResponsiveImage'
 import Seo from '../components/Seo'
+import HeroVideo from '../components/HeroVideo'
 import { academyFaq, academyModules, academyTests } from '../data/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
@@ -73,41 +74,6 @@ function ConceptTiles() {
 
 const spendBars = [30, 36, 40, 48, 55, 62, 70, 80]
 const merLine = [34, 31, 33, 30, 32, 29, 31, 30]
-
-/** The hero shows where the academy leads: a webshop that grows its budget while its ROAS holds. Example figures. */
-function HeroVisual() {
-  return <div className="ac-hv" aria-hidden="true">
-    <div className="ac-hv-dash">
-      <div className="ac-hv-bar"><span><i /><i /><i /></span><em>schaalplan · voorbeeld</em></div>
-      <div className="ac-hv-body">
-        <span className="ac-mock-label">LAATSTE 8 WEKEN</span>
-        <div className="ac-hv-kpis">
-          <div><small>Ad spend</small><strong>€12.400</strong><em>+38%</em></div>
-          <div><small>Omzet</small><strong>€41.200</strong><em>+31%</em></div>
-          <div><small>ROAS</small><strong>3,3</strong><em>doel 3–4</em></div>
-          <div><small>Nieuwe klanten</small><strong>612</strong><em>+27%</em></div>
-        </div>
-        <svg className="ac-hv-chart" viewBox="0 0 300 84">
-          {spendBars.map((height, index) => <rect key={index} x={10 + index * 36} y={82 - height * .85} width="22" height={height * .85} rx="4" />)}
-          <polyline points={merLine.map((y, index) => `${21 + index * 36},${y}`).join(' ')} />
-        </svg>
-        <p className="ac-hv-legend"><span><i className="is-bar" />Budget</span><span><i className="is-line" />ROAS</span><b>Schalen</b></p>
-      </div>
-    </div>
-    <div className="ac-hv-ad">
-      <div className="ac-hv-ad-top"><span className="ac-hv-avatar">v.</span><span>jouw webshop<small>Gesponsord</small></span><b>···</b></div>
-      <div className="ac-hv-ad-art"><span className="ac-hv-ring" /><span className="ac-hv-ring ac-hv-ring-two" /><span className="ac-hv-product" /><strong>Bestseller.<br />Nu met gratis levering.</strong></div>
-      <div className="ac-hv-ad-cta"><span>jouwwebshop.be</span><b>Shop nu</b></div>
-    </div>
-    <div className="ac-hv-stat ac-hv-ltv">
-      <span className="ac-mock-label">KLANTWAARDE (LTV)</span>
-      <div><span>1e aankoop</span><i style={{ width: '48%' }} /><b>€58</b></div>
-      <div><span>90 dagen</span><i style={{ width: '80%' }} /><b>€96</b></div>
-      <div><span>180 dagen</span><i style={{ width: '100%' }} /><b>€121</b></div>
-    </div>
-    <div className="ac-hv-file"><span>Retargeting · catalogus<small>Winkelwagen · 7 dagen</small></span><b>Actief</b></div>
-  </div>
-}
 
 /** A small, illustrative mock-up per topic: what you look at in Ads Manager or your webshop. */
 function ModuleVisual({ id }: { id: string }) {
@@ -300,7 +266,7 @@ export default function Academy() {
             <p><strong>Door Stef Keppens</strong>, verkoop.studio<span>Uit de praktijk bij {practice.map((name, index) => <b key={name}>{name}{index < practice.length - 1 && <i aria-hidden="true">·</i>}</b>)}</span></p>
           </div>
         </div>
-        <HeroVisual />
+        <HeroVideo />
       </section>
 
       <section id="aanbod" className="ac-offer ac-wrap" aria-labelledby="offer-title">

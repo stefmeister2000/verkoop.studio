@@ -47,15 +47,16 @@ test('only homepage embeds the complete build CSS and deprioritizes hydration do
   }
 })
 
-test('hero artwork paints from the inlined styles, without an image download', async () => {
-  const html = await readFile('dist/index.html', 'utf8')
-  const head = html.split('</head>')[0]
-  const hero = html.match(/<section class="studio-hero"[\s\S]*?<\/section>/)?.[0]
-  assert(hero)
-  assert.doesNotMatch(hero, /<(img|picture)\b/)
-  assert.equal([...head.matchAll(/<link\b[^>]*as="image"[^>]*>/g)].length, 0)
-  assert.match(hero, /class="hd-board" aria-hidden="true"/)
-  assert.match(head, /<style data-home-styles="[^"]+">[\s\S]*\.hd-board\{/)
+test('home and academy heroes show the video without loading a player before interaction', async () => {
+  for (const [file, heroClass] of [['dist/index.html', 'studio-hero'], ['dist/academy/index.html', 'ac-hero ac-wrap']]) {
+    const html = await readFile(file, 'utf8')
+    const hero = html.match(new RegExp(`<section class="${heroClass}"[\\s\\S]*?<\\/section>`))?.[0]
+    assert(hero, file)
+    assert.match(hero, /<button[^>]+aria-label="Speel video af:/)
+    assert.match(hero, /https:\/\/i\.ytimg\.com\/vi\/tSjPY9J6ynk\/maxresdefault\.jpg/)
+    assert.doesNotMatch(hero, /<iframe\b/)
+    assert.match(hero, /<noscript><a href="https:\/\/www\.youtube\.com\/watch\?v=tSjPY9J6ynk"/)
+  }
 })
 
 test('homepage retains all existing tracking scripts verbatim', async () => {
