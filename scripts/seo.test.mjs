@@ -106,7 +106,7 @@ test('FAQ answers exist in initial HTML and service sections use headings', asyn
     assert(detail[1].includes(escaped), faqItems[index].question.nl)
   }
   const service = await readFile('dist/google-ads/index.html', 'utf8')
-  for (const heading of ['Het probleem', 'Aanpak', 'Opleverpunten']) assert.match(service, new RegExp(`<h2[^>]*>${heading}</h2>`))
+  for (const heading of ['Waar het vastloopt', 'Wat je krijgt', 'Zo werken we']) assert.match(service, new RegExp(`<h2[^>]*>${heading}</h2>`))
   const agency = await readFile('dist/agency/index.html', 'utf8')
   const graph = JSON.parse(agency.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph']
   const person = graph.find(item => item['@type'] === 'Person')
