@@ -108,3 +108,20 @@ test('endpoint rejects invalid input, ignores bots and needs Resend', async () =
   assert.equal(f.sent.length, 0)
   assert.equal((await post(academyRouter({ resend: null, from: 'x', to: 'y' }), signup)).status, 503)
 })
+
+test('English signups retain their language for CRM, confirmation and newsletter consent', async () => {
+  const f = fixture()
+  const payloads = []
+  const router = academyRouter({ resend: f.resend, from: 'noreply@example.com', to: 'stefkeppens@gmail.com', crmUrl: 'https://crm.example.com/api', sendCrm: async payload => { payloads.push(payload); return { status: 'created' } } })
+  assert.equal(academyFields({ ...signup, lang: 'en' }).lang, 'en')
+  assert.equal(academyFields({ ...signup, lang: 'invalid' }).lang, 'nl')
+  const response = await post(router, { ...signup, lang: 'en', nieuwsbrief: true })
+  assert.equal(response.status, 200)
+  const confirmation = f.sent.find(item => item.p.subject === 'Your Meta Ads Academy signup')
+  assert.ok(confirmation)
+  assert.match(confirmation.p.text, /Stef will contact you personally/)
+  assert.match(confirmation.p.html, /lang="en"/)
+  assert.doesNotMatch(confirmation.p.html, /Bedankt|Tot snel/)
+  assert.equal(JSON.parse(f.created.at(-1).properties.newsletter_consent).lang, 'en')
+  assert.equal(payloads.length, 1)
+})

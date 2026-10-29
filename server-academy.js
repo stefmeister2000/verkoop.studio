@@ -20,7 +20,7 @@ export function academyFields(body = {}) {
     niveau: Object.hasOwn(ACADEMY_LEVELS, body.niveau) ? body.niveau : '',
     budget: Object.hasOwn(ACADEMY_BUDGETS, body.budget) ? body.budget : '',
     form_id: text(body.form_id, 60) || 'academy', submission_id: text(body.submission_id, 80),
-    nieuwsbrief: body.nieuwsbrief === true, lang: 'nl',
+    nieuwsbrief: body.nieuwsbrief === true, lang: body.lang === 'en' ? 'en' : 'nl',
     attribution: body.attribution && typeof body.attribution === 'object' ? body.attribution : {},
     ga4: body.ga4,
   }
@@ -69,16 +69,22 @@ export function academyNotification(fields) {
 
 export function academyWelcome(fields) {
   const firstName = fields.naam.split(/\s+/)[0]
-  const lines = [
+  const en = fields.lang === 'en'
+  const lines = en ? [
+    `Hi ${firstName},`, '',
+    'Thank you for signing up for the Meta Ads Academy by verkoop.studio.',
+    'Stef will contact you personally to discuss your goals, experience and lessons. You will then receive a tailored proposal.',
+    'Have a question in the meantime? Just reply to this email.', '', 'Speak soon,', 'Stef — verkoop.studio',
+  ] : [
     `Hoi ${firstName},`, '',
     'Bedankt voor je aanmelding voor de Meta Ads Academy van verkoop.studio.',
     'Stef neemt persoonlijk contact met je op om je doel, je ervaring en de opzet van je traject te bespreken. Daarna krijg je een voorstel.',
     'Een vraag in de tussentijd? Antwoord gewoon op deze mail.', '', 'Tot snel,', 'Stef — verkoop.studio',
   ]
   return {
-    subject: 'Je aanmelding voor de Meta Ads Academy',
+    subject: en ? 'Your Meta Ads Academy signup' : 'Je aanmelding voor de Meta Ads Academy',
     text: lines.join('\n'),
-    html: `<div style="font-family:Arial,Helvetica,sans-serif;color:#172343;max-width:520px;font-size:15px;line-height:1.6"><p style="font-size:12px;color:#254bfa;font-weight:700;letter-spacing:1px;margin:0 0 6px">META ADS ACADEMY</p><h1 style="font-size:24px;line-height:1.2;margin:0 0 16px">Bedankt, ${escape(firstName)}.</h1><p>${escape(lines[2])}</p><p>${escape(lines[3])}</p><p>${escape(lines[4])}</p><p style="color:#62708a;font-size:13px;margin-top:24px">Tot snel,<br>Stef — verkoop.studio</p></div>`,
+    html: `<div lang="${en ? 'en' : 'nl'}" style="font-family:Arial,Helvetica,sans-serif;color:#172343;max-width:520px;font-size:15px;line-height:1.6"><p style="font-size:12px;color:#254bfa;font-weight:700;letter-spacing:1px;margin:0 0 6px">META ADS ACADEMY</p><h1 style="font-size:24px;line-height:1.2;margin:0 0 16px">${en ? 'Thank you' : 'Bedankt'}, ${escape(firstName)}.</h1><p>${escape(lines[2])}</p><p>${escape(lines[3])}</p><p>${escape(lines[4])}</p><p style="color:#62708a;font-size:13px;margin-top:24px">${escape(lines[6])}<br>Stef — verkoop.studio</p></div>`,
   }
 }
 
@@ -149,7 +155,7 @@ export function academyRouter({ resend, from, to, replyFrom, crmUrl, crmToken, s
     } catch (error) { console.error('[academy] welcome email failed:', error.message) }
     if (fields.nieuwsbrief) {
       try {
-        const subscription = await subscribeNewsletter({ resend, email: fields.email, lang: 'nl', source: 'academy' })
+        const subscription = await subscribeNewsletter({ resend, email: fields.email, lang: fields.lang, source: 'academy' })
         if (subscription.ok) captured.push('newsletter_segment')
       } catch { console.error('[academy] newsletter signup failed') }
     }

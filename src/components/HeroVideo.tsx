@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './HeroVideo.css'
 
 const videoId = 'tSjPY9J6ynk'
-const videoTitle = 'Waarom je Meta Ads geld VERBRANDEN (en hoe je het fixt)'
 
 export default function HeroVideo({ lang = 'nl' }: { lang?: 'nl' | 'en' }) {
+  const videoTitle = lang === 'nl' ? 'Waarom je Meta Ads geld VERBRANDEN (en hoe je het fixt)' : 'Why your Meta Ads BURN money (and how to fix it) — video in Dutch'
   const [playing, setPlaying] = useState(false)
   return (
     <div className="hero-video">

@@ -654,3 +654,12 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 @media (max-width: 360px) {
   .ac-offer-list { grid-template-columns: 1fr; }
 }
+
+/* Keep language selection available on desktop and narrow phone screens. */
+.ac-header-actions { display: flex; align-items: center; justify-self: end; gap: 10px; }
+.ac-language { display: flex; padding: 3px; border: 1px solid var(--ac-line); border-radius: 999px; background: #fff; }
+.ac-language button { min-width: 36px; min-height: 38px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.ac-language button[aria-pressed="true"] { background: var(--ac-tint); color: var(--ac-blue); }
+.ac-manage-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--ac-blue); font-size: 14px; font-weight: 600; line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 901px) and (max-width: 1180px) { .ac-header-inner { grid-template-columns: 1fr auto; } .ac-pill-nav { display: none; } }
+@media (max-width: 560px) { .ac-header-inner { gap: 8px; } .ac-header-actions { gap: 6px; } .ac-header-actions .ac-header-cta { display: none; } .ac-language button { min-height: 44px; } }
