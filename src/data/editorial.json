@@ -221,6 +221,20 @@
           ]
         },
         {
+          "title": "Welke cijfers moet je marketingbureau rapporteren?",
+          "paragraphs": [
+            "Vraag om een rapport dat zichtbaarheid, aanvragen en klanten afzonderlijk toont. Google Search Console meet onder meer vertoningen en klikken vanuit Google. Die cijfers vertellen hoe mensen je site vinden, maar laten niet zien hoeveel aanvragen of verkopen daaruit volgen. Vraag daarom bij elk resultaat welke bron en definitie worden gebruikt.",
+            "Laat voor aanvragen vastleggen wat precies wordt geteld. Een klik op de contactknop is iets anders dan een ontvangen formulier. Google Analytics kan een formulierinzending als belangrijke gebeurtenis meten als die actie correct is ingesteld. Bespreek daarnaast met je team welke aanvragen bij je aanbod passen en welke klant worden; dat blijkt niet vanzelf uit het aantal gemeten gebeurtenissen.",
+            "Een bruikbaar rapport vermeldt ook de meetperiode, ontbrekende gegevens en veranderingen in budget of aanbod. Bekijk bij weinig aanvragen de aantallen naast de percentages. Spreek af welke concrete beslissing op het rapport volgt, bijvoorbeeld de uitleg op een dienstenpagina verbeteren of de opvolging van aanvragen onderzoeken. Een stijging na een wijziging bewijst op zichzelf nog niet dat die wijziging de oorzaak is."
+          ],
+          "checklist": [
+            "Welke bron en meetperiode horen bij ieder cijfer?",
+            "Tellen we een knopklik, een ontvangen aanvraag of een geschikte aanvraag?",
+            "Wie houdt bij welke aanvragen uiteindelijk klant worden?",
+            "Welke gegevens ontbreken en wat onderzoeken we als volgende stap?"
+          ]
+        },
+        {
           "title": "Maak de samenwerking praktisch",
           "paragraphs": [
             "Nabijheid kan handig zijn voor overleg, maar spreek vooral af wie beslissingen neemt, wie toegang krijgt tot welke systemen en hoe je feedback geeft. Leg ook vast hoe accounts en bestanden worden overgedragen wanneer de samenwerking eindigt.",
@@ -244,10 +258,22 @@
         {
           "href": "/funnel-audit",
           "label": "Groeianalyse: onderzoek waar je klantreis vastloopt"
+        },
+        {
+          "href": "/data-analytics",
+          "label": "Data en analytics: inzicht in aanvragen en resultaten"
+        },
+        {
+          "href": "https://support.google.com/webmasters/answer/7576553?hl=nl",
+          "label": "Google Search Console: wat het prestatierapport meet"
+        },
+        {
+          "href": "https://support.google.com/analytics/answer/12946393?hl=nl",
+          "label": "Google Analytics: formulierinzendingen als belangrijke gebeurtenissen meten"
         }
       ],
       "publishedAt": "2026-10-02",
-      "modifiedAt": "2026-10-08"
+      "modifiedAt": "2026-10-29"
     }
   ],
   "metadata": {}
