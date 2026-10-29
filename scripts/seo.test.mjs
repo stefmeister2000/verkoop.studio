@@ -138,14 +138,15 @@ test('articles have crawlable content, authorship, links and sitemap entries', a
   }
 })
 
-test('hero artwork is drawn in HTML, so the first view needs no image download', async () => {
+test('hero video is discoverable before hydration and defers the YouTube player', async () => {
   const html = await readFile('dist/index.html', 'utf8')
   const hero = html.match(/<section class="studio-hero"[\s\S]*?<\/section>/)?.[0]
   assert(hero, 'Homepage includes the hero section')
-  assert.doesNotMatch(hero, /<img\b/)
-  assert.doesNotMatch(html, /rel="preload" as="image"/)
-  assert.match(hero, /class="hd-board" aria-hidden="true"/)
-  assert.match(hero, /href="\/cases\/pinacello"/)
+  assert.match(hero, /aria-label="Speel video af: Waarom je Meta Ads geld VERBRANDEN/)
+  assert.match(hero, /<img[^>]+src="https:\/\/i\.ytimg\.com\/vi\/tSjPY9J6ynk\/maxresdefault\.jpg"/)
+  assert.match(hero, /href="https:\/\/www\.youtube\.com\/watch\?v=tSjPY9J6ynk"/)
+  assert.doesNotMatch(hero, /<iframe\b/)
+  assert.match(html, /href="\/cases\/pinacello"/)
 })
 
 
