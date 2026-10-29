@@ -165,33 +165,28 @@ export default function Nav() {
           </Link>
         </div>
 
-        <button
-          ref={menuButton}
-          aria-controls="mobile-navigation"
-          aria-label={open ? (lang === 'nl' ? 'Menu sluiten' : 'Close menu') : (lang === 'nl' ? 'Menu openen' : 'Open menu')}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-paper lg:hidden"
-        >
+        <div className="flex items-center gap-2 lg:hidden">
+          <div id="faq-chat-anchor" />
+          <button
+            ref={menuButton}
+            aria-controls="mobile-navigation"
+            aria-label={open ? (lang === 'nl' ? 'Menu sluiten' : 'Close menu') : (lang === 'nl' ? 'Menu openen' : 'Open menu')}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-paper"
+          >
             <span className="sr-only">Menu</span>
             {open ? (
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path
-                  d="M1 1L17 17M17 1L1 17"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
+                <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             ) : (
               <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
-                <path
-                  d="M0 1H18M0 7H18M0 13H18"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
+                <path d="M0 1H18M0 7H18M0 13H18" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             )}
-        </button>
+          </button>
+        </div>
       </div>
 
       {open && (

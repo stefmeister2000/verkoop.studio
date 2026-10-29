@@ -47,7 +47,7 @@
 .faq-chat :is(button,a):focus-visible { outline: 3px solid #8ea9ef; outline-offset: 3px; }
 @keyframes chat-open { from { opacity: 0; transform: translateY(16px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes chat-answer { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@media(max-width: 1023px) { .faq-chat { right: 16px; bottom: calc(86px + env(safe-area-inset-bottom)); } .faq-chat-panel { height: min(640px,calc(100dvh - 175px - env(safe-area-inset-bottom))); } }
+@media(max-width: 1023px) { .faq-chat:not(.has-open-chat) { display: none; } }
 @media(max-width: 420px) { .chat-header { padding: 16px 14px; gap: 9px; } .chat-identity h2 { font-size: 15px; } .chat-identity p { font-size: 9px; } .faq-chat-log { padding: 18px 16px; } .chat-welcome h3 { font-size: 26px; } }
 @media(prefers-reduced-motion: reduce) { .faq-chat *, .faq-chat *::before { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 @media(max-height: 800px) {
@@ -57,8 +57,14 @@
   .chat-starters button { padding: 10px; }
 }
 
-/* A spacious conversation sheet, with a quiet launcher above the mobile CTA. */
-@media (max-width: 600px) {
+/* Header launcher on phones and tablets. The conversation opens as a sheet. */
+#faq-chat-anchor { display: flex; }
+#faq-chat-anchor .faq-chat-launcher { justify-content: center; width: 44px; height: 44px; min-height: 44px; padding: 0; gap: 0; border-radius: 50%; box-shadow: none; }
+#faq-chat-anchor .faq-chat-launcher > span { display: none; }
+#faq-chat-anchor .chat-launcher-symbol { display: block; }
+#faq-chat-anchor .faq-chat-launcher.is-open,
+.studio-nav.is-open #faq-chat-anchor { display: none; }
+@media (max-width: 1023px) {
   .faq-chat { right: 12px; bottom: calc(82px + env(safe-area-inset-bottom)); }
   .faq-chat-launcher { justify-content: center; width: 48px; height: 48px; min-height: 48px; padding: 0; gap: 0; border-radius: 50%; box-shadow: 0 4px 14px #1c2c6026; }
   .faq-chat-launcher > span { display: none; }

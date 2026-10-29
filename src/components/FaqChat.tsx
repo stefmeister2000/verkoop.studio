@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { findChatAnswers, getChatArticles, type ChatArticle } from '../lib/chatKnowledge'
@@ -10,6 +11,7 @@ export default function FaqChat() {
   const nl = lang === 'nl'
   const [open, setOpen] = useState(false)
   const [mobile, setMobile] = useState(false)
+  const [headerSlot, setHeaderSlot] = useState<HTMLElement | null>(null)
   const [viewport, setViewport] = useState({ height: 0, top: 0 })
   const panel = useRef<HTMLElement>(null)
   const [query, setQuery] = useState('')
@@ -21,10 +23,11 @@ export default function FaqChat() {
   const articles = getChatArticles(lang)
   const lastAnswer = messages.at(-1)?.answers[0]
   const close = () => { setOpen(false); launcher.current?.focus() }
-  useEffect(() => {
-    const media = window.matchMedia('(max-width: 600px)')
+  useLayoutEffect(() => {
+    const media = window.matchMedia('(max-width: 1023px)')
     const update = () => { setMobile(media.matches); setViewport({ height: window.visualViewport?.height ?? window.innerHeight, top: window.visualViewport?.offsetTop ?? 0 }) }
     update()
+    setHeaderSlot(document.getElementById('faq-chat-anchor'))
     media.addEventListener('change', update)
     window.visualViewport?.addEventListener('resize', update)
     window.visualViewport?.addEventListener('scroll', update)
@@ -43,6 +46,7 @@ export default function FaqChat() {
   const add = (question: string, answers: ChatArticle[]) => { setMessages(previous => [...previous.slice(-19), { question, answers }]); setQuery(''); if (!mobile) input.current?.focus() }
   function choose(id: string) { const article = articles.find(a => a.id === id); if (article) add(article.title, [article]) }
   function send() { if (query.trim()) add(query.trim(), findChatAnswers(query.trim(), lang, lastAnswer?.id)) }
+  const launcherButton = <button type="button" className={`faq-chat-launcher ${open ? 'is-open' : ''}`} ref={launcher} onClick={() => open ? close() : setOpen(true)} aria-expanded={open} aria-label={nl ? (open ? 'FAQ-chat sluiten' : 'FAQ-chat openen') : (open ? 'Close FAQ chat' : 'Open FAQ chat')}><svg className="chat-launcher-symbol" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-4 3v-11a8 8 0 0 1 8-8h3a8 8 0 0 1 8 8Z" transform="translate(1 -1)" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg><span>{nl ? 'Vraag het de studio' : 'Ask the studio'}</span></button>
   return <div className={`faq-chat ${open ? 'has-open-chat' : ''}`} style={{ '--chat-viewport-height': `${viewport.height}px`, '--chat-viewport-top': `${viewport.top}px` } as CSSProperties} data-clarity-mask="true">
     {open && <section ref={panel} tabIndex={-1} className="faq-chat-panel" role="dialog" aria-modal={mobile} aria-labelledby="faq-chat-title" onKeyDown={event => { if (mobile && event.key === 'Tab') {
       const items = panel.current?.querySelectorAll<HTMLElement>('button:not(:disabled), a[href], input')
@@ -62,6 +66,6 @@ export default function FaqChat() {
       <form className="chat-composer" onSubmit={event => { event.preventDefault(); send() }}><label className="sr-only" htmlFor="faq-chat-query">{nl ? 'Je vraag' : 'Your question'}</label><input id="faq-chat-query" ref={input} value={query} onChange={event => setQuery(event.target.value)} placeholder={nl ? 'Waar wil je meer over weten?' : 'What would you like to know?'} maxLength={400} autoComplete="off" data-clarity-mask="true" /><button type="submit" disabled={!query.trim()} aria-label={nl ? 'Vraag versturen' : 'Send question'}>↑</button></form>
       <footer><span>{nl ? 'Antwoorden uit onze website' : 'Answers from our website'}</span><Link to="/contact" onClick={close}>{nl ? 'Praat met ons' : 'Talk to us'} ↗</Link></footer>
     </section>}
-    <button type="button" className={`faq-chat-launcher ${open ? 'is-open' : ''}`} ref={launcher} onClick={() => open ? close() : setOpen(true)} aria-expanded={open} aria-label={nl ? (open ? 'FAQ-chat sluiten' : 'FAQ-chat openen') : (open ? 'Close FAQ chat' : 'Open FAQ chat')}><svg className="chat-launcher-symbol" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-4 3v-11a8 8 0 0 1 8-8h3a8 8 0 0 1 8 8Z" transform="translate(1 -1)" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg><span>{nl ? 'Vraag het de studio' : 'Ask the studio'}</span></button>
+    {mobile && headerSlot ? createPortal(launcherButton, headerSlot) : launcherButton}
   </div>
 }
