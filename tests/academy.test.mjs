@@ -125,3 +125,17 @@ test('English signups retain their language for CRM, confirmation and newsletter
   assert.equal(JSON.parse(f.created.at(-1).properties.newsletter_consent).lang, 'en')
   assert.equal(payloads.length, 1)
 })
+
+test('popup requests use Resend capture, confirmation and CRM without newsletter enrolment', async () => {
+  const f = fixture()
+  const payloads = []
+  const router = academyRouter({ resend: f.resend, from: 'noreply@example.com', to: 'stefkeppens@gmail.com', crmUrl: 'https://crm.example.com/api', sendCrm: async payload => { payloads.push(payload); return { status: 'created' } } })
+  const response = await post(router, { ...signup, form_id: 'academy-popup', submission_id: 'popup-1' })
+  assert.equal(response.status, 200)
+  assert.deepEqual(response.body.captured, ['resend_contact', 'resend_email', 'crm', 'resend_welcome'])
+  assert.equal(f.created.length, 1)
+  assert.equal(payloads.length, 1)
+  assert.match(f.sent[0].p.text, /Formulier: academy-popup/)
+  assert.ok(f.sent.some(item => item.p.subject === 'Je kennismakingsaanvraag voor de Meta Ads Academy'))
+  assert.equal(f.segments.length, 0)
+})

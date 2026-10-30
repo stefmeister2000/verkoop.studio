@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import AcademySignup from '../components/AcademySignup'
+import AcademyCapturePopup from '../components/AcademyCapturePopup'
+import { recordAcademyPopup } from '../lib/academy-popup'
 import BrandMark from '../components/BrandMark'
 import ResponsiveImage from '../components/ResponsiveImage'
 import Seo from '../components/Seo'
@@ -230,6 +232,8 @@ export default function Academy() {
   const [slide, setSlide] = useState(0)
   const [testId, setTestId] = useState(academyTests[0].id)
   const [signedUp, setSignedUp] = useState<{ naam: string; via: string } | null>(null)
+  const [popupVisible, setPopupVisible] = useState(false)
+  const [popupSuppressed, setPopupSuppressed] = useState(false)
   const [sticky, setSticky] = useState(false)
   const [stickyArmed, setStickyArmed] = useState(false)
   const topic = academyModules[slide]
@@ -265,10 +269,15 @@ export default function Academy() {
   }
 
   function goToSignup() {
+    recordAcademyPopup()
+    setPopupSuppressed(true)
     scrollToId('aanmelden', signedUp ? undefined : '#aanmelden input[name="naam"]')
   }
 
-  const joined = (via: string) => (naam: string) => setSignedUp({ naam, via })
+  const joined = (via: string) => (naam: string) => {
+    recordAcademyPopup(true)
+    setSignedUp({ naam, via })
+  }
 
   const swipeStart = useRef<number | null>(null)
   const tabsRef = useRef<HTMLDivElement>(null)
@@ -499,7 +508,9 @@ export default function Academy() {
       </section>
     </main>
 
-    {!signedUp && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
+    <AcademyCapturePopup completed={!!signedUp} suppressed={popupSuppressed} onVisibilityChange={setPopupVisible} onSuccess={joined('academy-popup')} />
+
+    {!signedUp && !popupVisible && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
       <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>{t('Plan een kennismaking')}</button>
     </div>}
 
