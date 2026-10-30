@@ -709,9 +709,9 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 .ac-sticky .ac-button { width: 100%; margin: 0; font-size: 15px; }
 @media (max-width: 560px) {
   .ac-hero-usps { grid-template-columns: 1fr; gap: 8px; margin-top: 20px; }
-  .ac-hero-usps li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; }
+  .ac-hero-usps li { padding: 12px 14px; }
   .ac-hero-usps strong { font-size: 14px; }
-  .ac-hero-usps span { margin-top: 0; text-align: right; font-size: 12.5px; }
+  .ac-hero-usps span { font-size: 13px; }
   .ac-stats-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
   .ac-stats-row > div { padding: 14px; background: #f5f6ff; border: 1px solid var(--ac-line); border-radius: 14px; }
   .ac-stats-row span { font-size: 10px; letter-spacing: .06em; }
