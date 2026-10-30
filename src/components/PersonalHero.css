@@ -2,3 +2,12 @@
 @media (max-width: 800px) {
   .hero-video-area { padding: 12px 20px 28px; }
 }
+
+.hero-academy { margin-top: 24px; padding-top: 18px; border-top: 1px solid #e5e7ef; }
+.hero-academy p { margin: 0; max-width: 410px; color: #62677d; font-size: 14px; line-height: 1.6; }
+.hero-academy a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #254bfa; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.hero-academy a:focus-visible { outline: 3px solid #a5b4ff; outline-offset: 4px; border-radius: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-academy a span { transition: transform .25s ease; }
+  .hero-academy a:hover span { transform: translate(2px, -2px); }
+}

@@ -30,6 +30,10 @@ export default function PersonalHero() {
             {nl ? 'Bekijk resultaten' : 'See results'}
           </a>
         </div>
+        <div className="hero-academy">
+          <p>{nl ? 'Zelf je Meta ads leren beheren? Volg 1-op-1 lessen met Stef.' : 'Want to manage your own Meta ads? Take one-to-one lessons with Stef.'}</p>
+          <Link to="/academy">{nl ? 'Ontdek de Academy' : 'Explore the Academy'} <span aria-hidden="true">↗</span></Link>
+        </div>
       </div>
       <div className="hero-video-area">
         <HeroVideo lang={lang} />
