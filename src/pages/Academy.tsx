@@ -377,11 +377,6 @@ export default function Academy() {
 
           <ol className="ac-stages">{stages.map(([label, text], index) => <li key={label}><span className="ac-stage-number">{number(index)}</span><div><strong>{label}</strong><p>{text}</p></div></li>)}</ol>
 
-          <div className="ac-focus-join">
-            <p><strong>{t("Klaar om te starten?")}</strong></p>
-            <p>{t("Prijs op maat, na een kennismaking met Stef.")}</p>
-            {!signedUp && <button className="ac-button" onClick={goToSignup}>{t("Meld je aan")}</button>}
-          </div>
         </article>
 
         <aside className="ac-focus-card" aria-label={t("Meta Ads Academy in het kort")}>
