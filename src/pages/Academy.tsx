@@ -12,7 +12,6 @@ import { academyFaq as sourceFaq, academyModules as sourceModules, academyTests 
 import { cases } from '../data/cases'
 import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
-import stefDeskSmall from '../assets/stef-desk-640.webp'
 import stefNooms from '../assets/stef.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
 import studentUpdate from '../assets/academy-student-update.png'
@@ -22,7 +21,6 @@ import academyStylesheet from './Academy.css?url'
 
 const number = (index: number) => String(index + 1).padStart(2, '0')
 const contactAcademy = '/contact?interesse=academy'
-const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
 /** Animate on entry without ever hiding content before JavaScript or CSS has loaded. */
 function useReveal(lang: string) {
   const ref = useRef<HTMLDivElement>(null)
@@ -257,7 +255,7 @@ export default function Academy() {
       const card = document.querySelector('.ac-focus-card')?.getBoundingClientRect()
       const promise = document.querySelector('.ac-promise')?.getBoundingClientRect()
       const visible = (rect?: DOMRect) => !!rect && rect.top < innerHeight && rect.bottom > 0
-      // Hide the bar wherever another join button is already on screen.
+      // Keep the reading card quiet and avoid repeating other visible join buttons.
       setSticky(!!hero && hero.bottom < 0 && !visible(signup) && !visible(footer) && !visible(card) && !visible(promise))
       // Mount the bar only once the visitor scrolls, so it never animates while the stylesheet is still loading.
       if (scrollY > 40) setStickyArmed(true)
@@ -341,16 +339,11 @@ export default function Academy() {
               <div><strong>{thanks}{" " + t("Je aanvraag is binnen.")}</strong><small>{t("Stef neemt contact op om een kennismaking te plannen. Je krijgt ook een bevestiging per mail.")}</small></div>
             </div> : <button className="ac-button" onClick={goToSignup}>{t('Plan een kennismaking')}</button>}
           </div>
-          <div className="ac-trust">
-            <img src={stefDeskSmall} alt="" width="44" height="44" loading="eager" />
-            <p><strong>{t("Door Stef Keppens")}</strong>, verkoop.studio<span>{t("Uit de praktijk bij") + " "}{practice.map((name, index) => <b key={name}>{name}{index < practice.length - 1 && <i aria-hidden="true">·</i>}</b>)}</span></p>
-          </div>
         </div>
       </section>
 
       <section id="aanbod" className="ac-offer ac-wrap" aria-labelledby="offer-title">
         <div className="ac-offer-main">
-          <p className="ac-dot-kicker"><span />{" " + t("Het aanbod")}</p>
           <h2 id="offer-title">{t('Dit zit erin.')}</h2>
           <ul className="ac-offer-list">{offer.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
         </div>
@@ -416,14 +409,10 @@ export default function Academy() {
         </article>
 
         <aside className="ac-focus-card" aria-label={t("Meta Ads Academy in het kort")}>
-          <figure><ResponsiveImage src={stefNooms} alt={t("Stef Keppens van verkoop.studio")} sizes="340px" loading="lazy" /><figcaption>META ADS ACADEMY</figcaption></figure>
+          <figure><ResponsiveImage src={stefNooms} alt={t("Stef Keppens van verkoop.studio")} sizes="(max-width: 700px) 100vw, 420px" loading="lazy" /></figure>
           <div className="ac-focus-card-body">
-            <h3>Meta Ads Academy</h3>
-            <span className="ac-focus-url">verkoop.studio/academy</span>
-            <p>{t("1-op-1 Meta ads lessen voor webshops.")}</p>
-            <dl><div><dt>{t("Lessen")}</dt><dd>{t("1-op-1")}</dd></div><div><dt>{t("ROAS-doel")}</dt><dd>3–4</dd></div><div><dt>Account</dt><dd>{t("Eigen")}</dd></div></dl>
-            {signedUp ? <p className="ac-focus-done">{" " + t("Je aanvraag is binnen.")}</p> : <button className="ac-button ac-focus-join-button" onClick={goToSignup}>{t("Plan een kennismaking")}</button>}
-            <small>{t("Prijs op maat, na een kennismaking met Stef.")}</small>
+            <h3>{t('Leren in de praktijk')}</h3>
+            <p>{t('1-op-1 met Stef, in je eigen advertentieaccount. Je werkt aan je eigen campagnes, pagina’s en tracking.')}</p>
           </div>
         </aside>
       </section>

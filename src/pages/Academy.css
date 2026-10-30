@@ -198,7 +198,7 @@
 .ac-check-list.is-no li { border-left-color: #f0a8a8; }
 .ac-plain-list { display: grid; gap: 10px; margin-top: 16px; }
 .ac-plain-list li { padding-left: 14px; border-left: 2px solid var(--ac-blue); font-size: 16px; font-weight: 500; line-height: 1.5; }
-.ac-focus-card { position: sticky; top: 92px; overflow: hidden; border-radius: 20px; background: #fff; border: 1px solid #e3e6f2; box-shadow: 0 40px 80px -44px #254bfa59; }
+.ac-focus-card { position: sticky; top: 92px; overflow: hidden; border-radius: 20px; background: #fff; border: 1px solid #e3e6f2; box-shadow: none; }
 .ac-focus-card figure { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
 .ac-focus-card figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; }
 .ac-focus-card figcaption { position: absolute; left: 14px; bottom: 12px; padding: 6px 10px; border-radius: 8px; background: var(--ac-blue); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; }
@@ -771,3 +771,5 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
   .ac-case-controls span { min-width: 32px; color: var(--ac-text); text-align: center; font-size: 12px; }
   .academy-page .ac-proof-heading h2 { font-size: clamp(24px, 5vw, 32px); white-space: nowrap; }
 }
+
+.ac-offer-main > h2:first-child { margin-top: 0; }
