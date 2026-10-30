@@ -313,7 +313,6 @@ export default function PursuitOffer() {
             <p>Van</p>
             <strong>verkoop.studio</strong>
             <span>TanguyDeBee BV · BTW BE 1002.613.972</span>
-            <span>Zilverbergstraat 176, 8800 Roeselare</span>
           </div>
         </div>
       </section>
