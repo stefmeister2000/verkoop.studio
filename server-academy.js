@@ -36,7 +36,7 @@ export function academyKey(fields) {
 export function academyCrmPayload(fields) {
   return crmPayload({
     naam: fields.naam, email: fields.email, telefoon: fields.telefoon, bedrijf: fields.bedrijf, website: fields.website,
-    doel: 'Meta Ads Academy: aanmelding',
+    doel: 'Meta Ads Academy: kennismaking',
     uitdaging: fields.vraag,
     investering: ACADEMY_BUDGETS[fields.budget] ?? '',
     extra: [fields.niveau && `Stand van zaken: ${ACADEMY_LEVELS[fields.niveau]}`, fields.nieuwsbrief && 'Nieuwsbrief: ja'].filter(Boolean).join('\n'),
@@ -72,17 +72,17 @@ export function academyWelcome(fields) {
   const en = fields.lang === 'en'
   const lines = en ? [
     `Hi ${firstName},`, '',
-    'Thank you for signing up for the Meta Ads Academy by verkoop.studio.',
-    'Stef will contact you personally to discuss your goals, experience and lessons. You will then receive a tailored proposal.',
+    'Thank you for requesting an introductory call about the Meta Ads Academy by verkoop.studio.',
+    'Stef will contact you personally to arrange a time. During the call, you can discuss your goals and see whether the lessons are a good fit.',
     'Have a question in the meantime? Just reply to this email.', '', 'Speak soon,', 'Stef — verkoop.studio',
   ] : [
     `Hoi ${firstName},`, '',
-    'Bedankt voor je aanmelding voor de Meta Ads Academy van verkoop.studio.',
-    'Stef neemt persoonlijk contact met je op om je doel, je ervaring en de opzet van je traject te bespreken. Daarna krijg je een voorstel.',
+    'Bedankt voor je aanvraag voor een kennismaking over de Meta Ads Academy van verkoop.studio.',
+    'Stef neemt persoonlijk contact met je op om een moment af te spreken. Tijdens de kennismaking bespreken jullie je doelen en of de lessen bij je passen.',
     'Een vraag in de tussentijd? Antwoord gewoon op deze mail.', '', 'Tot snel,', 'Stef — verkoop.studio',
   ]
   return {
-    subject: en ? 'Your Meta Ads Academy signup' : 'Je aanmelding voor de Meta Ads Academy',
+    subject: en ? 'Your Meta Ads Academy introductory call request' : 'Je kennismakingsaanvraag voor de Meta Ads Academy',
     text: lines.join('\n'),
     html: `<div lang="${en ? 'en' : 'nl'}" style="font-family:Arial,Helvetica,sans-serif;color:#172343;max-width:520px;font-size:15px;line-height:1.6"><p style="font-size:12px;color:#254bfa;font-weight:700;letter-spacing:1px;margin:0 0 6px">META ADS ACADEMY</p><h1 style="font-size:24px;line-height:1.2;margin:0 0 16px">${en ? 'Thank you' : 'Bedankt'}, ${escape(firstName)}.</h1><p>${escape(lines[2])}</p><p>${escape(lines[3])}</p><p>${escape(lines[4])}</p><p style="color:#62708a;font-size:13px;margin-top:24px">${escape(lines[6])}<br>Stef — verkoop.studio</p></div>`,
   }

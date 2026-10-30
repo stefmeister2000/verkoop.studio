@@ -60,7 +60,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       })
       const receipt = await response.json()
       if (!response.ok || receipt.ok !== true) {
-        setError(response.status === 400 ? "Controleer je gegevens en probeer opnieuw." : response.status === 429 ? "Even te veel pogingen. Probeer het over enkele minuten opnieuw." : "Aanmelden lukte niet. Probeer opnieuw of mail stefkeppens@gmail.com.")
+        setError(response.status === 400 ? "Controleer je gegevens en probeer opnieuw." : response.status === 429 ? "Even te veel pogingen. Probeer het over enkele minuten opnieuw." : "Versturen lukte niet. Probeer opnieuw of mail stefkeppens@gmail.com.")
         setStatus('idle')
         return
       }
@@ -68,7 +68,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       trackAcademyConversion(receipt, submissionId.current, formId)
       onSuccess(naam.split(/\s+/)[0])
     } catch {
-      setError("Aanmelden lukte niet. Probeer opnieuw of mail stefkeppens@gmail.com.")
+      setError("Versturen lukte niet. Probeer opnieuw of mail stefkeppens@gmail.com.")
       setStatus('idle')
     }
   }
@@ -79,14 +79,14 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       <label className="ac-field"><span className={full ? '' : 'sr-only'}>{t("E-mailadres")}</span><input name="email" type="email" autoComplete="email" autoCapitalize="none" spellCheck={false} required maxLength={200} placeholder={full ? '' : t("Je e-mailadres")} /></label>
       <label className="ac-field"><span className={full ? '' : 'sr-only'}>{t("Telefoon")}</span><input name="telefoon" type="tel" autoComplete="tel" required maxLength={60} placeholder={full ? '' : t("Je telefoonnummer")} /></label>
       {full && <label className="ac-field"><span>{t("Bedrijf") + " "}<em>{t("optioneel")}</em></span><input name="bedrijf" autoComplete="organization" maxLength={200} /></label>}
-      {full && <label className="ac-field ac-field-wide"><span>{t("Webshop") + " "}<em>{t("optioneel")}</em></span><input name="website" type="url" inputMode="url" autoCapitalize="none" spellCheck={false} maxLength={300} placeholder="https://" /></label>}
+      {full && <label className="ac-field ac-field-wide"><span>{t("Website of webshop") + " "}<em>{t("optioneel")}</em></span><input name="website" type="url" inputMode="url" autoCapitalize="none" spellCheck={false} maxLength={300} placeholder="https://" /></label>}
     </div>
     {full && <Choices legend={t("Waar sta je met Meta ads?")} options={levels} value={niveau} onChange={value => { start(); setNiveau(value) }} />}
     {full && <Choices legend={t("Maandelijks advertentiebudget")} options={budgets} value={budget} onChange={value => { start(); setBudget(value) }} />}
     {full && <label className="ac-field ac-field-wide"><span>{t("Waar wil je vooral beter in worden?") + " "}<em>{t("optioneel")}</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder={t("Bijvoorbeeld: opschalen zonder dat mijn ROAS zakt, mijn tracking op orde krijgen of retargeting opzetten.")} /></label>}
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
     {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.")}</span></label>}
-    <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? t("Even geduld…") : (submitLabel ?? t('Meld je aan'))}</button>
+    <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? t("Even geduld…") : (submitLabel ?? t('Plan een kennismaking'))}</button>
     {error && <p className="ac-form-error" role="alert">{t(error)}</p>}
   </form>
 }
