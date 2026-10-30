@@ -14,6 +14,7 @@ import stefDeskSmall from '../assets/stef-desk-640.webp'
 import stefNooms from '../assets/stef.webp'
 import studioTeam from '../assets/studio-team.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
+import studentUpdate from '../assets/academy-student-update.png'
 import pinacelloPage from '../assets/cases/pinacello.webp'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
 import academyStylesheet from './Academy.css?url'
@@ -302,7 +303,7 @@ export default function Academy() {
             <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>NL</button>
             <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
           </div>
-          <button className="ac-header-cta" onClick={goToSignup}>{t("Meld je aan")}</button>
+          <button className="ac-header-cta" onClick={goToSignup}>{t("Plan een kennismaking")}</button>
         </div>
       </div>
     </header>
@@ -321,8 +322,8 @@ export default function Academy() {
         <div className="ac-hero-conversion">
           <div id="academy-hero-signup" className="ac-hero-signup">
             {signedUp ? <div className="ac-welcome-card" role="status">
-              <div><strong>{thanks}{" " + t("Je aanmelding is binnen.")}</strong><small>{t("Stef neemt persoonlijk contact met je op. Je krijgt ook een bevestiging per mail.")}</small></div>
-            </div> : <button className="ac-button" onClick={goToSignup}>{t('Meld je aan')}</button>}
+              <div><strong>{thanks}{" " + t("Je aanvraag is binnen.")}</strong><small>{t("Stef neemt contact op om een kennismaking te plannen. Je krijgt ook een bevestiging per mail.")}</small></div>
+            </div> : <button className="ac-button" onClick={goToSignup}>{t('Plan een kennismaking')}</button>}
           </div>
           <div className="ac-trust">
             <img src={stefDeskSmall} alt="" width="44" height="44" loading="eager" />
@@ -341,6 +342,17 @@ export default function Academy() {
 
       <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
         <h2 id="proof-title">{t("Case studies")}</h2>
+        <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
+          <div className="ac-student-copy">
+            <p className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</p>
+            <h3 id="student-proof-title">{t('Een update van een deelnemer')}</h3>
+            <blockquote lang={lang}>“{t('Even kleine update van het nieuwe bedrijf dat ik maandje geleden ben opgestart')}”</blockquote>
+            <p className="ac-student-credit">{t('Deelnemer aan de 1-op-1 lessen')}</p>
+            <p className="ac-student-revenue"><strong>{euro(5872.60)}</strong><span>{t('Omzet in Shopify')}</span></p>
+            <p className="ac-fine">{t('28 sep – 10 okt 2026 · gedeelde screenshot')}</p>
+          </div>
+          <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} />{lang === 'en' && <figcaption>{t('Origineel bericht in het Nederlands')}</figcaption>}</figure>
+        </article>
         <article className="ac-case ac-case-main ac-reveal">
           <div className="ac-case-copy">
             <span className="ac-case-tag">{t("VAN KLIK TOT AANKOOP")}</span>
@@ -368,7 +380,7 @@ export default function Academy() {
           <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
           <p className="ac-promise-figure"><strong>3–4</strong><span>{t("ROAS op je Meta ads")}</span></p>
           <p>{t("Elke euro die je in Meta ads steekt, levert") + " "}<b>{t("€3 tot €4 omzet")}</b>{(lang === 'nl' ? ' ' : '') + t("op. Daar werkt elke les naartoe.")}</p>
-          {signedUp ? <p className="ac-promise-done">{t("Je aanmelding is binnen.")}</p> : <button className="ac-button ac-button-light" onClick={goToSignup}>{t("Meld je aan")}</button>}
+          {signedUp ? <p className="ac-promise-done">{t("Je aanvraag is binnen.")}</p> : <button className="ac-button ac-button-light" onClick={goToSignup}>{t("Plan een kennismaking")}</button>}
           <small>{t("Prijs op maat na de kennismaking. Advertentiebudget niet inbegrepen.")}</small>
         </aside>
 
@@ -389,7 +401,7 @@ export default function Academy() {
             <span className="ac-focus-url">verkoop.studio/academy</span>
             <p>{t("1-op-1 Meta ads lessen voor webshops.")}</p>
             <dl><div><dt>{t("Lessen")}</dt><dd>{t("1-op-1")}</dd></div><div><dt>{t("ROAS-doel")}</dt><dd>3–4</dd></div><div><dt>Account</dt><dd>{t("Eigen")}</dd></div></dl>
-            {signedUp ? <p className="ac-focus-done">{" " + t("Je aanmelding is binnen.")}</p> : <button className="ac-button ac-focus-join-button" onClick={goToSignup}>{t("Meld je aan")}</button>}
+            {signedUp ? <p className="ac-focus-done">{" " + t("Je aanvraag is binnen.")}</p> : <button className="ac-button ac-focus-join-button" onClick={goToSignup}>{t("Plan een kennismaking")}</button>}
             <small>{t("Prijs op maat, na een kennismaking met Stef.")}</small>
           </div>
         </aside>
@@ -409,7 +421,7 @@ export default function Academy() {
             <p>{topic.summary}</p>
             <ul>{topic.points.map(point => <li key={point}>{point}</li>)}</ul>
             <p className="ac-slide-outcome"><span>{t("WAT JE EROVER HEBT")}</span>{topic.outcome}</p>
-            <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>{t("Meld je aan")}</button></div>
+            <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>{t("Plan een kennismaking")}</button></div>
           </div>
         </div>
       </section>
@@ -465,20 +477,20 @@ export default function Academy() {
 
       <section id="aanmelden" className="ac-signup-section ac-wrap" aria-labelledby="signup-title">
         <div className="ac-signup-intro">
-          <p className="ac-dot-kicker"><span />{" " + t("Aanmelden")}</p>
-          <h2 id="signup-title">{t("Start je 1-op-1 lessen.")}<br /><span>{t("Meld je aan.")}</span></h2>
-          <p>{t("Vul het formulier in. Stef bekijkt je webshop en neemt persoonlijk contact met je op.")}</p>
+          <p className="ac-dot-kicker"><span />{" " + t("Kennismaking")}</p>
+          <h2 id="signup-title">{t("Plan een kennismaking")}</h2>
+          <p>{t("Laat je gegevens achter. Stef neemt contact op om een kennismaking te plannen.")}</p>
           <ol className="ac-next-steps">
-            <li><span>1</span><div><strong>{t("Vul het formulier in")}</strong><small>{t("Een minuut werk. Webshop en budget zijn optioneel.")}</small></div></li>
+            <li><span>1</span><div><strong>{t("Vul het formulier in")}</strong><small>{t("Een minuut werk. Website en budget zijn optioneel.")}</small></div></li>
             <li><span>2</span><div><strong>{t("Kennismaking met Stef")}</strong><small>{t("Telefonisch of per e-mail: waar sta je en wat wil je bereiken?")}</small></div></li>
-            <li><span>3</span><div><strong>{t("Start je lessen")}</strong><small>{t("Je krijgt een voorstel op maat. Daarna beslis je.")}</small></div></li>
+            <li><span>3</span><div><strong>{t("Kies daarna je traject")}</strong><small>{t("Je krijgt een voorstel op maat. Daarna beslis je.")}</small></div></li>
           </ol>
           <p className="ac-privacy">{t("We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.")}</p>
         </div>
         <div className="ac-signup-card">
           {signedUp ? <div className="ac-signup-done" role="status">
                         <h3>{thanks}</h3>
-            <p>{t("Je aanmelding is binnen. Stef bekijkt je webshop en neemt persoonlijk contact met je op. Je krijgt ook een bevestiging per mail.")}</p>
+            <p>{t("Je aanvraag is binnen. Stef neemt contact op om een kennismaking te plannen. Je krijgt ook een bevestiging per mail.")}</p>
             <div><Link className="ac-button" to="/cases">{t("Bekijk intussen onze cases")}</Link></div>
           </div> : <AcademySignup formId="academy-signup" variant="full" onSuccess={joined('academy-signup')} />}
         </div>
@@ -501,12 +513,12 @@ export default function Academy() {
       </section>
 
       <section className="ac-final ac-wrap" aria-labelledby="final-title">
-        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">{t("KLAAR VOOR ROAS 3 TOT 4?")}</p><h2 id="final-title">{t("Start je 1-op-1 lessen.")}</h2><p>{t("Meld je aan in een minuut. Stef neemt persoonlijk contact met je op.")}</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>{t("Meld je aan")}</button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>{t("Of stel eerst een vraag")}</Link></div></div>
+        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">{t("KENNISMAKEN MET STEF")}</p><h2 id="final-title">{t("Even kennismaken?")}</h2><p>{t("Bespreek je doelen met Stef en ontdek hoe de lessen bij jouw bedrijf passen.")}</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>{t("Plan een kennismaking")}</button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>{t("Of stel eerst een vraag")}</Link></div></div>
       </section>
     </main>
 
     {!signedUp && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
-      <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>{t('Leer Meta ads')}</button>
+      <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>{t('Plan een kennismaking')}</button>
     </div>}
 
     <footer className="ac-footer">
@@ -516,9 +528,9 @@ export default function Academy() {
           <NewsletterForm />
         </div>
         <div className="ac-footer-columns">
-          <div><h3>Academy</h3><a href="#aanbod">{t("Aanbod")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#aanmelden">{t("Aanmelden")}</a></div>
+          <div><h3>Academy</h3><a href="#aanbod">{t("Aanbod")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#aanmelden">{t("Kennismaking")}</a></div>
           <div><h3>verkoop.studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
-          <div><h3>Contact</h3><a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a><Link to={contactAcademy}>{t("Plan een gesprek")}</Link><span>{t("Lochristi, België")}</span></div>
+          <div><h3>Contact</h3><a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a><a href="#aanmelden">{t("Plan een kennismaking")}</a><span>{t("Lochristi, België")}</span></div>
           <div><h3>{t("Goed om te weten")}</h3><span>{t("Niet verbonden aan of gecertificeerd door Meta.")}</span><span>{t("Resultaten hangen af van je product, marge en budget.")}</span></div>
         </div>
         <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("verkoop.studio. Alle rechten voorbehouden.")}</p>
