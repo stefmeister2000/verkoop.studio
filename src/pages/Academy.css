@@ -807,3 +807,10 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
   .ac-practice-body .ac-testlog-side button > span:last-child { display: block; }
   .ac-practice-body .ac-testlog-side button small { display: block; margin-top: 3px; text-align: left; }
 }
+
+.ac-student-story { margin-top: 16px; }
+.ac-student-story-title { font-size: 23px; font-weight: 600; line-height: 1.2; letter-spacing: -.025em; }
+.ac-student-story > p + p { margin-top: 10px; color: var(--ac-text); font-size: 14px; line-height: 1.55; }
+.ac-case-slides .ac-student-proof figure { flex: none; }
+.ac-case-slides .ac-student-proof img { max-height: 420px; }
+@media (max-width: 700px) { .ac-student-story-title { font-size: 20px; } }

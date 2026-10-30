@@ -22,10 +22,10 @@ export const addOns: AddOn[] = [
   {
     key: 'learning-track',
     name: { nl: 'Meta Ads Academy', en: 'Meta Ads Academy' },
-    price: { nl: 'Meld je aan', en: 'Sign up' },
+    price: { nl: 'Bekijk de lessen', en: 'Explore the lessons' },
     description: {
-      nl: 'Volledig 1-op-1 Meta ads lessen met Stef, in je eigen account. Eén belofte: een ROAS van 3 tot 4. Ook als je nog nooit hebt geadverteerd.',
-      en: 'Fully one-on-one Meta ads lessons with Stef, in your own account. One promise: a ROAS of 3 to 4. Even if you have never advertised before.',
+      nl: 'Leer zelf Meta ads beheren, 1-op-1 met Stef.',
+      en: 'Learn to manage Meta ads yourself, one-to-one with Stef.',
     },
     href: '/academy',
   },

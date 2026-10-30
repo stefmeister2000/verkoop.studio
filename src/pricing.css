@@ -125,3 +125,9 @@
   .pricing-mobile-comparison dt { color: #253453; }
   .pricing-mobile-comparison dd { color: #59657c; margin-top: 4px; }
 }
+
+/* Short package summaries; the full comparison remains available below. */
+.plan-outcome { min-height: 48px; }
+.plan-includes { margin-top: 20px; padding-top: 20px; }
+.plan-includes ul { gap: 10px; }
+@media (max-width: 700px) { .plan-outcome { min-height: 0; } }
