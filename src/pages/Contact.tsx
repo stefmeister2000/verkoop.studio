@@ -64,9 +64,8 @@ export default function Contact() {
           <div className="contact-note">
             <p className="contact-who">
               <strong>Stef Keppens</strong>
-              <span>Lochristi</span>
             </p>
-            <a className="contact-mail" href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a>
+            <a className="contact-mail" href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>
             {!selectedPlatform && (
               <ol className="contact-steps">
                 {steps.map((step) => <li key={step}>{step}</li>)}

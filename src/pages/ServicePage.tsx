@@ -194,7 +194,7 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
             <p className="service-close-who">
               <strong>Stef Keppens</strong>
               <span>Lochristi</span>
-              <a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a>
+              <a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>
             </p>
           </div>
         </div>

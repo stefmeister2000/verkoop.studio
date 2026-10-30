@@ -60,7 +60,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       })
       const receipt = await response.json()
       if (!response.ok || receipt.ok !== true) {
-        setError(response.status === 400 ? "Controleer je gegevens en probeer opnieuw." : response.status === 429 ? "Even te veel pogingen. Probeer het over enkele minuten opnieuw." : "Versturen lukte niet. Probeer opnieuw of mail stefkeppens@gmail.com.")
+        setError(response.status === 400 ? "Controleer je gegevens en probeer opnieuw." : response.status === 429 ? "Even te veel pogingen. Probeer het over enkele minuten opnieuw." : "Versturen lukte niet. Probeer opnieuw of mail stef@verkoop.studio.")
         setStatus('idle')
         return
       }
@@ -68,7 +68,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       trackAcademyConversion(receipt, submissionId.current, formId)
       onSuccess(naam.split(/\s+/)[0])
     } catch {
-      setError("Versturen lukte niet. Probeer opnieuw of mail stefkeppens@gmail.com.")
+      setError("Versturen lukte niet. Probeer opnieuw of mail stef@verkoop.studio.")
       setStatus('idle')
     }
   }
