@@ -200,10 +200,6 @@
 .ac-check-list.is-no li { border-left-color: #f0a8a8; }
 .ac-plain-list { display: grid; gap: 10px; margin-top: 16px; }
 .ac-plain-list li { padding-left: 14px; border-left: 2px solid var(--ac-blue); font-size: 16px; font-weight: 500; line-height: 1.5; }
-.ac-focus-author { display: flex; align-items: flex-start; gap: 16px; margin-top: 16px; padding: 18px; border-radius: 16px; background: #ffffffb3; border: 1px solid var(--ac-line); }
-.ac-focus-author img { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 24%; }
-.ac-focus-author p { color: var(--ac-text); font-size: 15px; line-height: 1.65; }
-.ac-focus-author strong { color: var(--ac-ink); font-weight: 600; }
 .ac-focus-card { position: sticky; top: 92px; overflow: hidden; border-radius: 20px; background: #fff; border: 1px solid #e3e6f2; box-shadow: 0 40px 80px -44px #254bfa59; }
 .ac-focus-card figure { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
 .ac-focus-card figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; }
@@ -580,9 +576,6 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 
 /* Pinacello case: published client results, unlike the fictional testlog. */
 .ac-proof { margin-top: 110px; scroll-margin-top: 88px; }
-.ac-proof-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 480px); align-items: end; gap: 20px 56px; }
-.ac-proof-top h2 { margin-top: 12px; }
-.ac-proof-top .ac-section-intro { margin-top: 0; }
 .ac-case { border: 1px solid #eef0f7; border-radius: 26px; background: #fff; box-shadow: 0 30px 60px -38px #181c3d4d; }
 .ac-case-tag { color: var(--ac-blue); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
 .ac-case-figure { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; }
@@ -601,7 +594,6 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 .ac-case-shot figcaption { position: absolute; left: 14px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: #ffffffeb; color: var(--ac-ink); font-family: var(--ac-mono); font-size: 12px; box-shadow: 0 8px 20px -10px #181c3d59; pointer-events: none; }
 @media (max-width: 900px) {
   .ac-proof { margin-top: 88px; }
-  .ac-proof-top { grid-template-columns: 1fr; }
   .ac-case-main { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
   .ac-case-shot { order: -1; }
 }
@@ -631,10 +623,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 .ac-promise-figure span { color: #dbe1ff; font-size: 16px; font-weight: 600; }
 .ac-promise > p:not(.ac-kicker):not(.ac-promise-figure) { margin-top: 14px; color: #e4e8ff; font-size: 15.5px; line-height: 1.55; }
 .ac-promise > p b { color: #fff; white-space: nowrap; }
-.ac-promise-steps { display: grid; gap: 10px; margin: 22px 0 24px; padding-top: 20px; border-top: 1px solid #ffffff33; }
-.ac-promise-steps li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; }
-.ac-promise-steps span { display: grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 50%; background: #ffffff26; font-size: 12.5px; font-weight: 700; }
-.ac-promise .ac-button { width: 100%; }
+.ac-promise .ac-button { width: 100%; margin-top: 24px; }
 .ac-promise small { margin-top: 12px; color: #c7d0ff; font-size: 12px; line-height: 1.5; text-align: center; }
 p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: center; }
 @media (max-width: 900px) {
