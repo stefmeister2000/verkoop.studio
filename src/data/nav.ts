@@ -10,6 +10,7 @@ export const navItems: NavItem[] = [
   { label: { nl: 'Resultaten', en: 'Results' }, href: '/#resultaten' },
   { label: { nl: 'Diensten', en: 'Services' }, href: '/#expertise' },
   { label: { nl: 'Cases', en: 'Cases' }, href: '/cases' },
+  { label: { nl: 'Academy', en: 'Academy' }, href: '/academy' },
   { label: { nl: 'Agency', en: 'Agency' }, href: '/agency' },
   { label: { nl: 'Contact', en: 'Contact' }, href: '/contact' },
 ]
