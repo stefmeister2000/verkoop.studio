@@ -376,7 +376,7 @@ export default function Academy() {
         </article>
         <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
           <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
-          <div className="ac-student-story"><p className="ac-student-story-title">{t('Van een 9-tot-5 naar een eigen bedrijf.')}</p><p>{t('Na de lessen met Stef kon deze deelnemer zijn baan achter zich laten en zich op zijn eigen onderneming richten. Dit is de update die hij deelde.')}</p></div>
+          <div className="ac-student-story"><p className="ac-student-story-title">{t('Van een 9-tot-5 naar een eigen bedrijf.')}</p><p>{t('Na de lessen met Stef kon deze deelnemer zijn baan achter zich laten en zich op zijn eigen onderneming richten.')}</p></div>
           <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
         </article>
         </div>
