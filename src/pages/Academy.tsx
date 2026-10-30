@@ -364,10 +364,6 @@ export default function Academy() {
           const second = track.children[1] as HTMLElement
           setCaseSlide(track.scrollLeft > (second.offsetLeft - first.offsetLeft) / 2 ? 1 : 0)
         }}>
-        <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
-          <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
-          <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
-        </article>
         <article className="ac-case ac-case-main ac-reveal" aria-labelledby="pinacello-case-title">
           <div className="ac-case-copy">
             <span className="ac-case-tag">PINACELLO</span>
@@ -378,6 +374,10 @@ export default function Academy() {
           </figure>
           <ol className="ac-case-steps">{pinacelloSteps.map(([label, text], index) => <li key={label}><span>{number(index)}</span><div><strong>{label}</strong>{text}</div></li>)}</ol>
           <Link className="ac-text-link" to="/cases/pinacello">{t("Lees de volledige case")}</Link>
+        </article>
+        <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
+          <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
+          <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
         </article>
         </div>
         <p className="ac-fine">{t("Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.")}</p>
@@ -419,7 +419,7 @@ export default function Academy() {
 
       <section id="programma" className="ac-curriculum ac-wrap" aria-labelledby="curriculum-title">
         <div className="ac-curriculum-top">
-          <div><p className="ac-kicker">{t("WAT JE LEERT")}</p><h2 id="curriculum-title">{t("Alles voor ROAS 3 tot 4.") + " "}<span>{t("Onderdeel per onderdeel.")}</span></h2></div>
+          <div><h2 id="curriculum-title">{t("Wat je leert")}</h2><p className="ac-learning-intro">{t("Van je eerste campagne tot meten en bijsturen.")}</p></div>
           <div className="ac-slider-buttons"><button onClick={() => step(-1)}>{t("Vorige")}</button><button onClick={() => step(1)}>{t("Volgende")}</button></div>
         </div>
         <div className="ac-progress-tabs" ref={tabsRef}>{academyModules.map((item, index) => <button key={item.id} className={index === slide ? 'is-active' : index < slide ? 'is-past' : ''} onClick={() => setSlide(index)} aria-label={item.shortTitle} aria-current={index === slide ? 'true' : undefined}><span>{number(index)}</span><em>{item.shortTitle}</em></button>)}</div>
@@ -434,11 +434,10 @@ export default function Academy() {
             <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>{t("Plan een kennismaking")}</button></div>
           </div>
         </div>
-      </section>
-
-      <section id="testlog" className="ac-testlog-section ac-wrap" aria-labelledby="testlog-title">
-        <p className="ac-dot-kicker"><span />{" " + t('Oefenvoorbeeld')}</p>
-        <h2 id="testlog-title">{t('Welke ad werkt echt?')}</h2>
+        <details id="testlog" className="ac-practice-example">
+          <summary>{t('Probeer een voorbeeld')}<span aria-hidden="true">+</span></summary>
+          <div className="ac-practice-body">
+        <h3 id="testlog-title">{t('Welke ad werkt echt?')}</h3>
         <p className="ac-section-intro">{t('Vergelijk kosten en nieuwe klanten. Kies een ad.')}</p>
         <div className="ac-stats-row"><div><span>{t("UITGAVEN · 14 DAGEN")}</span><strong>{euro(totals.spend)}</strong></div><div><span>{t("NIEUWE KLANTEN")}</span><strong className="ac-positive">{totals.newCustomers} <small>{t("van") + " "}{totals.purchases}{" " + t("aankopen")}</small></strong></div></div>
         <div className="ac-testlog ac-reveal">
@@ -469,6 +468,8 @@ export default function Academy() {
           </div>
         </div>
         <p className="ac-fine">{t('Fictieve cijfers, geen klantresultaten.')}</p>
+          </div>
+        </details>
       </section>
 
       <section id="aanmelden" className="ac-signup-section ac-wrap" aria-labelledby="signup-title">
@@ -513,7 +514,7 @@ export default function Academy() {
       </section>
     </main>
 
-    <AcademyCapturePopup completed={!!signedUp} suppressed={popupSuppressed} onVisibilityChange={setPopupVisible} onSuccess={joined('academy-popup')} />
+    <AcademyCapturePopup completed={!!signedUp} suppressed={popupSuppressed} onVisibilityChange={setPopupVisible} />
 
     {!signedUp && !popupVisible && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
       <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>{t('Plan een kennismaking')}</button>

@@ -1,16 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import AcademySignup from './AcademySignup'
+import AcademyInfoSignup from './AcademyInfoSignup'
 import { useAcademyTranslation } from '../i18n/academy'
 import { ACADEMY_POPUP_DELAY, canShowAcademyPopup, readAcademyPopupHistory, recordAcademyPopup } from '../lib/academy-popup'
 
-export default function AcademyCapturePopup({ completed, suppressed, onVisibilityChange, onSuccess }: {
+export default function AcademyCapturePopup({ completed, suppressed, onVisibilityChange }: {
   completed: boolean
   suppressed: boolean
   onVisibilityChange: (visible: boolean) => void
-  onSuccess: (name: string) => void
 }) {
   const { t } = useAcademyTranslation()
-  const [stage, setStage] = useState<'prompt' | 'form' | 'success' | null>(null)
+  const [stage, setStage] = useState<'prompt' | 'success' | null>(null)
   const panel = useRef<HTMLElement>(null)
   const previousFocus = useRef<HTMLElement | null>(null)
   const capturedHere = useRef(false)
@@ -72,7 +71,6 @@ export default function AcademyCapturePopup({ completed, suppressed, onVisibilit
   }, [completed, suppressed, onVisibilityChange])
 
   useEffect(() => {
-    if (stage === 'form') panel.current?.querySelector<HTMLInputElement>('input[name="naam"]')?.focus({ preventScroll: true })
     if (!stage) return
     const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') close() }
     document.addEventListener('keydown', escape)
@@ -81,19 +79,18 @@ export default function AcademyCapturePopup({ completed, suppressed, onVisibilit
 
   if (!stage) return null
   return <aside ref={panel} className="ac-capture-popup" role="dialog" aria-modal="false" aria-labelledby="academy-popup-title" aria-describedby="academy-popup-description">
-    <button className="ac-popup-close" type="button" onClick={close} aria-label={t('Sluit kennismakingsvenster')}>×</button>
+    <button className="ac-popup-close" type="button" onClick={close} aria-label={t('Sluit informatievenster')}>×</button>
     <p className="ac-kicker">META ADS ACADEMY</p>
-    <h2 id="academy-popup-title">{stage === 'success' ? t('Je aanvraag is binnen.') : t('Even kennismaken?')}</h2>
-    <p id="academy-popup-description">{stage === 'success' ? t('Stef neemt contact op om een kennismaking te plannen. Je krijgt ook een bevestiging per mail.') : t('Ontdek samen met Stef of de lessen bij je passen.')}</p>
-    {stage === 'prompt' && <div className="ac-popup-actions"><button className="ac-button" onClick={() => setStage('form')}>{t('Plan een kennismaking')}</button><button className="ac-popup-later" onClick={close}>{t('Niet nu')}</button></div>}
-    {stage === 'form' && <>
-      <AcademySignup formId="academy-popup" onSuccess={name => {
+    <h2 id="academy-popup-title">{stage === 'success' ? t('De info is onderweg.') : t('Eerst wat meer info?')}</h2>
+    <p id="academy-popup-description">{stage === 'success' ? t('Bekijk je inbox voor het overzicht van de lessen.') : t('Ontvang gratis de lesinhoud en hoe de begeleiding werkt.')}</p>
+    {stage === 'prompt' && <>
+      <AcademyInfoSignup onSuccess={() => {
         capturedHere.current = true
         recordAcademyPopup(true)
         setStage('success')
-        onSuccess(name)
       }} />
-      <p className="ac-popup-privacy">{t('Alleen contact over je kennismaking. Geen nieuwsbrief.')}</p>
+      <p className="ac-popup-privacy">{t('Eén mail met informatie. Geen nieuwsbrief of belafspraak.')}</p>
+      <button className="ac-popup-later" onClick={close}>{t('Niet nu')}</button>
     </>}
     {stage === 'success' && <button className="ac-popup-later" onClick={close}>{t('Verder lezen')}</button>}
   </aside>
