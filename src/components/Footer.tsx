@@ -31,7 +31,6 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="studio-brand" aria-label="verkoop.studio, home"><BrandMark /></Link>
-            <p className="mt-2 text-sm text-mute">Lochristi, België</p>
             <p className="mt-3 max-w-xs text-sm text-mute">{t.tagline}</p>
           </div>
 
@@ -66,8 +65,8 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
             <p className="text-sm font-semibold text-paper">{t.contact}</p>
             <ul className="mt-3 space-y-2 text-sm text-mute">
               <li>
-                <a href="mailto:stefkeppens@gmail.com" className="transition hover:text-paper">
-                  stefkeppens@gmail.com
+                <a href="mailto:stef@verkoop.studio" className="transition hover:text-paper">
+                  stef@verkoop.studio
                 </a>
               </li>
               <li>

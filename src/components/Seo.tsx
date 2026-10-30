@@ -15,8 +15,7 @@ export default function Seo({ title, description, path, noindex = false, languag
   const organization = {
     '@type': 'ProfessionalService', '@id': `${SITE_URL}/#organization`, name: SITE_NAME,
     url: `${SITE_URL}/`, logo: `${SITE_URL}/favicon.svg`, image: socialImage,
-    email: 'stefkeppens@gmail.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Lochristi', addressCountry: 'BE' },
+    email: 'stef@verkoop.studio',
     description: 'Google Ads, Meta Ads, e-mailmarketing, data-analyse, websites en software vanuit Lochristi.',
   }
   const person = {

@@ -723,3 +723,22 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 @media (max-width: 560px) {
   .ac-capture-popup { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); padding: 20px; }
 }
+
+/* Clear language names beside the hero, with comfortable touch targets. */
+.ac-hero-copy .ac-language { width: fit-content; margin-bottom: 24px; padding: 4px; border-radius: 14px; background: #ffffffb8; }
+.ac-hero-copy .ac-language button { min-height: 44px; padding: 0 18px; border-radius: 10px; font-size: 14px; color: var(--ac-text); }
+.ac-hero-copy .ac-language button[aria-pressed="true"] { color: #fff; background: var(--ac-blue); box-shadow: 0 3px 10px #254bfa26; }
+.ac-case-main { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.ac-case-main .ac-case-figure { flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+.ac-case-main .ac-case-figure span { font-size: clamp(22px, 3vw, 32px); font-weight: 600; color: var(--ac-ink); }
+.ac-case-dashboard a { display: block; overflow: hidden; border: 1px solid var(--ac-line); border-radius: 16px; }
+.ac-case-dashboard img { width: 100%; height: auto; }
+.ac-case-main .ac-case-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
+.ac-case-main > .ac-text-link { justify-self: start; }
+@media (max-width: 700px) {
+  .ac-case-main .ac-case-steps { grid-template-columns: 1fr; }
+  .ac-case-main { gap: 20px; }
+  .ac-hero-copy .ac-language { margin-bottom: 20px; }
+}
+
+#pinacello-case-title { scroll-margin-top: 100px; }

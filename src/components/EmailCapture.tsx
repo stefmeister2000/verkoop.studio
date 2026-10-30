@@ -157,13 +157,13 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
           <span>{t.consent}</span>
         </label>
         {error && <p className="email-capture-error" role="alert">{error} {error === t.preferences &&
-          <a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a>}</p>}
+          <a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>}</p>}
         <button className="email-capture-submit" type="submit" disabled={status === 'pending'}>
           {status === 'pending' ? t.busy : t.action}<span aria-hidden="true">↗</span>
         </button>
         <div className="email-capture-footnote">
           <span>{t.note}</span>
-          <details><summary>{t.privacyLabel}</summary><p>{t.privacy} <a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a>.</p></details>
+          <details><summary>{t.privacyLabel}</summary><p>{t.privacy} <a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>.</p></details>
         </div>
       </form>}
       </div>

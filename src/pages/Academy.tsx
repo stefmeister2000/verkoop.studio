@@ -17,7 +17,6 @@ import stefNooms from '../assets/stef.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
 import studentUpdate from '../assets/academy-student-update.png'
 import pinacelloResults from '../assets/cases/pinacello-results.png'
-import pinacelloPage from '../assets/cases/pinacello.webp'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
 import academyStylesheet from './Academy.css?url'
 
@@ -308,10 +307,6 @@ export default function Academy() {
         <div className="ac-identity"><Link to="/" aria-label={t("verkoop.studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
         <nav className="ac-pill-nav" aria-label={t("Academy navigatie")}><a href="#aanbod">{t("Aanbod")}</a><a href="#resultaten">{t("Resultaten")}</a><a href="#aanpak">{t("Aanpak")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#faq">FAQ</a></nav>
         <div className="ac-header-actions">
-          <div className="ac-language" role="group" aria-label={t('Taal kiezen')}>
-            <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>NL</button>
-            <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
-          </div>
           <button className="ac-header-cta" onClick={goToSignup}>{t("Plan een kennismaking")}</button>
         </div>
       </div>
@@ -320,6 +315,10 @@ export default function Academy() {
     <main id="academy-main">
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
+          <div className="ac-language" role="group" aria-label={t('Taal kiezen')}>
+            <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>Nederlands</button>
+            <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>English</button>
+          </div>
           <h1 id="academy-title">{t("Start en schaal je webshop") + " "}<span>{t("met Meta ads.")}</span></h1>
           <ul className="ac-hero-usps">
             <li><strong>{t('Voor webshops & B2B-bedrijven')}</strong><span>{t('Starten of groeien')}</span></li>
@@ -355,21 +354,16 @@ export default function Academy() {
           <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
           <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
         </article>
-        <article className="ac-case ac-case-main ac-reveal">
+        <article className="ac-case ac-case-main ac-reveal" aria-labelledby="pinacello-case-title">
           <div className="ac-case-copy">
-            <span className="ac-case-tag">{t("VAN KLIK TOT AANKOOP")}</span>
-            <p className="ac-case-figure"><strong>+120%</strong><span>{t("online omzet bij Pinacello")}</span></p>
-            <p>{t("Ads, landingspagina en retargeting werken samen als één verkoopmotor.")}</p>
-            <ol className="ac-case-steps">{pinacelloSteps.map(([label, text], index) => <li key={label}><span>{number(index)}</span><div><strong>{label}</strong>{text}</div></li>)}</ol>
-            <Link className="ac-text-link" to="/cases/pinacello">{t("Lees de volledige case")}</Link>
+            <span className="ac-case-tag">PINACELLO</span>
+            <h3 id="pinacello-case-title" className="ac-case-figure"><strong>120%</strong><span>{t('meer groei')}</span></h3>
           </div>
-          <figure className="ac-case-shot">
-            <a href="https://promo.pinacello.com/" target="_blank" rel="noopener noreferrer" aria-label={t("Bekijk de campagnepagina van Pinacello in een nieuw tabblad")}><ResponsiveImage src={pinacelloPage} width="1900" height="1024" alt={t("Campagnepagina van Pinacello met productbeelden, aanbod en een bestelknop")} sizes="(max-width: 900px) 100vw, 620px" loading="lazy" /></a>
-            <figcaption>promo.pinacello.com</figcaption>
+          <figure className="ac-case-dashboard">
+            <a href={pinacelloResults} target="_blank" rel="noopener noreferrer" aria-label={t('Bekijk de Pinacello-resultaten op volledige grootte')}><img src={pinacelloResults} width="1722" height="490" loading="lazy" alt={t('Pinacello-dashboard: €1.121 advertentiekosten, €5.124 netto winkelomzet, ROAS 4,57, 110 bestellingen, €46,58 gemiddelde bestelwaarde en €49,27 klantwaarde.')} /></a>
           </figure>
-          <figure className="ac-case-metrics">
-            <a href={pinacelloResults} target="_blank" rel="noopener noreferrer" aria-label={t('Bekijk de Pinacello-resultaten op volledige grootte')}><img src={pinacelloResults} width="1686" height="250" loading="lazy" alt={t('Pinacello-dashboard: €1.121 advertentiekosten, €5.124 netto winkelomzet, ROAS 4,57 en break-even ROAS 2,86.')} /></a>
-          </figure>
+          <ol className="ac-case-steps">{pinacelloSteps.map(([label, text], index) => <li key={label}><span>{number(index)}</span><div><strong>{label}</strong>{text}</div></li>)}</ol>
+          <Link className="ac-text-link" to="/cases/pinacello">{t("Lees de volledige case")}</Link>
         </article>
         <p className="ac-fine">{t("Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.")}</p>
         <div className="ac-more-cases" aria-labelledby="more-cases-title">
@@ -523,7 +517,7 @@ export default function Academy() {
         <div className="ac-footer-columns">
           <div><h3>Academy</h3><a href="#aanbod">{t("Aanbod")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#aanmelden">{t("Kennismaking")}</a></div>
           <div><h3>verkoop.studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
-          <div><h3>Contact</h3><a href="mailto:stefkeppens@gmail.com">stefkeppens@gmail.com</a><a href="#aanmelden">{t("Plan een kennismaking")}</a><span>{t("Lochristi, België")}</span></div>
+          <div><h3>Contact</h3><a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a><a href="#aanmelden">{t("Plan een kennismaking")}</a></div>
           <div><h3>{t("Goed om te weten")}</h3><span>{t("Niet verbonden aan of gecertificeerd door Meta.")}</span><span>{t("Resultaten hangen af van je product, marge en budget.")}</span></div>
         </div>
         <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("verkoop.studio. Alle rechten voorbehouden.")}</p>

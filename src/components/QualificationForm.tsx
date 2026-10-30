@@ -41,7 +41,7 @@ const COPY = {
     doneBody:
       'Je aanvraag is goed ontvangen. We contacteren je binnen 24 uur via e-mail of telefoon om je doelen en de volgende stap te bespreken.',
     errorNote:
-      'Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar stefkeppens@gmail.com.',
+      'Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar stef@verkoop.studio.',
   },
   en: {
     labels: {
@@ -71,7 +71,7 @@ const COPY = {
     doneTitle: 'Thank you.',
     doneBody: 'Your request has been received. We’ll contact you within 24 hours by email or phone to discuss your goals and the next step.',
     errorNote:
-      'Something went wrong while sending. Please try again or email directly at stefkeppens@gmail.com.',
+      'Something went wrong while sending. Please try again or email directly at stef@verkoop.studio.',
   },
 }
 
