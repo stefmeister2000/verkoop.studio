@@ -227,6 +227,14 @@ export default function Academy() {
     [t('VERBETEREN & SCHALEN'), t('We testen ads en pagina’s, bekijken je cijfers en verhogen het budget voor wat werkt.')],
   ] as const
 
+  const caseTrack = useRef<HTMLDivElement>(null)
+  const [caseSlide, setCaseSlide] = useState(0)
+  const showCase = (index: number) => {
+    const track = caseTrack.current
+    const first = track?.children[0] as HTMLElement | undefined
+    const target = track?.children[index] as HTMLElement | undefined
+    if (track && first && target) track.scrollTo({ left: target.offsetLeft - first.offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+  }
   const pageRef = useReveal(lang)
   const [slide, setSlide] = useState(0)
   const [testId, setTestId] = useState(academyTests[0].id)
@@ -349,7 +357,20 @@ export default function Academy() {
       </section>
 
       <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
-        <h2 id="proof-title">{t("Case studies")}</h2>
+        <div className="ac-proof-heading">
+          <h2 id="proof-title">{t("Case studies")}</h2>
+          <div className="ac-case-controls">
+            <button type="button" aria-label={t('Vorige case')} aria-controls="academy-case-slides" disabled={caseSlide === 0} onClick={() => showCase(0)}>←</button>
+            <span aria-live="polite">{caseSlide + 1} / 2</span>
+            <button type="button" aria-label={t('Volgende case')} aria-controls="academy-case-slides" disabled={caseSlide === 1} onClick={() => showCase(1)}>→</button>
+          </div>
+        </div>
+        <div id="academy-case-slides" className="ac-case-slides" ref={caseTrack} role="region" aria-label={t('Case studies')} tabIndex={0} onScroll={event => {
+          const track = event.currentTarget
+          const first = track.children[0] as HTMLElement
+          const second = track.children[1] as HTMLElement
+          setCaseSlide(track.scrollLeft > (second.offsetLeft - first.offsetLeft) / 2 ? 1 : 0)
+        }}>
         <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
           <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
           <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
@@ -365,6 +386,7 @@ export default function Academy() {
           <ol className="ac-case-steps">{pinacelloSteps.map(([label, text], index) => <li key={label}><span>{number(index)}</span><div><strong>{label}</strong>{text}</div></li>)}</ol>
           <Link className="ac-text-link" to="/cases/pinacello">{t("Lees de volledige case")}</Link>
         </article>
+        </div>
         <p className="ac-fine">{t("Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.")}</p>
         <div className="ac-more-cases" aria-labelledby="more-cases-title">
           <div className="ac-more-cases-heading"><h3 id="more-cases-title">{t('Meer uit de praktijk')}</h3><Link className="ac-text-link" to="/cases">{t('Alle cases')} <span aria-hidden="true">↗</span></Link></div>

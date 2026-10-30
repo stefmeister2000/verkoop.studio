@@ -742,3 +742,32 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 }
 
 #pinacello-case-title { scroll-margin-top: 100px; }
+
+/* Two case-study posts, side by side with swipe navigation on phones. */
+.ac-proof-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.ac-case-slides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; align-items: stretch; }
+.ac-case-slides > article { width: 100%; min-width: 0; margin: 0; padding: 24px; border-radius: 24px; box-shadow: none; }
+.ac-case-slides .ac-student-proof { display: flex; flex-direction: column; }
+.ac-case-slides .ac-student-proof figure { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.ac-case-slides .ac-student-proof img { width: auto; max-width: 100%; max-height: 500px; object-fit: contain; }
+.ac-case-slides .ac-case-main { align-content: start; gap: 20px; }
+.ac-case-slides .ac-case-figure strong { font-size: 48px; }
+.ac-case-slides .ac-case-figure span { font-size: 24px; }
+.ac-case-slides .ac-case-steps { grid-template-columns: 1fr; gap: 8px; }
+.ac-case-controls { display: none; }
+@media (max-width: 700px) {
+  .ac-case-slides { position: relative; display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: 20px; padding-bottom: 2px; }
+  .ac-case-slides::-webkit-scrollbar { display: none; }
+  .ac-case-slides > article { flex: 0 0 calc(100% - 20px); scroll-snap-align: start; padding: 16px; border-radius: 20px; }
+  .ac-case-slides .ac-student-proof figure { flex: 1; }
+  .ac-case-slides .ac-case-figure { gap: 6px; }
+  .ac-case-slides .ac-case-figure strong { font-size: 42px; }
+  .ac-case-slides .ac-case-figure span { font-size: 20px; }
+  .ac-case-slides .ac-case-main { gap: 16px; }
+  .ac-case-slides .ac-case-steps li { padding: 10px; font-size: 13px; grid-template-columns: 22px 1fr; gap: 6px; }
+  .ac-case-controls { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+  .ac-case-controls button { width: 44px; height: 44px; border: 1px solid var(--ac-line); border-radius: 50%; background: #fff; color: var(--ac-blue); font-size: 20px; }
+  .ac-case-controls button:disabled { opacity: .35; cursor: default; }
+  .ac-case-controls span { min-width: 32px; color: var(--ac-text); text-align: center; font-size: 12px; }
+  .academy-page .ac-proof-heading h2 { font-size: clamp(24px, 5vw, 32px); white-space: nowrap; }
+}
