@@ -384,7 +384,7 @@ export default function Academy() {
         <div className="ac-more-cases" aria-labelledby="more-cases-title">
           <div className="ac-more-cases-heading"><h3 id="more-cases-title">{t('Meer uit de praktijk')}</h3><Link className="ac-text-link" to="/cases">{t('Alle cases')} <span aria-hidden="true">↗</span></Link></div>
           <div className="ac-mini-cases">{otherCases.map(item => <Link key={item.slug} to={`/cases/${item.slug}`} className="ac-mini-case">
-            <div className="ac-mini-case-image"><ResponsiveImage src={item.image} alt="" sizes="(max-width: 600px) 88px, (max-width: 900px) 30vw, 370px" loading="lazy" /></div>
+            <div className="ac-mini-case-image"><ResponsiveImage src={item.image} alt="" sizes="(max-width: 600px) 88px, (max-width: 1228px) calc((100vw - 64px) / 2), 582px" loading="lazy" /></div>
             <div className="ac-mini-case-copy"><span className="ac-mini-case-title"><strong>{item.name}</strong><span aria-hidden="true">↗</span></span><p>{caseCopy[item.slug] ?? item.summary[lang]}</p></div>
           </Link>)}</div>
         </div>
