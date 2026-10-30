@@ -686,21 +686,14 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
   .ac-testlog-decision p { font-size: 14px; }
 }
 
-.ac-student-proof { display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: center; gap: 40px; padding: 32px; margin-top: 28px; border: 1px solid var(--ac-line); border-radius: 24px; background: linear-gradient(135deg, #f2f4ff, #fff); }
-.ac-student-copy h3 { margin-top: 12px; font-size: 28px; line-height: 1.2; letter-spacing: -.03em; }
-.ac-student-copy blockquote { margin-top: 22px; max-width: 540px; font-size: 21px; line-height: 1.5; color: var(--ac-ink); }
-.ac-student-credit { margin-top: 10px; color: var(--ac-text); font-size: 13px; }
-.ac-student-revenue { margin-top: 24px; }
-.ac-student-revenue strong { display: block; font-size: 36px; font-weight: 700; letter-spacing: -.03em; color: var(--ac-blue); }
-.ac-student-revenue span { color: var(--ac-text); font-size: 14px; }
-.ac-student-proof figure { max-width: 300px; width: 100%; justify-self: center; }
+.ac-student-proof { width: min(100%, 460px); padding: 22px; margin-top: 28px; border: 1px solid var(--ac-line); border-radius: 24px; background: linear-gradient(135deg, #f2f4ff, #fff); }
+.ac-student-proof figure { margin-top: 16px; }
 .ac-student-proof img { width: 100%; height: auto; border-radius: 16px; }
-.ac-student-proof figcaption { margin-top: 8px; color: var(--ac-mute); font-size: 12px; text-align: center; }
-@media (max-width: 700px) {
-  .ac-student-proof { grid-template-columns: 1fr; gap: 24px; padding: 22px; }
-  .ac-student-copy h3 { font-size: 24px; }
-  .ac-student-copy blockquote { margin-top: 16px; font-size: 18px; }
-  .ac-student-revenue { margin-top: 18px; }
+.ac-case-metrics { grid-column: 1 / -1; min-width: 0; }
+.ac-case-metrics a { display: block; border-radius: 14px; overflow: hidden; }
+.ac-case-metrics img { display: block; width: 100%; height: auto; }
+@media (max-width: 560px) {
+  .ac-student-proof { padding: 16px; }
 }
 
 /* One clear floating action, without an extra outer frame. */

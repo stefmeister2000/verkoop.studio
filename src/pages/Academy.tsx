@@ -14,6 +14,7 @@ import stefDeskSmall from '../assets/stef-desk-640.webp'
 import stefNooms from '../assets/stef.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
 import studentUpdate from '../assets/academy-student-update.png'
+import pinacelloResults from '../assets/cases/pinacello-results.png'
 import pinacelloPage from '../assets/cases/pinacello.webp'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
 import academyStylesheet from './Academy.css?url'
@@ -342,15 +343,8 @@ export default function Academy() {
       <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
         <h2 id="proof-title">{t("Case studies")}</h2>
         <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
-          <div className="ac-student-copy">
-            <p className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</p>
-            <h3 id="student-proof-title">{t('Een update van een deelnemer')}</h3>
-            <blockquote lang={lang}>“{t('Even kleine update van het nieuwe bedrijf dat ik maandje geleden ben opgestart')}”</blockquote>
-            <p className="ac-student-credit">{t('Deelnemer aan de 1-op-1 lessen')}</p>
-            <p className="ac-student-revenue"><strong>{euro(5872.60)}</strong><span>{t('Omzet in Shopify')}</span></p>
-            <p className="ac-fine">{t('28 sep – 10 okt 2026 · gedeelde screenshot')}</p>
-          </div>
-          <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} />{lang === 'en' && <figcaption>{t('Origineel bericht in het Nederlands')}</figcaption>}</figure>
+          <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
+          <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
         </article>
         <article className="ac-case ac-case-main ac-reveal">
           <div className="ac-case-copy">
@@ -363,6 +357,9 @@ export default function Academy() {
           <figure className="ac-case-shot">
             <a href="https://promo.pinacello.com/" target="_blank" rel="noopener noreferrer" aria-label={t("Bekijk de campagnepagina van Pinacello in een nieuw tabblad")}><ResponsiveImage src={pinacelloPage} width="1900" height="1024" alt={t("Campagnepagina van Pinacello met productbeelden, aanbod en een bestelknop")} sizes="(max-width: 900px) 100vw, 620px" loading="lazy" /></a>
             <figcaption>promo.pinacello.com</figcaption>
+          </figure>
+          <figure className="ac-case-metrics">
+            <a href={pinacelloResults} target="_blank" rel="noopener noreferrer" aria-label={t('Bekijk de Pinacello-resultaten op volledige grootte')}><img src={pinacelloResults} width="1686" height="250" loading="lazy" alt={t('Pinacello-dashboard: €1.121 advertentiekosten, €5.124 netto winkelomzet, ROAS 4,57 en break-even ROAS 2,86.')} /></a>
           </figure>
         </article>
         <p className="ac-fine">{t("Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.")}</p>
