@@ -31,7 +31,7 @@ function useReveal(lang: string) {
     const motion = matchMedia('(prefers-reduced-motion: reduce)')
     const animations = new Set<Animation>()
     let observer: IntersectionObserver | undefined
-    const selector = '.ac-reveal, .ac-hero-copy > *, main section h2, .ac-dot-kicker, .ac-offer-list > li, .ac-stages > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-intro, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
+    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, .ac-hero-conversion > *, main section h2, .ac-dot-kicker, .ac-offer-list > li, .ac-stages > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-intro, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
     const stop = () => {
       observer?.disconnect()
       animations.forEach(animation => animation.cancel())
@@ -311,16 +311,16 @@ export default function Academy() {
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
           <h1 id="academy-title">{t("Start en schaal je webshop") + " "}<span>{t("met Meta ads.")}</span></h1>
-          <p className="ac-hero-lead">{t("Volledig 1-op-1 lessen met Stef, in je eigen account. Ook als je nog nooit hebt geadverteerd. Onze belofte: een ROAS van 3 tot 4.")}</p>
-          <HeroVideo lang={lang} />
+          <p className="ac-hero-lead">{t('Voor webshopondernemers die zelf willen starten of groeien met Meta ads.')}</p>
+          <p className="ac-hero-detail">{t('Je leert campagnes, landingspagina’s en tracking opzetten. Stef begeleidt je 1-op-1, in je eigen account.')}</p>
+        </div>
+        <HeroVideo lang={lang} />
+        <div className="ac-hero-conversion">
           <div id="academy-hero-signup" className="ac-hero-signup">
             {signedUp ? <div className="ac-welcome-card" role="status">
-              
               <div><strong>{thanks}{" " + t("Je aanmelding is binnen.")}</strong><small>{t("Stef neemt persoonlijk contact met je op. Je krijgt ook een bevestiging per mail.")}</small></div>
-            </div> : <AcademySignup formId="academy-hero" onSuccess={joined('academy-hero')} />}
+            </div> : <button className="ac-button" onClick={goToSignup}>{t('Meld je aan')}</button>}
           </div>
-          {!signedUp && <ul className="ac-hero-note"><li>{t("Volledig 1-op-1")}</li><li>{t("Starters welkom")}</li><li>{t("Doel: ROAS 3 tot 4")}</li></ul>}
-          <a className="ac-manage-link" href="https://verkoop.studio/">{t('Wil je dat wij jouw ads overnemen?')} <span aria-hidden="true">↗</span></a>
           <div className="ac-trust">
             <img src={stefDeskSmall} alt="" width="44" height="44" loading="eager" />
             <p><strong>{t("Door Stef Keppens")}</strong>, verkoop.studio<span>{t("Uit de praktijk bij") + " "}{practice.map((name, index) => <b key={name}>{name}{index < practice.length - 1 && <i aria-hidden="true">·</i>}</b>)}</span></p>
@@ -334,13 +334,6 @@ export default function Academy() {
           <h2 id="offer-title">{t('Dit zit erin.')}</h2>
           <ul className="ac-offer-list">{offer.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
         </div>
-        <aside className="ac-promise" aria-label={t("Onze belofte")}>
-          <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
-          <p className="ac-promise-figure"><strong>3–4</strong><span>{t("ROAS op je Meta ads")}</span></p>
-          <p>{t("Elke euro die je in Meta ads steekt, levert") + " "}<b>{t("€3 tot €4 omzet")}</b>{(lang === 'nl' ? ' ' : '') + t("op. Daar werkt elke les naartoe.")}</p>
-          {signedUp ? <p className="ac-promise-done">{t("Je aanmelding is binnen.")}</p> : <button className="ac-button ac-button-light" onClick={goToSignup}>{t("Meld je aan")}</button>}
-          <small>{t("Prijs op maat na de kennismaking. Advertentiebudget niet inbegrepen.")}</small>
-        </aside>
       </section>
 
       <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
@@ -367,6 +360,14 @@ export default function Academy() {
           </Link>)}</div>
         </div>
       </section>
+
+        <aside className="ac-promise ac-promise-section ac-wrap" aria-label={t("Onze belofte")}>
+          <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
+          <p className="ac-promise-figure"><strong>3–4</strong><span>{t("ROAS op je Meta ads")}</span></p>
+          <p>{t("Elke euro die je in Meta ads steekt, levert") + " "}<b>{t("€3 tot €4 omzet")}</b>{(lang === 'nl' ? ' ' : '') + t("op. Daar werkt elke les naartoe.")}</p>
+          {signedUp ? <p className="ac-promise-done">{t("Je aanmelding is binnen.")}</p> : <button className="ac-button ac-button-light" onClick={goToSignup}>{t("Meld je aan")}</button>}
+          <small>{t("Prijs op maat na de kennismaking. Advertentiebudget niet inbegrepen.")}</small>
+        </aside>
 
       <section id="aanpak" className="ac-focus ac-wrap" aria-labelledby="focus-title">
         <article className="ac-focus-article">
