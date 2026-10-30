@@ -773,3 +773,37 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 }
 
 .ac-offer-main > h2:first-child { margin-top: 0; }
+
+/* One learning section: short topics, with the practice example on demand. */
+.ac-learning-intro { margin-top: 12px; color: var(--ac-text); line-height: 1.5; }
+.ac-practice-example { margin-top: 28px; border: 1px solid var(--ac-line); border-radius: 20px; background: #fff; scroll-margin-top: 90px; }
+.ac-practice-example > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; }
+.ac-practice-example > summary::-webkit-details-marker { display: none; }
+.ac-practice-example > summary span { color: var(--ac-blue); font-size: 24px; transition: transform .2s; }
+.ac-practice-example[open] > summary span { transform: rotate(45deg); }
+.ac-practice-body { padding: 0 24px 24px; }
+.ac-practice-body > h3 { font-size: 24px; line-height: 1.2; }
+.ac-practice-body .ac-section-intro { margin-top: 10px; font-size: 16px; }
+.ac-practice-body .ac-testlog { margin-top: 20px; }
+.ac-info-form { display: grid; gap: 12px; margin-top: 18px; }
+.ac-info-form .ac-field { gap: 6px; }
+.ac-info-form .ac-field input { width: 100%; min-height: 48px; font-size: 16px; }
+@media (max-width: 700px) {
+  .ac-curriculum .ac-slider-buttons, .ac-curriculum .ac-slide-visual, .ac-curriculum .ac-slide-number, .ac-curriculum .ac-slide-copy > h3, .ac-curriculum .ac-slide-copy > p, .ac-curriculum .ac-slide-actions { display: none; }
+  .ac-curriculum .ac-progress-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; overflow: visible; margin-top: 20px; }
+  .ac-curriculum .ac-progress-tabs button { min-width: 0; padding: 12px; min-height: 48px; border: 1px solid var(--ac-line); border-radius: 12px; background: #fff; color: var(--ac-text); text-align: left; }
+  .ac-curriculum .ac-progress-tabs button.is-active { border-color: var(--ac-blue); background: var(--ac-tint); color: var(--ac-blue); }
+  .ac-curriculum .ac-progress-tabs button span { display: none; }
+  .ac-curriculum .ac-progress-tabs button em { margin: 0; font-size: 14px; }
+  .ac-curriculum .ac-slide { display: block; margin-top: 16px; min-height: 0; }
+  .ac-curriculum .ac-slide-copy { padding: 18px; border: 1px solid var(--ac-line); border-radius: 16px; background: #fff; }
+  .ac-curriculum .ac-slide-copy ul { margin: 0; gap: 10px; }
+  .ac-curriculum .ac-slide-copy li { font-size: 15px; line-height: 1.5; }
+  .ac-practice-example > summary { padding: 16px; font-size: 16px; }
+  .ac-practice-body { padding: 0 12px 16px; }
+  .ac-practice-body .ac-stats-row { display: none; }
+  .ac-practice-body .ac-testlog-decision .ac-mock-label, .ac-practice-body .ac-testlog-decision .ac-text-link { display: none; }
+  .ac-practice-body .ac-testlog-side button { padding: 12px; }
+  .ac-practice-body .ac-testlog-side button > span:last-child { display: block; }
+  .ac-practice-body .ac-testlog-side button small { display: block; margin-top: 3px; text-align: left; }
+}
