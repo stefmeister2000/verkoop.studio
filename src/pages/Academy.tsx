@@ -12,7 +12,6 @@ import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
 import stefNooms from '../assets/stef.webp'
-import studioTeam from '../assets/studio-team.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
 import studentUpdate from '../assets/academy-student-update.png'
 import pinacelloPage from '../assets/cases/pinacello.webp'
@@ -459,20 +458,6 @@ export default function Academy() {
           </div>
         </div>
         <p className="ac-fine">{t('Fictieve cijfers, geen klantresultaten.')}</p>
-      </section>
-
-      <section className="ac-not ac-wrap" aria-labelledby="not-title">
-        <h2 id="not-title" className="ac-reveal">{t("Dit is niet voor wie")}<span className="ac-not-words"><s>{t("de boost-knop")}</s> <s>{t("snelle trucs")}</s><br /><s>{t("een winning-product-hack")}</s></span>{t("zoekt. Maar voor wie")}<br /><span className="ac-blue">{t("rendabel wil")}</span><br /><span className="ac-grey">{t("opschalen.")}</span></h2>
-        <figure className="ac-stat-card ac-reveal">
-          <ResponsiveImage src={studioTeam} alt={t("Samen aan het werk in de studio van verkoop.studio")} sizes="(max-width: 900px) 100vw, 520px" loading="lazy" />
-          <dl><div><dt>{t("Totaal rendement")}</dt><dd>MER</dd></div><div><dt>{t("Klantwaarde")}</dt><dd>LTV</dd></div><div><dt>{t("Server-tracking")}</dt><dd>CAPI</dd></div></dl>
-        </figure>
-        <ul className="ac-pillars ac-reveal">
-          <li><strong>{t("Meten")}</strong><span>{t("Weten wat klopt")}</span></li>
-          <li><strong>{t("Rendement")}</strong><span>{t("Sturen op winst")}</span></li>
-          <li><strong>Creatives</strong><span>{t("Altijd nieuwe winnaars")}</span></li>
-          <li><strong>{t("Schalen")}</strong><span>{t("Met beslisregels")}</span></li>
-        </ul>
       </section>
 
       <section id="aanmelden" className="ac-signup-section ac-wrap" aria-labelledby="signup-title">
