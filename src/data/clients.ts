@@ -1,7 +1,6 @@
 import type { Client } from './types'
 import pinacello from '../assets/cases/pinacello.webp'
 import nooms from '../assets/cases/nooms.webp'
-import olearys from '../assets/cases/olearys.webp'
 import ekart from '../assets/cases/ekart.webp'
 
 export const clients: Client[] = [
@@ -19,14 +18,6 @@ export const clients: Client[] = [
     description: {
       nl: 'Nooms is mijn eigen bedrijf. Ik bouw het zelf op, met focus op ecommerce, funnels, branding, verkoop en digitale groei.',
       en: 'Nooms is my own company. I’m building it myself, focused on ecommerce, funnels, branding, sales and digital growth.',
-    },
-  },
-  {
-    name: "O'Learys",
-    image: olearys,
-    description: {
-      nl: 'Ik werk aan de online digitale kant van O’Learys, waaronder B2C- en B2B-landingspagina’s, funnels, campagnes, tracking en conversie.',
-      en: 'I work on the digital side of O’Learys, including B2C and B2B landing pages, funnels, campaigns, tracking and conversion.',
     },
   },
   {

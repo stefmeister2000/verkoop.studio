@@ -9,25 +9,17 @@ const cardLine: Record<string, { nl: string; en: string }> = {
     nl: 'Pre-sale via influencer marketing volledig uitverkocht.',
     en: 'Pre-sale sold out completely via influencer marketing.',
   },
-  olearys: {
-    nl: 'Van één website naar aparte routes voor bezoekers en organisatoren.',
-    en: 'From one website to separate paths for visitors and organisers.',
-  },
   'e-kart': {
     nl: 'Van zin in een race naar een boeking.',
     en: 'From the thrill of racing to a booking.',
-  },
-  Tinrate: {
-    nl: 'Een platform om betaalde gesprekken met experts te boeken.',
-    en: 'A platform for booking paid conversations with experts.',
   },
 }
 
 export default function SelectedWork() {
   const { lang } = useLang()
   const nl = lang === 'nl'
-  const selected = ['pinacello', 'nooms', 'olearys', 'e-kart'].flatMap((slug) => cases.filter((c) => c.slug === slug))
-  const featuredPartners = ['Tinrate', 'WERKR'].flatMap(name => {
+  const selected = ['pinacello', 'nooms', 'e-kart'].flatMap((slug) => cases.filter((c) => c.slug === slug))
+  const featuredPartners = ['WERKR'].flatMap(name => {
     const project = lyteCases.find(c => c.name === name)
     return project ? [project] : []
   })

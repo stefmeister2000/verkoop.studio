@@ -2,40 +2,6 @@ import type { Bi, PortfolioItem } from './types'
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: 'olearys-b2c-booking',
-    project: "O'Learys: B2C booking landing page",
-    caseSlug: 'olearys',
-    liveUrl: 'https://olearys.com/nl-be/',
-    category: 'B2C',
-    audience: {
-      nl: 'Consumenten die een activiteit of avondje uit boeken',
-      en: 'Consumers booking an activity or a night out',
-    },
-    objective: { nl: 'Meer voltooide boekingen per activiteit', en: 'More completed bookings per activity' },
-    conversion: { nl: 'Boeking starten', en: 'Start a booking' },
-    description: {
-      nl: 'Landingspagina per activiteit, opgebouwd rond één duidelijke boekingsstap in plaats van een breed activiteitenoverzicht.',
-      en: 'A landing page per activity, built around one clear booking step instead of a broad activity overview.',
-    },
-  },
-  {
-    id: 'olearys-b2b-events',
-    project: "O'Learys: B2B company-event page",
-    caseSlug: 'olearys',
-    liveUrl: 'https://olearys.com/nl-be/',
-    category: 'B2B',
-    audience: {
-      nl: 'Bedrijven die een teamevent of bedrijfsfeest organiseren',
-      en: 'Companies organising a team event or company party',
-    },
-    objective: { nl: 'Meer gekwalificeerde B2B-aanvragen', en: 'More qualified B2B enquiries' },
-    conversion: { nl: 'Offerte aanvragen', en: 'Request a quote' },
-    description: {
-      nl: 'Aparte pagina met een zakelijk beslistraject: arrangementen, capaciteit en een directe offerte-aanvraag.',
-      en: 'A separate page with a business decision path: packages, capacity and a direct quote request.',
-    },
-  },
-  {
     id: 'pinacello-campaign',
     project: 'Pinacello: ecommerce campagnepagina',
     caseSlug: 'pinacello',

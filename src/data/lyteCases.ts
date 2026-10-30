@@ -30,17 +30,6 @@ export const lyteCases: LyteCase[] = [
     },
   },
   {
-    name: 'Tinrate',
-    category: 'Incubator',
-    url: 'https://lytestudios.be/projects/tinrate/',
-    image: '/partners/tinrate.webp',
-    logo: '/partners/tinrate-logo.svg',
-    description: {
-      nl: 'Een platform om betaalde gesprekken met experts te boeken, mee uitgebouwd door LYTE.',
-      en: 'A platform for booking paid expert conversations, co-developed by LYTE.',
-    },
-  },
-  {
     name: 'EONLOG',
     category: 'Website',
     url: 'https://lytestudios.be/projects/eonlog-website/',
@@ -48,17 +37,6 @@ export const lyteCases: LyteCase[] = [
     description: {
       nl: 'Een website die de investeringsaanpak van een family office uitlegt.',
       en: 'A website explaining the investment approach of a family office.',
-    },
-  },
-  {
-    name: 'Tinrate',
-    category: 'Website',
-    url: 'https://lytestudios.be/projects/tinrate-website/',
-    image: '/partners/tinrate-website.webp',
-    logo: '/partners/tinrate-logo.svg',
-    description: {
-      nl: 'De website die bezoekers helpt experts te ontdekken en een gesprek te boeken.',
-      en: 'A website helping visitors discover experts and book a conversation.',
     },
   },
   {

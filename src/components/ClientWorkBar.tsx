@@ -25,7 +25,7 @@ export default function ClientWorkBar() {
         <h2 className="max-w-2xl font-display text-2xl text-paper text-balance sm:text-3xl">{t.title}</h2>
         <p className="mt-4 max-w-2xl text-bone">{t.body}</p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {clients.map((client) => (
             <div key={client.name} className="overflow-hidden rounded-2xl border border-line bg-surface">
               {client.image ? (

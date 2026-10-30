@@ -208,7 +208,6 @@ export default function Academy() {
   ]
   const otherCases = cases.filter(item => item.slug !== 'pinacello')
   const caseCopy: Record<string, string> = {
-    olearys: t('Van bezoeker naar boeking, voor particulieren en bedrijven.'),
     'e-kart': t('Een duidelijke route van interesse naar een kartboeking.'),
     nooms: t('Van productontdekking via influencers naar aankoop en herhaalaankoop.'),
   }
