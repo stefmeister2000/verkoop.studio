@@ -202,8 +202,8 @@ export default function Academy() {
     [t('1-op-1 begeleiding'), t('Samen met Stef bouw je jouw funnel, van eerste klik tot aankoop.')],
     [t('Starten vanaf nul'), t('Je leert hoe ads, je webshop en opvolging samenwerken.')],
     ['Meta ads', t('Trek nieuwe bezoekers aan en bereik geïnteresseerden opnieuw.')],
-    [t('Landingspagina’s'), t('Maak van een klik een aankoop met een duidelijk aanbod.')],
-    ['Tracking', t('Meet elke stap en ontdek waar bezoekers afhaken of kopen.')],
+    [t('Landingspagina’s'), t('Landingspagina’s op maat, afgestemd op je ads, aanbod en webshop.')],
+    ['Tracking', t('GA4, Meta Pixel en conversies instellen, van eerste klik tot aankoop.')],
     [t('E-mailmarketing'), t('Volg winkelwagens op en breng klanten terug voor hun volgende aankoop.')],
   ]
   const otherCases = cases.filter(item => item.slug !== 'pinacello')
@@ -218,10 +218,11 @@ export default function Academy() {
     ['Retargeting', t("Wie interesse toonde, komt terug tot de aankoop.")],
   ]
   const stages = [
-    [t('OPZETTEN'), t('Je account en tracking op orde.')],
-    [t('STARTEN'), t('Je eerste campagnes live.')],
-    [t('VERBETEREN'), t('Ads testen en resultaten bekijken.')],
-    [t('SCHALEN'), t('Meer budget voor wat werkt.')],
+    [t('OPZETTEN'), t('We richten je advertentieaccount in en installeren GA4, Meta Pixel en conversiemeting.')],
+    [t('LANDINGSPAGINA’S'), t('Samen bouwen we landingspagina’s op maat, met een duidelijk aanbod en een logische stap naar aankoop.')],
+    [t('CAMPAGNES'), t('Je zet ads en retargeting live. E-mailflows volgen geïnteresseerde bezoekers en verlaten winkelwagens op.')],
+    [t('DASHBOARD OP MAAT'), t('Je krijgt toegang tot een volledig dashboard op maat, met je advertentiekosten, conversies en omzet op één plek.')],
+    [t('VERBETEREN & SCHALEN'), t('We testen ads en pagina’s, bekijken je cijfers en verhogen het budget voor wat werkt.')],
   ] as const
 
   const pageRef = useReveal(lang)
@@ -337,17 +338,13 @@ export default function Academy() {
           <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
           <p className="ac-promise-figure"><strong>3–4</strong><span>{t("ROAS op je Meta ads")}</span></p>
           <p>{t("Elke euro die je in Meta ads steekt, levert") + " "}<b>{t("€3 tot €4 omzet")}</b>{(lang === 'nl' ? ' ' : '') + t("op. Daar werkt elke les naartoe.")}</p>
-          <ol className="ac-promise-steps"><li><span>1</span>{t("Meld je aan in 1 minuut")}</li><li><span>2</span>{t("Kennismaking met Stef")}</li><li><span>3</span>{t("Start je 1-op-1 lessen")}</li></ol>
           {signedUp ? <p className="ac-promise-done">{t("Je aanmelding is binnen.")}</p> : <button className="ac-button ac-button-light" onClick={goToSignup}>{t("Meld je aan")}</button>}
           <small>{t("Prijs op maat na de kennismaking. Advertentiebudget niet inbegrepen.")}</small>
         </aside>
       </section>
 
       <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
-        <div className="ac-proof-top">
-          <div><p className="ac-dot-kicker"><span />{" " + t("Uit de praktijk · Pinacello")}</p><h2 id="proof-title">{t("Geen theorie.") + " "}<span>{t("Zo werkt het bij Pinacello.")}</span></h2></div>
-          <p className="ac-section-intro">{t("Stef werkt doorlopend aan de groei van Pinacello. Wat je in de lessen leert, komt rechtstreeks uit dat werk.")}</p>
-        </div>
+        <h2 id="proof-title">{t("Case studies")}</h2>
         <article className="ac-case ac-case-main ac-reveal">
           <div className="ac-case-copy">
             <span className="ac-case-tag">{t("VAN KLIK TOT AANKOOP")}</span>
@@ -378,11 +375,6 @@ export default function Academy() {
           <p className="ac-focus-lead">{t('Samen met Stef, in je eigen advertentieaccount.')}</p>
 
           <ol className="ac-stages">{stages.map(([label, text], index) => <li key={label}><span className="ac-stage-number">{number(index)}</span><div><strong>{label}</strong><p>{text}</p></div></li>)}</ol>
-
-          <div className="ac-focus-author">
-            <img src={stefDeskSmall} alt="" width="56" height="56" loading="lazy" />
-            <p><strong>Stef Keppens</strong><br />{t('Je vaste begeleider.')}</p>
-          </div>
 
           <div className="ac-focus-join">
             <p><strong>{t("Klaar om te starten?")}</strong></p>
