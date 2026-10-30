@@ -312,7 +312,7 @@ export default function Academy() {
         <div className="ac-hero-copy">
           <h1 id="academy-title">{t("Start en schaal je webshop") + " "}<span>{t("met Meta ads.")}</span></h1>
           <ul className="ac-hero-usps">
-            <li><strong>{t('Voor webshops')}</strong><span>{t('Starten of groeien')}</span></li>
+            <li><strong>{t('Voor webshops & B2B-bedrijven')}</strong><span>{t('Starten of groeien')}</span></li>
             <li><strong>{t('Ads, pagina’s & tracking')}</strong><span>{t('Je hele funnel')}</span></li>
             <li><strong>{t('1-op-1 met Stef')}</strong><span>{t('In je eigen account')}</span></li>
           </ul>
