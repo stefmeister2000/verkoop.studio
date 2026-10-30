@@ -7,6 +7,7 @@ import ResponsiveImage from '../components/ResponsiveImage'
 import Seo from '../components/Seo'
 import HeroVideo from '../components/HeroVideo'
 import { academyFaq as sourceFaq, academyModules as sourceModules, academyTests as sourceTests } from '../data/academy'
+import { cases } from '../data/cases'
 import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
@@ -20,25 +21,65 @@ import academyStylesheet from './Academy.css?url'
 const number = (index: number) => String(index + 1).padStart(2, '0')
 const contactAcademy = '/contact?interesse=academy'
 const practice = ['Pinacello', 'Nooms', 'O’Learys', 'E-Kart']
-/** Elements below the fold fade in once; everything stays visible without JS, on touch screens or with reduced motion. */
-function useReveal() {
+/** Animate on entry without ever hiding content before JavaScript or CSS has loaded. */
+function useReveal(lang: string) {
   const ref = useRef<HTMLDivElement>(null)
+  const seen = useRef(new WeakSet<Element>())
   useEffect(() => {
     const root = ref.current
-    const motion = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px) and (prefers-reduced-motion: no-preference)')
-    if (!root || !('IntersectionObserver' in window) || !motion.matches) return
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (!entry.isIntersecting) return
-      entry.target.classList.add('is-in')
-      observer.unobserve(entry.target)
-    }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
-    root.querySelectorAll('.ac-reveal').forEach(element => {
-      if (element.getBoundingClientRect().top < innerHeight) return
-      element.classList.add('is-waiting')
-      observer.observe(element)
-    })
-    return () => observer.disconnect()
-  }, [])
+    if (!root || !('IntersectionObserver' in window)) return
+    const motion = matchMedia('(prefers-reduced-motion: reduce)')
+    const animations = new Set<Animation>()
+    let observer: IntersectionObserver | undefined
+    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, main section h2, .ac-dot-kicker, .ac-offer-list > li, .ac-stages > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-intro, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
+    const stop = () => {
+      observer?.disconnect()
+      animations.forEach(animation => animation.cancel())
+      animations.clear()
+    }
+    const start = () => {
+      stop()
+      if (motion.matches) return
+      const candidates = Array.from(root.querySelectorAll<HTMLElement>(selector))
+      // Animate a card or its children, never both at the same time.
+      const targets = candidates.filter(element => !candidates.some(parent => parent !== element && parent.contains(element)))
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return
+          const element = entry.target as HTMLElement
+          observer?.unobserve(element)
+          seen.current.add(element)
+          if (typeof element.animate !== 'function') return
+          const siblings = Array.from(element.parentElement?.children ?? []).filter(child => targets.includes(child as HTMLElement))
+          const delay = Math.min(Math.max(siblings.indexOf(element), 0), 4) * 55
+          const animation = element.animate([
+            { opacity: 0, transform: 'translateY(20px)' },
+            { opacity: 1, transform: 'translateY(0)' },
+          ], { duration: 650, delay, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'backwards' })
+          animations.add(animation)
+          animation.onfinish = () => { animations.delete(animation) }
+        })
+      }, { threshold: 0, rootMargin: '0px 0px -24px 0px' })
+      targets.forEach(element => {
+        if (element.getBoundingClientRect().bottom < 0) seen.current.add(element)
+        if (!seen.current.has(element)) observer?.observe(element)
+      })
+    }
+    const revealFocused = (event: FocusEvent) => {
+      animations.forEach(animation => {
+        const target = (animation.effect as KeyframeEffect | null)?.target
+        if (target instanceof Element && target.contains(event.target as Node)) animation.finish()
+      })
+    }
+    start()
+    motion.addEventListener('change', start)
+    root.addEventListener('focusin', revealFocused)
+    return () => {
+      stop()
+      motion.removeEventListener('change', start)
+      root.removeEventListener('focusin', revealFocused)
+    }
+  }, [lang])
   return ref
 }
 
@@ -157,7 +198,20 @@ export default function Academy() {
   const academyModules = sourceModules.map(item => ({ ...item, tag: t(item.tag), shortTitle: t(item.shortTitle), title: t(item.title), summary: t(item.summary), points: item.points.map(t), outcome: t(item.outcome) }))
   const academyFaq = sourceFaq.map(item => ({ question: t(item.question), answer: t(item.answer) }))
   const academyTests = sourceTests.map(item => ({ ...item, name: t(item.name), verdict: t(item.verdict), decision: t(item.decision) }))
-  const offer = [t('1-op-1 begeleiding'), t('Starten vanaf nul'), 'Meta ads', t('Landingspagina’s'), 'Tracking', t('E-mailmarketing')]
+  const offer = [
+    [t('1-op-1 begeleiding'), t('Samen met Stef bouw je jouw funnel, van eerste klik tot aankoop.')],
+    [t('Starten vanaf nul'), t('Je leert hoe ads, je webshop en opvolging samenwerken.')],
+    ['Meta ads', t('Trek nieuwe bezoekers aan en bereik geïnteresseerden opnieuw.')],
+    [t('Landingspagina’s'), t('Maak van een klik een aankoop met een duidelijk aanbod.')],
+    ['Tracking', t('Meet elke stap en ontdek waar bezoekers afhaken of kopen.')],
+    [t('E-mailmarketing'), t('Volg winkelwagens op en breng klanten terug voor hun volgende aankoop.')],
+  ]
+  const otherCases = cases.filter(item => item.slug !== 'pinacello')
+  const caseCopy: Record<string, string> = {
+    olearys: t('Van bezoeker naar boeking, voor particulieren en bedrijven.'),
+    'e-kart': t('Een duidelijke route van interesse naar een kartboeking.'),
+    nooms: t('Van productontdekking via influencers naar aankoop en herhaalaankoop.'),
+  }
   const pinacelloSteps = [
     [t("Aandacht"), t("Meta ads en content rond het product en het aanbod.")],
     [t("Pagina"), t("Een campagnepagina met aanbod, bundels en een directe bestelknop.")],
@@ -170,7 +224,7 @@ export default function Academy() {
     [t('SCHALEN'), t('Meer budget voor wat werkt.')],
   ] as const
 
-  const pageRef = useReveal()
+  const pageRef = useReveal(lang)
   const [slide, setSlide] = useState(0)
   const [testId, setTestId] = useState(academyTests[0].id)
   const [signedUp, setSignedUp] = useState<{ naam: string; via: string } | null>(null)
@@ -277,7 +331,7 @@ export default function Academy() {
         <div className="ac-offer-main">
           <p className="ac-dot-kicker"><span />{" " + t("Het aanbod")}</p>
           <h2 id="offer-title">{t('Dit zit erin.')}</h2>
-          <ul className="ac-offer-list">{offer.map(title => <li key={title}><strong>{title}</strong></li>)}</ul>
+          <ul className="ac-offer-list">{offer.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
         </div>
         <aside className="ac-promise" aria-label={t("Onze belofte")}>
           <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
@@ -308,6 +362,13 @@ export default function Academy() {
           </figure>
         </article>
         <p className="ac-fine">{t("Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.")}</p>
+        <div className="ac-more-cases" aria-labelledby="more-cases-title">
+          <div className="ac-more-cases-heading"><h3 id="more-cases-title">{t('Meer uit de praktijk')}</h3><Link className="ac-text-link" to="/cases">{t('Alle cases')} <span aria-hidden="true">↗</span></Link></div>
+          <div className="ac-mini-cases">{otherCases.map(item => <Link key={item.slug} to={`/cases/${item.slug}`} className="ac-mini-case">
+            <div className="ac-mini-case-image"><ResponsiveImage src={item.image} alt="" sizes="(max-width: 600px) 88px, (max-width: 900px) 30vw, 370px" loading="lazy" /></div>
+            <div className="ac-mini-case-copy"><span className="ac-mini-case-title"><strong>{item.name}</strong><span aria-hidden="true">↗</span></span><p>{caseCopy[item.slug] ?? item.summary[lang]}</p></div>
+          </Link>)}</div>
+        </div>
       </section>
 
       <section id="aanpak" className="ac-focus ac-wrap" aria-labelledby="focus-title">
@@ -376,7 +437,7 @@ export default function Academy() {
           <div className="ac-testlog-main">
             <div className="ac-testlog-head"><div><strong>{t("Webshop · aankopen")}</strong><span>3 creatives</span></div><code>{t("Nieuwe klanten, cumulatief")}</code></div>
             <TestChart selected={test.id} />
-            <div className="ac-testlog-decision" aria-live="polite"><span className="ac-mock-label">{t("BESLISSING ·") + " "}{test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testModule && <button className="ac-text-link" onClick={() => { showSlide(academyModules.indexOf(testModule)); scrollToId('programma') }}>{t("Hierover gaat:") + " "}{testModule.shortTitle}</button>}</div>
+            <div className="ac-testlog-decision" aria-live="polite"><div className="ac-decision-copy" key={test.id}><span className="ac-mock-label">{t("BESLISSING ·") + " "}{test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testModule && <button className="ac-text-link" onClick={() => { showSlide(academyModules.indexOf(testModule)); scrollToId('programma') }}>{t("Hierover gaat:") + " "}{testModule.shortTitle}</button>}</div></div>
           </div>
           <div className="ac-testlog-table">
             <div className="ac-table-caption"><span>TESTS</span><span>{t("Klik op een test om de beslissing te zien")}</span></div>
