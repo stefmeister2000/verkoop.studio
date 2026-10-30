@@ -157,26 +157,17 @@ export default function Academy() {
   const academyModules = sourceModules.map(item => ({ ...item, tag: t(item.tag), shortTitle: t(item.shortTitle), title: t(item.title), summary: t(item.summary), points: item.points.map(t), outcome: t(item.outcome) }))
   const academyFaq = sourceFaq.map(item => ({ question: t(item.question), answer: t(item.answer) }))
   const academyTests = sourceTests.map(item => ({ ...item, name: t(item.name), verdict: t(item.verdict), decision: t(item.decision) }))
-  const offer = [
-    [t("Volledig 1-op-1"), t("Alleen jij en Stef, in je eigen account en webshop.")],
-    [t("Starten vanaf nul"), t("Nog nooit geadverteerd? Je begint bij de basis, zonder vakjargon.")],
-    ['Meta ads', t("Campagnes, creatives, retargeting en opschalen.")],
-    [t("Landingspagina’s"), t("Pagina’s die bezoekers uit je ads omzetten in kopers.")],
-    ['Tracking', t("Pixel en Conversions API, zodat je cijfers kloppen.")],
-    [t("E-mailmarketing"), t("Flows en mails die klanten opnieuw laten kopen.")],
-  ]
+  const offer = [t('1-op-1 begeleiding'), t('Starten vanaf nul'), 'Meta ads', t('Landingspagina’s'), 'Tracking', t('E-mailmarketing')]
   const pinacelloSteps = [
     [t("Aandacht"), t("Meta ads en content rond het product en het aanbod.")],
     [t("Pagina"), t("Een campagnepagina met aanbod, bundels en een directe bestelknop.")],
     ['Retargeting', t("Wie interesse toonde, komt terug tot de aankoop.")],
   ]
-  const whyMeta = [t("Je bereikt kopers nog voor ze zelf zoeken"), t("Je toont je product met beeld en video, waar je klant al scrolt"), t("Je schaalt op zolang je cijfers kloppen")]
-  const pitfalls = [t("Sturen op Ads Manager zonder je echte omzet te checken"), t("Niet weten bij welke ROAS je winst maakt"), t("Het budget verdubbelen na twee goede dagen"), t("Eén goede ad laten opbranden")]
   const stages = [
-    [t("BOUWEN"), t("Pixel, tracking en je account correct opgezet.")],
-    [t("LANCEREN"), t("Je eerste campagnes live, met feedback van Stef voor je publiceert.")],
-    [t("OPTIMALISEREN"), t("Elke week testen wat verkoopt en bijsturen.")],
-    [t("SCHALEN"), t("Budget omhoog zolang je ROAS tussen 3 en 4 blijft.")],
+    [t('OPZETTEN'), t('Je account en tracking op orde.')],
+    [t('STARTEN'), t('Je eerste campagnes live.')],
+    [t('VERBETEREN'), t('Ads testen en resultaten bekijken.')],
+    [t('SCHALEN'), t('Meer budget voor wat werkt.')],
   ] as const
 
   const pageRef = useReveal()
@@ -285,9 +276,8 @@ export default function Academy() {
       <section id="aanbod" className="ac-offer ac-wrap" aria-labelledby="offer-title">
         <div className="ac-offer-main">
           <p className="ac-dot-kicker"><span />{" " + t("Het aanbod")}</p>
-          <h2 id="offer-title">{t("1-op-1 Meta ads lessen.") + " "}<span>{t("Met één belofte.")}</span></h2>
-          <p className="ac-section-intro">{t("Geen videocursus, geen groep. Stef leert je persoonlijk alles wat je webshop nodig heeft om met Meta ads te verkopen: van ads en landingspagina’s tot tracking en e‑mail.")}</p>
-          <ul className="ac-offer-list">{offer.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
+          <h2 id="offer-title">{t('Dit zit erin.')}</h2>
+          <ul className="ac-offer-list">{offer.map(title => <li key={title}><strong>{title}</strong></li>)}</ul>
         </div>
         <aside className="ac-promise" aria-label={t("Onze belofte")}>
           <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
@@ -323,22 +313,14 @@ export default function Academy() {
       <section id="aanpak" className="ac-focus ac-wrap" aria-labelledby="focus-title">
         <article className="ac-focus-article">
           <p className="ac-dot-kicker"><span />{" " + t("De aanpak")}</p>
-          <h2 id="focus-title">{t("Van eerste campagne") + " "}<span>{t("naar ROAS 3 tot 4.")}</span></h2>
-          <p className="ac-focus-lead">{t("Webshops verliezen op Meta vaak geld door drie dingen: meting die niet klopt, geen zicht op hun marge en ads die opbranden. In de lessen zet je ze recht, in die volgorde.")}</p>
+          <h2 id="focus-title">{t('Zo werken we.')}</h2>
+          <p className="ac-focus-lead">{t('Samen met Stef, in je eigen advertentieaccount.')}</p>
 
-          <h3>{t("Waarom Meta ads?")}</h3>
-          <ul className="ac-check-list is-yes">{whyMeta.map(item => <li key={item}>{item}</li>)}</ul>
-
-          <h3>{t("Waar het vaak misloopt")}</h3>
-          <ul className="ac-check-list is-no">{pitfalls.map(item => <li key={item}>{item}</li>)}</ul>
-
-          <h3>{t("Jouw traject")}</h3>
           <ol className="ac-stages">{stages.map(([label, text], index) => <li key={label}><span className="ac-stage-number">{number(index)}</span><div><strong>{label}</strong><p>{text}</p></div></li>)}</ol>
 
-          <h3>{t("Van wie je leert")}</h3>
           <div className="ac-focus-author">
             <img src={stefDeskSmall} alt="" width="56" height="56" loading="lazy" />
-            <p><strong>Stef Keppens</strong>{" " + t("van verkoop.studio werkt aan de groei van merken als Pinacello en bouwt met Nooms zijn eigen webshopmerk. In de lessen leer je exact die werkwijze.")}</p>
+            <p><strong>Stef Keppens</strong><br />{t('Je vaste begeleider.')}</p>
           </div>
 
           <div className="ac-focus-join">
