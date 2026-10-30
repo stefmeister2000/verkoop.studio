@@ -19,7 +19,7 @@ test('every lesson, FAQ and test explanation has English copy', () => {
 })
 
 test('all explicit translation keys resolve and Dutch remains in prerendered HTML', async () => {
-  for (const filename of ['../src/pages/Academy.tsx', '../src/components/AcademySignup.tsx']) {
+  for (const filename of ['../src/pages/Academy.tsx', '../src/components/AcademySignup.tsx', '../src/components/AcademyCapturePopup.tsx']) {
     const source = await readFile(new URL(filename, import.meta.url), 'utf8')
     const ast = ts.createSourceFile(filename, source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX)
     function walk(node) {

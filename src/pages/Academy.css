@@ -704,3 +704,22 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
   .ac-sticky { bottom: calc(16px + env(safe-area-inset-bottom)); }
   .ac-sticky .ac-button { min-height: 52px; }
 }
+
+/* A quiet, non-modal invitation; the form is opened only on request. */
+.ac-capture-popup { position: fixed; z-index: 60; right: 24px; bottom: calc(24px + env(safe-area-inset-bottom)); width: min(360px, calc(100% - 32px)); max-height: calc(100dvh - 100px - env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; padding: 24px; border: 1px solid var(--ac-line); border-radius: 20px; background: #fff; box-shadow: 0 14px 42px -18px #181c3d66; animation: ac-popup-enter .3s ease-out both; }
+.ac-capture-popup > .ac-kicker { margin-right: 30px; font-size: 10px; }
+.ac-capture-popup h2 { margin-top: 10px; font-size: 23px; line-height: 1.2; letter-spacing: -.025em; }
+.ac-capture-popup > p:not(.ac-kicker) { margin-top: 10px; color: var(--ac-text); font-size: 14px; line-height: 1.5; }
+.ac-popup-close { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 44px; height: 44px; color: var(--ac-text); border-radius: 12px; font-size: 26px; line-height: 1; }
+.ac-popup-close:hover, .ac-popup-later:hover { background: var(--ac-tint); }
+.ac-popup-actions { display: grid; gap: 4px; margin-top: 18px; }
+.ac-capture-popup .ac-button { width: 100%; min-height: 48px; padding-inline: 12px; font-size: 14px; }
+.ac-popup-later { display: block; min-height: 44px; margin-top: 4px; width: 100%; border-radius: 10px; color: var(--ac-text); font-size: 13px; }
+.ac-capture-popup .ac-signup { margin-top: 18px; padding: 0; border: 0; box-shadow: none; background: transparent; }
+.ac-capture-popup .ac-signup-fields { grid-template-columns: 1fr; }
+.ac-capture-popup .ac-field input { font-size: 16px; height: 46px; }
+.ac-capture-popup > p.ac-popup-privacy { font-size: 11px; color: var(--ac-mute); }
+@keyframes ac-popup-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 560px) {
+  .ac-capture-popup { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); padding: 20px; }
+}
