@@ -31,7 +31,7 @@ function useReveal(lang: string) {
     const motion = matchMedia('(prefers-reduced-motion: reduce)')
     const animations = new Set<Animation>()
     let observer: IntersectionObserver | undefined
-    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, main section h2, .ac-dot-kicker, .ac-offer-list > li, .ac-stages > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-intro, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
+    const selector = '.ac-reveal, .ac-hero-copy > *, main section h2, .ac-dot-kicker, .ac-offer-list > li, .ac-stages > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-intro, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
     const stop = () => {
       observer?.disconnect()
       animations.forEach(animation => animation.cancel())
@@ -311,6 +311,7 @@ export default function Academy() {
         <div className="ac-hero-copy">
           <h1 id="academy-title">{t("Start en schaal je webshop") + " "}<span>{t("met Meta ads.")}</span></h1>
           <p className="ac-hero-lead">{t("Volledig 1-op-1 lessen met Stef, in je eigen account. Ook als je nog nooit hebt geadverteerd. Onze belofte: een ROAS van 3 tot 4.")}</p>
+          <HeroVideo lang={lang} />
           <div id="academy-hero-signup" className="ac-hero-signup">
             {signedUp ? <div className="ac-welcome-card" role="status">
               
@@ -324,7 +325,6 @@ export default function Academy() {
             <p><strong>{t("Door Stef Keppens")}</strong>, verkoop.studio<span>{t("Uit de praktijk bij") + " "}{practice.map((name, index) => <b key={name}>{name}{index < practice.length - 1 && <i aria-hidden="true">·</i>}</b>)}</span></p>
           </div>
         </div>
-        <HeroVideo lang={lang} />
       </section>
 
       <section id="aanbod" className="ac-offer ac-wrap" aria-labelledby="offer-title">
