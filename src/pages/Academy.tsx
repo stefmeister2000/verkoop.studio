@@ -203,7 +203,7 @@ export default function Academy() {
     [t('Starten vanaf nul'), t('Je leert hoe ads, je webshop en opvolging samenwerken.')],
     ['Meta ads', t('Trek nieuwe bezoekers aan en bereik geïnteresseerden opnieuw.')],
     [t('Landingspagina’s'), t('Landingspagina’s op maat, afgestemd op je ads, aanbod en webshop.')],
-    ['Tracking', t('GA4, Meta Pixel en conversies instellen, van eerste klik tot aankoop.')],
+    ['Tracking', t('Onze pixelsoftware voor server-side tracking, plus GA4 en Meta Pixel.')],
     [t('E-mailmarketing'), t('Volg winkelwagens op en breng klanten terug voor hun volgende aankoop.')],
   ]
   const otherCases = cases.filter(item => item.slug !== 'pinacello')
@@ -311,8 +311,11 @@ export default function Academy() {
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
           <h1 id="academy-title">{t("Start en schaal je webshop") + " "}<span>{t("met Meta ads.")}</span></h1>
-          <p className="ac-hero-lead">{t('Voor webshopondernemers die zelf willen starten of groeien met Meta ads.')}</p>
-          <p className="ac-hero-detail">{t('Je leert campagnes, landingspagina’s en tracking opzetten. Stef begeleidt je 1-op-1, in je eigen account.')}</p>
+          <ul className="ac-hero-usps">
+            <li><strong>{t('Voor webshops')}</strong><span>{t('Starten of groeien')}</span></li>
+            <li><strong>{t('Ads, pagina’s & tracking')}</strong><span>{t('Je hele funnel')}</span></li>
+            <li><strong>{t('1-op-1 met Stef')}</strong><span>{t('In je eigen account')}</span></li>
+          </ul>
         </div>
         <HeroVideo lang={lang} />
         <div className="ac-hero-conversion">
@@ -412,9 +415,9 @@ export default function Academy() {
       </section>
 
       <section id="testlog" className="ac-testlog-section ac-wrap" aria-labelledby="testlog-title">
-        <p className="ac-dot-kicker"><span />{" " + t("Webshop-account · fictief voorbeeld")}</p>
-        <h2 id="testlog-title">{t("Leer kijken voorbij")}<br /><span>{t("de hoogste ROAS.")}</span></h2>
-        <p className="ac-section-intro">{t("Drie creatives, veertien dagen. Ads Manager kiest de kortingsactie als winnaar. Kijk je naar nieuwe klanten en marge, dan wint een andere. Klik op een test.")}</p>
+        <p className="ac-dot-kicker"><span />{" " + t('Oefenvoorbeeld')}</p>
+        <h2 id="testlog-title">{t('Welke ad werkt echt?')}</h2>
+        <p className="ac-section-intro">{t('Vergelijk kosten en nieuwe klanten. Kies een ad.')}</p>
         <div className="ac-stats-row"><div><span>{t("UITGAVEN · 14 DAGEN")}</span><strong>{euro(totals.spend)}</strong></div><div><span>{t("NIEUWE KLANTEN")}</span><strong className="ac-positive">{totals.newCustomers} <small>{t("van") + " "}{totals.purchases}{" " + t("aankopen")}</small></strong></div></div>
         <div className="ac-testlog ac-reveal">
           <aside className="ac-testlog-side">
@@ -423,6 +426,7 @@ export default function Academy() {
             <span className="ac-testlog-system"><span className="ac-live-dot" />{" " + t("verkoop.studio werkplaats")}</span>
           </aside>
           <div className="ac-testlog-main">
+            <dl className="ac-test-metrics" aria-live="polite"><div><dt>{t('Nieuwe klanten')}</dt><dd>{test.newCustomers}</dd></div><div><dt>{t('Kosten per klant')}</dt><dd>{euro(Math.round(test.spend / test.newCustomers * 100) / 100)}</dd></div></dl>
             <div className="ac-testlog-head"><div><strong>{t("Webshop · aankopen")}</strong><span>3 creatives</span></div><code>{t("Nieuwe klanten, cumulatief")}</code></div>
             <TestChart selected={test.id} />
             <div className="ac-testlog-decision" aria-live="polite"><div className="ac-decision-copy" key={test.id}><span className="ac-mock-label">{t("BESLISSING ·") + " "}{test.name.toUpperCase()}</span><strong>{test.verdict}.</strong><p>{test.decision}</p>{testModule && <button className="ac-text-link" onClick={() => { showSlide(academyModules.indexOf(testModule)); scrollToId('programma') }}>{t("Hierover gaat:") + " "}{testModule.shortTitle}</button>}</div></div>
@@ -442,7 +446,7 @@ export default function Academy() {
             </button>)}
           </div>
         </div>
-        <p className="ac-fine">{t("Fictieve cijfers om te oefenen. Geen klantgegevens en geen voorspelling van je eigen resultaat.")}</p>
+        <p className="ac-fine">{t('Fictieve cijfers, geen klantresultaten.')}</p>
       </section>
 
       <section className="ac-not ac-wrap" aria-labelledby="not-title">
@@ -502,8 +506,7 @@ export default function Academy() {
     </main>
 
     {!signedUp && stickyArmed && <div className={`ac-sticky ${sticky ? 'is-visible' : ''}`} aria-hidden={!sticky}>
-      <p><strong>Meta Ads Academy</strong><span>{t("1-op-1 lessen · doel ROAS 3 tot 4")}</span></p>
-      <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>{t("Meld je aan")}</button>
+      <button className="ac-button" tabIndex={sticky ? 0 : -1} onClick={goToSignup}>{t('Leer Meta ads')}</button>
     </div>}
 
     <footer className="ac-footer">
