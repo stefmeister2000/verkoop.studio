@@ -25,7 +25,7 @@ test('every indexable route has crawlable content, unique metadata and valid str
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, route)
     assert.match(html, /<html lang="nl"/)
     const graph = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph']
-    assert(graph.some(item => item['@type'] === 'ProfessionalService' && item.address.addressLocality === 'Lochristi'), route)
+    assert(graph.some(item => item['@type'] === 'ProfessionalService' && item.email === 'stef@verkoop.studio' && !item.address), route)
     assert(graph.some(item => item['@type'] === 'WebPage' && item.url === origin + route), route)
     assert(sitemap.includes(`<loc>${origin}${route}</loc>`), route)
     for (const [, asset] of html.matchAll(/(?:src|href)="(\/(?:assets|partners)\/[^"?#]+)[^"]*"/g)) {

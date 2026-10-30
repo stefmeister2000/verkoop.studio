@@ -189,7 +189,6 @@ export const services: Service[] = [
         'Built-in tracking and conversion measurement',
       ],
     },
-    relatedCase: 'olearys',
   },
   {
     slug: 'funnels',
@@ -495,7 +494,6 @@ export const services: Service[] = [
         'Testing and refinement after go-live',
       ],
     },
-    relatedCase: 'olearys',
   },
   {
     slug: 'distributie',

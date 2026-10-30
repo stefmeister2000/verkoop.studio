@@ -33,7 +33,6 @@ export default function App({ location }: { location?: string }) {
           <Route path="distributie" element={<ServicePage slug="distributie" />} />
 
           <Route path="cases" element={<CasesIndex />} />
-          <Route path="cases/olearys" element={<CaseStudyPage slug="olearys" />} />
           <Route path="cases/pinacello" element={<CaseStudyPage slug="pinacello" />} />
           <Route path="cases/e-kart" element={<CaseStudyPage slug="e-kart" />} />
           <Route path="cases/nooms" element={<CaseStudyPage slug="nooms" />} />
