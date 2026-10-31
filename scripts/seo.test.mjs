@@ -126,7 +126,7 @@ test('articles have crawlable content, authorship, links and sitemap entries', a
     const graphs = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]))
     const article = graphs.find(g => g['@type'] === 'BlogPosting')
     assert.equal(article.url, origin + route)
-    assert.equal(article.author.name, 'verkoop.studio')
+    assert.equal(article.author.name, 'Verkoop Studio')
     assert.equal(article.inLanguage, 'nl-BE')
     const source = articles.find(a => origin + `/blog/${a.slug}` === article.url)
     assert.equal(article.datePublished, source.publishedAt)

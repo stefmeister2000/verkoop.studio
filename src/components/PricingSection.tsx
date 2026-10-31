@@ -6,22 +6,22 @@ import { useLang } from '../i18n/LanguageContext'
 
 const positioning = {
   foundation: {
-    label: ['Een sterke basis', 'A strong foundation'],
-    outcome: ['Je advertenties en meting op orde.', 'Get your ads and tracking in place.'],
-    points: [['Strategie en advertentiebeheer', 'Tracking en rapportage', 'Advies over content en conversie'], ['Strategy and ad management', 'Tracking and reporting', 'Content and conversion advice']],
+    label: ['Volledige aanpak', 'The full scope'],
+    outcome: ['Alles, behalve videoshoots.', 'Everything except video shoots.'],
+    points: [['Strategie, campagnes en rapportage', 'Landingspagina’s, e-mail en SEO', 'Geen videoshoots'], ['Strategy, campaigns and reporting', 'Landing pages, email and SEO', 'No video shoots']],
     cta: ['Bespreek Foundation', 'Discuss Foundation'],
   },
   partner: {
-    label: ['Campagnes + conversie', 'Campaigns + conversion'],
-    outcome: ['Campagnes, pagina’s en opvolging.', 'Campaigns, pages and follow-up.'],
-    points: [['Alles uit Foundation', 'Landingspagina’s en e-mailflows', 'Wekelijks testen en bijsturen'], ['Everything in Foundation', 'Landing pages and email flows', 'Weekly testing and improvements']],
+    label: ['Met videoshoots', 'With video shoots'],
+    outcome: ['Dezelfde aanpak, inclusief videoshoots.', 'The same scope, including video shoots.'],
+    points: [['Alles uit Foundation', 'Videoshoots inbegrepen'], ['Everything in Foundation', 'Video shoots included']],
     cta: ['Bespreek Partner', 'Discuss Partner'],
   },
   department: {
-    label: ['Een team naast je team', 'An extension of your team'],
-    outcome: ['Een groeiteam naast je bedrijf.', 'A growth team alongside your business.'],
-    points: [['Alles uit Partner', 'Meerdere kanalen en automatisering', 'Strategie en uitvoering met je team'], ['Everything in Partner', 'Multiple channels and automation', 'Strategy and delivery with your team']],
-    cta: ['Bespreek maatwerk', 'Discuss your needs'],
+    label: ['Met wekelijks overleg', 'With a weekly meeting'],
+    outcome: ['Alles, inclusief videoshoots en een wekelijks overleg.', 'Everything, including video shoots and a weekly meeting.'],
+    points: [['Alles uit Partner', 'Videoshoots inbegrepen', 'Wekelijks overleg'], ['Everything in Partner', 'Video shoots included', 'Weekly meeting']],
+    cta: ['Bespreek Department', 'Discuss Department'],
   },
 }
 
@@ -35,7 +35,7 @@ export default function PricingSection() {
       <div className="pricing-wrap">
         <header className="pricing-intro">
           <h2 id="pricing-title">{nl ? 'Kies je groeipakket.' : 'Choose your growth plan.'}</h2>
-          <p>{nl ? 'Van campagnebeheer tot een volledig groeiteam.' : 'From campaign management to a full growth team.'}</p>
+          <p>{nl ? 'Het verschil zit in videoshoots en het wekelijkse overleg.' : 'The difference is video shoots and the weekly meeting.'}</p>
         </header>
         <div className="pricing-grid">
           {pricingTiers.map((tier, index) => {
