@@ -11,7 +11,7 @@ import stefDeskSmall from '../assets/stef-desk-640.webp'
 const COPY = {
   nl: {
     seoTitle: 'Contact',
-    seoDescription: 'Bespreek je website, software, app of groeiplan met verkoop.studio.',
+    seoDescription: 'Bespreek je website, software, app of groeiplan met verkoop.studio in Lochristi.',
     title: 'Waar wil je bedrijf naartoe?',
     body: 'Vertel ons je doel en wat vandaag vastloopt. We bespreken je huidige aanpak, bepalen waar de grootste kans zit en bekijken welke samenwerking past.',
     meeting: 'Plan een groeigesprek',
@@ -19,7 +19,7 @@ const COPY = {
   },
   en: {
     seoTitle: 'Contact',
-    seoDescription: 'Discuss your website, software, app or growth plan with verkoop.studio.',
+    seoDescription: 'Discuss your website, software, app or growth plan with verkoop.studio in Lochristi.',
     title: 'Where do you want your business to go?',
     body: 'Tell us your goal and what is holding you back. We discuss your current approach, identify the biggest opportunity and explore how we can help.',
     meeting: 'Schedule a growth call',

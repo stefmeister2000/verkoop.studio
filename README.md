@@ -2,7 +2,7 @@
 
 ![verkoop.studio](public/logo.svg)
 
-Marketing agency website for verkoop.studio. Canonical production origin: **https://verkoop.studio**.
+Marketing agency website for verkoop.studio, Lochristi. Canonical production origin: **https://verkoop.studio**.
 
 ## Development and deployment
 

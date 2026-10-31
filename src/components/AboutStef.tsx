@@ -17,8 +17,8 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
         </Heading>
         <p className="mt-6 max-w-2xl text-lg text-bone">
           {nl
-            ? 'We brengen strategie, marketing, design en ontwikkeling samen in één studio. Van je eerste groeivraag tot de website, campagnes en systemen die het waarmaken.'
-            : 'We bring strategy, marketing, design and development together in one studio. From your first growth question to the website, campaigns and systems that make it happen.'}
+            ? 'Vanuit Lochristi brengen we strategie, marketing, design en ontwikkeling samen in één studio. Van je eerste groeivraag tot de website, campagnes en systemen die het waarmaken.'
+            : 'From Lochristi, we bring strategy, marketing, design and development together in one studio. From your first growth question to the website, campaigns and systems that make it happen.'}
         </p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <div className="panel agency-card">
@@ -39,8 +39,8 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
             </CardHeading>
             <p className="mt-4 text-bone">
               {nl
-                ? 'Websites, software en mobiele apps. Productdesign en ontwikkeling vanuit onze studio.'
-                : 'Websites, software and mobile apps. Product design and development from our studio.'}
+                ? 'Websites, software en mobiele apps. Productdesign en ontwikkeling vanuit onze studio in Lochristi.'
+                : 'Websites, software and mobile apps. Product design and development from our studio in Lochristi.'}
             </p>
 
           </div>
