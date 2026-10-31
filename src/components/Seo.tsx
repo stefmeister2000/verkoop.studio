@@ -1,6 +1,6 @@
 import { seoMetadata } from '../data/seoMetadata'
 import { useLang } from '../i18n/LanguageContext'
-import { SITE_NAME, SITE_URL, socialImage } from '../lib/site'
+import { SITE_NAME, SITE_ALTERNATE_NAME, SITE_URL, socialImage } from '../lib/site'
 import { services } from '../data/services'
 
 interface SeoProps { title: string; description: string; path: string; noindex?: boolean; language?: 'nl' | 'en' }
@@ -9,11 +9,12 @@ export default function Seo({ title, description, path, noindex = false, languag
   const lang = language ?? selectedLang
   const url = `${SITE_URL}${path === '/' ? '/' : path}`
   const metadata = seoMetadata[path]?.[lang]
-  const fullTitle = `${metadata?.title ?? title} | ${SITE_NAME}`
+  const pageTitle = metadata?.title ?? title
+  const fullTitle = path === '/' ? `${SITE_NAME} | ${pageTitle}` : `${pageTitle} | ${SITE_NAME}`
   const metaDescription = metadata?.description ?? description
   const service = services.find(s => `/${s.slug}` === path)
   const organization = {
-    '@type': 'ProfessionalService', '@id': `${SITE_URL}/#organization`, name: SITE_NAME,
+    '@type': 'ProfessionalService', '@id': `${SITE_URL}/#organization`, name: SITE_NAME, alternateName: SITE_ALTERNATE_NAME,
     url: `${SITE_URL}/`, logo: `${SITE_URL}/favicon.svg`, image: socialImage,
     email: 'stef@verkoop.studio',
     description: 'Google Ads, Meta Ads, e-mailmarketing, data-analyse, websites en software vanuit Lochristi.',
@@ -24,7 +25,7 @@ export default function Seo({ title, description, path, noindex = false, languag
     worksFor: { '@id': organization['@id'] },
   }
   const graph = [organization, person,
-    { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME, publisher: { '@id': organization['@id'] } },
+    { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME, alternateName: SITE_ALTERNATE_NAME, publisher: { '@id': organization['@id'] } },
     { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: fullTitle, description: metaDescription, inLanguage: lang === 'nl' ? 'nl-BE' : 'en', isPartOf: { '@id': `${SITE_URL}/#website` }, about: { '@id': organization['@id'] }, ...(path === '/agency' ? { mainEntity: { '@id': person['@id'] } } : {}) },
     ...(service ? [{ '@type': 'Service', name: service.title[lang], description: service.summary[lang], url, provider: { '@id': organization['@id'] }, serviceType: service.title[lang] }] : []),
     ...(path !== '/' && !noindex ? [{ '@type': 'BreadcrumbList', itemListElement: [

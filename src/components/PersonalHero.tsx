@@ -19,8 +19,8 @@ export default function PersonalHero() {
         </h1>
         <p className="hero-description">
           {nl
-            ? 'Je ziet welke campagnes klanten opleveren, en waar je budget beter rendeert.'
-            : 'See which campaigns bring customers, and where your budget works harder.'}
+            ? 'Verkoop Studio helpt je met online marketing en websites. Je ziet welke campagnes klanten opleveren, en waar je budget beter rendeert.'
+            : 'Verkoop Studio helps you with online marketing and websites. See which campaigns bring customers, and where your budget works harder.'}
         </p>
         <div className="hero-actions">
           <Link className="button-dark" to="/contact" onClick={() => trackEvent('audit_cta_clicked', { placement: 'hero' })}>
