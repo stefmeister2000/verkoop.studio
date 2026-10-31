@@ -2,9 +2,27 @@
 <html lang="nl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=verkoop-2" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+    <!-- Meta Pixel first, so PageView is not waiting on fonts or other tags. -->
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://www.facebook.com" />
+    <link rel="preload" href="https://connect.facebook.net/en_US/fbevents.js" as="script" fetchpriority="high" />
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;t.fetchPriority='high';
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '29297541076513579');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=verkoop-2" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!--seo-head-->
@@ -22,43 +40,38 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     </noscript>
 
-    <!-- Meta Pixel Code -->
+    <!--
+      Current, Clarity and Google start only after the page load event.
+      The pixel request is already issued above. Stubs stay here so a lead
+      submitted before those libraries arrive is still queued.
+    -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '29297541076513579');
-      fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Current pixel (attribution dashboard): page views, ad clicks and confirmed leads. Calls made before it loads are queued. -->
-    <script>window.current=window.current||function(){(window.current.q=window.current.q||[]).push(arguments)};</script>
-    <script async src="https://perfomance.verkoop.studio/t.js" data-site="cur_X__QIQRqLHhHyf9iIQc3h4S3M7zXnwag"></script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "yr9byb5ej9");
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRKJP8K3SD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+      window.current=window.current||function(){(window.current.q=window.current.q||[]).push(arguments)};
+      window.dataLayer=window.dataLayer||[];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-7ZLQS38RJ7');
       gtag('config', 'G-VRKJP8K3SD');
+      function loadDeferredTrackers(){
+        if (loadDeferredTrackers.done) return;
+        loadDeferredTrackers.done = true;
+        var current = document.createElement('script');
+        current.async = true;
+        current.src = 'https://perfomance.verkoop.studio/t.js';
+        current.setAttribute('data-site', 'cur_X__QIQRqLHhHyf9iIQc3h4S3M7zXnwag');
+        document.head.appendChild(current);
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "yr9byb5ej9");
+        var google = document.createElement('script');
+        google.async = true;
+        google.src = 'https://www.googletagmanager.com/gtag/js?id=G-VRKJP8K3SD';
+        document.head.appendChild(google);
+      }
+      if (document.readyState === 'complete') loadDeferredTrackers();
+      else window.addEventListener('load', loadDeferredTrackers, { once: true });
     </script>
 
     <!--

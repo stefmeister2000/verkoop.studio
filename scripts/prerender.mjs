@@ -1,18 +1,18 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { render, routes, SITE_URL } from '../dist-ssr/entry-server.js'
 import { inlineHomepageStyles } from './inline-home-styles.mjs'
-const template = await readFile('dist/index.html', 'utf8')
-const homepageTemplate = (await inlineHomepageStyles(template, href => readFile(`dist${href}`, 'utf8')))
+const builtTemplate = await readFile('dist/index.html', 'utf8')
+const template = (await inlineHomepageStyles(builtTemplate, href => readFile(`dist${href}`, 'utf8')))
+  .replace(/<link\b(?=[^>]*\brel="modulepreload")(?=[^>]*\bhref="\/assets\/[^"]+\.js")[^>]*>\n?/g, '')
   .replace(/<script\b(?=[^>]*\btype="module")(?=[^>]*\bsrc="\/assets\/[^"/]+\.js")[^>]*>/g,
-    tag => tag.replace('<script', '<script fetchpriority="low"'))
+    tag => tag.includes('fetchpriority=') ? tag : tag.replace('<script', '<script fetchpriority="low"'))
 const origin = new URL(SITE_URL)
 if (!['http:', 'https:'].includes(origin.protocol) || origin.pathname !== '/') throw new Error('VITE_SITE_URL must be an HTTP(S) origin')
 for (const route of [...routes, '/404']) {
   let markup = render(route)
   const head = []
   markup = markup.replace(/<title>[\s\S]*?<\/title>|<meta\s[^>]*\/>|<link\s[^>]*\/>/g, tag => { head.push(tag); return '' })
-  const pageTemplate = route === '/' ? homepageTemplate : template
-  const html = pageTemplate.replace('<!--seo-head-->', head.join('\n')).replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
+  const html = template.replace('<!--seo-head-->', head.join('\n')).replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
   const directory = route === '/' ? 'dist' : `dist${route}`
   await mkdir(directory, { recursive: true })
   await writeFile(`${directory}/index.html`, html)
