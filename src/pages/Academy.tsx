@@ -183,10 +183,10 @@ function NewsletterForm() {
   if (status === 'success') return <p className="ac-newsletter-done" role="status">{" " + t("Je bent ingeschreven. Nieuwe tips komen in je inbox.")}</p>
   return <form className="ac-newsletter" onSubmit={submit} data-clarity-mask="true">
     <label htmlFor="academy-newsletter-email">{t("Meta-adstips in je inbox")}</label>
-    <p>{t("Praktische tips over Meta ads, ROAS en opschalen van verkoop.studio.")}</p>
+    <p>{t("Praktische tips over Meta ads, ROAS en opschalen van Verkoop Studio.")}</p>
     <div className="ac-newsletter-row"><input id="academy-newsletter-email" name="email" type="email" autoComplete="email" required maxLength={254} placeholder={t("naam@bedrijf.be")} /><button type="submit" className="ac-button" disabled={status === 'pending'}>{status === 'pending' ? t("Bezig…") : t("Inschrijven")}</button></div>
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-    <label className="ac-consent"><input type="checkbox" name="consent" required /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.")}</span></label>
+    <label className="ac-consent"><input type="checkbox" name="consent" required /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.")}</span></label>
     {error && <p className="ac-form-error" role="alert">{t(error)}</p>}
   </form>
 }
@@ -304,12 +304,12 @@ export default function Academy() {
 
   return <div className="academy-page" lang={lang} ref={pageRef}>
     <link rel="stylesheet" href={academyStylesheet} precedence="academy" />
-    <Seo title={t("Meta Ads Academy — 1-op-1 Meta ads lessen voor webshops")} description={t("Volledig 1-op-1 Meta ads lessen voor webshops, met Stef van verkoop.studio. Eén belofte: een ROAS van 3 tot 4. Ook als je nog nooit hebt geadverteerd.")} path="/academy" language={lang} />
+    <Seo title={t("Meta Ads Academy — 1-op-1 Meta ads lessen voor webshops")} description={t("Volledig 1-op-1 Meta ads lessen voor webshops, met Stef van Verkoop Studio. Eén belofte: een ROAS van 3 tot 4. Ook als je nog nooit hebt geadverteerd.")} path="/academy" language={lang} />
     <a className="ac-skip" href="#academy-main">{t("Naar de inhoud")}</a>
 
     <header className="ac-header">
       <div className="ac-wrap ac-header-inner">
-        <div className="ac-identity"><Link to="/" aria-label={t("verkoop.studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
+        <div className="ac-identity"><Link to="/" aria-label={t("Verkoop Studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
         <nav className="ac-pill-nav" aria-label={t("Academy navigatie")}><a href="#aanbod">{t("Aanbod")}</a><a href="#resultaten">{t("Resultaten")}</a><a href="#aanpak">{t("Aanpak")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#faq">FAQ</a></nav>
         <div className="ac-header-actions">
           <button className="ac-header-cta" onClick={goToSignup}>{t("Plan een kennismaking")}</button>
@@ -409,7 +409,7 @@ export default function Academy() {
         </article>
 
         <aside className="ac-focus-card" aria-label={t("Meta Ads Academy in het kort")}>
-          <figure><ResponsiveImage src={stefNooms} alt={t("Stef Keppens van verkoop.studio")} sizes="(max-width: 700px) 100vw, 420px" loading="lazy" /></figure>
+          <figure><ResponsiveImage src={stefNooms} alt={t("Stef Keppens van Verkoop Studio")} sizes="(max-width: 700px) 100vw, 420px" loading="lazy" /></figure>
           <div className="ac-focus-card-body">
             <h3>{t('Leren in de praktijk')}</h3>
             <p>{t('1-op-1 met Stef, in je eigen advertentieaccount. Je werkt aan je eigen campagnes, pagina’s en tracking.')}</p>
@@ -444,7 +444,7 @@ export default function Academy() {
           <aside className="ac-testlog-side">
             <span className="ac-testlog-badge">{t("Testlog")}</span>
             {academyTests.map(item => <button key={item.id} className={item.id === test.id ? 'is-active' : ''} onClick={() => setTestId(item.id)} aria-pressed={item.id === test.id}><span className={`ac-swatch ac-swatch-${item.id}`} /><span>{item.name}<small>{item.newCustomers}{" " + t("nieuwe klanten")}</small></span></button>)}
-            <span className="ac-testlog-system"><span className="ac-live-dot" />{" " + t("verkoop.studio werkplaats")}</span>
+            <span className="ac-testlog-system"><span className="ac-live-dot" />{" " + t("Verkoop Studio werkplaats")}</span>
           </aside>
           <div className="ac-testlog-main">
             <dl className="ac-test-metrics" aria-live="polite"><div><dt>{t('Nieuwe klanten')}</dt><dd>{test.newCustomers}</dd></div><div><dt>{t('Kosten per klant')}</dt><dd>{euro(Math.round(test.spend / test.newCustomers * 100) / 100)}</dd></div></dl>
@@ -501,7 +501,7 @@ export default function Academy() {
           <p className="ac-small">{t("Benieuwd hoe dat in de praktijk loopt?")}</p>
           <div className="ac-hero-actions"><Link className="ac-button" to="/cases">{t("Bekijk onze cases")}</Link><a className="ac-text-link" href="https://verkoop.studio/">{t("Wil je dat wij jouw ads overnemen?")}</a></div>
         </div>
-        <figure className="ac-honest-photo ac-reveal"><ResponsiveImage src={stefPortrait} alt={t("Stef Keppens van verkoop.studio")} sizes="(max-width: 900px) 100vw, 520px" loading="lazy" /></figure>
+        <figure className="ac-honest-photo ac-reveal"><ResponsiveImage src={stefPortrait} alt={t("Stef Keppens van Verkoop Studio")} sizes="(max-width: 900px) 100vw, 520px" loading="lazy" /></figure>
       </section>
 
       <section id="faq" className="ac-faq ac-wrap" aria-labelledby="faq-title">
@@ -523,16 +523,16 @@ export default function Academy() {
     <footer className="ac-footer">
       <div className="ac-wrap">
         <div className="ac-footer-top">
-          <div><div className="ac-identity"><Link to="/" aria-label={t("verkoop.studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>{t("Volledig 1-op-1 Meta ads lessen voor webshops, met één doel: een ROAS van 3 tot 4. Van verkoop.studio.")}</p></div>
+          <div><div className="ac-identity"><Link to="/" aria-label={t("Verkoop Studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>{t("Volledig 1-op-1 Meta ads lessen voor webshops, met één doel: een ROAS van 3 tot 4. Van Verkoop Studio.")}</p></div>
           <NewsletterForm />
         </div>
         <div className="ac-footer-columns">
           <div><h3>Academy</h3><a href="#aanbod">{t("Aanbod")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#aanmelden">{t("Kennismaking")}</a></div>
-          <div><h3>verkoop.studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
+          <div><h3>Verkoop Studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
           <div><h3>Contact</h3><a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a><a href="#aanmelden">{t("Plan een kennismaking")}</a></div>
           <div><h3>{t("Goed om te weten")}</h3><span>{t("Niet verbonden aan of gecertificeerd door Meta.")}</span><span>{t("Resultaten hangen af van je product, marge en budget.")}</span></div>
         </div>
-        <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("verkoop.studio. Alle rechten voorbehouden.")}</p>
+        <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("Verkoop Studio. Alle rechten voorbehouden.")}</p>
       </div>
     </footer>
   </div>

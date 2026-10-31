@@ -75,7 +75,7 @@ export const academyFaq = [
   { question: 'Heb ik een minimumbudget nodig?', answer: 'Geen vast minimum. Wat zinvol is, hangt af van je marge en je productprijs. Dat bekijken we samen in de kennismaking.' },
   { question: 'Werkt dit voor Shopify, WooCommerce of andere platformen?', answer: 'Ja. Alleen de koppeling van pixel en Conversions API verschilt per platform, en die lopen we samen na.' },
   { question: 'Wat gebeurt er met mijn gegevens?', answer: 'Stef gebruikt je naam, e-mail, telefoon en wat je invult om contact met je op te nemen, en we bewaren je aanmelding in ons klantenbestand. Nieuwsbrieven krijg je alleen als je dat aanvinkt.' },
-  { question: 'Is dit een officiële Meta-opleiding?', answer: 'Nee. Dit zijn onafhankelijke lessen van verkoop.studio, zonder Meta-certificering.' },
+  { question: 'Is dit een officiële Meta-opleiding?', answer: 'Nee. Dit zijn onafhankelijke lessen van Verkoop Studio, zonder Meta-certificering.' },
 ]
 
 export interface AcademyTest {

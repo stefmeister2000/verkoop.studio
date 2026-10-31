@@ -123,7 +123,7 @@ export default function Nav() {
         <Link
           to="/"
           className="studio-brand"
-          aria-label="verkoop.studio, home"
+          aria-label="Verkoop Studio, home"
         >
           <BrandMark />
         </Link>
