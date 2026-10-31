@@ -18,13 +18,13 @@ export default function Home() {
       <Seo
         title={
           lang === 'nl'
-            ? 'Marketingbureau in Lochristi | Google Ads & data'
-            : 'Marketing agency in Lochristi | Google Ads & analytics'
+            ? 'Marketingbureau voor groei | Google Ads & data'
+            : 'Marketing agency for growth | Google Ads & analytics'
         }
         description={
           lang === 'nl'
-            ? 'verkoop.studio in Lochristi helpt bedrijven groeien met Google Ads, Meta Ads, e-mailmarketing, data-analyse en websites die bezoekers omzetten in klanten.'
-            : 'verkoop.studio in Lochristi helps businesses grow with Google Ads, Meta Ads, email marketing, analytics and websites that turn visitors into customers.'
+            ? 'verkoop.studio helpt bedrijven groeien met Google Ads, Meta Ads, e-mailmarketing, data-analyse en websites die bezoekers omzetten in klanten.'
+            : 'verkoop.studio helps businesses grow with Google Ads, Meta Ads, email marketing, analytics and websites that turn visitors into customers.'
         }
         path="/"
       />

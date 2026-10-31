@@ -33,7 +33,7 @@ export function getChatArticles(lang: Lang): ChatArticle[] {
     ...services.map(s => ({ id: `service-${s.slug}`, title: s.title[lang], text: s.summary[lang], bullets: s.includes[lang], href: `/${s.slug}`, keywords: aliases[s.slug] ?? s.slug, followups: [`process-${s.slug}`, ...(s.relatedCase ? [`case-${s.relatedCase}`] : []), 'start'] })),
     ...services.map(s => ({ id: `process-${s.slug}`, title: nl ? `${s.title[lang]}: onze aanpak` : `${s.title[lang]}: our approach`, text: s.problem[lang], bullets: s.process[lang], href: `/${s.slug}`, keywords: '', followups: ['start', 'pricing'] })),
     ...cases.map(c => ({ id: `case-${c.slug}`, title: c.name, text: c.summary[lang], bullets: c.built[lang], href: `/cases/${c.slug}`, keywords: `${c.name} ${c.slug}`, followups: ['cases', 'start'] })),
-    ...faqItems.map((f, i) => ({ id: `faq-${i}`, title: f.question[lang], text: f.answer[lang], href: i === 13 ? '/academy' : '/contact', keywords: i === 0 ? 'wie who locatie location lochristi studio' : i === 13 ? 'academy leren learn cursus course opleiding training leertraject learning meta ads zelf' : '', followups: ['start'] })),
+    ...faqItems.map((f, i) => ({ id: `faq-${i}`, title: f.question[lang], text: f.answer[lang], href: i === 13 ? '/academy' : '/contact', keywords: i === 0 ? 'wie who studio' : i === 13 ? 'academy leren learn cursus course opleiding training leertraject learning meta ads zelf' : '', followups: ['start'] })),
   ]
 }
 export function findChatAnswers(query: string, lang: Lang, context?: string): ChatArticle[] {

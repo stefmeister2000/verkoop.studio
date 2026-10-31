@@ -193,7 +193,6 @@ export default function ServicePage({ slug }: { slug: ServiceSlug }) {
             <p className="contact-lead">{leadIn(service.title[lang], lang, slug)}</p>
             <p className="service-close-who">
               <strong>Stef Keppens</strong>
-              <span>Lochristi</span>
               <a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>
             </p>
           </div>

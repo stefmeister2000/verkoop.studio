@@ -16,7 +16,7 @@ export default function Seo({ title, description, path, noindex = false, languag
     '@type': 'ProfessionalService', '@id': `${SITE_URL}/#organization`, name: SITE_NAME,
     url: `${SITE_URL}/`, logo: `${SITE_URL}/favicon.svg`, image: socialImage,
     email: 'stef@verkoop.studio',
-    description: 'Google Ads, Meta Ads, e-mailmarketing, data-analyse, websites en software vanuit Lochristi.',
+    description: 'Google Ads, Meta Ads, e-mailmarketing, data-analyse, websites en software.',
   }
   const person = {
     '@type': 'Person', '@id': `${SITE_URL}/#stef-keppens`, name: 'Stef Keppens',
