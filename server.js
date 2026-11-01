@@ -131,9 +131,9 @@ app.post('/api/lead', async (req, res) => {
     }
 
     const conversion = await sendOpenAiLead({
-      receipt: result, submissionId: b.submission_id, sourceUrl: req.get('referer'),
+      receipt: result, submissionId: b.submission_id, sourceUrl: req.get('referer'), cookieHeader: req.get('cookie'),
     })
-    if (!conversion.sent && conversion.reason !== 'not_configured') {
+    if (!conversion.sent && !['not_configured', 'consent_denied'].includes(conversion.reason)) {
       console.warn('[openai-conversions]', conversion.reason, conversion.status || '')
     }
     return res.json({ ok: true, captured, openai_event_id: conversion.eventId })
@@ -158,3 +158,4 @@ app.use((req, res) => {
 
 const PORT = process.env.PORT || 8787
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`))
+

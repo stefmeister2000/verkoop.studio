@@ -87,3 +87,33 @@ test('browser and server share the exact event identity for deduplication', asyn
   assert.equal(calls[0][3].event_id, JSON.parse(f.calls[0].options.body).events[0].id)
   assert.equal(calls[0][1], 'lead_created')
 })
+
+
+
+test('server forwards the pixel references unchanged so the first deduplicated event can match the click', async () => {
+  const f = fixture([503, 200])
+  await sendOpenAiLead({ ...input, cookieHeader: 'unrelated=private; __oppref=click%2Fopaque%2Bvalue%3D; __obref=browser-reference; __oaiq_consent=true' }, f.options)
+  const event = JSON.parse(f.calls[0].options.body).events[0]
+  assert.equal(event.oppref, 'click/opaque+value=')
+  assert.deepEqual(event.user, { obref: 'browser-reference' })
+  assert.equal(event.id, 'website_lead_submission-1')
+  assert.equal(f.calls[0].options.body, f.calls[1].options.body)
+  assert.ok(!f.calls[0].options.body.includes('private'))
+})
+
+test('missing, malformed or oversized pixel cookies do not corrupt conversion requests', async () => {
+  for (const cookieHeader of [undefined, '', '__oppref=%ZZ; __obref=%00bad', '__oppref=; __obref=%20', `__oppref=${'a'.repeat(4097)}; __obref=${'a'.repeat(513)}`, 'not__oppref=wrong']) {
+    const f = fixture()
+    await sendOpenAiLead({ ...input, cookieHeader }, f.options)
+    const event = JSON.parse(f.calls[0].options.body).events[0]
+    assert.equal(event.oppref, undefined)
+    assert.equal(event.user, undefined)
+  }
+})
+
+test('stored pixel consent denial also stops the server conversion', async () => {
+  const f = fixture()
+  const result = await sendOpenAiLead({ ...input, cookieHeader: '__oppref=old-click; __obref=old-browser; __oaiq_consent=false' }, f.options)
+  assert.deepEqual(result, { sent: false, reason: 'consent_denied', eventId: 'website_lead_submission-1' })
+  assert.equal(f.calls.length, 0)
+})
