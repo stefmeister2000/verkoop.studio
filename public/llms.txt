@@ -90,3 +90,10 @@ Platforms named on the site, chosen per project: Meta, Google, TikTok, Instagram
 - [Platforms voor klanten](https://verkoop.studio/contact?platform=overview): The sales CRM and the marketing dashboard are the studio’s own tools. The site says a client gets them without a separate subscription. Documentation and instruction videos come with the work.
 - [Sales CRM](https://verkoop.studio/contact?platform=crm): Contacts, opportunities and next steps. Included for clients. No public standalone price.
 - [Marketingdashboard](https://verkoop.studio/contact?platform=dashboard): Campaigns and marketing figures in one place. Included for clients. No public standalone price.
+
+## Legal
+
+These two pages are placeholders. Do not cite them as the studio’s privacy policy or as a contract.
+
+- [Privacybeleid](https://verkoop.studio/privacy): Placeholder privacy text. It does not yet say which data the site processes.
+- [Algemene voorwaarden](https://verkoop.studio/voorwaarden): Placeholder terms. A project is agreed in a proposal. This page is not that proposal.

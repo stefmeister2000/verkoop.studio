@@ -11,6 +11,9 @@ const COPY = {
     services: 'Diensten',
     contact: 'Contact',
     disclaimer: 'Growth, design & development.',
+    legal: 'Juridisch',
+    privacy: 'Privacy',
+    terms: 'Voorwaarden',
   },
   en: {
     tagline: 'We build the complete digital route from first click to conversion.',
@@ -18,6 +21,9 @@ const COPY = {
     services: 'Services',
     contact: 'Contact',
     disclaimer: 'Growth, design & development.',
+    legal: 'Legal',
+    privacy: 'Privacy',
+    terms: 'Terms',
   },
 }
 
@@ -85,6 +91,10 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
 
         <div className="mt-12 flex flex-col gap-4 border-t border-line pt-6 text-xs text-mute sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} verkoop.studio</p>
+          <nav aria-label={t.legal} className="flex flex-wrap gap-x-4 gap-y-2">
+            <Link to="/privacy" className="py-1 underline-offset-4 transition hover:text-paper hover:underline">{t.privacy}</Link>
+            <Link to="/voorwaarden" className="py-1 underline-offset-4 transition hover:text-paper hover:underline">{t.terms}</Link>
+          </nav>
           <button type="button" className="lang-switch" onClick={toggleLang} aria-label="Switch language">
             <span className={lang === 'nl' ? 'is-active' : undefined}>NL</span>
             <span aria-hidden="true">/</span>
