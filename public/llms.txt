@@ -93,7 +93,7 @@ Platforms named on the site, chosen per project: Meta, Google, TikTok, Instagram
 
 ## Legal
 
-These two pages are placeholders. Do not cite them as the studio’s privacy policy or as a contract.
+These pages are the privacy policy and the terms for verkoop.studio. No street address, VAT number or company number is published.
 
-- [Privacybeleid](https://verkoop.studio/privacy): Placeholder privacy text. It does not yet say which data the site processes.
-- [Algemene voorwaarden](https://verkoop.studio/voorwaarden): Placeholder terms. A project is agreed in a proposal. This page is not that proposal.
+- [Privacybeleid](https://verkoop.studio/privacy): Names the data the site collects: contact form, newsletter, academy, and measurement (Meta Pixel, Google Analytics 4, Microsoft Clarity, Current). There is no cookie banner. The contact form is not masked in Clarity.
+- [Algemene voorwaarden](https://verkoop.studio/voorwaarden): Not the proposal. A job starts when a proposal is accepted. Site prices are not a binding offer. VAT is not stated. Ad spend is separate.
