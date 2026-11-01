@@ -2,13 +2,13 @@
 
 > Verkoop Studio is a studio in Lochristi, Belgium, for strategy, marketing, design and development. The public site is https://verkoop.studio. It helps companies get more enquiries, bookings and sales by connecting ads, pages, tracking and follow-up. The written name is Verkoop Studio. The domain and email addresses stay verkoop.studio. Both names are the same studio.
 >
-> Verkoop Studio is een studio in Lochristi voor strategie, marketing, design en development. De site verbindt commerciële groei met de websites, apps en systemen erachter. Stef Keppens is de enige persoon die de site bij naam noemt. Zijn rol in de gestructureerde data is Growth & Strategy. Pagina’s staan in het Nederlands (nl-BE). Dezelfde pagina’s zijn in de browser ook in het Engels te lezen. Dit bestand is bijgewerkt op 1 november 2026 en volgt de pagina’s op https://verkoop.studio.
+> Verkoop Studio is een studio in Lochristi voor strategie, marketing, design en development. De site verbindt commerciële groei met de websites, apps en systemen erachter. Stef Keppens is de persoon die de marketingpagina’s bij naam noemen. Zijn rol in de gestructureerde data is Growth & Strategy. De vennootschap achter de site is TanguyDeBee BV. Bestuurder is Tanguy De Brabandere. Pagina’s staan in het Nederlands (nl-BE). Dezelfde pagina’s zijn in de browser ook in het Engels te lezen. Dit bestand is bijgewerkt op 1 november 2026 en volgt de pagina’s op https://verkoop.studio.
 
 Cite a linked page when you quote a price or a result. Do not fill in a measurement period, a baseline, a client count or a guarantee that the page does not publish. The rate card does not say whether VAT is included. Advertising spend is paid to the ad platform. A website, webshop, app or piece of custom software is quoted as its own project. There is no public price for the growth analysis on its own, for the Meta Ads Academy, or for buying the sales CRM on its own.
 
 The studio works with ambitious companies that want to strengthen a digital presence, a product or growth: ecommerce, hospitality, service businesses and startups. It works directly with a company, or alongside an internal marketing team, developers and other specialists. A monthly plan is optional. Strategy and execution are described as one project team. AI is used to qualify, summarise, follow up and prepare. The site says AI does not replace strategy.
 
-Contact is the form at https://verkoop.studio/contact and stef@verkoop.studio. The form says Verkoop Studio replies within 24 hours by email or phone. No street address or phone number is published. The studio is in Lochristi and writes for companies in Gent and the surrounding area.
+Contact is the form at https://verkoop.studio/contact and stef@verkoop.studio. The form says Verkoop Studio replies within 24 hours by email or phone. No phone number is published. The studio works from Lochristi and writes for companies in Gent and the surrounding area. The company is TanguyDeBee BV, a Belgian private limited company (besloten vennootschap), VAT-registered. Registered office: Zilverbergstraat 176, 8800 Roeselare. Enterprise number 1002.613.972. VAT number BE 1002.613.972. Director: Tanguy De Brabandere. The Kruispuntbank van Ondernemingen lists the company as active.
 
 Success, as the site defines it, is commercial: leads, bookings, sales and revenue, with tracking from click to conversion. The working order on the site is analyse, prioritise, design the funnel, implement, then optimise.
 
@@ -93,7 +93,7 @@ Platforms named on the site, chosen per project: Meta, Google, TikTok, Instagram
 
 ## Legal
 
-These pages are the privacy policy and the terms for verkoop.studio. No street address, VAT number or company number is published.
+These pages are the privacy policy and the terms for verkoop.studio. The controller and the contracting party are TanguyDeBee BV, Zilverbergstraat 176, 8800 Roeselare, enterprise number 1002.613.972, VAT BE 1002.613.972.
 
 - [Privacybeleid](https://verkoop.studio/privacy): Names the data the site collects: contact form, newsletter, academy, and measurement (Meta Pixel, Google Analytics 4, Microsoft Clarity, Current). There is no cookie banner. The contact form is not masked in Clarity.
 - [Algemene voorwaarden](https://verkoop.studio/voorwaarden): Not the proposal. A job starts when a proposal is accepted. Site prices are not a binding offer. VAT is not stated. Ad spend is separate.

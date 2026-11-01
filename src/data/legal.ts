@@ -33,11 +33,11 @@ export const legalDocuments = {
         title: { nl: 'Verantwoordelijke', en: 'Who is responsible' },
         paragraphs: {
           nl: [
-            'Verkoop Studio in Lochristi, België, is verantwoordelijk voor deze site. Je bereikt de studio via stef@verkoop.studio. Een straatadres staat niet op de site.',
+            'Verkoop Studio is de naam op deze site. De studio werkt vanuit Lochristi. Verantwoordelijke is TanguyDeBee BV, een besloten vennootschap met zetel te Zilverbergstraat 176, 8800 Roeselare, België. Het ondernemingsnummer is 1002.613.972. Het btw-nummer is BE 1002.613.972. De vennootschap is onderworpen aan de btw. Bestuurder is Tanguy De Brabandere. Je bereikt de vennootschap via stef@verkoop.studio.',
             'Het beleid gaat over deze website en over aanvragen aan de studio. Het is niet het privacybeleid van de webshop, het advertentieaccount of het CRM van een klant.',
           ],
           en: [
-            'Verkoop Studio in Lochristi, Belgium, is responsible for this site. You reach the studio at stef@verkoop.studio. No street address is published.',
+            'Verkoop Studio is the name on this site. The studio works from Lochristi. The controller is TanguyDeBee BV, a Belgian private limited company, with its registered office at Zilverbergstraat 176, 8800 Roeselare, Belgium. The enterprise number is 1002.613.972. The VAT number is BE 1002.613.972. The company is VAT-registered. The director is Tanguy De Brabandere. You reach the company at stef@verkoop.studio.',
             'The policy is about this website and about enquiries to the studio. It is not the privacy policy of a customer’s shop, ads account or CRM.',
           ],
         },
@@ -126,11 +126,11 @@ export const legalDocuments = {
         title: { nl: 'Deze pagina', en: 'This page' },
         paragraphs: {
           nl: [
-            'Dit zijn de voorwaarden voor werk met Verkoop Studio. Ze zijn niet de voorwaarden van de klanten van een klant, en ze zijn niet het privacybeleid op /privacy.',
+            'Dit zijn de voorwaarden voor werk met Verkoop Studio. De contractpartij is TanguyDeBee BV, zetel Zilverbergstraat 176, 8800 Roeselare, ondernemingsnummer 1002.613.972, btw-nummer BE 1002.613.972. Ze zijn niet de voorwaarden van de klanten van een klant, en ze zijn niet het privacybeleid op /privacy.',
             'De site beschrijft het werk van de studio. Een pagina, een prijs of een pakket is geen bindend aanbod en geen aanvaarde opdracht.',
           ],
           en: [
-            'These are the terms for working with Verkoop Studio. They are not the terms of a client’s own customers, and they are not the privacy policy at /privacy.',
+            'These are the terms for working with Verkoop Studio. The contracting party is TanguyDeBee BV, registered office Zilverbergstraat 176, 8800 Roeselare, enterprise number 1002.613.972, VAT number BE 1002.613.972. They are not the terms of a client’s own customers, and they are not the privacy policy at /privacy.',
             'The site describes the studio’s work. A page, a price or a plan is not a binding offer and not an accepted job.',
           ],
         },
@@ -140,11 +140,11 @@ export const legalDocuments = {
         paragraphs: {
           nl: [
             'Growth Foundation kost €1.500 per maand voor de volledige aanpak zonder videoshoots. Growth Partner kost €2.500 per maand en voegt videoshoots toe. Growth Department kost €4.000 per maand en voegt een wekelijks overleg toe.',
-            'De site zegt niet of btw in die bedragen zit. Advertentiebudget betaal je aan het advertentieplatform, niet aan Verkoop Studio als deel van dat bedrag. Websites, webshops, apps en software op maat kunnen aparte projecten zijn. Het sales CRM en het marketingdashboard zitten in een pakket, zonder aparte publieke abonnementsprijs. Scope, advertentiebudget en licenties van derden staan in het voorstel.',
+            'De site zegt niet of btw in die bedragen zit. Advertentiebudget betaal je aan het advertentieplatform, niet aan TanguyDeBee BV als deel van dat bedrag. Websites, webshops, apps en software op maat kunnen aparte projecten zijn. Het sales CRM en het marketingdashboard zitten in een pakket, zonder aparte publieke abonnementsprijs. Scope, advertentiebudget en licenties van derden staan in het voorstel.',
           ],
           en: [
             'Growth Foundation costs €1,500 per month for the full approach without video shoots. Growth Partner costs €2,500 per month and adds video shoots. Growth Department costs €4,000 per month and adds a weekly meeting.',
-            'The site does not say whether VAT is included in those amounts. Ad spend is paid to the ad platform, not to Verkoop Studio as part of that fee. Websites, webshops, apps and custom software can be separate projects. The sales CRM and the marketing dashboard are included in a plan, with no separate public subscription price. Scope, ad budget and third-party licences are set in the proposal.',
+            'The site does not say whether VAT is included in those amounts. Ad spend is paid to the ad platform, not to TanguyDeBee BV as part of that fee. Websites, webshops, apps and custom software can be separate projects. The sales CRM and the marketing dashboard are included in a plan, with no separate public subscription price. Scope, ad budget and third-party licences are set in the proposal.',
           ],
         },
       },
@@ -166,11 +166,11 @@ export const legalDocuments = {
         paragraphs: {
           nl: [
             'Je geeft juiste informatie en de toegang die het werk nodig heeft, zoals advertentieaccounts, de site en tracking, wanneer het voorstel dat zegt.',
-            'Werk dat voor jou gemaakt is, wordt overgedragen zoals het voorstel beschrijft. Tot de afgesproken facturen voor dat werk betaald zijn, houdt Verkoop Studio de rechten op dat werk.',
+            'Werk dat voor jou gemaakt is, wordt overgedragen zoals het voorstel beschrijft. Tot de afgesproken facturen voor dat werk betaald zijn, houdt TanguyDeBee BV de rechten op dat werk.',
           ],
           en: [
             'You give accurate information and the access the work needs, such as ad accounts, the site and tracking, when the proposal says so.',
-            'Work made for you is handed over as the proposal describes. Until the agreed invoices for that work are paid, Verkoop Studio keeps the rights in that work.',
+            'Work made for you is handed over as the proposal describes. Until the agreed invoices for that work are paid, TanguyDeBee BV keeps the rights in that work.',
           ],
         },
       },
@@ -178,12 +178,12 @@ export const legalDocuments = {
         title: { nl: 'Aansprakelijkheid', en: 'Liability' },
         paragraphs: {
           nl: [
-            'Verkoop Studio is niet aansprakelijk voor het resultaat van een advertentieplatform, voor jouw eigen cijfers, of voor een beslissing die jij neemt uit een rapport.',
-            'Belgisch recht geldt. Een geschil gaat naar de rechtbanken van Oost-Vlaanderen.',
+            'TanguyDeBee BV is niet aansprakelijk voor het resultaat van een advertentieplatform, voor jouw eigen cijfers, of voor een beslissing die jij neemt uit een rapport.',
+            'Belgisch recht geldt. Een geschil gaat naar de rechtbanken die bevoegd zijn voor de zetel in Roeselare.',
           ],
           en: [
-            'Verkoop Studio is not liable for the result of an ad platform, for your own numbers, or for a decision you make from a report.',
-            'Belgian law applies. A dispute goes to the courts of East Flanders.',
+            'TanguyDeBee BV is not liable for the result of an ad platform, for your own numbers, or for a decision you make from a report.',
+            'Belgian law applies. A dispute goes to the courts with jurisdiction over the registered office in Roeselare.',
           ],
         },
       },
