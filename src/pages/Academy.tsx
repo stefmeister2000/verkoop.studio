@@ -482,7 +482,7 @@ export default function Academy() {
             <li><span>2</span><div><strong>{t("Kennismaking met Stef")}</strong><small>{t("Telefonisch of per e-mail: waar sta je en wat wil je bereiken?")}</small></div></li>
             <li><span>3</span><div><strong>{t("Kies daarna je traject")}</strong><small>{t("Je krijgt een voorstel op maat. Daarna beslis je.")}</small></div></li>
           </ol>
-          <p className="ac-privacy">{t("We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.")}</p>
+          <p className="ac-privacy">{t("We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.")} <Link to="/privacy">{t("Privacybeleid")}</Link></p>
         </div>
         <div className="ac-signup-card">
           {signedUp ? <div className="ac-signup-done" role="status">
@@ -533,6 +533,7 @@ export default function Academy() {
           <div><h3>{t("Goed om te weten")}</h3><span>{t("Niet verbonden aan of gecertificeerd door Meta.")}</span><span>{t("Resultaten hangen af van je product, marge en budget.")}</span></div>
         </div>
         <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("verkoop.studio. Alle rechten voorbehouden.")}</p>
+        <p className="ac-legal"><Link to="/privacy">{t("Privacybeleid")}</Link><Link to="/voorwaarden">{t("Algemene voorwaarden")}</Link></p>
       </div>
     </footer>
   </div>

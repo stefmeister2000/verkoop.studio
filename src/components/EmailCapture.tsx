@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { isLegalPath } from '../data/legal'
 import { useLang } from '../i18n/LanguageContext'
 import { trackNewsletterConversion } from '../lib/analytics'
 import './EmailCapture.css'
@@ -16,6 +17,7 @@ const COPY = {
     note: 'Uitschrijven kan altijd.',
     privacy: 'Je e-mailadres en toestemming worden via Resend bewaard voor deze nieuwsbrief. Inzage of verwijdering aanvragen:',
     privacyLabel: 'Privacy',
+    privacyPage: 'Privacybeleid',
     success: 'Je staat op de lijst.', successText: 'Bedankt! Je ontvangt voortaan onze tips en nieuws in je inbox.',
     error: 'Opslaan lukt even niet. Probeer het opnieuw.',
     limited: 'Te veel pogingen. Probeer het over 10 minuten opnieuw.',
@@ -31,6 +33,7 @@ const COPY = {
     note: 'Unsubscribe at any time.',
     privacy: 'Your email and consent are stored through Resend for this newsletter. To request access or deletion:',
     privacyLabel: 'Privacy',
+    privacyPage: 'Privacy policy',
     success: "You're on the list.", successText: "Thank you! You'll receive our tips and news in your inbox.",
     error: "We couldn't save your subscription. Please try again.",
     limited: 'Too many attempts. Please try again in 10 minutes.',
@@ -55,7 +58,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
   const pending = useRef(false)
   const submissionId = useRef('')
   const panel = useRef<HTMLElement>(null)
-  const excluded = pathname === '/contact' || pathname === '/funnel-audit'
+  const excluded = pathname === '/contact' || pathname === '/funnel-audit' || isLegalPath(pathname)
 
   useEffect(() => {
     if (!openRequest) return
@@ -163,7 +166,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
         </button>
         <div className="email-capture-footnote">
           <span>{t.note}</span>
-          <details><summary>{t.privacyLabel}</summary><p>{t.privacy} <a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>.</p></details>
+          <details><summary>{t.privacyLabel}</summary><p>{t.privacy} <a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>. <Link to="/privacy">{t.privacyPage}</Link></p></details>
         </div>
       </form>}
       </div>
