@@ -79,6 +79,16 @@ Run `node --test tests/newsletter.test.mjs` for isolated integration tests.
 
 Connect `verkoop.studio` (and optionally `www.verkoop.studio`) to the existing Railway service and apply the DNS targets shown by Railway. Set `VITE_SITE_URL=https://verkoop.studio` in Railway before rebuilding. Redirect the old host to the new origin while preserving paths and query parameters. The verified legacy email sender remains in place until the new sending domain is verified in Resend; then set `LEAD_FROM` and `LEAD_REPLY_FROM` to the verified new address.
 
+## OpenAI lead measurement
+
+Confirmed contact/enquiry submissions send `lead_created` from the browser and, when configured, from the server to pixel `RVGNA5NGiGauDpbp33VAqq`. Set the server-only `OPENAI_CONVERSIONS_API_KEY` in Railway Variables using the Conversions API key from Ads Manager. Never use a `VITE_` variable or commit the key. An empty key disables only server delivery.
+
+The server returns `openai_event_id`; the browser uses it as the Pixel `event_id`, matching the CAPI `id` to avoid counting the same lead twice. Retries reuse the event ID and timestamp. Events contain `customer_action`, server time, and a same-origin page URL with query and fragment removed (falling back to `/contact`). No customer details or form answers are sent. Matching identifiers are not added by this integration.
+
+Delivery is best-effort: two attempts with two-second timeouts and a short backoff for network errors, 429s and 5xx responses. A failure never changes a saved lead into a failed form and logs only a failure category/status. There is no persistent retry queue. Test with `node --test tests/openai-conversions.test.mjs tests/lead-tracking.test.mjs`; use `validate_only: true` for authenticated API smoke tests to avoid creating fake leads.
+
+Reference: https://developers.openai.com/ads/conversions-api
+
 ## Google Analytics lead measurement
 
 Successful newsletter popup subscriptions also send GA4 `generate_lead` and Meta `Lead`, using `form_id: newsletter-popup`, GA4 `method: newsletter_signup` and Meta `content_name: Newsletter signup`. These fire only after `/api/newsletter` confirms storage in the newsletter segment. Opening the popup, failed requests and honeypot acknowledgements do not count. A stable browser submission ID deduplicates repeated callbacks independently per destination; email and consent text are never sent to analytics. Growth-analysis enquiries keep their existing form IDs. In GA4, inspect `generate_lead` in Realtime/DebugView and use `form_id` to distinguish the sources (register an event-scoped custom dimension for reporting if needed). Google Ads conversion imports/settings are separate from this website change.

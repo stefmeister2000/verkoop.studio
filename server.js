@@ -6,6 +6,7 @@ import { crmPayload, sendToCrm } from './server-crm.js'
 import { Resend } from 'resend'
 import { sendConfirmation } from './server-confirmation.js'
 import { captureLead } from './server-lead.js'
+import { sendOpenAiLead } from './server-openai-conversions.js'
 import { newsletterRouter } from './server-newsletter.js'
 import { academyRouter } from './server-academy.js'
 import { academyInfoRouter } from './server-academy-info.js'
@@ -129,7 +130,13 @@ app.post('/api/lead', async (req, res) => {
       }
     }
 
-    return res.json({ ok: true, captured })
+    const conversion = await sendOpenAiLead({
+      receipt: result, submissionId: b.submission_id, sourceUrl: req.get('referer'),
+    })
+    if (!conversion.sent && conversion.reason !== 'not_configured') {
+      console.warn('[openai-conversions]', conversion.reason, conversion.status || '')
+    }
+    return res.json({ ok: true, captured, openai_event_id: conversion.eventId })
   } catch (err) {
     console.error('[lead] unexpected error:', err.message)
     return res.status(502).json({ error: 'send_failed' })

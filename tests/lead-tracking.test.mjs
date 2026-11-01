@@ -116,7 +116,7 @@ test('OpenAI measures a confirmed enquiry once with the exact payload and no per
   f.window.oaiq = (...args) => calls.push(args)
   f.track({ ...receipt, email: 'private@example.com', naam: 'Private' }, 'openai-1', 'contact')
   f.track(receipt, 'openai-1', 'contact')
-  assert.deepEqual(JSON.parse(JSON.stringify(calls)), [['measure', 'lead_created', { type: 'customer_action' }]])
+  assert.deepEqual(JSON.parse(JSON.stringify(calls)), [['measure', 'lead_created', { type: 'customer_action' }, { event_id: 'website_lead_openai-1' }]])
   f.track(receipt, 'openai-2', 'contact')
   assert.equal(calls.length, 2)
   const reloaded = fixture({ storage: f.storage })
