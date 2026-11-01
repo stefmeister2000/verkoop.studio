@@ -14,6 +14,8 @@ import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefNooms from '../assets/stef.webp'
 import stefPortrait from '../assets/hero-portrait.webp'
+import stefDesk from '../assets/stef-desk.webp'
+import stefDeskSmall from '../assets/stef-desk-640.webp'
 import studentUpdate from '../assets/academy-student-update.png'
 import pinacelloResults from '../assets/cases/pinacello-results.png'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
@@ -31,7 +33,7 @@ function useReveal(lang: string) {
     const motion = matchMedia('(prefers-reduced-motion: reduce)')
     const animations = new Set<Animation>()
     let observer: IntersectionObserver | undefined
-    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, .ac-hero-conversion > *, main section h2, .ac-dot-kicker, .ac-offer-list > li, .ac-stages > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-intro, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
+    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, .ac-hero-conversion > *, main section h2, .ac-dot-kicker, .ac-ledger > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-aside, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
     const stop = () => {
       observer?.disconnect()
       animations.forEach(animation => animation.cancel())
@@ -217,11 +219,11 @@ export default function Academy() {
     ['Retargeting', t("Wie interesse toonde, komt terug tot de aankoop.")],
   ]
   const stages = [
-    [t('OPZETTEN'), t('We richten je advertentieaccount in en installeren GA4, Meta Pixel en conversiemeting.')],
-    [t('LANDINGSPAGINA’S'), t('Samen bouwen we landingspagina’s op maat, met een duidelijk aanbod en een logische stap naar aankoop.')],
-    [t('CAMPAGNES'), t('Je zet ads en retargeting live. E-mailflows volgen geïnteresseerde bezoekers en verlaten winkelwagens op.')],
-    [t('DASHBOARD OP MAAT'), t('Je krijgt toegang tot een volledig dashboard op maat, met je advertentiekosten, conversies en omzet op één plek.')],
-    [t('VERBETEREN & SCHALEN'), t('We testen ads en pagina’s, bekijken je cijfers en verhogen het budget voor wat werkt.')],
+    [t('Opzetten'), t('We richten je advertentieaccount in en installeren GA4, Meta Pixel en conversiemeting.')],
+    [t('Landingspagina’s'), t('Samen bouwen we landingspagina’s op maat, met een duidelijk aanbod en een logische stap naar aankoop.')],
+    [t('Campagnes'), t('Je zet ads en retargeting live. E-mailflows volgen geïnteresseerde bezoekers en verlaten winkelwagens op.')],
+    [t('Dashboard op maat'), t('Je krijgt toegang tot een volledig dashboard op maat, met je advertentiekosten, conversies en omzet op één plek.')],
+    [t('Verbeteren & schalen'), t('We testen ads en pagina’s, bekijken je cijfers en verhogen het budget voor wat werkt.')],
   ] as const
 
   const caseTrack = useRef<HTMLDivElement>(null)
@@ -272,6 +274,14 @@ export default function Academy() {
     })
   }
 
+  const exampleRef = useRef<HTMLDetailsElement>(null)
+  /** A link to the worked example opens it, instead of landing on a closed summary. */
+  function openExample(event: { preventDefault: () => void }) {
+    event.preventDefault()
+    if (exampleRef.current) exampleRef.current.open = true
+    scrollToId('testlog')
+  }
+
   function goToSignup() {
     recordAcademyPopup()
     setPopupSuppressed(true)
@@ -304,13 +314,13 @@ export default function Academy() {
 
   return <div className="academy-page" lang={lang} ref={pageRef}>
     <link rel="stylesheet" href={academyStylesheet} precedence="academy" />
-    <Seo title={t("Meta Ads Academy — 1-op-1 Meta ads lessen voor webshops")} description={t("Volledig 1-op-1 Meta ads lessen voor webshops, met Stef van Verkoop Studio. Eén belofte: een ROAS van 3 tot 4. Ook als je nog nooit hebt geadverteerd.")} path="/academy" language={lang} />
+    <Seo title={t("Meta Ads Academy: 1-op-1 Meta ads lessen voor webshops")} description={t("Volledig 1-op-1 Meta ads lessen voor webshops, met Stef van Verkoop Studio. Eén belofte: een ROAS van 3 tot 4. Ook als je nog nooit hebt geadverteerd.")} path="/academy" language={lang} />
     <a className="ac-skip" href="#academy-main">{t("Naar de inhoud")}</a>
 
     <header className="ac-header">
       <div className="ac-wrap ac-header-inner">
-        <div className="ac-identity"><Link to="/" aria-label={t("Verkoop Studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
-        <nav className="ac-pill-nav" aria-label={t("Academy navigatie")}><a href="#aanbod">{t("Aanbod")}</a><a href="#resultaten">{t("Resultaten")}</a><a href="#aanpak">{t("Aanpak")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#faq">FAQ</a></nav>
+        <div className="ac-identity"><Link to="/" aria-label={t("Verkoop Studio, naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><a href="#academy-main" className="ac-identity-label">academy</a></div>
+        <nav className="ac-pill-nav" aria-label={t("Academy navigatie")}><a href="#aanbod">{t("Aanbod")}</a><a href="#resultaten">{t("Resultaten")}</a><a href="#aanpak">{t("Aanpak")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog" onClick={openExample}>{t("Voorbeeld")}</a><a href="#faq">FAQ</a></nav>
         <div className="ac-header-actions">
           <button className="ac-header-cta" onClick={goToSignup}>{t("Plan een kennismaking")}</button>
         </div>
@@ -320,16 +330,12 @@ export default function Academy() {
     <main id="academy-main">
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
-          <div className="ac-language" role="group" aria-label={t('Taal kiezen')}>
-            <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>Nederlands</button>
-            <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>English</button>
-          </div>
           <h1 id="academy-title">{t("Start en schaal je webshop") + " "}<span>{t("met Meta ads.")}</span></h1>
-          <ul className="ac-hero-usps">
-            <li><strong>{t('Voor webshops & B2B-bedrijven')}</strong><span>{t('Starten of groeien')}</span></li>
-            <li><strong>{t('Ads, pagina’s & tracking')}</strong><span>{t('Je hele funnel')}</span></li>
-            <li><strong>{t('1-op-1 met Stef')}</strong><span>{t('In je eigen account')}</span></li>
-          </ul>
+          <dl className="ac-spec">
+            <div><dt>{t('Voor wie')}</dt><dd>{t('Webshops en B2B-bedrijven, startend of groeiend')}</dd></div>
+            <div><dt>{t('Waarover')}</dt><dd>{t('Ads, landingspagina’s en tracking: je hele funnel')}</dd></div>
+            <div><dt>{t('Met wie')}</dt><dd>{t('1-op-1 met Stef, in je eigen advertentieaccount')}</dd></div>
+          </dl>
         </div>
         <HeroVideo lang={lang} />
         <div className="ac-hero-conversion">
@@ -344,7 +350,7 @@ export default function Academy() {
       <section id="aanbod" className="ac-offer ac-wrap" aria-labelledby="offer-title">
         <div className="ac-offer-main">
           <h2 id="offer-title">{t('Dit zit erin.')}</h2>
-          <ul className="ac-offer-list">{offer.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
+          <ol className="ac-ledger">{offer.map(([title, text], index) => <li key={title}><span className="ac-ledger-index">{number(index)}</span><strong>{title}</strong><span className="ac-ledger-text">{text}</span></li>)}</ol>
         </div>
       </section>
 
@@ -375,7 +381,7 @@ export default function Academy() {
           <Link className="ac-text-link" to="/cases/pinacello">{t("Lees de volledige case")}</Link>
         </article>
         <article className="ac-student-proof ac-reveal" aria-labelledby="student-proof-title">
-          <h3 id="student-proof-title" className="ac-kicker">{t('GEDEELD NA DE LESSEN')}</h3>
+          <h3 id="student-proof-title" className="ac-quiet-kicker">{t('Gedeeld na de lessen')}</h3>
           <div className="ac-student-story"><p className="ac-student-story-title">{t('Van een 9-tot-5 naar een eigen bedrijf.')}</p><p>{t('Na de lessen met Stef kon deze deelnemer zijn baan achter zich laten en zich op zijn eigen onderneming richten.')}</p></div>
           <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
         </article>
@@ -391,7 +397,7 @@ export default function Academy() {
       </section>
 
         <aside className="ac-promise ac-promise-section ac-wrap" aria-label={t("Onze belofte")}>
-          <p className="ac-kicker">{t("ONZE BELOFTE")}</p>
+          <p className="ac-quiet-kicker ac-quiet-kicker-light">{t("Onze belofte")}</p>
           <p className="ac-promise-figure"><strong>3–4</strong><span>{t("ROAS op je Meta ads")}</span></p>
           <p>{t("Elke euro die je in Meta ads steekt, levert") + " "}<b>{t("€3 tot €4 omzet")}</b>{(lang === 'nl' ? ' ' : '') + t("op. Daar werkt elke les naartoe.")}</p>
           {signedUp ? <p className="ac-promise-done">{t("Je aanvraag is binnen.")}</p> : <button className="ac-button ac-button-light" onClick={goToSignup}>{t("Plan een kennismaking")}</button>}
@@ -404,7 +410,7 @@ export default function Academy() {
           <h2 id="focus-title">{t('Zo werken we.')}</h2>
           <p className="ac-focus-lead">{t('Samen met Stef, in je eigen advertentieaccount.')}</p>
 
-          <ol className="ac-stages">{stages.map(([label, text], index) => <li key={label}><span className="ac-stage-number">{number(index)}</span><div><strong>{label}</strong><p>{text}</p></div></li>)}</ol>
+          <ol className="ac-ledger ac-stages">{stages.map(([label, text], index) => <li key={label}><span className="ac-ledger-index">{number(index)}</span><strong>{label}</strong><span className="ac-ledger-text">{text}</span></li>)}</ol>
 
         </article>
 
@@ -431,10 +437,9 @@ export default function Academy() {
             <p>{topic.summary}</p>
             <ul>{topic.points.map(point => <li key={point}>{point}</li>)}</ul>
             <p className="ac-slide-outcome"><span>{t("WAT JE EROVER HEBT")}</span>{topic.outcome}</p>
-            <div className="ac-slide-actions"><button className="ac-button" onClick={goToSignup}>{t("Plan een kennismaking")}</button></div>
           </div>
         </div>
-        <details id="testlog" className="ac-practice-example">
+        <details id="testlog" className="ac-practice-example" ref={exampleRef}>
           <summary>{t('Probeer een voorbeeld')}<span aria-hidden="true">+</span></summary>
           <div className="ac-practice-body">
         <h3 id="testlog-title">{t('Welke ad werkt echt?')}</h3>
@@ -473,23 +478,35 @@ export default function Academy() {
       </section>
 
       <section id="aanmelden" className="ac-signup-section ac-wrap" aria-labelledby="signup-title">
-        <div className="ac-signup-intro">
-          <p className="ac-dot-kicker"><span />{" " + t("Kennismaking")}</p>
-          <h2 id="signup-title">{t("Plan een kennismaking")}</h2>
-          <p>{t("Laat je gegevens achter. Stef neemt contact op om een kennismaking te plannen.")}</p>
-          <ol className="ac-next-steps">
-            <li><span>1</span><div><strong>{t("Vul het formulier in")}</strong><small>{t("Een minuut werk. Website en budget zijn optioneel.")}</small></div></li>
-            <li><span>2</span><div><strong>{t("Kennismaking met Stef")}</strong><small>{t("Telefonisch of per e-mail: waar sta je en wat wil je bereiken?")}</small></div></li>
-            <li><span>3</span><div><strong>{t("Kies daarna je traject")}</strong><small>{t("Je krijgt een voorstel op maat. Daarna beslis je.")}</small></div></li>
-          </ol>
-          <p className="ac-privacy">{t("We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.")} <Link to="/privacy">{t("Privacybeleid")}</Link></p>
-        </div>
+        <aside className="ac-signup-aside">
+          <figure className="ac-signup-portrait">
+            <picture>
+              <source media="(max-width: 600px)" srcSet={stefDeskSmall} />
+              <ResponsiveImage src={stefDesk} alt={t("Stef Keppens aan zijn laptop")} sizes="(max-width: 860px) 100vw, 400px" loading="lazy" />
+            </picture>
+          </figure>
+          <div className="ac-signup-note">
+            <p className="ac-signup-who"><strong>Stef Keppens</strong><span>{t("Je lesgever bij Verkoop Studio")}</span></p>
+            <a className="ac-signup-mail" href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>
+            <ol className="ac-signup-steps">
+              <li>{t("Jij deelt waar je staat en wat je wil bereiken.")}</li>
+              <li>{t("Stef belt of mailt je voor een kennismaking.")}</li>
+              <li>{t("Je krijgt een voorstel op maat. Daarna beslis je.")}</li>
+            </ol>
+          </div>
+        </aside>
+
         <div className="ac-signup-card">
           {signedUp ? <div className="ac-signup-done" role="status">
-                        <h3>{thanks}</h3>
+            <h2 id="signup-title">{thanks}</h2>
             <p>{t("Je aanvraag is binnen. Stef neemt contact op om een kennismaking te plannen. Je krijgt ook een bevestiging per mail.")}</p>
             <div><Link className="ac-button" to="/cases">{t("Bekijk intussen onze cases")}</Link></div>
-          </div> : <AcademySignup formId="academy-signup" variant="full" onSuccess={joined('academy-signup')} />}
+          </div> : <>
+            <h2 id="signup-title">{t("Plan een kennismaking")}</h2>
+            <p className="ac-signup-lead">{t("Laat je gegevens achter. Stef neemt contact op om een kennismaking te plannen.")}</p>
+            <AcademySignup formId="academy-signup" variant="full" onSuccess={joined('academy-signup')} />
+            <p className="ac-privacy">{t("We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.")} <Link to="/privacy">{t("Privacybeleid")}</Link></p>
+          </>}
         </div>
       </section>
 
@@ -510,7 +527,7 @@ export default function Academy() {
       </section>
 
       <section className="ac-final ac-wrap" aria-labelledby="final-title">
-        <div className="ac-final-inner ac-reveal"><div><p className="ac-kicker">{t("KENNISMAKEN MET STEF")}</p><h2 id="final-title">{t("Even kennismaken?")}</h2><p>{t("Bespreek je doelen met Stef en ontdek hoe de lessen bij jouw bedrijf passen.")}</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>{t("Plan een kennismaking")}</button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>{t("Of stel eerst een vraag")}</Link></div></div>
+        <div className="ac-final-inner ac-reveal"><div><p className="ac-quiet-kicker ac-quiet-kicker-light">{t("Kennismaken met Stef")}</p><h2 id="final-title">{t("Even kennismaken?")}</h2><p>{t("Bespreek je doelen met Stef en ontdek hoe de lessen bij jouw bedrijf passen.")}</p></div><div className="ac-final-actions"><button className="ac-button ac-button-light" onClick={goToSignup}>{t("Plan een kennismaking")}</button><Link className="ac-text-link ac-text-link-light" to={contactAcademy}>{t("Of stel eerst een vraag")}</Link></div></div>
       </section>
     </main>
 
@@ -523,17 +540,24 @@ export default function Academy() {
     <footer className="ac-footer">
       <div className="ac-wrap">
         <div className="ac-footer-top">
-          <div><div className="ac-identity"><Link to="/" aria-label={t("Verkoop Studio — naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>{t("Volledig 1-op-1 Meta ads lessen voor webshops, met één doel: een ROAS van 3 tot 4. Van Verkoop Studio.")}</p></div>
+          <div><div className="ac-identity"><Link to="/" aria-label={t("Verkoop Studio, naar de homepage")}><BrandMark /></Link><span className="ac-identity-line" /><span className="ac-identity-label">academy</span></div><p>{t("Volledig 1-op-1 Meta ads lessen voor webshops, met één doel: een ROAS van 3 tot 4. Van Verkoop Studio.")}</p></div>
           <NewsletterForm />
         </div>
         <div className="ac-footer-columns">
-          <div><h3>Academy</h3><a href="#aanbod">{t("Aanbod")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog">{t("Testlog")}</a><a href="#aanmelden">{t("Kennismaking")}</a></div>
+          <div><h3>Academy</h3><a href="#aanbod">{t("Aanbod")}</a><a href="#programma">{t("Programma")}</a><a href="#testlog" onClick={openExample}>{t("Voorbeeld")}</a><a href="#aanmelden">{t("Kennismaking")}</a></div>
           <div><h3>Verkoop Studio</h3><Link to="/">Home</Link><Link to="/meta-ads">Meta Ads</Link><Link to="/cases">Cases</Link><Link to="/agency">Agency</Link></div>
           <div><h3>Contact</h3><a href="mailto:stef@verkoop.studio">stef@verkoop.studio</a><a href="#aanmelden">{t("Plan een kennismaking")}</a></div>
           <div><h3>{t("Goed om te weten")}</h3><span>{t("Niet verbonden aan of gecertificeerd door Meta.")}</span><span>{t("Resultaten hangen af van je product, marge en budget.")}</span></div>
         </div>
-        <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("Verkoop Studio. Alle rechten voorbehouden.")}</p>
-        <p className="ac-legal"><Link to="/privacy">{t("Privacybeleid")}</Link><Link to="/voorwaarden">{t("Algemene voorwaarden")}</Link></p>
+        <div className="ac-footer-bottom">
+          <p className="ac-copyright">© {new Date().getFullYear()}{" " + t("Verkoop Studio. Alle rechten voorbehouden.")}</p>
+          <p className="ac-legal"><Link to="/privacy">{t("Privacybeleid")}</Link><Link to="/voorwaarden">{t("Algemene voorwaarden")}</Link></p>
+          <div className="ac-lang-switch" role="group" aria-label={t('Taal kiezen')}>
+            <button type="button" lang="nl" aria-label="Nederlands" className={lang === 'nl' ? 'is-active' : undefined} aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>NL</button>
+            <i aria-hidden="true" />
+            <button type="button" lang="en" aria-label="English" className={lang === 'en' ? 'is-active' : undefined} aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
+          </div>
+        </div>
       </div>
     </footer>
   </div>

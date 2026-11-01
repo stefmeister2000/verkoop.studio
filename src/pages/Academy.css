@@ -51,6 +51,8 @@
 .ac-text-link-light { color: #fff; }
 .ac-glass { background: #ffffff9e; border: 1px solid #e5e7eb99; border-radius: 22px; box-shadow: 0 20px 25px -5px #254bfa0d, 0 8px 10px -6px #254bfa0a; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .ac-kicker { color: var(--ac-blue); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.ac-quiet-kicker { color: var(--ac-mute); font-size: 13px; font-weight: 500; letter-spacing: -.01em; }
+.ac-quiet-kicker-light { color: #b9c4ff; }
 .ac-dot-kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--ac-mute); font-size: 12.5px; }
 .ac-dot-kicker span { width: 6px; height: 6px; border-radius: 50%; background: var(--ac-blue); }
 .ac-mock-label { display: block; color: var(--ac-mute); font-size: 10.5px; font-weight: 700; letter-spacing: .14em; }
@@ -215,11 +217,8 @@
 .ac-focus-done { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #effaf4; color: #145c3a; font-size: 14px; font-weight: 600; }
 .ac-focus-card small { display: block; margin-top: 10px; color: var(--ac-mute); font-size: 12px; text-align: center; }
 
-.ac-stages { display: grid; gap: 12px; margin-top: 18px; }
-.ac-stages li { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; background: #ffffffb3; border: 1px solid var(--ac-line); }
-.ac-stages strong { display: block; color: var(--ac-blue); font-size: 12.5px; font-weight: 700; letter-spacing: .12em; }
-.ac-stage-number { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 12px; background: var(--ac-tint); color: var(--ac-blue); font-family: var(--ac-mono); font-size: 14px; font-weight: 600; }
-.ac-stages p { margin-top: 3px; color: var(--ac-ink); font-size: 15.5px; line-height: 1.55; }
+.ac-stages { margin-top: 20px; }
+.ac-stages li { grid-template-columns: 40px minmax(0, 10.5rem) minmax(0, 1fr); gap: 4px 16px; padding: 18px 2px; }
 .ac-curriculum-top { flex-wrap: wrap; align-items: flex-end; gap: 16px 24px; }
 .ac-curriculum-top h2 { margin-top: 10px; font-size: 40px; }
 .ac-calc > div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px dashed var(--ac-line); font-size: 14px; }
@@ -353,18 +352,27 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 /* Plans */
 
 /* Signup section */
-.ac-signup-section { display: grid; grid-template-columns: .9fr 1.1fr; align-items: start; gap: 64px; margin-top: 140px; scroll-margin-top: 96px; }
-.ac-signup-intro h2 { margin-top: 12px; }
-.ac-signup-intro > p:not(.ac-dot-kicker):not(.ac-privacy) { margin-top: 18px; color: var(--ac-text); font-size: 16.5px; line-height: 1.6; }
-.ac-next-steps { display: grid; gap: 18px; margin-top: 30px; }
-.ac-next-steps li { display: flex; gap: 14px; }
-.ac-next-steps li > span { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--ac-blue); color: #fff; font-size: 13px; font-weight: 700; }
-.ac-next-steps strong { display: block; font-size: 15.5px; font-weight: 600; }
-.ac-next-steps small { display: block; margin-top: 2px; color: var(--ac-mute); font-size: 13.5px; line-height: 1.5; }
-.ac-privacy { max-width: 420px; margin-top: 26px; color: var(--ac-mute); font-size: 12.5px; line-height: 1.55; }
+/* The same shape as the studio's contact page: Stef on the left, the form on the right,
+   so you can see who answers before you fill anything in. */
+.ac-signup-section { display: grid; grid-template-columns: minmax(280px, 400px) minmax(0, 1fr); align-items: start; gap: 24px; margin-top: 140px; scroll-margin-top: 96px; }
+.ac-signup-aside { display: grid; gap: 16px; }
+.ac-signup-portrait { position: relative; height: clamp(420px, 52vh, 560px); border-radius: 24px; overflow: hidden; background: #d7def6; }
+.ac-signup-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 14%; }
+.ac-signup-note { padding: 20px 22px 10px; background: #fff; border: 1px solid var(--ac-line); border-radius: 20px; }
+.ac-signup-who { display: flex; flex-direction: column; gap: 2px; }
+.ac-signup-who strong { font-size: 18px; font-weight: 650; letter-spacing: -.03em; }
+.ac-signup-who span { color: var(--ac-text); font-size: 14px; }
+.ac-signup-mail { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; color: var(--ac-blue); font-size: 15px; font-weight: 600; }
+.ac-signup-mail:hover { color: var(--ac-blue-deep); }
+.ac-signup-steps { margin-top: 4px; }
+.ac-signup-steps li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: center; padding: 13px 0; border-top: 1px solid var(--ac-line); font-size: 15px; line-height: 1.45; }
+.ac-signup-steps li::before { content: ''; width: 18px; height: 2px; background: var(--ac-blue); }
+.ac-privacy { max-width: 46rem; margin-top: 22px; color: var(--ac-mute); font-size: 12.5px; line-height: 1.55; }
 .ac-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-.ac-signup-card { padding: 30px; border-radius: 24px; background: #fff; border: 1px solid #e3e6f2; box-shadow: 0 50px 90px -46px #254bfa59; }
-.ac-signup-done h3 { margin-top: 16px; font-size: 26px; font-weight: 600; letter-spacing: -.025em; }
+.ac-signup-card { padding: 34px 34px 30px; border-radius: 24px; background: #fff; border: 1px solid var(--ac-line); box-shadow: 0 30px 70px -50px #181c3d66; }
+.academy-page .ac-signup-card h2 { font-size: clamp(32px, 3.2vw, 44px); }
+.ac-signup-lead { margin-top: 14px; max-width: 40rem; color: var(--ac-text); font-size: 16px; line-height: 1.6; }
+.ac-signup-card .ac-signup-full { margin-top: 26px; }
 .ac-signup-done p { margin-top: 8px; color: var(--ac-text); font-size: 15px; line-height: 1.6; }
 .ac-signup-done > div { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 22px; }
 
@@ -422,10 +430,17 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 .ac-footer-columns h3 { margin-bottom: 14px; font-size: 14px; font-weight: 600; }
 .ac-footer .ac-footer-columns a, .ac-footer .ac-footer-columns span { display: block; margin-bottom: 10px; color: #6b7190; font-size: 14px; line-height: 1.45; }
 .ac-footer .ac-footer-columns a:hover { color: var(--ac-blue); }
-.ac-copyright { margin-top: 40px; color: var(--ac-mute); font-size: 12.5px; }
-.ac-legal { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; color: var(--ac-mute); font-size: 12.5px; }
+.ac-footer-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin-top: 40px; }
+.ac-copyright { color: var(--ac-mute); font-size: 12.5px; }
+.ac-legal { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--ac-mute); font-size: 12.5px; }
 .ac-legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .ac-legal a:hover { color: var(--ac-blue); }
+.ac-lang-switch { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.ac-lang-switch button { min-height: 44px; padding: 0 2px; color: var(--ac-mute); font-size: 12.5px; font-weight: 500; letter-spacing: .04em; }
+.ac-lang-switch button:hover { color: var(--ac-ink); }
+.ac-lang-switch button.is-active { color: var(--ac-ink); font-weight: 600; }
+.ac-lang-switch i { width: 1px; height: 11px; background: #d6daea; }
+@media (max-width: 560px) { .ac-lang-switch { margin-left: 0; } }
 
 /* Scroll reveal: only applied by JS to content below the fold. */
 @media (prefers-reduced-motion: reduce) {
@@ -447,7 +462,9 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-hero { grid-template-columns: 1fr; grid-template-areas: "copy" "video" "action"; row-gap: 28px; padding-top: 36px; }
   .ac-hero-signup { margin-top: 0; }
   .ac-hv { zoom: 1; margin-inline: auto; }
-  .ac-signup-section { grid-template-columns: 1fr; gap: 36px; margin-top: 96px; }
+  .ac-signup-section { grid-template-columns: 1fr; gap: 20px; margin-top: 96px; }
+  .ac-signup-aside { order: 2; }
+  .ac-signup-portrait { height: clamp(280px, 56vw, 420px); }
   .ac-slide, .ac-honest, .ac-faq { grid-template-columns: 1fr; }
   .ac-focus { grid-template-columns: 1fr; gap: 36px; margin-top: 88px; }
   .ac-focus-card { position: static; max-width: 420px; }
@@ -481,14 +498,14 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-signup-fields { grid-template-columns: 1fr; }
   .ac-welcome-card { flex-wrap: wrap; }
   .ac-welcome-card .ac-button { width: 100%; margin-left: 0; }
-  .ac-signup-card { padding: 20px 16px; border-radius: 20px; }
+  .ac-signup-card { padding: 22px 18px 20px; border-radius: 20px; }
+  .ac-signup-portrait { height: clamp(260px, 70vw, 360px); border-radius: 20px; }
+  .ac-signup-portrait img { object-position: center 18%; }
   .ac-footer { padding-bottom: 100px; }
   .ac-hero-actions .ac-button { flex: 1 1 100%; }
   .academy-page section h2, .ac-honest h2, .ac-faq h2, .ac-final h2 { font-size: 31px; }
   .ac-focus-article h2 { font-size: 31px; }
   .ac-curriculum-top h2 { font-size: 28px; }
-  .ac-stages li { padding: 12px 14px; }
-  .ac-stages p { font-size: 15px; }
   .ac-focus-lead { font-size: 16.5px; }
   .ac-check-list li { font-size: 15px; }
   .ac-progress-tabs { display: flex; gap: 8px; margin: 18px -16px 28px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; }
@@ -524,7 +541,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-slider-buttons button { height: 44px; }
   .ac-progress-tabs button { min-height: 44px; padding-top: 14px; }
   .ac-slide { touch-action: pan-y; }
-  .ac-signup-intro .ac-next-steps { display: none; }
+
   .ac-honest-photo { aspect-ratio: 16 / 11; }
   .ac-footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 }
@@ -570,10 +587,26 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 /* Offer: the one thing a visitor should understand right after the hero. */
 .ac-offer { margin-top: 96px; scroll-margin-top: 88px; }
 .ac-offer-main h2 { margin-top: 12px; }
-.ac-offer-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
-.ac-offer-list li { display: grid; align-content: start; gap: 4px; padding: 18px 20px; border: 1px solid #eef0f7; border-radius: 18px; background: #fff; box-shadow: 0 20px 40px -30px #181c3d40; }
-.ac-offer-list strong { font-size: 16px; font-weight: 600; letter-spacing: -.015em; }
-.ac-offer-list span { color: var(--ac-text); font-size: 14.5px; line-height: 1.5; }
+/* The signature row. Everything the page lists uses it: a number in the gutter,
+   a name, and one line of plain language, ruled off like a line in an account. */
+.ac-ledger { display: grid; margin-top: 28px; border-top: 1px solid var(--ac-line); }
+.ac-ledger li {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 15.5rem) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 4px 20px;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--ac-line);
+}
+.ac-ledger .ac-ledger-index { font-family: var(--ac-mono); font-size: 13px; font-weight: 500; color: var(--ac-mute); letter-spacing: 0; }
+.ac-ledger strong { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.ac-ledger .ac-ledger-text { color: var(--ac-text); font-size: 15.5px; line-height: 1.55; }
+@media (max-width: 760px) {
+  .ac-ledger li { grid-template-columns: 34px minmax(0, 1fr); padding: 16px 2px; }
+  .ac-ledger .ac-ledger-index { grid-row: span 2; }
+  .ac-ledger strong { font-size: 16px; }
+  .ac-ledger .ac-ledger-text { font-size: 14.5px; }
+}
 .ac-promise { display: flex; flex-direction: column; padding: 32px; border-radius: 26px; color: #fff; background: radial-gradient(500px 300px at 100% 0%, #7891ff, transparent 70%), linear-gradient(160deg, var(--ac-blue), #1a33c9); box-shadow: 0 40px 70px -34px #254bfab3; }
 .ac-promise-section { max-width: 760px; margin-top: 64px; }
 .ac-promise .ac-kicker { color: #dbe1ff; }
@@ -587,29 +620,19 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: center; }
 @media (max-width: 900px) {
   .ac-offer { margin-top: 72px; }
-  .ac-offer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .ac-offer { margin-top: 56px; }
-  .ac-offer-list { gap: 8px; margin-top: 22px; }
-  .ac-offer-list li { gap: 3px; padding: 12px 13px; border-radius: 14px; }
-  .ac-offer-list strong { font-size: 14.5px; }
-  .ac-offer-list span { font-size: 13px; line-height: 1.45; }
+  .ac-ledger { margin-top: 22px; }
   .ac-promise { padding: 24px 20px; border-radius: 22px; }
   .ac-promise-figure strong { font-size: 64px; }
 }
-@media (max-width: 360px) {
-  .ac-offer-list { grid-template-columns: 1fr; }
-}
 
-/* Keep language selection available on desktop and narrow phone screens. */
+/* The header carries the studio, the page sections and one join button. */
 .ac-header-actions { display: flex; align-items: center; justify-self: end; gap: 10px; }
-.ac-language { display: flex; padding: 3px; border: 1px solid var(--ac-line); border-radius: 999px; background: #fff; }
-.ac-language button { min-width: 36px; min-height: 38px; border-radius: 999px; font-size: 12px; font-weight: 600; }
-.ac-language button[aria-pressed="true"] { background: var(--ac-tint); color: var(--ac-blue); }
 .ac-manage-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--ac-blue); font-size: 14px; font-weight: 600; line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
 @media (min-width: 901px) and (max-width: 1180px) { .ac-header-inner { grid-template-columns: 1fr auto; } .ac-pill-nav { display: none; } }
-@media (max-width: 560px) { .ac-header-inner { gap: 8px; } .ac-header-actions { gap: 6px; } .ac-header-actions .ac-header-cta { display: none; } .ac-language button { min-height: 44px; } }
+@media (max-width: 560px) { .ac-header-inner { gap: 8px; } .ac-header-actions { gap: 6px; } .ac-header-actions .ac-header-cta { display: none; } }
 
 /* Small case studies keep the main Pinacello story in focus. */
 .ac-more-cases { margin-top: 32px; }
@@ -639,11 +662,9 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 
 /* A shared motion rhythm: gentle entry, precise feedback, no continuous movement. */
 @media (prefers-reduced-motion: no-preference) {
-  .ac-mini-case, .ac-offer-list li, .ac-stages li { transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s, border-color .4s; }
+  .ac-mini-case { transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s, border-color .4s; }
   .ac-mini-case-image img { transition: transform .7s cubic-bezier(.22, 1, .36, 1); }
   .ac-mini-case-title > span, .ac-manage-link > span, .ac-text-link > span { display: inline-block; transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
-  .ac-language button { transition: background .25s, color .25s, box-shadow .25s; }
-  .ac-language button[aria-pressed="true"] { box-shadow: 0 2px 8px #254bfa14; }
   .ac-button:active, .ac-header-cta:active { transform: scale(.98); }
   .ac-mini-case:focus-visible { transform: translateY(-3px); }
   .ac-faq-list details[open] p { animation: ac-answer-in .35s cubic-bezier(.22, 1, .36, 1); }
@@ -653,7 +674,7 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
   .ac-chart-line.is-selected circle { r: 5.5px; }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .ac-mini-case:hover, .ac-offer-list li:hover, .ac-stages li:hover { transform: translateY(-4px); border-color: #bdc8ff; box-shadow: 0 16px 32px -22px #254bfa55; }
+  .ac-mini-case:hover { transform: translateY(-4px); border-color: #bdc8ff; box-shadow: 0 16px 32px -22px #254bfa55; }
   .ac-mini-case:hover img { transform: scale(1.035); }
   .ac-mini-case:hover .ac-mini-case-title > span, .ac-manage-link:hover > span, .ac-text-link:hover > span { transform: translate(3px, -3px); }
 }
@@ -663,16 +684,16 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 }
 
 /* Compact benefits and a readable phone-sized practice example. */
-.ac-hero-usps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 24px; }
-.ac-hero-usps li { min-width: 0; padding: 14px; border: 1px solid var(--ac-line); border-radius: 14px; background: #ffffffcc; }
-.ac-hero-usps strong { display: block; font-size: 14px; line-height: 1.4; }
-.ac-hero-usps span { display: block; margin-top: 4px; color: var(--ac-text); font-size: 13px; line-height: 1.4; }
+/* The same ruled row, at hero scale: who it is for, what it covers, who teaches it. */
+.ac-spec { margin-top: 28px; max-width: 34rem; border-top: 1px solid var(--ac-line); }
+.ac-spec > div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 16px; padding: 12px 2px; border-bottom: 1px solid var(--ac-line); }
+.ac-spec dt { color: var(--ac-mute); font-size: 13px; }
+.ac-spec dd { color: var(--ac-ink); font-size: 14.5px; line-height: 1.5; }
 .ac-test-metrics { display: none; }
 @media (max-width: 560px) {
-  .ac-hero-usps { grid-template-columns: 1fr; gap: 8px; margin-top: 20px; }
-  .ac-hero-usps li { padding: 12px 14px; }
-  .ac-hero-usps strong { font-size: 14px; }
-  .ac-hero-usps span { font-size: 13px; }
+  .ac-spec { margin-top: 20px; }
+  .ac-spec > div { grid-template-columns: 4.6rem minmax(0, 1fr); gap: 12px; padding: 10px 2px; }
+  .ac-spec dd { font-size: 14px; }
   .ac-stats-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
   .ac-stats-row > div { padding: 14px; background: #f5f6ff; border: 1px solid var(--ac-line); border-radius: 14px; }
   .ac-stats-row span { font-size: 10px; letter-spacing: .06em; }
@@ -728,10 +749,6 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
   .ac-capture-popup { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); padding: 20px; }
 }
 
-/* Clear language names beside the hero, with comfortable touch targets. */
-.ac-hero-copy .ac-language { width: fit-content; margin-bottom: 24px; padding: 4px; border-radius: 14px; background: #ffffffb8; }
-.ac-hero-copy .ac-language button { min-height: 44px; padding: 0 18px; border-radius: 10px; font-size: 14px; color: var(--ac-text); }
-.ac-hero-copy .ac-language button[aria-pressed="true"] { color: #fff; background: var(--ac-blue); box-shadow: 0 3px 10px #254bfa26; }
 .ac-case-main { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 .ac-case-main .ac-case-figure { flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 12px; }
 .ac-case-main .ac-case-figure span { font-size: clamp(22px, 3vw, 32px); font-weight: 600; color: var(--ac-ink); }
@@ -742,7 +759,6 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 @media (max-width: 700px) {
   .ac-case-main .ac-case-steps { grid-template-columns: 1fr; }
   .ac-case-main { gap: 20px; }
-  .ac-hero-copy .ac-language { margin-bottom: 20px; }
 }
 
 #pinacello-case-title { scroll-margin-top: 100px; }
