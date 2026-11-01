@@ -1,9 +1,6 @@
 import type { Bi } from './types'
 
-/**
- * Placeholder legal copy. Replace `notice` and `sections` with the policy
- * you want to publish. Routes, footer links and the page layout can stay.
- */
+// Matches the public site as of 1 November 2026. Not a substitute for advice on a client project.
 export interface LegalSection {
   title: Bi<string>
   paragraphs: Bi<string[]>
@@ -23,55 +20,91 @@ export const legalDocuments = {
     path: '/privacy',
     title: { nl: 'Privacybeleid', en: 'Privacy policy' },
     description: {
-      nl: 'Voorlopige privacytekst van Verkoop Studio in Lochristi. De definitieve privacyverklaring volgt.',
-      en: 'Draft privacy text for Verkoop Studio in Lochristi. The final privacy policy will replace this page.',
+      nl: 'Privacybeleid van Verkoop Studio voor bezoekers en aanvragen op verkoop.studio.',
+      en: 'Privacy policy of Verkoop Studio for visitors and enquiries on verkoop.studio.',
     },
-    updated: { nl: 'Voorlopige versie · 1 november 2026', en: 'Draft · 1 November 2026' },
+    updated: { nl: '1 november 2026', en: '1 November 2026' },
     notice: {
-      nl: 'Dit is een voorlopige tekst. Hij legt nog niet vast welke gegevens Verkoop Studio verwerkt. Het definitieve privacybeleid volgt.',
-      en: 'This is a draft. It does not yet say which data Verkoop Studio processes. The final privacy policy will replace it.',
+      nl: 'Dit beleid gaat over bezoekers van verkoop.studio en over mensen die de studio schrijven. Het is niet het privacybeleid van de klanten van een klant.',
+      en: 'This policy covers visitors to verkoop.studio and people who write to the studio. It is not the privacy policy of a client’s own customers.',
     },
     sections: [
       {
-        title: { nl: 'Voor wie deze tekst is', en: 'Who this text is for' },
+        title: { nl: 'Verantwoordelijke', en: 'Who is responsible' },
         paragraphs: {
-          nl: ['Deze plaatsaanduiding hoort bij de site verkoop.studio van Verkoop Studio in Lochristi. Ze gaat over bezoekers van deze site. Ze is niet het privacybeleid van een klantproject.'],
-          en: ['This placeholder belongs to verkoop.studio, the site of Verkoop Studio in Lochristi. It is about visitors to this site. It is not the privacy policy of a client project.'],
+          nl: [
+            'Verkoop Studio is de naam op deze site. De studio werkt vanuit Lochristi. Verantwoordelijke is TanguyDeBee BV, een besloten vennootschap met zetel te Zilverbergstraat 176, 8800 Roeselare, België. Het ondernemingsnummer is 1002.613.972. Het btw-nummer is BE 1002.613.972. De vennootschap is onderworpen aan de btw. Bestuurder is Tanguy De Brabandere. Je bereikt de vennootschap via stef@verkoop.studio.',
+            'Het beleid gaat over deze website en over aanvragen aan de studio. Het is niet het privacybeleid van de webshop, het advertentieaccount of het CRM van een klant.',
+          ],
+          en: [
+            'Verkoop Studio is the name on this site. The studio works from Lochristi. The controller is TanguyDeBee BV, a Belgian private limited company, with its registered office at Zilverbergstraat 176, 8800 Roeselare, Belgium. The enterprise number is 1002.613.972. The VAT number is BE 1002.613.972. The company is VAT-registered. The director is Tanguy De Brabandere. You reach the company at stef@verkoop.studio.',
+            'The policy is about this website and about enquiries to the studio. It is not the privacy policy of a customer’s shop, ads account or CRM.',
+          ],
         },
       },
       {
-        title: { nl: 'Welke gegevens', en: 'Which data' },
+        title: { nl: 'Contactformulier', en: 'Contact form' },
         paragraphs: {
-          nl: ['De definitieve tekst somt de gegevens op die formulieren, de nieuwsbrief en de meting van de site verzamelen. Deze versie doet dat nog niet.'],
-          en: ['The final text will list the data that forms, the newsletter and site measurement collect. This version does not.'],
+          nl: [
+            'Op /contact zijn naam, e-mailadres, telefoon, doel en uitdaging verplicht. Bedrijf, website, beschikbaar budget, kanalen, timing en een extra notitie zijn optioneel. Meegestuurd worden een inzending-id, een formulier-id, de taal en de campagneherkomst: UTM, de verwijzer, en een LinkedIn-klik-id als die er is. Wanneer ze beschikbaar zijn, gaan ook de client-id en de sessie-id van Google Analytics mee. Een verborgen spamveld telt niet als persoonsgegeven.',
+            'Je vraagt zelf om een antwoord en om opvolging van een mogelijke opdracht, vóór een contract. De site zegt dat de studio binnen 24 uur antwoordt per e-mail of telefoon. Resend bewaart het contact in een segment, stuurt een melding aan de studio en een bevestiging aan jou, en start een opvolging tenzij je uitgeschreven bent. Dezelfde aanvraag gaat ook naar het CRM van de studio wanneer die koppeling aanstaat.',
+          ],
+          en: [
+            'On /contact, name, email address, phone, goal and challenge are required. Company, website, available budget, channels, timing and an extra note are optional. A submission id, a form id, the language and the campaign source are sent too: UTM, the referrer, and a LinkedIn click id when there is one. When they are available, the Google Analytics client id and session id go with the enquiry. A hidden spam field does not count as a person’s data.',
+            'You ask for an answer and for follow-up on a possible project, before a contract. The site says the studio replies within 24 hours by email or phone. Resend stores the contact in a segment, sends a notification to the studio and a confirmation to you, and starts a follow-up unless you have unsubscribed. The same enquiry also goes to the studio’s CRM when that connection is on.',
+          ],
         },
       },
       {
-        title: { nl: 'Waarvoor', en: 'Why' },
+        title: { nl: 'Nieuwsbrief', en: 'Newsletter' },
         paragraphs: {
-          nl: ['De definitieve tekst zegt waarvoor elk gegeven dient, bijvoorbeeld om een aanvraag te beantwoorden of om het gebruik van de site te begrijpen. Deze versie legt geen doel vast.'],
-          en: ['The final text will say what each piece of data is for, such as answering an enquiry or understanding how the site is used. This version sets no purpose.'],
+          nl: [
+            'De nieuwsbrief op de site en in de footer van de academy vraagt je e-mailadres, een expliciet vak voor toestemming, en je taal. Resend bewaart dat adres met die toestemming, in een segment.',
+            'Dit steunt op je toestemming. Je trekt ze in via stef@verkoop.studio. Via dat adres, en via deze pagina, vraag je ook inzage of verwijdering.',
+          ],
+          en: [
+            'The newsletter on the site and in the academy footer asks for your email address, an explicit consent tick, and your language. Resend stores that address with that consent, in a segment.',
+            'This relies on your consent. You withdraw it by emailing stef@verkoop.studio. You use that address, and this page, to ask for access or deletion too.',
+          ],
         },
       },
       {
-        title: { nl: 'Wie ze ontvangt', en: 'Who receives it' },
+        title: { nl: 'Academy', en: 'Academy' },
         paragraphs: {
-          nl: ['De definitieve tekst noemt de diensten die gegevens voor de site verwerken, zoals hosting, e-mail en meting. Deze versie noemt geen verwerkers.'],
-          en: ['The final text will name the services that process data for the site, such as hosting, email and measurement. This version names no processors.'],
+          nl: [
+            'Voor de academy zijn naam, e-mailadres en telefoon verplicht. Waar het formulier erom vraagt, zijn bedrijf, website, je niveau met Meta ads, het maandelijkse advertentiebudget, een vraag en een apart nieuwsbriefvak optioneel. Het doel is de kennismaking die je vroeg, en de opvolging daarvan. Er gaat een welkomstmail uit. De aanmelding kan in het CRM staan wanneer die koppeling aanstaat.',
+            'Het infovenster van de academy vraagt alleen een e-mailadres en stuurt één informatiemail. Dat is geen nieuwsbrief en het maakt geen belafspraak.',
+          ],
+          en: [
+            'For the academy, name, email address and phone are required. Where the form asks for them, company, website, your level with Meta ads, the monthly ad budget, a question and a separate newsletter tick are optional. The purpose is the introductory call you asked for, and follow-up on that request. A welcome email is sent. The signup can be stored in the CRM when that connection is on.',
+            'The academy information popup asks for an email address only and sends one information email. It is not a newsletter and it does not book a call.',
+          ],
         },
       },
       {
-        title: { nl: 'Hoe lang', en: 'How long' },
+        title: { nl: 'Meting', en: 'Measurement' },
         paragraphs: {
-          nl: ['Bewaartermijnen staan in de definitieve tekst. Deze versie legt geen termijn vast.'],
-          en: ['Retention periods belong in the final text. This version sets no period.'],
+          nl: [
+            'De site vraagt geen cookietoestemming voordat deze tools starten. Ze dienen om bezoeken, advertenties en paginagebruik te begrijpen. Meta Pixel stuurt een PageView bij het laden, en een Lead-event pas na een bevestigde formulierinzending, zonder contactgegevens. Google Analytics 4 draait op twee properties. Microsoft Clarity start nadat de pagina geladen is. Clarity schermt de chat, de nieuwsbrief en de academyformulieren af. Het contactformulier niet. Current, het eigen meetscript van de studio op perfomance.verkoop.studio, stuurt bij een lead alleen een formulier-id en de methode.',
+            'De FAQ-chat antwoordt in de browser vanuit de pagina’s van de site. Het gesprek wordt niet op de server van de studio bewaard. YouTube-video’s gebruiken het domein youtube-nocookie. De speler in de hero laadt pas als je op afspelen drukt. De andere video’s op de homepage laden met de pagina. De browser onthoudt de gekozen taal, de campagneherkomst voor een aanvraag, of het nieuwsbriefpaneel is weggeklikt, de staat van het academy-venster, en een sessievlag zodat dezelfde lead niet twee keer telt.',
+          ],
+          en: [
+            'The site does not ask for cookie consent before these tools run. They are there to understand visits, ads and how pages are used. Meta Pixel sends a PageView on load, and a Lead event only after a confirmed form capture, without contact details. Google Analytics 4 runs on two properties. Microsoft Clarity starts after the page has loaded. Clarity masks the chat, the newsletter and the academy forms. It does not mask the contact form. Current, the studio’s own measurement script at perfomance.verkoop.studio, sends only a form id and the method with a lead.',
+            'The FAQ chat answers in the browser from the site’s own pages. The conversation is not stored on the studio’s server. YouTube videos use the youtube-nocookie domain. The hero player loads only after you press play. The other videos on the homepage load with the page. The browser stores the chosen language, the campaign source for an enquiry, whether the newsletter panel was dismissed, the academy popup state, and a session flag so the same lead is not counted twice.',
+          ],
         },
       },
       {
-        title: { nl: 'Jouw vragen', en: 'Your questions' },
+        title: { nl: 'Bewaren en jouw rechten', en: 'Keeping data and your rights' },
         paragraphs: {
-          nl: ['Een vraag over je gegevens kan je sturen naar stef@verkoop.studio. Hoe een vraag om inzage, verbetering of verwijdering wordt behandeld, staat in de definitieve tekst.'],
-          en: ['You can send a question about your data to stef@verkoop.studio. How a request for access, correction or deletion is handled belongs in the final text.'],
+          nl: [
+            'Gegevens van een aanvraag of van de academy blijven bewaard zolang de studio nog opvolgt, en zolang dat nodig is om later een vraag over die aanvraag te beantwoorden. Nieuwsbriefgegevens blijven tot je uitschrijft of om verwijdering vraagt. Meetgegevens blijven volgens de instellingen van die tools.',
+            'Verkoop Studio deelt gegevens met Resend voor e-mail en contacten, met het eigen CRM wanneer een formulier gekoppeld is, met Meta, Google, Microsoft en Current voor de meting, en met YouTube wanneer een video laadt. Voor inzage, verbetering, verwijdering of bezwaar mail je stef@verkoop.studio. De studio antwoordt op dat verzoek. Je kunt ook een klacht indienen bij de Gegevensbeschermingsautoriteit in België.',
+          ],
+          en: [
+            'Enquiry and academy details are kept while the studio is still following up, and for as long as needed to answer a later question about that request. Newsletter details are kept until you unsubscribe or ask for deletion. Measurement data is kept under the settings of those tools.',
+            'Verkoop Studio shares data with Resend for email and contacts, with its own CRM when a form is connected, with Meta, Google, Microsoft and Current for measurement, and with YouTube when a video loads. For access, correction, deletion or objection you email stef@verkoop.studio. The studio replies to that request. You can also complain to the Gegevensbeschermingsautoriteit in Belgium.',
+          ],
         },
       },
     ],
@@ -80,62 +113,89 @@ export const legalDocuments = {
     path: '/voorwaarden',
     title: { nl: 'Algemene voorwaarden', en: 'Terms of service' },
     description: {
-      nl: 'Voorlopige voorwaarden van Verkoop Studio. Een opdracht staat in een voorstel, niet in deze tekst.',
-      en: 'Draft terms for Verkoop Studio. A project is agreed in a proposal, not on this page.',
+      nl: 'Algemene voorwaarden van Verkoop Studio voor werk dat start via verkoop.studio.',
+      en: 'Terms of service of Verkoop Studio for work that starts on verkoop.studio.',
     },
-    updated: { nl: 'Voorlopige versie · 1 november 2026', en: 'Draft · 1 November 2026' },
+    updated: { nl: '1 november 2026', en: '1 November 2026' },
     notice: {
-      nl: 'Dit is een voorlopige tekst. Ze is geen contract. Een opdracht wordt vastgelegd in een voorstel dat je aanvaardt.',
-      en: 'This is a draft. It is not a contract. A project is set out in a proposal you accept.',
+      nl: 'Prijzen op deze site zijn geen contract. Een opdracht start wanneer jij en Verkoop Studio een voorstel allebei aanvaarden.',
+      en: 'Prices on this site are not a contract. A job starts when you and Verkoop Studio both accept a proposal.',
     },
     sections: [
       {
-        title: { nl: 'Voor wie', en: 'Who this is for' },
+        title: { nl: 'Deze pagina', en: 'This page' },
         paragraphs: {
-          nl: ['Deze plaatsaanduiding hoort bij verkoop.studio. Ze vervangt geen voorstel en geldt niet als de voorwaarden van een klantproject.'],
-          en: ['This placeholder belongs to verkoop.studio. It does not replace a proposal and it is not the terms of a client project.'],
+          nl: [
+            'Dit zijn de voorwaarden voor werk met Verkoop Studio. De contractpartij is TanguyDeBee BV, zetel Zilverbergstraat 176, 8800 Roeselare, ondernemingsnummer 1002.613.972, btw-nummer BE 1002.613.972. Ze zijn niet de voorwaarden van de klanten van een klant, en ze zijn niet het privacybeleid op /privacy.',
+            'De site beschrijft het werk van de studio. Een pagina, een prijs of een pakket is geen bindend aanbod en geen aanvaarde opdracht.',
+          ],
+          en: [
+            'These are the terms for working with Verkoop Studio. The contracting party is TanguyDeBee BV, registered office Zilverbergstraat 176, 8800 Roeselare, enterprise number 1002.613.972, VAT number BE 1002.613.972. They are not the terms of a client’s own customers, and they are not the privacy policy at /privacy.',
+            'The site describes the studio’s work. A page, a price or a plan is not a binding offer and not an accepted job.',
+          ],
         },
       },
       {
-        title: { nl: 'Een opdracht', en: 'A project' },
+        title: { nl: 'Prijzen', en: 'Prices' },
         paragraphs: {
-          nl: ['Een prijs of pakket op de site is geen aanvaarde opdracht. De samenwerking start wanneer jij en Verkoop Studio het voorstel aanvaarden.'],
-          en: ['A price or plan on the site is not an accepted project. The work starts when you and Verkoop Studio accept the proposal.'],
+          nl: [
+            'Growth Foundation kost €1.500 per maand voor de volledige aanpak zonder videoshoots. Growth Partner kost €2.500 per maand en voegt videoshoots toe. Growth Department kost €4.000 per maand en voegt een wekelijks overleg toe.',
+            'De site zegt niet of btw in die bedragen zit. Advertentiebudget betaal je aan het advertentieplatform, niet aan TanguyDeBee BV als deel van dat bedrag. Websites, webshops, apps en software op maat kunnen aparte projecten zijn. Het sales CRM en het marketingdashboard zitten in een pakket, zonder aparte publieke abonnementsprijs. Scope, advertentiebudget en licenties van derden staan in het voorstel.',
+          ],
+          en: [
+            'Growth Foundation costs €1,500 per month for the full approach without video shoots. Growth Partner costs €2,500 per month and adds video shoots. Growth Department costs €4,000 per month and adds a weekly meeting.',
+            'The site does not say whether VAT is included in those amounts. Ad spend is paid to the ad platform, not to TanguyDeBee BV as part of that fee. Websites, webshops, apps and custom software can be separate projects. The sales CRM and the marketing dashboard are included in a plan, with no separate public subscription price. Scope, ad budget and third-party licences are set in the proposal.',
+          ],
         },
       },
       {
-        title: { nl: 'Wat we doen', en: 'What we do' },
+        title: { nl: 'Een opdracht', en: 'A job' },
         paragraphs: {
-          nl: ['Wat er gebeurt, wanneer, en wat jij aanlevert, staat in dat voorstel. Deze pagina voegt daar niets aan toe.'],
-          en: ['What happens, when, and what you provide is set out in that proposal. This page adds nothing to it.'],
+          nl: [
+            'Een opdracht bestaat alleen wanneer jij en Verkoop Studio het voorstel allebei aanvaarden. Het voorstel bepaalt de scope, de prijs, de betaling, de licenties en hoe het werk stopt.',
+            'Deze pagina legt geen vervaldag, geen voorschot, geen rente en geen opzegtermijn vast.',
+          ],
+          en: [
+            'A job exists only when you and Verkoop Studio both accept the proposal. The proposal sets the scope, the fee, the payment, the licences and how the work stops.',
+            'This page does not set a due date, a deposit, interest or a notice period.',
+          ],
         },
       },
       {
-        title: { nl: 'Betaling', en: 'Payment' },
+        title: { nl: 'Wat jij aanlevert', en: 'What you provide' },
         paragraphs: {
-          nl: ['Facturen en betalingstermijnen staan in het voorstel. Deze tekst legt geen termijn, voorschot of rente vast.'],
-          en: ['Invoices and payment terms are in the proposal. This text sets no due date, deposit or interest.'],
+          nl: [
+            'Je geeft juiste informatie en de toegang die het werk nodig heeft, zoals advertentieaccounts, de site en tracking, wanneer het voorstel dat zegt.',
+            'Werk dat voor jou gemaakt is, wordt overgedragen zoals het voorstel beschrijft. Tot de afgesproken facturen voor dat werk betaald zijn, houdt TanguyDeBee BV de rechten op dat werk.',
+          ],
+          en: [
+            'You give accurate information and the access the work needs, such as ad accounts, the site and tracking, when the proposal says so.',
+            'Work made for you is handed over as the proposal describes. Until the agreed invoices for that work are paid, TanguyDeBee BV keeps the rights in that work.',
+          ],
         },
       },
       {
         title: { nl: 'Aansprakelijkheid', en: 'Liability' },
         paragraphs: {
-          nl: ['Deze plaatsaanduiding beperkt of verruimt geen aansprakelijkheid. Dat hoort in de definitieve voorwaarden en in het voorstel.'],
-          en: ['This placeholder does not limit or expand liability. That belongs in the final terms and in the proposal.'],
+          nl: [
+            'TanguyDeBee BV is niet aansprakelijk voor het resultaat van een advertentieplatform, voor jouw eigen cijfers, of voor een beslissing die jij neemt uit een rapport.',
+            'Belgisch recht geldt. Een geschil gaat naar de rechtbanken die bevoegd zijn voor de zetel in Roeselare.',
+          ],
+          en: [
+            'TanguyDeBee BV is not liable for the result of an ad platform, for your own numbers, or for a decision you make from a report.',
+            'Belgian law applies. A dispute goes to the courts with jurisdiction over the registered office in Roeselare.',
+          ],
         },
       },
       {
-        title: { nl: 'Einde', en: 'Ending the work' },
+        title: { nl: 'Taal en contact', en: 'Language and contact' },
         paragraphs: {
-          nl: ['Hoe een opdracht stopt, staat in het voorstel. Deze tekst legt geen opzegtermijn vast.'],
-          en: ['How a project ends is set out in the proposal. This text sets no notice period.'],
-        },
-      },
-      {
-        title: { nl: 'Contact', en: 'Contact' },
-        paragraphs: {
-          nl: ['Vragen over deze tekst kan je sturen naar stef@verkoop.studio.'],
-          en: ['Questions about this text can go to stef@verkoop.studio.'],
+          nl: [
+            'Bij een verschil geldt de Nederlandse tekst boven de Engelse vertaling. Vragen over deze pagina stuur je naar stef@verkoop.studio.',
+          ],
+          en: [
+            'Where they differ, the Dutch text prevails over the English translation. Questions about this page go to stef@verkoop.studio.',
+          ],
         },
       },
     ],
