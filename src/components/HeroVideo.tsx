@@ -29,6 +29,7 @@ export default function HeroVideo({ lang = 'nl' }: { lang?: 'nl' | 'en' }) {
             width="1280"
             height="720"
             decoding="async"
+            fetchPriority="high"
           />
           <span className="hero-video-icon" aria-hidden="true">▶</span>
         </button>

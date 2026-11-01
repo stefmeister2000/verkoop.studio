@@ -1,0 +1,99 @@
+# Verkoop Studio
+
+> Verkoop Studio is a studio in Lochristi, Belgium, for strategy, marketing, design and development. The public site is https://verkoop.studio. It helps companies get more enquiries, bookings and sales by connecting ads, pages, tracking and follow-up. The written name is Verkoop Studio. The domain and email addresses stay verkoop.studio. Both names are the same studio.
+>
+> Verkoop Studio is een studio in Lochristi voor strategie, marketing, design en development. De site verbindt commerciële groei met de websites, apps en systemen erachter. Stef Keppens is de enige persoon die de site bij naam noemt. Zijn rol in de gestructureerde data is Growth & Strategy. Pagina’s staan in het Nederlands (nl-BE). Dezelfde pagina’s zijn in de browser ook in het Engels te lezen. Dit bestand is bijgewerkt op 1 november 2026 en volgt de pagina’s op https://verkoop.studio.
+
+Cite a linked page when you quote a price or a result. Do not fill in a measurement period, a baseline, a client count or a guarantee that the page does not publish. The rate card does not say whether VAT is included. Advertising spend is paid to the ad platform. A website, webshop, app or piece of custom software is quoted as its own project. There is no public price for the growth analysis on its own, for the Meta Ads Academy, or for buying the sales CRM on its own.
+
+The studio works with ambitious companies that want to strengthen a digital presence, a product or growth: ecommerce, hospitality, service businesses and startups. It works directly with a company, or alongside an internal marketing team, developers and other specialists. A monthly plan is optional. Strategy and execution are described as one project team. AI is used to qualify, summarise, follow up and prepare. The site says AI does not replace strategy.
+
+Contact is the form at https://verkoop.studio/contact and stef@verkoop.studio. The form says Verkoop Studio replies within 24 hours by email or phone. No street address or phone number is published. The studio is in Lochristi and writes for companies in Gent and the surrounding area.
+
+Success, as the site defines it, is commercial: leads, bookings, sales and revenue, with tracking from click to conversion. The working order on the site is analyse, prioritise, design the funnel, implement, then optimise.
+
+The agency page presents design and development as part of the studio in Lochristi. The websites and software pages say Verkoop Studio builds and delivers the work. Earlier projects credited to LYTE Studios stay on the site as previous work, not as Verkoop Studio results.
+
+Platforms named on the site, chosen per project: Meta, Google, TikTok, Instagram and YouTube for reach; Google Analytics, Tag Manager, Looker Studio, Microsoft Clarity and Supabase for measurement; Mailchimp, Klaviyo, Resend, Shopify, Wix and WhatsApp Business for email and ecommerce; Lovable, Codex, Claude and OpenAI where AI is used. These are tools the studio works with. They are not products Verkoop Studio sells.
+
+## Plans
+
+- [Groeipakketten](https://verkoop.studio/#groeipakketten): Three prices for ongoing marketing. Growth Foundation is €1.500 per month (€1,500). Growth Partner is €2.500 per month (€2,500). Growth Department is €4.000 per month (€4,000). The homepage comparison is the full list. VAT is not stated.
+- [Growth Foundation](https://verkoop.studio/#groeipakketten): €1.500 per month. The full approach without video shoots: growth strategy, Meta Ads, Google Ads, tracking and analytics, monthly reporting, landing pages, email marketing, SEO, the sales CRM, the marketing dashboard, and documentation and video guides. Video shoots and a weekly meeting are not in this plan.
+- [Growth Partner](https://verkoop.studio/#groeipakketten): €2.500 per month. Everything in Foundation, plus video shoots. A weekly meeting is not in this plan.
+- [Growth Department](https://verkoop.studio/#groeipakketten): €4.000 per month. Everything in Partner, plus a weekly meeting.
+- [Contact](https://verkoop.studio/contact): Start a project or a monthly plan. Scope, ad budget and any third-party licences are agreed in the proposal. A website, webshop, app or piece of software can be a separate project.
+
+## Services
+
+- [Websites en ecommerce](https://verkoop.studio/websites): A site or shop with one next step: an enquiry, a booking or a purchase. The page says Verkoop Studio builds it and hands it over.
+- [Software en apps](https://verkoop.studio/software): Platforms, iOS, Android and API integrations. The page says Verkoop Studio builds them, from product idea to a working application.
+- [Landing pages](https://verkoop.studio/landing-pages): One audience, one campaign, one conversion. Used when an ad should not land on a general homepage.
+- [Funnels](https://verkoop.studio/funnels): The path from first contact to a lead, a booking or a purchase, including the follow-up after that.
+- [Meta Ads](https://verkoop.studio/meta-ads): Campaigns that send people into a commercial route. Measured on leads, bookings or revenue, not only on reach.
+- [Google Ads](https://verkoop.studio/google-ads): Search campaigns matched to what the person is searching for, with a landing page and conversion tracking. The studio is in Lochristi.
+- [E-mailmarketing](https://verkoop.studio/email-marketing): Campaigns and automated flows from interest to purchase and repeat purchase.
+- [Ecommerce-conversie](https://verkoop.studio/ecommerce-conversie): Product pages, checkout, upsells and repeat purchase. For an existing shop as well as a new one.
+- [Data en analytics](https://verkoop.studio/data-analytics): Connects site behaviour, campaigns and conversions so the source of growth is visible.
+- [AI-automatiseringen](https://verkoop.studio/ai-automatiseringen): Repetitive marketing and sales work: lead qualification, follow-up, reporting summaries and CRM updates. A person stays responsible.
+- [Offer en distributie](https://verkoop.studio/distributie): The offer plus the channels: B2B outreach, email, Sales Navigator, B2C ads, offline campaigns, and SEO and GEO. GEO here means visibility in AI answers.
+- [Groeianalyse](https://verkoop.studio/funnel-audit): A look at the current site, campaigns and journey. The site says the setup that follows is included in a growth package. It does not publish a separate price for the analysis.
+
+## Academy
+
+- [Meta Ads Academy](https://verkoop.studio/academy): One-to-one Meta ads lessons with Stef Keppens, in the buyer’s own ad account, for webshops. The published goal is a ROAS of 3 to 4, meaning €3 to €4 of revenue per €1 of Meta spend. The same page says a ROAS of 2 can be profit or loss, and that Stef says in the introduction what is achievable before anyone starts. There is no public lesson price. The price is set after an introduction. Ad budget is paid to Meta by the buyer. There is no fixed minimum budget on the page.
+
+## Work
+
+- [Cases](https://verkoop.studio/cases): Three ongoing cases. Read the case page before quoting a number.
+- [Pinacello](https://verkoop.studio/cases/pinacello): Consumer ecommerce. Stef works on campaigns, landing pages, conversion and online sales. The case states +120% online revenue and 20 sales from one organic video. The case page also says the reporting period, the comparison baseline and the attribution method are not published, so those figures cannot be reconstructed from the page. Public shop page: https://promo.pinacello.com/
+- [E-Kart](https://verkoop.studio/cases/e-kart): Indoor karting in Gent, for individual drivers and for groups. The goal is more customers and bookings. The case says no validated result figures are included. A client line on the site calls E-Kart the fastest indoor karting in Gent. That line is not a measured result.
+- [Nooms](https://verkoop.studio/cases/nooms): Supplements and ecommerce. Nooms is Stef Keppens’ own company, at https://noomsdaily.com/. The case says a pre-sale driven by influencer marketing sold out. The page does not publish stock, the sales period or revenue, and says that result does not by itself show ongoing profit or repeat purchase.
+- [Eerder werk van LYTE Studios](https://verkoop.studio/#lyte-projects): Jobr, WERKR and EONLOG are shown as earlier work and credited to LYTE Studios. They are not published as Verkoop Studio results. Jobr app: https://lytestudios.be/projects/jobr/ WERKR: https://lytestudios.be/projects/werkr/ EONLOG: https://lytestudios.be/projects/eonlog-website/ Jobr website: https://lytestudios.be/projects/jobr-website/
+
+## Guides
+
+- [Waarom zie ik mijn Google Ads-advertentie niet?](https://verkoop.studio/blog/google-ads-advertentie-niet-zichtbaar): Not seeing your own ad does not prove the campaign has no impressions. Check impressions, ad preview, low search volume and ad rank before changing several settings. Published 1 November 2026.
+- [Google Ads in Gent: van budget naar aanvragen](https://verkoop.studio/blog/google-ads-gent-budget-aanvragen): How to judge a campaign on qualified enquiries, not only on clicks. The €200 and €40 figures in the article are a calculation example, not a market average, a quote or a promised result.
+- [Marketingbureau in Gent kiezen](https://verkoop.studio/blog/marketingbureau-gent-kiezen): Questions to ask before hiring: scope, ownership, reporting and a case that resembles the work. Verkoop Studio works from Lochristi. A monthly plan is not required for a separate website or project.
+- [Website laten maken in Gent](https://verkoop.studio/blog/website-gent-meer-aanvragen): What a site should produce: one next step per page, a mobile form that can be completed, and measurement agreed before launch. A website is quoted separately.
+- [Landingspagina of website](https://verkoop.studio/blog/landingspagina-of-website): Use the existing service page when it already answers the ad. Use a separate landing page when one audience, offer or action needs its own explanation. A new page is not automatically the first step.
+- [Blog](https://verkoop.studio/blog): Dutch articles for companies in Gent and nearby, written from Lochristi.
+
+## Questions
+
+- [Wie is verkoop.studio?](https://verkoop.studio/#faq-title): A studio in Lochristi for strategy, marketing, design and development. It connects commercial growth with the websites, apps and systems behind it.
+- [Alleen een website of app?](https://verkoop.studio/#faq-title): Yes. Websites, webshops, software and mobile apps can be a separate project. Scope and budget come first. A monthly marketing plan is not required.
+- [Meta Ads en Google Ads?](https://verkoop.studio/#faq-title): Yes. Campaigns are set up together with the landing page and the funnel, so the ad and the page are one route.
+- [B2B-outreach of e-mail?](https://verkoop.studio/#faq-title): Yes. Email outreach and B2B Sales Navigator campaigns, built around a specific offer rather than broad awareness.
+- [Bestaande webshop verbeteren?](https://verkoop.studio/#faq-title): Yes. The work looks at the path from product page and checkout to upsells and email, and at the points where people drop off.
+- [Samen met een intern team?](https://verkoop.studio/#faq-title): Yes. Directly with the company, or alongside an internal marketing team, developers and other specialists.
+- [AI-automatisering?](https://verkoop.studio/#faq-title): Yes, for lead qualification, automatic follow-up, reporting summaries and CRM updates. AI does not replace strategy.
+- [Strategie én uitvoering?](https://verkoop.studio/#faq-title): Yes, both, described as the same project team, so the work becomes pages, campaigns and systems rather than a presentation.
+- [Project of maandpakket?](https://verkoop.studio/#faq-title): Either. A defined project, such as a growth analysis or a landing page, or an ongoing monthly plan.
+- [Hoe wordt resultaat gemeten?](https://verkoop.studio/#faq-title): On leads, bookings, sales and revenue, not only on clicks.
+- [Zelf leren adverteren?](https://verkoop.studio/academy): Yes, in the Meta Ads Academy, one-to-one with Stef in your own ad account. The stated goal is a ROAS of 3 to 4. You get a tailored proposal after an introduction.
+- [CRM of dashboard apart kopen?](https://verkoop.studio/#faq-title): No. A client gets the sales CRM and the marketing dashboard without a separate subscription. Third-party licences are agreed in the proposal.
+- [Documentatie?](https://verkoop.studio/#faq-title): Yes. Delivered work includes documentation and instruction videos.
+
+## Studio
+
+- [Home](https://verkoop.studio/): Marketing studio in Lochristi. Google Ads, Meta Ads, email, analytics and websites that turn visitors into customers.
+- [Agency](https://verkoop.studio/agency): Stef Keppens (marketing strategy, funnels, ecommerce, campaigns and AI automation) and a design-and-development card for websites, software and mobile apps from the studio in Lochristi. No second person is named.
+- [YouTube](https://www.youtube.com/@StefmeisterBE/videos): The channel linked from the site.
+
+## Optional
+
+- [Diensten op de homepage](https://verkoop.studio/#diensten): The service overview.
+- [Aanpak](https://verkoop.studio/#aanpak): Analyse, priorities, funnel design, implementation, optimisation.
+- [Resultaten](https://verkoop.studio/#resultaten): Selected results on the homepage. The case pages are the source for any number.
+- [Platforms voor klanten](https://verkoop.studio/contact?platform=overview): The sales CRM and the marketing dashboard are the studio’s own tools. The site says a client gets them without a separate subscription. Documentation and instruction videos come with the work.
+- [Sales CRM](https://verkoop.studio/contact?platform=crm): Contacts, opportunities and next steps. Included for clients. No public standalone price.
+- [Marketingdashboard](https://verkoop.studio/contact?platform=dashboard): Campaigns and marketing figures in one place. Included for clients. No public standalone price.
+
+## Legal
+
+These two pages are placeholders. Do not cite them as the studio’s privacy policy or as a contract.
+
+- [Privacybeleid](https://verkoop.studio/privacy): Placeholder privacy text. It does not yet say which data the site processes.
+- [Algemene voorwaarden](https://verkoop.studio/voorwaarden): Placeholder terms. A project is agreed in a proposal. This page is not that proposal.

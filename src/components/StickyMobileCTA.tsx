@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { isLegalPath } from '../data/legal'
 import { persistentCta, persistentCtaHref } from '../data/nav'
 import { services } from '../data/services'
 import { trackEvent } from '../lib/analytics'
@@ -49,7 +50,7 @@ export default function StickyMobileCTA() {
     }
   }, [pathname])
 
-  if (pathname === '/contact' || pathname === '/funnel-audit') return null
+  if (pathname === '/contact' || pathname === '/funnel-audit' || isLegalPath(pathname)) return null
 
   return (
     <div className={`mobile-contact-bar pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-line bg-ink/95 p-3 backdrop-blur lg:hidden${suppressed ? ' is-suppressed' : ''}`}>

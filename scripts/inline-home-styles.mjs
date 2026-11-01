@@ -1,8 +1,8 @@
 import { gzipSync } from 'node:zlib'
 
-// The homepage can paint without a separate render-blocking CSS request.
+// Every prerendered page can paint without a separate render-blocking CSS request.
 // Reuse the complete compiled stylesheet so navigation and responsive states
-// keep the same rules; other entry pages retain their cacheable stylesheet.
+// keep the same rules. Page-specific stylesheets stay as their own files.
 export async function inlineHomepageStyles(template, readAsset) {
   const links = [...template.matchAll(/<link\b(?=[^>]*\brel="stylesheet")(?=[^>]*\bhref="(\/assets\/[^"/]+\.css)")[^>]*>/g)]
   if (!links.length) throw new Error('Expected a built homepage stylesheet')

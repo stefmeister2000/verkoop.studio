@@ -22,6 +22,7 @@
 .email-capture-footnote { display: flex; justify-content: space-between; gap: 8px; margin-top: 12px; font-size: 10px; line-height: 1.6; color: #6c7890; }
 .email-capture-footnote details { text-align: right; }
 .email-capture-footnote summary { cursor: pointer; text-decoration: underline; }
+.email-capture-footnote a { color: inherit; text-decoration: underline; }
 .email-capture-footnote details[open] { max-width: 65%; }
 .email-capture a { text-decoration: underline; overflow-wrap: anywhere; }
 .email-capture-error { font-size: 12px; line-height: 1.5; color: #a52d35; margin-bottom: 12px; }

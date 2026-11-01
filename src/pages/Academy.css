@@ -362,6 +362,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 .ac-next-steps strong { display: block; font-size: 15.5px; font-weight: 600; }
 .ac-next-steps small { display: block; margin-top: 2px; color: var(--ac-mute); font-size: 13.5px; line-height: 1.5; }
 .ac-privacy { max-width: 420px; margin-top: 26px; color: var(--ac-mute); font-size: 12.5px; line-height: 1.55; }
+.ac-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .ac-signup-card { padding: 30px; border-radius: 24px; background: #fff; border: 1px solid #e3e6f2; box-shadow: 0 50px 90px -46px #254bfa59; }
 .ac-signup-done h3 { margin-top: 16px; font-size: 26px; font-weight: 600; letter-spacing: -.025em; }
 .ac-signup-done p { margin-top: 8px; color: var(--ac-text); font-size: 15px; line-height: 1.6; }
@@ -422,6 +423,9 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 .ac-footer .ac-footer-columns a, .ac-footer .ac-footer-columns span { display: block; margin-bottom: 10px; color: #6b7190; font-size: 14px; line-height: 1.45; }
 .ac-footer .ac-footer-columns a:hover { color: var(--ac-blue); }
 .ac-copyright { margin-top: 40px; color: var(--ac-mute); font-size: 12.5px; }
+.ac-legal { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 12px; color: var(--ac-mute); font-size: 12.5px; }
+.ac-legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.ac-legal a:hover { color: var(--ac-blue); }
 
 /* Scroll reveal: only applied by JS to content below the fold. */
 @media (prefers-reduced-motion: reduce) {

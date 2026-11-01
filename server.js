@@ -77,7 +77,16 @@ for (const [route, source] of [['/ig', 'instagram'], ['/fb', 'facebook'], ['/li'
 }
 
 app.use('/assets', express.static(path.join(DIST, 'assets'), { immutable: true, maxAge: '1y' }))
-app.use(express.static(DIST, { redirect: false, index: false }))
+app.use(express.static(DIST, {
+  redirect: false,
+  index: false,
+  setHeaders(res, filePath) {
+    if (filePath.endsWith(`${path.sep}llms.txt`)) {
+      res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+      res.setHeader('Cache-Control', 'public, max-age=3600')
+    }
+  },
+}))
 
 const isEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s || ''))
 

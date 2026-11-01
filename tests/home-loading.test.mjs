@@ -24,26 +24,22 @@ test('homepage styling fails closed for missing or unsafe CSS and oversized payl
   await assert.rejects(inlineHomepageStyles(template, async () => `/*${randomBytes(70000).toString('hex')}*/`), /32 KiB/)
 })
 
-test('only homepage embeds the complete build CSS and deprioritizes hydration download', async () => {
+test('every page embeds the shared CSS and deprioritizes hydration download', async () => {
   const routes = JSON.parse(await readFile('dist/routes.json', 'utf8'))
   for (const route of [...routes, '/404']) {
     const html = await readFile(`dist${route === '/' ? '' : route}/index.html`, 'utf8')
     const styles = [...html.matchAll(/<style data-home-styles="([^"]+)">([\s\S]*?)<\/style>/g)]
     const appScript = html.match(/<script\b(?=[^>]*type="module")(?=[^>]*src="\/assets\/)[^>]*>/)?.[0]
     assert(appScript, route)
-    if (route === '/') {
-      assert(styles.length > 0, 'Homepage has immediate styles even without JavaScript')
-      assert(!/<link\b(?=[^>]*rel="stylesheet")(?=[^>]*href="\/assets\/)/.test(html))
-      assert.match(appScript, /fetchpriority="low"/)
-      for (const [tag, href, css] of styles) {
-        assert.equal(css, await readFile(`dist${href}`, 'utf8'))
-        assert(html.indexOf(tag) < html.indexOf('</head>'))
-      }
-    } else {
-      assert.equal(styles.length, 0, route)
-      assert.match(html, /<link\b(?=[^>]*rel="stylesheet")(?=[^>]*href="\/assets\/)/)
-      assert(!appScript.includes('fetchpriority="low"'), route)
+    assert(styles.length > 0, `${route}: styles are in the document, not a blocking request`)
+    assert.match(appScript, /fetchpriority="low"/)
+    assert(!html.includes('rel="modulepreload"'), route)
+    for (const [tag, href, css] of styles) {
+      assert.equal(css, await readFile(`dist${href}`, 'utf8'))
+      assert(html.indexOf(tag) < html.indexOf('</head>'))
+      assert(!html.includes(`href="${href}"`), `${route} still requests ${href} separately`)
     }
+    if (route === '/') assert(!/<link\b(?=[^>]*rel="stylesheet")(?=[^>]*href="\/assets\/)/.test(html))
   }
 })
 
@@ -63,6 +59,33 @@ test('homepage retains all existing tracking scripts verbatim', async () => {
   const source = (await readFile('index.html', 'utf8')).replace(/<!--[\s\S]*?-->/g, '')
   const html = await readFile('dist/index.html', 'utf8')
   const scripts = [...source.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].map(m => m[0]).filter(tag => !tag.includes('type="module"'))
-  assert(scripts.length >= 4)
+  assert(scripts.length >= 2)
   for (const script of scripts) assert(html.includes(script), 'Tracking source must not be changed by prerendering')
+})
+
+test('Meta Pixel starts before fonts, and the other trackers wait until load', async () => {
+  const heroPoster = 'https://i.ytimg.com/vi/tSjPY9J6ynk/maxresdefault.jpg'
+  const routes = JSON.parse(await readFile('dist/routes.json', 'utf8'))
+  for (const route of [...routes, '/404']) {
+    const html = await readFile(`dist${route === '/' ? '' : route}/index.html`, 'utf8')
+    const head = html.split('</head>')[0]
+    const pixel = head.indexOf('https://connect.facebook.net/en_US/fbevents.js')
+    const font = head.indexOf('https://fonts.googleapis.com/css2')
+    assert(pixel > -1 && font > pixel, `${route}: pixel request before the font stylesheet`)
+    assert(head.includes("fbq('init'"), route)
+    assert(head.includes("fbq('track', 'PageView')"), route)
+    assert(head.includes("t.fetchPriority='high'"), route)
+    assert(!/<script\b[^>]*\bsrc="https:\/\/www\.googletagmanager\.com\/gtag\/js/.test(head), route)
+    assert(!/<script\b[^>]*\bsrc="https:\/\/perfomance\.verkoop\.studio\/t\.js/.test(head), route)
+    assert(!/<script\b[^>]*\bsrc="https:\/\/www\.clarity\.ms\//.test(head), route)
+    assert(head.includes('https://www.googletagmanager.com/gtag/js?id=G-VRKJP8K3SD'), route)
+    assert(head.includes('https://perfomance.verkoop.studio/t.js'), route)
+    assert(head.includes('https://www.clarity.ms/tag/'), route)
+    assert(head.includes("addEventListener('load', loadDeferredTrackers"), route)
+    if (html.includes(heroPoster)) {
+      const preload = head.search(/<link rel="preload" as="image" href="https:\/\/i\.ytimg\.com\/vi\/tSjPY9J6ynk\/maxresdefault\.jpg" fetchpriority="high"/i)
+      assert(preload > pixel, `${route}: hero image preload follows the pixel`)
+      assert.equal(head.match(/rel="preload" as="image"/gi)?.length, 1, route)
+    }
+  }
 })
