@@ -109,3 +109,42 @@ test('newsletter destinations stay independent and repeat receipts survive reloa
   assert.equal(b.calls.ga.length, 1)
   assert.equal(b.calls.meta.length, 0)
 })
+
+
+test('OpenAI measures a confirmed enquiry once with the exact payload and no personal data', () => {
+  const f = fixture(), calls = []
+  f.window.oaiq = (...args) => calls.push(args)
+  f.track({ ...receipt, email: 'private@example.com', naam: 'Private' }, 'openai-1', 'contact')
+  f.track(receipt, 'openai-1', 'contact')
+  assert.deepEqual(JSON.parse(JSON.stringify(calls)), [['measure', 'lead_created', { type: 'customer_action' }]])
+  f.track(receipt, 'openai-2', 'contact')
+  assert.equal(calls.length, 2)
+  const reloaded = fixture({ storage: f.storage })
+  reloaded.window.oaiq = (...args) => calls.push(args)
+  reloaded.track(receipt, 'openai-1', 'contact')
+  assert.equal(calls.length, 2)
+})
+
+test('OpenAI rejects failed, incomplete and honeypot receipts', () => {
+  const f = fixture(), calls = []
+  f.window.oaiq = (...args) => calls.push(args)
+  for (const r of [{}, { ok: true }, { ok: false, captured: ['resend_contact'] }, { ok: true, captured: ['crm'] }]) {
+    f.track(r, 'openai-1', 'contact')
+  }
+  f.track(receipt, '', 'contact')
+  assert.equal(calls.length, 0)
+})
+
+test('OpenAI remains independent of other tags and blocked storage', () => {
+  const f = fixture({ brokenStorage: true }), calls = []
+  f.window.gtag = f.window.fbq = () => { throw Error('blocked') }
+  f.window.oaiq = (...args) => calls.push(args)
+  f.track(receipt, 'openai-1', 'contact')
+  f.track(receipt, 'openai-1', 'contact')
+  assert.equal(calls.length, 1)
+  const broken = fixture()
+  broken.window.oaiq = () => { throw Error('blocked') }
+  assert.doesNotThrow(() => broken.track(receipt, 'openai-1', 'contact'))
+  assert.equal(broken.calls.ga.length, 1)
+  assert.equal(broken.calls.meta.length, 1)
+})
