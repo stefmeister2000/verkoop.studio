@@ -1,5 +1,5 @@
 // Server-only bridge. Never import this module into the browser bundle.
-export function crmPayload(body, { campaign = 'verkoop.studio website' } = {}) {
+export function crmPayload(body, { campaign = 'Verkoop Studio website' } = {}) {
   const text = (value) => typeof value === 'string' ? value.trim() : ''
   const fields = [
     ['Doel', body.doel], ['Uitdaging', body.uitdaging],

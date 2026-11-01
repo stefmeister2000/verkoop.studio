@@ -6,7 +6,7 @@ import { subscribeNewsletter } from './server-newsletter.js'
 
 export const ACADEMY_LEVELS = { start: 'Nog niet gestart met Meta ads', basis: 'Draait al campagnes', actief: 'Wil opschalen' }
 export const ACADEMY_BUDGETS = { klein: 'Tot €1.000 per maand', middel: '€1.000 – €5.000 per maand', groot: '€5.000 – €20.000 per maand', schaal: 'Meer dan €20.000 per maand' }
-export const ACADEMY_CAMPAIGN = 'verkoop.studio academy'
+export const ACADEMY_CAMPAIGN = 'Verkoop Studio academy'
 
 const text = (value, limit) => typeof value === 'string' ? value.trim().slice(0, limit) : ''
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
@@ -57,13 +57,13 @@ export function academyNotification(fields) {
     text: [`Nieuwe academy-aanmelding van ${title}`, `Aanmelding van ${fields.naam}`, '', 'Beantwoord deze e-mail rechtstreeks om de aanvrager te contacteren.', '',
       'CONTACTGEGEVENS', ...contact.map(([label, value]) => `${label}: ${value || 'niet ingevuld'}`), '',
       'META ADS ACADEMY', ...academy.map(([label, value]) => `${label}: ${value || 'niet ingevuld'}`), '',
-      'HERKOMST', `Formulier: ${fields.form_id}`, attribution, '', 'verkoop.studio · Interne aanmeldingsmelding'].join('\n'),
+      'HERKOMST', `Formulier: ${fields.form_id}`, attribution, '', 'Verkoop Studio · Interne aanmeldingsmelding'].join('\n'),
     html: `<!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nieuwe academy-aanmelding</title></head><body style="margin:0;background-color:#f0f2f7;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#172343;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" bgcolor="#f0f2f7" style="background-color:#f0f2f7;padding:24px 12px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">`
-      + `<tr><td bgcolor="#172343" style="background-color:#172343;padding:28px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;color:#ffffff;font-weight:700;">verkoop.studio</td></tr><tr><td style="padding-top:28px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#c5cdfd;letter-spacing:1px;">NIEUWE ACADEMY-AANMELDING</td></tr><tr><td style="padding-top:10px;overflow-wrap:anywhere;font-family:Arial,Helvetica,sans-serif;font-size:28px;line-height:36px;color:#ffffff;font-weight:700;">${escape(title)}</td></tr><tr><td style="padding-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#e0e5f4;">Aanmelding van ${escape(fields.naam)}</td></tr></table></td></tr>`
+      + `<tr><td bgcolor="#172343" style="background-color:#172343;padding:28px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:24px;color:#ffffff;font-weight:700;">Verkoop Studio</td></tr><tr><td style="padding-top:28px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#c5cdfd;letter-spacing:1px;">NIEUWE ACADEMY-AANMELDING</td></tr><tr><td style="padding-top:10px;overflow-wrap:anywhere;font-family:Arial,Helvetica,sans-serif;font-size:28px;line-height:36px;color:#ffffff;font-weight:700;">${escape(title)}</td></tr><tr><td style="padding-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#e0e5f4;">Aanmelding van ${escape(fields.naam)}</td></tr></table></td></tr>`
       + `<tr><td bgcolor="#e5e9ff" style="background-color:#e5e9ff;padding:16px 24px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#263861;">Je kunt deze e-mail rechtstreeks beantwoorden om de aanvrager te contacteren.</td></tr>`
       + block('Contactgegevens', contact) + block('Meta Ads Academy', academy)
       + `<tr><td bgcolor="#f8f9fc" style="background-color:#f8f9fc;padding:22px 24px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#495978;font-weight:700;">Herkomst van de aanmelding</td></tr><tr><td style="padding-top:10px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#62708a;">Formulier: ${escape(fields.form_id)}</td></tr><tr><td style="padding-top:6px;overflow-wrap:anywhere;word-break:break-word;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#62708a;">${escape(attribution)}</td></tr></table></td></tr>`
-      + `<tr><td align="center" style="padding-top:20px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#62708a;">verkoop.studio · Interne aanmeldingsmelding</td></tr></table></td></tr></table></body></html>`,
+      + `<tr><td align="center" style="padding-top:20px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#62708a;">Verkoop Studio · Interne aanmeldingsmelding</td></tr></table></td></tr></table></body></html>`,
   }
 }
 
@@ -72,19 +72,19 @@ export function academyWelcome(fields) {
   const en = fields.lang === 'en'
   const lines = en ? [
     `Hi ${firstName},`, '',
-    'Thank you for requesting an introductory call about the Meta Ads Academy by verkoop.studio.',
+    'Thank you for requesting an introductory call about the Meta Ads Academy by Verkoop Studio.',
     'Stef will contact you personally to arrange a time. During the call, you can discuss your goals and see whether the lessons are a good fit.',
-    'Have a question in the meantime? Just reply to this email.', '', 'Speak soon,', 'Stef — verkoop.studio',
+    'Have a question in the meantime? Just reply to this email.', '', 'Speak soon,', 'Stef — Verkoop Studio',
   ] : [
     `Hoi ${firstName},`, '',
-    'Bedankt voor je aanvraag voor een kennismaking over de Meta Ads Academy van verkoop.studio.',
+    'Bedankt voor je aanvraag voor een kennismaking over de Meta Ads Academy van Verkoop Studio.',
     'Stef neemt persoonlijk contact met je op om een moment af te spreken. Tijdens de kennismaking bespreken jullie je doelen en of de lessen bij je passen.',
-    'Een vraag in de tussentijd? Antwoord gewoon op deze mail.', '', 'Tot snel,', 'Stef — verkoop.studio',
+    'Een vraag in de tussentijd? Antwoord gewoon op deze mail.', '', 'Tot snel,', 'Stef — Verkoop Studio',
   ]
   return {
     subject: en ? 'Your Meta Ads Academy introductory call request' : 'Je kennismakingsaanvraag voor de Meta Ads Academy',
     text: lines.join('\n'),
-    html: `<div lang="${en ? 'en' : 'nl'}" style="font-family:Arial,Helvetica,sans-serif;color:#172343;max-width:520px;font-size:15px;line-height:1.6"><p style="font-size:12px;color:#254bfa;font-weight:700;letter-spacing:1px;margin:0 0 6px">META ADS ACADEMY</p><h1 style="font-size:24px;line-height:1.2;margin:0 0 16px">${en ? 'Thank you' : 'Bedankt'}, ${escape(firstName)}.</h1><p>${escape(lines[2])}</p><p>${escape(lines[3])}</p><p>${escape(lines[4])}</p><p style="color:#62708a;font-size:13px;margin-top:24px">${escape(lines[6])}<br>Stef — verkoop.studio</p></div>`,
+    html: `<div lang="${en ? 'en' : 'nl'}" style="font-family:Arial,Helvetica,sans-serif;color:#172343;max-width:520px;font-size:15px;line-height:1.6"><p style="font-size:12px;color:#254bfa;font-weight:700;letter-spacing:1px;margin:0 0 6px">META ADS ACADEMY</p><h1 style="font-size:24px;line-height:1.2;margin:0 0 16px">${en ? 'Thank you' : 'Bedankt'}, ${escape(firstName)}.</h1><p>${escape(lines[2])}</p><p>${escape(lines[3])}</p><p>${escape(lines[4])}</p><p style="color:#62708a;font-size:13px;margin-top:24px">${escape(lines[6])}<br>Stef — Verkoop Studio</p></div>`,
   }
 }
 

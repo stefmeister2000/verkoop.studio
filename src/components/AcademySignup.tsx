@@ -85,7 +85,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
     {full && <Choices legend={t("Maandelijks advertentiebudget")} options={budgets} value={budget} onChange={value => { start(); setBudget(value) }} />}
     {full && <label className="ac-field ac-field-wide"><span>{t("Waar wil je vooral beter in worden?") + " "}<em>{t("optioneel")}</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder={t("Bijvoorbeeld: opschalen zonder dat mijn ROAS zakt, mijn tracking op orde krijgen of retargeting opzetten.")} /></label>}
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-    {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.")}</span></label>}
+    {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.")}</span></label>}
     <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? t("Even geduld…") : (submitLabel ?? t('Plan een kennismaking'))}</button>
     {error && <p className="ac-form-error" role="alert">{t(error)}</p>}
   </form>

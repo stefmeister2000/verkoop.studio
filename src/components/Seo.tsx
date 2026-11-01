@@ -46,7 +46,7 @@ export default function Seo({ title, description, path, noindex = false, languag
     <meta property="og:url" content={url} />
     <meta property="og:locale" content={lang === 'nl' ? 'nl_BE' : 'en_GB'} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="verkoop.studio. Meer aanvragen. Meer verkoop." />
+    <meta property="og:image:alt" content="Verkoop Studio. Meer aanvragen. Meer verkoop." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={metaDescription} />

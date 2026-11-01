@@ -36,7 +36,7 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="studio-brand" aria-label="verkoop.studio, home"><BrandMark /></Link>
+            <Link to="/" className="studio-brand" aria-label="Verkoop Studio, home"><BrandMark /></Link>
             <p className="mt-3 max-w-xs text-sm text-mute">{t.tagline}</p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-line pt-6 text-xs text-mute sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} verkoop.studio</p>
+          <p>© {new Date().getFullYear()} Verkoop Studio</p>
           <nav aria-label={t.legal} className="flex flex-wrap gap-x-4 gap-y-2">
             <Link to="/privacy" className="py-1 underline-offset-4 transition hover:text-paper hover:underline">{t.privacy}</Link>
             <Link to="/voorwaarden" className="py-1 underline-offset-4 transition hover:text-paper hover:underline">{t.terms}</Link>

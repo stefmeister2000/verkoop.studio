@@ -2,8 +2,8 @@ import type { FaqItem } from './types'
 
 export const faqItems: FaqItem[] = [
   {
-    question: { nl: 'Wie is verkoop.studio?', en: 'Who is verkoop.studio?' },
-    answer: { nl: 'verkoop.studio is een studio in Lochristi voor strategie, marketing, design en development. We verbinden commerciële groei met de websites, apps en systemen erachter. In ons portfolio vermelden we wie de bestaande projecten uitvoerde.', en: 'verkoop.studio is a studio in Lochristi for strategy, marketing, design and development. We connect commercial growth with the websites, apps and systems behind it. Our portfolio credits the teams behind existing projects.' },
+    question: { nl: 'Wie is Verkoop Studio?', en: 'Who is Verkoop Studio?' },
+    answer: { nl: 'Verkoop Studio is een studio in Lochristi voor strategie, marketing, design en development. We verbinden commerciële groei met de websites, apps en systemen erachter. In ons portfolio vermelden we wie de bestaande projecten uitvoerde.', en: 'Verkoop Studio is a studio in Lochristi for strategy, marketing, design and development. We connect commercial growth with the websites, apps and systems behind it. Our portfolio credits the teams behind existing projects.' },
   },
   {
     question: { nl: 'Kunnen we ook alleen een website of app laten bouwen?', en: 'Can we work with you just on a website or app?' },
@@ -101,15 +101,15 @@ export const faqItems: FaqItem[] = [
       en: 'Can I learn to advertise myself, without a monthly package?',
     },
     answer: {
-      nl: 'Ja. In de Meta Ads Academy op verkoop.studio/academy krijg je volledig 1-op-1 lessen met Stef, in je eigen advertentieaccount. Het doel: een ROAS van 3 tot 4, ook als je nog nooit hebt geadverteerd. Je meldt je aan via het formulier, Stef neemt contact op en je krijgt een voorstel op maat.',
-      en: 'Yes. In the Meta Ads Academy at verkoop.studio/academy you get fully one-on-one lessons with Stef, in your own ad account. The goal: a ROAS of 3 to 4, even if you have never advertised before. You sign up through the form, Stef gets in touch and you receive a tailored proposal.',
+      nl: 'Ja. In de Meta Ads Academy van Verkoop Studio krijg je volledig 1-op-1 lessen met Stef, in je eigen advertentieaccount. Het doel: een ROAS van 3 tot 4, ook als je nog nooit hebt geadverteerd. Je meldt je aan via het formulier, Stef neemt contact op en je krijgt een voorstel op maat.',
+      en: 'Yes. In the Meta Ads Academy at Verkoop Studio you get fully one-on-one lessons with Stef, in your own ad account. The goal: a ROAS of 3 to 4, even if you have never advertised before. You sign up through the form, Stef gets in touch and you receive a tailored proposal.',
     },
   },
   {
     question: { nl: 'Wat kost een samenwerking?', en: 'What does a collaboration cost?' },
     answer: {
-      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten, vanaf €1.500 per maand. Toegang tot onze klanttools, zoals het CRM en marketingdashboard, is inbegrepen, net als documentatie en instructievideo’s. De invulling van de opstart en uitvoering hangt af van het gekozen pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel.',
-      en: 'Ongoing collaborations run through three growth packages, starting at €1,500 per month. Access to our client tools, including the CRM and marketing dashboard, is included, along with documentation and video guides. Setup and delivery depend on the package you choose. Scope, advertising budget and any third-party licences are agreed in the proposal.',
+      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten. €1.500 per maand dekt alles, behalve videoshoots. €2.500 per maand dekt ook videoshoots. €4.000 per maand dekt ook een wekelijks overleg. Het CRM, het marketingdashboard en de documentatie zitten in elk pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel.',
+      en: 'Ongoing work runs through three growth plans. €1,500 per month covers everything except video shoots. €2,500 per month also covers video shoots. €4,000 per month also covers a weekly meeting. The CRM, the marketing dashboard and the documentation are in every plan. Scope, ad spend and any third-party licences are agreed in the proposal.',
     },
   },
   {

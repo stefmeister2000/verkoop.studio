@@ -8,12 +8,12 @@ const COPY = {
   nl: {
     seoTitle: 'De agency',
     seoDescription:
-      "verkoop.studio uit Lochristi werkt met bedrijven aan de volledige digitale klantreis: advertenties, landingspagina's, tracking, ecommerce en automatisering.",
+      "Verkoop Studio uit Lochristi werkt met bedrijven aan de volledige digitale klantreis: advertenties, landingspagina's, tracking, ecommerce en automatisering.",
   },
   en: {
     seoTitle: 'The agency',
     seoDescription:
-      "verkoop.studio in Lochristi works with companies on the full digital customer journey: ads, landing pages, tracking, ecommerce and automation.",
+      "Verkoop Studio in Lochristi works with companies on the full digital customer journey: ads, landing pages, tracking, ecommerce and automation.",
   },
 }
 

@@ -50,7 +50,7 @@ export function OwnPlatforms() {
   return <section className="studio-own-platforms" aria-labelledby="own-platforms-title">
     <div className="own-platforms-intro">
       <h2 id="own-platforms-title">{nl ? 'Onze eigen platforms. Inbegrepen voor klanten.' : 'Our own platforms. Included for clients.'}</h2>
-      <p>{nl ? 'Als klant van verkoop.studio krijg je toegang tot ons sales-CRM en marketingdashboard. Die programma’s hoef je niet meer apart aan te schaffen. Bij alles wat we opleveren krijg je documentatie en instructievideo’s, zodat jij en je team weten hoe het werkt.' : 'As a verkoop.studio client, you get access to our sales CRM and marketing dashboard, with no separate purchase or subscription needed. Everything we deliver comes with documentation and video guides, so you and your team know how it works.'}</p>
+      <p>{nl ? 'Als klant van Verkoop Studio krijg je toegang tot ons sales-CRM en marketingdashboard. Die programma’s hoef je niet meer apart aan te schaffen. Bij alles wat we opleveren krijg je documentatie en instructievideo’s, zodat jij en je team weten hoe het werkt.' : 'As a Verkoop Studio client, you get access to our sales CRM and marketing dashboard, with no separate purchase or subscription needed. Everything we deliver comes with documentation and video guides, so you and your team know how it works.'}</p>
       <Link className="own-platforms-cta" to="/contact?platform=overview">{nl ? 'Vraag toegang aan' : 'Request access'} <span aria-hidden="true">↗</span></Link>
     </div>
     <div className="own-platforms-products">

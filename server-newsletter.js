@@ -5,8 +5,8 @@ import { resendRequest } from './server-lead.js'
 export const NEWSLETTER_SEGMENT = '77506f2d-d387-4e75-97aa-bbaa003e7e0f'
 export const CONSENT_VERSION = 'website-newsletter-v1'
 const CONSENT = {
-  nl: 'Ja, ik ontvang graag marketingtips en nieuws van verkoop.studio per e-mail.',
-  en: 'Yes, I would like to receive marketing tips and news from verkoop.studio by email.',
+  nl: 'Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.',
+  en: 'Yes, I would like to receive marketing tips and news from Verkoop Studio by email.',
 }
 
 export async function subscribeNewsletter({ resend, email, lang, source = 'website_popup', request = resendRequest, now = new Date() }) {

@@ -13,7 +13,7 @@ export const seoMetadata: Record<string, Partial<Record<'nl' | 'en', Metadata>>>
     en: { title: 'Marketing and ecommerce case studies' },
   },
   '/agency': {
-    nl: { title: 'Studio voor marketing en development', description: 'Ontmoet de mensen achter verkoop.studio in Lochristi. Strategie, marketing, design en ontwikkeling voor je volgende groeistap.' },
+    nl: { title: 'Studio voor marketing en development', description: 'Ontmoet de mensen achter Verkoop Studio in Lochristi. Strategie, marketing, design en ontwikkeling voor je volgende groeistap.' },
     en: { title: 'Our marketing and development studio' },
   },
   '/contact': { nl: { title: 'Contact en projectaanvraag' }, en: { title: 'Contact us about your project' } },
@@ -21,11 +21,11 @@ export const seoMetadata: Record<string, Partial<Record<'nl' | 'en', Metadata>>>
   '/funnels': { nl: { title: 'Salesfunnels en klantopvolging' }, en: { title: 'Sales funnels and lead nurturing' } },
   '/meta-ads': { nl: { title: 'Meta Ads voor leads en verkoop' }, en: { title: 'Meta Ads for leads and sales' } },
   '/google-ads': {
-    nl: { title: 'Google Ads voor meer aanvragen', description: 'Bereik klanten die actief zoeken. Verkoop.studio uit Lochristi bouwt Google Ads-campagnes met gerichte landingspagina’s en conversiemeting.' },
+    nl: { title: 'Google Ads voor meer aanvragen', description: 'Bereik klanten die actief zoeken. Verkoop Studio uit Lochristi bouwt Google Ads-campagnes met gerichte landingspagina’s en conversiemeting.' },
     en: { title: 'Google Ads for qualified enquiries' },
   },
-  '/email-marketing': { nl: { description: 'E-mailmarketing die klanten opvolgt: nieuwsbrieven, segmentatie en geautomatiseerde flows. Van strategie tot uitvoering door verkoop.studio.' } },
-  '/distributie': { nl: { description: 'Bouw je distributie uit met verkoop.studio: heldere positionering, geschikte verkoopkanalen en een aanpak voor nieuwe verkooppunten.' } },
+  '/email-marketing': { nl: { description: 'E-mailmarketing die klanten opvolgt: nieuwsbrieven, segmentatie en geautomatiseerde flows. Van strategie tot uitvoering door Verkoop Studio.' } },
+  '/distributie': { nl: { description: 'Bouw je distributie uit met Verkoop Studio: heldere positionering, geschikte verkoopkanalen en een aanpak voor nieuwe verkooppunten.' } },
   '/cases/nooms': { nl: { title: 'Nooms: merk en ecommerce' }, en: { title: 'Nooms: brand and ecommerce' } },
 }
 

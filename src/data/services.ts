@@ -24,8 +24,8 @@ export const services: Service[] = [
     number: '01',
     title: { nl: 'Websites & ecommerce', en: 'Websites & ecommerce' },
     summary: {
-      nl: 'Een site of webshop met één volgende stap: een aanvraag, een reservatie of een aankoop.',
-      en: 'A site or online store with one next step: an enquiry, a booking or a purchase.',
+      nl: 'Een site of webshop met één volgende stap: een aanvraag, een reservatie of een aankoop. Verkoop Studio bouwt en levert ze op.',
+      en: 'A site or online store with one next step: an enquiry, a booking or a purchase. Verkoop Studio builds it and hands it over.',
     },
     includes: {
       nl: ['Webdesign', 'Webdevelopment', 'Ecommerce', 'Contentstructuur'],
@@ -39,12 +39,12 @@ export const services: Service[] = [
       nl: [
         'We bepalen wie de site bezoekt en welke ene actie telt.',
         'We zetten structuur en ontwerp op rond die actie.',
-        'LYTE Studios bouwt en test. Samen leveren we de site op.',
+        'Wij bouwen en testen de site, en leveren ze op.',
       ],
       en: [
         'We decide who visits and which single action matters.',
         'We shape the structure and design around that action.',
-        'LYTE Studios builds and tests. Together we hand the site over.',
+        'We build and test the site, and hand it over.',
       ],
     },
     deliverables: {
@@ -61,22 +61,14 @@ export const services: Service[] = [
         'Handover and a launch plan',
       ],
     },
-    partnerCase: {
-      name: 'Jobr website',
-      url: 'https://lytestudios.be/projects/jobr-website/',
-      description: {
-        nl: 'Door LYTE Studios: een website die de Jobr-app introduceert en bezoekers naar downloads en werkgeversregistraties leidt.',
-        en: 'By LYTE Studios: a website introducing the Jobr app and guiding visitors to downloads and employer registration.',
-      },
-    },
   },
   {
     slug: 'software',
     number: '02',
     title: { nl: 'Software & apps', en: 'Software & apps' },
     summary: {
-      nl: 'Van productidee tot werkende applicatie. Samen met LYTE Studios bouwen we platformen, mobiele apps en software op maat.',
-      en: 'From product idea to working application. Together with LYTE Studios, we build platforms, mobile apps and custom software.',
+      nl: 'Van productidee tot werkende applicatie. Verkoop Studio bouwt platformen, mobiele apps en software op maat.',
+      en: 'From product idea to working application. Verkoop Studio builds platforms, mobile apps and custom software.',
     },
     includes: {
       nl: [
@@ -100,12 +92,12 @@ export const services: Service[] = [
       nl: [
         'We brengen gebruikers, processen en technische vereisten in kaart.',
         'We bepalen de eerste versie en werken de gebruikerservaring uit.',
-        'LYTE Studios ontwikkelt de applicatie; samen stemmen we product en marktintroductie af.',
+        'Wij ontwikkelen de applicatie en stemmen product en marktintroductie af.',
       ],
       en: [
         'We map users, workflows and technical requirements.',
         'We scope the first release and design the user experience.',
-        'LYTE Studios develops the application; together we align the product and its launch.',
+        'We develop the application and align the product with its launch.',
       ],
     },
     deliverables: {
@@ -121,14 +113,6 @@ export const services: Service[] = [
         'Tested application',
         'Integrations and handover',
       ],
-    },
-    partnerCase: {
-      name: 'WERKR',
-      url: 'https://lytestudios.be/projects/werkr/',
-      description: {
-        nl: 'Door LYTE Studios: een softwareplatform voor flexibele personeelsplanning en uitvoering van opdrachten.',
-        en: 'By LYTE Studios: a software platform for flexible workforce planning and job delivery.',
-      },
     },
   },
   {

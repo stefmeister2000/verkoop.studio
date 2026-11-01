@@ -1,6 +1,6 @@
 # Verkoop Studio
 
-> Verkoop Studio is a studio in Lochristi, Belgium, for strategy, marketing, design and development. The public site is https://verkoop.studio. It helps companies get more enquiries, bookings and sales by connecting ads, pages, tracking and follow-up. The written name is Verkoop Studio. The domain, email addresses and many sentences on the site use verkoop.studio. Both names are the same studio.
+> Verkoop Studio is a studio in Lochristi, Belgium, for strategy, marketing, design and development. The public site is https://verkoop.studio. It helps companies get more enquiries, bookings and sales by connecting ads, pages, tracking and follow-up. The written name is Verkoop Studio. The domain and email addresses stay verkoop.studio. Both names are the same studio.
 >
 > Verkoop Studio is een studio in Lochristi voor strategie, marketing, design en development. De site verbindt commerciële groei met de websites, apps en systemen erachter. Stef Keppens is de enige persoon die de site bij naam noemt. Zijn rol in de gestructureerde data is Growth & Strategy. Pagina’s staan in het Nederlands (nl-BE). Dezelfde pagina’s zijn in de browser ook in het Engels te lezen. Dit bestand is bijgewerkt op 1 november 2026 en volgt de pagina’s op https://verkoop.studio.
 
@@ -12,22 +12,22 @@ Contact is the form at https://verkoop.studio/contact and stef@verkoop.studio. T
 
 Success, as the site defines it, is commercial: leads, bookings, sales and revenue, with tracking from click to conversion. The working order on the site is analyse, prioritise, design the funnel, implement, then optimise.
 
-The agency page presents design and development as part of the studio in Lochristi. The websites and software pages say the build is done together with LYTE Studios. The FAQ says the portfolio credits who carried out existing projects.
+The agency page presents design and development as part of the studio in Lochristi. The websites and software pages say Verkoop Studio builds and delivers the work. Earlier projects credited to LYTE Studios stay on the site as previous work, not as Verkoop Studio results.
 
 Platforms named on the site, chosen per project: Meta, Google, TikTok, Instagram and YouTube for reach; Google Analytics, Tag Manager, Looker Studio, Microsoft Clarity and Supabase for measurement; Mailchimp, Klaviyo, Resend, Shopify, Wix and WhatsApp Business for email and ecommerce; Lovable, Codex, Claude and OpenAI where AI is used. These are tools the studio works with. They are not products Verkoop Studio sells.
 
 ## Plans
 
-- [Groeipakketten](https://verkoop.studio/#groeipakketten): Three guide prices for ongoing marketing. Growth Foundation is €1.500 per month (€1,500). Growth Partner is €2.500 per month (€2,500). Growth Department is from €4.000 per month (from €4,000). The homepage comparison is the full list. VAT is not stated.
-- [Growth Foundation](https://verkoop.studio/#groeipakketten): €1.500 per month for companies that want ads, tracking and the marketing base in order. Includes growth strategy, Meta Ads, Google Ads, tracking and analytics, monthly reporting, creative direction, advice on landing pages, the website and the sales funnel, basic retargeting, and access to the sales CRM, the marketing dashboard, documentation and instruction videos. Landing-page implementation, SEO, email flows and a weekly meeting are not in this plan.
-- [Growth Partner](https://verkoop.studio/#groeipakketten): €2.500 per month. Everything in Foundation, plus landing-page implementation, SEO and local SEO, email strategy and flows, custom dashboards and ad tests, full retargeting, regular website optimisation, and a weekly growth meeting.
-- [Growth Department](https://verkoop.studio/#groeipakketten): From €4.000 per month. Everything in Partner, plus higher capacity across campaigns and funnels, continuous website optimisation, active content planning, advanced CRM work, management consulting, a monthly management workshop, and priority support.
-- [Contact](https://verkoop.studio/contact): Start a project or a monthly plan. Scope, ad budget and any third-party licences are agreed in the proposal. Websites and custom software are quoted separately.
+- [Groeipakketten](https://verkoop.studio/#groeipakketten): Three prices for ongoing marketing. Growth Foundation is €1.500 per month (€1,500). Growth Partner is €2.500 per month (€2,500). Growth Department is €4.000 per month (€4,000). The homepage comparison is the full list. VAT is not stated.
+- [Growth Foundation](https://verkoop.studio/#groeipakketten): €1.500 per month. The full approach without video shoots: growth strategy, Meta Ads, Google Ads, tracking and analytics, monthly reporting, landing pages, email marketing, SEO, the sales CRM, the marketing dashboard, and documentation and video guides. Video shoots and a weekly meeting are not in this plan.
+- [Growth Partner](https://verkoop.studio/#groeipakketten): €2.500 per month. Everything in Foundation, plus video shoots. A weekly meeting is not in this plan.
+- [Growth Department](https://verkoop.studio/#groeipakketten): €4.000 per month. Everything in Partner, plus a weekly meeting.
+- [Contact](https://verkoop.studio/contact): Start a project or a monthly plan. Scope, ad budget and any third-party licences are agreed in the proposal. A website, webshop, app or piece of software can be a separate project.
 
 ## Services
 
-- [Websites en ecommerce](https://verkoop.studio/websites): A site or shop with one next step: an enquiry, a booking or a purchase. The page says the studio sets the structure and the design, and LYTE Studios builds and tests the site.
-- [Software en apps](https://verkoop.studio/software): Platforms, iOS, Android and API integrations. The page says this is built together with LYTE Studios, from product idea to a working application.
+- [Websites en ecommerce](https://verkoop.studio/websites): A site or shop with one next step: an enquiry, a booking or a purchase. The page says Verkoop Studio builds it and hands it over.
+- [Software en apps](https://verkoop.studio/software): Platforms, iOS, Android and API integrations. The page says Verkoop Studio builds them, from product idea to a working application.
 - [Landing pages](https://verkoop.studio/landing-pages): One audience, one campaign, one conversion. Used when an ad should not land on a general homepage.
 - [Funnels](https://verkoop.studio/funnels): The path from first contact to a lead, a booking or a purchase, including the follow-up after that.
 - [Meta Ads](https://verkoop.studio/meta-ads): Campaigns that send people into a commercial route. Measured on leads, bookings or revenue, not only on reach.
