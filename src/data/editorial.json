@@ -2,6 +2,113 @@
   "version": 1,
   "articles": [
     {
+      "slug": "google-ads-advertentie-niet-zichtbaar",
+      "title": "Waarom zie ik mijn Google Ads-advertentie niet?",
+      "description": "Je advertentie verschijnt niet wanneer je zelf zoekt. Controleer vertoningen, advertentievoorbeeld, zoekvolume en advertentierang voordat je iets wijzigt.",
+      "category": "Google Ads",
+      "sections": [
+        {
+          "title": "Niet zelf gezien: wordt je advertentie nergens getoond?",
+          "paragraphs": [
+            "Dat je jouw advertentie niet ziet, bewijst niet dat de campagne geen vertoningen krijgt. Een eigen zoekopdracht is één moment, op één locatie en apparaat. Begin daarom bij het aantal vertoningen in Google Ads voor de juiste campagne en periode. Gebruik daarna het advertentievoorbeeld om een concrete zoekopdracht te onderzoeken.",
+            "Maak eerst onderscheid tussen twee situaties. Zijn er wel vertoningen, maar zie jij de advertentie niet? Onderzoek dan die specifieke zoekopdracht en context. Blijft het aantal vertoningen nul, controleer dan ook instellingen en meldingen die de hele campagne kunnen tegenhouden. Deze gids gaat over zoekadvertenties; je positie in de gewone Google-resultaten is een afzonderlijke SEO-vraag."
+          ]
+        },
+        {
+          "title": "Controleer eerst account, periode en status",
+          "paragraphs": [
+            "Open het juiste advertentieaccount en kies een periode waarin de campagne actief hoorde te zijn. Een onbedoeld filter of een verkeerde datumselectie kan je naar het verkeerde probleem laten zoeken. Bekijk de status op elk niveau: campagne, advertentiegroep, advertentie en zoekwoord.",
+            "Een actieve campagne helpt niet wanneer de advertentiegroep is gepauzeerd. Controleer ook afkeuringen, accountmeldingen over facturering, start- en einddatums, locaties en het advertentieschema. Lees bij een leerstatus de toelichting van de biedstrategie. Verander niet telkens meerdere instellingen om die melding weg te krijgen; noteer eerst wat ze precies zegt."
+          ],
+          "checklist": [
+            "Kijk ik naar de juiste campagne en actieve meetperiode?",
+            "Zijn campagne, advertentiegroep en advertentie ingeschakeld?",
+            "Staat er een concrete afkeuring of accountblokkade?",
+            "Vallen mijn locatie en het tijdstip binnen de instellingen?"
+          ]
+        },
+        {
+          "title": "Gebruik Advertentievoorbeeld en -diagnose",
+          "paragraphs": [
+            "Open in Google Ads de tool Advertentievoorbeeld en -diagnose bij de hulpmiddelen voor probleemoplossing. Vul de zoekopdracht in en stel locatie, taal en apparaat in op de situatie die je wilt controleren. Bewaar de gevonden verklaring samen met die instellingen en het tijdstip.",
+            "Deze tool voorkomt dat je door herhaald zelf te zoeken echte vertoningen toevoegt. De uitkomst blijft een momentopname en beschrijft niet noodzakelijk alle activiteit van je campagne. Vergelijk de diagnose daarom met de werkelijke vertoningen in het account. Voor een lokaal bedrijf kan een voorbeeld op een desktop buiten het werkgebied iets anders opleveren dan een mobiele zoekopdracht binnen de doelgroep."
+          ]
+        },
+        {
+          "title": "Wat betekent een laag zoekvolume bij je merknaam?",
+          "paragraphs": [
+            "Een zoekwoord met de status Laag zoekvolume is inactief totdat het zoekverkeer voldoende toeneemt. Google controleert die status opnieuw. Dit kan bij een nieuwe of weinig gezochte merknaam voorkomen, ook wanneer het zoekwoord inhoudelijk correct is.",
+            "Deze status hangt niet af van je bod, advertentietekst of kwaliteitsscore. Alleen het bod verhogen lost de volumemelding dus niet op. Controleer eerst spelling en relevante schrijfwijzen van de merknaam. Maak van een beperkte merkcampagne niet zonder afweging een brede campagne op algemene diensten: daarmee verander je de doelgroep en de bedoeling van het budget."
+          ]
+        },
+        {
+          "title": "Lage advertentierang: moet je bod omhoog?",
+          "paragraphs": [
+            "Advertentierang bepaalt mede of een advertentie kan verschijnen en op welke positie. Google kijkt daarvoor onder meer naar je bod, de kwaliteit van advertentie en landingspagina, drempels, concurrentie en de context van de zoekopdracht. Een melding over lage advertentierang bewijst daarom niet dat uitsluitend het budget te laag is.",
+            "Gebruik je Klikken maximaliseren met een maximale CPC-biedlimiet, controleer dan of die limiet de biedstrategie beperkt. Een biedlimiet en een gemiddeld dagbudget zijn verschillende instellingen. Klikken maximaliseren richt zich op klikken binnen het budget en garandeert geen voortdurende zichtbaarheid op je merknaam.",
+            "Kies één onderbouwde aanpassing en leg de bestaande instelling, het toegestane budget en het evaluatiemoment vast. Er bestaat geen universele klikprijs die elk lokaal bedrijf zichtbaar maakt. Beoordeel naast vertoningen en klikken ook of de bezoekers passen bij je aanbod."
+          ]
+        },
+        {
+          "title": "Is een slechte Ad Strength-score de oorzaak?",
+          "paragraphs": [
+            "De Ad Strength-score (advertentiesterkte) geeft feedback op de mix en relevantie van je advertentieonderdelen. Die beoordeling bepaalt volgens Google niet of een advertentie mag worden vertoond en wordt niet gebruikt om advertentierang te berekenen. Een slechte score is dus niet op zichzelf de verklaring voor nul vertoningen.",
+            "Gebruik de feedback om onderscheidende koppen en beschrijvingen te schrijven. Controleer afzonderlijk of de advertentie is goedgekeurd en welke diagnose Google geeft voor de zoekopdracht. Herhaling toevoegen om een score te veranderen maakt de boodschap niet vanzelf duidelijker voor een klant."
+          ]
+        },
+        {
+          "title": "Wat laat je controleren en wanneer evalueer je?",
+          "paragraphs": [
+            "Geef je beheerder een concrete onderzoeksvraag: voor deze zoekopdracht, locatie en dit apparaat zie ik mijn advertentie niet; dit zijn de vertoningen en de diagnose. Voeg een schermafbeelding zonder betaalgegevens of andere gevoelige informatie toe. Zo kan iemand de situatie gericht onderzoeken.",
+            "Noteer per wijziging wat je verwacht te zien en vergelijk daarna gelijkwaardige perioden. Bij weinig merkzoekopdrachten kan één dag onvoldoende informatie geven. Meer vertoningen na een wijziging zijn bovendien niet automatisch bewijs dat alleen die wijziging het verschil veroorzaakte.",
+            "Zodra de advertentie wordt getoond, verschuift de vraag naar resultaat: komen de juiste mensen op de juiste pagina en ontstaan er geschikte aanvragen? Onze aparte gids over Google Ads-budget en aanvragen helpt om dat vervolg te beoordelen. Wil je de diagnose samen doornemen, dan kun je via onze Google Ads-pagina je situatie toelichten."
+          ],
+          "checklist": [
+            "Exacte zoekopdracht, locatie, taal, apparaat en tijdstip",
+            "Campagne, meetperiode en werkelijk aantal vertoningen",
+            "Letterlijke statusmelding en uitkomst van de diagnosetool",
+            "Eén aanpassing, reden, budgetafspraak en evaluatiemoment",
+            "Vervolgmeting van geschikte aanvragen zodra er verkeer is"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "/google-ads",
+          "label": "Bespreek je Google Ads-campagne"
+        },
+        {
+          "href": "/blog/google-ads-gent-budget-aanvragen",
+          "label": "Van Google Ads-budget naar geschikte aanvragen"
+        },
+        {
+          "href": "https://support.google.com/google-ads/answer/7378077?hl=nl",
+          "label": "Google: waarom je jouw advertentie mogelijk niet ziet"
+        },
+        {
+          "href": "https://support.google.com/google-ads/answer/148778?hl=nl",
+          "label": "Google: Advertentievoorbeeld en -diagnose"
+        },
+        {
+          "href": "https://support.google.com/google-ads/answer/2616014?hl=nl",
+          "label": "Google: de status Laag zoekvolume"
+        },
+        {
+          "href": "https://support.google.com/google-ads/answer/1722122?hl=nl",
+          "label": "Google: hoe advertentierang werkt"
+        },
+        {
+          "href": "https://support.google.com/google-ads/answer/6268626?hl=nl",
+          "label": "Google: Klikken maximaliseren en de CPC-biedlimiet"
+        },
+        {
+          "href": "https://support.google.com/google-ads/answer/9921843?hl=nl",
+          "label": "Google: Ad Strength bij responsieve zoekadvertenties"
+        }
+      ],
+      "publishedAt": "2026-11-01"
+    },
+    {
       "slug": "landingspagina-of-website",
       "title": "Landingspagina of website: wat heb je nodig voor je campagne?",
       "category": "Landingspagina’s & conversie",
