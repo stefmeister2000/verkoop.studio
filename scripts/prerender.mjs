@@ -19,6 +19,6 @@ for (const route of [...routes, '/404']) {
 }
 const xml = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;')
 await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(route => `<url><loc>${xml(SITE_URL + route)}</loc></url>`).join('\n')}</urlset>`)
-await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\nDisallow: /api/\n\nUser-agent: OAI-SearchBot\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`)
+await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\nDisallow: /api/\n\nUser-agent: OAI-SearchBot\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n# ${SITE_URL}/llms.txt\n`)
 await writeFile('dist/routes.json', JSON.stringify(routes))
 console.log(`Pre-rendered ${routes.length} indexable pages and a 404 page for ${SITE_URL}`)

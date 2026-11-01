@@ -87,6 +87,12 @@ test('production server returns route HTML, permanent redirects and real 404s', 
     const asset = homepage.match(/src="(\/assets\/[^"]+)"/)[1]
     assert.match((await get(asset)).headers.get('cache-control'), /max-age=31536000.*immutable/)
     for (const path of ['/robots.txt', '/sitemap.xml', '/favicon.svg', '/social-cover.png']) assert.equal((await get(path)).status, 200, path)
+    const llms = await get('/llms.txt')
+    assert.equal(llms.status, 200)
+    assert.match(llms.headers.get('content-type'), /text\/plain/)
+    const llmsText = await llms.text()
+    assert.match(llmsText, /^# Verkoop Studio/)
+    assert.doesNotMatch(llmsText.slice(0, 500), /<html/i)
   } finally {
     server.kill('SIGTERM')
     await once(server, 'exit')
