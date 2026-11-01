@@ -26,6 +26,7 @@ declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
     fbq?: (command: 'trackSingle', pixelId: string, event: 'Lead', params: Record<string, unknown>, options: { eventID: string }) => void
+    oaiq?: (command: 'measure', event: 'lead_created', params: { type: 'customer_action' }) => void
     current?: (command: 'lead', data: Record<string, unknown>) => void
     gtag?: {
       (command: 'event', event: string, params: Record<string, unknown>): void
@@ -65,6 +66,11 @@ export function trackLeadConversion(receipt: { ok?: boolean; captured?: unknown 
   // The bot honeypot returns ok without storing a lead or returning capture receipts.
   if (receipt.ok !== true || !Array.isArray(receipt.captured) || !receipt.captured.includes('resend_contact')) return
   sendLeadConversion(submissionId, formId, 'website_form', 'Website enquiry')
+  if (typeof window.oaiq === 'function') {
+    trackLeadOnce(`sk_openai_lead_${submissionId}`, () => {
+      window.oaiq!('measure', 'lead_created', { type: 'customer_action' })
+    })
+  }
 }
 
 /** Academy signups are leads Stef follows up; they get their own label so ads can be judged separately. */
