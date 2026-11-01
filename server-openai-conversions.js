@@ -10,8 +10,19 @@ function conversionUrl(value) {
   return `${ORIGIN}/contact`
 }
 
-/** Confirmed enquiries only; no form answers or customer identifiers leave the server. */
-export async function sendOpenAiLead({ receipt, submissionId, sourceUrl }, {
+// Reuse only the pixel's own first-party references; never collect form answers or raw customer details.
+function pixelCookie(header, name, maxLength = 4096) {
+  if (typeof header !== 'string') return undefined
+  const part = header.split(';').map(value => value.trim()).find(value => value.startsWith(`${name}=`))
+  if (!part) return undefined
+  try {
+    const value = decodeURIComponent(part.slice(name.length + 1))
+    return value.trim() && value.length <= maxLength && !/[\x00-\x1f\x7f]/.test(value) ? value : undefined
+  } catch { return undefined }
+}
+
+/** Confirmed enquiries only; attribution references come from the existing OpenAI pixel. */
+export async function sendOpenAiLead({ receipt, submissionId, sourceUrl, cookieHeader }, {
   apiKey = process.env.OPENAI_CONVERSIONS_API_KEY,
   fetchImpl = fetch,
   now = Date.now,
@@ -24,13 +35,21 @@ export async function sendOpenAiLead({ receipt, submissionId, sourceUrl }, {
     ? submissionId : receipt.key
   if (typeof id !== 'string' || !/^[a-zA-Z0-9_-]{1,128}$/.test(id)) return { sent: false, reason: 'missing_id' }
   const eventId = `website_lead_${id}`
+  if (pixelCookie(cookieHeader, '__oaiq_consent', 5) === 'false') {
+    return { sent: false, reason: 'consent_denied', eventId }
+  }
   if (!apiKey?.trim()) return { sent: false, reason: 'not_configured', eventId }
+
+  const oppref = pixelCookie(cookieHeader, '__oppref')
+  const obref = pixelCookie(cookieHeader, '__obref', 512)
 
   // Freeze ID and timestamp for both attempts. OpenAI deduplicates against the browser ID.
   const body = JSON.stringify({ validate_only: false, events: [{
     id: eventId,
     type: 'lead_created',
     timestamp_ms: now(),
+    ...(oppref ? { oppref } : {}),
+    ...(obref ? { user: { obref } } : {}),
     source_url: conversionUrl(sourceUrl),
     action_source: 'web',
     data: { type: 'customer_action' },
@@ -55,3 +74,4 @@ export async function sendOpenAiLead({ receipt, submissionId, sourceUrl }, {
   }
   return { sent: false, eventId, reason: 'unavailable' }
 }
+
