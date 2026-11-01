@@ -1,6 +1,6 @@
 import BrandMark from './BrandMark'
 import { Link } from 'react-router-dom'
-import { navItems, persistentCta, persistentCtaHref } from '../data/nav'
+import { footerNavItems, persistentCta, persistentCtaHref } from '../data/nav'
 import { services } from '../data/services'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -44,7 +44,7 @@ export default function Footer({ onNewsletterOpen }: { onNewsletterOpen: () => v
             <p className="text-sm font-semibold text-paper">{t.nav}</p>
             <ul className="mt-3 space-y-2 footer-link-grid">
               <li><Link to="/blog" className="text-sm text-mute transition hover:text-paper">Blog · Gent & omgeving</Link></li>
-              {navItems.map((item) => (
+              {footerNavItems.map((item) => (
                 <li key={item.href}>
                   <Link to={item.href} className="text-sm text-mute transition hover:text-paper">
                     {item.label[lang]}
