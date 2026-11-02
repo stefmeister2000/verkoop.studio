@@ -5,7 +5,6 @@ import SelectedWork from '../components/SelectedWork'
 import PersonalAds from '../components/PersonalAds'
 import AgencyCapabilities from '../components/AgencyCapabilities'
 import { StudioTools, OwnPlatforms } from '../components/StudioPlatforms'
-import AboutStef from '../components/AboutStef'
 import ProcessSection from '../components/ProcessSection'
 import PricingSection from '../components/PricingSection'
 import FAQ from '../components/FAQ'
@@ -39,7 +38,6 @@ export default function Home() {
       <AgencyCapabilities />
       <StudioTools />
       <OwnPlatforms />
-      <AboutStef />
       <FAQ />
       <FinalCTA />
     </div>
