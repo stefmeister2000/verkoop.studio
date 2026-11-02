@@ -1,7 +1,11 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useRef, useState, type FormEvent } from 'react'
 import { captureAttribution, trackEvent, trackLeadConversion, getGa4Context } from '../lib/analytics'
+import { useFormFunnel } from '../lib/useFormFunnel'
 import { useInView } from '../lib/useInView'
 import { useLang } from '../i18n/LanguageContext'
+
+/** The fields a visitor meets, in order. Drop-off is reported against these. */
+const STEPS = ['naam', 'email', 'telefoon', 'doel'] as const
 
 const GOALS = [
   { key: 'customers', nl: ['Meer klanten', 'Meer aanvragen of boekingen.'], en: ['More customers', 'More enquiries or bookings.'] },
@@ -15,12 +19,11 @@ const COPY = {
   nl: {
     labels: {
       naam: 'Naam',
-      bedrijf: 'Bedrijf (optioneel)',
+      bedrijf: 'Bedrijf',
       email: 'Zakelijk e-mailadres',
       telefoon: 'Telefoonnummer',
-      website: 'Website (optioneel)',
+      website: 'Website',
       doel: 'Waar kunnen we je mee helpen?',
-      uitdaging: 'Grootste uitdaging',
       investering: 'Beschikbaar project- of marketingbudget',
       kanalen: 'Huidige kanalen',
       timing: 'Gewenste timing',
@@ -31,7 +34,6 @@ const COPY = {
       email: 'Vul een geldig zakelijk e-mailadres in.',
       telefoon: 'Vul je telefoonnummer in.',
       doel: 'Kies je belangrijkste doel.',
-      uitdaging: 'Beschrijf kort je grootste uitdaging.',
     },
     optioneel: 'Optioneel',
     addOptional: '+ Extra info toevoegen (optioneel)',
@@ -46,12 +48,11 @@ const COPY = {
   en: {
     labels: {
       naam: 'Name',
-      bedrijf: 'Company (optional)',
+      bedrijf: 'Company',
       email: 'Business email',
       telefoon: 'Phone number',
-      website: 'Website (optional)',
+      website: 'Website',
       doel: 'What can we help you with?',
-      uitdaging: 'Biggest challenge',
       investering: 'Available project or marketing budget',
       kanalen: 'Current channels',
       timing: 'Desired timing',
@@ -62,7 +63,6 @@ const COPY = {
       email: 'Please enter a valid business email address.',
       telefoon: 'Please enter your phone number.',
       doel: 'Please choose your main goal.',
-      uitdaging: 'Briefly describe your biggest challenge.',
     },
     optioneel: 'Optional',
     addOptional: '+ Add more info (optional)',
@@ -82,7 +82,6 @@ interface FormState {
   telefoon: string
   website: string
   doel: string
-  uitdaging: string
   investering: string
   kanalen: string
   timing: string
@@ -96,7 +95,6 @@ const initialState: FormState = {
   telefoon: '',
   website: '',
   doel: '',
-  uitdaging: '',
   investering: '',
   kanalen: '',
   timing: '',
@@ -119,27 +117,12 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
   const [showOptional, setShowOptional] = useState(false)
   const submissionRef = useRef('')
   const honeypotRef = useRef('')
-  const startedRef = useRef(false)
-  const abandonedRef = useRef(false)
+  const funnel = useFormFunnel({ formId: id, steps: STEPS, lang })
 
   const { ref } = useInView<HTMLDivElement>(() => trackEvent('form_viewed', { form_id: id }))
 
-  useEffect(() => {
-    const handleLeave = () => {
-      if (startedRef.current && status !== 'done' && !abandonedRef.current) {
-        abandonedRef.current = true
-        trackEvent('form_abandoned', { form_id: id })
-      }
-    }
-    window.addEventListener('beforeunload', handleLeave)
-    return () => window.removeEventListener('beforeunload', handleLeave)
-  }, [id, status])
-
   function update<K extends keyof FormState>(key: K, value: string) {
-    if (!startedRef.current) {
-      startedRef.current = true
-      trackEvent('form_started', { form_id: id })
-    }
+    funnel.observe(key, value)
     setValues((prev) => ({ ...prev, [key]: value }))
   }
 
@@ -149,7 +132,6 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = t.errors.email
     if (!values.telefoon.trim()) next.telefoon = t.errors.telefoon
     if (!values.doel) next.doel = t.errors.doel
-    if (!values.uitdaging.trim()) next.uitdaging = t.errors.uitdaging
     setErrors(next)
     return Object.keys(next).length === 0
   }
@@ -182,7 +164,8 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
       })
       const receipt = await res.json()
       if (!res.ok || receipt.ok !== true) throw new Error(`Request failed: ${res.status}`)
-      trackEvent('form_submitted', { form_id: id, doel: values.doel, ...attribution })
+      funnel.markSubmitted()
+      trackEvent('form_submitted', { ...funnel.progress(), doel: values.doel, ...attribution })
       trackLeadConversion(receipt, submissionRef.current, id)
       setStatus('done')
     } catch {
@@ -212,15 +195,6 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
             onChange={(e) => update('naam', e.target.value)}
           />
         </Field>
-        <Field label={t.labels.bedrijf} error={errors.bedrijf} htmlFor="bedrijf">
-          <input
-            id="bedrijf"
-            autoComplete="organization"
-            className="input"
-            value={values.bedrijf}
-            onChange={(e) => update('bedrijf', e.target.value)}
-          />
-        </Field>
         <Field label={t.labels.email} error={errors.email ? t.errors.email : undefined} htmlFor="email">
           <input
             id="email"
@@ -243,18 +217,6 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
             onChange={(e) => update('telefoon', e.target.value)}
           />
         </Field>
-        <Field label={t.labels.website} error={errors.website} htmlFor="website">
-          <input
-            id="website"
-            inputMode="url"
-            autoCapitalize="none"
-            spellCheck={false}
-            placeholder="https://"
-            className="input"
-            value={values.website}
-            onChange={(e) => update('website', e.target.value)}
-          />
-        </Field>
         <fieldset className="goal-picker sm:col-span-2" aria-describedby={`${id}-goal-hint${errors.doel ? ` ${id}-goal-error` : ''}`} disabled={status === 'submitting'}>
             <legend>{t.labels.doel}</legend>
             <p id={`${id}-goal-hint`} className="goal-picker-hint">{lang === 'nl' ? 'Kies wat het best past. De details bekijken we samen.' : 'Choose the closest fit. We’ll work out the details together.'}</p>
@@ -268,15 +230,6 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
             </div>
             {errors.doel && <p id={`${id}-goal-error`} className="mt-2 text-sm text-accent-2" role="alert">{t.errors.doel}</p>}
           </fieldset>
-        <Field label={t.labels.uitdaging} error={errors.uitdaging ? t.errors.uitdaging : undefined} htmlFor="uitdaging" full>
-          <textarea
-            id="uitdaging"
-            rows={3}
-            className="input resize-none"
-            value={values.uitdaging}
-            onChange={(e) => update('uitdaging', e.target.value)}
-          />
-        </Field>
 
         {!compact && !showOptional && (
           <div className="sm:col-span-2">
@@ -293,6 +246,27 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
         {!compact && showOptional && (
           <>
             <div className="sm:col-span-2 pt-2 text-xs uppercase tracking-widest text-mute">{t.optioneel}</div>
+            <Field label={t.labels.bedrijf} htmlFor="bedrijf">
+              <input
+                id="bedrijf"
+                autoComplete="organization"
+                className="input"
+                value={values.bedrijf}
+                onChange={(e) => update('bedrijf', e.target.value)}
+              />
+            </Field>
+            <Field label={t.labels.website} htmlFor="website">
+              <input
+                id="website"
+                inputMode="url"
+                autoCapitalize="none"
+                spellCheck={false}
+                placeholder="https://"
+                className="input"
+                value={values.website}
+                onChange={(e) => update('website', e.target.value)}
+              />
+            </Field>
             <Field label={t.labels.investering} htmlFor="investering">
               <input
                 id="investering"
@@ -338,6 +312,7 @@ export default function QualificationForm({ id = 'audit-formulier', compact = fa
             autoComplete="off"
             onChange={(e) => {
               honeypotRef.current = e.target.value
+              funnel.observe('company_website', e.target.value)
             }}
           />
         </div>

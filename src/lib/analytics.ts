@@ -15,6 +15,8 @@ export type TrackingEvent =
   | 'audit_cta_clicked'
   | 'form_viewed'
   | 'form_started'
+  | 'form_step'
+  | 'form_email_captured'
   | 'form_abandoned'
   | 'form_submitted'
   | 'calendar_opened'

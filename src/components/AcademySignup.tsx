@@ -2,6 +2,10 @@ import { useAcademyTranslation } from '../i18n/academy'
 import { useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { captureAttribution, getGa4Context, trackAcademyConversion, trackEvent } from '../lib/analytics'
+import { useFormFunnel } from '../lib/useFormFunnel'
+
+/** The fields a visitor meets, in order. Drop-off is reported against these. */
+const STEPS = ['naam', 'email', 'telefoon'] as const
 
 interface AcademySignupProps {
   formId: string
@@ -27,13 +31,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
   const [niveau, setNiveau] = useState('')
   const [budget, setBudget] = useState('')
   const submissionId = useRef('')
-  const started = useRef(false)
-
-  function start() {
-    if (started.current) return
-    started.current = true
-    trackEvent('form_started', { form_id: formId })
-  }
+  const funnel = useFormFunnel({ formId, steps: STEPS, lang })
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -64,7 +62,8 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
         setStatus('idle')
         return
       }
-      trackEvent('form_submitted', { form_id: formId, ...attribution })
+      funnel.markSubmitted()
+      trackEvent('form_submitted', { ...funnel.progress(), ...attribution })
       trackAcademyConversion(receipt, submissionId.current, formId)
       onSuccess(naam.split(/\s+/)[0])
     } catch {
@@ -73,7 +72,10 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
     }
   }
 
-  return <form className={`ac-signup ${full ? 'ac-signup-full' : 'ac-signup-compact'}`} onSubmit={submit} onInput={start} noValidate data-clarity-mask="true">
+  return <form className={`ac-signup ${full ? 'ac-signup-full' : 'ac-signup-compact'}`} onSubmit={submit} onInput={event => {
+    const field = event.target as HTMLInputElement
+    if (field.name) funnel.observe(field.name, field.value)
+  }} noValidate data-clarity-mask="true">
     <div className="ac-signup-fields">
       <label className={`ac-field ${full ? '' : 'ac-field-wide'}`}><span className={full ? '' : 'sr-only'}>{t("Naam")}</span><input name="naam" autoComplete="name" required maxLength={200} placeholder={full ? '' : t("Je naam")} /></label>
       <label className="ac-field"><span className={full ? '' : 'sr-only'}>{t("E-mailadres")}</span><input name="email" type="email" autoComplete="email" autoCapitalize="none" spellCheck={false} required maxLength={200} placeholder={full ? '' : t("Je e-mailadres")} /></label>
@@ -81,8 +83,8 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       {full && <label className="ac-field"><span>{t("Bedrijf") + " "}<em>{t("optioneel")}</em></span><input name="bedrijf" autoComplete="organization" maxLength={200} /></label>}
       {full && <label className="ac-field ac-field-wide"><span>{t("Website of webshop") + " "}<em>{t("optioneel")}</em></span><input name="website" type="url" inputMode="url" autoCapitalize="none" spellCheck={false} maxLength={300} placeholder="https://" /></label>}
     </div>
-    {full && <Choices legend={t("Waar sta je met Meta ads?")} options={levels} value={niveau} onChange={value => { start(); setNiveau(value) }} />}
-    {full && <Choices legend={t("Maandelijks advertentiebudget")} options={budgets} value={budget} onChange={value => { start(); setBudget(value) }} />}
+    {full && <Choices legend={t("Waar sta je met Meta ads?")} options={levels} value={niveau} onChange={value => { funnel.observe('niveau', value); setNiveau(value) }} />}
+    {full && <Choices legend={t("Maandelijks advertentiebudget")} options={budgets} value={budget} onChange={value => { funnel.observe('budget', value); setBudget(value) }} />}
     {full && <label className="ac-field ac-field-wide"><span>{t("Waar wil je vooral beter in worden?") + " "}<em>{t("optioneel")}</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder={t("Bijvoorbeeld: opschalen zonder dat mijn ROAS zakt, mijn tracking op orde krijgen of retargeting opzetten.")} /></label>}
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
     {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.")}</span></label>}

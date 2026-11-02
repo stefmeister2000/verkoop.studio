@@ -53,6 +53,35 @@ New contacts enter the CRM as Website / New, with qualification answers in notes
 
 Run `npm run test:crm` for mapping, authentication, oversized-input and failure-response checks. Never use real visitor addresses for automated delivery tests.
 
+## Form funnel and unfinished forms
+
+Every form reports how far a visitor gets, not only whether they sent it.
+`src/lib/formFunnel.ts` holds the rules and `useFormFunnel` wires them to the
+browser. Alongside the existing `form_viewed`, `form_started` and
+`form_submitted`, the dataLayer receives:
+
+- `form_step` once per field reached, with `furthest_step`, `steps_completed`,
+  `step_count` and `progress_pct`.
+- `form_email_captured` the first time a usable email address is typed.
+- `form_abandoned` when the page is hidden or closed before sending, carrying
+  the same progress fields plus `email_captured`.
+
+Switching tab counts as leaving, and a visitor who returns and sends the form
+still fires `form_submitted`. Count an abandonment as a `form_abandoned`
+without a later `form_submitted`. These events are pushed to the dataLayer
+only; add GTM triggers to forward the ones GA4 should receive.
+
+`POST /api/lead/partial` keeps the email address of a visitor who typed one and
+left. The browser sends it with `navigator.sendBeacon`, so it survives the page
+closing. The address is stored as a Resend contact with a `form_unfinished`
+property recording the form, the drop-off point and the progress, and is added
+to `PARTIAL_LEAD_SEGMENT` when that segment is configured. This is **not** a
+subscription: no newsletter consent is given here, so the contact never joins
+the enquiry segment and never starts the enquiry follow-up flow, and an earlier
+unsubscribe is never overridden. The endpoint checks the same honeypot and
+limits requests per email and IP. Run `node --test tests/partial-lead.test.mjs
+tests/form-funnel.test.mjs`.
+
 ## Newsletter popup → Resend
 
 The compact NL/EN popup appears after 12 seconds, waits while visitors use another

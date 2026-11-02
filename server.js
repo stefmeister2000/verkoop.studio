@@ -6,6 +6,7 @@ import { crmPayload, sendToCrm } from './server-crm.js'
 import { Resend } from 'resend'
 import { sendConfirmation } from './server-confirmation.js'
 import { captureLead } from './server-lead.js'
+import { partialLeadRouter } from './server-partial.js'
 import { sendOpenAiLead } from './server-openai-conversions.js'
 import { newsletterRouter } from './server-newsletter.js'
 import { academyRouter } from './server-academy.js'
@@ -29,6 +30,9 @@ const {
   // Optional override for the confirmation ("thank you") sender. Defaults to
   // the verified domain sender below.
   LEAD_REPLY_FROM, // e.g. "Stef Keppens <stef@stefkeppens.be>"
+  // Resend segment for visitors who left a form unfinished. Without it their
+  // email is still stored on the contact, just not grouped in a segment.
+  PARTIAL_LEAD_SEGMENT,
 } = process.env
 
 const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null
@@ -59,6 +63,7 @@ app.use((req, res, next) => {
 })
 app.use(express.json({ limit: '32kb' }))
 app.use('/api/newsletter', newsletterRouter(resend))
+app.use('/api/lead/partial', partialLeadRouter({ resend, segmentId: PARTIAL_LEAD_SEGMENT }))
 app.use('/api/academy-info', academyInfoRouter({ resend, from: SENDER, to: LEAD_TO }))
 app.use('/api/academy', academyRouter({
   resend, from: SENDER, to: LEAD_TO, replyFrom: LEAD_REPLY_FROM,
@@ -97,7 +102,7 @@ app.post('/api/lead', async (req, res) => {
     // Honeypot: real users never fill this hidden field.
     if (b.company_website) return res.json({ ok: true })
 
-    const required = ['naam', 'email', 'telefoon', 'doel', 'uitdaging']
+    const required = ['naam', 'email', 'telefoon', 'doel']
     for (const f of required) {
       if (!b[f] || !String(b[f]).trim()) return res.status(400).json({ error: 'missing_fields' })
     }
