@@ -14,7 +14,10 @@ import image4 from '../assets/cases/nooms.webp'
 import small4 from '../assets/cases/nooms-640.webp'
 import image6 from '../assets/cases/ekart.webp'
 import small6 from '../assets/cases/ekart-640.webp'
+import healthfactor from '../assets/cases/healthfactor-website.webp'
+import healthfactorSmall from '../assets/cases/healthfactor-website-640.webp'
 export const optimizedImages: Record<string, {width:number; height:number; srcSet?:string}> = {
+  [healthfactor]: {width:1440, height:749, srcSet:`${healthfactorSmall} 640w, ${healthfactor} 1440w`},
   '/images/ads/healthfactor-personal.jpg': {width:720, height:1280},
   [image0]: {width:1254, height:1254, srcSet:`${small0} 640w, ${image0} 1254w`},
   [image1]: {width:848, height:1066, srcSet:`${small1} 640w, ${image1} 848w`},
