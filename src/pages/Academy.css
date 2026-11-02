@@ -353,21 +353,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
 /* Plans */
 
 /* Signup section */
-/* The same shape as the studio's contact page: Stef on the left, the form on the right,
-   so you can see who answers before you fill anything in. */
-.ac-signup-section { display: grid; grid-template-columns: minmax(280px, 400px) minmax(0, 1fr); align-items: start; gap: 24px; margin-top: 140px; scroll-margin-top: 96px; }
-.ac-signup-aside { display: grid; gap: 16px; }
-.ac-signup-portrait { position: relative; height: clamp(420px, 52vh, 560px); border-radius: 24px; overflow: hidden; background: #d7def6; }
-.ac-signup-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 14%; }
-.ac-signup-note { padding: 20px 22px 10px; background: #fff; border: 1px solid var(--ac-line); border-radius: 20px; }
-.ac-signup-who { display: flex; flex-direction: column; gap: 2px; }
-.ac-signup-who strong { font-size: 18px; font-weight: 650; letter-spacing: -.03em; }
-.ac-signup-who span { color: var(--ac-text); font-size: 14px; }
-.ac-signup-mail { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; color: var(--ac-blue); font-size: 15px; font-weight: 600; }
-.ac-signup-mail:hover { color: var(--ac-blue-deep); }
-.ac-signup-steps { margin-top: 4px; }
-.ac-signup-steps li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: center; padding: 13px 0; border-top: 1px solid var(--ac-line); font-size: 15px; line-height: 1.45; }
-.ac-signup-steps li::before { content: ''; width: 18px; height: 2px; background: var(--ac-blue); }
+.ac-signup-section { width: min(760px, 100% - 48px); margin-top: 140px; scroll-margin-top: 96px; }
 .ac-privacy { max-width: 46rem; margin-top: 22px; color: var(--ac-mute); font-size: 12.5px; line-height: 1.55; }
 .ac-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .ac-signup-card { padding: 34px 34px 30px; border-radius: 24px; background: #fff; border: 1px solid var(--ac-line); box-shadow: 0 30px 70px -50px #181c3d66; }
@@ -463,9 +449,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-hero { grid-template-columns: 1fr; grid-template-areas: "copy" "video" "action"; row-gap: 28px; padding-top: 36px; }
   .ac-hero-signup { margin-top: 0; }
   .ac-hv { zoom: 1; margin-inline: auto; }
-  .ac-signup-section { grid-template-columns: 1fr; gap: 20px; margin-top: 96px; }
-  .ac-signup-aside { order: 2; }
-  .ac-signup-portrait { height: clamp(280px, 56vw, 420px); }
+  .ac-signup-section { margin-top: 96px; }
   .ac-slide, .ac-honest, .ac-faq { grid-template-columns: 1fr; }
   .ac-focus { grid-template-columns: 1fr; gap: 36px; margin-top: 88px; }
   .ac-focus-card { position: static; max-width: 420px; }
@@ -500,8 +484,6 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-welcome-card { flex-wrap: wrap; }
   .ac-welcome-card .ac-button { width: 100%; margin-left: 0; }
   .ac-signup-card { padding: 22px 18px 20px; border-radius: 20px; }
-  .ac-signup-portrait { height: clamp(260px, 70vw, 360px); border-radius: 20px; }
-  .ac-signup-portrait img { object-position: center 18%; }
   .ac-footer { padding-bottom: 100px; }
   .ac-hero-actions .ac-button { flex: 1 1 100%; }
   .academy-page section h2, .ac-honest h2, .ac-faq h2, .ac-final h2 { font-size: 31px; }
