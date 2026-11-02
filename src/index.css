@@ -535,12 +535,12 @@ main > div:not(.studio-home) {
 }
 .selected-work {
   display: grid;
-  grid-template-columns: 1.1fr repeat(3, 1fr);
+  grid-template-columns: 1.1fr minmax(0, 2.5fr);
   gap: 18px;
   padding: 34px;
+  align-items: start;
 }
 .work-intro {
-  grid-row: span 2;
   padding: 5px 13px 0 0;
 }
 .work-intro h2 {
@@ -560,6 +560,55 @@ main > div:not(.studio-home) {
 }
 .work-intro .button-dark {
   margin-top: 22px;
+}
+.work-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 26px;
+}
+.work-controls button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e1e4ef;
+  border-radius: 50%;
+  background: #fff;
+  color: #171d36;
+  font-size: 17px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    opacity 0.2s;
+}
+.work-controls button:hover:not(:disabled) {
+  border-color: #254bfa;
+  color: #254bfa;
+}
+.work-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+/* A peeking next card does the work of telling visitors the row keeps going. */
+.work-track {
+  display: flex;
+  gap: 18px;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 6px;
+}
+.work-track::-webkit-scrollbar {
+  display: none;
+}
+.work-track:focus-visible {
+  outline: 3px solid #7891ff;
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+.work-track > .project-tile {
+  flex: 0 0 calc((100% - 30px) / 2.3);
+  scroll-snap-align: start;
 }
 .project-tile {
   display: block;
@@ -763,12 +812,13 @@ button:focus-visible {
     bottom: 32px;
   }
   .selected-work {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
   .work-intro {
-    grid-column: 1/-1;
-    grid-row: auto;
     padding: 0 0 14px;
+  }
+  .work-track > .project-tile {
+    flex-basis: calc((100% - 18px) / 1.75);
   }
   .work-intro h2 {
     font-size: 35px;
@@ -849,18 +899,6 @@ button:focus-visible {
   }
   .work-intro h2 {
     font-size: 32px;
-  }
-  .project-image {
-    aspect-ratio: 0.95;
-  }
-  .project-caption {
-    padding: 11px;
-  }
-  .project-caption h3 {
-    font-size: 12px;
-  }
-  .project-caption p {
-    font-size: 9px;
   }
   .studio-home > section > div.max-w-6xl {
     padding: 36px 22px;
