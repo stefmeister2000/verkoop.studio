@@ -31,7 +31,7 @@ test('all explicit translation keys resolve and Dutch remains in prerendered HTM
     walk(ast)
   }
   const html = await readFile(new URL('../dist/academy/index.html', import.meta.url), 'utf8')
-  assert.match(html, /Start en schaal je webshop/)
+  assert.match(html, /Bouw en schaal je merk/)
   assert.match(html, /aria-label="English"/)
-  assert.match(html, /href="https:\/\/verkoop\.studio\/"[^>]*>Wil je dat wij jouw ads overnemen\?/)
+  assert.match(html, /aria-label="Verkoop Studio, naar de homepage" href="\/"/)
 })
