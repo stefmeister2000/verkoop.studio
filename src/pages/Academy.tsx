@@ -327,12 +327,8 @@ export default function Academy() {
     <main id="academy-main">
       <section className="ac-hero ac-wrap" aria-labelledby="academy-title">
         <div className="ac-hero-copy">
-          <h1 id="academy-title">{t("Bouw en schaal je merk") + " "}<span>{t("met Meta ads.")}</span></h1>
-          <dl className="ac-spec">
-            <div><dt>{t('Voor wie')}</dt><dd>{t('Webshops en B2B-bedrijven, startend of groeiend')}</dd></div>
-            <div><dt>{t('Waarover')}</dt><dd>{t('Ads, landingspagina’s en tracking: je hele funnel')}</dd></div>
-            <div><dt>{t('Met wie')}</dt><dd>{t('1-op-1 met Stef, in je eigen advertentieaccount')}</dd></div>
-          </dl>
+          <h1 id="academy-title">{t("Leer je") + " "}<span>{t("merk schalen.")}</span></h1>
+          <p className="ac-hero-intro">{t("Werk 1-op-1 met Stef aan je advertenties, landingspagina’s en opvolging. Leer hoe je nieuwe klanten aantrekt, je cijfers leest en je merk stap voor stap laat groeien.")}</p>
         </div>
         <HeroVideo lang={lang} />
         <div className="ac-hero-conversion">
