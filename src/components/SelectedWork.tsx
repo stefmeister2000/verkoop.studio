@@ -23,7 +23,7 @@ export default function SelectedWork() {
   const { lang } = useLang()
   const nl = lang === 'nl'
   const selected = ['pinacello', 'nooms', 'e-kart', 'healthfactor'].flatMap((slug) => cases.filter((c) => c.slug === slug))
-  const featuredPartners = ['WERKR'].flatMap(name => {
+  const featuredPartners = ['WERKR', 'Jobr'].flatMap(name => {
     const project = lyteCases.find(c => c.name === name)
     return project ? [project] : []
   })

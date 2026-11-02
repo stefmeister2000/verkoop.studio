@@ -31,6 +31,10 @@ export default function Home() {
       />
       <PersonalHero />
       <SelectedWork />
+      <PricingSection />
+      <div id="aanpak">
+        <ProcessSection />
+      </div>
       <PersonalAds />
       <GrowthGoals />
       <RevenueGrowth />
@@ -38,10 +42,6 @@ export default function Home() {
       <StudioTools />
       <OwnPlatforms />
       <AboutStef />
-      <div id="aanpak">
-        <ProcessSection />
-      </div>
-      <PricingSection />
       <FAQ />
       <FinalCTA />
     </div>
