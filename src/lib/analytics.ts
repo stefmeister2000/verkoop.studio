@@ -5,6 +5,7 @@
  */
 
 export type TrackingEvent =
+  | 'whatsapp_clicked'
   | 'traffic_source_captured'
   | 'referral_source_captured'
   | 'linkedin_campaign_captured'
