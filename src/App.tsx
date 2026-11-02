@@ -35,6 +35,7 @@ export default function App({ location }: { location?: string }) {
           <Route path="cases/pinacello" element={<CaseStudyPage slug="pinacello" />} />
           <Route path="cases/e-kart" element={<CaseStudyPage slug="e-kart" />} />
           <Route path="cases/nooms" element={<CaseStudyPage slug="nooms" />} />
+          <Route path="cases/healthfactor" element={<CaseStudyPage slug="healthfactor" />} />
 
           <Route path="funnel-audit" element={<FunnelAudit />} />
           <Route path="agency" element={<OverStef />} />

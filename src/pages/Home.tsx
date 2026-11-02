@@ -3,6 +3,7 @@ import GrowthGoals from '../components/GrowthGoals'
 import PersonalHero from '../components/PersonalHero'
 import RevenueGrowth from '../components/RevenueGrowth'
 import SelectedWork from '../components/SelectedWork'
+import PersonalAds from '../components/PersonalAds'
 import AgencyCapabilities from '../components/AgencyCapabilities'
 import { StudioTools, OwnPlatforms } from '../components/StudioPlatforms'
 import AboutStef from '../components/AboutStef'
@@ -30,6 +31,7 @@ export default function Home() {
       />
       <PersonalHero />
       <SelectedWork />
+      <PersonalAds />
       <GrowthGoals />
       <RevenueGrowth />
       <AgencyCapabilities />

@@ -22,9 +22,11 @@ export default function CaseVisual({ case: c, lang, ratio = 'aspect-[16/10]', cl
       <div className={`mx-auto flex w-fit max-w-full justify-center rounded-2xl border border-line bg-black ${className}`}>
         <video
           src={c.video}
+          poster={c.videoPoster}
+          aria-label={`${c.name} video`}
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           className="max-h-[70vh] w-auto max-w-full rounded-2xl"
         />
       </div>

@@ -11,7 +11,8 @@ export const cases: CaseStudy[] = [
     status: 'ongoing',
     liveUrl: 'https://promo.pinacello.com/',
     image: pinacello,
-    video: '/videos/pinacello.mp4',
+    video: '/videos/ads/pinacello-personal.mp4',
+    videoPoster: '/images/ads/pinacello-personal.jpg',
     videoCaption: {
       nl: '20 verkopen uit één organische video. We focussen op zelfgemaakte producten.',
       en: '20 sales from one organic video. We focus on self-made products.',
@@ -151,7 +152,48 @@ export const cases: CaseStudy[] = [
       en: 'Building a scalable digital route from product discovery to first purchase and repeat purchase.',
     },
   },
-
+  {
+    slug: 'healthfactor',
+    name: 'Healthfactor',
+    sector: { nl: 'Fitness · Persoonlijke videoadvertenties', en: 'Fitness · Personal video ads' },
+    status: 'showcase',
+    image: '/images/ads/healthfactor-personal.jpg',
+    video: '/videos/ads/healthfactor-personal.mp4',
+    videoPoster: '/images/ads/healthfactor-personal.jpg',
+    videoCaption: {
+      nl: 'Een persoonlijk verhaal, rechtstreeks vanuit de gym. Bekijk de advertentie voor Healthfactor.',
+      en: 'A personal story, straight from the gym. Watch the Healthfactor ad.',
+    },
+    summary: {
+      nl: 'Een gezicht bij de gym. Healthfactor stelt zich voor met een persoonlijke videoadvertentie, gefilmd tussen de toestellen en trainingsplekken.',
+      en: 'A face behind the gym. Healthfactor introduces itself through a personal video ad, filmed among the equipment and training spaces.',
+    },
+    situation: {
+      nl: 'Wie een gym kiest, wil ook weten hoe het er aanvoelt. De Healthfactor-video laat de ruimte zien en geeft het woord aan iemand die de kijker persoonlijk aanspreekt.',
+      en: 'Choosing a gym also means getting a feel for the place. The Healthfactor video shows the space and lets someone speak directly to the viewer.',
+    },
+    challenge: {
+      nl: 'In een korte video moet duidelijk worden wat iemand kan verwachten. Een vertrouwd gezicht, beelden van de gym en leesbare ondertitels helpen het verhaal over te brengen.',
+      en: 'A short video needs to make it clear what someone can expect. A familiar face, footage of the gym and readable subtitles help tell that story.',
+    },
+    role: {
+      nl: 'De persoonlijke advertentie vormt hier het vertrekpunt: rechtstreeks in de camera vertellen, afwisselen met beelden op locatie en de boodschap ondersteunen met ondertitels.',
+      en: 'The personal ad is the starting point here: speaking directly to camera, alternating with footage on location and supporting the message with subtitles.',
+    },
+    builtLabel: { nl: 'Wat je in de advertentie ziet', en: 'What you see in the ad' },
+    built: {
+      nl: ['Een persoon die de kijker rechtstreeks aanspreekt', 'Beelden uit de gym en verschillende trainingsplekken', 'Een verticale video met ingebouwde ondertitels'],
+      en: ['A person speaking directly to the viewer', 'Footage from the gym and different training spaces', 'A vertical video with embedded subtitles'],
+    },
+    measurement: {
+      nl: 'Bij dit soort campagnes kijken we naar aanvragen en kennismakingen, naast videoweergaven en klikken.',
+      en: 'For this type of campaign, we look at enquiries and introductory appointments alongside video views and clicks.',
+    },
+    objective: {
+      nl: 'Bezoekers laten kennismaken met de sfeer en de mensen achter Healthfactor.',
+      en: 'Introduce viewers to the atmosphere and people behind Healthfactor.',
+    },
+  },
 ]
 
 export const getCase = (slug: string) =>
