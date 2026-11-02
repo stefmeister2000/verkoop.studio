@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { pricingTiers, featureRows, addOns } from '../data/pricing'
+import { pricingTiers, featureRows } from '../data/pricing'
 import type { TierKey } from '../data/pricing'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -74,10 +74,6 @@ export default function PricingSection() {
         </details>
         <div className="pricing-first-step">
           <div><h3>{nl ? 'Hulp nodig bij je keuze?' : 'Need help choosing?'}</h3><p>{nl ? 'Samen bekijken we wat je bedrijf nodig heeft.' : 'Let’s look at what your business needs.'}</p><Link className="button-dark" to="/contact">{nl ? 'Help me kiezen' : 'Help me choose'} <span aria-hidden="true">↗</span></Link></div>
-          <div className="pricing-alternatives">{addOns.map(addOn => {
-            const content = <><h4>{addOn.name[lang]}</h4><strong>{addOn.price?.[lang] ?? (nl ? 'Op aanvraag' : 'On request')}</strong><p>{addOn.description[lang]}</p></>
-            return addOn.href ? <Link key={addOn.key} to={addOn.href} className="pricing-alternative-link">{content}<span aria-hidden="true">↗</span></Link> : <div key={addOn.key}>{content}</div>
-          })}</div>
         </div>
       </div>
     </section>
