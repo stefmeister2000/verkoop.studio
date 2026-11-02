@@ -67,13 +67,13 @@ export const academyModules: AcademyModule[] = [
 ]
 
 export const academyFaq = [
-  { question: 'Voor wie zijn de lessen?', answer: 'Voor webshops die met Meta ads willen starten of meer uit hun ads willen halen. Nog nooit geadverteerd? Dan beginnen we bij de basis.' },
+  { question: 'Voor wie zijn de lessen?', answer: 'Voor ondernemers die hun merk willen laten groeien met Meta Ads en Google Ads. Nog nooit geadverteerd? Dan beginnen we bij de basis.' },
   { question: 'Hoe werken de 1-op-1 lessen?', answer: 'Je vraagt een kennismaking aan. Stef neemt contact op om je doelen te bespreken. Daarna kies je of je start met 1-op-1 lessen in je eigen account.' },
-  { question: 'Wat kost het?', answer: 'Een prijs op maat, afhankelijk van je doel en hoeveel begeleiding je nodig hebt. Je hoort hem na de kennismaking. Je advertentiebudget betaal je zelf aan Meta.' },
+  { question: 'Wat kost het?', answer: 'Een prijs op maat, afhankelijk van je doel en hoeveel begeleiding je nodig hebt. Je hoort hem na de kennismaking. Je advertentiebudget betaal je zelf aan Meta of Google.' },
   { question: 'Heb ik een minimumbudget nodig?', answer: 'Geen vast minimum. Wat zinvol is, hangt af van je marge en je productprijs. Dat bekijken we samen in de kennismaking.' },
   { question: 'Werkt dit voor Shopify, WooCommerce of andere platformen?', answer: 'Ja. Alleen de koppeling van pixel en Conversions API verschilt per platform, en die lopen we samen na.' },
   { question: 'Wat gebeurt er met mijn gegevens?', answer: 'Stef gebruikt je naam, e-mail, telefoon en wat je invult om contact met je op te nemen, en we bewaren je aanmelding in ons klantenbestand. Nieuwsbrieven krijg je alleen als je dat aanvinkt.' },
-  { question: 'Is dit een officiële Meta-opleiding?', answer: 'Nee. Dit zijn onafhankelijke lessen van Verkoop Studio, zonder Meta-certificering.' },
+  { question: 'Is dit een officiële opleiding van Meta of Google?', answer: 'Nee. Dit zijn onafhankelijke lessen van Verkoop Studio, zonder certificering van Meta of Google.' },
 ]
 
 export interface AcademyTest {

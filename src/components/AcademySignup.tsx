@@ -5,7 +5,7 @@ import { captureAttribution, getGa4Context, trackAcademyConversion, trackEvent }
 
 interface AcademySignupProps {
   formId: string
-  /** "compact" asks name, email and phone; "full" also asks company, webshop, experience, ad budget and a question. */
+  /** "compact" asks name, email and phone; "full" also asks company, webshop, experience and ad budget. */
   variant?: 'compact' | 'full'
   submitLabel?: string
   onSuccess: (firstName: string) => void
@@ -53,7 +53,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       const response = await fetch('/api/academy', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(25_000),
         body: JSON.stringify({
-          naam, email, telefoon, bedrijf: data.get('bedrijf') ?? '', website: data.get('website') ?? '', vraag: data.get('vraag') ?? '', niveau, budget,
+          naam, email, telefoon, bedrijf: data.get('bedrijf') ?? '', website: data.get('website') ?? '', niveau, budget,
           nieuwsbrief: data.get('nieuwsbrief') === 'on', form_id: formId, submission_id: submissionId.current,
           company_website: data.get('company_website'), attribution, ga4, lang,
         }),
@@ -81,9 +81,8 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       {full && <label className="ac-field"><span>{t("Bedrijf") + " "}<em>{t("optioneel")}</em></span><input name="bedrijf" autoComplete="organization" maxLength={200} /></label>}
       {full && <label className="ac-field ac-field-wide"><span>{t("Website of webshop") + " "}<em>{t("optioneel")}</em></span><input name="website" type="url" inputMode="url" autoCapitalize="none" spellCheck={false} maxLength={300} placeholder="https://" /></label>}
     </div>
-    {full && <Choices legend={t("Waar sta je met Meta ads?")} options={levels} value={niveau} onChange={value => { start(); setNiveau(value) }} />}
+    {full && <Choices legend={t("Waar sta je met adverteren?")} options={levels} value={niveau} onChange={value => { start(); setNiveau(value) }} />}
     {full && <Choices legend={t("Maandelijks advertentiebudget")} options={budgets} value={budget} onChange={value => { start(); setBudget(value) }} />}
-    {full && <label className="ac-field ac-field-wide"><span>{t("Waar wil je vooral beter in worden?") + " "}<em>{t("optioneel")}</em></span><textarea name="vraag" rows={3} maxLength={2000} placeholder={t("Bijvoorbeeld: opschalen zonder dat mijn ROAS zakt, mijn tracking op orde krijgen of retargeting opzetten.")} /></label>}
     <input className="ac-honeypot" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
     {full && <label className="ac-consent"><input type="checkbox" name="nieuwsbrief" /><span>{t("Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.")}</span></label>}
     <button type="submit" className="ac-button ac-signup-submit" disabled={status === 'pending'}>{status === 'pending' ? t("Even geduld…") : (submitLabel ?? t('Plan een kennismaking'))}</button>
