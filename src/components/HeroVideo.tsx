@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './HeroVideo.css'
 
-export default function HeroVideo({ lang = 'nl', videoId = 'tSjPY9J6ynk', title }: { lang?: 'nl' | 'en'; videoId?: string; title?: string }) {
+export default function HeroVideo({ lang = 'nl', videoId = 'tSjPY9J6ynk', title, autoPlay = false }: { lang?: 'nl' | 'en'; videoId?: string; title?: string; autoPlay?: boolean }) {
   const videoTitle = title ?? (lang === 'nl' ? 'Waarom je Meta Ads geld VERBRANDEN (en hoe je het fixt)' : 'Why your Meta Ads BURN money (and how to fix it) — video in Dutch')
-  const [playing, setPlaying] = useState(false)
+  const [playing, setPlaying] = useState(autoPlay)
   return (
     <div className="hero-video">
       {playing ? (
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0${autoPlay ? '&mute=1' : ''}`}
           title={videoTitle}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
