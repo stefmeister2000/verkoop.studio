@@ -40,6 +40,7 @@
   .brand-name > span { font-size: 12px; }
   .verkoop-brand-icon { width: 36px; height: 36px; }
   .studio-hero .hero-copy { padding: 24px 20px 12px; }
+  .studio-hero .hero-video-area { order: -1; padding: 20px 20px 0; }
   .studio-hero .hero-copy h1 { font-size: clamp(34px,9vw,52px); line-height: 1.08; }
   .studio-hero .hero-description { font-size: 16px; line-height: 1.7; }
   .studio-hero .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
