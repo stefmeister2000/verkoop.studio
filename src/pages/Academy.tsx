@@ -13,7 +13,6 @@ import { cases } from '../data/cases'
 import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefNooms from '../assets/stef.webp'
-import stefPortrait from '../assets/hero-portrait.webp'
 import stefDesk from '../assets/stef-desk.webp'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
 import studentUpdate from '../assets/academy-student-update.png'
@@ -507,17 +506,6 @@ export default function Academy() {
             <p className="ac-privacy">{t("We gebruiken je gegevens alleen om contact met je op te nemen over de academy. Nieuwsbrieven krijg je enkel als je dat aanvinkt.")} <Link to="/privacy">{t("Privacybeleid")}</Link></p>
           </>}
         </div>
-      </section>
-
-      <section className="ac-honest ac-wrap" aria-labelledby="honest-title">
-        <div className="ac-honest-copy ac-reveal">
-          <h2 id="honest-title">{t("Eén belofte.")}<br /><span>{t("ROAS 3 tot 4.")}</span></h2>
-          <p>{t("Geen snelle trucs of vage beloftes over viraal gaan. Eén duidelijk doel waar elke les naartoe werkt: €3 tot €4 omzet per euro advertentiebudget.")}</p>
-          <p className="ac-strong-line">{t("Met de werkwijze die Stef ook voor klanten als Pinacello en zijn eigen merk gebruikt.")}</p>
-          <p className="ac-small">{t("Benieuwd hoe dat in de praktijk loopt?")}</p>
-          <div className="ac-hero-actions"><Link className="ac-button" to="/cases">{t("Bekijk onze cases")}</Link><a className="ac-text-link" href="https://verkoop.studio/">{t("Wil je dat wij jouw ads overnemen?")}</a></div>
-        </div>
-        <figure className="ac-honest-photo ac-reveal"><ResponsiveImage src={stefPortrait} alt={t("Stef Keppens van Verkoop Studio")} sizes="(max-width: 900px) 100vw, 520px" loading="lazy" /></figure>
       </section>
 
       <section id="faq" className="ac-faq ac-wrap" aria-labelledby="faq-title">
