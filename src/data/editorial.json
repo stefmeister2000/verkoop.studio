@@ -379,5 +379,14 @@
       "modifiedAt": "2026-10-29"
     }
   ],
-  "metadata": {}
+  "metadata": {
+    "/websites": {
+      "title": "Website of webshop laten maken",
+      "description": "Een website of webshop laten maken? Verkoop Studio bouwt je site rond aanvragen, reservaties of aankopen. Bespreek je project en ontvang een voorstel."
+    },
+    "/data-analytics": {
+      "title": "GA4 en conversies meten",
+      "description": "We controleren je GA4 en conversietracking en maken dashboards met kosten, aanvragen en beschikbare omzetdata. Krijg inzicht in wat je marketing oplevert."
+    }
+  }
 }
