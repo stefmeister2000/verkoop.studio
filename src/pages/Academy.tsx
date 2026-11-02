@@ -208,7 +208,7 @@ export default function Academy() {
     ['Tracking', t('Onze pixelsoftware voor server-side tracking, plus GA4 en Meta Pixel.')],
     [t('E-mailmarketing'), t('Volg winkelwagens op en breng klanten terug voor hun volgende aankoop.')],
   ]
-  const otherCases = cases.filter(item => item.slug !== 'pinacello')
+  const otherCases = cases.filter(item => !['pinacello', 'healthfactor'].includes(item.slug))
   const caseCopy: Record<string, string> = {
     'e-kart': t('Een duidelijke route van interesse naar een kartboeking.'),
     nooms: t('Van productontdekking via influencers naar aankoop en herhaalaankoop.'),
