@@ -2,6 +2,7 @@ import type { CaseStudy } from './types'
 import nooms from '../assets/cases/nooms.webp'
 import pinacello from '../assets/cases/pinacello.webp'
 import ekart from '../assets/cases/ekart.webp'
+import healthfactor from '../assets/cases/healthfactor-website.webp'
 
 export const cases: CaseStudy[] = [
   {
@@ -157,7 +158,7 @@ export const cases: CaseStudy[] = [
     name: 'Healthfactor',
     sector: { nl: 'Fitness · Persoonlijke videoadvertenties', en: 'Fitness · Personal video ads' },
     status: 'showcase',
-    image: '/images/ads/healthfactor-personal.jpg',
+    image: healthfactor,
     video: '/videos/ads/healthfactor-personal.mp4',
     videoPoster: '/images/ads/healthfactor-personal.jpg',
     videoCaption: {
