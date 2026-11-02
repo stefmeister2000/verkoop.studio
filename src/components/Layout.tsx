@@ -1,4 +1,3 @@
-import FaqChat from './FaqChat'
 import { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './Nav'
@@ -41,7 +40,6 @@ export default function Layout() {
       </main>
       <Footer onNewsletterOpen={() => setNewsletterRequest(value => value + 1)} />
       <BackToTop />
-      <FaqChat />
       <WhatsAppSupport />
       <StickyMobileCTA />
       <EmailCapture openRequest={newsletterRequest} />
