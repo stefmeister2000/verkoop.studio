@@ -6,6 +6,7 @@ import Footer from './Footer'
 import StickyMobileCTA from './StickyMobileCTA'
 import BackToTop from './BackToTop'
 import EmailCapture from './EmailCapture'
+import WhatsAppSupport from './WhatsAppSupport'
 import { usePageMotion } from '../lib/usePageMotion'
 import { usePrimaryButtonMotion } from '../lib/usePrimaryButtonMotion'
 import { captureAttribution } from '../lib/analytics'
@@ -41,6 +42,7 @@ export default function Layout() {
       <Footer onNewsletterOpen={() => setNewsletterRequest(value => value + 1)} />
       <BackToTop />
       <FaqChat />
+      <WhatsAppSupport />
       <StickyMobileCTA />
       <EmailCapture openRequest={newsletterRequest} />
     </div>
