@@ -10,7 +10,7 @@ const COPY = {
   nl: {
     seoTitle: 'Cases',
     seoDescription:
-      "Ecommerce, hospitality en consumer brands: cases van Pinacello, E-Kart en Nooms.",
+      "Ecommerce, hospitality en consumer brands: cases van Pinacello, Healthfactor, E-Kart en Nooms.",
     title: 'Werk dat ideeën verder brengt',
     body: 'Van groeicampagnes en ecommerce tot apps en platformen. Ontdek de ervaring achter Verkoop Studio, met de oorspronkelijke uitvoerder bij elk project.',
     ongoing: 'Lopend project',
@@ -19,7 +19,7 @@ const COPY = {
   en: {
     seoTitle: 'Cases',
     seoDescription:
-      "Ecommerce, hospitality and consumer brands: cases from Pinacello, E-Kart and Nooms.",
+      "Ecommerce, hospitality and consumer brands: cases from Pinacello, Healthfactor, E-Kart and Nooms.",
     title: 'Work that takes ideas further',
     body: 'From growth campaigns and ecommerce to apps and platforms. Explore the experience behind Verkoop Studio, with the original team credited on each project.',
     ongoing: 'Ongoing project',

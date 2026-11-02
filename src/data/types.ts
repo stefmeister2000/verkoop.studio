@@ -27,13 +27,13 @@ export interface Service {
   partnerCase?: { name: string; url: string; description: Bi<string> }
 }
 
-export type CaseSlug = 'pinacello' | 'e-kart' | 'nooms'
+export type CaseSlug = 'pinacello' | 'e-kart' | 'nooms' | 'healthfactor'
 
 export interface CaseStudy {
   slug: CaseSlug
   name: string
   sector: Bi<string>
-  status: 'ongoing' | 'afgerond'
+  status: 'ongoing' | 'afgerond' | 'showcase'
   summary: Bi<string>
   situation: Bi<string>
   challenge: Bi<string>
@@ -44,6 +44,7 @@ export interface CaseStudy {
   objective: Bi<string>
   image?: string
   video?: string
+  videoPoster?: string
   videoCaption?: Bi<string>
   comingSoon?: boolean
   unavailable?: boolean

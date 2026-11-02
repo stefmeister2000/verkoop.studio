@@ -5,6 +5,10 @@ import { cases } from '../data/cases'
 import { lyteCases } from '../data/lyteCases'
 
 const cardLine: Record<string, { nl: string; en: string }> = {
+  healthfactor: {
+    nl: 'Een gezicht bij de gym. Persoonlijke videoadvertenties.',
+    en: 'A face behind the gym. Personal video ads.',
+  },
   nooms: {
     nl: 'Pre-sale via influencer marketing volledig uitverkocht.',
     en: 'Pre-sale sold out completely via influencer marketing.',
@@ -18,7 +22,7 @@ const cardLine: Record<string, { nl: string; en: string }> = {
 export default function SelectedWork() {
   const { lang } = useLang()
   const nl = lang === 'nl'
-  const selected = ['pinacello', 'nooms', 'e-kart'].flatMap((slug) => cases.filter((c) => c.slug === slug))
+  const selected = ['pinacello', 'nooms', 'e-kart', 'healthfactor'].flatMap((slug) => cases.filter((c) => c.slug === slug))
   const featuredPartners = ['WERKR'].flatMap(name => {
     const project = lyteCases.find(c => c.name === name)
     return project ? [project] : []
