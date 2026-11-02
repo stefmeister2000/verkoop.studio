@@ -85,6 +85,7 @@
 .ac-hero > .hero-video { grid-area: video; align-self: center; }
 .ac-hero-conversion { grid-area: action; }
 .ac-hero-copy h1 { font-size: clamp(38px, 4.3vw, 56px); line-height: 1.04; font-weight: 700; letter-spacing: -.04em; text-wrap: balance; }
+.ac-hero-intro { max-width: 34rem; margin-top: 22px; color: var(--ac-text); font-size: clamp(16px, 1.7vw, 18px); line-height: 1.65; }
 .ac-hero-signup { width: 100%; margin-top: 28px; padding: 0; scroll-margin-top: 100px; }
 /* mobile.css pads every div that wraps a form; these wrappers are already styled. */
 .ac-footer-top { padding: 0; }
@@ -441,7 +442,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-header-inner { grid-template-columns: 1fr auto; }
   .ac-pill-nav { display: none; }
   :where(.academy-page section) h2 { font-size: 36px; }
-  .ac-hero { grid-template-columns: 1fr; grid-template-areas: "copy" "video" "action"; row-gap: 28px; padding-top: 36px; }
+  .ac-hero { grid-template-columns: 1fr; grid-template-areas: "video" "copy" "action"; row-gap: 28px; padding-top: 36px; }
   .ac-hero-signup { margin-top: 0; }
   .ac-hv { zoom: 1; margin-inline: auto; }
   .ac-signup-section { margin-top: 96px; }
