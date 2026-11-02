@@ -166,7 +166,6 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <div id="faq-chat-anchor" />
           <button
             ref={menuButton}
             aria-controls="mobile-navigation"
