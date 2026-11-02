@@ -31,7 +31,7 @@ export default function PersonalHero() {
         </div>
       </div>
       <div className="hero-video-area">
-        <HeroVideo lang={lang} />
+        <HeroVideo lang={lang} videoId="VPaGW0vW-X0" title="Verkoop Studio — VSL website" />
       </div>
     </section>
   )
