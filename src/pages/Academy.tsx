@@ -13,8 +13,6 @@ import { cases } from '../data/cases'
 import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
 import stefNooms from '../assets/stef.webp'
-import stefDesk from '../assets/stef-desk.webp'
-import stefDeskSmall from '../assets/stef-desk-640.webp'
 import studentUpdate from '../assets/academy-student-update.png'
 import pinacelloResults from '../assets/cases/pinacello-results.png'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
@@ -32,7 +30,7 @@ function useReveal(lang: string) {
     const motion = matchMedia('(prefers-reduced-motion: reduce)')
     const animations = new Set<Animation>()
     let observer: IntersectionObserver | undefined
-    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, .ac-hero-conversion > *, main section h2, .ac-dot-kicker, .ac-ledger > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-aside, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
+    const selector = '.ac-reveal, .ac-hero-copy > *, .ac-hero > .hero-video, .ac-hero-conversion > *, main section h2, .ac-dot-kicker, .ac-ledger > li, .ac-promise, .ac-focus-card, .ac-mini-case, .ac-signup-card, .ac-faq-list details, .ac-footer-top, .ac-footer-columns > div'
     const stop = () => {
       observer?.disconnect()
       animations.forEach(animation => animation.cancel())
@@ -476,24 +474,6 @@ export default function Academy() {
       </section>
 
       <section id="aanmelden" className="ac-signup-section ac-wrap" aria-labelledby="signup-title">
-        <aside className="ac-signup-aside">
-          <figure className="ac-signup-portrait">
-            <picture>
-              <source media="(max-width: 600px)" srcSet={stefDeskSmall} />
-              <ResponsiveImage src={stefDesk} alt={t("Stef Keppens aan zijn laptop")} sizes="(max-width: 860px) 100vw, 400px" loading="lazy" />
-            </picture>
-          </figure>
-          <div className="ac-signup-note">
-            <p className="ac-signup-who"><strong>Stef Keppens</strong><span>{t("Je lesgever bij Verkoop Studio")}</span></p>
-            <a className="ac-signup-mail" href="mailto:stef@verkoop.studio">stef@verkoop.studio</a>
-            <ol className="ac-signup-steps">
-              <li>{t("Jij deelt waar je staat en wat je wil bereiken.")}</li>
-              <li>{t("Stef belt of mailt je voor een kennismaking.")}</li>
-              <li>{t("Je krijgt een voorstel op maat. Daarna beslis je.")}</li>
-            </ol>
-          </div>
-        </aside>
-
         <div className="ac-signup-card">
           {signedUp ? <div className="ac-signup-done" role="status">
             <h2 id="signup-title">{thanks}</h2>

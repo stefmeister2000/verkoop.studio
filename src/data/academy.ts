@@ -69,8 +69,6 @@ export const academyModules: AcademyModule[] = [
 export const academyFaq = [
   { question: 'Voor wie zijn de lessen?', answer: 'Voor webshops die met Meta ads willen starten of meer uit hun ads willen halen. Nog nooit geadverteerd? Dan beginnen we bij de basis.' },
   { question: 'Hoe werken de 1-op-1 lessen?', answer: 'Je vraagt een kennismaking aan. Stef neemt contact op om je doelen te bespreken. Daarna kies je of je start met 1-op-1 lessen in je eigen account.' },
-  { question: 'Wat betekent een ROAS van 3 tot 4?', answer: 'Dat elke euro in Meta ads €3 tot €4 omzet oplevert. Met €1.000 advertentiebudget is dat €3.000 tot €4.000 omzet. Dat is het doel van elk traject.' },
-  { question: 'Hoe zeker is die ROAS van 3 tot 4?', answer: 'Het is de belofte waar elke les naartoe werkt. Hoe snel je er bent, hangt af van je product, je marge en je budget. Stef zegt je in de kennismaking eerlijk wat haalbaar is, nog voor je start.' },
   { question: 'Wat kost het?', answer: 'Een prijs op maat, afhankelijk van je doel en hoeveel begeleiding je nodig hebt. Je hoort hem na de kennismaking. Je advertentiebudget betaal je zelf aan Meta.' },
   { question: 'Heb ik een minimumbudget nodig?', answer: 'Geen vast minimum. Wat zinvol is, hangt af van je marge en je productprijs. Dat bekijken we samen in de kennismaking.' },
   { question: 'Werkt dit voor Shopify, WooCommerce of andere platformen?', answer: 'Ja. Alleen de koppeling van pixel en Conversions API verschilt per platform, en die lopen we samen na.' },
