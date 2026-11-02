@@ -386,7 +386,6 @@ export default function Academy() {
           <figure><img src={studentUpdate} width="810" height="966" loading="lazy" alt={t('WhatsApp-update van een deelnemer met €5.872,60 Shopify-omzet van 28 september tot 10 oktober 2026.')} /></figure>
         </article>
         </div>
-        <p className="ac-fine">{t("Gepubliceerde resultaten van Pinacello, waar Stef aan de ecommerce- en groeikant werkt. Elke webshop is anders.")}</p>
         <div className="ac-more-cases" aria-labelledby="more-cases-title">
           <div className="ac-more-cases-heading"><h3 id="more-cases-title">{t('Meer uit de praktijk')}</h3><Link className="ac-text-link" to="/cases">{t('Alle cases')} <span aria-hidden="true">↗</span></Link></div>
           <div className="ac-mini-cases">{otherCases.map(item => <Link key={item.slug} to={`/cases/${item.slug}`} className="ac-mini-case">
