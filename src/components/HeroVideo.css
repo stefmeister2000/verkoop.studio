@@ -9,3 +9,9 @@
 @media (max-width: 480px) {
   .hero-video { border-radius: 14px; }
 }
+
+.hero-video-player { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-video-sound { position: absolute; z-index: 2; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 1px solid #ffffff88; border-radius: 999px; background: #254bfa; box-shadow: 0 3px 14px #0003; color: white; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.hero-video-sound:hover { background: #1a37d6; }
+.hero-video-sound:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.hero-video-sound:disabled { cursor: wait; opacity: .7; }
