@@ -6,8 +6,8 @@ import { lyteCases } from '../data/lyteCases'
 
 const cardLine: Record<string, { nl: string; en: string }> = {
   healthfactor: {
-    nl: 'Een gezicht bij de gym. Persoonlijke videoadvertenties.',
-    en: 'A face behind the gym. Personal video ads.',
+    nl: '50+ aanvragen in 30 dagen',
+    en: '50+ enquiries in 30 days',
   },
   nooms: {
     nl: 'Pre-sale via influencer marketing volledig uitverkocht.',
@@ -56,6 +56,8 @@ export default function SelectedWork() {
             <h3>{c.name}</h3>
             {c.slug === 'pinacello' ? (
               <strong className="project-result">+120% {nl ? 'online omzet' : 'online revenue'}</strong>
+            ) : c.slug === 'healthfactor' ? (
+              <strong className="project-result">{cardLine[c.slug][lang]}</strong>
             ) : (
               <p>{cardLine[c.slug][lang]}</p>
             )}
