@@ -11,16 +11,15 @@ export default function PersonalHero() {
     <section className="studio-hero" aria-labelledby="hero-title">
       <div className="hero-copy">
         <h1 id="hero-title">
-          {nl ? 'Meer aanvragen.' : 'More enquiries.'}
-          <br />
-          {nl ? 'Meer verkoop.' : 'More sales.'}
-          <br />
-          <span>{nl ? 'Grip op je groei.' : 'Clarity on growth.'}</span>
+          <span>{nl ? 'Wij helpen kmo’s groeien' : 'We help small businesses grow'}</span>{' '}
+          {nl
+            ? 'met advertenties, overtuigende websites en automatische opvolging'
+            : 'with ads, persuasive websites and automated follow-up'}
         </h1>
         <p className="hero-description">
           {nl
-            ? 'Verkoop Studio helpt je met online marketing en websites. Je ziet welke campagnes klanten opleveren, en waar je budget beter rendeert.'
-            : 'Verkoop Studio helps you with online marketing and websites. See which campaigns bring customers, and where your budget works harder.'}
+            ? 'Vanuit Lochristi bouwen we je campagnes, website en opvolging. In je dashboard zie je welke campagnes aanvragen en verkopen opleveren.'
+            : 'From Lochristi, we build your campaigns, website and follow-up. Your dashboard shows which campaigns bring enquiries and sales.'}
         </p>
         <div className="hero-actions">
           <Link className="button-dark" to="/contact" onClick={() => trackEvent('audit_cta_clicked', { placement: 'hero' })}>

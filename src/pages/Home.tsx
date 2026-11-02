@@ -1,7 +1,6 @@
 import Seo from '../components/Seo'
 import GrowthGoals from '../components/GrowthGoals'
 import PersonalHero from '../components/PersonalHero'
-import RevenueGrowth from '../components/RevenueGrowth'
 import SelectedWork from '../components/SelectedWork'
 import PersonalAds from '../components/PersonalAds'
 import AgencyCapabilities from '../components/AgencyCapabilities'
@@ -37,7 +36,6 @@ export default function Home() {
       </div>
       <PersonalAds />
       <GrowthGoals />
-      <RevenueGrowth />
       <AgencyCapabilities />
       <StudioTools />
       <OwnPlatforms />

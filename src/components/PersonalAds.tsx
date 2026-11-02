@@ -7,17 +7,17 @@ export default function PersonalAds() {
   const { lang } = useLang()
   const nl = lang === 'nl'
   return (
-    <section className="personal-ads" aria-labelledby="personal-ads-title" id="persoonlijke-ads">
-      <div className="personal-ads-copy">
-        <span className="personal-ads-eyebrow">{nl ? 'Persoonlijke videoadvertenties' : 'Personal video ads'}</span>
-        <h2 id="personal-ads-title">{nl ? 'Een gezicht bij je merk.' : 'A face behind your brand.'}</h2>
+    <section className="personal-ads" aria-labelledby="personal-ads-title" id="resultaten">
+      <div className="personal-ads-copy" id="persoonlijke-ads">
+        <span className="personal-ads-eyebrow">{nl ? 'Advertenties, websites en resultaat' : 'Ads, websites and results'}</span>
+        <h2 id="personal-ads-title">{nl ? 'Van persoonlijk verhaal naar aanvraag of verkoop.' : 'From a personal story to an enquiry or sale.'}</h2>
         <p>{nl
-          ? 'Laat de mensen achter je zaak aan het woord. Bij Pinacello vertellen de makers hun productverhaal. Bij Healthfactor krijg je een kijkje in de gym, met iemand die je rechtstreeks aanspreekt.'
-          : 'Let the people behind your business tell the story. At Pinacello, the makers share their product story. At Healthfactor, you get a look inside the gym with someone speaking directly to you.'}</p>
+          ? 'Bij Pinacello vertellen de makers over hun product. Bij Healthfactor maak je kennis met de mensen en de gym. We filmen op locatie en maken advertenties met hun eigen verhaal.'
+          : 'At Pinacello, the makers talk about their product. At Healthfactor, you meet the people and see the gym. We film on location and turn their stories into ads.'}</p>
         <p>{nl
-          ? 'Zo maken we persoonlijke ads: een herkenbaar gezicht, beelden uit je eigen zaak en een boodschap die je ook zonder geluid kunt volgen. Van het eerste idee tot de opname en montage.'
-          : 'That is how we approach personal ads: a recognisable face, footage from your own business and a message viewers can follow without sound. From the first idea to filming and editing.'}</p>
-        <Link className="button-dark" to="/contact">{nl ? 'Bespreek jouw video' : 'Discuss your video'} <span aria-hidden="true">↗</span></Link>
+          ? 'De advertentie leidt naar een website met een helder aanbod en een eenvoudige volgende stap. We volgen aanvragen en verkopen op om de campagne te verbeteren.'
+          : 'The ad leads to a website with a clear offer and a simple next step. We track enquiries and sales to improve the campaign.'}</p>
+        <Link className="button-dark" to="/contact">{nl ? 'Bespreek jouw campagne' : 'Discuss your campaign'} <span aria-hidden="true">↗</span></Link>
       </div>
       <div className="personal-ads-examples">
         {(['pinacello', 'healthfactor'] as const).map(slug => {
@@ -42,6 +42,9 @@ export default function PersonalAds() {
               />
               <figcaption>
                 <h3>{project.name}</h3>
+                <strong className="personal-ad-result">{slug === 'pinacello'
+                  ? (nl ? '+120% online omzet' : '+120% online revenue')
+                  : (nl ? '50+ aanvragen in 30 dagen' : '50+ enquiries in 30 days')}</strong>
                 <p>{slug === 'pinacello'
                   ? (nl ? 'De makers en het verhaal achter het product.' : 'The makers and the story behind the product.')
                   : (nl ? 'Een persoonlijke kennismaking in de gym.' : 'A personal introduction inside the gym.')}</p>
