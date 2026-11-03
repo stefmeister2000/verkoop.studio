@@ -10,6 +10,8 @@
 .studio-tool-logos img:not(.studio-tool-wordmark) { width: 44px; height: 44px; padding: 8px; box-sizing: border-box; background: #f4f5fb; border-radius: 12px; }
 .studio-home > section.studio-own-platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 64px 44px; background: #141827; color: #fff; }
 .own-platforms-intro h2 { font-size: clamp(30px,3.6vw,46px); line-height: 1.12; letter-spacing: -.045em; margin: 0 0 24px; }
+.own-platforms-value { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; padding: 10px 16px; border: 1px solid #7187ff66; border-radius: 12px; background: #2c40a94d; color: #e1e7ff; font-size: 14px; }
+.own-platforms-value strong { color: #fff; font-size: 25px; line-height: 1.1; letter-spacing: -.04em; }
 .own-platforms-intro > p:last-of-type { color: #c5cbdc; font-size: 15px; line-height: 1.8; }
 .own-platforms-cta { display: inline-flex; gap: 24px; align-items: center; margin-top: 28px; padding: 16px 22px; background: #fff; color: #141827; border-radius: 10px; font-size: 14px; font-weight: 600; }
 .own-platforms-products article + article { border-top: 1px solid #ffffff26; padding-top: 30px; margin-top: 30px; }

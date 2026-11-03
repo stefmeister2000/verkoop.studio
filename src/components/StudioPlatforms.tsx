@@ -49,6 +49,7 @@ export function OwnPlatforms() {
   const nl = lang === 'nl'
   return <section className="studio-own-platforms" aria-labelledby="own-platforms-title">
     <div className="own-platforms-intro">
+      <div className="own-platforms-value"><span>{nl ? 'Ter waarde van' : 'Valued at'}</span><strong>€400+</strong></div>
       <h2 id="own-platforms-title">{nl ? 'Onze eigen platforms. Inbegrepen voor klanten.' : 'Our own platforms. Included for clients.'}</h2>
       <p>{nl ? 'Als klant van Verkoop Studio krijg je toegang tot ons sales-CRM en marketingdashboard. Die programma’s hoef je niet meer apart aan te schaffen. Bij alles wat we opleveren krijg je documentatie en instructievideo’s, zodat jij en je team weten hoe het werkt.' : 'As a Verkoop Studio client, you get access to our sales CRM and marketing dashboard, with no separate purchase or subscription needed. Everything we deliver comes with documentation and video guides, so you and your team know how it works.'}</p>
       <Link className="own-platforms-cta" to="/contact?platform=overview">{nl ? 'Vraag toegang aan' : 'Request access'} <span aria-hidden="true">↗</span></Link>
