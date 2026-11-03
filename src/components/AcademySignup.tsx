@@ -7,6 +7,7 @@ interface AcademySignupProps {
   formId: string
   /** "compact" asks name, email and phone; "full" also asks company, webshop, experience and ad budget. */
   variant?: 'compact' | 'full'
+  requestType?: 'intro' | 'free_lesson'
   submitLabel?: string
   onSuccess: (firstName: string) => void
 }
@@ -16,7 +17,7 @@ function Choices({ legend, options, value, onChange }: { legend: string; options
   return <fieldset className="ac-level-picker"><legend>{legend} <em>{t("optioneel")}</em></legend><div>{options.map(([key, text]) => <button type="button" key={key} className={value === key ? 'is-active' : ''} aria-pressed={value === key} onClick={() => onChange(value === key ? '' : key)}>{text}</button>)}</div></fieldset>
 }
 
-export default function AcademySignup({ formId, variant = 'compact', submitLabel, onSuccess }: AcademySignupProps) {
+export default function AcademySignup({ formId, variant = 'compact', requestType = 'intro', submitLabel, onSuccess }: AcademySignupProps) {
   const { lang, t } = useAcademyTranslation()
   const levels = [['start', t("Nog niet gestart")], ['basis', t("Draait al campagnes")], ['actief', t("Wil opschalen")]] as const
   const budgets = [['klein', t("Tot €1.000 / maand")], ['middel', t("€1.000 – €5.000 / maand")], ['groot', t("€5.000 – €20.000 / maand")], ['schaal', t("Meer dan €20.000 / maand")]] as const
@@ -53,7 +54,7 @@ export default function AcademySignup({ formId, variant = 'compact', submitLabel
       const response = await fetch('/api/academy', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(25_000),
         body: JSON.stringify({
-          naam, email, telefoon, bedrijf: data.get('bedrijf') ?? '', website: data.get('website') ?? '', niveau, budget,
+          naam, email, telefoon, request_type: requestType, bedrijf: data.get('bedrijf') ?? '', website: data.get('website') ?? '', niveau, budget,
           nieuwsbrief: data.get('nieuwsbrief') === 'on', form_id: formId, submission_id: submissionId.current,
           company_website: data.get('company_website'), attribution, ga4, lang,
         }),

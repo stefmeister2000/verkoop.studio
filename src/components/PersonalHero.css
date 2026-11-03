@@ -3,3 +3,4 @@
 @media (max-width: 800px) {
   .hero-video-area { padding: 12px 20px 28px; }
 }
+.studio-hero .hero-video-area { align-self: start; }
