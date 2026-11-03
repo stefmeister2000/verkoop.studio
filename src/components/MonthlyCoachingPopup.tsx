@@ -6,26 +6,52 @@ import './MonthlyCoachingPopup.css'
 
 const COPY = {
   nl: {
-    kicker: 'Elke maand · 1 plek', title: '2 weken gratis begeleiding.',
-    description: 'Ontvang onze marketingtips. Elke maand kiezen we één inschrijver voor twee weken gratis begeleiding.',
     email: 'Je e-mailadres', placeholder: 'jij@bedrijf.be',
     submit: 'Meld me aan', busy: 'Even opslaan…', close: 'Sluiten',
-    note: 'Uitschrijven kan altijd. We mailen je als je geselecteerd bent.', privacy: 'Privacy',
-    success: 'Je bent ingeschreven.', successText: 'Je ontvangt onze marketingtips en bent kandidaat voor de maandselectie. We mailen je als we jou kiezen.',
+    privacy: 'Privacy', success: 'Je bent ingeschreven.',
     consent: 'Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.',
     preferences: 'Je bent eerder uitgeschreven. Mail stef@verkoop.studio om je voorkeuren aan te passen.',
     error: 'Aanmelden lukt even niet. Probeer opnieuw.', limited: 'Probeer het over 10 minuten opnieuw.',
   },
   en: {
-    kicker: 'Every month · 1 spot', title: '2 weeks of free guidance.',
-    description: 'Get our marketing tips. Each month, we select one subscriber for two weeks of free guidance.',
     email: 'Your email address', placeholder: 'you@company.com',
     submit: 'Sign me up', busy: 'Saving…', close: 'Close',
-    note: 'Unsubscribe anytime. We’ll email you if you’re selected.', privacy: 'Privacy',
-    success: 'You’re subscribed.', successText: 'You’ll receive our marketing tips and enter the monthly selection. We’ll email you if we choose you.',
+    privacy: 'Privacy', success: 'You’re subscribed.',
     consent: 'Yes, I would like to receive marketing tips and news from Verkoop Studio by email.',
     preferences: 'You previously unsubscribed. Email stef@verkoop.studio to update your preferences.',
     error: 'We couldn’t save your entry. Please try again.', limited: 'Please try again in 10 minutes.',
+  },
+}
+
+
+const OFFERS = {
+  academy: {
+    nl: {
+      kicker: 'Elke maand · 1 plek', title: '2 weken gratis les.',
+      description: 'Schrijf je in voor onze nieuwsbrief. Elke maand kiezen we één inschrijver voor twee weken gratis les bij de Academy.',
+      note: 'Uitschrijven kan altijd. We mailen je als je geselecteerd bent.',
+      successText: 'Je ontvangt onze nieuwsbrief en bent kandidaat voor twee weken gratis les. We mailen je als we jou kiezen.',
+    },
+    en: {
+      kicker: 'Every month · 1 spot', title: '2 weeks of free lessons.',
+      description: 'Subscribe to our newsletter. Each month, we select one subscriber for two weeks of free Academy lessons.',
+      note: 'Unsubscribe anytime. We’ll email you if you’re selected.',
+      successText: 'You’ll receive our newsletter and enter the selection for two weeks of free lessons. We’ll email you if we choose you.',
+    },
+  },
+  agency: {
+    nl: {
+      kicker: 'De Verkoop Studio nieuwsbrief', title: 'Marketingtips in je inbox.',
+      description: 'Praktische tips over advertenties, websites en opvolging. Ontvang onze nieuwsbrief en blijf mee met het nieuws van Verkoop Studio.',
+      note: 'Uitschrijven kan altijd.',
+      successText: 'Bedankt! Je ontvangt voortaan onze marketingtips en het nieuws van Verkoop Studio per e-mail.',
+    },
+    en: {
+      kicker: 'The Verkoop Studio newsletter', title: 'Marketing tips in your inbox.',
+      description: 'Practical tips on ads, websites and follow-up. Subscribe to our newsletter for the latest from Verkoop Studio.',
+      note: 'Unsubscribe anytime.',
+      successText: 'Thank you! You’ll receive our marketing tips and the latest from Verkoop Studio by email.',
+    },
   },
 }
 
@@ -33,7 +59,7 @@ export default function MonthlyCoachingPopup({ source, completed = false, suppre
   source: 'agency' | 'academy'; completed?: boolean; suppressed?: boolean; onVisibilityChange?: (visible: boolean) => void
 }) {
   const { lang } = useLang()
-  const t = COPY[lang]
+  const t = { ...COPY[lang], ...OFFERS[source][lang] }
   const [stage, setStage] = useState<'form' | 'success' | null>(null)
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
