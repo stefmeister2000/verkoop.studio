@@ -21,7 +21,7 @@ export function coachingEntryRouter({ resend, from, to, request = resendRequest,
     if (email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
       || !['nl', 'en'].includes(body.lang) || !['agency', 'academy'].includes(body.source)) return res.status(400).json({ error: 'invalid_fields' })
     if (body.consent !== true || body.consent_version !== CONSENT_VERSION) return res.status(400).json({ error: 'consent_required' })
-    if (!resend || !from || !to) return res.status(503).json({ error: 'not_configured' })
+    if (!resend || (body.source === 'academy' && (!from || !to))) return res.status(503).json({ error: 'not_configured' })
     const hash = createHash('sha256').update(email).digest('hex')
     if (!allow(`ip:${req.ip}`, 10) || !allow(`email:${hash}`, 3)) return res.set('Retry-After', '600').status(429).json({ error: 'rate_limited' })
     const parts = new Intl.DateTimeFormat('en', { timeZone: 'Europe/Brussels', year: 'numeric', month: '2-digit' }).formatToParts(now())
@@ -29,15 +29,17 @@ export function coachingEntryRouter({ resend, from, to, request = resendRequest,
     const key = createHash('sha256').update(`${email}:${month}`).digest('hex')
     try {
       // Explicit newsletter opt-in; never enrol these entries in website-enquiry flows.
-      const subscription = await subscribeNewsletter({ resend, email, lang: body.lang, source: `coaching_popup_${body.source}`, request, now: now() })
+      const subscription = await subscribeNewsletter({ resend, email, lang: body.lang, source: body.source === 'academy' ? 'coaching_popup_academy' : 'newsletter_popup_agency', request, now: now() })
       if (!subscription.ok) return res.status(subscription.status).json({ ok: false, error: subscription.error })
-      // Stable payload across both pages so retries share the same provider idempotency key.
+      // Agency visitors subscribe to the newsletter only, without entering the Academy selection.
+      if (body.source === 'agency') return res.json({ ok: true, captured: ['newsletter_segment'] })
+      // Stable payload across languages so retries share the same provider idempotency key.
       // Resend retains idempotency keys for 24h; select unique emails per month from these notifications.
       await request(() => resend.emails.send({
         from, to: [to], replyTo: email,
-        subject: `Maandselectie ${month}: 2 weken gratis begeleiding`,
-        text: `Nieuwe kandidaat voor de maandselectie.\n\nE-mailadres: ${email}\nSelectiemaand: ${month}\nAanbod: twee weken gratis begeleiding voor één persoon per maand, gezamenlijk voor de website en Academy.\n\nTel ieder e-mailadres één keer per maand. Neem persoonlijk contact op als deze kandidaat geselecteerd wordt.\nNieuwsbriefinschrijving met toestemming. Geen kennismakingsaanvraag of betaalde klantconversie.`,
-      }, { idempotencyKey: `coaching-newsletter-entry/${key}` }))
+        subject: `Maandselectie ${month}: 2 weken gratis les`,
+        text: `Nieuwe kandidaat voor de maandselectie.\n\nE-mailadres: ${email}\nSelectiemaand: ${month}\nAanbod: twee weken gratis les bij de Academy voor één persoon per maand.\n\nTel ieder e-mailadres één keer per maand. Neem persoonlijk contact op als deze kandidaat geselecteerd wordt.\nNieuwsbriefinschrijving met toestemming. Geen kennismakingsaanvraag of betaalde klantconversie.`,
+      }, { idempotencyKey: `academy-lessons-entry/${key}` }))
       return res.json({ ok: true, captured: ['newsletter_segment'] })
     } catch {
       console.error('[coaching-entry] registration failed')

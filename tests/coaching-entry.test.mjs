@@ -15,7 +15,7 @@ async function fixture(run, { fail = false, configured = true, unsubscribed = fa
   app.use('/entry', coachingEntryRouter({ resend: configured ? resend : null, from: 'sender@example.com', to: 'owner@example.com', now: () => new Date('2026-10-31T23:30:00Z') }))
   const server = app.listen(0)
   const post = async (body = {}) => {
-    const response = await fetch(`http://127.0.0.1:${server.address().port}/entry`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'Candidate@Example.com', source: 'agency', lang: 'nl', consent: true, consent_version: CONSENT_VERSION, ...body }) })
+    const response = await fetch(`http://127.0.0.1:${server.address().port}/entry`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'Candidate@Example.com', source: 'academy', lang: 'nl', consent: true, consent_version: CONSENT_VERSION, ...body }) })
     return { status: response.status, body: await response.json() }
   }
   try { await run({ post, sent, created, segments }) } finally { server.close() }
@@ -27,14 +27,16 @@ test('registration is retained and owner notified, without sending a marketing e
     assert.equal(created[0].email, 'candidate@example.com')
     assert.deepEqual(segments, [{ contactId: 'contact', segmentId: NEWSLETTER_SEGMENT }])
     const consent = JSON.parse(created[0].properties.newsletter_consent)
-    assert.equal(consent.source, 'coaching_popup_agency')
+    assert.equal(consent.source, 'coaching_popup_academy')
     assert.equal(consent.version, CONSENT_VERSION)
     assert.equal(sent.length, 1)
     assert.deepEqual(sent[0].data.to, ['owner@example.com'])
-    assert.match(sent[0].data.subject, /2026-11/)
+    assert.match(sent[0].data.subject, /2026-11: 2 weken gratis les/)
+    assert.match(sent[0].data.text, /gratis les bij de Academy/)
+    assert.doesNotMatch(sent[0].data.text, /gezamenlijk/)
     assert.match(sent[0].data.text, /Nieuwsbriefinschrijving met toestemming/)
     await post({ source: 'academy', lang: 'en' })
-    assert.deepEqual(sent[0], sent[1], 'cross-page retries use the same key and payload')
+    assert.deepEqual(sent[0], sent[1], 'cross-language retries use the same key and payload')
   })
 })
 test('invalid data, bots and rapid repeat entries are handled without extra messages', async () => {
@@ -64,4 +66,15 @@ test('segment failure does not report success or notify an entry', async () => {
     assert.equal((await post()).status, 502)
     assert.equal(sent.length, 0)
   }, { segmentFail: true })
+})
+
+test('agency popup only subscribes to the newsletter, never enters the Academy selection', async () => {
+  await fixture(async ({ post, sent, created, segments }) => {
+    const result = await post({ source: 'agency' })
+    assert.equal(result.status, 200)
+    assert.deepEqual(result.body.captured, ['newsletter_segment'])
+    assert.deepEqual(segments, [{ contactId: 'contact', segmentId: NEWSLETTER_SEGMENT }])
+    assert.equal(JSON.parse(created[0].properties.newsletter_consent).source, 'newsletter_popup_agency')
+    assert.equal(sent.length, 0)
+  }, { fail: true })
 })
