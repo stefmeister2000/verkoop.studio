@@ -197,12 +197,12 @@ export default function Academy() {
   const academyFaq = sourceFaq.map(item => ({ question: t(item.question), answer: t(item.answer) }))
   const academyTests = sourceTests.map(item => ({ ...item, name: t(item.name), verdict: t(item.verdict), decision: t(item.decision) }))
   const offer = [
-    [t('1-op-1 begeleiding'), t('Samen met Stef bouw je jouw funnel, van eerste klik tot aankoop.')],
-    [t('Starten vanaf nul'), t('Je leert hoe ads, je webshop en opvolging samenwerken.')],
-    ['Meta Ads & Google Ads', t('Trek nieuwe bezoekers aan en bereik geïnteresseerden opnieuw.')],
-    [t('Landingspagina’s'), t('Landingspagina’s op maat, afgestemd op je ads, aanbod en webshop.')],
-    ['Tracking', t('Onze pixelsoftware voor server-side tracking, plus GA4, Meta Pixel en Google Ads-conversiemeting.')],
-    [t('E-mailmarketing'), t('Volg winkelwagens op en breng klanten terug voor hun volgende aankoop.')],
+    { title: t('Analyse van jouw bedrijf'), text: t('We bekijken je aanbod, klanten, campagnes en cijfers. Daarmee bepalen we waar jouw bedrijf kan groeien.'), label: t('Jouw startpunt'), icon: 'M4 19h16M7 15V9m5 6V5m5 10v-4' },
+    { title: t('Trackingsoftware'), text: t('Toegang tot onze trackingsoftware. Zie waar aanvragen vandaan komen en welke campagnes omzet opleveren.'), label: t('Ter waarde van €400+'), icon: 'M4 17l5-5 4 2 7-9M15 5h5v5', featured: true },
+    { title: t('Sales-CRM inbegrepen'), text: t('Onze volledige sales-CRM helpt je contacten, aanvragen en opvolging op één plek bij te houden.'), label: t('Software inbegrepen'), icon: 'M5 4h14v16H5zM8 8h8M8 12h5M8 16h6' },
+    { title: t('Online of op kantoor'), text: t('Volg je 1-op-1 lessen live online of bij ons op kantoor. Samen nemen we je vragen en campagnes door.'), label: t('Lessen inbegrepen'), icon: 'M3 4h18v12H3zM8 20h8m-4-4v4' },
+    { title: t('Een kring van ondernemers'), text: t('Kom in contact met andere ondernemers om ervaringen, vragen en ideeën uit te wisselen.'), label: t('Samen ondernemen'), icon: 'M9 8a3 3 0 1 0 6 0a3 3 0 1 0-6 0M6 20v-2a6 6 0 0 1 12 0v2M3 10v5m18-5v5' },
+    { title: t('Dashboard met opgenomen lessen'), text: t('We bouwen aan een lesdashboard om op je eigen tempo terug te kijken. Dit wordt ook onderdeel van je begeleiding.'), label: t('Binnenkort inbegrepen'), icon: 'M3 4h18v16H3zM10 8l6 4-6 4z', upcoming: true },
   ]
   const otherCases = cases.filter(item => !['pinacello', 'healthfactor'].includes(item.slug))
   const caseCopy: Record<string, string> = {
@@ -340,10 +340,23 @@ export default function Academy() {
       </section>
 
       <section id="aanbod" className="ac-offer ac-wrap" aria-labelledby="offer-title">
-        <div className="ac-offer-main">
-          <h2 id="offer-title">{t('Dit zit erin.')}</h2>
-          <ol className="ac-ledger">{offer.map(([title, text], index) => <li key={title}><span className="ac-ledger-index">{number(index)}</span><strong>{title}</strong><span className="ac-ledger-text">{text}</span></li>)}</ol>
+        <div className="ac-offer-heading">
+          <p className="ac-offer-eyebrow">{t('Jouw Academy-traject')}</p>
+          <h2 id="offer-title">{t('Dit zit er allemaal in.')}</h2>
+          <p>{t('Persoonlijke begeleiding, de software en een plek om samen te leren.')}</p>
         </div>
+        <article className="ac-offer-coaching ac-reveal">
+          <div>
+            <span className="ac-offer-coaching-label">{t('Samen met Stef')}</span>
+            <h3>{t('Volledige 1-op-1 begeleiding.')}</h3>
+            <p>{t('We werken aan jouw bedrijf, in jouw accounts. Van je eerste analyse tot het opzetten en verbeteren van je Meta Ads, Google Ads en opvolging.')}</p>
+          </div>
+          <div className="ac-offer-personal" aria-hidden="true"><strong>1<span>:</span>1</strong><span>{t('Jij & Stef')}</span></div>
+        </article>
+        <ul className="ac-offer-grid">{offer.map(item => <li key={item.title} className={`ac-offer-card ac-reveal${item.featured ? ' ac-offer-card-featured' : ''}${item.upcoming ? ' ac-offer-card-upcoming' : ''}`}>
+          <div className="ac-offer-card-top"><span className="ac-offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg></span><span className="ac-offer-card-label">{item.label}</span></div>
+          <h3>{item.title}</h3><p>{item.text}</p>
+        </li>)}</ul>
       </section>
 
       <section id="resultaten" className="ac-proof ac-wrap" aria-labelledby="proof-title">
