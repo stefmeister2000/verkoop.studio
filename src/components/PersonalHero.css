@@ -1,6 +1,14 @@
-.hero-video-area { min-width: 0; align-self: center; padding: 36px 24px 36px 12px; }
-.studio-hero .hero-copy h1 { font-size: clamp(34px, 3.2vw, 50px); text-wrap: balance; }
-@media (max-width: 800px) {
-  .hero-video-area { padding: 12px 20px 28px; }
+/* A centered headline, wide VSL and immediate request form. */
+.studio-home .studio-hero--centered { grid-template-columns: minmax(0,1fr); justify-items: center; gap: 32px; min-height: 0; padding: 48px 32px 56px; }
+.studio-home .studio-hero--centered .hero-copy { width: min(100%,1100px); padding: 0; text-align: center; }
+.studio-home .studio-hero--centered .hero-copy h1 { margin: 0; font-size: clamp(36px,3.6vw,56px); line-height: 1.12; text-wrap: balance; }
+.studio-home .studio-hero--centered .hero-video-area { width: min(100%,900px); min-width: 0; padding: 0; }
+.studio-home .studio-hero--centered .hero-conversion { width: min(100%,760px); min-width: 0; padding: 0; }
+.studio-home .studio-hero--centered .hero-request { margin-top: 0; }
+@media (max-width: 767px) {
+  .studio-home .studio-hero--centered { padding: 12px 8px 32px; gap: 24px; }
+  .studio-home .studio-hero--centered .hero-video-area { order: -1; }
+  .studio-home .studio-hero--centered .hero-copy { padding: 0 12px; }
+  .studio-home .studio-hero--centered .hero-copy h1 { font-size: clamp(26px,7vw,34px); line-height: 1.12; }
+  .studio-home .studio-hero--centered .hero-conversion { padding: 0 12px; }
 }
-.studio-hero .hero-video-area { align-self: start; }

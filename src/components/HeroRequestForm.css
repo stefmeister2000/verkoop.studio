@@ -15,3 +15,12 @@
 .hero-request-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 @media(max-width: 480px) { .hero-request { padding: 18px; } .hero-request .hero-request-fields { grid-template-columns: minmax(0,1fr); gap: 10px; } }
 @media(max-width: 767px) { body:has(.hero-request:focus-within) .whatsapp-support { visibility: hidden; } }
+
+/* Wide request cards sit directly below the centered VSL. */
+@media(min-width: 768px) {
+  :is(.hero-conversion,.ac-hero-conversion) .hero-request { padding: 26px 28px; }
+  :is(.hero-conversion,.ac-hero-conversion) .hero-request h2 { text-align: center; }
+  :is(.hero-conversion,.ac-hero-conversion) .hero-request-fields { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  :is(.hero-conversion,.ac-hero-conversion) .hero-request-name { grid-column: auto; }
+  :is(.hero-conversion,.ac-hero-conversion) .hero-request-note { text-align: center; }
+}

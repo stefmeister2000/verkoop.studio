@@ -80,12 +80,12 @@
 /* Hero */
 .ac-header-cta { justify-self: end; white-space: nowrap; padding: 10px 18px; border-radius: 999px; background: var(--ac-blue); color: #fff; font-size: 14px; font-weight: 600; box-shadow: 0 8px 20px -10px #254bfa99; transition: background .2s, transform .2s; }
 .ac-header-cta:hover { background: var(--ac-blue-deep); transform: translateY(-1px); }
-.ac-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "copy video" "action video"; column-gap: 60px; padding-top: 56px; }
-.ac-hero-copy { grid-area: copy; }
-.ac-hero > .hero-video { grid-area: video; align-self: center; }
-.ac-hero-conversion { grid-area: action; }
-.ac-hero-copy h1 { font-size: clamp(38px, 4.3vw, 56px); line-height: 1.04; font-weight: 700; letter-spacing: -.04em; text-wrap: balance; }
-.ac-hero-intro { max-width: 34rem; margin-top: 22px; color: var(--ac-text); font-size: clamp(16px, 1.7vw, 18px); line-height: 1.65; }
+.ac-hero { display: grid; grid-template-columns: minmax(0,1fr); grid-template-areas: "copy" "video" "action"; justify-items: center; row-gap: 32px; padding-top: 48px; }
+.ac-hero-copy { grid-area: copy; width: min(100%,1000px); text-align: center; }
+.ac-hero > .hero-video { grid-area: video; width: min(100%,900px); }
+.ac-hero-conversion { grid-area: action; width: min(100%,760px); }
+.ac-hero-copy h1 { font-size: clamp(38px, 4.5vw, 64px); line-height: 1.04; font-weight: 700; letter-spacing: -.04em; text-wrap: balance; }
+.ac-hero-intro { max-width: 46rem; margin-inline: auto; margin-top: 22px; color: var(--ac-text); font-size: clamp(16px, 1.7vw, 18px); line-height: 1.65; }
 .ac-hero-signup { width: 100%; margin-top: 28px; padding: 0; scroll-margin-top: 100px; }
 /* mobile.css pads every div that wraps a form; these wrappers are already styled. */
 .ac-footer-top { padding: 0; }
@@ -442,7 +442,7 @@ button.ac-row.is-active { background: #f1f4ff; border-color: #d5dcff; }
   .ac-header-inner { grid-template-columns: 1fr auto; }
   .ac-pill-nav { display: none; }
   :where(.academy-page section) h2 { font-size: 36px; }
-  .ac-hero { grid-template-columns: 1fr; grid-template-areas: "video" "copy" "action"; row-gap: 28px; padding-top: 36px; }
+  .ac-hero { padding-top: 36px; }
   .ac-hero-signup { margin-top: 0; }
   .ac-hv { zoom: 1; margin-inline: auto; }
   .ac-signup-section { margin-top: 96px; }
@@ -914,9 +914,11 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 /* Immediate free-lesson request in the hero, without a separate reveal button. */
 .ac-hero-target { display: inline-block; margin-top: 18px; padding: 8px 11px; border: 1px solid #cdd7ff; border-radius: 10px; color: #2344d8; background: #eef1ff; font-size: 14px; font-weight: 650; line-height: 1.4; }
 .ac-hero-target + .ac-hero-intro { margin-top: 12px; font-size: 15px; line-height: 1.5; }
-.ac-hero-signup { margin-top: 22px; }
+.ac-hero-signup { margin-top: 0; }
 .ac-hero-signup .hero-request { margin-top: 0; }
 .ac-hero > .hero-video { align-self: start; }
 @media(max-width: 900px) { .ac-hero-signup { margin-top: 0; } }
 @media(max-width: 700px) { .ac-hero-copy h1 { font-size: 34px; line-height: 1.08; } .ac-hero { row-gap: 22px; } }
 .academy-page .hero-request h2 { font-size: clamp(22px,2vw,27px); line-height: 1.15; margin-top: 0; }
+
+@media(max-width: 767px) { .ac-hero { grid-template-areas: "video" "copy" "action"; } }
