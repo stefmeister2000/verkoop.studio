@@ -329,7 +329,7 @@ export default function Academy() {
           <h1 id="academy-title">{t("Leer je") + " "}<span>{t("merk schalen.")}</span></h1>
           <p className="ac-hero-intro">{t("Werk 1-op-1 met Stef aan je Meta Ads, Google Ads, landingspagina’s en opvolging. Leer hoe je nieuwe klanten aantrekt, je cijfers leest en je merk stap voor stap laat groeien.")}</p>
         </div>
-        <HeroVideo lang={lang} />
+        <HeroVideo lang={lang} videoId="pXlZ6lWWg68" title="Verkoop Studio Academy — VSL" autoPlay />
         <div className="ac-hero-conversion">
           <div id="academy-hero-signup" className="ac-hero-signup">
             {signedUp ? <div className="ac-welcome-card" role="status">
