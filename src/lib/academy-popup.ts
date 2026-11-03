@@ -1,6 +1,6 @@
-export const ACADEMY_POPUP_DELAY = 45_000
+export const ACADEMY_POPUP_DELAY = 10_000
 export const ACADEMY_POPUP_COOLDOWN = 7 * 24 * 60 * 60_000
-const storageKey = 'academy-intro-popup-v1'
+const storageKey = 'verkoop-monthly-coaching-v1'
 type PopupHistory = { shownAt?: number; converted?: boolean }
 let memory: PopupHistory = {}
 
@@ -23,10 +23,9 @@ export function recordAcademyPopup(converted = false) {
   try { localStorage.setItem(storageKey, JSON.stringify(memory)) } catch { /* Nonessential storage. */ }
 }
 
-export function canShowAcademyPopup({ now, startedAt, scrollProgress, history, blocked }: {
+export function canShowAcademyPopup({ now, startedAt, history, blocked }: {
   now: number; startedAt: number; scrollProgress: number; history: PopupHistory; blocked: boolean
 }) {
   return !blocked && !history.converted && now - startedAt >= ACADEMY_POPUP_DELAY
-    && scrollProgress >= .25
     && (history.shownAt === undefined || now - history.shownAt >= ACADEMY_POPUP_COOLDOWN)
 }

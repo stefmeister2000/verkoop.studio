@@ -5,6 +5,7 @@ import Footer from './Footer'
 import StickyMobileCTA from './StickyMobileCTA'
 import BackToTop from './BackToTop'
 import EmailCapture from './EmailCapture'
+import MonthlyCoachingPopup from './MonthlyCoachingPopup'
 import WhatsAppSupport from './WhatsAppSupport'
 import { usePageMotion } from '../lib/usePageMotion'
 import { usePrimaryButtonMotion } from '../lib/usePrimaryButtonMotion'
@@ -42,7 +43,8 @@ export default function Layout() {
       <BackToTop />
       <WhatsAppSupport />
       <StickyMobileCTA />
-      <EmailCapture openRequest={newsletterRequest} />
+      <EmailCapture openRequest={newsletterRequest} automatic={location.pathname !== '/'} />
+      {location.pathname === '/' && <MonthlyCoachingPopup source="agency" suppressed={newsletterRequest > 0} />}
     </div>
   )
 }

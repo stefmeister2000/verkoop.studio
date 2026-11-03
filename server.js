@@ -10,6 +10,7 @@ import { sendOpenAiLead } from './server-openai-conversions.js'
 import { newsletterRouter } from './server-newsletter.js'
 import { academyRouter } from './server-academy.js'
 import { academyInfoRouter } from './server-academy-info.js'
+import { coachingEntryRouter } from './server-coaching-entry.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.join(__dirname, 'dist')
@@ -59,6 +60,7 @@ app.use((req, res, next) => {
 })
 app.use(express.json({ limit: '32kb' }))
 app.use('/api/newsletter', newsletterRouter(resend))
+app.use('/api/coaching-entry', coachingEntryRouter({ resend, from: SENDER, to: LEAD_TO }))
 app.use('/api/academy-info', academyInfoRouter({ resend, from: SENDER, to: LEAD_TO }))
 app.use('/api/academy', academyRouter({
   resend, from: SENDER, to: LEAD_TO, replyFrom: LEAD_REPLY_FROM,

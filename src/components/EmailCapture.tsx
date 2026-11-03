@@ -45,7 +45,7 @@ function remember(days: number) {
   try { localStorage.setItem(STORAGE_KEY, String(Date.now() + days * 86_400_000)) } catch { /* Optional storage. */ }
 }
 
-export default function EmailCapture({ openRequest = 0 }: { openRequest?: number }) {
+export default function EmailCapture({ openRequest = 0, automatic = true }: { openRequest?: number; automatic?: boolean }) {
   const { lang } = useLang()
   const { pathname } = useLocation()
   const t = COPY[lang]
@@ -71,7 +71,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
   }, [openRequest])
 
   useEffect(() => {
-    if (excluded || dismissed.current) return
+    if (!automatic || excluded || dismissed.current) return
     try { if (Number(localStorage.getItem(STORAGE_KEY)) > Date.now()) return } catch { /* Optional storage. */ }
     let timer: ReturnType<typeof setTimeout>
     function showWhenIdle() {
@@ -85,7 +85,7 @@ export default function EmailCapture({ openRequest = 0 }: { openRequest?: number
     }
     timer = setTimeout(showWhenIdle, 12_000)
     return () => clearTimeout(timer)
-  }, [excluded])
+  }, [excluded, automatic])
 
   function close() {
     dismissed.current = true
