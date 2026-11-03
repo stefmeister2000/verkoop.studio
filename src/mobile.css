@@ -50,14 +50,16 @@
   .project-caption { padding: 20px; }
   .project-caption h3 { font-size: 20px; }
   .project-caption p { font-size: 15px; line-height: 1.5; margin-top: 6px; }
-  .selected-work .project-tile { display: grid; grid-template-columns: 88px minmax(0,1fr); gap: 14px; padding: 16px; align-items: start; }
-  .selected-work .project-image { width: 88px; aspect-ratio: 1; border-radius: 12px; }
-  .selected-work .project-arrow { display: none; }
-  .selected-work .project-caption { padding: 0; min-width: 0; }
+  /* Full-bleed track: a card edge against the screen edge is what invites the swipe. */
+  .selected-work .work-track { margin-inline: -20px; padding-inline: 20px; scroll-padding-inline: 20px; gap: 12px; }
+  .work-controls button { width: 46px; height: 46px; }
+  .selected-work .work-track > .project-tile { flex-basis: calc(100% - 52px); }
+  .selected-work .project-image { aspect-ratio: 1.35; }
+  .selected-work .project-caption { padding: 16px 16px 18px; }
+  .selected-work .project-caption h3 { font-size: 18px; }
   .selected-work .project-caption p,
   .selected-work .project-result { font-size: 15px; line-height: 1.5; }
-  .selected-work .partner-project-heading { flex-wrap: wrap; gap: 6px; }
-  .work-intro > p { font-size: 15px; }
+  .work-intro p { font-size: 15px; }
   .studio-home :is(.growth-goals,.marketing-services,.revenue-case) { padding: 36px 20px; }
   .studio-home > section > div.max-w-6xl { padding: 40px 20px; }
   .studio-home h2 { font-size: clamp(28px,7.5vw,36px); }
