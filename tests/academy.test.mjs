@@ -3,6 +3,9 @@ import assert from 'node:assert/strict'
 import express from 'express'
 import { academyFields, academyCrmPayload, academyNotification, academyRouter, captureAcademySignup, ACADEMY_CAMPAIGN } from '../server-academy.js'
 
+import { WEBSITE_ENQUIRY_SEGMENT } from '../server-lead.js'
+import { NEWSLETTER_SEGMENT } from '../server-newsletter.js'
+
 const ok = { data: { id: 'receipt' }, error: null }
 const failure = { data: null, error: { name: 'validation_error', statusCode: 422 } }
 const signup = { naam: 'Lies Peeters', email: 'Lies@Example.com', telefoon: '0470 00 00 00', niveau: 'basis', budget: 'middel', submission_id: 'sub-1', form_id: 'academy-hero' }
@@ -62,7 +65,7 @@ test('signup stores the contact, emails Stef and creates the CRM lead', async ()
   let crmCalls = 0
   const result = await captureAcademySignup({ resend: f.resend, fields: academyFields(signup), from: 'noreply@example.com', to: 'stefkeppens@gmail.com', crm: async () => { crmCalls++ } })
   assert.equal(result.ok, true)
-  assert.deepEqual(result.captured, ['resend_contact', 'resend_email', 'crm'])
+  assert.deepEqual(result.captured, ['resend_contact', 'resend_segment', 'resend_email', 'crm'])
   assert.equal(f.created[0].email, 'lies@example.com')
   assert.deepEqual(f.sent[0].p.to, ['stefkeppens@gmail.com'])
   assert.equal(f.sent[0].p.replyTo, 'lies@example.com')
@@ -78,7 +81,7 @@ test('a failed CRM or email is reported instead of a silent success', async () =
   f.resend.emails.send = async () => failure
   const mailDown = await captureAcademySignup({ resend: f.resend, fields: academyFields(signup), from: 'x', to: 'y' })
   assert.equal(mailDown.ok, false)
-  assert.deepEqual(mailDown.captured, ['resend_contact'])
+  assert.deepEqual(mailDown.captured, ['resend_contact', 'resend_segment'])
 })
 
 test('endpoint confirms the signup by mail, forwards the CRM payload and only subscribes with consent', async () => {
@@ -87,15 +90,16 @@ test('endpoint confirms the signup by mail, forwards the CRM payload and only su
   const router = academyRouter({ resend: f.resend, from: 'noreply@example.com', to: 'stefkeppens@gmail.com', crmUrl: 'https://crm.example.com/api', crmToken: 'test', sendCrm: async payload => { crmPayloads.push(payload); return { status: 'created', leadId: 'lead-1' } } })
   const first = await post(router, signup)
   assert.equal(first.status, 200)
-  assert.deepEqual(first.body.captured, ['resend_contact', 'resend_email', 'crm', 'resend_welcome'])
+  assert.deepEqual(first.body.captured, ['resend_contact', 'resend_segment', 'resend_email', 'crm', 'resend_welcome'])
   assert.equal(crmPayloads[0].campaign, ACADEMY_CAMPAIGN)
   const confirmation = f.sent.find(item => item.p.subject === 'Je kennismakingsaanvraag voor de Meta Ads Academy')
   assert.deepEqual(confirmation.p.to, ['lies@example.com'])
   assert.match(confirmation.p.text, /Stef neemt persoonlijk contact met je op/)
   assert.doesNotMatch(confirmation.p.text, /toegang/)
-  assert.equal(f.segments.length, 0)
+  assert.deepEqual(f.segments.map(s => s.segmentId), [WEBSITE_ENQUIRY_SEGMENT])
   const second = await post(router, { ...signup, submission_id: 'sub-2', nieuwsbrief: true })
   assert.ok(second.body.captured.includes('newsletter_segment'))
+  assert.equal(f.segments.at(-1).segmentId, NEWSLETTER_SEGMENT)
   assert.equal(JSON.parse(f.created.at(-1).properties.newsletter_consent).source, 'academy')
 })
 
@@ -132,12 +136,12 @@ test('popup requests use Resend capture, confirmation and CRM without newsletter
   const router = academyRouter({ resend: f.resend, from: 'noreply@example.com', to: 'stefkeppens@gmail.com', crmUrl: 'https://crm.example.com/api', sendCrm: async payload => { payloads.push(payload); return { status: 'created' } } })
   const response = await post(router, { ...signup, form_id: 'academy-popup', submission_id: 'popup-1' })
   assert.equal(response.status, 200)
-  assert.deepEqual(response.body.captured, ['resend_contact', 'resend_email', 'crm', 'resend_welcome'])
+  assert.deepEqual(response.body.captured, ['resend_contact', 'resend_segment', 'resend_email', 'crm', 'resend_welcome'])
   assert.equal(f.created.length, 1)
   assert.equal(payloads.length, 1)
   assert.match(f.sent[0].p.text, /Formulier: academy-popup/)
   assert.ok(f.sent.some(item => item.p.subject === 'Je kennismakingsaanvraag voor de Meta Ads Academy'))
-  assert.equal(f.segments.length, 0)
+  assert.deepEqual(f.segments.map(s => s.segmentId), [WEBSITE_ENQUIRY_SEGMENT])
 })
 
 test('free lessons retain their offer in CRM, owner notification and confirmation without newsletter enrolment', async () => {
@@ -154,6 +158,14 @@ test('free lessons retain their offer in CRM, owner notification and confirmatio
     assert.match(mail.subject, lang === 'nl' ? /gratis Academy-les/ : /free Academy lesson/)
     assert.match(mail.text, lang === 'nl' ? /je gratis les te plannen/ : /schedule your free lesson/)
     assert.doesNotMatch(mail.text, /kennismaking|introductory call/)
-    assert.equal(f.segments.length, 0)
+    assert.deepEqual(f.segments.map(s => s.segmentId), [WEBSITE_ENQUIRY_SEGMENT])
   }
+})
+
+test('a failed website segment assignment cannot report success', async () => {
+  const f = fixture()
+  f.resend.contacts.segments.add = async () => failure
+  const result = await captureAcademySignup({ resend: f.resend, fields: academyFields(signup), from: 'x', to: 'y' })
+  assert.equal(result.ok, false)
+  assert.deepEqual(result.failed, ['resend_segment'])
 })

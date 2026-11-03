@@ -7,20 +7,24 @@ import './MonthlyCoachingPopup.css'
 const COPY = {
   nl: {
     kicker: 'Elke maand · 1 plek', title: '2 weken gratis begeleiding.',
-    description: 'We kiezen elke maand één persoon die we gratis helpen met de groei van hun merk.',
-    action: 'Ik stel me kandidaat', email: 'Je e-mailadres', placeholder: 'jij@bedrijf.be',
+    description: 'Ontvang onze marketingtips. Elke maand kiezen we één inschrijver voor twee weken gratis begeleiding.',
+    action: 'Schrijf me in', email: 'Je e-mailadres', placeholder: 'jij@bedrijf.be',
     submit: 'Meld me aan', busy: 'Even opslaan…', close: 'Sluiten', later: 'Niet nu',
-    note: 'We mailen je als je geselecteerd bent. Geen nieuwsbrief.', privacy: 'Privacy',
-    success: 'Je aanmelding is binnen.', successText: 'Bedankt! Je bent kandidaat voor de maandselectie. We mailen je als we jou kiezen.',
+    note: 'Uitschrijven kan altijd. We mailen je als je geselecteerd bent.', privacy: 'Privacy',
+    success: 'Je bent ingeschreven.', successText: 'Je ontvangt onze marketingtips en bent kandidaat voor de maandselectie. We mailen je als we jou kiezen.',
+    consent: 'Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.',
+    preferences: 'Je bent eerder uitgeschreven. Mail stef@verkoop.studio om je voorkeuren aan te passen.',
     error: 'Aanmelden lukt even niet. Probeer opnieuw.', limited: 'Probeer het over 10 minuten opnieuw.',
   },
   en: {
     kicker: 'Every month · 1 spot', title: '2 weeks of free guidance.',
-    description: 'Every month, we choose one person to help grow their brand, free of charge.',
-    action: 'Put me forward', email: 'Your email address', placeholder: 'you@company.com',
+    description: 'Get our marketing tips. Each month, we select one subscriber for two weeks of free guidance.',
+    action: 'Sign me up', email: 'Your email address', placeholder: 'you@company.com',
     submit: 'Sign me up', busy: 'Saving…', close: 'Close', later: 'Not now',
-    note: 'We’ll email you if you’re selected. No newsletter.', privacy: 'Privacy',
-    success: 'Your entry is in.', successText: 'Thank you! You’re a candidate for the monthly selection. We’ll email you if we choose you.',
+    note: 'Unsubscribe anytime. We’ll email you if you’re selected.', privacy: 'Privacy',
+    success: 'You’re subscribed.', successText: 'You’ll receive our marketing tips and enter the monthly selection. We’ll email you if we choose you.',
+    consent: 'Yes, I would like to receive marketing tips and news from Verkoop Studio by email.',
+    preferences: 'You previously unsubscribed. Email stef@verkoop.studio to update your preferences.',
     error: 'We couldn’t save your entry. Please try again.', limited: 'Please try again in 10 minutes.',
   },
 }
@@ -91,10 +95,10 @@ export default function MonthlyCoachingPopup({ source, completed = false, suppre
     try {
       const response = await fetch('/api/coaching-entry', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(20_000),
-        body: JSON.stringify({ email: data.get('email'), company_website: data.get('company_website'), source, lang }),
+        body: JSON.stringify({ email: data.get('email'), company_website: data.get('company_website'), source, lang, consent: data.get('consent') === 'on', consent_version: 'website-newsletter-v1' }),
       })
       const result = await response.json()
-      if (!response.ok || result.ok !== true) { setError(response.status === 429 ? t.limited : t.error); return }
+      if (!response.ok || result.ok !== true) { setError(response.status === 409 ? t.preferences : response.status === 429 ? t.limited : t.error); return }
       recordAcademyPopup(true)
       if (panel.current) setStage('success')
       panel.current?.focus({ preventScroll: true })
@@ -116,6 +120,7 @@ export default function MonthlyCoachingPopup({ source, completed = false, suppre
       <label htmlFor="coaching-email">{t.email}</label>
       <input id="coaching-email" name="email" type="email" autoComplete="email" required maxLength={200} placeholder={t.placeholder} disabled={pending} />
       <div className="coaching-popup-trap" aria-hidden="true"><label>Website<input name="company_website" tabIndex={-1} autoComplete="off" /></label></div>
+      <label className="coaching-popup-consent"><input type="checkbox" name="consent" required disabled={pending} /><span>{t.consent}</span></label>
       {error && <p className="coaching-popup-error" role="alert">{error}</p>}
       <button className="coaching-popup-submit" disabled={pending}>{pending ? t.busy : t.submit} <span aria-hidden="true">↗</span></button>
       <p className="coaching-popup-note">{t.note} <Link to="/privacy">{t.privacy}</Link></p>

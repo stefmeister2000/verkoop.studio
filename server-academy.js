@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { Router } from 'express'
-import { resendRequest, saveLeadContact } from './server-lead.js'
+import { resendRequest, saveLeadContact, WEBSITE_ENQUIRY_SEGMENT } from './server-lead.js'
 import { crmPayload, sendToCrm } from './server-crm.js'
 import { subscribeNewsletter } from './server-newsletter.js'
 
@@ -98,8 +98,13 @@ export async function captureAcademySignup({ resend, fields, from, to, crm, requ
   if (!resend) return { ok: false, status: 503, captured: [], failed: ['resend_not_configured'] }
   const key = academyKey(fields)
   const notification = academyNotification(fields)
+  let contact
   const tasks = [
-    ['resend_contact', () => saveLeadContact(resend, fields, request)],
+    ['resend_contact', async () => { contact = await saveLeadContact(resend, fields, request) }],
+    ['resend_segment', () => {
+      if (!contact?.id) throw new Error('contact_required')
+      return request(() => resend.contacts.segments.add({ contactId: contact.id, segmentId: WEBSITE_ENQUIRY_SEGMENT }))
+    }],
     ['resend_email', () => request(() => resend.emails.send({
       from, to: [...new Set(['stefkeppens@gmail.com', to].filter(Boolean))], replyTo: fields.email, ...notification,
     }, { idempotencyKey: `academy-notification/${key}` }))],

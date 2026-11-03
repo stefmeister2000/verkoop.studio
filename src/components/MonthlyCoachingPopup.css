@@ -12,6 +12,8 @@
 .coaching-popup form { margin-top:16px; }
 .coaching-popup form > label { display:block; font-size:12px; font-weight:600; margin-bottom:6px; }
 .coaching-popup input[type=email] { width:100%; min-height:46px; padding:10px 12px; border:1px solid #c9d1ec; border-radius:10px; background:white; color:#181c3d; font-size:16px; margin-bottom:10px; }
+.coaching-popup form > .coaching-popup-consent { display:flex; gap:9px; align-items:flex-start; margin:2px 0 14px; font-size:12px; line-height:1.5; font-weight:400; color:#515c79; cursor:pointer; }
+.coaching-popup-consent input { flex:0 0 auto; width:17px; height:17px; margin:2px 0 0; accent-color:#2948ff; }
 .coaching-popup form .coaching-popup-submit { width:100%; }
 .coaching-popup .coaching-popup-note { margin-top:10px; font-size:11px; line-height:1.5; }
 .coaching-popup-note a { color:#2948ff; text-decoration:underline; }
