@@ -20,6 +20,7 @@ export function academyFields(body = {}) {
     niveau: Object.hasOwn(ACADEMY_LEVELS, body.niveau) ? body.niveau : '',
     budget: Object.hasOwn(ACADEMY_BUDGETS, body.budget) ? body.budget : '',
     form_id: text(body.form_id, 60) || 'academy', submission_id: text(body.submission_id, 80),
+    request_type: body.request_type === 'free_lesson' ? 'free_lesson' : 'intro',
     nieuwsbrief: body.nieuwsbrief === true, lang: body.lang === 'en' ? 'en' : 'nl',
     attribution: body.attribution && typeof body.attribution === 'object' ? body.attribution : {},
     ga4: body.ga4,
@@ -36,7 +37,7 @@ export function academyKey(fields) {
 export function academyCrmPayload(fields) {
   return crmPayload({
     naam: fields.naam, email: fields.email, telefoon: fields.telefoon, bedrijf: fields.bedrijf, website: fields.website,
-    doel: 'Meta Ads Academy: kennismaking',
+    doel: fields.request_type === 'free_lesson' ? 'Ads Academy: gratis les' : 'Meta Ads Academy: kennismaking',
     uitdaging: fields.vraag,
     investering: ACADEMY_BUDGETS[fields.budget] ?? '',
     extra: [fields.niveau && `Stand van zaken: ${ACADEMY_LEVELS[fields.niveau]}`, fields.nieuwsbrief && 'Nieuwsbrief: ja'].filter(Boolean).join('\n'),
@@ -51,9 +52,9 @@ export function academyNotification(fields) {
   const title = fields.bedrijf || fields.naam
   const attribution = Object.entries(fields.attribution).filter(([, value]) => typeof value === 'string' && value).map(([key, value]) => `${key}: ${value}`).join(' · ') || 'niet ingevuld'
   const contact = [['Naam', fields.naam], ['E-mailadres', fields.email], ['Telefoon', fields.telefoon], ['Bedrijf', fields.bedrijf], ...(fields.website ? [['Website', fields.website]] : [])]
-  const academy = [['Waar staat de webshop met Meta ads?', ACADEMY_LEVELS[fields.niveau]], ['Maandelijks advertentiebudget', ACADEMY_BUDGETS[fields.budget]], ['Waar wil je vooral beter in worden?', fields.vraag], ['Nieuwsbrief', fields.nieuwsbrief ? 'ja' : 'nee']]
+  const academy = [['Aanvraag', fields.request_type === 'free_lesson' ? 'Gratis les' : 'Kennismaking'], ['Waar staat de webshop met Meta ads?', ACADEMY_LEVELS[fields.niveau]], ['Maandelijks advertentiebudget', ACADEMY_BUDGETS[fields.budget]], ['Waar wil je vooral beter in worden?', fields.vraag], ['Nieuwsbrief', fields.nieuwsbrief ? 'ja' : 'nee']]
   return {
-    subject: oneLine(`Nieuwe academy-aanmelding van ${title}`).slice(0, 120),
+    subject: oneLine(`${fields.request_type === 'free_lesson' ? 'Gratis Academy-les aangevraagd' : 'Nieuwe academy-aanmelding'} van ${title}`).slice(0, 120),
     text: [`Nieuwe academy-aanmelding van ${title}`, `Aanmelding van ${fields.naam}`, '', 'Beantwoord deze e-mail rechtstreeks om de aanvrager te contacteren.', '',
       'CONTACTGEGEVENS', ...contact.map(([label, value]) => `${label}: ${value || 'niet ingevuld'}`), '',
       'META ADS ACADEMY', ...academy.map(([label, value]) => `${label}: ${value || 'niet ingevuld'}`), '',
@@ -81,8 +82,12 @@ export function academyWelcome(fields) {
     'Stef neemt persoonlijk contact met je op om een moment af te spreken. Tijdens de kennismaking bespreken jullie je doelen en of de lessen bij je passen.',
     'Een vraag in de tussentijd? Antwoord gewoon op deze mail.', '', 'Tot snel,', 'Stef — Verkoop Studio',
   ]
+  if (fields.request_type === 'free_lesson') {
+    lines[2] = en ? 'Thank you for requesting your free lesson at Verkoop Studio Academy.' : 'Bedankt voor je aanvraag voor een gratis les bij Verkoop Studio Academy.'
+    lines[3] = en ? 'Stef will contact you personally to schedule your free lesson and discuss your business.' : 'Stef neemt persoonlijk contact met je op om je gratis les te plannen en je bedrijf te bespreken.'
+  }
   return {
-    subject: en ? 'Your Meta Ads Academy introductory call request' : 'Je kennismakingsaanvraag voor de Meta Ads Academy',
+    subject: fields.request_type === 'free_lesson' ? (en ? 'Your free Academy lesson request' : 'Je aanvraag voor een gratis Academy-les') : en ? 'Your Meta Ads Academy introductory call request' : 'Je kennismakingsaanvraag voor de Meta Ads Academy',
     text: lines.join('\n'),
     html: `<div lang="${en ? 'en' : 'nl'}" style="font-family:Arial,Helvetica,sans-serif;color:#172343;max-width:520px;font-size:15px;line-height:1.6"><p style="font-size:12px;color:#254bfa;font-weight:700;letter-spacing:1px;margin:0 0 6px">META ADS ACADEMY</p><h1 style="font-size:24px;line-height:1.2;margin:0 0 16px">${en ? 'Thank you' : 'Bedankt'}, ${escape(firstName)}.</h1><p>${escape(lines[2])}</p><p>${escape(lines[3])}</p><p>${escape(lines[4])}</p><p style="color:#62708a;font-size:13px;margin-top:24px">${escape(lines[6])}<br>Stef — Verkoop Studio</p></div>`,
   }

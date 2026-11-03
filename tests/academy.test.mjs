@@ -139,3 +139,21 @@ test('popup requests use Resend capture, confirmation and CRM without newsletter
   assert.ok(f.sent.some(item => item.p.subject === 'Je kennismakingsaanvraag voor de Meta Ads Academy'))
   assert.equal(f.segments.length, 0)
 })
+
+test('free lessons retain their offer in CRM, owner notification and confirmation without newsletter enrolment', async () => {
+  for (const lang of ['nl', 'en']) {
+    const f = fixture()
+    const payloads = []
+    const router = academyRouter({ resend: f.resend, from: 'noreply@example.com', to: 'owner@example.com', crmUrl: 'https://crm.example.com', sendCrm: async payload => { payloads.push(payload); return {} } })
+    const response = await post(router, { ...signup, request_type: 'free_lesson', lang })
+    assert.equal(response.status, 200)
+    assert.match(payloads[0].notes, /Ads Academy: gratis les/)
+    assert.match(f.sent[0].p.subject, /Gratis Academy-les aangevraagd/)
+    assert.match(f.sent[0].p.text, /Aanvraag: Gratis les/)
+    const mail = f.sent[1].p
+    assert.match(mail.subject, lang === 'nl' ? /gratis Academy-les/ : /free Academy lesson/)
+    assert.match(mail.text, lang === 'nl' ? /je gratis les te plannen/ : /schedule your free lesson/)
+    assert.doesNotMatch(mail.text, /kennismaking|introductory call/)
+    assert.equal(f.segments.length, 0)
+  }
+})

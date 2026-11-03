@@ -910,3 +910,13 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
  .ac-offer-card-top { margin-bottom: 18px; }
  .ac-offer-card h3 { font-size: 21px; }
 }
+
+/* Immediate free-lesson request in the hero, without a separate reveal button. */
+.ac-hero-target { display: inline-block; margin-top: 18px; padding: 8px 11px; border: 1px solid #cdd7ff; border-radius: 10px; color: #2344d8; background: #eef1ff; font-size: 14px; font-weight: 650; line-height: 1.4; }
+.ac-hero-target + .ac-hero-intro { margin-top: 12px; font-size: 15px; line-height: 1.5; }
+.ac-hero-signup { margin-top: 22px; }
+.ac-hero-signup .hero-request { margin-top: 0; }
+.ac-hero > .hero-video { align-self: start; }
+@media(max-width: 900px) { .ac-hero-signup { margin-top: 0; } }
+@media(max-width: 700px) { .ac-hero-copy h1 { font-size: 34px; line-height: 1.08; } .ac-hero { row-gap: 22px; } }
+.academy-page .hero-request h2 { font-size: clamp(22px,2vw,27px); line-height: 1.15; margin-top: 0; }

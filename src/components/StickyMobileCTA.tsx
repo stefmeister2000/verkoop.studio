@@ -9,6 +9,7 @@ import { useLang } from '../i18n/LanguageContext'
 /** Opening and closing actions. The bar stays hidden while one of these is already on screen. */
 const PRIMARY_ACTION = [
   '.studio-hero .hero-actions .button-dark',
+  '.studio-hero .hero-request',
   '.service-hero .button-dark',
   '.closing-cta .hero-actions .button-dark',
   '.pina-case-cta .button-dark',
