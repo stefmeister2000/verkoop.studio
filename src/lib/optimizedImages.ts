@@ -28,10 +28,6 @@ export const optimizedImages: Record<string, {width:number; height:number; srcSe
   [image4]: {width:1440, height:781, srcSet:`${small4} 640w, ${image4} 1440w`},
   [image6]: {width:1440, height:1080, srcSet:`${small6} 640w, ${image6} 1440w`},
 
-  '/partners/jobr.webp': {width:1280, height:800, srcSet:'/partners/jobr-640.webp 640w, /partners/jobr.webp 1280w'},
-  '/partners/werkr.webp': {width:1280, height:800, srcSet:'/partners/werkr-640.webp 640w, /partners/werkr.webp 1280w'},
   '/partners/eonlog-website.webp': {width:1280, height:800, srcSet:'/partners/eonlog-website-640.webp 640w, /partners/eonlog-website.webp 1280w'},
-  '/partners/jobr-website.webp': {width:1280, height:800, srcSet:'/partners/jobr-website-640.webp 640w, /partners/jobr-website.webp 1280w'},
-  '/partners/werkr-logo.svg': {width:125, height:27},
   '/partners/lyte-logo.png': {width:1984, height:688},
 }
