@@ -8,9 +8,10 @@ const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.Modu
 const { canShowAcademyPopup, ACADEMY_POPUP_DELAY, ACADEMY_POPUP_COOLDOWN } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`)
 const base = { now: 1_000_000, startedAt: 900_000, scrollProgress: .3, history: {}, blocked: false }
 
-test('invitation needs both reading time and scroll engagement', () => {
+test('invitation becomes eligible after ten seconds without requiring a deep scroll', () => {
   assert.equal(canShowAcademyPopup({ ...base, startedAt: base.now - ACADEMY_POPUP_DELAY + 1 }), false)
-  assert.equal(canShowAcademyPopup({ ...base, scrollProgress: .24 }), false)
+  assert.equal(ACADEMY_POPUP_DELAY, 10_000)
+  assert.equal(canShowAcademyPopup({ ...base, scrollProgress: 0 }), true)
   assert.equal(canShowAcademyPopup({ ...base, startedAt: base.now - ACADEMY_POPUP_DELAY, scrollProgress: .25 }), true)
 })
 
