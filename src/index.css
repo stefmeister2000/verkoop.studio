@@ -535,13 +535,25 @@ main > div:not(.studio-home) {
 }
 .selected-work {
   display: grid;
-  grid-template-columns: 1.1fr minmax(0, 2.5fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
   padding: 34px;
-  align-items: start;
 }
+/* Heading left, button and arrows right, so the track below gets the full width. */
 .work-intro {
-  padding: 5px 13px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+.work-intro-copy {
+  max-width: 46ch;
+}
+.work-intro-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 .work-intro h2 {
   font-size: clamp(25px, 2.6vw, 38px);
@@ -552,19 +564,15 @@ main > div:not(.studio-home) {
 .work-intro h2 span {
   color: #254bfa;
 }
-.work-intro > p {
+.work-intro p {
   color: #4e5364;
   font-size: 15px;
   line-height: 1.6;
   margin-top: 19px;
 }
-.work-intro .button-dark {
-  margin-top: 22px;
-}
 .work-controls {
   display: flex;
   gap: 8px;
-  margin-top: 26px;
 }
 .work-controls button {
   width: 42px;
@@ -595,8 +603,10 @@ main > div:not(.studio-home) {
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 26px;
   scrollbar-width: none;
-  padding-bottom: 6px;
+  margin: -18px -26px -34px;
+  padding: 18px 26px 34px;
 }
 .work-track::-webkit-scrollbar {
   display: none;
@@ -607,7 +617,7 @@ main > div:not(.studio-home) {
   border-radius: 20px;
 }
 .work-track > .project-tile {
-  flex: 0 0 calc((100% - 30px) / 2.3);
+  flex: 0 0 calc((100% - 54px) / 3.3);
   scroll-snap-align: start;
 }
 .project-tile {
@@ -780,7 +790,10 @@ button:focus-visible {
   }
   .selected-work {
     padding: 26px;
-    gap: 14px;
+    gap: 18px;
+  }
+  .work-track > .project-tile {
+    flex-basis: calc((100% - 36px) / 2.5);
   }
   .work-intro h2 {
     font-size: 29px;
@@ -811,19 +824,13 @@ button:focus-visible {
     right: 25px;
     bottom: 32px;
   }
-  .selected-work {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .work-intro {
-    padding: 0 0 14px;
-  }
   .work-track > .project-tile {
     flex-basis: calc((100% - 18px) / 1.75);
   }
   .work-intro h2 {
     font-size: 35px;
   }
-  .work-intro > p {
+  .work-intro p {
     max-width: 420px;
   }
   .studio-home > section > div.max-w-6xl {

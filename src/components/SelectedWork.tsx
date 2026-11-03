@@ -55,36 +55,40 @@ export default function SelectedWork() {
   return (
     <section className="selected-work" id="selected-work">
       <div className="work-intro">
-        <h2>
-          {nl ? 'Sterke campagnes.' : 'Strong campaigns.'}
-          <br />
-          {nl ? 'Slimme websites.' : 'Smart websites.'}
-          <br />
-          <span>{nl ? 'Meetbare groei.' : 'Measurable growth.'}</span>
-        </h2>
-        <p>{nl ? 'Ontdek de projecten achter ons team.' : 'Explore the projects behind our team.'}</p>
-        <Link className="button-dark" to="/cases">
-          {nl ? 'Alle projecten' : 'All projects'} <span>↗</span>
-        </Link>
-        <div className="work-controls">
-          <button
-            type="button"
-            aria-label={nl ? 'Vorig project' : 'Previous project'}
-            aria-controls="work-track"
-            disabled={reach.start}
-            onClick={() => scrollByCard(-1)}
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            aria-label={nl ? 'Volgend project' : 'Next project'}
-            aria-controls="work-track"
-            disabled={reach.end}
-            onClick={() => scrollByCard(1)}
-          >
-            →
-          </button>
+        <div className="work-intro-copy">
+          <h2>
+            {nl ? 'Sterke campagnes.' : 'Strong campaigns.'}
+            <br />
+            {nl ? 'Slimme websites.' : 'Smart websites.'}
+            <br />
+            <span>{nl ? 'Meetbare groei.' : 'Measurable growth.'}</span>
+          </h2>
+          <p>{nl ? 'Ontdek de projecten achter ons team.' : 'Explore the projects behind our team.'}</p>
+        </div>
+        <div className="work-intro-actions">
+          <Link className="button-dark" to="/cases">
+            {nl ? 'Alle projecten' : 'All projects'} <span>↗</span>
+          </Link>
+          <div className="work-controls">
+            <button
+              type="button"
+              aria-label={nl ? 'Vorig project' : 'Previous project'}
+              aria-controls="work-track"
+              disabled={reach.start}
+              onClick={() => scrollByCard(-1)}
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              aria-label={nl ? 'Volgend project' : 'Next project'}
+              aria-controls="work-track"
+              disabled={reach.end}
+              onClick={() => scrollByCard(1)}
+            >
+              →
+            </button>
+          </div>
         </div>
       </div>
       <div
