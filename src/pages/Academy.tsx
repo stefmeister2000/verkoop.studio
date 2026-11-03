@@ -12,7 +12,6 @@ import { academyFaq as sourceFaq, academyModules as sourceModules, academyTests 
 import { cases } from '../data/cases'
 import { useAcademyTranslation } from '../i18n/academy'
 import { trackNewsletterConversion } from '../lib/analytics'
-import stefNooms from '../assets/stef.webp'
 import studentUpdate from '../assets/academy-student-update.png'
 import pinacelloResults from '../assets/cases/pinacello-results.png'
 // Loaded only on this page, so the homepage's inlined stylesheet stays within its size budget.
@@ -406,11 +405,23 @@ export default function Academy() {
 
         </article>
 
-        <aside className="ac-focus-card" aria-label={t("Ads Academy in het kort")}>
-          <figure><ResponsiveImage src={stefNooms} alt={t("Stef Keppens van Verkoop Studio")} sizes="(max-width: 700px) 100vw, 420px" loading="lazy" /></figure>
-          <div className="ac-focus-card-body">
-            <h3>{t('Leren in de praktijk')}</h3>
-            <p>{t('1-op-1 met Stef, in je eigen advertentieaccount. Je werkt aan je eigen campagnes, pagina’s en tracking.')}</p>
+        <aside className="ac-focus-card ac-tracking-card" aria-labelledby="tracking-access-title">
+          <div className="ac-tracking-visual">
+            <div className="ac-tracking-topline" aria-hidden="true"><span className="ac-tracking-symbol">↗</span><span>verkoop<span className="ac-tracking-wordmark-dot">.</span> tracking</span><span className="ac-tracking-spark">✦</span></div>
+            <div className="ac-tracking-window" aria-hidden="true">
+              <div className="ac-tracking-window-bar"><span /><span /><span /><b>{t('Jouw overzicht')}</b></div>
+              <div className="ac-tracking-sources"><span>Meta Ads</span><span>Google Ads</span><span>{t('Website')}</span></div>
+              <div className="ac-tracking-connector"><i /><i /><i /></div>
+              <div className="ac-tracking-destination"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="4" /><path d="M7 16v-4m5 4V8m5 8v-6" /></svg><span>{t('Alles in één dashboard')}</span></div>
+            </div>
+            <div className="ac-tracking-value"><span>{t('Ter waarde van')}</span><strong>€400<span>+</span></strong></div>
+          </div>
+          <div className="ac-tracking-body">
+            <span className="ac-tracking-badge">{t('Inbegrepen bij de Academy')}</span>
+            <h3 id="tracking-access-title">{t('Krijg toegang tot onze')} <span>{t('trackingsoftware.')}</span></h3>
+            <p>{t('Zie waar je aanvragen vandaan komen en welke campagnes omzet opleveren.')}</p>
+            <ul>{[t('Advertentiekosten en conversies bij elkaar'), t('Inzicht in de herkomst van je leads'), t('Samen instellen tijdens je lessen')].map(text => <li key={text}><span aria-hidden="true">✓</span>{text}</li>)}</ul>
+            <button className="ac-button" onClick={goToSignup}>{t('Plan een kennismaking')}<span aria-hidden="true">↗</span></button>
           </div>
         </aside>
       </section>

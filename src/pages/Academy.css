@@ -835,3 +835,38 @@ p.ac-promise-done { margin-top: 0; color: #fff; font-weight: 600; text-align: ce
 @media (max-width: 700px) {
   .ac-offer, .ac-focus, .ac-curriculum { padding: 26px 18px; border-radius: 22px; }
 }
+
+/* Tracking access: a software benefit card in the Academy's blue/white palette. */
+.ac-focus-card.ac-tracking-card { width: 100%; border-color: #cbd5ff; border-radius: 24px; box-shadow: 0 22px 48px -30px #254bfa66; }
+.ac-tracking-visual { position: relative; isolation: isolate; overflow: hidden; padding: 22px 22px 18px; background: linear-gradient(145deg, #3458ff, #1c35c7); color: #fff; }
+.ac-tracking-visual::before { content: ''; position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(#ffffff0b 1px, transparent 1px), linear-gradient(90deg, #ffffff0b 1px, transparent 1px); background-size: 24px 24px; }
+.ac-tracking-topline { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: -.02em; }
+.ac-tracking-symbol { display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid #ffffff66; border-radius: 7px; font-size: 18px; }
+.ac-tracking-wordmark-dot { color: #bccaff; }
+.ac-tracking-spark { margin-left: auto; color: #dbe3ff; font-size: 22px; }
+.ac-tracking-window { margin-top: 22px; padding: 12px; background: #fff; border: 1px solid #ffffff80; border-radius: 13px; box-shadow: 0 14px 24px #10217b33; color: var(--ac-ink); transform: rotate(-2deg); }
+.ac-tracking-window-bar { display: flex; align-items: center; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #edf0ff; }
+.ac-tracking-window-bar > span { width: 5px; height: 5px; border-radius: 50%; background: #ccd6ff; }
+.ac-tracking-window-bar b { margin-left: auto; font-size: 9px; font-weight: 500; color: #636b89; }
+.ac-tracking-sources { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; margin-top: 14px; }
+.ac-tracking-sources span { padding: 7px 2px; border: 1px solid #dfe5ff; border-radius: 6px; font-size: 9px; font-weight: 600; text-align: center; white-space: nowrap; }
+.ac-tracking-connector { display: flex; justify-content: space-around; width: 69%; height: 20px; margin: 0 auto 10px; border: 1px solid #a7b8ff; border-top: 0; border-radius: 0 0 7px 7px; position: relative; }
+.ac-tracking-connector::after { content: ''; position: absolute; top: 100%; left: 50%; height: 10px; border-left: 1px solid #a7b8ff; }
+.ac-tracking-connector i:nth-child(2) { border-left: 1px solid #a7b8ff; }
+.ac-tracking-destination { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 5px; border-radius: 8px; background: #eef2ff; color: #254bfa; font-size: 11px; font-weight: 600; }
+.ac-tracking-destination svg { flex: none; width: 20px; height: 20px; }
+.ac-tracking-value { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 21px; }
+.ac-tracking-value > span { font-size: 12px; color: #e0e7ff; }
+.ac-tracking-value strong { font-size: 38px; line-height: 1; font-weight: 700; letter-spacing: -.05em; }
+.ac-tracking-value strong span { font-size: 25px; vertical-align: top; margin-left: 2px; }
+.ac-tracking-body { padding: 24px; }
+.ac-tracking-badge { display: inline-flex; padding: 5px 8px; border-radius: 6px; background: #edf1ff; color: #254bfa; font-size: 10px; font-weight: 700; letter-spacing: .02em; }
+.ac-tracking-card h3 { margin-top: 15px; font-size: 27px; font-weight: 700; line-height: 1.12; letter-spacing: -.035em; }
+.ac-tracking-card h3 span { color: var(--ac-blue); }
+.ac-tracking-body > p { margin-top: 13px; color: var(--ac-text); font-size: 14px; line-height: 1.6; }
+.ac-tracking-body ul { display: grid; gap: 11px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--ac-line); }
+.ac-tracking-body li { display: flex; gap: 9px; align-items: flex-start; color: var(--ac-ink); font-size: 12px; line-height: 1.5; }
+.ac-tracking-body li > span { flex: none; color: var(--ac-blue); font-weight: 700; }
+.ac-tracking-body .ac-button { width: 100%; margin-top: 22px; padding-inline: 12px; font-size: 14px; }
+@media (max-width: 900px) { .ac-focus-card.ac-tracking-card { max-width: 420px; margin-inline: auto; } }
+@media (max-width: 380px) { .ac-tracking-body { padding: 20px; } .ac-tracking-visual { padding-inline: 18px; } .ac-tracking-card h3 { font-size: 25px; } }
