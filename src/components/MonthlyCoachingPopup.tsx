@@ -8,8 +8,8 @@ const COPY = {
   nl: {
     kicker: 'Elke maand · 1 plek', title: '2 weken gratis begeleiding.',
     description: 'Ontvang onze marketingtips. Elke maand kiezen we één inschrijver voor twee weken gratis begeleiding.',
-    action: 'Schrijf me in', email: 'Je e-mailadres', placeholder: 'jij@bedrijf.be',
-    submit: 'Meld me aan', busy: 'Even opslaan…', close: 'Sluiten', later: 'Niet nu',
+    email: 'Je e-mailadres', placeholder: 'jij@bedrijf.be',
+    submit: 'Meld me aan', busy: 'Even opslaan…', close: 'Sluiten',
     note: 'Uitschrijven kan altijd. We mailen je als je geselecteerd bent.', privacy: 'Privacy',
     success: 'Je bent ingeschreven.', successText: 'Je ontvangt onze marketingtips en bent kandidaat voor de maandselectie. We mailen je als we jou kiezen.',
     consent: 'Ja, ik ontvang graag marketingtips en nieuws van Verkoop Studio per e-mail.',
@@ -19,8 +19,8 @@ const COPY = {
   en: {
     kicker: 'Every month · 1 spot', title: '2 weeks of free guidance.',
     description: 'Get our marketing tips. Each month, we select one subscriber for two weeks of free guidance.',
-    action: 'Sign me up', email: 'Your email address', placeholder: 'you@company.com',
-    submit: 'Sign me up', busy: 'Saving…', close: 'Close', later: 'Not now',
+    email: 'Your email address', placeholder: 'you@company.com',
+    submit: 'Sign me up', busy: 'Saving…', close: 'Close',
     note: 'Unsubscribe anytime. We’ll email you if you’re selected.', privacy: 'Privacy',
     success: 'You’re subscribed.', successText: 'You’ll receive our marketing tips and enter the monthly selection. We’ll email you if we choose you.',
     consent: 'Yes, I would like to receive marketing tips and news from Verkoop Studio by email.',
@@ -34,7 +34,7 @@ export default function MonthlyCoachingPopup({ source, completed = false, suppre
 }) {
   const { lang } = useLang()
   const t = COPY[lang]
-  const [stage, setStage] = useState<'invite' | 'form' | 'success' | null>(null)
+  const [stage, setStage] = useState<'form' | 'success' | null>(null)
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
   const panel = useRef<HTMLElement>(null)
@@ -68,7 +68,7 @@ export default function MonthlyCoachingPopup({ source, completed = false, suppre
       shown = true
       previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
       recordAcademyPopup()
-      setStage('invite')
+      setStage('form')
     }
     const input = (event: Event) => {
       if (!(event.target instanceof Element) || !event.target.closest('form') || panel.current?.contains(event.target)) return
@@ -109,13 +109,9 @@ export default function MonthlyCoachingPopup({ source, completed = false, suppre
   if (!stage) return null
   return <aside className="coaching-popup" ref={panel} tabIndex={-1} role="dialog" aria-modal="false" aria-labelledby="coaching-popup-title" aria-describedby="coaching-popup-description">
     <button className="coaching-popup-close" type="button" onClick={close} aria-label={t.close}>×</button>
-    <p className="coaching-popup-kicker"><span aria-hidden="true">✦</span> {t.kicker}</p>
+    <p className="coaching-popup-kicker">{t.kicker}</p>
     <h2 id="coaching-popup-title">{stage === 'success' ? t.success : t.title}</h2>
     <p id="coaching-popup-description" role={stage === 'success' ? 'status' : undefined}>{stage === 'success' ? t.successText : t.description}</p>
-    {stage === 'invite' && <div className="coaching-popup-actions">
-      <button className="coaching-popup-submit" onClick={() => { setStage('form'); requestAnimationFrame(() => panel.current?.querySelector<HTMLInputElement>('[name="email"]')?.focus({ preventScroll: true })) }}>{t.action} <span aria-hidden="true">↗</span></button>
-      <button className="coaching-popup-later" onClick={close}>{t.later}</button>
-    </div>}
     {stage === 'form' && <form onSubmit={submit} aria-busy={pending} data-clarity-mask="true">
       <label htmlFor="coaching-email">{t.email}</label>
       <input id="coaching-email" name="email" type="email" autoComplete="email" required maxLength={200} placeholder={t.placeholder} disabled={pending} />
