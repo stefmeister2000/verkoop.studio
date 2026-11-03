@@ -1,4 +1,4 @@
-export const ACADEMY_POPUP_DELAY = 10_000
+export const ACADEMY_POPUP_DELAY = 5_000
 export const ACADEMY_POPUP_COOLDOWN = 7 * 24 * 60 * 60_000
 const storageKey = 'verkoop-monthly-coaching-v1'
 type PopupHistory = { shownAt?: number; converted?: boolean }
