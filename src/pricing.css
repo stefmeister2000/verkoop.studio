@@ -28,13 +28,15 @@
 .growth-plan-featured .plan-software { border-color: #ffffff30; background: #ffffff12; color: #e4edff; }
 .growth-plan-featured .plan-software > span { color: #b6f1e1; }
 .plan-audience { font-size: 14px; line-height: 1.6; color: #4e5364; margin-top: 12px; min-height: 62px; }
-.plan-details-toggle, .pricing-mobile-comparison { display: none; }
+.plan-details-toggle { display: none; }
 .plan-details-content { display: flex; flex-direction: column; flex: 1; }
 .plan-includes { border-top: 1px solid #e2e7f2; margin-top: 24px; padding-top: 24px; flex: 1; }
 .plan-includes > p { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #68758e; margin-bottom: 18px; }
 .plan-includes ul { display: grid; gap: 13px; }
 .plan-includes li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.6; color: #4e5364; }
 .plan-includes li > span { color: #254bfa; flex-shrink: 0; }
+.plan-includes li.plan-feature-off { color: #949db2; }
+.plan-includes li.plan-feature-off > span { color: #b2bacb; }
 .plan-cta { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 15px 18px; min-height: 50px; border: 1px solid #cdd6ee; border-radius: 12px; font-size: 13px; font-weight: 600; margin-top: 32px; color: #1f3bbb; background: #f4f6ff; }
 .plan-cta-note { text-align: center; font-size: 10px; line-height: 1.6; color: #6a7389; margin-top: 12px; }
 .growth-plan-featured { background: linear-gradient(150deg,#263fd6,#17256a); border-color: #3451ed; color: #fff; box-shadow: 0 20px 50px #254bfa26; }
@@ -42,20 +44,11 @@
 .growth-plan-featured .plan-topline > span:last-child { background: #ffffff1f; color: #fff; }
 .growth-plan-featured .plan-includes { border-color: #ffffff30; }
 .growth-plan-featured .plan-includes li > span { color: #b6f1e1; }
+.growth-plan-featured .plan-includes li.plan-feature-off { color: #ffffffab; }
+.growth-plan-featured .plan-includes li.plan-feature-off > span { color: #ffffff91; }
 .growth-plan-featured .plan-signal span { background: #ffffff1a; }
 .growth-plan-featured .plan-signal .signal-active { background: linear-gradient(160deg,#d2f5ff,#7fa7ff); }
 .growth-plan-featured .plan-cta { color: #254bfa; background: #fff; border-color: #fff; }
-.pricing-comparison { margin-top: 36px; border-block: 1px solid #dde3ef; }
-.pricing-comparison summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 23px 0; cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: #263966; }
-.pricing-comparison summary::-webkit-details-marker { display: none; }
-.pricing-comparison > summary > span { font-size: 24px; font-weight: 400; }
-.pricing-comparison[open] > summary > span { rotate: 45deg; }
-.pricing-table-scroll { overflow-x: auto; padding-bottom: 15px; }
-.pricing-table-scroll table { min-width: 740px; width: 100%; font-size: 12px; text-align: left; }
-.pricing-table-scroll th,.pricing-table-scroll td { padding: 14px; border-bottom: 1px solid #e0e6f2; color: #4c5b74; }
-.pricing-table-scroll thead th { background: #edf1fc; color: #1d3054; }
-.pricing-table-scroll tbody th { font-weight: 400; }
-.pricing-table-scroll td:nth-child(3) { background: #f0f3ff; }
 .pricing-first-step { display: grid; grid-template-columns: 1fr; gap: 56px; margin-top: 48px; }
 .pricing-first-step h3 { font-size: 26px; line-height: 1.2; letter-spacing: -.04em; color: #182039; margin: 0 0 14px; }
 .pricing-first-step p { font-size: 13px; line-height: 1.8; color: #5f6a80; }
@@ -111,23 +104,13 @@
   .plan-details-toggle > span { font-size: 22px; }
   .growth-plan-featured .plan-details-toggle { border-color: #ffffff40; color: #fff; }
   .plan-details-content:not(.is-expanded) { display: none; }
-  .plan-includes { margin-top: 16px; padding-top: 16px; }
   .plan-cta { margin-top: 16px; }
-  .pricing-table-scroll { display: none; }
-  .pricing-mobile-comparison { display: grid; gap: 8px; padding-bottom: 20px; }
-  .pricing-mobile-comparison > details { padding: 0 16px; border: 1px solid #dce2f0; border-radius: 12px; background: #fff; min-width: 0; }
-  .pricing-mobile-comparison summary { padding-block: 14px; min-height: 52px; }
-  .pricing-mobile-comparison summary > span:first-child { font-size: 16px; }
-  .pricing-mobile-comparison summary > span:last-child { font-size: 22px; }
-  .pricing-mobile-comparison details[open] > summary > span:last-child { rotate: 45deg; }
-  .pricing-mobile-comparison dl { padding-bottom: 12px; }
-  .pricing-mobile-comparison dl > div { padding: 12px 0; border-top: 1px solid #e0e6f2; font-size: 14px; line-height: 1.5; }
-  .pricing-mobile-comparison dt { color: #253453; }
-  .pricing-mobile-comparison dd { color: #59657c; margin-top: 4px; }
 }
 
-/* Short package summaries; the full comparison remains available below. */
+/* Every card lists the full package; nothing is hidden behind a click. */
 .plan-outcome { min-height: 48px; }
 .plan-includes { margin-top: 20px; padding-top: 20px; }
-.plan-includes ul { gap: 10px; }
+.plan-includes ul { gap: 9px; }
 @media (max-width: 700px) { .plan-outcome { min-height: 0; } }
+/* The toggle already draws a rule above the list on mobile. */
+@media (max-width: 760px) { .plan-includes { margin-top: 0; padding-top: 6px; border-top: 0; } }
