@@ -16,8 +16,8 @@ const positioning = {
     cta: ['Bespreek Partner', 'Discuss Partner'],
   },
   department: {
-    label: ['Met wekelijks overleg', 'With a weekly meeting'],
-    outcome: ['Alles, inclusief videoshoots en een wekelijks overleg.', 'Everything, including video shoots and a weekly meeting.'],
+    label: ['Met social media', 'With social media'],
+    outcome: ['Alles, inclusief videoshoots en volledig social media management.', 'Everything, including video shoots and full social media management.'],
     cta: ['Bespreek Department', 'Discuss Department'],
   },
 }
@@ -32,7 +32,7 @@ export default function PricingSection() {
       <div className="pricing-wrap">
         <header className="pricing-intro">
           <h2 id="pricing-title">{nl ? 'Kies je groeipakket.' : 'Choose your growth plan.'}</h2>
-          <p>{nl ? 'Elk pakket bevat de volledige aanpak. Het verschil zit in videoshoots en het wekelijkse overleg.' : 'Every package covers the full scope. The difference is video shoots and the weekly meeting.'}</p>
+          <p>{nl ? 'Elk pakket bevat de volledige aanpak. Het verschil zit in videoshoots en social media management.' : 'Every package covers the full scope. The difference is video shoots and social media management.'}</p>
         </header>
         <div className="pricing-grid">
           {pricingTiers.map((tier, index) => {
