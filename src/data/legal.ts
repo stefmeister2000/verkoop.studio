@@ -139,11 +139,11 @@ export const legalDocuments = {
         title: { nl: 'Prijzen', en: 'Prices' },
         paragraphs: {
           nl: [
-            'Growth Foundation kost €1.500 per maand voor de volledige aanpak zonder videoshoots. Growth Partner kost €2.500 per maand en voegt videoshoots toe. Growth Department kost €4.000 per maand en voegt een wekelijks overleg toe.',
+            'Growth Foundation kost €1.500 per maand voor de volledige aanpak zonder videoshoots. Growth Partner kost €2.500 per maand en voegt videoshoots toe. Growth Department kost €4.000 per maand en voegt volledig social media management toe, inclusief posts voor Instagram en TikTok.',
             'De site zegt niet of btw in die bedragen zit. Advertentiebudget betaal je aan het advertentieplatform, niet aan TanguyDeBee BV als deel van dat bedrag. Websites, webshops, apps en software op maat kunnen aparte projecten zijn. Het sales CRM en het marketingdashboard zitten in een pakket, zonder aparte publieke abonnementsprijs. Scope, advertentiebudget en licenties van derden staan in het voorstel.',
           ],
           en: [
-            'Growth Foundation costs €1,500 per month for the full approach without video shoots. Growth Partner costs €2,500 per month and adds video shoots. Growth Department costs €4,000 per month and adds a weekly meeting.',
+            'Growth Foundation costs €1,500 per month for the full approach without video shoots. Growth Partner costs €2,500 per month and adds video shoots. Growth Department costs €4,000 per month and adds full social media management, including posts for Instagram and TikTok.',
             'The site does not say whether VAT is included in those amounts. Ad spend is paid to the ad platform, not to TanguyDeBee BV as part of that fee. Websites, webshops, apps and custom software can be separate projects. The sales CRM and the marketing dashboard are included in a plan, with no separate public subscription price. Scope, ad budget and third-party licences are set in the proposal.',
           ],
         },

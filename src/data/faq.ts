@@ -108,8 +108,8 @@ export const faqItems: FaqItem[] = [
   {
     question: { nl: 'Wat kost een samenwerking?', en: 'What does a collaboration cost?' },
     answer: {
-      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten. €1.500 per maand dekt alles, behalve videoshoots. €2.500 per maand dekt ook videoshoots. €4.000 per maand dekt ook een wekelijks overleg. Het CRM, het marketingdashboard en de documentatie zitten in elk pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel.',
-      en: 'Ongoing work runs through three growth plans. €1,500 per month covers everything except video shoots. €2,500 per month also covers video shoots. €4,000 per month also covers a weekly meeting. The CRM, the marketing dashboard and the documentation are in every plan. Scope, ad spend and any third-party licences are agreed in the proposal.',
+      nl: 'Doorlopende samenwerkingen lopen via drie groeipakketten. €1.500 per maand dekt alles, behalve videoshoots. €2.500 per maand dekt ook videoshoots. €4.000 per maand dekt ook volledig social media management, met posts voor Instagram en TikTok. Het CRM, het marketingdashboard en de documentatie zitten in elk pakket. Scope, advertentiebudget en eventuele externe licenties leggen we vooraf vast in het voorstel.',
+      en: 'Ongoing work runs through three growth plans. €1,500 per month covers everything except video shoots. €2,500 per month also covers video shoots. €4,000 per month also covers full social media management, with posts for Instagram and TikTok. The CRM, the marketing dashboard and the documentation are in every plan. Scope, ad spend and any third-party licences are agreed in the proposal.',
     },
   },
   {

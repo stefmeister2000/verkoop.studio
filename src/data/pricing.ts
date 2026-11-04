@@ -79,17 +79,17 @@ export const pricingTiers: PricingTier[] = [
     name: { nl: 'Growth Department', en: 'Growth Department' },
     price: { nl: '€4.000 / maand', en: '€4,000 / month' },
     audience: {
-      nl: 'Voor bedrijven die daarbij ook een wekelijks overleg willen.',
-      en: 'For businesses that also want a weekly meeting.',
+      nl: 'Voor bedrijven die daarbij ook hun social media volledig uit handen willen geven.',
+      en: 'For businesses that also want their social media handled end to end.',
     },
     highlights: {
       nl: [
         'Alles uit Partner',
-        'Wekelijks overleg',
+        'Volledig social media management',
       ],
       en: [
         'Everything in Partner',
-        'Weekly meeting',
+        'Full social media management',
       ],
     },
   },
@@ -117,5 +117,5 @@ export const featureRows: FeatureRow[] = [
   { label: { nl: 'CRM en marketingdashboard', en: 'CRM and marketing dashboard' }, values: [check, check, check] },
   { label: { nl: 'Documentatie en instructievideo’s', en: 'Documentation and video guides' }, values: [check, check, check] },
   { label: { nl: 'Videoshoots', en: 'Video shoots' }, values: [dash, check, check] },
-  { label: { nl: 'Wekelijks overleg', en: 'Weekly meeting' }, values: [dash, dash, check] },
+  { label: { nl: 'Social media management (Instagram, TikTok)', en: 'Social media management (Instagram, TikTok)' }, values: [dash, dash, check] },
 ]
