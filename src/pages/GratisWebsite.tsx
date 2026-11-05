@@ -9,8 +9,8 @@ import { getCase } from '../data/cases'
 import { trackEvent } from '../lib/analytics'
 import { useLang } from '../i18n/LanguageContext'
 import pinacello from '../assets/cases/pinacello.webp'
-import studioTeam from '../assets/studio-team.webp'
-import studioTeamSmall from '../assets/studio-team-640.webp'
+import studioFlyers from '../assets/studio-flyers.webp'
+import studioFlyersSmall from '../assets/studio-flyers-640.webp'
 import stefDesk from '../assets/stef-desk.webp'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
 
@@ -123,9 +123,9 @@ export default function GratisWebsite() {
           </div>
           <figure className="m-0">
             <picture>
-              <source media="(max-width: 640px)" srcSet={studioTeamSmall} />
+              <source media="(max-width: 640px)" srcSet={studioFlyersSmall} />
               <ResponsiveImage
-                src={studioTeam}
+                src={studioFlyers}
                 alt={g.why.photoAlt[lang]}
                 sizes="(max-width: 1024px) 100vw, 320px"
                 loading="lazy"
