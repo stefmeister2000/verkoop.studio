@@ -40,10 +40,22 @@ export const giveaway = {
       nl: 'De actie loopt veertien dagen. Deelnemen kan tot en met 19 november 2026.',
       en: 'The campaign runs for fourteen days. You can enter until 19 November 2026.',
     },
+    facts: {
+      nl: [
+        { label: 'Wat', value: 'Een volledige nieuwe website' },
+        { label: 'Voor wie', value: 'Eén bedrijf, door ons gekozen' },
+        { label: 'Tot wanneer', value: '19 november 2026' },
+      ],
+      en: [
+        { label: 'What', value: 'A complete new website' },
+        { label: 'For whom', value: 'One business, chosen by us' },
+        { label: 'Until', value: '19 November 2026' },
+      ],
+    },
     figureAlt: { nl: 'De webshop die we voor Pinacello bouwden', en: 'The online store we built for Pinacello' },
     figureCaption: {
-      nl: 'Pinacello. Een van de sites die we dit jaar bouwden.',
-      en: 'Pinacello. One of the sites we built this year.',
+      nl: 'Pinacello. Een van de sites die we bouwden.',
+      en: 'Pinacello. One of the sites we built.',
     },
   },
 
