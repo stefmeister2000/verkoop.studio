@@ -1,5 +1,24 @@
 // Server-only bridge. Never import this module into the browser bundle.
-export function crmPayload(body, { campaign = 'Verkoop Studio website' } = {}) {
+
+/** The campaign every ordinary website enquiry is tagged with in the CRM. */
+export const WEBSITE_CAMPAIGN = 'Verkoop Studio website'
+/** The entry form on /gratis-website posts this form_id. */
+export const GIVEAWAY_FORM_ID = 'gratis-website-actie'
+/** Campaign for the free-website giveaway. The CRM reads this name to badge the lead. */
+export const GIVEAWAY_CAMPAIGN = 'Verkoop Studio gratis website'
+
+/**
+ * The CRM campaign a lead is filed under, derived from the form it came from.
+ * The visitor never sends a campaign name, so a running campaign cannot be
+ * renamed from the browser; only the form_id the page itself posts is read.
+ */
+export function campaignForForm(formId) {
+  return (typeof formId === 'string' ? formId.trim() : '') === GIVEAWAY_FORM_ID
+    ? GIVEAWAY_CAMPAIGN
+    : WEBSITE_CAMPAIGN
+}
+
+export function crmPayload(body, { campaign = campaignForForm(body?.form_id) } = {}) {
   const text = (value) => typeof value === 'string' ? value.trim() : ''
   const fields = [
     ['Doel', body.doel], ['Uitdaging', body.uitdaging],

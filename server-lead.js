@@ -1,4 +1,5 @@
 import { enquiryTemplate } from './server-templates.js'
+import { GIVEAWAY_FORM_ID } from './server-crm.js'
 import { createHash } from 'node:crypto'
 
 export const WEBSITE_ENQUIRY_SEGMENT = 'd6c1a8b8-b0a0-4ea8-af19-e93f4b07800d'
@@ -59,7 +60,7 @@ export async function captureLead({ resend, body, from, to = 'stefkeppens@gmail.
     }],
     ['resend_email', () => request(() => resend.emails.send({
       from, to: [...new Set(['stefkeppens@gmail.com', to].filter(Boolean))], replyTo: body.email,
-      subject: `Nieuwe groeianalyse-aanvraag van ${String(body.bedrijf || body.naam).replace(/[\r\n]/g, ' ').slice(0, 80)}`,
+      subject: `${body.form_id === GIVEAWAY_FORM_ID ? 'Nieuwe deelname gratis website van' : 'Nieuwe groeianalyse-aanvraag van'} ${String(body.bedrijf || body.naam).replace(/[\r\n]/g, ' ').slice(0, 80)}`,
       template: enquiryTemplate(body),
     }, { idempotencyKey: `lead-notification/${key}` }))],
   ]

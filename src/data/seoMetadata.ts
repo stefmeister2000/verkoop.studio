@@ -17,6 +17,10 @@ export const seoMetadata: Record<string, Partial<Record<'nl' | 'en', Metadata>>>
     en: { title: 'Our marketing and development studio' },
   },
   '/contact': { nl: { title: 'Contact en projectaanvraag' }, en: { title: 'Contact us about your project' } },
+  '/gratis-website': {
+    nl: { title: 'Gratis website voor één bedrijf' },
+    en: { title: 'A free website for one business' },
+  },
   '/funnel-audit': { nl: { title: 'Groeianalyse voor je bedrijf' }, en: { title: 'Growth analysis for your business' } },
   '/funnels': { nl: { title: 'Salesfunnels en klantopvolging' }, en: { title: 'Sales funnels and lead nurturing' } },
   '/meta-ads': { nl: { title: 'Meta Ads voor leads en verkoop' }, en: { title: 'Meta Ads for leads and sales' } },
