@@ -1,7 +1,7 @@
 import ResponsiveImage from '../components/ResponsiveImage'
 import { useLang } from '../i18n/LanguageContext'
 import stefNooms from '../assets/stef.webp'
-import studioTeam from '../assets/studio-team.webp'
+import studioFlyers from '../assets/studio-flyers.webp'
 export default function AboutStef({ standalone = false }: { standalone?: boolean }) {
   const Heading = standalone ? 'h1' : 'h2'
   const CardHeading = standalone ? 'h2' : 'h3'
@@ -33,7 +33,7 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
             </p>
           </div>
           <div className="panel agency-card">
-            <ResponsiveImage className="agency-team-photo" src={studioTeam} alt={nl ? 'Samen aan het werk in de studio' : 'Working together in the studio'} loading="lazy" />
+            <ResponsiveImage className="agency-team-photo" src={studioFlyers} alt={nl ? 'Op een stadsplein met flyers in de hand' : 'On a city square, holding flyers'} loading="lazy" />
             <CardHeading className="font-display text-3xl text-paper">
               Design & development
             </CardHeading>

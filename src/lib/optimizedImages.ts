@@ -1,7 +1,7 @@
 import image0 from '../assets/freeflow-hero-3d.webp'
 import small0 from '../assets/freeflow-hero-3d-640.webp'
-import image1 from '../assets/studio-team.webp'
-import small1 from '../assets/studio-team-640.webp'
+import image1 from '../assets/studio-flyers.webp'
+import small1 from '../assets/studio-flyers-640.webp'
 import imageHero from '../assets/hero-portrait.webp'
 import smallHero from '../assets/hero-portrait-640.webp'
 import image2 from '../assets/stef.webp'
@@ -20,7 +20,7 @@ export const optimizedImages: Record<string, {width:number; height:number; srcSe
   [healthfactor]: {width:1440, height:749, srcSet:`${healthfactorSmall} 640w, ${healthfactor} 1440w`},
   '/images/ads/healthfactor-personal.jpg': {width:720, height:1280},
   [image0]: {width:1254, height:1254, srcSet:`${small0} 640w, ${image0} 1254w`},
-  [image1]: {width:848, height:1066, srcSet:`${small1} 640w, ${image1} 848w`},
+  [image1]: {width:848, height:1060, srcSet:`${small1} 640w, ${image1} 848w`},
   [imageHero]: {width:1066, height:1600, srcSet:`${smallHero} 640w, ${imageHero} 1066w`},
   [image2]: {width:1440, height:1920, srcSet:`${small2} 640w, ${image2} 1440w`},
   [imageStefDesk]: {width:1066, height:1600, srcSet:`${smallStefDesk} 640w, ${imageStefDesk} 1066w`},
