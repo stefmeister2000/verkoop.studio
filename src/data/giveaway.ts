@@ -40,6 +40,11 @@ export const giveaway = {
       nl: 'De actie loopt veertien dagen. Deelnemen kan tot en met 19 november 2026.',
       en: 'The campaign runs for fourteen days. You can enter until 19 November 2026.',
     },
+    figureAlt: { nl: 'De webshop die we voor Pinacello bouwden', en: 'The online store we built for Pinacello' },
+    figureCaption: {
+      nl: 'Pinacello. Een van de sites die we dit jaar bouwden.',
+      en: 'Pinacello. One of the sites we built this year.',
+    },
   },
 
   /** What the winner gets. The scope of the prize, so keep this exact. */
@@ -71,6 +76,17 @@ export const giveaway = {
     },
   },
 
+  /** Real work, so an entrant can see what the prize looks like. Slugs come from cases.ts. */
+  proof: {
+    title: { nl: 'Dit is wat we bouwen', en: 'This is what we build' },
+    body: {
+      nl: 'Geen mockups. Deze sites staan online voor klanten die ervoor betaalden. De winnaar krijgt hetzelfde werk, zonder de factuur.',
+      en: 'No mockups. These are live, for clients who paid for them. The winner gets the same work, without the invoice.',
+    },
+    cases: ['pinacello', 'nooms', 'healthfactor'] as const,
+    view: { nl: 'Bekijk de case', en: 'View the case' },
+  },
+
   steps: {
     title: { nl: 'Hoe het werkt', en: 'How it works' },
     items: {
@@ -90,6 +106,7 @@ export const giveaway = {
   /** Why the studio runs this. Said plainly, because entrants can tell. */
   why: {
     title: { nl: 'Waarom we dit doen', en: 'Why we do this' },
+    photoAlt: { nl: 'Het team van Verkoop Studio', en: 'The Verkoop Studio team' },
     body: {
       nl: 'Een site die werkt, overtuigt beter dan een verkooppraatje. We bouwen deze site gratis omdat we er een case van willen maken: we vragen de winnaar om het resultaat met ons te mogen tonen. En we spreken graag met de bedrijven die meedoen, ook met wie niet gekozen wordt.',
       en: 'A site that works convinces better than a sales pitch. We build this one for free because we want to turn it into a case: we ask the winner for permission to show the result. And we are glad to speak with every business that enters, including the ones we do not pick.',
@@ -102,6 +119,9 @@ export const giveaway = {
       nl: 'Vijf velden, plus je huidige site als je er een hebt. We lezen elke inzending zelf.',
       en: 'Five fields, plus your current site if you have one. We read every entry ourselves.',
     },
+    photoAlt: { nl: 'Stef Keppens aan zijn laptop', en: 'Stef Keppens at his laptop' },
+    who: { nl: 'Stef leest de inzendingen', en: 'Stef reads the entries' },
+    where: { nl: 'Lochristi', en: 'Lochristi' },
   },
 
   /** The action rules. A contest in Belgium needs them written down and reachable. */
