@@ -82,6 +82,11 @@ export const giveaway = {
         'Measurement and form follow-up, so you see where an enquiry came from.',
       ],
     },
+    figureAlt: { nl: 'De website die we voor Healthfactor bouwden', en: 'The website we built for Healthfactor' },
+    figureCaption: {
+      nl: 'Healthfactor. Zo ziet een afgewerkte site eruit.',
+      en: 'Healthfactor. This is what a finished site looks like.',
+    },
     excluded: {
       nl: 'Hosting en domeinnaam blijven voor eigen rekening. Een webshop, een app of maatwerksoftware valt buiten deze actie.',
       en: 'Hosting and the domain name stay your own cost. A webshop, an app or custom software falls outside this campaign.',
@@ -92,10 +97,10 @@ export const giveaway = {
   proof: {
     title: { nl: 'Dit is wat we bouwen', en: 'This is what we build' },
     body: {
-      nl: 'Geen mockups. Deze sites staan online voor klanten die ervoor betaalden. De winnaar krijgt hetzelfde werk, zonder de factuur.',
-      en: 'No mockups. These are live, for clients who paid for them. The winner gets the same work, without the invoice.',
+      nl: 'Geen mockups. Dit is werk dat online staat, voor klanten die ervoor betaalden. De winnaar krijgt hetzelfde werk, zonder de factuur.',
+      en: 'No mockups. This is work that is live, for clients who paid for it. The winner gets the same work, without the invoice.',
     },
-    cases: ['pinacello', 'nooms', 'healthfactor'] as const,
+    cases: ['pinacello', 'nooms', 'e-kart'] as const,
     view: { nl: 'Bekijk de case', en: 'View the case' },
   },
 
