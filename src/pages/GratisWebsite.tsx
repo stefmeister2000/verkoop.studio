@@ -8,7 +8,7 @@ import { giveaway } from '../data/giveaway'
 import { getCase } from '../data/cases'
 import { trackEvent } from '../lib/analytics'
 import { useLang } from '../i18n/LanguageContext'
-import pinacello from '../assets/cases/pinacello.webp'
+import pinacelloSite from '../assets/pinacello-site.webp'
 import healthfactorSite from '../assets/cases/healthfactor-website.webp'
 import studioFlyers from '../assets/studio-flyers.webp'
 import studioFlyersSmall from '../assets/studio-flyers-640.webp'
@@ -28,14 +28,30 @@ export default function GratisWebsite() {
     <div>
       <Seo title={g.seo.title[lang]} description={g.seo.description[lang]} path={g.path} />
 
-      {/* The first screen answers what, for whom and by when, not just the name of the offer. */}
+      {/* On a phone the screenshot sits between the lead and the facts, so the
+          thing being given away is on screen without scrolling. On desktop the
+          left column keeps its reading order and the screenshot spans it. */}
       <section className="bg-surface/40">
-        <div className={`${RAIL} reveal grid items-center gap-10 py-16 sm:py-28 lg:grid-cols-[1fr_1.1fr] lg:gap-16`}>
-          <div>
-            <p className="giveaway-eyebrow">{g.hero.eyebrow[lang]}</p>
-            <h1 className="mt-5 font-display text-4xl text-paper text-balance sm:text-5xl">{g.hero.title[lang]}</h1>
-            <p className="mt-5 max-w-xl text-lg text-bone">{g.hero.lead[lang]}</p>
-            <dl className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-3">
+        <div className={`${RAIL} reveal grid items-center gap-x-16 gap-y-8 py-12 sm:py-20 lg:grid-cols-[1fr_1.1fr]`}>
+          <div className="order-1 lg:col-start-1 lg:row-start-1">
+            <h1 className="font-display text-4xl text-paper text-balance sm:text-5xl">{g.hero.title[lang]}</h1>
+            <p className="mt-4 max-w-xl text-lg text-bone">{g.hero.lead[lang]}</p>
+          </div>
+
+          <figure className="order-2 m-0 lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center">
+            <ResponsiveImage
+              src={pinacelloSite}
+              alt={g.hero.figureAlt[lang]}
+              sizes="(max-width: 1024px) 100vw, 600px"
+              loading="eager"
+              fetchPriority="high"
+              className="w-full rounded-2xl border border-line object-cover object-top"
+            />
+            <figcaption className="mt-3 text-sm text-mute">{g.hero.figureCaption[lang]}</figcaption>
+          </figure>
+
+          <div className="order-3 lg:col-start-1 lg:row-start-2">
+            <dl className="grid gap-x-8 gap-y-4 sm:grid-cols-3">
               {g.hero.facts[lang].map(fact => (
                 <div key={fact.label} className="border-t border-line pt-3">
                   <dt className="text-xs font-semibold uppercase tracking-[0.08em] text-mute">{fact.label}</dt>
@@ -50,21 +66,9 @@ export default function GratisWebsite() {
               </a>
             </p>
           </div>
-          <figure className="m-0">
-            <ResponsiveImage
-              src={pinacello}
-              alt={g.hero.figureAlt[lang]}
-              sizes="(max-width: 1024px) 100vw, 600px"
-              loading="eager"
-              fetchPriority="high"
-              className="w-full rounded-2xl border border-line object-cover object-top"
-            />
-            <figcaption className="mt-3 text-sm text-mute">{g.hero.figureCaption[lang]}</figcaption>
-          </figure>
         </div>
       </section>
 
-      {/* The prize is a list of promises, not a set of peer objects, so it is a list. */}
       <section className="border-t border-line" aria-labelledby="prijs-titel">
         <div className={`${RAIL} reveal py-16 sm:py-20`}>
           <h2 id="prijs-titel" className="font-display text-3xl text-paper text-balance sm:text-4xl">{g.prize.title[lang]}</h2>
