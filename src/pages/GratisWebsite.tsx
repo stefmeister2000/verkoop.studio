@@ -9,13 +9,15 @@ import { getCase } from '../data/cases'
 import { trackEvent } from '../lib/analytics'
 import { useLang } from '../i18n/LanguageContext'
 import pinacello from '../assets/cases/pinacello.webp'
+import healthfactorSite from '../assets/cases/healthfactor-website.webp'
 import studioFlyers from '../assets/studio-flyers.webp'
 import studioFlyersSmall from '../assets/studio-flyers-640.webp'
 import stefDesk from '../assets/stef-desk.webp'
 import stefDeskSmall from '../assets/stef-desk-640.webp'
 
-/** One content rail for the whole page, so every heading starts on the same line. */
-const RAIL = 'mx-auto w-full max-w-5xl px-5 sm:px-8'
+/** One content rail for the whole page, so every heading starts on the same line.
+ *  max-w-6xl is the width the rest of the site uses. */
+const RAIL = 'mx-auto w-full max-w-6xl px-5 sm:px-8'
 
 export default function GratisWebsite() {
   const { lang } = useLang()
@@ -28,7 +30,7 @@ export default function GratisWebsite() {
 
       {/* The first screen answers what, for whom and by when, not just the name of the offer. */}
       <section className="bg-surface/40">
-        <div className={`${RAIL} reveal grid items-center gap-10 py-16 sm:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14`}>
+        <div className={`${RAIL} reveal grid items-center gap-10 py-16 sm:py-28 lg:grid-cols-[1fr_1.1fr] lg:gap-16`}>
           <div>
             <p className="giveaway-eyebrow">{g.hero.eyebrow[lang]}</p>
             <h1 className="mt-5 font-display text-4xl text-paper text-balance sm:text-5xl">{g.hero.title[lang]}</h1>
@@ -52,7 +54,7 @@ export default function GratisWebsite() {
             <ResponsiveImage
               src={pinacello}
               alt={g.hero.figureAlt[lang]}
-              sizes="(max-width: 1024px) 100vw, 460px"
+              sizes="(max-width: 1024px) 100vw, 600px"
               loading="eager"
               fetchPriority="high"
               className="w-full rounded-2xl border border-line object-cover object-top"
@@ -67,8 +69,22 @@ export default function GratisWebsite() {
         <div className={`${RAIL} reveal py-16 sm:py-20`}>
           <h2 id="prijs-titel" className="font-display text-3xl text-paper text-balance sm:text-4xl">{g.prize.title[lang]}</h2>
           <p className="mt-4 max-w-2xl text-bone">{g.prize.intro[lang]}</p>
-          <CheckList items={[...g.prize.items[lang]]} columns={2} className="mt-8" />
-          <p className="mt-8 max-w-2xl border-t border-line pt-5 text-sm text-mute">{g.prize.excluded[lang]}</p>
+          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-14">
+            <div>
+              <CheckList items={[...g.prize.items[lang]]} columns={1} />
+              <p className="mt-8 border-t border-line pt-5 text-sm text-mute">{g.prize.excluded[lang]}</p>
+            </div>
+            <figure className="m-0">
+              <ResponsiveImage
+                src={healthfactorSite}
+                alt={g.prize.figureAlt[lang]}
+                sizes="(max-width: 1024px) 100vw, 460px"
+                loading="lazy"
+                className="w-full rounded-2xl border border-line object-cover object-top"
+              />
+              <figcaption className="mt-3 text-sm text-mute">{g.prize.figureCaption[lang]}</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -77,7 +93,7 @@ export default function GratisWebsite() {
         <div className={`${RAIL} reveal py-16 sm:py-20`}>
           <h2 id="werk-titel" className="font-display text-3xl text-paper text-balance sm:text-4xl">{g.proof.title[lang]}</h2>
           <p className="mt-4 max-w-2xl text-bone">{g.proof.body[lang]}</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {proofCases.map(item => (
               <Link
                 key={item!.slug}

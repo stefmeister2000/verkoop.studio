@@ -82,6 +82,11 @@ export const giveaway = {
         'Measurement and form follow-up, so you see where an enquiry came from.',
       ],
     },
+    figureAlt: { nl: 'De website die we voor Healthfactor bouwden', en: 'The website we built for Healthfactor' },
+    figureCaption: {
+      nl: 'Healthfactor. Zo ziet een afgewerkte site eruit.',
+      en: 'Healthfactor. This is what a finished site looks like.',
+    },
     excluded: {
       nl: 'Hosting en domeinnaam blijven voor eigen rekening. Een webshop, een app of maatwerksoftware valt buiten deze actie.',
       en: 'Hosting and the domain name stay your own cost. A webshop, an app or custom software falls outside this campaign.',
@@ -92,10 +97,10 @@ export const giveaway = {
   proof: {
     title: { nl: 'Dit is wat we bouwen', en: 'This is what we build' },
     body: {
-      nl: 'Geen mockups. Deze sites staan online voor klanten die ervoor betaalden. De winnaar krijgt hetzelfde werk, zonder de factuur.',
-      en: 'No mockups. These are live, for clients who paid for them. The winner gets the same work, without the invoice.',
+      nl: 'Geen mockups. Dit is werk dat online staat, voor klanten die ervoor betaalden. De winnaar krijgt hetzelfde werk, zonder de factuur.',
+      en: 'No mockups. This is work that is live, for clients who paid for it. The winner gets the same work, without the invoice.',
     },
-    cases: ['pinacello', 'nooms', 'healthfactor'] as const,
+    cases: ['pinacello', 'nooms', 'e-kart'] as const,
     view: { nl: 'Bekijk de case', en: 'View the case' },
   },
 
@@ -118,7 +123,7 @@ export const giveaway = {
   /** Why the studio runs this. Said plainly, because entrants can tell. */
   why: {
     title: { nl: 'Waarom we dit doen', en: 'Why we do this' },
-    photoAlt: { nl: 'Op een stadsplein met flyers in de hand', en: 'On a city square, holding flyers' },
+    photoAlt: { nl: 'Tanguy De Brabandere op een stadsplein', en: 'Tanguy De Brabandere on a city square' },
     body: {
       nl: 'Een site die werkt, overtuigt beter dan een verkooppraatje. We bouwen deze site gratis omdat we er een case van willen maken: we vragen de winnaar om het resultaat met ons te mogen tonen. En we spreken graag met de bedrijven die meedoen, ook met wie niet gekozen wordt.',
       en: 'A site that works convinces better than a sales pitch. We build this one for free because we want to turn it into a case: we ask the winner for permission to show the result. And we are glad to speak with every business that enters, including the ones we do not pick.',
