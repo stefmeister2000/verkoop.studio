@@ -33,9 +33,9 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
             </p>
           </div>
           <div className="panel agency-card">
-            <ResponsiveImage className="agency-team-photo" src={studioFlyers} alt={nl ? 'Op een stadsplein met flyers in de hand' : 'On a city square, holding flyers'} loading="lazy" />
+            <ResponsiveImage className="agency-team-photo" src={studioFlyers} alt={nl ? 'Tanguy De Brabandere op een stadsplein' : 'Tanguy De Brabandere on a city square'} loading="lazy" />
             <CardHeading className="font-display text-3xl text-paper">
-              Design & development
+              Tanguy De Brabandere
             </CardHeading>
             <p className="mt-4 text-bone">
               {nl

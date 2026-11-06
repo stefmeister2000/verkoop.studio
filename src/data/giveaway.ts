@@ -123,7 +123,7 @@ export const giveaway = {
   /** Why the studio runs this. Said plainly, because entrants can tell. */
   why: {
     title: { nl: 'Waarom we dit doen', en: 'Why we do this' },
-    photoAlt: { nl: 'Op een stadsplein met flyers in de hand', en: 'On a city square, holding flyers' },
+    photoAlt: { nl: 'Tanguy De Brabandere op een stadsplein', en: 'Tanguy De Brabandere on a city square' },
     body: {
       nl: 'Een site die werkt, overtuigt beter dan een verkooppraatje. We bouwen deze site gratis omdat we er een case van willen maken: we vragen de winnaar om het resultaat met ons te mogen tonen. En we spreken graag met de bedrijven die meedoen, ook met wie niet gekozen wordt.',
       en: 'A site that works convinces better than a sales pitch. We build this one for free because we want to turn it into a case: we ask the winner for permission to show the result. And we are glad to speak with every business that enters, including the ones we do not pick.',
