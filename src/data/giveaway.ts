@@ -29,11 +29,10 @@ export const giveaway = {
   },
 
   hero: {
-    eyebrow: { nl: 'Actie', en: 'Campaign' },
     title: { nl: 'We bouwen één bedrijf gratis een nieuwe website.', en: 'We’re building one business a new website, free.' },
     lead: {
-      nl: 'Niet een template met een ander logo. Dezelfde aanpak als bij onze betalende klanten: we bekijken wat je verkoopt, voor wie, en bouwen daar een site rond die aanvragen oplevert. Eén deelnemer krijgt dat volledig gratis.',
-      en: 'Not a template with a different logo. The same approach as for our paying clients: we look at what you sell and to whom, then build a site around that which brings in enquiries. One entrant gets it entirely free.',
+      nl: 'Dezelfde aanpak als bij onze betalende klanten. Eén deelnemer krijgt dat volledig gratis.',
+      en: 'The same approach as for our paying clients. One entrant gets it entirely free.',
     },
     cta: { nl: 'Doe mee', en: 'Enter now' },
     deadline: {
@@ -52,7 +51,7 @@ export const giveaway = {
         { label: 'Until', value: '19 November 2026' },
       ],
     },
-    figureAlt: { nl: 'De webshop die we voor Pinacello bouwden', en: 'The online store we built for Pinacello' },
+    figureAlt: { nl: 'De website die we voor Pinacello bouwden', en: 'The website we built for Pinacello' },
     figureCaption: {
       nl: 'Pinacello. Een van de sites die we bouwden.',
       en: 'Pinacello. One of the sites we built.',

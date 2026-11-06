@@ -1554,17 +1554,3 @@ button:focus-visible {
   .button-light { transition: none; }
 }
 
-/* Brand eyebrow pill, per sources/brand/pack/BRAND.md. */
-.giveaway-eyebrow {
-  display: inline-block;
-  padding: 6px 11px;
-  border: 1px solid #e2e8fc;
-  border-radius: 30px;
-  background: #eaf0ff;
-  color: #2344ca;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
