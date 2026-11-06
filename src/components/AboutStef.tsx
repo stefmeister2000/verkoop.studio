@@ -23,7 +23,7 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <div className="panel agency-card">
             <ResponsiveImage className="agency-team-photo agency-nooms-photo" src={stefNooms} alt={nl ? 'Stef Keppens bij Nooms' : 'Stef Keppens at Nooms'} loading="lazy" />
-            <CardHeading className="font-display text-3xl text-paper">
+            <CardHeading className="font-display text-paper">
               Stef Keppens
             </CardHeading>
             <p className="mt-4 text-bone">
@@ -34,7 +34,7 @@ export default function AboutStef({ standalone = false }: { standalone?: boolean
           </div>
           <div className="panel agency-card">
             <ResponsiveImage className="agency-team-photo" src={studioFlyers} alt={nl ? 'Tanguy De Brabandere op een stadsplein' : 'Tanguy De Brabandere on a city square'} loading="lazy" />
-            <CardHeading className="font-display text-3xl text-paper">
+            <CardHeading className="font-display text-paper">
               Tanguy De Brabandere
             </CardHeading>
             <p className="mt-4 text-bone">
