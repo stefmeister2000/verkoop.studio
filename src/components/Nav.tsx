@@ -21,10 +21,14 @@ function sectionInView(): HomeSection {
 
 /** NL / EN choice. Both options are always visible, so a visitor sees English is available. */
 function LangSwitch({ lang, setLang }: { lang: 'nl' | 'en'; setLang: (lang: 'nl' | 'en') => void }) {
+  // The pill only slides after a click, so a saved choice restored on load never animates in.
+  const [moved, setMoved] = useState(false)
+  const choose = (next: 'nl' | 'en') => { if (next === lang) return; setMoved(true); setLang(next) }
   return (
-    <div className="nav-lang" role="group" aria-label={lang === 'nl' ? 'Taal' : 'Language'}>
-      <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>NL</button>
-      <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
+    <div className={`nav-lang${moved ? ' is-animated' : ''}`} data-lang={lang} role="group" aria-label={lang === 'nl' ? 'Taal' : 'Language'}>
+      <span className="nav-lang-thumb" aria-hidden="true" />
+      <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => choose('nl')}>NL</button>
+      <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => choose('en')}>EN</button>
     </div>
   )
 }
