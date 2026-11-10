@@ -19,6 +19,16 @@ function sectionInView(): HomeSection {
   return current
 }
 
+/** NL / EN choice. Both options are always visible, so a visitor sees English is available. */
+function LangSwitch({ lang, setLang }: { lang: 'nl' | 'en'; setLang: (lang: 'nl' | 'en') => void }) {
+  return (
+    <div className="nav-lang" role="group" aria-label={lang === 'nl' ? 'Taal' : 'Language'}>
+      <button type="button" lang="nl" aria-label="Nederlands" aria-pressed={lang === 'nl'} onClick={() => setLang('nl')}>NL</button>
+      <button type="button" lang="en" aria-label="English" aria-pressed={lang === 'en'} onClick={() => setLang('en')}>EN</button>
+    </div>
+  )
+}
+
 export default function Nav() {
   const menuButton = useRef<HTMLButtonElement>(null)
   const navRef = useRef<HTMLElement>(null)
@@ -28,7 +38,7 @@ export default function Nav() {
   const [section, setSection] = useState<HomeSection>('')
   const [indicator, setIndicator] = useState<{ x: number; w: number } | null>(null)
   const location = useLocation()
-  const { lang } = useLang()
+  const { lang, setLang } = useLang()
 
   useEffect(() => {
     const home = location.pathname === '/'
@@ -154,6 +164,7 @@ export default function Nav() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
+          <LangSwitch lang={lang} setLang={setLang} />
           <Link
             to={persistentCtaHref}
             onClick={() =>
@@ -166,6 +177,7 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
+          <LangSwitch lang={lang} setLang={setLang} />
           <button
             ref={menuButton}
             aria-controls="mobile-navigation"
