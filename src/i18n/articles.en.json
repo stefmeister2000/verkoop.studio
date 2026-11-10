@@ -1,0 +1,355 @@
+{
+  "google-ads-advertentie-niet-zichtbaar": {
+    "title": "Why can’t I see my Google Ads ad?",
+    "description": "Your ad doesn’t appear when you search for it yourself. Check impressions, the ad preview, search volume and Ad Rank before you change anything.",
+    "category": "Google Ads",
+    "sections": [
+      {
+        "title": "You didn’t see it: is your ad not showing anywhere?",
+        "paragraphs": [
+          "Not seeing your own ad doesn’t prove the campaign is getting no impressions. A search of your own is a single moment, in one location, on one device. So start with the number of impressions in Google Ads for the right campaign and date range. Then use the ad preview to investigate a specific search.",
+          "First, separate two situations. Are there impressions, but you can’t see the ad? Then investigate that specific search and its context. If impressions stay at zero, also check the settings and notifications that could be holding back the whole campaign. This guide is about search ads; your position in the regular Google results is a separate SEO question."
+        ]
+      },
+      {
+        "title": "Check the account, date range and status first",
+        "paragraphs": [
+          "Open the right ad account and choose a period in which the campaign should have been running. An unintended filter or the wrong date selection can send you chasing the wrong problem. Check the status at every level: campaign, ad group, ad and keyword.",
+          "An active campaign doesn’t help if the ad group is paused. Also check disapprovals, account notifications about billing, start and end dates, locations and the ad schedule. If you see a learning status, read the bid strategy’s explanation. Don’t keep changing several settings to make that message go away; first write down exactly what it says."
+        ],
+        "checklist": [
+          "Am I looking at the right campaign and an active measurement period?",
+          "Are the campaign, ad group and ad all enabled?",
+          "Is there a specific disapproval or account suspension?",
+          "Do my location and the time of day fall within the settings?"
+        ]
+      },
+      {
+        "title": "Use the Ad Preview and Diagnosis tool",
+        "paragraphs": [
+          "In Google Ads, open the Ad Preview and Diagnosis tool under the troubleshooting tools. Enter the search term and set the location, language and device to match the situation you want to check. Save the explanation you get together with those settings and the time.",
+          "This tool stops you adding real impressions by searching for your ad over and over. The result is still a snapshot and doesn’t necessarily reflect all of your campaign’s activity. So compare the diagnosis with the actual impressions in the account. For a local business, a preview on a desktop outside the service area can give a different result from a mobile search within the target audience."
+        ]
+      },
+      {
+        "title": "What does low search volume mean for your brand name?",
+        "paragraphs": [
+          "A keyword with the status Low search volume stays inactive until search traffic increases enough. Google checks that status again over time. It can happen with a new or rarely searched brand name, even when the keyword itself is correct.",
+          "This status doesn’t depend on your bid, ad copy or Quality Score. Simply raising your bid won’t clear the volume warning. First check the spelling and relevant variations of your brand name. Don’t turn a focused brand campaign into a broad campaign on general services without thinking it through: that changes both the audience and the purpose of the budget."
+        ]
+      },
+      {
+        "title": "Low Ad Rank: should you raise your bid?",
+        "paragraphs": [
+          "Ad Rank helps determine whether an ad can appear and in which position. Google looks at factors including your bid, the quality of the ad and landing page, thresholds, competition and the context of the search. So a low Ad Rank notification doesn’t prove that the budget alone is too low.",
+          "If you use Maximise clicks with a maximum CPC bid limit, check whether that limit is restricting the bid strategy. A bid limit and an average daily budget are different settings. Maximise clicks aims for clicks within your budget and doesn’t guarantee constant visibility for your brand name.",
+          "Choose one well-founded change and record the existing setting, the approved budget and when you’ll review it. There’s no universal cost per click that makes every local business visible. Alongside impressions and clicks, also judge whether the visitors match what you offer."
+        ]
+      },
+      {
+        "title": "Is a poor Ad Strength score the cause?",
+        "paragraphs": [
+          "The Ad Strength score gives feedback on the mix and relevance of your ad assets. According to Google, that rating doesn’t determine whether an ad is eligible to show and isn’t used to calculate Ad Rank. So a poor score on its own doesn’t explain zero impressions.",
+          "Use the feedback to write distinctive headlines and descriptions. Separately, check whether the ad is approved and what diagnosis Google gives for the search. Adding repetition to change a score doesn’t automatically make the message clearer to a customer."
+        ]
+      },
+      {
+        "title": "What should you have checked, and when do you review?",
+        "paragraphs": [
+          "Give whoever manages your account a specific question to investigate: for this search, location and device I can’t see my ad; here are the impressions and the diagnosis. Add a screenshot without payment details or other sensitive information. That way, someone can look into the situation properly.",
+          "For each change, note what you expect to see and then compare equivalent periods. With few brand searches, a single day may not give you enough information. And more impressions after a change aren’t automatically proof that the change alone made the difference.",
+          "Once the ad is showing, the question shifts to results: are the right people reaching the right page, and are suitable enquiries coming in? Our separate guide on Google Ads budget and enquiries helps you assess that next step. If you’d like to go through the diagnosis together, you can explain your situation via our Google Ads page."
+        ],
+        "checklist": [
+          "Exact search term, location, language, device and time",
+          "Campaign, measurement period and actual number of impressions",
+          "Exact status message and the result from the diagnosis tool",
+          "One change, the reason, the agreed budget and the review date",
+          "Follow-up measurement of suitable enquiries once there’s traffic"
+        ]
+      }
+    ],
+    "links": [
+      { "href": "/google-ads", "label": "Talk through your Google Ads campaign" },
+      { "href": "/blog/google-ads-gent-budget-aanvragen", "label": "From Google Ads budget to suitable enquiries" },
+      { "href": "https://support.google.com/google-ads/answer/7378077?hl=nl", "label": "Google: why you might not see your ad" },
+      { "href": "https://support.google.com/google-ads/answer/148778?hl=nl", "label": "Google: Ad Preview and Diagnosis" },
+      { "href": "https://support.google.com/google-ads/answer/2616014?hl=nl", "label": "Google: the Low search volume status" },
+      { "href": "https://support.google.com/google-ads/answer/1722122?hl=nl", "label": "Google: how Ad Rank works" },
+      { "href": "https://support.google.com/google-ads/answer/6268626?hl=nl", "label": "Google: Maximise clicks and the CPC bid limit" },
+      { "href": "https://support.google.com/google-ads/answer/9921843?hl=nl", "label": "Google: Ad Strength for responsive search ads" }
+    ]
+  },
+  "landingspagina-of-website": {
+    "title": "Landing page or website: what does your campaign need?",
+    "description": "A new landing page, or your existing website? Compare the options for your campaign, with examples and a practical decision checklist.",
+    "category": "Landing pages & conversion",
+    "sections": [
+      {
+        "title": "The short answer: start with your visitor’s question",
+        "paragraphs": [
+          "Use an existing service page if it clearly delivers on your campaign’s promise. Choose a separate landing page when one audience, offer or action needs its own explanation. Work on the whole website if visitors need to compare several services, or if the general information and navigation fall short. So a new page isn’t automatically the best first step.",
+          "Nor is it always a choice between a landing page and a website. A campaign page can simply be part of your existing site. You don’t need a new domain or an entirely new website for every campaign."
+        ]
+      },
+      {
+        "title": "What’s the difference between a landing page, sales page and website?",
+        "paragraphs": [
+          "Google Ads calls the page someone lands on after clicking an ad the landing page. That can be a homepage, product page or service page. In a website project, a separate landing page usually means a page built around one specific visitor question and next step.",
+          "A sales page is a page focused on selling: it helps someone judge whether a specific offer suits them and how to order or get in touch. Its length follows from the questions you need to answer, not from a fixed formula. A full website also ties together your services, your business, contact details and any knowledge articles."
+        ]
+      },
+      {
+        "title": "When is your existing service page enough?",
+        "paragraphs": [
+          "Look at the page first as if you’ve just seen the ad. Do you immediately find the right service, the service area, relevant information and a clear next step? Then targeted improvements may be wiser than building a second page with almost the same content. You keep information and maintenance in one place.",
+          "Take this fictional example: an installer advertises one service in his existing service area. His service page explains the approach, answers practical questions and has a workable enquiry route. Check that fit before you have a separate campaign page made. If information is missing, fill that gap first."
+        ]
+      },
+      {
+        "title": "When does a separate landing page add value?",
+        "paragraphs": [
+          "A dedicated page becomes useful when the campaign supports a different decision from the general service page. Take a fictional events venue: someone organising a corporate event wants information about group size, the programme and practical arrangements. An individual visitor may mainly be looking for opening hours and availability. Those different questions can justify separate pages.",
+          "Make the content specific to that decision. Show real, relevant examples and explain what happens after someone enquires. Google advises that the destination matches the ad and is easy to use, including on mobile. An eye-catching button doesn’t make up for a missing explanation or an unclear offer."
+        ],
+        "checklist": [
+          "The page is about the same offer as the ad.",
+          "The visitor understands who the offer is and isn’t suitable for.",
+          "Important conditions and practical information are easy to find.",
+          "Examples and proof are real and verifiable.",
+          "Getting in touch works on a phone and the next step is clear."
+        ]
+      },
+      {
+        "title": "When should you tackle the wider website?",
+        "paragraphs": [
+          "A standalone campaign page doesn’t solve everything. If your offer is described inconsistently across pages, visitors can’t tell your services apart or company information is missing, the job is bigger. In that case, bring structure to the website first and decide which page answers which question.",
+          "With several services, a clear overview page can help people choose, with detailed service pages beneath it. A campaign can then link straight to the most relevant page. That way, your homepage doesn’t have to answer every ad, audience and buying question at once."
+        ]
+      },
+      {
+        "title": "How do you judge whether the chosen page works?",
+        "paragraphs": [
+          "Agree in advance what counts as a suitable enquiry. Then look at the route from campaign visit to enquiry and the follow-up after that. Lots of completed forms aren’t automatically good enquiries; a contact might fall outside your service area, for example. So also discuss quality with whoever handles the enquiries.",
+          "Compare results over suitable periods and note changes in ad budget, audience and offer. With few visits or enquiries, a large percentage difference isn’t yet a reliable conclusion. And a before-and-after comparison alone doesn’t prove the new page is the cause. Keep improvements manageable and test first that your tracking and enquiry route work."
+        ]
+      },
+      {
+        "title": "Frequently asked questions about campaign pages",
+        "paragraphs": [
+          "Do I need a full website first? Not necessarily. A focused page can explain an initial offer, as long as visitors can also find the necessary company information, terms and ways to get in touch. Do decide what additional information and features your offer requires.",
+          "Does a separate sales page automatically rank better in Google? No. A page has to be useful and answer its own question. Copies that only swap in a place name or keyword add little and can fall under Google’s policy on doorway pages.",
+          "Should all the navigation go? No. Keep the main next step clear, but make sure visitors can find the information they need. Start with the questions that hold back a decision, not with a one-size-fits-all template. Under ‘Putting it into practice’ you’ll find our services and the primary sources for this guide."
+        ]
+      }
+    ],
+    "links": [
+      { "href": "/landing-pages", "label": "Landing pages for a clear next step" },
+      { "href": "/websites", "label": "Websites: the wider structure and visitor journeys" },
+      { "href": "/google-ads", "label": "Google Ads and how it connects to your landing page" },
+      { "href": "https://support.google.com/google-ads/answer/14086?hl=nl", "label": "Google Ads: definition of a landing page" },
+      { "href": "https://support.google.com/google-ads/answer/6238826?hl=nl", "label": "Google Ads: optimising landing pages" },
+      { "href": "https://developers.google.com/search/docs/essentials/spam-policies", "label": "Google Search: spam policies, including doorway pages" }
+    ]
+  },
+  "marketingbureau-gent-kiezen": {
+    "title": "Choosing a marketing agency in Ghent: what should you ask first?",
+    "description": "A practical guide for business owners in Ghent: compare scope, ownership, reporting and how you’ll work with a marketing agency.",
+    "category": "Strategy",
+    "sections": [
+      {
+        "title": "Start with the problem you want to solve",
+        "paragraphs": [
+          "Are you looking for a marketing agency in Ghent because too few enquiries are coming in? Because your online shop gets visitors but sells little? Or because no one can explain which campaigns are working? Those questions don’t automatically lead to the same brief.",
+          "Before an introductory meeting, write down your main goal, how you measure it today and who follows up on enquiries. A useful brief might be: we want more enquiries for corporate events and want to know how many of them turn into a booking. That’s more concrete than “more visibility”."
+        ]
+      },
+      {
+        "title": "Compare like with like",
+        "paragraphs": [
+          "A monthly fee says little without a clear scope. Ask which campaigns, pages and reports are included. Will copy and visuals be created, or does your team need to supply them? Who updates the website when a campaign brings in clicks but no customers?",
+          "Keep agency fees, ad budget and software separate. Also compare the time your own team will need to put in. A cheaper proposal can leave more of the work with you."
+        ],
+        "checklist": [
+          "Which work and deliverables are included?",
+          "Which costs come on top of the agreed fee?",
+          "Who manages the website, ad accounts and tracking data?",
+          "How often do we discuss results and decisions?"
+        ]
+      },
+      {
+        "title": "Ask for a case study that resembles your situation",
+        "paragraphs": [
+          "An online shop case study tells you something different from a campaign for group bookings. Look at the audience, the buying decision and what the agency actually did. Our E-Kart case study, for example, is about individual drivers as well as organisers of group activities in Ghent. Those visitors have different questions.",
+          "When you see a results percentage, ask about the measurement period, the comparison and the data source. Revenue growth alone doesn’t tell you how much ad budget was needed or what share came from the campaign."
+        ]
+      },
+      {
+        "title": "When is it better to start with an analysis than a campaign?",
+        "paragraphs": [
+          "If you don’t yet know whether the problem lies in reach, the website or the follow-up, an analysis can help define the brief. Agree which pages and steps will be reviewed, what data is available and which questions the analysis should answer. That way you compare agencies on their research and proposed approach, not just a list of channels.",
+          "Our growth analysis looks at your current website, campaigns and commercial customer journey. Possible deliverables include concrete observations, tracking issues and prioritised next steps. Agree in advance which parts suit your situation; an analysis on its own is no guarantee of more enquiries. Under ‘Putting it into practice’ you’ll find the details and how to request one."
+        ]
+      },
+      {
+        "title": "Which figures should your marketing agency report?",
+        "paragraphs": [
+          "Ask for a report that shows visibility, enquiries and customers separately. Google Search Console measures things like impressions and clicks from Google. Those figures tell you how people find your site, but not how many enquiries or sales follow. So for every result, ask which source and definition are being used.",
+          "For enquiries, have it recorded exactly what is being counted. A click on the contact button is not the same as a form you’ve received. Google Analytics can measure a form submission as a key event if that action is set up correctly. Also discuss with your team which enquiries fit your offer and which become customers; that doesn’t follow automatically from the number of tracked events.",
+          "A useful report also states the measurement period, any missing data and changes in budget or offer. With few enquiries, look at the numbers alongside the percentages. Agree which concrete decision follows from the report, such as improving the explanation on a service page or looking into how enquiries are followed up. An increase after a change doesn’t in itself prove that the change was the cause."
+        ],
+        "checklist": [
+          "Which source and measurement period belong to each figure?",
+          "Are we counting a button click, a received enquiry or a suitable enquiry?",
+          "Who keeps track of which enquiries eventually become customers?",
+          "What data is missing and what do we investigate next?"
+        ]
+      },
+      {
+        "title": "Make the collaboration practical",
+        "paragraphs": [
+          "Being nearby can be handy for meetings, but above all agree who makes decisions, who gets access to which systems and how you give feedback. Also set out how accounts and files will be handed over when the collaboration ends.",
+          "Verkoop Studio works from Lochristi. In a first conversation, we look at your current customer journey, what’s blocking it and which kind of project fits. An ongoing package isn’t required for a standalone website or project."
+        ]
+      }
+    ],
+    "links": [
+      { "href": "/cases/e-kart", "label": "E-Kart: B2C and B2B in Ghent" },
+      { "href": "/agency", "label": "Our studio in Lochristi" },
+      { "href": "/#groeipakketten", "label": "Scope and guide prices for our packages" },
+      { "href": "/funnel-audit", "label": "Growth analysis: find where your customer journey stalls" },
+      { "href": "/data-analytics", "label": "Data and analytics: insight into enquiries and results" },
+      { "href": "https://support.google.com/webmasters/answer/7576553?hl=nl", "label": "Google Search Console: what the Performance report measures" },
+      { "href": "https://support.google.com/analytics/answer/12946393?hl=nl", "label": "Google Analytics: measuring form submissions as key events" }
+    ]
+  },
+  "google-ads-gent-budget-aanvragen": {
+    "title": "Google Ads for your business in Ghent: from budget to suitable enquiries",
+    "description": "Work out what a suitable enquiry can cost and connect Google Ads, your landing page and follow-up. With a transparent worked example.",
+    "category": "Google Ads",
+    "sections": [
+      {
+        "title": "First decide what a suitable enquiry is",
+        "paragraphs": [
+          "For a business looking for customers in Ghent, a completed form isn’t the same as a sales opportunity. An enquiry might fall outside your service area, be about a different service or not meet your minimum order.",
+          "Agree in advance what counts as a suitable enquiry. Then record which enquiries turn into a conversation, a quote and a customer. That way you can judge campaigns on what happens after the click."
+        ]
+      },
+      {
+        "title": "Work back from a customer to an enquiry",
+        "paragraphs": [
+          "Say, purely as a worked example, that you want to pay no more than €200 in ad costs for a new customer. One in every five suitable enquiries becomes a customer. Then an ad cost of no more than €40 per suitable enquiry fits that starting point: €200 × 20%.",
+          "This isn’t a market average, a quote or a promised result. The model leaves out agency fees, software, taxes and other business costs. Set your own limit based on margin, capacity and the value of a customer. If your close rate drops, you’ll need to revisit that limit too."
+        ]
+      },
+      {
+        "title": "Make the ad and the page answer the same question",
+        "paragraphs": [
+          "Someone looking for a corporate event in Ghent needs different information from someone who wants to book an activity for themselves. Send each ad to the page that helps people make that specific choice.",
+          "State the offer, who it’s suitable for, the location or service area and the next step. A general homepage can offer too many choices when the search is already very specific."
+        ],
+        "checklist": [
+          "Does the page match the service being searched for?",
+          "Can a visitor get in touch easily on a phone?",
+          "Is it clear what happens after the enquiry?",
+          "Are unsuitable enquiries tracked separately?"
+        ]
+      },
+      {
+        "title": "Decide based on the whole journey",
+        "paragraphs": [
+          "Look at the search, the click, the suitable enquiry and the customer together. Lots of clicks without enquiries point to a different question from lots of enquiries without customers. In the first case, check the offer and the page; in the second, look into quality and follow-up, among other things.",
+          "Set aside a test budget you can responsibly spend and agree in advance when you’ll adjust course. Without historical data, we can’t reliably predict a cost per click or number of enquiries. That’s why our Google Ads approach connects campaigns with landing pages and tracking."
+        ]
+      }
+    ],
+    "links": [
+      { "href": "/google-ads", "label": "Our Google Ads approach" },
+      { "href": "/landing-pages", "label": "Landing pages for targeted enquiries" },
+      { "href": "/data-analytics", "label": "From campaign to measurable results" }
+    ]
+  },
+  "website-gent-meer-aanvragen": {
+    "title": "Having a website built for your business in Ghent: what should it deliver?",
+    "description": "A website brief for Ghent business owners: visitor questions, mobile forms, content, speed and measurable next steps.",
+    "category": "Websites & conversion",
+    "sections": [
+      {
+        "title": "Choose the most important next step",
+        "paragraphs": [
+          "A website can support a booking, a quote request, a purchase or an introductory meeting. Choose one main next step per page. That helps you decide which information needs to be on it and what can wait.",
+          "For a local service provider, the service area may be decisive. For a venue in Ghent, practical visitor information and the booking route matter. For an online shop, the product choice needs to be clear. Don’t use identical pages for every city when the offer and information don’t differ."
+        ]
+      },
+      {
+        "title": "Write from the questions people have before they enquire",
+        "paragraphs": [
+          "Visitors want to understand what you do, who it’s for, what your approach involves and why they can trust you. Show work that fits. A concrete case study with a clear contribution is more useful than a row of general promises.",
+          "When briefing, discuss who supplies copy, photos and supporting evidence. Also include practical information that customers often ask about in a first conversation. Only publish figures whose origin you can explain."
+        ]
+      },
+      {
+        "title": "Test the real mobile task",
+        "paragraphs": [
+          "Don’t just check whether the homepage fits on a phone. Go through the whole journey: finding a service, reading the information, filling in the form and receiving a confirmation. Check that sticky buttons, chat windows and the keyboard don’t cover the input fields.",
+          "Large images can use unnecessary amounts of data. Have smaller screens load an appropriate image size, reserve space for images and only load video when it’s needed. Then measure on real devices; a smaller file alone doesn’t prove a better experience."
+        ],
+        "checklist": [
+          "Is the main button clear and easy to reach?",
+          "Can you fill in the form using the phone keyboard?",
+          "Is an error explained clearly without wiping what was entered?",
+          "Does the enquiry actually reach the right person?"
+        ]
+      },
+      {
+        "title": "What information do you need for a useful website quote?",
+        "paragraphs": [
+          "Start with your offer, audience and main next step. Add the number of different page types, the copy and images available and the features you need. A contact form calls for different work from a booking route or online shop. That way you can compare quotes for the same job.",
+          "Ask for a clear split between the build, content, any integrations and ongoing maintenance. Have it recorded who supplies copy, photos, feedback and access. We quote the scope of a website separately; a general figure without that scope won’t help you compare proposals fairly."
+        ],
+        "checklist": [
+          "What should a visitor be able to do on the site?",
+          "Which pages and features are included?",
+          "Who supplies content and who processes feedback?",
+          "Which costs and responsibilities recur after launch?"
+        ]
+      },
+      {
+        "title": "How do you check whether the website is genuinely fast and pleasant to use?",
+        "paragraphs": [
+          "Combine a technical test with the tasks visitors actually carry out. Open the most important service page on a phone, read the content and go through the form. Check that the main content appears quickly, buttons respond and text doesn’t jump around as images load.",
+          "A Lighthouse score is a lab test. It helps you track down bottlenecks, but doesn’t automatically describe the experience of your real visitors. Google’s Core Web Vitals look at loading, responsiveness and visual stability. Use whatever real-visitor data is available alongside the test results, and compare the same pages before and after a change.",
+          "If real-visitor data is missing, say so. A lab measurement of blocking time is not a measured INP from real visits. Also record when and on which device you measure, so a one-off fluctuation isn’t immediately taken as an improvement or a problem."
+        ]
+      },
+      {
+        "title": "What happens to existing pages when you redesign your website?",
+        "paragraphs": [
+          "Include your existing page addresses in the brief. Keep useful URLs where that makes sense. If an address has to change, agree in advance which new page answers the same visitor question. That way, a visitor following an old link reaches a relevant destination instead of an error page.",
+          "When URLs change, Google recommends a list of old and new addresses, permanent redirects and updated internal links. Don’t simply point every removed page to the homepage: the destination needs to match in content. After launch, also check the sitemap and that public pages aren’t accidentally set to noindex, an instruction to keep them out of the search index.",
+          "Agree who checks this before and after launch. A new design doesn’t guarantee you’ll keep your search traffic; Google may need time to reprocess changed URLs. The Google guide under ‘Putting it into practice’ explains this approach."
+        ],
+        "checklist": [
+          "Which existing pages bring in visitors or enquiries?",
+          "Which addresses stay the same and which get a suitable replacement?",
+          "Have redirects, internal links and the sitemap been checked?",
+          "Who monitors availability and indexing after launch?"
+        ]
+      },
+      {
+        "title": "Agree ownership and evaluation in advance",
+        "paragraphs": [
+          "Ask who manages the domain, hosting, source files and accounts. Discuss maintenance, changes and what happens if you switch provider. A handover is only useful once your team can work with it.",
+          "Before launch, agree which actions you’ll measure. Compare suitable enquiries and customers using the same definitions, and note any changes in campaigns or offer. From Lochristi, Verkoop Studio connects websites, campaigns and follow-up; we quote the scope of a website separately."
+        ]
+      }
+    ],
+    "links": [
+      { "href": "/websites", "label": "Websites and ecommerce" },
+      { "href": "/blog/landingspagina-of-website", "label": "Guide: a full website or a focused landing page?" },
+      { "href": "/contact", "label": "Talk through your website brief" },
+      { "href": "https://web.dev/articles/vitals", "label": "Google: Core Web Vitals and the difference between lab and real-visitor data" },
+      { "href": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes", "label": "Google: carefully moving existing URLs to a redesigned website" }
+    ]
+  }
+}

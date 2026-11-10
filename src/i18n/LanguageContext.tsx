@@ -18,8 +18,8 @@ function readInitialLang(): Lang {
   } catch { return 'nl' }
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('nl')
+export function LanguageProvider({ children, initialLang = 'nl' }: { children: ReactNode; initialLang?: Lang }) {
+  const [lang, setLangState] = useState<Lang>(initialLang)
   const [storageReady, setStorageReady] = useState(false)
 
   useEffect(() => {
